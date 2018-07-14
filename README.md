@@ -1,8 +1,7 @@
 # CDN Tests
 
 These tests cover HTTP-specified behaviours for CDNs, primarily from
-[RFC7234](http://httpwg.org/specs/rfc7234.html), but as seen through the lens of
-[Fetch](https://fetch.spec.whatwg.org/).
+[RFC7234](http://httpwg.org/specs/rfc7234.html).
 
 A few notes:
 
@@ -23,7 +22,7 @@ First, start the server-side:
 
 > node server.js
 
-Then, configure your CDN to use port `8000` on that hostname as the origin. Point a browser (as above, currently Chrome) to the CDN.
+Then, configure your CDN to use port `8000` on that hostname as the origin. Point a browser (as above, currently Chrome) to the CDN host/port.
 
 
 
