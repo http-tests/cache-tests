@@ -53,7 +53,7 @@ export default
         {
           response_headers: [
             ['Expires', 60],
-            ['Date', 120]
+            ['Date', 70]
           ]
         },
         {
@@ -68,6 +68,36 @@ export default
           response_headers: [
             ['Expires', '0'],
             ['Date', 0]
+          ]
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache does not reuse a response when the Age header is greater than its Expires freshness lifetime',
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Expires', 10],
+            ['Age', '15']
+          ]
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache does not reuse a response when the Age header is greater than its Expires freshness lifetime, and Date is fast',
+      requests: [
+        {
+          response_headers: [
+            ['Date', 5],
+            ['Expires', 10],
+            ['Age', '8']
           ]
         },
         {
@@ -94,6 +124,21 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=0']
+          ]
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache does not reuse a response when the Age header is greater than its Cache-Control: max-age freshness lifetime',
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=10'],
+            ['Age', '15']
           ]
         },
         {
@@ -175,20 +220,6 @@ export default
         }
       ],
       browser_skip: true
-    },
-    {
-      name: 'HTTP cache does not reuse a response when the Age header is greater than its freshness lifetime',
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=3600'],
-            ['Age', '12000']
-          ]
-        },
-        {
-          expected_type: 'not_cached'
-        }
-      ]
     }
   ]
 }
