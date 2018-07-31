@@ -26,11 +26,33 @@ export default
       ]
     },
     {
-      name: 'HTTP cache updates the Age header',
+      name: 'HTTP cache updates the Age header (Expires)',
       requests: [
         {
           response_headers: [
             ['Expires', 30 * 24 * 60 * 60],
+            ['Date', 0],
+            ['Age', '30']
+          ],
+          pause_after: true
+        },
+        {
+          expected_type: 'cached',
+          expected_response_headers: [
+            ['Age', function (assert, p, a) {
+              assert.isTrue(a !== undefined, `${p} isn't present`)
+              assert.isTrue(parseInt(a) > 32, `${p} is ${a}, should be bigger`)
+            }]
+          ]
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache updates the Age header (CC: max-age)',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=600'],
             ['Date', 0],
             ['Age', '30']
           ],
