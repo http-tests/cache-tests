@@ -54,7 +54,7 @@ var configs = new Map()
 function handleConfig (pathSegs, request, response) {
   var uuid = pathSegs[0]
   if (request.method !== 'PUT') {
-    sendResponse(response, 401, `${request.method} request to config for ${uuid}`)
+    sendResponse(response, 405, `${request.method} request to config for ${uuid}`)
     return
   }
   if (configs.has(uuid)) {
