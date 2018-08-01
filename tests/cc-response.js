@@ -90,5 +90,5 @@ export default
         }
       ]
     }
-  ]  
+  ]
 }

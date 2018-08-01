@@ -7,14 +7,14 @@ export default {
       name: "HTTP cache doesn't use aged but fresh response when request contains Cache-Control: max-age=0",
       requests: [
         {
-          template: "fresh",
+          template: 'fresh',
           pause_after: true
         },
         {
           request_headers: [
-            ["Cache-Control", "max-age=0"]
+            ['Cache-Control', 'max-age=0']
           ],
-          expected_type: "not_cached"
+          expected_type: 'not_cached'
         }
       ]
     },
@@ -22,14 +22,14 @@ export default {
       name: "HTTP cache doesn't use aged but fresh response when request contains Cache-Control: max-age=1",
       requests: [
         {
-          template: "fresh",
+          template: 'fresh',
           pause_after: true
         },
         {
           request_headers: [
-            ["Cache-Control", "max-age=1"]
+            ['Cache-Control', 'max-age=1']
           ],
-          expected_type: "not_cached"
+          expected_type: 'not_cached'
         }
       ]
     },
@@ -38,49 +38,49 @@ export default {
       requests: [
         {
           response_headers: [
-            ["Cache-Control", "max-age=3600"],
-            ["Age", "1800"]
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '1800']
           ]
         },
         {
           request_headers: [
-            ["Cache-Control", "max-age=600"]
+            ['Cache-Control', 'max-age=600']
           ],
-          expected_type: "not_cached"
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: "HTTP cache does use aged stale response when request contains Cache-Control: max-stale that permits its use",
+      name: 'HTTP cache does use aged stale response when request contains Cache-Control: max-stale that permits its use',
       requests: [
         {
           response_headers: [
-            ["Cache-Control", "max-age=1"]
+            ['Cache-Control', 'max-age=1']
           ],
           pause_after: true
         },
         {
           request_headers: [
-            ["Cache-Control", "max-stale=1000"]
+            ['Cache-Control', 'max-stale=1000']
           ],
-          expected_type: "cached"
+          expected_type: 'cached'
         }
       ]
     },
     {
-      name: "HTTP cache does reuse stale response with Age header when request contains Cache-Control: max-stale that permits its use",
+      name: 'HTTP cache does reuse stale response with Age header when request contains Cache-Control: max-stale that permits its use',
       requests: [
         {
           response_headers: [
-            ["Cache-Control", "max-age=1500"],
-            ["Age", "2000"]
+            ['Cache-Control', 'max-age=1500'],
+            ['Age', '2000']
           ]
         },
         {
           request_headers: [
-            ["Cache-Control", "max-stale=1000"]
+            ['Cache-Control', 'max-stale=1000']
           ],
-          expected_type: "cached"
+          expected_type: 'cached'
         }
       ]
     },
@@ -89,14 +89,14 @@ export default {
       requests: [
         {
           response_headers: [
-            ["Cache-Control", "max-age=1500"]
+            ['Cache-Control', 'max-age=1500']
           ]
         },
         {
           request_headers: [
-            ["Cache-Control", "min-fresh=2000"]
+            ['Cache-Control', 'min-fresh=2000']
           ],
-          expected_type: "not_cached"
+          expected_type: 'not_cached'
         }
       ]
     },
@@ -105,15 +105,15 @@ export default {
       requests: [
         {
           response_headers: [
-            ["Cache-Control", "max-age=1500"],
-            ["Age", "1000"]
+            ['Cache-Control', 'max-age=1500'],
+            ['Age', '1000']
           ]
         },
         {
           request_headers: [
-            ["Cache-Control", "min-fresh=1000"]
+            ['Cache-Control', 'min-fresh=1000']
           ],
-          expected_type: "not_cached"
+          expected_type: 'not_cached'
         }
       ]
     },
@@ -122,49 +122,49 @@ export default {
       requests: [
         {
           response_headers: [
-            ["Cache-Control", "max-age=3600"]
+            ['Cache-Control', 'max-age=3600']
           ]
         },
         {
           request_headers: [
-            ["Cache-Control", "no-cache"]
+            ['Cache-Control', 'no-cache']
           ],
-          expected_type: "not_cached"
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: "HTTP cache validates fresh response with Last-Modified when request contains Cache-Control: no-cache",
+      name: 'HTTP cache validates fresh response with Last-Modified when request contains Cache-Control: no-cache',
       requests: [
         {
           response_headers: [
-            ["Cache-Control", "max-age=3600"],
-            ["Last-Modified", -10000],
-            ["Date", 0]
+            ['Cache-Control', 'max-age=3600'],
+            ['Last-Modified', -10000],
+            ['Date', 0]
           ]
         },
         {
           request_headers: [
-            ["Cache-Control", "no-cache"]
+            ['Cache-Control', 'no-cache']
           ],
-          expected_type: "lm_validate"
+          expected_type: 'lm_validate'
         }
       ]
     },
     {
-      name: "HTTP cache validates fresh response with ETag when request contains Cache-Control: no-cache",
+      name: 'HTTP cache validates fresh response with ETag when request contains Cache-Control: no-cache',
       requests: [
         {
           response_headers: [
-            ["Cache-Control", "max-age=3600"],
-            ["ETag", utils.httpContent("abc")]
+            ['Cache-Control', 'max-age=3600'],
+            ['ETag', utils.httpContent('abc')]
           ]
         },
         {
           request_headers: [
-            ["Cache-Control", "no-cache"]
+            ['Cache-Control', 'no-cache']
           ],
-          expected_type: "etag_validate"
+          expected_type: 'etag_validate'
         }
       ]
     },
@@ -173,23 +173,23 @@ export default {
       requests: [
         {
           response_headers: [
-            ["Cache-Control", "max-age=3600"]
+            ['Cache-Control', 'max-age=3600']
           ]
         },
         {
           request_headers: [
-            ["Cache-Control", "no-store"]
+            ['Cache-Control', 'no-store']
           ],
-          expected_type: "not_cached"
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: "HTTP cache generates 504 status code when nothing is in cache and request contains Cache-Control: only-if-cached",
+      name: 'HTTP cache generates 504 status code when nothing is in cache and request contains Cache-Control: only-if-cached',
       requests: [
         {
           request_headers: [
-            ["Cache-Control", "only-if-cached"]
+            ['Cache-Control', 'only-if-cached']
           ],
           expected_status: 504,
           expected_response_text: null
