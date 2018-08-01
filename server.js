@@ -4,7 +4,7 @@ const http = require('http')
 const path = require('path')
 const fs = require('fs')
 
-const baseUrl = "http://localhost:8000/"
+const baseUrl = 'http://localhost:8000/'
 
 const mimeTypes = {
   'html': 'text/html',
@@ -40,10 +40,7 @@ function handleFile (url, request, response) {
   if (urlPath === '/') urlPath = '/index.html'
   var filename = path.join(process.cwd(), urlPath)
   if (!fs.existsSync(filename)) {
-    response.writeHead(404, {'Content-Type': 'text/plain'})
-    console.log(`${urlPath} 404`)
-    response.write('Not Found\n')
-    response.end()
+    sendResponse(response, 404, `${urlPath} Not Found`)
     return
   }
   var mimeType = mimeTypes[path.extname(filename).split('.')[1]]
@@ -57,11 +54,11 @@ var configs = new Map()
 function handleConfig (pathSegs, request, response) {
   var uuid = pathSegs[0]
   if (request.method !== 'PUT') {
-    console.log(`WARN: ${request.method} request to config for ${uuid}`)
+    sendResponse(response, 401, `${request.method} request to config for ${uuid}`)
     return
   }
   if (configs.has(uuid)) {
-    console.log(`WARN: config already exists for ${uuid}`)
+    sendResponse(response, 409, `Config already exists for ${uuid}`)
     return
   }
   var body = ''
@@ -85,25 +82,19 @@ function handleState (pathSegs, request, response) {
 function handleXhr (pathSegs, request, response) {
   var uuid = pathSegs[0]
   if (!uuid) {
-    response.writeHead(404, {'Content-Type': 'text/plain'})
-    console.log(`WARN: ${request.url} 404`)
-    response.write('Not Found\n')
-    response.end()
+    sendResponse(response, 404, `Config Not Found for ${uuid}`)
     return
   }
   var requests = configs.get(uuid)
   if (!requests) {
-    response.writeHead(409, {'Content-Type': 'text/plain'})
-    console.log(`WARN: ${request.url} 409`)
-    response.write('Conflict\n')
-    response.end()
+    sendResponse(response, 409, `Requests not found for ${uuid}`)
     return
   }
   var serverState = stash.get(uuid) || []
   var config = requests[serverState.length]
   var previousConfig = requests[serverState.length - 1]
   if (!config) {
-    console.log(`WARN: request ${serverState.length + 1} of ${requests.length} for ${requests[0].name}`)
+    sendResponse(response, 409, `WARN: request ${serverState.length + 1} of ${requests.length} for ${requests[0].name}`)
     return
   } else {
     console.log(`      request ${serverState.length + 1} of ${requests.length} for ${config.name}`)
@@ -163,6 +154,13 @@ function handleXhr (pathSegs, request, response) {
   } else {
     response.end(content)
   }
+}
+
+function sendResponse (response, statusCode, message) {
+  console.log(message)
+  response.writeHead(statusCode, {'Content-Type': 'text/plain'})
+  response.write(`${message}\n`)
+  response.end()
 }
 
 function getHeader (headers, headerName) {
