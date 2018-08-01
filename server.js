@@ -1,9 +1,10 @@
-
 /* global URL */
 
 const http = require('http')
 const path = require('path')
 const fs = require('fs')
+
+const baseUrl = "http://localhost:8000/"
 
 const mimeTypes = {
   'html': 'text/html',
@@ -19,7 +20,7 @@ const locationHeaders = new Set(['location', 'content-location'])
 const dateHeaders = new Set(['date', 'expires', 'last-modified'])
 
 function handleMain (request, response) {
-  var url = new URL(request.url, 'https://localhost:8080/')
+  var url = new URL(request.url, baseUrl)
   var pathSegs = url.pathname.split('/')
   pathSegs.shift()
   var dispatch = pathSegs.shift()
@@ -35,7 +36,7 @@ function handleMain (request, response) {
 }
 
 function handleFile (url, request, response) {
-  var urlPath = url.pathname
+  var urlPath = path.normalize(url.pathname)
   if (urlPath === '/') urlPath = '/index.html'
   var filename = path.join(process.cwd(), urlPath)
   if (!fs.existsSync(filename)) {
