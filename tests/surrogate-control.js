@@ -34,6 +34,50 @@ export default
       ]
     },
     {
+      name: 'HTTP cache reuses a response with positive Surrogate-Control: max-age with an extesion',
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Surrogate-Control', 'foobar, max-age=3600']
+          ]
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+
+    {
+      name: 'HTTP cache reuses a response with positive Surrogate-Control: max-age in a quoted string',
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Surrogate-Control', 'max-age="3600"']
+          ]
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache reuses a response with positive Surrogate-Control: MaX-aGe',
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Surrogate-Control', 'MaX-aGe=3600']
+          ]
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+
+    {
       name: 'HTTP cache reuses a response with positive Surrogate-Control: max-age and a past Expires',
       browser_skip: true,
       requests: [
