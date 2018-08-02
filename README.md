@@ -1,20 +1,20 @@
-# CDN Tests
+# HTTP Cache Tests
 
-These tests cover HTTP-specified behaviours for CDNs, primarily from
+These tests cover HTTP-specified behaviours for caches, primarily from
 [RFC7234](http://httpwg.org/specs/rfc7234.html).
+
+They were extracted from the [WPT tests for caching]() and generalised so that they can be used to test the browser cache or intermediary caches upstream.
 
 A few notes:
 
 * By its nature, caching is optional; some tests expecting a response to be cached might fail
   because the client chose not to cache it, or chose to race the cache with a network request.
 
-* Likewise, some tests might fail because there is a separate document-level cache that's
-  ill-defined; see [this issue](https://github.com/whatwg/fetch/issues/354).
+* Likewise, some tests might fail because there is a separate document-level cache in browsers that's ill-defined; see [this issue](https://github.com/whatwg/fetch/issues/354).
 
 * Some browser caches will behave differently when reloading / shift-reloading, despite the `cache
   mode` staying the same.
 
-* They only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
 
 ## Running the Tests
 
@@ -22,8 +22,19 @@ First, start the server-side:
 
 > node server.js
 
-Then, configure your CDN to use port `8000` on that hostname as the origin. Point a browser (as above, currently Chrome) to the CDN host/port.
 
+### Testing Browser Caches
+
+To test a browser, just point it at `https://{hostname}:8000/` and click "Browser Tests".
+
+
+### Testing CDNs, Reverse Proxies and other Intermediary Caches
+
+To test a forward proxy, configure your browser to use it, then point it at `https://{hostname}:8000/` and click "Intermediary Tests".
+
+To test an reverse proxy or CDN, configure it to use port `8000` on the server as the origin. Then point a browser* to the CDN host/port and click "Intermediary Tests".
+
+* They only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
 
 
 ## Test Format
