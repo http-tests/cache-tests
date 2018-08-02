@@ -43,7 +43,7 @@ function handleFile (url, request, response) {
     sendResponse(response, 404, `${urlPath} Not Found`)
     return
   }
-  var mimeType = mimeTypes[path.extname(filename).split('.')[1]]
+  var mimeType = mimeTypes[path.extname(filename).split('.')[1]] || 'application/octet-stream'
   response.writeHead(200, {'Content-Type': mimeType})
   console.log(`${urlPath} 200 ${mimeType}`)
   var fileStream = fs.createReadStream(filename)
