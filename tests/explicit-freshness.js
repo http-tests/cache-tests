@@ -6,7 +6,7 @@ export default
   tests: [
     // response directives
     {
-      name: 'HTTP cache reuses a response with a future Expires',
+      name: 'HTTP cache SHOULD reuse a response with a future Expires',
       requests: [
         {
           response_headers: [
@@ -20,7 +20,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not reuse a response with a past Expires',
+      name: 'HTTP cache MUST NOT reuse a response with a past Expires',
       requests: [
         {
           response_headers: [
@@ -34,7 +34,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not reuse a response with a present Expires',
+      name: 'HTTP cache MUST NOT reuse a response with a present Expires',
       requests: [
         {
           response_headers: [
@@ -48,7 +48,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not reuse a response with an Expires older than Date',
+      name: 'HTTP cache MUST NOT reuse a response with an Expires older than Date',
       requests: [
         {
           response_headers: [
@@ -62,7 +62,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not reuse a response with an invalid Expires',
+      name: 'HTTP cache MUST NOT reuse a response with an invalid Expires',
       requests: [
         {
           response_headers: [
@@ -76,7 +76,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache reuses a response with Expires, even if Date is invalid',
+      name: 'HTTP cache SHOULD reuse a response with Expires, even if Date is invalid',
       requests: [
         {
           response_headers: [
@@ -90,7 +90,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not reuse a response when the Age header is greater than its Expires freshness lifetime',
+      name: 'HTTP cache MUST NOT reuse a response when the Age header is greater than its Expires freshness lifetime',
       requests: [
         {
           response_headers: [
@@ -105,7 +105,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not reuse a response when the Age header is greater than its Expires freshness lifetime, and Date is fast',
+      name: 'HTTP cache MUST NOT reuse a response when the Age header is greater than its Expires freshness lifetime, and Date is fast',
       requests: [
         {
           response_headers: [
@@ -120,7 +120,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache reuses a response with positive Cache-Control: max-age',
+      name: 'HTTP cache SHOULD reuse a response with positive Cache-Control: max-age',
       requests: [
         {
           response_headers: [
@@ -133,7 +133,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not reuse a response with Cache-Control: max-age=0',
+      name: 'HTTP cache MUST NOT reuse a response with Cache-Control: max-age=0',
       requests: [
         {
           response_headers: [
@@ -146,7 +146,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not reuse a response when the Age header is greater than its Cache-Control: max-age freshness lifetime',
+      name: 'HTTP cache MUST NOT reuse a response when the Age header is greater than its Cache-Control: max-age freshness lifetime',
       requests: [
         {
           response_headers: [
@@ -161,7 +161,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache reuses a response with positive Cache-Control: max-age and a past Expires',
+      name: 'HTTP cache SHOULD reuse a response with positive Cache-Control: max-age and a past Expires',
       requests: [
         {
           response_headers: [
@@ -176,7 +176,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache reuses a response with positive Cache-Control: max-age and an invalid Expires',
+      name: 'HTTP cache SHOULD reuse a response with positive Cache-Control: max-age and an invalid Expires',
       requests: [
         {
           response_headers: [
@@ -191,7 +191,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not reuse a response with Cache-Control: max-age=0 and a future Expires',
+      name: 'HTTP cache MUST NOT reuse a response with Cache-Control: max-age=0 and a future Expires',
       requests: [
         {
           response_headers: [
@@ -206,7 +206,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache reuses a response with positive Cache-Control: max-age and a CC extension present',
+      name: 'HTTP cache SHOULD reuse a response with positive Cache-Control: max-age and a CC extension present',
       requests: [
         {
           response_headers: [
@@ -219,7 +219,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache reuses a response with positive Cache-Control: MaX-AgE',
+      name: 'HTTP cache SHOULD reuse a response with positive Cache-Control: MaX-AgE',
       requests: [
         {
           response_headers: [
@@ -232,7 +232,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache does not prefer Cache-Control: s-maxage over Cache-Control: max-age',
+      name: 'Private HTTP cache MUST NOT prefer Cache-Control: s-maxage over Cache-Control: max-age',
       requests: [
         {
           response_headers: [
@@ -247,7 +247,7 @@ export default
       browser_only: true
     },
     {
-      name: 'HTTP cache does not prefer Cache-Control: s-maxage over Cache-Control: max-age (multiple headers)',
+      name: 'Private HTTP cache MUST NOT prefer Cache-Control: s-maxage over Cache-Control: max-age (multiple headers)',
       requests: [
         {
           response_headers: [
@@ -263,7 +263,7 @@ export default
       browser_only: true
     },
     {
-      name: 'HTTP cache prefers Cache-Control: s-maxage over Cache-Control: max-age',
+      name: 'Shared HTTP cache MUST prefer Cache-Control: s-maxage over Cache-Control: max-age',
       requests: [
         {
           response_headers: [

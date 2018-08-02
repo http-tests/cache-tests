@@ -5,7 +5,7 @@ export default
   name: 'Other Caching Requirements',
   tests: [
     {
-      name: 'HTTP cache generates an Age header',
+      name: 'HTTP cache MUST generate an Age header',
       requests: [
         {
           response_headers: [
@@ -26,7 +26,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache updates the Age header (Expires)',
+      name: 'HTTP cache MUST update the Age header (Expires)',
       requests: [
         {
           response_headers: [
@@ -48,7 +48,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache updates the Age header (CC: max-age)',
+      name: 'HTTP cache MUST update the Age header (CC: max-age)',
       requests: [
         {
           response_headers: [
@@ -70,7 +70,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache doesn\'t update the Date header',
+      name: 'HTTP cache MUST NOT update the Date header',
       requests: [
         {
           response_headers: [

@@ -10,7 +10,7 @@ function checkStatus (status) {
     body = utils.httpContent(code)
   }
   tests.push({
-    name: 'HTTP cache goes to the network if it has a stale ' + code + ' response',
+    name: 'HTTP cache MUST NOT reuse a stale ' + code + ' response with explicit freshness',
     requests: [
       {
         template: 'stale',
@@ -23,7 +23,7 @@ function checkStatus (status) {
     ]
   })
   tests.push({
-    name: 'HTTP cache avoids going to the network if it has a fresh ' + code + ' response',
+    name: 'HTTP cache SHOULD reuse a fresh ' + code + ' response with explict freshness',
     requests: [
       {
         template: 'fresh',

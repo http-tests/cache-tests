@@ -37,6 +37,13 @@ To test an reverse proxy or CDN, configure it to use port `8000` on the server a
 * They only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
 
 
+## Interpreting the Results
+
+HTTP caching by its nature is an optimisation; implementations aren't required to cache everything. However, when they do cache, their behaviour is constrained by [the specification](https://httpwg.org/specs/rfc7234.html).
+
+To reflect this, the test descriptions use SHOULD and MUST to indicate whether the behaviour is required or not; SHOULD tests are testing whether caching is happening (they're SHOULD because the point of a cache is caching!), whereas the MUST-level tests indicate a spec violation.
+
+
 ## Test Format
 
 Each test run gets its own URL, randomized content, and operates independently.
