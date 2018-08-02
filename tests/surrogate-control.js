@@ -34,7 +34,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache reuses a response with positive Surrogate-Control: max-age with an extesion',
+      name: 'HTTP cache reuses a response with positive Surrogate-Control: max-age with an extension',
       browser_skip: true,
       requests: [
         {
