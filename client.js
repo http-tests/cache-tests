@@ -273,9 +273,11 @@ function putTestConfig (uuid, requests) {
 function getServerState (uuid) {
   return fetch(`/state/${uuid}`)
     .then(function (response) {
-      return response.text()
+      if (response.status === 200) {
+        return response.text()
+      }
     }).then(function (text) {
-      if (text === '') return []
+      if (text === undefined) return []
       return JSON.parse(text)
     })
 }
