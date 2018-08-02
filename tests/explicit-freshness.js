@@ -210,7 +210,23 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age=1, s-maxage=3600']
+            ['Cache-Control', 's-maxage=3600, max-age=1']
+          ],
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ],
+      browser_only: true
+    },
+    {
+      name: 'HTTP cache does not prefer Cache-Control: s-maxage over Cache-Control: max-age (multiple headers)',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 's-maxage=3600'],
+            ['Cache-Control', 'max-age=1']
           ],
           pause_after: true
         },
