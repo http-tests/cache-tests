@@ -195,8 +195,8 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age=0'],
             ['Expires', 10000],
+            ['Cache-Control', 'max-age=0'],
             ['Date', 0]
           ]
         },
