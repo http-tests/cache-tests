@@ -232,19 +232,6 @@ export default
       ]
     },
     {
-      name: 'HTTP cache reuses a response with positive Cache-Control: max-age in a quoted string',
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age="3600"']
-          ]
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
       name: 'HTTP cache does not prefer Cache-Control: s-maxage over Cache-Control: max-age',
       requests: [
         {
