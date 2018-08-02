@@ -6,6 +6,7 @@ export default
   tests: [
     {
       name: 'Shared HTTP cache does not store a response with Cache-Control: private',
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -15,11 +16,11 @@ export default
         {
           expected_type: 'not_cached'
         }
-      ],
-      browser_skip: true
+      ]
     },
     {
       name: 'Private HTTP cache reuses a fresh response with Cache-Control: private',
+      browser_only: true,
       requests: [
         {
           response_headers: [
@@ -29,8 +30,7 @@ export default
         {
           expected_type: 'cached'
         }
-      ],
-      browser_only: true
+      ]
     },
     {
       name: 'HTTP cache does not store a response with Cache-Control: no-store',

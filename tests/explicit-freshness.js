@@ -76,6 +76,20 @@ export default
       ]
     },
     {
+      name: 'HTTP cache reuses a response with Expires, even if Date is invalid',
+      requests: [
+        {
+          response_headers: [
+            ['Date', 'foo'],
+            ['Expires', 10]
+          ]
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache does not reuse a response when the Age header is greater than its Expires freshness lifetime',
       requests: [
         {
