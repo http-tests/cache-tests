@@ -7,11 +7,11 @@ import * as utils from '../utils.js'
 
 const noBodyStatus = new Set([204, 304])
 
-const useBrowserCache = false
 
 chai.config.includeStack = false
 var assert = chai.assert
 
+var useBrowserCache = false
 export function runTests (tests, browserCache) {
   if (browserCache !== undefined) useBrowserCache = browserCache
   document.addEventListener('DOMContentLoaded', function () {
