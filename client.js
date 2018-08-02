@@ -8,6 +8,7 @@ import * as utils from '../utils.js'
 const noBodyStatus = new Set([204, 304])
 
 chai.config.includeStack = false
+chai.config.showDiff = false
 var assert = chai.assert
 
 var useBrowserCache = false
