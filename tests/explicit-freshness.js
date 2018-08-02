@@ -206,6 +206,19 @@ export default
       ]
     },
     {
+      name: 'HTTP cache reuses a response with positive Cache-Control: max-age and a CC extension present',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'foobar, max-age=3600']
+          ]
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache does not prefer Cache-Control: s-maxage over Cache-Control: max-age',
       requests: [
         {
