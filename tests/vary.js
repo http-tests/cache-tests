@@ -48,7 +48,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache MUST NOT reuse Vary response when request omits variant header",
+      name: 'HTTP cache MUST NOT reuse Vary response when request omits variant header',
       requests: [
         {
           request_headers: [
@@ -67,7 +67,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache SHOULD NOT invalidate existing Vary response",
+      name: 'HTTP cache SHOULD NOT invalidate existing Vary response',
       requests: [
         {
           request_headers: [
@@ -104,7 +104,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache SHOULD NOT include headers not listed in Vary in the cache key",
+      name: 'HTTP cache SHOULD NOT include headers not listed in Vary in the cache key',
       requests: [
         {
           request_headers: [
@@ -176,7 +176,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache MUST NOT reuse two-way Vary response when request omits variant header",
+      name: 'HTTP cache MUST NOT reuse two-way Vary response when request omits variant header',
       requests: [
         {
           request_headers: [
