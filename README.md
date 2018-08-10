@@ -1,19 +1,12 @@
-# HTTP Cache Tests
+# Tests for CDNs
 
-These tests cover HTTP-specified behaviours for caches, primarily from
-[RFC7234](http://httpwg.org/specs/rfc7234.html).
+This is a test suite for protocol behaviours by CDNs. Currently, it's focused on HTTP caching behaviours, as specified by [RFC7234](http://httpwg.org/specs/rfc7234.html).
 
-They were extracted from the [WPT tests for caching]() and generalised so that they can be used to test the browser cache or intermediary caches upstream.
+Its goal is to identify variances in the behaviours of CDNs, both from the normative specifications and between each other. This in turn can help avoid situations where CDNs act in surprising ways to their customers.
 
-A few notes:
+The initial tests were extracted from the [WPT tests for caching](), to provide a basis for HTTP conformance. Not all of these might apply to CDNs; for example, most CDNs ignore some (or all) request `Cache-Control` directives.
 
-* By its nature, caching is optional; some tests expecting a response to be cached might fail
-  because the client chose not to cache it, or chose to race the cache with a network request.
-
-* Likewise, some tests might fail because there is a separate document-level cache in browsers that's ill-defined; see [this issue](https://github.com/whatwg/fetch/issues/354).
-
-* Some browser caches will behave differently when reloading / shift-reloading, despite the `cache
-  mode` staying the same.
+As such, they aim to provide a basis for discussion among CDNs about how they should behave.
 
 
 ## Running the Tests
@@ -25,7 +18,11 @@ First, start the server-side:
 
 ### Testing Browser Caches
 
+The applicable tests can be run against a browser cache, to assess compatibility between CDN cache and browsers.
+
 To test a browser, just point it at `https://{hostname}:8000/` and click "Browser Tests".
+
+Note that some tests might fail because there is a separate document-level cache in browsers that's ill-defined; see [this issue](https://github.com/whatwg/fetch/issues/354).
 
 
 ### Testing CDNs, Reverse Proxies and other Intermediary Caches
