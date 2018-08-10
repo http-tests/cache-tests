@@ -15,23 +15,20 @@ First, start the server-side:
 
 > node server.js
 
+Make sure that the browser is not configured to use a proxy cache, and that the network being tested upon does not use an intercepting proxy cache.
+
+To test an reverse proxy or CDN, configure it to use port `8000` on the server as the origin. Then point a browser* to the CDN host/port.
+
+* They only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
+
 
 ### Testing Browser Caches
 
 The applicable tests can be run against a browser cache, to assess compatibility between CDN cache and browsers.
 
-To test a browser, just point it at `https://{hostname}:8000/` and click "Browser Tests".
+To test a browser, just point it at `https://{hostname}:8000/test-browser.html` after setting up the server.
 
 Note that some tests might fail because there is a separate document-level cache in browsers that's ill-defined; see [this issue](https://github.com/whatwg/fetch/issues/354).
-
-
-### Testing CDNs, Reverse Proxies and other Intermediary Caches
-
-To test a forward proxy, configure your browser to use it, then point it at `https://{hostname}:8000/` and click "Intermediary Tests".
-
-To test an reverse proxy or CDN, configure it to use port `8000` on the server as the origin. Then point a browser* to the CDN host/port and click "Intermediary Tests".
-
-* They only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
 
 
 ## Interpreting the Results

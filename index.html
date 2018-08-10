@@ -2,12 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>HTTP Caching Tests</title>
+    <title>CDN Cache Tests</title>
+    <style type="text/css">
+      .duration { display: none; }
+    </style>
   </head>
   <body>
-    <h1>HTTP Caching Tests</h1>
-    <ul>
-      <li><a href="test-browser.html">Browser Tests</a></li>
-      <li><a href="test-intermediary.html">Intermediary Tests</a></li>
+    <script type="module">
+    import * as client from './client.js'
+    import ccRequest from './tests/cc-request.js'
+    import ccResponse from './tests/cc-response.js'
+    import freshness from './tests/explicit-freshness.js'
+    import heuristic from './tests/heuristic-freshness.js'
+    import surrogate from './tests/surrogate-control.js'
+    import statuses from './tests/status.js'
+    import vary from './tests/vary.js'
+    import other from './tests/other.js'
+    client.runTests([freshness, heuristic, surrogate, ccResponse, statuses, ccRequest, vary, other])
+    </script>
   </body>
 </html>
