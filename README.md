@@ -24,7 +24,7 @@ Note that they only work reliably on Chrome for the time being; see [this bug](h
 
 ### Testing Browser Caches
 
-The applicable tests can be run against a browser cache, to assess compatibility between CDN cache and browsers.
+The applicable tests can be run against a browser cache, to assess compatibility between CDN caches and those in browsers.
 
 To test a browser, just point it at `https://{hostname}:8000/test-browser.html` after setting up the server.
 
