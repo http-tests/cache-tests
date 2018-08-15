@@ -4,7 +4,7 @@ This is a test suite for protocol behaviours by CDNs. Currently, it's focused on
 
 Its goal is to identify variances in the behaviours of CDNs, both from the normative specifications and between each other. This in turn can help avoid situations where CDNs act in surprising ways to their customers.
 
-The initial tests were extracted from the [WPT tests for caching](), to provide a basis for HTTP conformance. Not all of these might apply to CDNs; for example, most CDNs ignore some (or all) request `Cache-Control` directives.
+The initial tests were based upon the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache), to assess HTTP conformance. Not all of these necessarily apply to CDNs; for example, most CDNs ignore some (or all) request `Cache-Control` directives.
 
 As such, they aim to provide a basis for discussion among CDNs about how they should behave.
 
@@ -17,9 +17,9 @@ First, start the server-side:
 
 Make sure that the browser is not configured to use a proxy cache, and that the network being tested upon does not use an intercepting proxy cache.
 
-To test an reverse proxy or CDN, configure it to use port `8000` on the server as the origin. Then point a browser* to the CDN host/port.
+Then, to test an reverse proxy or CDN configure it to use port `8000` on the server as the origin and point a browser to the CDN host/port.
 
-* They only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
+Note that they only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
 
 
 ### Testing Browser Caches
@@ -27,8 +27,6 @@ To test an reverse proxy or CDN, configure it to use port `8000` on the server a
 The applicable tests can be run against a browser cache, to assess compatibility between CDN cache and browsers.
 
 To test a browser, just point it at `https://{hostname}:8000/test-browser.html` after setting up the server.
-
-Note that some tests might fail because there is a separate document-level cache in browsers that's ill-defined; see [this issue](https://github.com/whatwg/fetch/issues/354).
 
 
 ## Interpreting the Results
