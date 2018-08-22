@@ -4,11 +4,18 @@ This is a test suite for the HTTP protocol behaviours of CDNs and Reverse Proxie
 
 Currently, it's focused on HTTP caching behaviours, as specified by [RFC7234](http://httpwg.org/specs/rfc7234.html).
 
-Its goal is to identify variances in the behaviours of these devices, both from the normative specifications and between each other. This in turn can help avoid situations where they act in surprising ways.
 
-The initial tests were based upon the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache), to assess HTTP conformance. Not all of these necessarily apply; for example, most CDNs and reverse proxies ignore some (or all) request `Cache-Control` directives.
+## Goals
 
-As such, they aim to provide a basis for discussion about how CDNs and reverse proxies should behave.
+The goal of these tests is to identify variances in the behaviours of these devices, both from the normative specifications and between each other. This in turn can help avoid situations where they act in surprising ways.
+
+The initial tests were based upon the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache), to assess HTTP conformance.
+
+However, not all of them necessarily apply; for example, most CDNs and reverse proxies ignore some (or all) request `Cache-Control` directives.
+
+As such, the underlying aim is to provide a basis for discussion about how CDNs and reverse proxies should behave, so that over time we can adapt the tests and align implementations to behave more consistently.
+
+Therefore, if you believe a test should change (based upon common CDN/reverse proxy behaviour or your interpretation of the specifications), or have additional tests, please [contribute](CONTRIBUTING.md).
 
 
 ## Running the Tests
@@ -38,6 +45,7 @@ HTTP caching by its nature is an optimisation; implementations aren't required t
 To reflect this, the test descriptions use "must" and "should" to indicate whether the behaviour is based in interoperability requirements, or just an optimisation.
 
 "Should" tests are testing whether caching is happening (because the point of a cache is caching!), whereas the "must"-level tests indicate a spec violation (and usually it maps directly to a MUST in the RFC).
+
 
 
 ## Test Format
