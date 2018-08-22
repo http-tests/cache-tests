@@ -35,7 +35,9 @@ To test a browser, just point it at `https://{hostname}:8000/test-browser.html` 
 
 HTTP caching by its nature is an optimisation; implementations aren't required to cache everything. However, when they do cache, their behaviour is constrained by [the specification](https://httpwg.org/specs/rfc7234.html).
 
-To reflect this, the test descriptions use SHOULD and MUST to indicate whether the behaviour is required or not; SHOULD tests are testing whether caching is happening (they're SHOULD because the point of a cache is caching!), whereas the MUST-level tests indicate a spec violation.
+To reflect this, the test descriptions use "must" and "should" to indicate whether the behaviour is based in interoperability requirements, or just an optimisation.
+
+"Should" tests are testing whether caching is happening (because the point of a cache is caching!), whereas the "must"-level tests indicate a spec violation (and usually it maps directly to a MUST in the RFC).
 
 
 ## Test Format

@@ -10,7 +10,7 @@ function checkStatus (status) {
     body = utils.httpContent(code)
   }
   tests.push({
-    name: 'HTTP cache MUST NOT reuse a stale ' + code + ' response with explicit freshness',
+    name: 'HTTP cache must not reuse a stale ' + code + ' response with explicit freshness',
     requests: [
       {
         template: 'stale',
@@ -23,7 +23,7 @@ function checkStatus (status) {
     ]
   })
   tests.push({
-    name: 'HTTP cache SHOULD reuse a fresh ' + code + ' response with explict freshness',
+    name: 'HTTP cache should reuse a fresh ' + code + ' response with explict freshness',
     requests: [
       {
         template: 'fresh',

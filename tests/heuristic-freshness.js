@@ -13,10 +13,10 @@ function checkStatus (status) {
   var extra = status[4] || ''
   var extraHdr = status[5]
   var expectedType = 'not_cached'
-  var desired = 'MUST NOT reuse'
+  var desired = 'must not reuse'
   if (succeed === true) {
     expectedType = 'cached'
-    desired = 'SHOULD reuse'
+    desired = 'should reuse'
   }
   var responseHeaders = [
     ['Last-Modified', -24 * 60 * 60],

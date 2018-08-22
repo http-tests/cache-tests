@@ -5,7 +5,7 @@ export default
   name: 'Cache-Control Response Directives',
   tests: [
     {
-      name: 'Shared HTTP cache MUST NOT store a response with Cache-Control: private',
+      name: 'Shared HTTP cache must not store a response with Cache-Control: private',
       browser_skip: true,
       requests: [
         {
@@ -19,7 +19,7 @@ export default
       ]
     },
     {
-      name: 'Private HTTP cache SHOULD reuses a fresh response with Cache-Control: private',
+      name: 'Private HTTP cache should reuses a fresh response with Cache-Control: private',
       browser_only: true,
       requests: [
         {
@@ -33,7 +33,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache MUST NOT store a response with Cache-Control: no-store',
+      name: 'HTTP cache must not store a response with Cache-Control: no-store',
       requests: [
         {
           response_headers: [
@@ -46,7 +46,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache MUST NOT store a response with Cache-Control: no-store, even with max-age and Expires',
+      name: 'HTTP cache must not store a response with Cache-Control: no-store, even with max-age and Expires',
       requests: [
         {
           response_headers: [
@@ -61,7 +61,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache SHOULD store a response with Cache-Control: no-cache, but revalidates upon use',
+      name: 'HTTP cache should store a response with Cache-Control: no-cache, but revalidates upon use',
       requests: [
         {
           response_headers: [
@@ -75,7 +75,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache SHOULD store a response with Cache-Control: no-cache, but revalidates upon use, even with max-age and Expires',
+      name: 'HTTP cache should store a response with Cache-Control: no-cache, but revalidates upon use, even with max-age and Expires',
       requests: [
         {
           response_headers: [
