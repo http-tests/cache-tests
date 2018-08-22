@@ -9,7 +9,7 @@ Currently, it's focused on HTTP caching behaviours, as specified by [RFC7234](ht
 
 The goal of these tests is to identify variances in the behaviours of these devices, both from the normative specifications and between each other. This in turn can help avoid situations where they act in surprising ways.
 
-The initial tests were based upon the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache), to assess HTTP conformance.
+The initial tests were derived from contributions to the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache), to assess HTTP conformance.
 
 However, not all of them necessarily apply; for example, most CDNs and reverse proxies ignore some (or all) request `Cache-Control` directives.
 
