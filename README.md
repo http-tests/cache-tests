@@ -15,6 +15,8 @@ However, not all of them necessarily apply; for example, most CDNs and reverse p
 
 As such, the underlying aim is to provide a basis for discussion about how CDNs and reverse proxies should behave, so that over time we can adapt the tests and align implementations to behave more consistently.
 
+In other words, **passing all of the tests currently means nothing** -- this is not a conformance test suite, it's just the start of a conversation, and a **tool to assess how a CDN or reverse proxy behaves**.
+
 Therefore, if you believe a test should change (based upon common CDN/reverse proxy behaviour or your interpretation of the specifications), or have additional tests, please [contribute](CONTRIBUTING.md).
 
 
