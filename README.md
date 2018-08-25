@@ -1,13 +1,11 @@
 # Tests for CDNs and Reverse Proxies
 
-This is a test suite for the HTTP protocol behaviours of CDNs and Reverse Proxies (aka HTTP gateways).
-
-Currently, it's focused on HTTP caching behaviours, as specified by [RFC7234](http://httpwg.org/specs/rfc7234.html).
+This is a test suite for the HTTP protocol behaviours of CDNs and Reverse Proxies (aka HTTP gateways). Currently, it's focused on HTTP caching behaviours, as specified by [RFC7234](http://httpwg.org/specs/rfc7234.html).
 
 
 ## Goals
 
-The goal of these tests is to identify variances in the behaviours of these devices, both from the normative specifications and between each other. This in turn can help avoid situations where they act in surprising ways.
+Its goal is to identify variances in the behaviours of these devices, both from the normative specifications and between each other. This in turn can help avoid situations where they act in surprising ways.
 
 The initial tests were derived from contributions to the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache), to assess HTTP conformance.
 
