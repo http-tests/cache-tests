@@ -48,12 +48,12 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with an Expires older than Date',
+      name: 'HTTP cache must not reuse a response with an Expires older than Date, both fast',
       requests: [
         {
           response_headers: [
-            ['Expires', 60],
-            ['Date', 70]
+            ['Expires', 300],
+            ['Date', 400]
           ]
         },
         {
@@ -90,7 +90,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response when the Age header is greater than its Expires freshness lifetime',
+      name: 'HTTP cache must not reuse a response when the Age header is greater than its Expires minus Date',
       requests: [
         {
           response_headers: [
@@ -105,7 +105,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response when the Age header is greater than its Expires freshness lifetime, and Date is fast',
+      name: 'HTTP cache must not reuse a response when the Age header is greater than its Expires minus Date, and Date is fast',
       requests: [
         {
           response_headers: [
