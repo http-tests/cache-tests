@@ -90,13 +90,13 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response when the Age header is greater than its Expires minus Date',
+      name: 'HTTP cache must not reuse a response when the Age header is greater than its Expires minus Date, and Date is slow',
       requests: [
         {
           response_headers: [
-            ['Date', 0],
+            ['Date', -10],
             ['Expires', 10],
-            ['Age', '15']
+            ['Age', '25']
           ]
         },
         {
@@ -109,9 +109,9 @@ export default
       requests: [
         {
           response_headers: [
-            ['Date', 5],
-            ['Expires', 10],
-            ['Age', '8']
+            ['Date', 10],
+            ['Expires', 20],
+            ['Age', '15']
           ]
         },
         {
