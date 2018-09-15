@@ -14,23 +14,21 @@ var assert = chai.assert
 var useBrowserCache = false
 export function runTests (tests, browserCache) {
   if (browserCache !== undefined) useBrowserCache = browserCache
-  document.addEventListener('DOMContentLoaded', function () {
-    browserSetup()
-    mocha.setup({
-      'ui': 'bdd'
-    })
-    tests.forEach(testSet => {
-      describe(testSet.name, function () {
-        this.timeout(10000)
-        testSet.tests.forEach(function (test) {
-          if (test.browser_only === true && !useBrowserCache === true) return
-          if (test.browser_skip === true && useBrowserCache === true) return
-          it(test.name, makeCacheTest(test))
-        })
+  browserSetup()
+  mocha.setup({
+    'ui': 'bdd'
+  })
+  tests.forEach(testSet => {
+    describe(testSet.name, function () {
+      this.timeout(10000)
+      testSet.tests.forEach(function (test) {
+        if (test.browser_only === true && !useBrowserCache === true) return
+        if (test.browser_skip === true && useBrowserCache === true) return
+        it(test.name, makeCacheTest(test))
       })
     })
-    mocha.run()
-  }, false)
+  })
+  mocha.run()
 }
 
 function browserSetup () {
