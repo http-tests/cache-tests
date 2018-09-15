@@ -3,7 +3,7 @@
 import './node_modules/chai/chai.js'
 import './node_modules/mocha/mocha.js'
 import templates from './templates.js'
-import * as utils from '../utils.js'
+import * as utils from './utils.js'
 
 const noBodyStatus = new Set([204, 304])
 
