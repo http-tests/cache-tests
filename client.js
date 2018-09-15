@@ -15,7 +15,10 @@ var useBrowserCache = false
 export function runTests (tests, browserCache) {
   if (browserCache !== undefined) useBrowserCache = browserCache
   document.addEventListener('DOMContentLoaded', function () {
-    mochaSetup()
+    browserSetup()
+    mocha.setup({
+      'ui': 'bdd'
+    })
     tests.forEach(testSet => {
       describe(testSet.name, function () {
         this.timeout(10000)
@@ -30,7 +33,7 @@ export function runTests (tests, browserCache) {
   }, false)
 }
 
-function mochaSetup () {
+function browserSetup () {
   var head = document.getElementsByTagName('head')[0]
   var mochaLink = document.createElement('link')
   mochaLink.rel = 'stylesheet'
@@ -41,9 +44,6 @@ function mochaSetup () {
   var target = document.createElement('div')
   target.id = 'mocha'
   body.appendChild(target)
-  mocha.setup({
-    'ui': 'bdd'
-  })
 }
 
 function makeCacheTest (test) {
