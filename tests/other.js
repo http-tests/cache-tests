@@ -18,8 +18,8 @@ export default
           expected_type: 'cached',
           expected_response_headers: [
             ['Age', function (assert, p, a) {
-              assert.isTrue(a !== undefined, `${p} isn't present`)
-              assert.isTrue(parseInt(a) > 2, `${p} is ${a}, should be bigger`)
+              assert(a !== undefined, `${p} isn't present`)
+              assert(parseInt(a) > 2, `${p} is ${a}, should be bigger`)
             }]
           ]
         }
@@ -40,8 +40,8 @@ export default
           expected_type: 'cached',
           expected_response_headers: [
             ['Age', function (assert, p, a) {
-              assert.isTrue(a !== undefined, `${p} isn't present`)
-              assert.isTrue(parseInt(a) > 32, `${p} is ${a}, should be bigger`)
+              assert(a !== undefined, `${p} isn't present`)
+              assert(parseInt(a) > 32, `${p} is ${a}, should be bigger`)
             }]
           ]
         }
@@ -62,8 +62,8 @@ export default
           expected_type: 'cached',
           expected_response_headers: [
             ['Age', function (assert, p, a) {
-              assert.isTrue(a !== undefined, `${p} isn't present`)
-              assert.isTrue(parseInt(a) > 32, `${p} is ${a}, should be bigger`)
+              assert(a !== undefined, `${p} isn't present`)
+              assert(parseInt(a) > 32, `${p} is ${a}, should be bigger`)
             }]
           ]
         }

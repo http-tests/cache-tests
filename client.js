@@ -1,15 +1,11 @@
 /* global fetch chai mocha it describe */
 
-import './node_modules/chai/chai.js'
 import './node_modules/mocha/mocha.js'
 import templates from './templates.js'
 import * as utils from './utils.js'
 
 const noBodyStatus = new Set([204, 304])
-
-chai.config.includeStack = false
-chai.config.showDiff = false
-var assert = chai.assert
+const assert = utils.assert
 
 var useBrowserCache = false
 export function runTests (tests, browserCache) {
@@ -139,14 +135,14 @@ function makeCheckResponse (idx, config) {
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
     if ('expected_type' in config) {
       if (config.expected_type === 'error') {
-        assert.isTrue(false, `Request ${reqNum} doesn't throw an error`)
+        assert(false, `Request ${reqNum} doesn't throw an error`)
         return response.text()
       }
       if (config.expected_type === 'cached') {
-        assert.isBelow(resNum, reqNum, `Response ${reqNum} does not come from cache`)
+        assert(resNum < reqNum, `Response ${reqNum} does not come from cache`)
       }
       if (config.expected_type === 'not_cached') {
-        assert.equal(resNum, reqNum, `Response ${reqNum} comes from cache`)
+        assert(resNum === reqNum, `Response ${reqNum} comes from cache`)
       }
     }
     //  browsers seem to squelch 304 even in no-store mode.
@@ -154,18 +150,18 @@ function makeCheckResponse (idx, config) {
     //      config.expected_status = 304
     //    }
     if ('expected_status' in config) {
-      assert.equal(response.status, config.expected_status,
+      assert(response.status === config.expected_status,
         `Response ${reqNum} status is ${response.status}, not ${config.expected_status}`)
     } else if ('response_status' in config) {
-      assert.equal(response.status, config.response_status[0],
+      assert(response.status === config.response_status[0],
         `Response ${reqNum} status is ${response.status}, not ${config.response_status[0]}`)
     } else {
-      assert.equal(response.status, 200, `Response ${reqNum} status is ${response.status}, not 200`)
+      assert(response.status === 200, `Response ${reqNum} status is ${response.status}, not 200`)
     }
     if ('response_headers' in config) {
       config.response_headers.forEach(function (header) {
         if (header.len < 3 || header[2] === true) {
-          assert.equal(response.headers.get(header[0]), header[1],
+          assert(response.headers.get(header[0]) === header[1],
             `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)
         }
       })
@@ -176,7 +172,7 @@ function makeCheckResponse (idx, config) {
           var prefix = `Response ${reqNum} header ${header[0]}`
           header[1](assert, prefix, response.headers.get(header[0]), response)
         } else {
-          assert.equal(response.headers.get(header[0]), header[1],
+          assert(response.headers.get(header[0]) === header[1],
             `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)
         }
       })
@@ -193,14 +189,14 @@ function makeCheckResponseBody (config, uuid) {
     }
     if ('expected_response_text' in config) {
       if (config.expected_response_text !== null) {
-        assert.equal(resBody, config.expected_response_text,
+        assert(resBody === config.expected_response_text,
           `Response body is "${resBody}", not "${config.expected_response_text}"`)
       }
     } else if ('response_body' in config && config.response_body !== null) {
-      assert.equal(resBody, config.response_body,
+      assert(resBody === config.response_body,
         `Response body is "${resBody}", not "${config.response_body}"`)
     } else if (!noBodyStatus.has(statusCode)) {
-      assert.equal(resBody, uuid, `Response body is "${resBody}", not "${uuid}"`)
+      assert(resBody === uuid, `Response body is "${resBody}", not "${uuid}"`)
     }
   }
 }
@@ -223,13 +219,13 @@ function checkRequests (requests, testState) {
     }
     testIdx++
     expectedValidatingHeaders.forEach(vhdr => {
-      assert.isDefined(serverRequest, `request ${reqNum} wasn't sent to server`)
-      assert.property(serverRequest.request_headers, vhdr,
+      assert(typeof(serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
+      assert(serverRequest.request_headers.hasOwnProperty(vhdr),
         `request ${reqNum} doesn't have ${vhdr} header`)
     })
     if ('expected_request_headers' in config) {
       config.expected_request_headers.forEach(expectedHdr => {
-        assert.equal(serverRequest.request_headers[expectedHdr[0].toLowerCase()], expectedHdr[1],
+        assert(serverRequest.request_headers[expectedHdr[0].toLowerCase()] === expectedHdr[1],
           `request ${reqNum} header ${expectedHdr[0]} value is "${serverRequest.request_headers[expectedHdr[0].toLowerCase()]}", not "${expectedHdr[1]}"`)
       })
     }

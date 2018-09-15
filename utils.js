@@ -1,5 +1,16 @@
 /* global btoa */
 
+function AssertionError(options) {
+  this.name = 'Assertion'
+  this.message = options.message
+  this.htmlMessage = options.message
+}
+
+export function assert(expr, message) {
+  if (expr) return
+  throw new AssertionError({message: message})
+}
+
 var contentStore = {}
 export function httpContent (csKey) {
   if (csKey in contentStore) {
