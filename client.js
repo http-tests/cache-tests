@@ -1,4 +1,4 @@
-/* global fetch chai mocha it describe */
+/* global fetch mocha it describe */
 
 import './node_modules/mocha/mocha.js'
 import templates from './templates.js'
