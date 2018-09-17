@@ -1,17 +1,26 @@
 {
   "name": "cdn-tests",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tests for CDNs",
-  "main": "client.js",
+  "homepage": "",
+  "author": "Mark Nottingham",
+  "license": "BSD-3-Clause",
+  "engines": {
+    "node": ">=10.8.0"
+  },
   "dependencies": {
     "http-server": "^0.11.1",
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "server": "node server.js",
     "lint": "standard --fix server.js client.js utils.js templates.js tests/*.js"
   },
-  "author": "Mark Nottingham",
-  "license": "",
-  "devDependencies": {}
+  "config": {
+    "port": "8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mnot/cdn-tests.git"
+  }
 }

@@ -3,8 +3,10 @@
 const http = require('http')
 const path = require('path')
 const fs = require('fs')
+const process = require('process')
 
-const baseUrl = 'http://localhost:8000/'
+const port = process.env.npm_config_port
+const baseUrl = `http://localhost:${port}/`
 
 const mimeTypes = {
   'html': 'text/html',
@@ -182,4 +184,5 @@ function httpDate (now, deltaSecs) {
   return new Date(now + (deltaSecs * 1000)).toGMTString()
 }
 
-http.createServer(handleMain).listen(8000)
+http.createServer(handleMain).listen(port)
+console.log(`Serving HTTP on port ${port}`)
