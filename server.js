@@ -5,7 +5,7 @@ const path = require('path')
 const fs = require('fs')
 const process = require('process')
 
-const port = process.env.npm_config_port
+const port = process.env.npm_config_port || process.env.npm_package_config_port
 const baseUrl = `http://localhost:${port}/`
 
 const mimeTypes = {

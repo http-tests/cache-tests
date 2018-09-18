@@ -18,17 +18,39 @@ In other words, **passing all of the tests currently means nothing** -- this is 
 Therefore, if you believe a test should change (based upon common CDN/reverse proxy behaviour or your interpretation of the specifications), or have additional tests, please [contribute](CONTRIBUTING.md).
 
 
+## Installation
+
+The tests require a recent version of [NodeJS](https://nodejs.org/), which includes the `npm` package manager.
+
+To install them:
+
+> npm install cdn-tests
+
+
 ## Running the Tests
 
-First, start the server-side using [NodeJS](https://nodejs.org/):
+First, start the server-side by running:
 
-> node server.js
+> npm run server
+
+inside the `cdn-tests` directory. By default, the server runs on port 8000; to choose a different port, use the `--port` argument; e.g.,
+
+> npm run server --port=8080
 
 Make sure that the browser is not configured to use a proxy cache, and that the network being tested upon does not use an intercepting proxy cache.
 
-Then, to test an reverse proxy or CDN configure it to use port `8000` on the server as the origin and point a browser to the appropriate URL.
+Then, to test an reverse proxy or CDN configure it to use the server as the origin and point a browser to the appropriate URL.
 
 Note that they only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
+
+
+### Testing from the Command Line
+
+To run CLI tests:
+
+> npm run client http://server-url.example.org:8000/
+
+... using the URL of the server you want to test. This will output the test results to STDOUT.
 
 
 ### Testing Browser Caches

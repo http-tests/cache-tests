@@ -14,6 +14,7 @@
   },
   "scripts": {
     "server": "node server.js",
+    "client": "mocha-chrome",
     "lint": "standard --fix server.js client.js utils.js templates.js tests/*.js"
   },
   "config": {
@@ -22,5 +23,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mnot/cdn-tests.git"
+  },
+  "devDependencies": {
+    "mocha-chrome": "^1.1.0"
   }
 }
