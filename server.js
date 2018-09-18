@@ -1,12 +1,14 @@
 /* global URL */
 
 const http = require('http')
+const https = require('https')
 const path = require('path')
 const fs = require('fs')
 const process = require('process')
 
+const protocol = process.env.npm_config_protocol || process.env.npm_package_config_protocol
 const port = process.env.npm_config_port || process.env.npm_package_config_port
-const baseUrl = `http://localhost:${port}/`
+const baseUrl = `${protocol}://localhost:${port}/`
 
 const mimeTypes = {
   'html': 'text/html',
@@ -184,5 +186,14 @@ function httpDate (now, deltaSecs) {
   return new Date(now + (deltaSecs * 1000)).toGMTString()
 }
 
-http.createServer(handleMain).listen(port)
-console.log(`Serving HTTP on port ${port}`)
+if (protocol.toLowerCase() === 'https') {
+  const options = {
+    key: process.env.npm_config_keyfile,
+    cert: process.env.npm_config_certfile
+  }
+  https.createServer(options, handleMain).listen(port)
+} else {
+  http.createServer(handleMain).listen(port)
+}
+
+console.log(`Serving ${protocol} on port ${port}`)

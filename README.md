@@ -37,6 +37,12 @@ inside the `cdn-tests` directory. By default, the server runs on port 8000; to c
 
 > npm run server --port=8080
 
+If you want to run an HTTPS origin, you'll need to specify the `protocol`, `keyfile` and `certfile`:
+
+> npm run server --protocol=https --keyfile=/path/to/key.pem --certfile=/path-to-cert.pem
+
+Note that the default port for HTTPS is still 8000.
+
 Make sure that the browser is not configured to use a proxy cache, and that the network being tested upon does not use an intercepting proxy cache.
 
 Then, to test an reverse proxy or CDN configure it to use the server as the origin and point a browser to the appropriate URL.

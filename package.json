@@ -18,6 +18,7 @@
     "lint": "standard --fix server.js client.js utils.js templates.js tests/*.js"
   },
   "config": {
+    "protocol": "http",
     "port": "8000"
   },
   "repository": {
