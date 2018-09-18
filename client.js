@@ -219,7 +219,7 @@ function checkRequests (requests, testState) {
     }
     testIdx++
     expectedValidatingHeaders.forEach(vhdr => {
-      assert(typeof(serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
+      assert(typeof (serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
       assert(serverRequest.request_headers.hasOwnProperty(vhdr),
         `request ${reqNum} doesn't have ${vhdr} header`)
     })

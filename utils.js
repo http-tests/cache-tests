@@ -1,12 +1,12 @@
 /* global btoa */
 
-function AssertionError(options) {
+function AssertionError (options) {
   this.name = 'Assertion'
   this.message = options.message
   this.htmlMessage = options.message
 }
 
-export function assert(expr, message) {
+export function assert (expr, message) {
   if (expr) return
   throw new AssertionError({message: message})
 }
