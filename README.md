@@ -24,7 +24,13 @@ The tests require a recent version of [NodeJS](https://nodejs.org/), which inclu
 
 To install them:
 
-> npm install cdn-tests
+> npm i --production --legacy-bundling cdn-tests
+
+If you'd also like to run the tests from the command line, use:
+
+> npm i --legacy-bundling cdn-tests
+
+Then, change directory into `node_modules/cdn-tests`.
 
 
 ## Running the Tests
