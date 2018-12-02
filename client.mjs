@@ -1,16 +1,19 @@
 /* global fetch */
 
-import templates from './templates.js'
-import * as utils from './utils.js'
+import templates from './templates.mjs'
+import * as utils from './utils.mjs'
 
 const noBodyStatus = new Set([204, 304])
 const assert = utils.assert
 
+var theFetch = null
 var useBrowserCache = false
 var testArray = []
 export var testResults = {}
+export var baseUrl = "http://cloud.mnot.net:8080"
 
-export function runTests (tests, browserCache, chunkSize = 10) {
+export function runTests (tests, myFetch, browserCache, chunkSize = 10) {
+  theFetch = myFetch
   if (browserCache !== undefined) useBrowserCache = browserCache
   tests.forEach(testSet => {
     testSet.tests.forEach(function (test) {
@@ -70,7 +73,7 @@ function makeCacheTest (test) {
           var config = requests[idx]
           var url = makeTestUrl(uuid, config)
           var init = fetchInit(config)
-          return fetch(url, init)
+          return theFetch(url, init)
             .then(makeCheckResponse(idx, config))
             .then(makeCheckResponseBody(config, uuid), function (reason) {
               if ('expected_type' in config && config.expected_type === 'error') {
@@ -136,7 +139,7 @@ function fetchInit (config) {
   if (!useBrowserCache) {
     init.cache = 'no-store'
     init.headers.push(['Pragma', 'foo']) // dirty hack for Fetch
-    init.headers.push(['Cache-Control', 'nothing-to-see-here'])
+    init.headers.push(['Cache-Control', 'nothing-to-see-here']) // ditto
   }
   if ('request_method' in config) init.method = config['request_method']
   if ('request_headers' in config) init.headers = config['request_headers']
@@ -267,7 +270,7 @@ function makeTestUrl (uuid, config) {
   if ('query_arg' in config) {
     extra += `?${config.query_arg}`
   }
-  return `/test/${uuid}${extra}`
+  return `${baseUrl}/test/${uuid}${extra}`
 }
 
 function putTestConfig (uuid, requests) {
@@ -276,7 +279,7 @@ function putTestConfig (uuid, requests) {
     'headers': [['content-type', 'application/json']],
     'body': JSON.stringify(requests)
   }
-  return fetch(`/config/${uuid}`, init)
+  return theFetch(`${baseUrl}/config/${uuid}`, init)
     .then(function (response) {
       if (response.status !== 201) {
         console.log(`Warning: ${response.status} response when creating config for ${uuid}`)
@@ -285,7 +288,7 @@ function putTestConfig (uuid, requests) {
 }
 
 function getServerState (uuid) {
-  return fetch(`/state/${uuid}`)
+  return theFetch(`${baseUrl}/state/${uuid}`)
     .then(function (response) {
       if (response.status === 200) {
         return response.text()

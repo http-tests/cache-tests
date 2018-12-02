@@ -1,4 +1,4 @@
-/* global btoa */
+
 
 function AssertionError (options) {
   this.name = 'Assertion'
@@ -15,7 +15,7 @@ export function httpContent (csKey) {
   if (csKey in contentStore) {
     return contentStore[csKey]
   } else {
-    var content = btoa(Math.random() * Date.now())
+    var content = Math.random() * Date.now()
     contentStore[csKey] = content
     return content
   }
