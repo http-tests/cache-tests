@@ -10,5 +10,7 @@ import vary from './tests/vary.mjs'
 import other from './tests/other.mjs'
 
 var tests = [ccResponse, ccRequest, freshness, heuristic, surrogate, statuses, vary, other]
-client.runTests(tests, fetch)
+const baseUrl = process.env.npm_config_base || process.env.npm_package_config_base
+
+client.runTests(tests, fetch, false, baseUrl)
   .then(function () { console.dir(client.testResults) })

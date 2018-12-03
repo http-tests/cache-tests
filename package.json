@@ -15,11 +15,13 @@
   "scripts": {
     "server": "node server.js",
     "cli": "node --experimental-modules cli.mjs",
-    "lint": "standard --fix *.js *.mjs   tests/*.mjs"
+    "lint": "standard --fix *.js *.mjs   tests/*.mjs",
+    "foo": "node --experimental-modules foo.mjs"
   },
   "config": {
     "protocol": "http",
-    "port": "8000"
+    "port": "8000",
+    "base": ""
   },
   "repository": {
     "type": "git",

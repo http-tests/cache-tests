@@ -8,11 +8,12 @@ const assert = utils.assert
 var theFetch = null
 var useBrowserCache = false
 var testArray = []
+var baseUrl = ""
 export var testResults = {}
-export var baseUrl = 'http://cloud.mnot.net:8080'
 
-export function runTests (tests, myFetch, browserCache, chunkSize = 10) {
+export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
   theFetch = myFetch
+  if (base !== undefined) baseUrl = base
   if (browserCache !== undefined) useBrowserCache = browserCache
   tests.forEach(testSet => {
     testSet.tests.forEach(function (test) {
