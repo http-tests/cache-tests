@@ -9,6 +9,6 @@ import statuses from './tests/status.mjs'
 import vary from './tests/vary.mjs'
 import other from './tests/other.mjs'
 
-var tests = [ccResponse, ccRequest, freshness, heuristic, statuses, vary, other]
+var tests = [ccResponse, ccRequest, freshness, heuristic, surrogate, statuses, vary, other]
 client.runTests(tests, fetch)
-  .then(function() {console.dir(client.testResults)})
+  .then(function () { console.dir(client.testResults) })

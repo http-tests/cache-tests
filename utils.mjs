@@ -1,5 +1,4 @@
 
-
 function AssertionError (options) {
   this.name = 'Assertion'
   this.message = options.message

@@ -1,4 +1,3 @@
-/* global fetch */
 
 import templates from './templates.mjs'
 import * as utils from './utils.mjs'
@@ -10,7 +9,7 @@ var theFetch = null
 var useBrowserCache = false
 var testArray = []
 export var testResults = {}
-export var baseUrl = "http://cloud.mnot.net:8080"
+export var baseUrl = 'http://cloud.mnot.net:8080'
 
 export function runTests (tests, myFetch, browserCache, chunkSize = 10) {
   theFetch = myFetch

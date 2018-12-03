@@ -19,14 +19,14 @@ export function renderTestResults (tests, testResults, target, useBrowserCache) 
   })
 }
 
-function showTestResult(test, testResults) {
+function showTestResult (test, testResults) {
   var result = testResults[test.suiteName][test.name]
   if (result === true) {
-    return document.createTextNode(" ✅")
+    return document.createTextNode(' ✅')
   } else {
     var span = document.createElement('span')
     span.title = result
-    span.appendChild(document.createTextNode(" ⛔️"))
+    span.appendChild(document.createTextNode(' ⛔️'))
     return span
   }
 }
