@@ -27,6 +27,7 @@ function checkStatus (status) {
   }
   tests.push({
     name: `HTTP cache ${desired} a ${code} ${phrase} response with Last-Modified based upon heuristic freshness ${extra}`,
+    required: ! succeed,
     requests: [{
       response_status: [code, phrase],
       response_headers: responseHeaders,

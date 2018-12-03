@@ -52,6 +52,7 @@ export default {
     },
     {
       name: 'HTTP cache should reuse aged stale response when request contains Cache-Control: max-stale that permits its use',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -69,6 +70,7 @@ export default {
     },
     {
       name: 'HTTP cache should reuse stale response with Age header when request contains Cache-Control: max-stale that permits its use',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -135,6 +137,7 @@ export default {
     },
     {
       name: 'HTTP cache should validate fresh response with Last-Modified when request contains Cache-Control: no-cache',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -153,6 +156,7 @@ export default {
     },
     {
       name: 'HTTP cache should validate fresh response with ETag when request contains Cache-Control: no-cache',
+      required: false,
       requests: [
         {
           response_headers: [

@@ -24,6 +24,7 @@ function checkStatus (status) {
   })
   tests.push({
     name: 'HTTP cache should reuse a fresh ' + code + ' response with explict freshness',
+    required: false,
     requests: [
       {
         template: 'fresh',

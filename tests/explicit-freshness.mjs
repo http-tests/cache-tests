@@ -7,6 +7,7 @@ export default
     // response directives
     {
       name: 'HTTP cache should reuse a response with a future Expires',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -77,6 +78,7 @@ export default
     },
     {
       name: 'HTTP cache should reuse a response with Expires, even if Date is invalid',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -121,6 +123,7 @@ export default
     },
     {
       name: 'HTTP cache should reuse a response with positive Cache-Control: max-age',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -162,6 +165,7 @@ export default
     },
     {
       name: 'HTTP cache should reuse a response with positive Cache-Control: max-age and a past Expires',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -177,6 +181,7 @@ export default
     },
     {
       name: 'HTTP cache should reuse a response with positive Cache-Control: max-age and an invalid Expires',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -207,6 +212,7 @@ export default
     },
     {
       name: 'HTTP cache should reuse a response with positive Cache-Control: max-age and a CC extension present',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -220,6 +226,7 @@ export default
     },
     {
       name: 'HTTP cache should reuse a response with positive Cache-Control: MaX-AgE',
+      required: false,
       requests: [
         {
           response_headers: [

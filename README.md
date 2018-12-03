@@ -97,8 +97,9 @@ The `tests` member is an array of objects, with the following members:
 
 - `name` - The name of the test.
 - `requests` - a list of request objects (see below).
-- `browser_only` - if `true`, will not run on non-browser caches.
-- `browser_skip` - if `true, will not run on browser caches.
+- `browser_only` - if `true`, will not run on non-browser caches. Default `false`.
+- `browser_skip` - if `true, will not run on browser caches. Default `false`.
+- `required` - if `false`, test is advisory; e.g., testing cache efficiency. Default `true`.
 
 Possible members of a request object:
 

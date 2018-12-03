@@ -8,6 +8,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age',
       browser_skip: true,
+      required: false,
       requests: [
         {
           response_headers: [
@@ -36,6 +37,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age with an extension',
       browser_skip: true,
+      required: false,
       requests: [
         {
           response_headers: [
@@ -50,6 +52,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: MaX-aGe',
       browser_skip: true,
+      required: false,
       requests: [
         {
           response_headers: [
@@ -65,6 +68,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age and a past Expires',
       browser_skip: true,
+      required: false,
       requests: [
         {
           response_headers: [
@@ -81,6 +85,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age and an invalid Expires',
       browser_skip: true,
+      required: false,
       requests: [
         {
           response_headers: [
@@ -113,6 +118,7 @@ export default
     {
       name: 'HTTP cache should prefer long Surrogate-Control: max-age over short Cache-Control: max-age',
       browser_skip: true,
+      required: false,
       requests: [
         {
           response_headers: [
