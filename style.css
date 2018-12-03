@@ -1,5 +1,5 @@
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
 }
@@ -8,6 +8,21 @@ body {
   margin: 1em 2em;
 }
 
+th {
+  font-weight: normal;
+}
+
 ul {
   list-style-type: none;
+}
+
+.category {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.name {
+  margin: 0 auto;
+  text-align: right;
 }

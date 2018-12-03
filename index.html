@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTTP Caching Tests</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="module">
+      import * as summary from './summary.js'
+      import ccRequest from './tests/cc-request.mjs'
+      import ccResponse from './tests/cc-response.mjs'
+      import freshness from './tests/explicit-freshness.mjs'
+      import heuristic from './tests/heuristic-freshness.mjs'
+      import surrogate from './tests/surrogate-control.mjs'
+      import statuses from './tests/status.mjs'
+      import vary from './tests/vary.mjs'
+      import other from './tests/other.mjs'
+
+      var tests = [freshness, heuristic, surrogate, ccResponse, statuses, ccRequest, vary, other]
+      var resultFiles=['fastly.json', 'nginx.json', 'varnish.json']
+      var target = document.getElementById('target')
+
+      summary.loadResults(resultFiles).then(results => {
+        console.dir(results)
+        summary.showResults(target, tests, results)
+      })
+    </script>
+  </head>
+  <body>
+    <h1>HTTP Caching Tests</h1>
+    <table id="target">
+    </table>
+  </body>
+</html>
