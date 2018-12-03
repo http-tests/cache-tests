@@ -49,7 +49,7 @@ Make sure that the browser is not configured to use a proxy cache, and that the 
 
 ## Testing Reverse Proxies and CDNs
 
-To test an reverse proxy or CDN, configure it to use the server as the origin and point a browser to the appropriate URL.
+To test an reverse proxy or CDN, configure it to use the server as the origin and point a browser to `https://{hostname}/test-cdn.html`.
 
 Note that they only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
 
@@ -65,7 +65,7 @@ To test a reverse proxy or CDN from the command line::
 
 ## Testing Browser Caches
 
-To test a browser, just point it at `https://{hostname}:8000/test-browser.html` after setting up the server.
+To test a browser, just point it at `https://{hostname:port}/test-browser.html` after setting up the server.
 
 
 ## Interpreting the Results
