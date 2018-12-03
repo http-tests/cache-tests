@@ -43,7 +43,11 @@ function showTestResult (test, testResults) {
   } else {
     var span = document.createElement('span')
     span.title = result
-    span.appendChild(document.createTextNode(' ⛔️ '))
+    if (test.required === false) {
+      span.appendChild(document.createTextNode(' ⚠️ '))
+    } else {
+      span.appendChild(document.createTextNode(' ⛔️ '))
+    }
     return span
   }
 }
