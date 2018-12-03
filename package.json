@@ -15,7 +15,7 @@
   "scripts": {
     "server": "node server.js",
     "cli": "node --experimental-modules cli.mjs",
-    "lint": "standard --fix server.js client.js utils.js templates.js tests/*.js"
+    "lint": "standard --fix *.js *.mjs   tests/*.mjs"
   },
   "config": {
     "protocol": "http",
