@@ -1,21 +1,17 @@
-# Tests for CDNs and Reverse Proxies
+# Tests for HTTP Caches
 
-This is a test suite for the HTTP protocol behaviours of CDNs and Reverse Proxies (aka HTTP gateways). The initial tests were derived from contributions to the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache).
+This is a test suite for the protocol behaviours of [HTTP caches](http://httpwg.org/specs/rfc7234.html). The initial tests were derived from contributions to the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache).
 
 
 ## Goals
 
-Currently, it is focused on HTTP caching behaviours, as specified by [RFC7234](http://httpwg.org/specs/rfc7234.html).
+Overall, the goal of these tests is to identify variances in the behaviour, both from the normative specifications and between implementations. This in turn can help avoid situations where they act in surprising ways.
 
-Overall, its goal is to identify variances in the behaviours of these devices, both from the normative specifications and between each other. This in turn can help avoid situations where they act in surprising ways.
+The underlying aim is to provide a basis for discussion about how HTTP caches -- especially in CDNs and reverse proxies -- should behave, so that over time we can adapt the tests and align implementations to behave more consistently.
 
-The first set of tests are focused on HTTP conformance. However, not all of them necessarily apply; for example, most CDNs and reverse proxies ignore some (or all) request `Cache-Control` directives.
+In other words, **passing all of the tests currently means nothing** -- this is not a conformance test suite, it's just the start of a conversation, and a **tool to assess how a cache behaves**.
 
-As such, the underlying aim is to provide a basis for discussion about how CDNs and reverse proxies should behave, so that over time we can adapt the tests and align implementations to behave more consistently.
-
-In other words, **passing all of the tests currently means nothing** -- this is not a conformance test suite, it's just the start of a conversation, and a **tool to assess how a CDN or reverse proxy behaves**.
-
-Therefore, if you believe a test should change (based upon common CDN/reverse proxy behaviour or your interpretation of the specifications), or have additional tests, please [contribute](CONTRIBUTING.md).
+Therefore, if you believe a test should change (based upon common behaviour or your interpretation of the specifications), or have additional tests, please [contribute](CONTRIBUTING.md).
 
 
 ## Installation
@@ -24,13 +20,13 @@ The tests require a recent version of [NodeJS](https://nodejs.org/), which inclu
 
 To install them:
 
-> npm i --production --legacy-bundling cdn-tests
+> npm i --production --legacy-bundling http-cache-tests
 
-If you'd also like to run the tests from the command line, use:
+If you'd also like to run the tests from the command line, use this instead:
 
-> npm i --legacy-bundling cdn-tests
+> npm i --legacy-bundling http-cache-tests
 
-Then, change directory into `node_modules/cdn-tests`.
+Then, change directory into `node_modules/http-cache-tests`.
 
 
 ## Running the Test Server
@@ -39,7 +35,7 @@ First, start the server-side by running:
 
 > npm run server
 
-inside the `cdn-tests` directory. By default, the server runs on port 8000; to choose a different port, use the `--port` argument; e.g.,
+inside the `http-cache-tests` directory. By default, the server runs on port 8000; to choose a different port, use the `--port` argument; e.g.,
 
 > npm run server --port=8080
 
@@ -53,14 +49,14 @@ Make sure that the browser is not configured to use a proxy cache, and that the 
 
 ## Testing Reverse Proxies and CDNs
 
-To test an reverse proxy or CDN configure it to use the server as the origin and point a browser to the appropriate URL.
+To test an reverse proxy or CDN, configure it to use the server as the origin and point a browser to the appropriate URL.
 
 Note that they only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
 
 
 ### Testing from the Command Line
 
-To run CLI tests:
+To test a reverse proxy or CDN from the command line::
 
 > npm run --silent cli --base=http://server-url.example.org:8000/
 
@@ -68,8 +64,6 @@ To run CLI tests:
 
 
 ## Testing Browser Caches
-
-The applicable tests can be run against a browser cache, to assess compatibility between CDN/reverse proxy caches and those in browsers.
 
 To test a browser, just point it at `https://{hostname}:8000/test-browser.html` after setting up the server.
 
