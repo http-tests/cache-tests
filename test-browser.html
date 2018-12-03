@@ -3,27 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Browser HTTP Caching Tests</title>
+    <script type="module">
+      import * as client from './client.mjs'
+      import * as display from './display.mjs'
+      import ccRequest from './tests/cc-request.mjs'
+      import ccResponse from './tests/cc-response.mjs'
+      import freshness from './tests/explicit-freshness.mjs'
+      import heuristic from './tests/heuristic-freshness.mjs'
+      import statuses from './tests/status.mjs'
+      import vary from './tests/vary.mjs'
+      import other from './tests/other.mjs'
+
+      var tests = [freshness, heuristic, ccResponse, statuses, ccRequest, vary, other]
+      client.runTests(tests, fetch, true)
+        .then(function() {
+          var body = document.getElementsByTagName('body')[0]
+          var target = document.createElement('div')
+          return body.appendChild(target)
+        })
+        .then(function(target) {display.renderTestResults(tests, client.testResults, target, true)})
+    </script>
   </head>
   <body>
-    <script type="module">
-    import * as client from './client.mjs'
-    import * as display from './display.mjs'
-    import ccRequest from './tests/cc-request.mjs'
-    import ccResponse from './tests/cc-response.mjs'
-    import freshness from './tests/explicit-freshness.mjs'
-    import heuristic from './tests/heuristic-freshness.mjs'
-    import statuses from './tests/status.mjs'
-    import vary from './tests/vary.mjs'
-    import other from './tests/other.mjs'
-
-    var tests = [freshness, heuristic, ccResponse, statuses, ccRequest, vary, other]
-    client.runTests(tests, fetch, true)
-      .then(function() {
-        var body = document.getElementsByTagName('body')[0]
-        var target = document.createElement('div')
-        return body.appendChild(target)
-      })
-      .then(function(target) {display.renderTestResults(tests, client.testResults, target, true)})
-    </script>
   </body>
 </html>
