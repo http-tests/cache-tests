@@ -4,7 +4,8 @@ export default {
   name: 'Cache-Control Request Directives',
   tests: [
     {
-      name: 'HTTP cache must not reuse aged but fresh response when request contains Cache-Control: max-age=0',
+      name: 'HTTP cache should not reuse aged but fresh response when request contains Cache-Control: max-age=0',
+      required: false,
       requests: [
         {
           template: 'fresh',
@@ -19,7 +20,8 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not reuse aged but fresh response when request contains Cache-Control: max-age=1',
+      name: 'HTTP cache should not reuse aged but fresh response when request contains Cache-Control: max-age=1',
+      required: false,
       requests: [
         {
           template: 'fresh',
@@ -34,7 +36,8 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not reuse fresh response with Age header when request contains Cache-Control: max-age that is greater than remaining freshness',
+      name: 'HTTP cache should not reuse fresh response with Age header when request contains Cache-Control: max-age that is greater than remaining freshness',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -87,7 +90,8 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not reuse fresh response when request contains Cache-Control: min-fresh that wants it fresher',
+      name: 'HTTP cache should not reuse fresh response when request contains Cache-Control: min-fresh that wants it fresher',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -103,7 +107,8 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not reuse fresh response with Age header when request contains Cache-Control: min-fresh that wants it fresher',
+      name: 'HTTP cache should not reuse fresh response with Age header when request contains Cache-Control: min-fresh that wants it fresher',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -120,7 +125,8 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not reuse fresh response when request contains Cache-Control: no-cache',
+      name: 'HTTP cache should not reuse fresh response when request contains Cache-Control: no-cache',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -173,7 +179,8 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not reuse fresh response when request contains Cache-Control: no-store',
+      name: 'HTTP cache should not reuse fresh response when request contains Cache-Control: no-store',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -189,7 +196,8 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must generate 504 status code when nothing is in cache and request contains Cache-Control: only-if-cached',
+      name: 'HTTP cache should generate 504 status code when nothing is in cache and request contains Cache-Control: only-if-cached',
+      required: false,
       requests: [
         {
           request_headers: [
