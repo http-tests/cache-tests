@@ -76,6 +76,7 @@ To reflect this, the test descriptions use "must" and "should" to indicate wheth
 
 "Should" tests are testing whether caching is happening (because the point of a cache is caching!), whereas the "must"-level tests indicate a spec violation (and usually it maps directly to a MUST in the RFC).
 
+This is explicitly flagged in the tests with the `required` member.
 
 
 ## Test Format
