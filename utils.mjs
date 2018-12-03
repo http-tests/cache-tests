@@ -14,7 +14,7 @@ export function httpContent (csKey) {
   if (csKey in contentStore) {
     return contentStore[csKey]
   } else {
-    var content = Math.random() * Date.now()
+    var content = (Math.random() * Date.now()).toString()
     contentStore[csKey] = content
     return content
   }
