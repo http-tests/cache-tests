@@ -1,43 +1,65 @@
-/* global fetch mocha it describe */
 
-import './node_modules/mocha/mocha.js'
-import templates from './templates.js'
-import * as utils from './utils.js'
+import templates from './templates.mjs'
+import * as utils from './utils.mjs'
 
 const noBodyStatus = new Set([204, 304])
 const assert = utils.assert
 
+var theFetch = null
 var useBrowserCache = false
-export function runTests (tests, browserCache) {
+var testArray = []
+var baseUrl = ""
+export var testResults = {}
+
+export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
+  theFetch = myFetch
+  if (base !== undefined) baseUrl = base
   if (browserCache !== undefined) useBrowserCache = browserCache
-  browserSetup()
-  mocha.setup({
-    'ui': 'bdd'
-  })
   tests.forEach(testSet => {
-    describe(testSet.name, function () {
-      this.timeout(10000)
-      testSet.tests.forEach(function (test) {
-        if (test.browser_only === true && !useBrowserCache === true) return
-        if (test.browser_skip === true && useBrowserCache === true) return
-        it(test.name, makeCacheTest(test))
-      })
+    testSet.tests.forEach(function (test) {
+      if (test.browser_only === true && !useBrowserCache === true) return
+      if (test.browser_skip === true && useBrowserCache === true) return
+      testArray.push(
+        addTest(testSet.name, test.name, test.timeout, makeCacheTest(test))
+      )
     })
   })
-  mocha.run()
+  // return Promise.all(testArray)
+  return runSome(testArray, chunkSize)
 }
 
-function browserSetup () {
-  var head = document.getElementsByTagName('head')[0]
-  var mochaLink = document.createElement('link')
-  mochaLink.rel = 'stylesheet'
-  mochaLink.type = 'text/css'
-  mochaLink.href = '/node_modules/mocha/mocha.css'
-  head.appendChild(mochaLink)
-  var body = document.getElementsByTagName('body')[0]
-  var target = document.createElement('div')
-  target.id = 'mocha'
-  body.appendChild(target)
+function runSome (tests, chunkSize) {
+  return new Promise(function (resolve, reject) {
+    var index = 0
+    function next () {
+      if (index < tests.length) {
+        var these = tests.slice(index, index + chunkSize)
+        index += chunkSize
+        Promise.all(these).then(next)
+      } else {
+        resolve()
+      }
+    }
+    next()
+  })
+}
+
+function addTest (suiteName, testName, timeout, testFunc) {
+  if (!testResults[suiteName]) {
+    testResults[suiteName] = {}
+  }
+  var wrapper = new Promise(function (resolve, reject) {
+    testFunc()
+      .then(function (result) { // pass
+        testResults[suiteName][testName] = true
+        resolve()
+      })
+      .catch(function (err) { // fail
+        testResults[suiteName][testName] = err.message
+        resolve()
+      })
+  })
+  return wrapper
 }
 
 function makeCacheTest (test) {
@@ -51,7 +73,7 @@ function makeCacheTest (test) {
           var config = requests[idx]
           var url = makeTestUrl(uuid, config)
           var init = fetchInit(config)
-          return fetch(url, init)
+          return theFetch(url, init)
             .then(makeCheckResponse(idx, config))
             .then(makeCheckResponseBody(config, uuid), function (reason) {
               if ('expected_type' in config && config.expected_type === 'error') {
@@ -117,7 +139,7 @@ function fetchInit (config) {
   if (!useBrowserCache) {
     init.cache = 'no-store'
     init.headers.push(['Pragma', 'foo']) // dirty hack for Fetch
-    init.headers.push(['Cache-Control', 'nothing-to-see-here'])
+    init.headers.push(['Cache-Control', 'nothing-to-see-here']) // ditto
   }
   if ('request_method' in config) init.method = config['request_method']
   if ('request_headers' in config) init.headers = config['request_headers']
@@ -248,7 +270,7 @@ function makeTestUrl (uuid, config) {
   if ('query_arg' in config) {
     extra += `?${config.query_arg}`
   }
-  return `/test/${uuid}${extra}`
+  return `${baseUrl}/test/${uuid}${extra}`
 }
 
 function putTestConfig (uuid, requests) {
@@ -257,7 +279,7 @@ function putTestConfig (uuid, requests) {
     'headers': [['content-type', 'application/json']],
     'body': JSON.stringify(requests)
   }
-  return fetch(`/config/${uuid}`, init)
+  return theFetch(`${baseUrl}/config/${uuid}`, init)
     .then(function (response) {
       if (response.status !== 201) {
         console.log(`Warning: ${response.status} response when creating config for ${uuid}`)
@@ -266,7 +288,7 @@ function putTestConfig (uuid, requests) {
 }
 
 function getServerState (uuid) {
-  return fetch(`/state/${uuid}`)
+  return theFetch(`${baseUrl}/state/${uuid}`)
     .then(function (response) {
       if (response.status === 200) {
         return response.text()

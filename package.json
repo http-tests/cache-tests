@@ -10,22 +10,21 @@
   },
   "dependencies": {
     "http-server": "^0.11.1",
-    "mocha": "^5.2.0"
+    "node-fetch": "^2.2.0"
   },
   "scripts": {
     "server": "node server.js",
-    "client": "mocha-chrome",
-    "lint": "standard --fix server.js client.js utils.js templates.js tests/*.js"
+    "cli": "node --experimental-modules cli.mjs",
+    "lint": "standard --fix *.js *.mjs   tests/*.mjs",
+    "foo": "node --experimental-modules foo.mjs"
   },
   "config": {
     "protocol": "http",
-    "port": "8000"
+    "port": "8000",
+    "base": ""
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/mnot/cdn-tests.git"
-  },
-  "devDependencies": {
-    "mocha-chrome": "^1.1.0"
   }
 }

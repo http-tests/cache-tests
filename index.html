@@ -3,22 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>CDN and Reverse Proxy HTTP Caching Tests</title>
-    <style type="text/css">
-      .duration { display: none; }
-    </style>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="module">
+      import * as client from './client.mjs'
+      import * as display from './display.mjs'
+      import ccRequest from './tests/cc-request.mjs'
+      import ccResponse from './tests/cc-response.mjs'
+      import freshness from './tests/explicit-freshness.mjs'
+      import heuristic from './tests/heuristic-freshness.mjs'
+      import surrogate from './tests/surrogate-control.mjs'
+      import statuses from './tests/status.mjs'
+      import vary from './tests/vary.mjs'
+      import other from './tests/other.mjs'
+
+      var tests = [freshness, heuristic, surrogate, ccResponse, statuses, ccRequest, vary, other]
+      client.runTests(tests, fetch)
+        .then(function() {
+          var body = document.getElementsByTagName('body')[0]
+          var target = document.createElement('div')
+          return body.appendChild(target)
+        })
+        .then(function(target) {display.renderTestResults(tests, client.testResults, target, false)})
+    </script>
   </head>
   <body>
-    <script type="module">
-    import * as client from './client.js'
-    import ccRequest from './tests/cc-request.js'
-    import ccResponse from './tests/cc-response.js'
-    import freshness from './tests/explicit-freshness.js'
-    import heuristic from './tests/heuristic-freshness.js'
-    import surrogate from './tests/surrogate-control.js'
-    import statuses from './tests/status.js'
-    import vary from './tests/vary.js'
-    import other from './tests/other.js'
-    client.runTests([freshness, heuristic, surrogate, ccResponse, statuses, ccRequest, vary, other])
-    </script>
+    <h1>CDN and Reverse Proxy HTTP Caching Tests</h1>
   </body>
 </html>

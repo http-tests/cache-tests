@@ -60,9 +60,9 @@ Note that they only work reliably on Chrome for the time being; see [this bug](h
 
 To run CLI tests:
 
-> npm run client http://server-url.example.org:8000/
+> npm run --silent cli --base=http://server-url.example.org:8000/
 
-... using the URL of the server you want to test. This will output the test results to STDOUT.
+... using the URL of the server you want to test. This will output the test results in JSON to STDOUT.
 
 
 ### Testing Browser Caches

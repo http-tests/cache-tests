@@ -1,4 +1,4 @@
-import * as utils from '../utils.js'
+import * as utils from '../utils.mjs'
 
 export default {
   name: 'Vary and Secondary Cache Keys',

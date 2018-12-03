@@ -16,6 +16,7 @@ const mimeTypes = {
   'jpg': 'image/jpeg',
   'png': 'image/png',
   'js': 'application/javascript',
+  'mjs': 'application/javascript',
   'css': 'text/css'
 }
 const noteHeaders = new Set(['content-type', 'access-control-allow-origin', 'last-modified', 'etag'])

@@ -1,9 +1,7 @@
-/* global btoa */
 
 function AssertionError (options) {
   this.name = 'Assertion'
   this.message = options.message
-  this.htmlMessage = options.message
 }
 
 export function assert (expr, message) {
@@ -16,7 +14,7 @@ export function httpContent (csKey) {
   if (csKey in contentStore) {
     return contentStore[csKey]
   } else {
-    var content = btoa(Math.random() * Date.now())
+    var content = (Math.random() * Date.now()).toString()
     contentStore[csKey] = content
     return content
   }
