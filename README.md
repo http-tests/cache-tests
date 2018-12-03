@@ -33,7 +33,7 @@ If you'd also like to run the tests from the command line, use:
 Then, change directory into `node_modules/cdn-tests`.
 
 
-## Running the Tests
+## Running the Test Server
 
 First, start the server-side by running:
 
@@ -51,7 +51,9 @@ Note that the default port for HTTPS is still 8000.
 
 Make sure that the browser is not configured to use a proxy cache, and that the network being tested upon does not use an intercepting proxy cache.
 
-Then, to test an reverse proxy or CDN configure it to use the server as the origin and point a browser to the appropriate URL.
+## Testing Reverse Proxies and CDNs
+
+To test an reverse proxy or CDN configure it to use the server as the origin and point a browser to the appropriate URL.
 
 Note that they only work reliably on Chrome for the time being; see [this bug](https://github.com/whatwg/fetch/issues/722).
 
@@ -65,7 +67,7 @@ To run CLI tests:
 ... using the URL of the server you want to test. This will output the test results in JSON to STDOUT.
 
 
-### Testing Browser Caches
+## Testing Browser Caches
 
 The applicable tests can be run against a browser cache, to assess compatibility between CDN/reverse proxy caches and those in browsers.
 
