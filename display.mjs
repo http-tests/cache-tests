@@ -1,4 +1,11 @@
 
+export function downloadTestResults (target, fileName, data) {
+  var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+  target.setAttribute("href", dataStr)
+  target.setAttribute("download", fileName)
+  target.style.display = "inherit"
+}
+
 export function renderTestResults (tests, testResults, target, useBrowserCache) {
   var total_tests = 0
   var total_passed = 0
