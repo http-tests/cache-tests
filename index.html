@@ -17,7 +17,7 @@
       import vary from './tests/vary.mjs'
       import other from './tests/other.mjs'
 
-      var tests = [ccFresh, expires, heuristic, surrogate, ccResponse, statuses, ccRequest, vary, other]
+      var tests = [ccFresh, expires, ccResponse, heuristic, surrogate, statuses, ccRequest, vary, other]
       var target = document.getElementById('target')
 
       summary.loadResults(index).then(results => {

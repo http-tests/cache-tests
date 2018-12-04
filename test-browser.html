@@ -16,7 +16,7 @@
       import vary from './tests/vary.mjs'
       import other from './tests/other.mjs'
 
-      var tests = [ccFresh, expires, heuristic, ccResponse, statuses, ccRequest, vary, other]
+      var tests = [ccFresh, expires, ccResponse, heuristic, statuses, ccRequest, vary, other]
       client.runTests(tests, fetch, true)
         .then(function() {
           var resultsTarget = document.getElementById('results')
