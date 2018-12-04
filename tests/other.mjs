@@ -87,7 +87,7 @@ export default
           expected_type: 'cached',
           expected_response_headers: [
             ['Date', function (assert, p, a, r) {
-              assert.isTrue(a === r.headers.get('Server-Now'), `${p} is ${a}, should be ${r.headers.get('Server-Now')}`)
+              assert(a === r.headers.get('Server-Now'), `${p} is ${a}, should be ${r.headers.get('Server-Now')}`)
             }]
           ]
         }
