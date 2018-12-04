@@ -19,6 +19,12 @@ export default [
     "version": "12.0 (14606.1.36.1.9)"
   },
   {
+    "file": "edge.json",
+    "name": "Edge",
+    "type": "browser",
+    "version": "44.17763.1.0"
+  },
+  {
     "file": "nginx.json",
     "name": "nginx",
     "type": "rev-proxy",
