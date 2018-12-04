@@ -1,7 +1,7 @@
 
 export function downloadTestResults (target, fileName, data) {
-  var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
-  target.setAttribute("href", dataStr)
+  var dataBlob = new Blob([data], {type: 'text/json'})
+  target.setAttribute("href", window.URL.createObjectURL(dataBlob))
   target.setAttribute("download", fileName)
   target.style.display = "inherit"
 }
