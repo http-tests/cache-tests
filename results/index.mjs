@@ -28,25 +28,29 @@ export default [
     "file": "nginx.json",
     "name": "nginx",
     "type": "rev-proxy",
-    "version": "1.14.1"
+    "version": "1.15.6",
+    "link": "https://github.com/http-tests/cache-tests/wiki/nginx"
   },
   {
     "file": "squid.json",
     "name": "Squid",
     "type": "rev-proxy",
-    "version": "4.4"
+    "version": "4.4",
+    "link": "https://github.com/http-tests/cache-tests/wiki/Squid"
   },
   {
     "file": "trafficserver.json",
     "name": "ATS",
     "type": "rev-proxy",
-    "version": "8.0.1"
+    "version": "8.0.1",
+    "link": "https://github.com/http-tests/cache-tests/wiki/Traffic-Server"
   },
   {
     "file": "varnish.json",
     "name": "Varnish",
     "type": "rev-proxy",
-    "version": "5.2.1"
+    "version": "5.2.1",
+    "link": "https://github.com/http-tests/cache-tests/wiki/Varnish"
   },
   {
     "file": "fastly.json",
