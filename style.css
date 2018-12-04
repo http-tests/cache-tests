@@ -17,6 +17,10 @@ th {
   padding: 0.2em 0.4em;
 }
 
+th a {
+  color: white;
+}
+
 ul {
   list-style-type: none;
 }

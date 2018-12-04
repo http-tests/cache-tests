@@ -29,7 +29,7 @@ function showHeader(headerName, results) {
   var firstHeader = tableCell('th', headerName, 'name category')
   headerRow.appendChild(firstHeader)
   results.forEach(implementation => {
-    headerRow.appendChild(tableCell('th', implementation.name, 'category', implementation.version))
+    headerRow.appendChild(tableCell('th', implementation.name, 'category', implementation.version, implementation.link))
   })
   return headerRow
 }
@@ -66,13 +66,20 @@ function tableRow() {
   return rowElement
 }
 
-function tableCell(cellType, content, CssClass, hint) {
+function tableCell(cellType, content, CssClass, hint, link) {
   var cellElement = document.createElement(cellType)
   if (CssClass) {
     cellElement.setAttribute('class', CssClass)
   }
   var cellText = document.createTextNode(content)
-  cellElement.appendChild(cellText)
+  if (link) {
+    var linkElement = document.createElement('a')
+    linkElement.setAttribute('href', link)
+    linkElement.appendChild(cellText)
+    cellElement.appendChild(linkElement)
+  } else {
+    cellElement.appendChild(cellText)
+  }
   if (hint) {
     cellElement.title = hint
   }
