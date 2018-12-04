@@ -288,8 +288,9 @@ export default
       browser_only: true
     },
     {
-      name: 'Shared HTTP cache must prefer Cache-Control: s-maxage over Cache-Control: max-age',
+      name: 'Shared HTTP cache should prefer Cache-Control: s-maxage over Cache-Control: max-age',
       id: 'freshness-max-age-s-maxage-shared',
+      required: false,
       requests: [
         {
           response_headers: [
