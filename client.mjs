@@ -224,6 +224,7 @@ function makeCheckResponseBody (config, uuid) {
 }
 
 function checkRequests (requests, testState) {
+  // compare a test's requests array against the server-side testState
   var testIdx = 0
   for (let i = 0; i < requests.length; ++i) {
     var expectedValidatingHeaders = []
