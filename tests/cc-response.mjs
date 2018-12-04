@@ -6,6 +6,7 @@ export default
   tests: [
     {
       name: 'Shared HTTP cache must not store a response with Cache-Control: private',
+      id: 'cc-resp-private-shared',
       browser_skip: true,
       requests: [
         {
@@ -20,6 +21,7 @@ export default
     },
     {
       name: 'Private HTTP cache should reuses a fresh response with Cache-Control: private',
+      id: 'cc-resp-private-private',
       browser_only: true,
       required: false,
       requests: [
@@ -35,6 +37,7 @@ export default
     },
     {
       name: 'HTTP cache must not store a response with Cache-Control: no-store',
+      id: 'cc-resp-no-store',
       requests: [
         {
           response_headers: [
@@ -48,6 +51,7 @@ export default
     },
     {
       name: 'HTTP cache must not store a response with Cache-Control: no-store, even with max-age and Expires',
+      id: 'cc-resp-no-store-fresh',
       requests: [
         {
           response_headers: [
@@ -63,6 +67,7 @@ export default
     },
     {
       name: 'HTTP cache should store a response with Cache-Control: no-cache, but revalidates upon use',
+      id: 'cc-resp-no-cache-revalidate',
       required: false,
       requests: [
         {
@@ -78,6 +83,7 @@ export default
     },
     {
       name: 'HTTP cache should store a response with Cache-Control: no-cache, but revalidates upon use, even with max-age and Expires',
+      id: 'cc-resp-no-cache-revalidate-fresh',
       required: false,
       requests: [
         {

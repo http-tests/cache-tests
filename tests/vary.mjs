@@ -5,6 +5,7 @@ export default {
   tests: [
     {
       name: 'HTTP cache should reuse Vary response when request matches',
+      id: 'vary-match',
       required: false,
       requests: [
         {
@@ -28,6 +29,7 @@ export default {
     },
     {
       name: "HTTP cache must not reuse Vary response when request doesn't match",
+      id: 'vary-no-match',
       required: false,
       requests: [
         {
@@ -51,6 +53,7 @@ export default {
     },
     {
       name: 'HTTP cache must not reuse Vary response when request omits variant header',
+      id: 'vary-omit',
       requests: [
         {
           request_headers: [
@@ -70,6 +73,7 @@ export default {
     },
     {
       name: 'HTTP cache should not invalidate existing Vary response',
+      id: 'vary-invalidate',
       required: false,
       requests: [
         {
@@ -108,6 +112,7 @@ export default {
     },
     {
       name: 'HTTP cache should not include headers not listed in Vary in the cache key',
+      id: 'vary-cache-key',
       required: false,
       requests: [
         {
@@ -133,6 +138,7 @@ export default {
     },
     {
       name: 'HTTP cache should reuse two-way Vary response when request matches',
+      id: 'vary-2-match',
       required: false,
       requests: [
         {
@@ -158,6 +164,7 @@ export default {
     },
     {
       name: "HTTP cache must not reuse two-way Vary response when request doesn't match",
+      id: 'vary-2-no-match',
       requests: [
         {
           request_headers: [
@@ -182,6 +189,7 @@ export default {
     },
     {
       name: 'HTTP cache must not reuse two-way Vary response when request omits variant header',
+      id: 'vary-2-match-omit',
       requests: [
         {
           request_headers: [
@@ -201,6 +209,7 @@ export default {
     },
     {
       name: 'HTTP cache should reuse three-way Vary response when request matches',
+      id: 'vary-3-match',
       required: false,
       requests: [
         {
@@ -228,6 +237,7 @@ export default {
     },
     {
       name: "HTTP cache must not reuse three-way Vary response when request doesn't match",
+      id: 'vary-3-no-match',
       requests: [
         {
           request_headers: [
@@ -254,6 +264,7 @@ export default {
     },
     {
       name: "HTTP cache must not reuse three-way Vary response when request doesn't match, regardless of header order",
+      id: 'vary-3-order',
       requests: [
         {
           request_headers: [
@@ -280,6 +291,7 @@ export default {
     },
     {
       name: 'HTTP cache should reuse three-way Vary response when both request and the original request omited a variant header',
+      id: 'vary-3-omit',
       required: false,
       requests: [
         {
@@ -305,6 +317,7 @@ export default {
     },
     {
       name: "HTTP cache must not reuse Vary response with a field value of '*'",
+      id: 'vary-star',
       requests: [
         {
           request_headers: [

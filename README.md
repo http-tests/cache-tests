@@ -96,7 +96,8 @@ export default {
 
 The `tests` member is an array of objects, with the following members:
 
-- `name` - The name of the test.
+- `name` - The description of the test.
+- `id` - A short, stable identifier for the test.
 - `requests` - a list of request objects (see below).
 - `browser_only` - if `true`, will not run on non-browser caches. Default `false`.
 - `browser_skip` - if `true, will not run on browser caches. Default `false`.

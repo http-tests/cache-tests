@@ -17,10 +17,11 @@ export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
   if (browserCache !== undefined) useBrowserCache = browserCache
   tests.forEach(testSet => {
     testSet.tests.forEach(function (test) {
+      if (test.id === undefined) throw new Error("Missing test id")
       if (test.browser_only === true && !useBrowserCache === true) return
       if (test.browser_skip === true && useBrowserCache === true) return
       testArray.push(
-        addTest(testSet.name, test.name, test.timeout, makeCacheTest(test))
+        addTest(test.id, test.timeout, makeCacheTest(test))
       )
     })
   })
@@ -44,18 +45,17 @@ function runSome (tests, chunkSize) {
   })
 }
 
-function addTest (suiteName, testName, timeout, testFunc) {
-  if (!testResults[suiteName]) {
-    testResults[suiteName] = {}
-  }
+function addTest (testId, timeout, testFunc) {
   var wrapper = new Promise(function (resolve, reject) {
     testFunc()
       .then(function (result) { // pass
-        testResults[suiteName][testName] = true
+        if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
+        testResults[testId] = true
         resolve()
       })
       .catch(function (err) { // fail
-        testResults[suiteName][testName] = err.message
+        if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
+        testResults[testId] = err.message
         resolve()
       })
   })

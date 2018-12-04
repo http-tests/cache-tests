@@ -6,6 +6,7 @@ export default
   tests: [
     {
       name: 'HTTP cache must generate an Age header',
+      id: 'other-age-gen',
       requests: [
         {
           response_headers: [
@@ -27,6 +28,7 @@ export default
     },
     {
       name: 'HTTP cache must update the Age header (Expires)',
+      id: 'other-age-update-expires',
       requests: [
         {
           response_headers: [
@@ -49,6 +51,7 @@ export default
     },
     {
       name: 'HTTP cache must update the Age header (CC: max-age)',
+      id: 'other-age-update-max-age',
       requests: [
         {
           response_headers: [
@@ -71,6 +74,7 @@ export default
     },
     {
       name: 'HTTP cache must not update the Date header',
+      id: 'other-date-update',
       requests: [
         {
           response_headers: [

@@ -27,7 +27,7 @@ export function renderTestResults (tests, testResults, target, useBrowserCache) 
       testElement.appendChild(showTestResult(test, testResults))
       testElement.appendChild(testName)
       tests++
-      if (testResults[test.suiteName][test.name] === true) {
+      if (testResults[test.id] === true) {
         passed++
       }
     })
@@ -44,7 +44,7 @@ export function renderTestResults (tests, testResults, target, useBrowserCache) 
 }
 
 function showTestResult (test, testResults) {
-  var result = testResults[test.suiteName][test.name]
+  var result = testResults[test.id]
   if (result === true) {
     return document.createTextNode(' ✅ ')
   } else {

@@ -40,8 +40,7 @@ function showTest(suiteName, test, results) {
   var testRow = tableRow()
   testRow.appendChild(tableCell('th', test.name, 'name'))
   results.forEach(implementation => {
-    var suite = implementation.results[suiteName] || {}
-    var result = suite[test.name]
+    var result = implementation.results[test.id]
     var signal
     if (result === undefined) {
       signal = "-"

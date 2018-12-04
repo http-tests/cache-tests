@@ -11,6 +11,7 @@ function checkStatus (status) {
   }
   tests.push({
     name: 'HTTP cache must not reuse a stale ' + code + ' response with explicit freshness',
+    id: `status-${code}-stale`,
     requests: [
       {
         template: 'stale',
@@ -24,6 +25,7 @@ function checkStatus (status) {
   })
   tests.push({
     name: 'HTTP cache should reuse a fresh ' + code + ' response with explict freshness',
+    id: `status-${code}-fresh`,
     required: false,
     requests: [
       {
