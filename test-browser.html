@@ -9,13 +9,14 @@
       import * as display from './display.mjs'
       import ccRequest from './tests/cc-request.mjs'
       import ccResponse from './tests/cc-response.mjs'
-      import freshness from './tests/explicit-freshness.mjs'
+      import ccFresh from './tests/cc-freshness.mjs'
+      import expires from './tests/expires-freshness.mjs'
       import heuristic from './tests/heuristic-freshness.mjs'
       import statuses from './tests/status.mjs'
       import vary from './tests/vary.mjs'
       import other from './tests/other.mjs'
 
-      var tests = [freshness, heuristic, ccResponse, statuses, ccRequest, vary, other]
+      var tests = [ccFresh, expires, heuristic, ccResponse, statuses, ccRequest, vary, other]
       client.runTests(tests, fetch, true)
         .then(function() {
           var resultsTarget = document.getElementById('results')
