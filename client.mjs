@@ -240,7 +240,7 @@ function checkRequests (requests, testState) {
         expectedValidatingHeaders.push('if-modified-since')
       }
     }
-    testIdx++
+    testIdx++ // only increment for requests the server sees
     expectedValidatingHeaders.forEach(vhdr => {
       assert(typeof (serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
       assert(serverRequest.request_headers.hasOwnProperty(vhdr),
