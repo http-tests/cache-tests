@@ -1,17 +1,15 @@
 
 const useBrowserCache = false
 
-export function loadResults(resultFiles) {
-  return Promise.all(resultFiles.map(fileName =>
-      fetch(`results/${fileName}`)
+export function loadResults(index) {
+  return Promise.all(index.map(item =>
+      fetch(`results/${item.file}`)
       .then(response => {
         return response.json()
       })
       .then(results => {
-        return {
-          'name': fileName.split('.').slice(0, -1).join('.'),
-          'results': results
-        }
+        item.results = results
+        return item
       }
   ))
   )
@@ -31,7 +29,7 @@ function showHeader(headerName, results) {
   var firstHeader = tableCell('th', headerName, 'name category')
   headerRow.appendChild(firstHeader)
   results.forEach(implementation => {
-    headerRow.appendChild(tableCell('th', implementation.name, 'category'))
+    headerRow.appendChild(tableCell('th', implementation.name, 'category', implementation.version))
   })
   return headerRow
 }

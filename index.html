@@ -5,6 +5,7 @@
     <title>HTTP Caching Tests</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="module">
+      import index from './results/index.mjs'
       import * as summary from './summary.js'
       import ccRequest from './tests/cc-request.mjs'
       import ccResponse from './tests/cc-response.mjs'
@@ -16,11 +17,9 @@
       import other from './tests/other.mjs'
 
       var tests = [freshness, heuristic, surrogate, ccResponse, statuses, ccRequest, vary, other]
-      var resultFiles=['fastly.json', 'nginx.json', 'varnish.json']
       var target = document.getElementById('target')
 
-      summary.loadResults(resultFiles).then(results => {
-        console.dir(results)
+      summary.loadResults(index).then(results => {
         summary.showResults(target, tests, results)
       })
     </script>
