@@ -50,6 +50,20 @@ export default
       ]
     },
     {
+      name: 'HTTP cache must not store a response with Cache-Control: nO-StOrE',
+      id: 'cc-resp-no-store-case-insensitive',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'No-StOrE']
+          ]
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not store a response with Cache-Control: no-store, even with max-age and Expires',
       id: 'cc-resp-no-store-fresh',
       requests: [
