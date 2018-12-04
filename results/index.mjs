@@ -46,6 +46,13 @@ export default [
     "link": "https://github.com/http-tests/cache-tests/wiki/Traffic-Server"
   },
   {
+    "file": "apache.json",
+    "name": "httpd",
+    "type": "rev-proxy",
+    "version": "2.4.37",
+    "link": "https://github.com/http-tests/cache-tests/wiki/Apache-httpd"
+  },
+  {
     "file": "varnish.json",
     "name": "Varnish",
     "type": "rev-proxy",
