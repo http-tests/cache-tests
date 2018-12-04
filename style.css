@@ -8,8 +8,13 @@ body {
   margin: 1em 2em;
 }
 
+table {
+  border-spacing: 0;
+}
+
 th {
   font-weight: normal;
+  padding: 0.2em 0.4em;
 }
 
 ul {
@@ -23,7 +28,7 @@ ul {
 }
 
 .name {
-  margin: 0 auto;
+  margin: 0;
   text-align: right;
 }
 
