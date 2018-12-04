@@ -31,6 +31,18 @@ export default [
     "version": "1.14.1"
   },
   {
+    "file": "squid.json",
+    "name": "Squid",
+    "type": "rev-proxy",
+    "version": "4.4"
+  },
+  {
+    "file": "trafficserver.json",
+    "name": "ATS",
+    "type": "rev-proxy",
+    "version": "8.0.1"
+  },
+  {
     "file": "varnish.json",
     "name": "Varnish",
     "type": "rev-proxy",
