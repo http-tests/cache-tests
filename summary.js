@@ -42,19 +42,23 @@ function showTest(suiteName, test, results) {
   results.forEach(implementation => {
     var result = implementation.results[test.id]
     var signal
+    var hint
     if (result === undefined) {
       signal = "-"
     }
     else if (result === true) {
       signal = "✅"
+      hint = false
     }
     else if (test.required === false){
       signal = "⚠️"
+      hint = result
     }
     else {
       signal = "⛔️"
+      hint = result
     }
-    testRow.appendChild(tableCell('th', signal))
+    testRow.appendChild(tableCell('th', signal, false, hint))
   })
   return testRow
 }
@@ -64,12 +68,15 @@ function tableRow() {
   return rowElement
 }
 
-function tableCell(cellType, content, CssClass) {
+function tableCell(cellType, content, CssClass, hint) {
   var cellElement = document.createElement(cellType)
   if (CssClass) {
     cellElement.setAttribute('class', CssClass)
   }
   var cellText = document.createTextNode(content)
   cellElement.appendChild(cellText)
+  if (hint) {
+    cellElement.title = hint
+  }
   return cellElement
 }
