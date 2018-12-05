@@ -72,7 +72,7 @@ function makeCacheTest (test) {
         code: function (idx) {
           var config = requests[idx]
           var url = makeTestUrl(uuid, config)
-          var init = fetchInit(config)
+          var init = fetchInit(idx, config)
           return theFetch(url, init)
             .then(makeCheckResponse(idx, config))
             .then(makeCheckResponseBody(config, uuid), function (reason) {
@@ -132,7 +132,7 @@ function expandTemplates (test) {
   return requests
 }
 
-function fetchInit (config) {
+function fetchInit (idx, config) {
   var init = {
     'headers': []
   }
@@ -148,6 +148,8 @@ function fetchInit (config) {
   if ('mode' in config) init.mode = config['mode']
   if ('credentials' in config) init.mode = config['credentials']
   if ('cache' in config) init.cache = config['cache']
+  init.headers.push(['Test-ID', config.id])
+  init.headers.push(['Req-Num', (idx + 1).toString()])
   return init
 }
 
@@ -233,6 +235,9 @@ function checkRequests (requests, testState) {
     var reqNum = i + 1
     if ('expected_type' in config) {
       if (config.expected_type === 'cached') continue // the server will not see the request
+      if (config.expected_type === 'not_cached') {
+        assert(serverRequest.request_num === reqNum, `Response ${reqNum} comes from cache (${serverRequest.request_num} on server)`)
+      }
       if (config.expected_type === 'etag_validated') {
         expectedValidatingHeaders.push('if-none-match')
       }

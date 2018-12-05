@@ -115,7 +115,8 @@ function handleXhr (pathSegs, request, response) {
   var state = {
     'now': Date.now(),
     'request_method': request.method,
-    'request_headers': request.headers
+    'request_headers': request.headers,
+    'request_num': parseInt(request.headers['req-num'])
   }
   serverState.push(state)
   stash.set(uuid, serverState)
