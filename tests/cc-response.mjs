@@ -80,6 +80,38 @@ export default
       ]
     },
     {
+      name: 'HTTP cache must not use a cached response with Cache-Control: no-cache, even with max-age and Expires',
+      id: 'cc-resp-no-cache',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=10000, no-cache'],
+            ['Expires', 10000],
+            ['Date', 0]
+          ]
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not use a cached response with Cache-Control: No-CaChE, even with max-age and Expires',
+      id: 'cc-resp-no-cache-case-insensitive',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=10000, No-CaChE'],
+            ['Expires', 10000],
+            ['Date', 0]
+          ]
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache should store a response with Cache-Control: no-cache, but revalidates upon use',
       id: 'cc-resp-no-cache-revalidate',
       required: false,
