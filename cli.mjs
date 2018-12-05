@@ -5,6 +5,24 @@ import surrogate from './tests/surrogate-control.mjs'
 
 tests.push(surrogate)
 const baseUrl = process.env.npm_config_base || process.env.npm_package_config_base
+const testId = process.env.npm_config_id || process.env.npm_package_config_id
 
-client.runTests(tests, fetch, false, baseUrl)
+var testsToRun
+if (testId !== '') {
+  console.log(`Running ${testId}`)
+  tests.forEach(suite => {
+    suite.tests.forEach(test => {
+      if (test.id === testId) {
+        testsToRun = [{
+          'name': suite.name,
+          'tests': [test]
+        }]
+      }
+    })
+  })
+} else {
+  testsToRun = tests
+}
+
+client.runTests(testsToRun, fetch, false, baseUrl)
   .then(function () { console.log(JSON.stringify(client.getResults(), null, 2)) })

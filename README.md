@@ -66,6 +66,12 @@ To test a reverse proxy or CDN from the command line::
 
 ... using the URL of the server you want to test. This will output the test results in JSON to STDOUT. See `summary.mjs` for details of how to interpret that.
 
+To run a single test, use:
+
+> npm run cli --base=http://server-url.example.org:8000/ --id=test-id
+
+... where `test-id` is the identifier for the test.
+
 
 ## Testing Browser Caches
 
@@ -81,6 +87,8 @@ To reflect this, the test descriptions use "must" and "should" to indicate wheth
 "Should" tests are testing whether caching is happening (because the point of a cache is caching!), whereas the "must"-level tests indicate a spec violation (and usually it maps directly to a MUST in the RFC).
 
 This is explicitly flagged in the tests with the `required` member.
+
+In the live browser tests (`/test-cdn.html` and `/test-browser.html`), if you click on the test name, it will copy that specific test's UUID (part of the URL used for requests associated with the test) to the clipboard; that makes it easier to find them in the browser's developer tools and proxy logs.
 
 
 ## Test Format

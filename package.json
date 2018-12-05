@@ -21,7 +21,8 @@
   "config": {
     "protocol": "http",
     "port": "8000",
-    "base": ""
+    "base": "",
+    "id": ""
   },
   "repository": {
     "type": "git",
