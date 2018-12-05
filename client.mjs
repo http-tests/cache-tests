@@ -202,7 +202,7 @@ function makeCheckResponse (idx, config) {
       config.expected_response_headers.forEach(function (header) {
         if (typeof header[1] === 'function') {
           var prefix = `Response ${reqNum} header ${header[0]}`
-          header[1](assert, config, prefix, response.headers.get(header[0]), response)
+          header[1](config, assert, prefix, response.headers.get(header[0]), response)
         } else {
           assert(config, response.headers.get(header[0]) === header[1],
             `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)

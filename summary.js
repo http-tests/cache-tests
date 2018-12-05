@@ -47,16 +47,16 @@ function showTest (suiteName, test, results) {
       hint = false
     } else if (result[0] === 'Setup') {
       signal = '🔹'
-      hint = result[0]
+      hint = result[1]
     } else if (result[0] !== 'Assertion') {
       signal = '⁉️'
-      hint = result[0]
+      hint = result[1]
     } else if (test.required === false) {
       signal = '⚠️'
-      hint = result[0]
+      hint = result[1]
     } else {
       signal = '⛔️'
-      hint = result[0]
+      hint = result[1]
     }
     testRow.appendChild(tableCell('th', signal, false, hint))
   })
