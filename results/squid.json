@@ -1,9 +1,6 @@
 {
   "304-etag-update-response-Content-Foo": true,
-  "304-etag-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/6b271fde-2e25-452d-9b77-ee7ee6294104/236115442639.64578\", not \"236115442639.64578\""
-  ],
+  "304-etag-update-response-Content-Location": true,
   "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": true,
@@ -13,10 +10,7 @@
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": true,
   "304-etag-update-stored-Content-Foo": true,
-  "304-etag-update-stored-Content-Location": [
-    "Assertion",
-    "Response 3 header Content-Location is \"http://cloud.mnot.net/test/01df64c3-03af-4da2-834e-b135fb841c1e/236115442639.64578\", not \"236115442639.64578\""
-  ],
+  "304-etag-update-stored-Content-Location": true,
   "304-etag-update-stored-Content-MD5": true,
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": true,
@@ -26,10 +20,7 @@
   "304-etag-update-stored-X-Test-Header": true,
   "304-etag-update-stored-X-XSS-Protection": true,
   "304-lm-update-response-Content-Foo": true,
-  "304-lm-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/5aff5424-d2c6-4804-a57c-c6213db43f62/236115442639.64578\", not \"236115442639.64578\""
-  ],
+  "304-lm-update-response-Content-Location": true,
   "304-lm-update-response-Content-MD5": true,
   "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": true,
@@ -39,10 +30,7 @@
   "304-lm-update-response-X-Test-Header": true,
   "304-lm-update-response-X-XSS-Protection": true,
   "304-lm-update-stored-Content-Foo": true,
-  "304-lm-update-stored-Content-Location": [
-    "Assertion",
-    "Response 3 header Content-Location is \"http://cloud.mnot.net/test/e63f4de7-79eb-4615-9679-bef9d9086e7f/236115442639.64578\", not \"236115442639.64578\""
-  ],
+  "304-lm-update-stored-Content-Location": true,
   "304-lm-update-stored-Content-MD5": true,
   "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": true,

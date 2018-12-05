@@ -160,7 +160,7 @@
   "other-age-update-max-age": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 05 Dec 2018 10:17:20 GMT, should be Wed, 05 Dec 2018 10:17:16 GMT"
+    "Response 2 header Date is Wed, 05 Dec 2018 22:04:27 GMT, should be Wed, 05 Dec 2018 22:04:23 GMT"
   ],
   "status-200-fresh": true,
   "status-200-stale": true,

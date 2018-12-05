@@ -1,9 +1,6 @@
 {
   "304-etag-update-response-Content-Foo": true,
-  "304-etag-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"http://localhost:81/test/64bccbbd-36d7-41b5-a518-db5eb6c5a293/763924348017.0541\", not \"763924348017.0541\""
-  ],
+  "304-etag-update-response-Content-Location": true,
   "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
@@ -16,10 +13,7 @@
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": true,
   "304-etag-update-stored-Content-Foo": true,
-  "304-etag-update-stored-Content-Location": [
-    "Assertion",
-    "Response 3 header Content-Location is \"http://localhost:81/test/e740ed8f-8a0a-4bbb-9253-e06f5b8515f5/763924348017.0541\", not \"763924348017.0541\""
-  ],
+  "304-etag-update-stored-Content-Location": true,
   "304-etag-update-stored-Content-MD5": true,
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
@@ -32,10 +26,7 @@
   "304-etag-update-stored-X-Test-Header": true,
   "304-etag-update-stored-X-XSS-Protection": true,
   "304-lm-update-response-Content-Foo": true,
-  "304-lm-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"http://localhost:81/test/5c0d37de-1dbf-4cd2-b088-de177698e720/763924348017.0541\", not \"763924348017.0541\""
-  ],
+  "304-lm-update-response-Content-Location": true,
   "304-lm-update-response-Content-MD5": true,
   "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
@@ -48,10 +39,7 @@
   "304-lm-update-response-X-Test-Header": true,
   "304-lm-update-response-X-XSS-Protection": true,
   "304-lm-update-stored-Content-Foo": true,
-  "304-lm-update-stored-Content-Location": [
-    "Assertion",
-    "Response 3 header Content-Location is \"http://localhost:81/test/20f13e33-ade3-408d-bfbd-b48a550168b0/763924348017.0541\", not \"763924348017.0541\""
-  ],
+  "304-lm-update-stored-Content-Location": true,
   "304-lm-update-stored-Content-MD5": true,
   "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
