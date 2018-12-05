@@ -7,6 +7,7 @@ function check304 (args) {
   var valueB = args[2] || utils.httpContent(`${header}-value-B`)
   var etag = utils.httpContent(`${header}-etag-1`)
   var etag1 = `"${etag}"`
+  var lm1 = utils.httpDate(Date.now(), -24 * 60 * 60)
 
   tests.push({
     name: `HTTP cache must update returned ${header} from a Last-Modified 304`,
@@ -15,8 +16,7 @@ function check304 (args) {
       {
         response_headers: [
           ['Cache-Control', 'max-age=1'],
-          //          ['Expires', 1],
-          ['Last-Modified', -24 * 60 * 60],
+          ['Last-Modified', lm1],
           ['Date', 0],
           [header, valueA]
         ],
@@ -26,8 +26,7 @@ function check304 (args) {
       {
         response_headers: [
           ['Cache-Control', 'max-age=3600'],
-          //          ['Expires', 3600],
-          ['Last-Modified', -24 * 60 * 60],
+          ['Last-Modified', lm1],
           ['Date', 0],
           [header, valueB]
         ],
@@ -46,8 +45,7 @@ function check304 (args) {
       {
         response_headers: [
           ['Cache-Control', 'max-age=1'],
-          //          ['Expires', 1],
-          ['Last-Modified', -24 * 60 * 60],
+          ['Last-Modified', lm1],
           ['Date', 0],
           [header, valueA]
         ],
@@ -57,8 +55,7 @@ function check304 (args) {
       {
         response_headers: [
           ['Cache-Control', 'max-age=3600'],
-          //          ['Expires', 3600],
-          ['Last-Modified', -24 * 60 * 60],
+          ['Last-Modified', lm1],
           ['Date', 0],
           [header, valueB]
         ],

@@ -29,6 +29,10 @@ export function httpContent (csKey) {
   }
 }
 
+function httpDate (now, deltaSecs) {
+  return new Date(now + (deltaSecs * 1000)).toGMTString()
+}
+
 export function token () {
   var uuid = [toHex(randInt(32), 8),
     toHex(randInt(16), 4),
