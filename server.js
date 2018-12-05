@@ -123,7 +123,7 @@ function handleXhr (pathSegs, request, response) {
   var notedHeaders = new Map()
   var responseHeaders = config.response_headers || []
   responseHeaders.forEach(header => {
-    if (locationHeaders.has(header[0].toLowerCase())) { // magic!
+    if (locationHeaders.has(header[0].toLowerCase()) && config.magic_locations === true) { // magic!
       header[1] = `http://${request.headers['host']}${request.url}/${header[1]}` // FIXME
     }
     if (dateHeaders.has(header[0].toLowerCase()) && Number.isInteger(header[1])) { // magic!

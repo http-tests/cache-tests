@@ -120,6 +120,7 @@ Possible members of a request object:
 - `credentials` - The credentials string to pass to `fetch()`.
 - `cache` - The cache string to pass to `fetch()`.
 - `pause_after` - Boolean controlling a 3-second pause after the request completes.
+- `magic_locations` - Boolean; if `true`, the `Location` and `Content-Location` headers will be rewritten to full URLs.
 - `response_status` - A `[number, string]` array containing the HTTP status code
                     and phrase to return.
 - `response_headers` - An array of `[header_name_string, header_value_string]` arrays to
