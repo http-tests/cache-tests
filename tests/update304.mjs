@@ -27,7 +27,7 @@ function check304 (args) {
         response_headers: [
           ['Cache-Control', 'max-age=3600'],
           //          ['Expires', 3600],
-          ['Last-Modified', -1],
+          ['Last-Modified', -24 * 60 * 60],
           ['Date', 0],
           [header, valueB]
         ],
@@ -58,7 +58,7 @@ function check304 (args) {
         response_headers: [
           ['Cache-Control', 'max-age=3600'],
           //          ['Expires', 3600],
-          ['Last-Modified', -1],
+          ['Last-Modified', -24 * 60 * 60],
           ['Date', 0],
           [header, valueB]
         ],
