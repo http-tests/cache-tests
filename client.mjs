@@ -296,7 +296,7 @@ function putTestConfig (uuid, requests) {
   return theFetch(`${baseUrl}/config/${uuid}`, init)
     .then(function (response) {
       if (response.status !== 201) {
-        console.log(`Warning: ${response.status} response when creating config for ${uuid}`)
+        throw utils.SetupError({message: `PUT config resulted in ${response.status}`})
       }
     })
 }
