@@ -1,163 +1,163 @@
 {
   "304-etag-update-response-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Foo is \"32927218985.344704\", not \"1329348869337.187\""
   ],
   "304-etag-update-response-Content-Location": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Location is \"http://localhost:8080/test/46756eed-26e1-408c-af6a-372be1817336/426222674260.5696\", not \"1261200484518.5212\""
   ],
   "304-etag-update-response-Content-MD5": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-MD5 is \"1324778627245.7788\", not \"1022266709258.7216\""
   ],
   "304-etag-update-response-Content-Security-Policy": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Security-Policy is \"818382756088.4684\", not \"1399333137610.595\""
   ],
   "304-etag-update-response-Content-Type": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-response-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Test-Header is \"678239107560.0747\", not \"1405193234626.256\""
   ],
   "304-etag-update-response-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Content-Foo is \"965193905196.0293\", not \"352314235357.3055\""
   ],
   "304-etag-update-response-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Frame-Options is \"620225247675.0017\", not \"1188825767127.6672\""
   ],
   "304-etag-update-response-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Test-Header is \"1509193533484.7058\", not \"393505473930.74756\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-XSS-Protection is \"320777756722.40216\", not \"697698211164.0107\""
   ],
   "304-etag-update-stored-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Foo is \"32927218985.344704\", not \"1329348869337.187\""
   ],
   "304-etag-update-stored-Content-Location": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Location is \"http://localhost:8080/test/45ccd8df-4da0-4e00-9cd9-168169bf7d74/426222674260.5696\", not \"1261200484518.5212\""
   ],
   "304-etag-update-stored-Content-MD5": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-MD5 is \"1324778627245.7788\", not \"1022266709258.7216\""
   ],
   "304-etag-update-stored-Content-Security-Policy": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Security-Policy is \"818382756088.4684\", not \"1399333137610.595\""
   ],
   "304-etag-update-stored-Content-Type": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-stored-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Test-Header is \"678239107560.0747\", not \"1405193234626.256\""
   ],
   "304-etag-update-stored-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-Content-Foo is \"965193905196.0293\", not \"352314235357.3055\""
   ],
   "304-etag-update-stored-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-Frame-Options is \"620225247675.0017\", not \"1188825767127.6672\""
   ],
   "304-etag-update-stored-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-Test-Header is \"1509193533484.7058\", not \"393505473930.74756\""
   ],
   "304-etag-update-stored-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-XSS-Protection is \"320777756722.40216\", not \"697698211164.0107\""
   ],
   "304-lm-update-response-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Foo is \"32927218985.344704\", not \"1329348869337.187\""
   ],
   "304-lm-update-response-Content-Location": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Location is \"http://localhost:8080/test/124b7279-6d82-40ba-86a5-25fb3e80fd87/426222674260.5696\", not \"1261200484518.5212\""
   ],
   "304-lm-update-response-Content-MD5": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-MD5 is \"1324778627245.7788\", not \"1022266709258.7216\""
   ],
   "304-lm-update-response-Content-Security-Policy": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Security-Policy is \"818382756088.4684\", not \"1399333137610.595\""
   ],
   "304-lm-update-response-Content-Type": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-response-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Test-Header is \"678239107560.0747\", not \"1405193234626.256\""
   ],
   "304-lm-update-response-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Content-Foo is \"965193905196.0293\", not \"352314235357.3055\""
   ],
   "304-lm-update-response-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Frame-Options is \"620225247675.0017\", not \"1188825767127.6672\""
   ],
   "304-lm-update-response-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Test-Header is \"1509193533484.7058\", not \"393505473930.74756\""
   ],
   "304-lm-update-response-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-XSS-Protection is \"320777756722.40216\", not \"697698211164.0107\""
   ],
   "304-lm-update-stored-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Foo is \"32927218985.344704\", not \"1329348869337.187\""
   ],
   "304-lm-update-stored-Content-Location": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Location is \"http://localhost:8080/test/7b16d139-262b-436b-833d-6e2860fee48f/426222674260.5696\", not \"1261200484518.5212\""
   ],
   "304-lm-update-stored-Content-MD5": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-MD5 is \"1324778627245.7788\", not \"1022266709258.7216\""
   ],
   "304-lm-update-stored-Content-Security-Policy": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Security-Policy is \"818382756088.4684\", not \"1399333137610.595\""
   ],
   "304-lm-update-stored-Content-Type": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-stored-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Test-Header is \"678239107560.0747\", not \"1405193234626.256\""
   ],
   "304-lm-update-stored-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-Content-Foo is \"965193905196.0293\", not \"352314235357.3055\""
   ],
   "304-lm-update-stored-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-Frame-Options is \"620225247675.0017\", not \"1188825767127.6672\""
   ],
   "304-lm-update-stored-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-Test-Header is \"1509193533484.7058\", not \"393505473930.74756\""
   ],
   "304-lm-update-stored-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-XSS-Protection is \"320777756722.40216\", not \"697698211164.0107\""
   ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
@@ -244,7 +244,10 @@
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
-  "heuristic-200-cached": true,
+  "heuristic-200-cached": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,
   "heuristic-203-cached": [
@@ -256,7 +259,10 @@
     "Response 2 does not come from cache"
   ],
   "heuristic-403-not_cached": true,
-  "heuristic-404-cached": true,
+  "heuristic-404-cached": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-405-cached": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -295,7 +301,7 @@
   ],
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 05 Dec 2018 06:46:55 GMT, should be Wed, 05 Dec 2018 06:46:52 GMT"
+    "Response 2 header Date is Wed, 05 Dec 2018 06:56:16 GMT, should be Wed, 05 Dec 2018 06:56:13 GMT"
   ],
   "status-200-fresh": true,
   "status-200-stale": true,
@@ -323,20 +329,20 @@
   "status-504-stale": true,
   "status-599-fresh": true,
   "status-599-stale": true,
-  "surrogate-max-age": true,
-  "surrogate-max-age-0": [
+  "surrogate-max-age": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
+  "surrogate-max-age-0": true,
   "surrogate-max-age-0-expires": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "surrogate-max-age-age": [
+  "surrogate-max-age-age": true,
+  "surrogate-max-age-case-insensitive": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
-  "surrogate-max-age-case-insensitive": true,
   "surrogate-max-age-cc-max-age-invalid-expires": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -345,7 +351,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "surrogate-max-age-extension": true,
+  "surrogate-max-age-extension": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age-long-cc-max-age": [
     "Assertion",
     "Response 2 comes from cache"
@@ -354,10 +363,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "surrogate-no-store": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "surrogate-no-store": true,
   "surrogate-no-store-cc-fresh": [
     "Assertion",
     "Response 2 comes from cache"
