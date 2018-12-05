@@ -1,19 +1,19 @@
 {
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1495870158847.7698\", not \"998496496789.6718\""
+    "Response 2 header Content-Foo is \"1200398342182.6025\", not \"1242522088758.1865\""
   ],
   "304-etag-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"http://fastly-vanilla.mnot.net/test/9e848144-5769-4e0f-9128-0a00aa7c8a9f/1051631317385.578\", not \"306819441347.28235\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"992877992184.5084\", not \"813711610431.6447\""
+    "Response 2 header Content-MD5 is \"973225764544.9031\", not \"41256148384.42992\""
   ],
   "304-etag-update-response-Content-Security-Policy": [
     "Assertion",
-    "Response 2 header Content-Security-Policy is \"949169304007.4102\", not \"464494759352.4944\""
+    "Response 2 header Content-Security-Policy is \"415058758314.2754\", not \"1356367615707.2698\""
   ],
   "304-etag-update-response-Content-Type": [
     "Assertion",
@@ -21,39 +21,39 @@
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"1122774665561.2058\", not \"365128292495.3531\""
+    "Response 2 header Test-Header is \"1337161541304.6252\", not \"1429242049997.6965\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"454479322364.7493\", not \"1140553455696.8298\""
+    "Response 2 header X-Content-Foo is \"651830172172.2726\", not \"844525859666.6578\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
-    "Response 2 header X-Frame-Options is \"1406945272465.6343\", not \"550406139370.7661\""
+    "Response 2 header X-Frame-Options is \"785370527175.3053\", not \"1099941001469.6006\""
   ],
   "304-etag-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"787232581694.4261\", not \"1168153444205.7998\""
+    "Response 2 header X-Test-Header is \"1066117557797.6677\", not \"478846569020.3452\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
-    "Response 2 header X-XSS-Protection is \"1039830402627.0128\", not \"1277241938358.6462\""
+    "Response 2 header X-XSS-Protection is \"160953055913.0579\", not \"480949530947.16754\""
   ],
   "304-etag-update-stored-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Foo is \"1200398342182.6025\", not \"1242522088758.1865\""
   ],
   "304-etag-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://fastly-vanilla.mnot.net/test/64d7a971-8ee1-490f-ab4d-fbc61d3bc2f0/1051631317385.578\", not \"306819441347.28235\""
+    "Response 3 header Content-Location is \"http://fastly-vanilla.mnot.net/test/aa1991a7-9125-42e4-8efd-aba40450e94f/1206845530379.372\", not \"1321391911916.802\""
   ],
   "304-etag-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"992877992184.5084\", not \"813711610431.6447\""
+    "Response 3 header Content-MD5 is \"973225764544.9031\", not \"41256148384.42992\""
   ],
   "304-etag-update-stored-Content-Security-Policy": [
     "Assertion",
-    "Response 3 header Content-Security-Policy is \"949169304007.4102\", not \"464494759352.4944\""
+    "Response 3 header Content-Security-Policy is \"415058758314.2754\", not \"1356367615707.2698\""
   ],
   "304-etag-update-stored-Content-Type": [
     "Assertion",
@@ -61,39 +61,39 @@
   ],
   "304-etag-update-stored-Test-Header": [
     "Assertion",
-    "Response 3 header Test-Header is \"1122774665561.2058\", not \"365128292495.3531\""
+    "Response 3 header Test-Header is \"1337161541304.6252\", not \"1429242049997.6965\""
   ],
   "304-etag-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"454479322364.7493\", not \"1140553455696.8298\""
+    "Response 3 header X-Content-Foo is \"651830172172.2726\", not \"844525859666.6578\""
   ],
   "304-etag-update-stored-X-Frame-Options": [
     "Assertion",
-    "Response 3 header X-Frame-Options is \"1406945272465.6343\", not \"550406139370.7661\""
+    "Response 3 header X-Frame-Options is \"785370527175.3053\", not \"1099941001469.6006\""
   ],
   "304-etag-update-stored-X-Test-Header": [
     "Assertion",
-    "Response 3 header X-Test-Header is \"787232581694.4261\", not \"1168153444205.7998\""
+    "Response 3 header X-Test-Header is \"1066117557797.6677\", not \"478846569020.3452\""
   ],
   "304-etag-update-stored-X-XSS-Protection": [
     "Assertion",
-    "Response 3 header X-XSS-Protection is \"1039830402627.0128\", not \"1277241938358.6462\""
+    "Response 3 header X-XSS-Protection is \"160953055913.0579\", not \"480949530947.16754\""
   ],
   "304-lm-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1495870158847.7698\", not \"998496496789.6718\""
+    "Response 2 header Content-Foo is \"1200398342182.6025\", not \"1242522088758.1865\""
   ],
   "304-lm-update-response-Content-Location": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Location is \"http://fastly-vanilla.mnot.net/test/8a005786-7b6b-414b-8be9-093720b6f528/1206845530379.372\", not \"1321391911916.802\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"992877992184.5084\", not \"813711610431.6447\""
+    "Response 2 header Content-MD5 is \"973225764544.9031\", not \"41256148384.42992\""
   ],
   "304-lm-update-response-Content-Security-Policy": [
     "Assertion",
-    "Response 2 header Content-Security-Policy is \"949169304007.4102\", not \"464494759352.4944\""
+    "Response 2 header Content-Security-Policy is \"415058758314.2754\", not \"1356367615707.2698\""
   ],
   "304-lm-update-response-Content-Type": [
     "Assertion",
@@ -101,63 +101,63 @@
   ],
   "304-lm-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"1122774665561.2058\", not \"365128292495.3531\""
+    "Response 2 header Test-Header is \"1337161541304.6252\", not \"1429242049997.6965\""
   ],
   "304-lm-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"454479322364.7493\", not \"1140553455696.8298\""
+    "Response 2 header X-Content-Foo is \"651830172172.2726\", not \"844525859666.6578\""
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
-    "Response 2 header X-Frame-Options is \"1406945272465.6343\", not \"550406139370.7661\""
+    "Response 2 header X-Frame-Options is \"785370527175.3053\", not \"1099941001469.6006\""
   ],
   "304-lm-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"787232581694.4261\", not \"1168153444205.7998\""
+    "Response 2 header X-Test-Header is \"1066117557797.6677\", not \"478846569020.3452\""
   ],
   "304-lm-update-response-X-XSS-Protection": [
     "Assertion",
-    "Response 2 header X-XSS-Protection is \"1039830402627.0128\", not \"1277241938358.6462\""
+    "Response 2 header X-XSS-Protection is \"160953055913.0579\", not \"480949530947.16754\""
   ],
   "304-lm-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"1495870158847.7698\", not \"998496496789.6718\""
+    "Response 3 header Content-Foo is \"1200398342182.6025\", not \"1242522088758.1865\""
   ],
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://fastly-vanilla.mnot.net/test/4644a6a1-386c-46f7-95ca-5e79307cd566/1051631317385.578\", not \"306819441347.28235\""
+    "Response 3 header Content-Location is \"http://fastly-vanilla.mnot.net/test/3eca5d26-6b9f-4b7f-b750-2560a39154f5/1206845530379.372\", not \"1321391911916.802\""
   ],
   "304-lm-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"992877992184.5084\", not \"813711610431.6447\""
+    "Response 3 header Content-MD5 is \"973225764544.9031\", not \"41256148384.42992\""
   ],
   "304-lm-update-stored-Content-Security-Policy": [
     "Assertion",
-    "Response 3 header Content-Security-Policy is \"949169304007.4102\", not \"464494759352.4944\""
+    "Response 3 header Content-Security-Policy is \"415058758314.2754\", not \"1356367615707.2698\""
   ],
   "304-lm-update-stored-Content-Type": [
     "Assertion",
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-stored-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Test-Header is \"1337161541304.6252\", not \"1429242049997.6965\""
   ],
   "304-lm-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"454479322364.7493\", not \"1140553455696.8298\""
+    "Response 3 header X-Content-Foo is \"651830172172.2726\", not \"844525859666.6578\""
   ],
   "304-lm-update-stored-X-Frame-Options": [
     "Assertion",
-    "Response 3 header X-Frame-Options is \"1406945272465.6343\", not \"550406139370.7661\""
+    "Response 3 header X-Frame-Options is \"785370527175.3053\", not \"1099941001469.6006\""
   ],
   "304-lm-update-stored-X-Test-Header": [
     "Assertion",
-    "Response 3 header X-Test-Header is \"787232581694.4261\", not \"1168153444205.7998\""
+    "Response 3 header X-Test-Header is \"1066117557797.6677\", not \"478846569020.3452\""
   ],
   "304-lm-update-stored-X-XSS-Protection": [
     "Assertion",
-    "Response 3 header X-XSS-Protection is \"1039830402627.0128\", not \"1277241938358.6462\""
+    "Response 3 header X-XSS-Protection is \"160953055913.0579\", not \"480949530947.16754\""
   ],
   "cc-resp-no-cache": [
     "Assertion",
@@ -298,7 +298,7 @@
   "other-age-update-max-age": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 05 Dec 2018 06:47:28 GMT, should be Wed, 05 Dec 2018 06:47:25 GMT"
+    "Response 2 header Date is Wed, 05 Dec 2018 10:14:35 GMT, should be Wed, 05 Dec 2018 10:14:32 GMT"
   ],
   "status-200-fresh": true,
   "status-200-stale": true,
@@ -342,8 +342,8 @@
   ],
   "status-502-stale": true,
   "status-503-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "Response 1 status is 409, not 503"
   ],
   "status-503-stale": [
     "Setup",

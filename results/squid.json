@@ -1,88 +1,34 @@
 {
-  "304-etag-update-response-Content-Foo": [
-    "Assertion",
-    "Response 2 header Content-Foo is \"1201158173483.534\", not \"1146891510589.606\""
-  ],
+  "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/d3430f38-0a22-462b-8159-89dd508881a0/1520681944785.9783\", not \"45376862446.9534\""
+    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/6b271fde-2e25-452d-9b77-ee7ee6294104/236115442639.64578\", not \"236115442639.64578\""
   ],
-  "304-etag-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 header Content-MD5 is \"874756734656.9393\", not \"1041839106323.9569\""
-  ],
-  "304-etag-update-response-Content-Security-Policy": [
-    "Assertion",
-    "Response 2 header Content-Security-Policy is \"353818549496.8973\", not \"198693713329.01364\""
-  ],
-  "304-etag-update-response-Content-Type": [
-    "Assertion",
-    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
-  ],
-  "304-etag-update-response-Test-Header": [
-    "Assertion",
-    "Response 2 header Test-Header is \"1103245469104.2163\", not \"109430949344.14693\""
-  ],
-  "304-etag-update-response-X-Content-Foo": [
-    "Assertion",
-    "Response 2 header X-Content-Foo is \"1196324094960.0942\", not \"611254652081.0293\""
-  ],
-  "304-etag-update-response-X-Frame-Options": [
-    "Assertion",
-    "Response 2 header X-Frame-Options is \"1418131378099.2014\", not \"1379162711423.5767\""
-  ],
-  "304-etag-update-response-X-Test-Header": [
-    "Assertion",
-    "Response 2 header X-Test-Header is \"586457998417.9883\", not \"890544023124.6024\""
-  ],
-  "304-etag-update-response-X-XSS-Protection": [
-    "Assertion",
-    "Response 2 header X-XSS-Protection is \"730514934028.438\", not \"495361331006.364\""
-  ],
-  "304-etag-update-stored-Content-Foo": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
+  "304-etag-update-response-Content-MD5": true,
+  "304-etag-update-response-Content-Security-Policy": true,
+  "304-etag-update-response-Content-Type": true,
+  "304-etag-update-response-Test-Header": true,
+  "304-etag-update-response-X-Content-Foo": true,
+  "304-etag-update-response-X-Frame-Options": true,
+  "304-etag-update-response-X-Test-Header": true,
+  "304-etag-update-response-X-XSS-Protection": true,
+  "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
-    "Setup",
-    "Response 3 does not come from cache"
+    "Assertion",
+    "Response 3 header Content-Location is \"http://cloud.mnot.net/test/01df64c3-03af-4da2-834e-b135fb841c1e/236115442639.64578\", not \"236115442639.64578\""
   ],
-  "304-etag-update-stored-Content-MD5": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-etag-update-stored-Content-Security-Policy": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-etag-update-stored-Content-Type": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-etag-update-stored-Test-Header": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-etag-update-stored-X-Content-Foo": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-etag-update-stored-X-Frame-Options": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-etag-update-stored-X-Test-Header": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-etag-update-stored-X-XSS-Protection": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
+  "304-etag-update-stored-Content-MD5": true,
+  "304-etag-update-stored-Content-Security-Policy": true,
+  "304-etag-update-stored-Content-Type": true,
+  "304-etag-update-stored-Test-Header": true,
+  "304-etag-update-stored-X-Content-Foo": true,
+  "304-etag-update-stored-X-Frame-Options": true,
+  "304-etag-update-stored-X-Test-Header": true,
+  "304-etag-update-stored-X-XSS-Protection": true,
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/b8611706-2135-4c31-ae94-f92a6a03a0c3/45376862446.9534\", not \"45376862446.9534\""
+    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/5aff5424-d2c6-4804-a57c-c6213db43f62/236115442639.64578\", not \"236115442639.64578\""
   ],
   "304-lm-update-response-Content-MD5": true,
   "304-lm-update-response-Content-Security-Policy": true,
@@ -95,7 +41,7 @@
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://cloud.mnot.net/test/c5e9af85-c17c-4574-9908-1312454a146b/45376862446.9534\", not \"45376862446.9534\""
+    "Response 3 header Content-Location is \"http://cloud.mnot.net/test/e63f4de7-79eb-4615-9679-bef9d9086e7f/236115442639.64578\", not \"236115442639.64578\""
   ],
   "304-lm-update-stored-Content-MD5": true,
   "304-lm-update-stored-Content-Security-Policy": true,
