@@ -1,12 +1,12 @@
 
 export function downloadTestResults (target, fileName, data) {
   var dataBlob = new Blob([JSON.stringify(data, null, 2)], {type: 'text/json'})
-  target.setAttribute("href", window.URL.createObjectURL(dataBlob))
-  target.setAttribute("download", fileName)
-  target.style.display = "inherit"
+  target.setAttribute('href', window.URL.createObjectURL(dataBlob))
+  target.setAttribute('download', fileName)
+  target.style.display = 'inherit'
 }
 
-export function renderTestResults (tests, testResults, target, useBrowserCache) {
+export function renderTestResults (tests, testResults, testUUIDs, target, useBrowserCache) {
   var total_tests = 0
   var total_passed = 0
   tests.forEach(testSuite => {
@@ -26,6 +26,9 @@ export function renderTestResults (tests, testResults, target, useBrowserCache) 
       var testName = document.createTextNode(test.name)
       testElement.appendChild(showTestResult(test, testResults))
       testElement.appendChild(testName)
+      testElement.addEventListener('click', function (event) {
+        copyTextToClipboard(testUUIDs[test.id])
+      })
       tests++
       if (testResults[test.id] === true) {
         passed++
@@ -33,14 +36,14 @@ export function renderTestResults (tests, testResults, target, useBrowserCache) 
     })
     var summaryElement = document.createElement('p')
     var suiteSummary = target.appendChild(summaryElement)
-    suiteSummary.appendChild(document.createTextNode(tests + " tests, " + passed + " passed."))
+    suiteSummary.appendChild(document.createTextNode(tests + ' tests, ' + passed + ' passed.'))
     total_tests += tests
     total_passed += passed
   })
-    var totalElement = document.createElement('p')
-    var totalSummary = target.appendChild(totalElement)
-    var totalText = document.createTextNode("Total " + total_tests + " tests, " + total_passed + " passed.")
-    totalSummary.appendChild(totalText)
+  var totalElement = document.createElement('p')
+  var totalSummary = target.appendChild(totalElement)
+  var totalText = document.createTextNode('Total ' + total_tests + ' tests, ' + total_passed + ' passed.')
+  totalSummary.appendChild(totalText)
 }
 
 function showTestResult (test, testResults) {
@@ -57,4 +60,30 @@ function showTestResult (test, testResults) {
     }
     return span
   }
+}
+
+function copyTextToClipboard (text) {
+  var textArea = document.createElement('textarea')
+  textArea.style.position = 'fixed'
+  textArea.style.top = 0
+  textArea.style.left = 0
+  textArea.style.width = '2em'
+  textArea.style.height = '2em'
+  textArea.style.padding = 0
+  textArea.style.border = 'none'
+  textArea.style.outline = 'none'
+  textArea.style.boxShadow = 'none'
+  textArea.style.background = 'transparent'
+  textArea.value = text
+  document.body.appendChild(textArea)
+  textArea.focus()
+  textArea.select()
+  try {
+    var successful = document.execCommand('copy')
+    var msg = successful ? 'successful' : 'unsuccessful'
+    console.log('Copying text command was ' + msg)
+  } catch (err) {
+    console.log('Unable to copy')
+  }
+  document.body.removeChild(textArea)
 }

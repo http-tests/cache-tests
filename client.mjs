@@ -8,8 +8,10 @@ const assert = utils.assert
 var theFetch = null
 var useBrowserCache = false
 var testArray = []
-var baseUrl = ""
+var baseUrl = ''
 var testResults = {}
+
+export var testUUIDs = {}
 
 export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
   theFetch = myFetch
@@ -17,7 +19,7 @@ export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
   if (browserCache !== undefined) useBrowserCache = browserCache
   tests.forEach(testSet => {
     testSet.tests.forEach(function (test) {
-      if (test.id === undefined) throw new Error("Missing test id")
+      if (test.id === undefined) throw new Error('Missing test id')
       if (test.browser_only === true && !useBrowserCache === true) return
       if (test.browser_skip === true && useBrowserCache === true) return
       testArray.push(
@@ -29,7 +31,7 @@ export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
   return runSome(testArray, chunkSize)
 }
 
-export function getResults() {
+export function getResults () {
   const ordered = {}
   Object.keys(testResults).sort().forEach(key => {
     ordered[key] = testResults[key]
@@ -73,6 +75,7 @@ function addTest (testId, timeout, testFunc) {
 function makeCacheTest (test) {
   return function () {
     var uuid = utils.token()
+    testUUIDs[test.id] = uuid
     var requests = expandTemplates(test)
     var fetchFunctions = []
     for (let i = 0; i < requests.length; ++i) {

@@ -14,7 +14,7 @@
       client.runTests(baseTests, fetch)
       .then(function() {
         var resultsTarget = document.getElementById('results')
-        display.renderTestResults(baseTests, client.getResults(), resultsTarget, true)
+        display.renderTestResults(baseTests, client.getResults(), client.testUUIDs, resultsTarget, true)
       })
       .then(function() {
         var downloadTarget = document.getElementById('download')
