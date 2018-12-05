@@ -49,7 +49,9 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
 
 function showTestResult (test, testResults) {
   var result = testResults[test.id]
-  if (result === true) {
+  if (result === undefined) {
+    return document.createTextNode(' - ')
+  } else if (result === true) {
     return document.createTextNode(' ✅ ')
   } else {
     var span = document.createElement('span')
