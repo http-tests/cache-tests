@@ -8,4 +8,4 @@ import vary from './vary.mjs'
 import update304 from './update304.mjs'
 import other from './other.mjs'
 
-export default [ccResponse, ccRequest, ccFreshness, expires, heuristic, statuses, vary, update304, other]
+export default [ccFreshness, expires, ccResponse, heuristic, statuses, ccRequest, vary, update304, other]
