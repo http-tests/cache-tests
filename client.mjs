@@ -166,15 +166,16 @@ function makeCheckResponse (idx, config) {
     var reqNum = idx + 1
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
     if ('expected_type' in config) {
+      var typeSetup = setupCheck(config, 'expected_type')
       if (config.expected_type === 'error') {
-        assert(config, false, `Request ${reqNum} doesn't throw an error`)
+        assert(typeSetup, false, `Request ${reqNum} doesn't throw an error`)
         return response.text()
       }
       if (config.expected_type === 'cached') {
-        assert(config, resNum < reqNum, `Response ${reqNum} does not come from cache`)
+        assert(typeSetup, resNum < reqNum, `Response ${reqNum} does not come from cache`)
       }
       if (config.expected_type === 'not_cached') {
-        assert(config, resNum === reqNum, `Response ${reqNum} comes from cache`)
+        assert(typeSetup, resNum === reqNum, `Response ${reqNum} comes from cache`)
       }
     }
     //  browsers seem to squelch 304 even in no-store mode.
@@ -182,29 +183,38 @@ function makeCheckResponse (idx, config) {
     //      config.expected_status = 304
     //    }
     if ('expected_status' in config) {
-      assert(config, response.status === config.expected_status,
+      assert(setupCheck(config, 'expected_status'),
+        response.status === config.expected_status,
         `Response ${reqNum} status is ${response.status}, not ${config.expected_status}`)
     } else if ('response_status' in config) {
-      assert(config, response.status === config.response_status[0],
+      assert(true, // response status is always setup
+        response.status === config.response_status[0],
         `Response ${reqNum} status is ${response.status}, not ${config.response_status[0]}`)
+    } else if (response.status === 999) {
+      // special condition; the server thought it should have received a conditional request.
+      assert(true, false, `Request ${reqNum} should have been conditional, but it was not.`)
     } else {
-      assert(config, response.status === 200, `Response ${reqNum} status is ${response.status}, not 200`)
+      assert(true, // default status is always setup
+        response.status === 200,
+        `Response ${reqNum} status is ${response.status}, not 200`)
     }
     if ('response_headers' in config) {
       config.response_headers.forEach(function (header) {
         if (header.len < 3 || header[2] === true) {
-          assert(config, response.headers.get(header[0]) === header[1],
+          assert(true, // default headers is always setup
+            response.headers.get(header[0]) === header[1],
             `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)
         }
       })
     }
     if ('expected_response_headers' in config) {
       config.expected_response_headers.forEach(function (header) {
+        var respSetup = setupCheck(config, 'expected_response_headers')
         if (typeof header[1] === 'function') {
           var prefix = `Response ${reqNum} header ${header[0]}`
-          header[1](config, assert, prefix, response.headers.get(header[0]), response)
+          header[1](respSetup, assert, prefix, response.headers.get(header[0]), response)
         } else {
-          assert(config, response.headers.get(header[0]) === header[1],
+          assert(respSetup, response.headers.get(header[0]) === header[1],
             `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)
         }
       })
@@ -221,14 +231,18 @@ function makeCheckResponseBody (config, uuid) {
     }
     if ('expected_response_text' in config) {
       if (config.expected_response_text !== null) {
-        assert(config, resBody === config.expected_response_text,
+        assert(setupCheck(config, 'expected_response_text'),
+          resBody === config.expected_response_text,
           `Response body is "${resBody}", not "${config.expected_response_text}"`)
       }
     } else if ('response_body' in config && config.response_body !== null) {
-      assert(config, resBody === config.response_body,
+      assert(true, // response_body is always setup
+        resBody === config.response_body,
         `Response body is "${resBody}", not "${config.response_body}"`)
     } else if (!noBodyStatus.has(statusCode)) {
-      assert(config, resBody === uuid, `Response body is "${resBody}", not "${uuid}"`)
+      assert(true, // no_body is always setup
+        resBody === uuid,
+        `Response body is "${resBody}", not "${uuid}"`)
     }
   }
 }
@@ -242,9 +256,10 @@ function checkRequests (requests, testState) {
     var serverRequest = testState[testIdx]
     var reqNum = i + 1
     if ('expected_type' in config) {
+      var typeSetup = setupCheck(config, 'expected_type')
       if (config.expected_type === 'cached') continue // the server will not see the request
       if (config.expected_type === 'not_cached') {
-        assert(config, serverRequest.request_num === reqNum, `Response ${reqNum} comes from cache (${serverRequest.request_num} on server)`)
+        assert(typeSetup, serverRequest.request_num === reqNum, `Response ${reqNum} comes from cache (${serverRequest.request_num} on server)`)
       }
       if (config.expected_type === 'etag_validated') {
         expectedValidatingHeaders.push('if-none-match')
@@ -255,13 +270,14 @@ function checkRequests (requests, testState) {
     }
     testIdx++ // only increment for requests the server sees
     expectedValidatingHeaders.forEach(vhdr => {
-      assert(config, typeof (serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
-      assert(config, serverRequest.request_headers.hasOwnProperty(vhdr),
+      assert(typeSetup, typeof (serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
+      assert(typeSetup, serverRequest.request_headers.hasOwnProperty(vhdr),
         `request ${reqNum} doesn't have ${vhdr} header`)
     })
     if ('expected_request_headers' in config) {
       config.expected_request_headers.forEach(expectedHdr => {
-        assert(config, serverRequest.request_headers[expectedHdr[0].toLowerCase()] === expectedHdr[1],
+        assert(setupCheck(config, 'expected_request_headers'),
+          serverRequest.request_headers[expectedHdr[0].toLowerCase()] === expectedHdr[1],
           `request ${reqNum} header ${expectedHdr[0]} value is "${serverRequest.request_headers[expectedHdr[0].toLowerCase()]}", not "${expectedHdr[1]}"`)
       })
     }
@@ -311,4 +327,8 @@ function getServerState (uuid) {
       if (text === undefined) return []
       return JSON.parse(text)
     })
+}
+
+function setupCheck(config, memberName) {
+  return config.setup === true || 'setup_tests' in config && config.setup_tests.indexOf(memberName) > -1
 }

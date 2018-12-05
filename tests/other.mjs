@@ -19,9 +19,9 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (c, assert, p, a) {
-              assert(c, a !== undefined, `${p} isn't present`)
-              assert(c, parseInt(a) > 2, `${p} is ${a}, should be bigger`)
+            ['Age', function (s, assert, p, a) {
+              assert(s, a !== undefined, `${p} isn't present`)
+              assert(s, parseInt(a) > 2, `${p} is ${a}, should be bigger`)
             }]
           ]
         }
@@ -43,9 +43,9 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (c, assert, p, a) {
-              assert(c, a !== undefined, `${p} isn't present`)
-              assert(c, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
+            ['Age', function (s, assert, p, a) {
+              assert(s, a !== undefined, `${p} isn't present`)
+              assert(s, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
             }]
           ]
         }
@@ -67,9 +67,9 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (c, assert, p, a) {
-              assert(c, a !== undefined, `${p} isn't present`)
-              assert(c, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
+            ['Age', function (s, assert, p, a) {
+              assert(s, a !== undefined, `${p} isn't present`)
+              assert(s, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
             }]
           ]
         }
@@ -90,8 +90,8 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Date', function (c, assert, p, a, r) {
-              assert(c, a === r.headers.get('Server-Now'), `${p} is ${a}, should be ${r.headers.get('Server-Now')}`)
+            ['Date', function (s, assert, p, a, r) {
+              assert(s, a === r.headers.get('Server-Now'), `${p} is ${a}, should be ${r.headers.get('Server-Now')}`)
             }]
           ]
         }

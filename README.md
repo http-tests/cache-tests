@@ -134,6 +134,10 @@ Possible members of a request object:
                               headers to check the response for. See also response_headers.
 - `expected_response_text` - A string to check the response body against.
 - `setup` - Boolean to indicate whether this is a setup request; failures don't mean the actual test failed.
+- `setup_tests` - Array of values that indicate whether the specified check is part of setup;
+  failures don't mean the actual test failed. Possible values: ['expected_type', 'expected_status',
+  'expected_response_headers', 'expected_response_text', 'expected_type',
+  'expected_request_headers']
 
 `server.js` stashes an entry containing observed headers for each request it receives. When the
 test fetches have run, this state is retrieved and the expected_* lists are checked, including

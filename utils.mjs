@@ -9,9 +9,9 @@ function SetupError (options) {
   this.message = options.message
 }
 
-export function assert (config, expr, message) {
+export function assert (isSetup, expr, message) {
   if (expr) return
-  if (config.setup === true) {
+  if (isSetup) {
     throw new SetupError({message: message})
   } else {
     throw new AssertionError({message: message})

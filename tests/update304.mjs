@@ -33,7 +33,8 @@ function check304 (args) {
         expected_type: 'lm_validated',
         expected_response_headers: [
           [header, valueB]
-        ]
+        ],
+        setup_tests: ['expected_type']
       }
     ]
   })
@@ -68,7 +69,8 @@ function check304 (args) {
         expected_type: 'cached',
         expected_response_headers: [
           [header, valueB]
-        ]
+        ],
+        setup_tests: ['expected_type']
       }
     ]
   })
@@ -98,7 +100,8 @@ function check304 (args) {
         expected_type: 'etag_validated',
         expected_response_headers: [
           [header, valueB]
-        ]
+        ],
+        setup_tests: ['expected_type']
       }
     ]
   })
@@ -133,7 +136,8 @@ function check304 (args) {
         expected_type: 'cached',
         expected_response_headers: [
           [header, valueB]
-        ]
+        ],
+        setup_tests: ['expected_type']
       }
     ]
   })
