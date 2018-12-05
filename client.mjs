@@ -167,10 +167,6 @@ function makeCheckResponse (idx, config) {
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
     if ('expected_type' in config) {
       var typeSetup = setupCheck(config, 'expected_type')
-      if (config.expected_type === 'error') {
-        assert(typeSetup, false, `Request ${reqNum} doesn't throw an error`)
-        return response.text()
-      }
       if (config.expected_type === 'cached') {
         assert(typeSetup, resNum < reqNum, `Response ${reqNum} does not come from cache`)
       }
