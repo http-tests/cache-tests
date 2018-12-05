@@ -17,7 +17,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [
@@ -41,7 +42,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [
@@ -64,7 +66,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -86,7 +89,8 @@ export default {
             ['Date', 0],
             ['Vary', 'Foo']
           ],
-          response_body: utils.httpContent('foo_1')
+          response_body: utils.httpContent('foo_1'),
+          setup: true
         },
         {
           request_headers: [
@@ -99,7 +103,8 @@ export default {
             ['Vary', 'Foo']
           ],
           expected_type: 'not_cached',
-          response_body: utils.httpContent('foo_2')
+          response_body: utils.httpContent('foo_2'),
+          setup: true
         },
         {
           request_headers: [
@@ -125,7 +130,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [
@@ -151,7 +157,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo, Bar']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [
@@ -176,7 +183,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo, Bar']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [
@@ -200,7 +208,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo, Bar']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -223,7 +232,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo, Bar, Baz']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [
@@ -250,7 +260,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo, Bar, Baz']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [
@@ -277,7 +288,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo, Bar, Baz']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [
@@ -304,7 +316,8 @@ export default {
             ['Date', 0],
             ['Last-Modified', -3000],
             ['Vary', 'Foo, Bar, Baz']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [
@@ -329,7 +342,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', '*']
-          ]
+          ],
+          setup: true
         },
         {
           request_headers: [

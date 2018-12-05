@@ -14,7 +14,8 @@ export default
           response_headers: [
             ['Expires', 30 * 24 * 60 * 60],
             ['Date', 0]
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'cached'
@@ -29,7 +30,8 @@ export default
           response_headers: [
             ['Expires', -30 * 24 * 60 * 60],
             ['Date', 0]
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -44,7 +46,8 @@ export default
           response_headers: [
             ['Expires', 0],
             ['Date', 0]
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -59,7 +62,8 @@ export default
           response_headers: [
             ['Expires', 300],
             ['Date', 400]
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -74,7 +78,8 @@ export default
           response_headers: [
             ['Expires', '0'],
             ['Date', 0]
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -90,7 +95,8 @@ export default
           response_headers: [
             ['Date', 'foo'],
             ['Expires', 10]
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'cached'
@@ -106,7 +112,8 @@ export default
             ['Date', -10],
             ['Expires', 10],
             ['Age', '25']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -122,7 +129,8 @@ export default
             ['Date', 10],
             ['Expires', 20],
             ['Age', '15']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'

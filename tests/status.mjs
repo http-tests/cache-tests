@@ -16,7 +16,8 @@ function checkStatus (status) {
       {
         template: 'stale',
         response_status: [code, phrase],
-        response_body: body
+        response_body: body,
+        setup: true
       }, {
         expected_type: 'not_cached',
         response_body: body
@@ -31,7 +32,8 @@ function checkStatus (status) {
       {
         template: 'fresh',
         response_status: [code, phrase],
-        response_body: body
+        response_body: body,
+        setup: true
       }, {
         expected_type: 'cached',
         response_status: [code, phrase],

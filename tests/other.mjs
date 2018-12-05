@@ -13,14 +13,15 @@ export default
             ['Expires', 30 * 24 * 60 * 60],
             ['Date', 0]
           ],
-          pause_after: true
+          pause_after: true,
+          setup: true
         },
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (assert, p, a) {
-              assert(a !== undefined, `${p} isn't present`)
-              assert(parseInt(a) > 2, `${p} is ${a}, should be bigger`)
+            ['Age', function (c, assert, p, a) {
+              assert(c, a !== undefined, `${p} isn't present`)
+              assert(c, parseInt(a) > 2, `${p} is ${a}, should be bigger`)
             }]
           ]
         }
@@ -36,14 +37,15 @@ export default
             ['Date', 0],
             ['Age', '30']
           ],
-          pause_after: true
+          pause_after: true,
+          setup: true
         },
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (assert, p, a) {
-              assert(a !== undefined, `${p} isn't present`)
-              assert(parseInt(a) > 32, `${p} is ${a}, should be bigger`)
+            ['Age', function (c, assert, p, a) {
+              assert(c, a !== undefined, `${p} isn't present`)
+              assert(c, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
             }]
           ]
         }
@@ -59,14 +61,15 @@ export default
             ['Date', 0],
             ['Age', '30']
           ],
-          pause_after: true
+          pause_after: true,
+          setup: true
         },
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (assert, p, a) {
-              assert(a !== undefined, `${p} isn't present`)
-              assert(parseInt(a) > 32, `${p} is ${a}, should be bigger`)
+            ['Age', function (c, assert, p, a) {
+              assert(c, a !== undefined, `${p} isn't present`)
+              assert(c, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
             }]
           ]
         }
@@ -81,13 +84,14 @@ export default
             ['Expires', 30 * 24 * 60 * 60],
             ['Date', 0]
           ],
-          pause_after: true
+          pause_after: true,
+          setup: true
         },
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Date', function (assert, p, a, r) {
-              assert(a === r.headers.get('Server-Now'), `${p} is ${a}, should be ${r.headers.get('Server-Now')}`)
+            ['Date', function (c, assert, p, a, r) {
+              assert(c, a === r.headers.get('Server-Now'), `${p} is ${a}, should be ${r.headers.get('Server-Now')}`)
             }]
           ]
         }

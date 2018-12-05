@@ -19,6 +19,7 @@ function check304 (args) {
           ['Date', 0],
           [header, valueA]
         ],
+        setup: true,
         pause_after: true
       },
       {
@@ -48,6 +49,7 @@ function check304 (args) {
           ['Date', 0],
           [header, valueA]
         ],
+        setup: true,
         pause_after: true
       },
       {
@@ -59,6 +61,7 @@ function check304 (args) {
           [header, valueB]
         ],
         expected_type: 'lm_validated',
+        setup: true,
         pause_after: true
       },
       {
@@ -81,6 +84,7 @@ function check304 (args) {
           ['ETag', etag1],
           [header, valueA]
         ],
+        setup: true,
         pause_after: true
       },
       {
@@ -110,6 +114,7 @@ function check304 (args) {
           ['ETag', etag1],
           [header, valueA]
         ],
+        setup: true,
         pause_after: true
       },
       {
@@ -120,6 +125,7 @@ function check304 (args) {
           ['ETag', etag1],
           [header, valueB]
         ],
+        setup: true,
         pause_after: true,
         expected_type: 'etag_validated'
       },

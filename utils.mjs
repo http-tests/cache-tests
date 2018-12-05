@@ -4,9 +4,18 @@ function AssertionError (options) {
   this.message = options.message
 }
 
-export function assert (expr, message) {
+function SetupError (options) {
+  this.name = 'Setup'
+  this.message = options.message
+}
+
+export function assert (config, expr, message) {
   if (expr) return
-  throw new AssertionError({message: message})
+  if (config.setup === true) {
+    throw new SetupError({message: message})
+  } else {
+    throw new AssertionError({message: message})
+  }
 }
 
 var contentStore = {}

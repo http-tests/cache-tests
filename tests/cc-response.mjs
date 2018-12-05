@@ -12,7 +12,8 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'private, max-age=3600']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -28,7 +29,8 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'private, max-age=3600']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'cached'
@@ -42,7 +44,8 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'no-store']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -56,7 +59,8 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'No-StOrE']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -72,7 +76,8 @@ export default
             ['Cache-Control', 'max-age=10000, no-store'],
             ['Expires', 10000],
             ['Date', 0]
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -88,7 +93,8 @@ export default
             ['Cache-Control', 'max-age=10000, no-cache'],
             ['Expires', 10000],
             ['Date', 0]
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -104,7 +110,8 @@ export default
             ['Cache-Control', 'max-age=10000, No-CaChE'],
             ['Expires', 10000],
             ['Date', 0]
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'not_cached'
@@ -120,7 +127,8 @@ export default
           response_headers: [
             ['Cache-Control', 'no-cache'],
             ['ETag', 'abcd']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'etag_validated'
@@ -138,7 +146,8 @@ export default
             ['Expires', 10000],
             ['Date', 0],
             ['ETag', 'abcd']
-          ]
+          ],
+          setup: true
         },
         {
           expected_type: 'etag_validated'

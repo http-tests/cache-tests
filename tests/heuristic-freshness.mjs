@@ -32,7 +32,8 @@ function checkStatus (status) {
     requests: [{
       response_status: [code, phrase],
       response_headers: responseHeaders,
-      response_body: body
+      response_body: body,
+      setup: true
     }, {
       expected_type: expectedType,
       response_status: [code, phrase],
