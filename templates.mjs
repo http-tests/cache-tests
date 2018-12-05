@@ -18,7 +18,8 @@ export default {
     'response_headers': [
       ['Location', 'location_target'],
       ['Content-Location', 'content_location_target']
-    ]
+    ],
+    magic_locations: true
   },
   'location': {
     'filename': 'location_target',
