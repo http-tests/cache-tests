@@ -29,7 +29,7 @@ export function httpContent (csKey) {
   }
 }
 
-function httpDate (now, deltaSecs) {
+export function httpDate (now, deltaSecs) {
   return new Date(now + (deltaSecs * 1000)).toGMTString()
 }
 
