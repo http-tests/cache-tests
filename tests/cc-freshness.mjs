@@ -131,7 +131,7 @@ export default
       ]
     },
     {
-      name: 'Private HTTP cache must not prefer Cache-Control: s-maxage over Cache-Control: max-age',
+      name: 'Private HTTP cache must not prefer Cache-Control: s-maxage over shorter Cache-Control: max-age',
       id: 'freshness-max-age-s-maxage-private',
       requests: [
         {
@@ -147,7 +147,7 @@ export default
       browser_only: true
     },
     {
-      name: 'Private HTTP cache must not prefer Cache-Control: s-maxage over Cache-Control: max-age (multiple headers)',
+      name: 'Private HTTP cache must not prefer Cache-Control: s-maxage over shorter Cache-Control: max-age (multiple headers)',
       id: 'freshness-max-age-s-maxage-private-multiple',
       requests: [
         {
@@ -164,9 +164,8 @@ export default
       browser_only: true
     },
     {
-      name: 'Shared HTTP cache should prefer Cache-Control: s-maxage over Cache-Control: max-age',
-      id: 'freshness-max-age-s-maxage-shared',
-      required: false,
+      name: 'Shared HTTP cache must prefer Cache-Control: s-maxage over longer Cache-Control: max-age',
+      id: 'freshness-max-age-s-maxage-shared-longer',
       requests: [
         {
           response_headers: [
@@ -176,6 +175,56 @@ export default
         },
         {
           expected_type: 'not_cached'
+        }
+      ],
+      browser_skip: true
+    },
+    {
+      name: 'Shared HTTP cache must prefer Cache-Control: s-maxage over longer Cache-Control: max-age (reversed)',
+      id: 'freshness-max-age-s-maxage-shared-longer-reversed',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 's-maxage=1, max-age=3600']
+          ],
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ],
+      browser_skip: true
+    },
+    {
+      name: 'Shared HTTP cache must prefer Cache-Control: s-maxage over longer Cache-Control: max-age (multiple headers)',
+      id: 'freshness-max-age-s-maxage-shared-longer-multiple',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600'],
+            ['Cache-Control', 's-maxage=1']
+          ],
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ],
+      browser_skip: true
+    },
+    {
+      name: 'Shared HTTP cache should prefer Cache-Control: s-maxage over shorter Cache-Control: max-age',
+      id: 'freshness-max-age-s-maxage-shared-shorter',
+      required: false,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1, s-maxage=3600']
+          ],
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
         }
       ],
       browser_skip: true
