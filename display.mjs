@@ -53,8 +53,11 @@ function showTestResult (test, testResults) {
     return document.createTextNode(' ✅ ')
   } else {
     var span = document.createElement('span')
-    span.title = result
-    if (test.required === false) {
+    span.title = result[1]
+    if (result[0] !== 'Assertion') {
+      span.appendChild(document.createTextNode(' ⁉️ '))
+    }
+    else if (test.required === false) {
       span.appendChild(document.createTextNode(' ⚠️ '))
     } else {
       span.appendChild(document.createTextNode(' ⛔️ '))

@@ -65,7 +65,7 @@ function addTest (testId, timeout, testFunc) {
       })
       .catch(function (err) { // fail
         if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
-        testResults[testId] = err.message
+        testResults[testId] = [err.name || 'unknown', err.message]
         resolve()
       })
   })
@@ -87,11 +87,7 @@ function makeCacheTest (test) {
           return theFetch(url, init)
             .then(makeCheckResponse(idx, config))
             .then(makeCheckResponseBody(config, uuid), function (reason) {
-              if ('expected_type' in config && config.expected_type === 'error') {
-                assert.throws(new TypeError(), function () { throw reason })
-              } else {
-                throw reason
-              }
+              throw reason
             })
         },
         pauseAfter: 'pause_after' in requests[i]
