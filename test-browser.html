@@ -7,20 +7,12 @@
     <script type="module">
       import * as client from './client.mjs'
       import * as display from './display.mjs'
-      import ccRequest from './tests/cc-request.mjs'
-      import ccResponse from './tests/cc-response.mjs'
-      import ccFresh from './tests/cc-freshness.mjs'
-      import expires from './tests/expires-freshness.mjs'
-      import heuristic from './tests/heuristic-freshness.mjs'
-      import statuses from './tests/status.mjs'
-      import vary from './tests/vary.mjs'
-      import other from './tests/other.mjs'
+      import baseTests from './tests/index.mjs'
 
-      var tests = [ccFresh, expires, ccResponse, heuristic, statuses, ccRequest, vary, other]
-      client.runTests(tests, fetch, true)
+      client.runTests(baseTests, fetch, true)
         .then(function() {
           var resultsTarget = document.getElementById('results')
-          display.renderTestResults(tests, client.getResults(), resultsTarget, true)
+          display.renderTestResults(baseTests, client.getResults(), resultsTarget, true)
         })
         .then(function() {
           var downloadTarget = document.getElementById('download')

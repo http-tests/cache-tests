@@ -7,21 +7,14 @@
     <script type="module">
       import index from './results/index.mjs'
       import * as summary from './summary.js'
-      import ccRequest from './tests/cc-request.mjs'
-      import ccResponse from './tests/cc-response.mjs'
-      import ccFresh from './tests/cc-freshness.mjs'
-      import expires from './tests/expires-freshness.mjs'
-      import heuristic from './tests/heuristic-freshness.mjs'
+      import baseTests from './tests/index.mjs'
       import surrogate from './tests/surrogate-control.mjs'
-      import statuses from './tests/status.mjs'
-      import vary from './tests/vary.mjs'
-      import other from './tests/other.mjs'
 
-      var tests = [ccFresh, expires, ccResponse, heuristic, surrogate, statuses, ccRequest, vary, other]
+      baseTests.push(surrogate)
       var target = document.getElementById('target')
 
       summary.loadResults(index).then(results => {
-        summary.showResults(target, tests, results)
+        summary.showResults(target, baseTests, results)
       })
     </script>
   </head>

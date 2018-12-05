@@ -1,16 +1,9 @@
 import * as client from './client.mjs'
 import fetch from 'node-fetch'
-import ccRequest from './tests/cc-request.mjs'
-import ccResponse from './tests/cc-response.mjs'
-import ccFreshness from './tests/cc-freshness.mjs'
-import expires from './tests/expires-freshness.mjs'
-import heuristic from './tests/heuristic-freshness.mjs'
+import baseTests from './tests/index.mjs'
 import surrogate from './tests/surrogate-control.mjs'
-import statuses from './tests/status.mjs'
-import vary from './tests/vary.mjs'
-import other from './tests/other.mjs'
 
-var tests = [ccResponse, ccRequest, ccFreshness, expires, heuristic, surrogate, statuses, vary, other]
+var tests = baseTests + [surrogate]
 const baseUrl = process.env.npm_config_base || process.env.npm_package_config_base
 
 client.runTests(tests, fetch, false, baseUrl)
