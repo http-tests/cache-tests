@@ -18,11 +18,15 @@ Therefore, if you believe a test should change (based upon common behaviour or y
 
 The tests require a recent version of [NodeJS](https://nodejs.org/), which includes the `npm` package manager.
 
-To install them:
+To install the most recent source from GitHub (*recommended; things are moving fast*):
 
-> npm i --production --legacy-bundling http-cache-tests
+> git clone https://github.com/http-tests/cache-tests.git
 
-If you'd also like to run the tests from the command line, use this instead:
+and then install dependencies for the command-line client:
+
+> cd cache-tests; npm i
+
+Alternatively, for the most recent release:
 
 > npm i --legacy-bundling http-cache-tests
 
@@ -60,7 +64,7 @@ To test a reverse proxy or CDN from the command line::
 
 > npm run --silent cli --base=http://server-url.example.org:8000/
 
-... using the URL of the server you want to test. This will output the test results in JSON to STDOUT.
+... using the URL of the server you want to test. This will output the test results in JSON to STDOUT. See `summary.mjs` for details of how to interpret that.
 
 
 ## Testing Browser Caches
