@@ -104,7 +104,7 @@ function handleXhr (pathSegs, request, response) {
   var config = requests[serverState.length]
   var previousConfig = requests[serverState.length - 1]
   if (!config) {
-    sendResponse(response, 409, `WARN: request ${serverState.length + 1} of ${requests.length} for ${requests[0].name}`)
+    sendResponse(response, 409, `WARN: config not found for request ${serverState.length + 1} of ${requests.length} for ${requests[0].name}`)
     return
   } else {
     console.log(`      request ${serverState.length + 1} of ${requests.length} for ${config.name}`)
