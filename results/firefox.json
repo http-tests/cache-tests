@@ -2,11 +2,11 @@
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://localhost:8000/test/4af8e3e2-be43-4c40-9a5e-70abd51f18c5/1147682461015.9644\", not \"1417311985487.6755\""
+    "Response 2 header Content-Location is \"678540097030.1034\", not \"1194579397939.9783\""
   ],
   "304-etag-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"909490397307.2635\", not \"1216144320252.634\""
+    "Response 2 header Content-MD5 is \"646463293995.5537\", not \"547541173891.31934\""
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
@@ -21,11 +21,11 @@
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://localhost:8000/test/4e1dc1dc-a9e0-4360-9cf3-55099fd72a63/1147682461015.9644\", not \"1417311985487.6755\""
+    "Response 3 header Content-Location is \"678540097030.1034\", not \"1194579397939.9783\""
   ],
   "304-etag-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"909490397307.2635\", not \"1216144320252.634\""
+    "Response 3 header Content-MD5 is \"646463293995.5537\", not \"547541173891.31934\""
   ],
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
@@ -40,21 +40,18 @@
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://localhost:8000/test/2bdde6bf-512a-41d1-8c9a-ac192928aa95/1147682461015.9644\", not \"1417311985487.6755\""
+    "Response 2 header Content-Location is \"678540097030.1034\", not \"1194579397939.9783\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"909490397307.2635\", not \"1216144320252.634\""
+    "Response 2 header Content-MD5 is \"646463293995.5537\", not \"547541173891.31934\""
   ],
   "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
-  "304-lm-update-response-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-lm-update-response-Test-Header": true,
   "304-lm-update-response-X-Content-Foo": true,
   "304-lm-update-response-X-Frame-Options": true,
   "304-lm-update-response-X-Test-Header": true,
@@ -62,11 +59,11 @@
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://localhost:8000/test/9f03caab-8cf1-497f-9d76-1490708d142b/1147682461015.9644\", not \"1417311985487.6755\""
+    "Response 3 header Content-Location is \"678540097030.1034\", not \"1194579397939.9783\""
   ],
   "304-lm-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"909490397307.2635\", not \"1216144320252.634\""
+    "Response 3 header Content-MD5 is \"646463293995.5537\", not \"547541173891.31934\""
   ],
   "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [

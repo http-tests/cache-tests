@@ -10,7 +10,7 @@ export default [
     "file": "firefox.json",
     "name": "Firefox",
     "type": "browser",
-    "version": "64.0b12"
+    "version": "64.0"
   },
   {
     "file": "safari.json",

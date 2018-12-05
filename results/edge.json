@@ -2,11 +2,11 @@
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://cloud.mnot.net:8080/test/c7a316a7-a13b-4724-b9af-8297047e9b38/1066816799035.7764\", not \"946923928971.2451\""
+    "Response 2 header Content-Location is \"1359105508043.0351\", not \"1187221671398.105\""
   ],
   "304-etag-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"389490337441.9848\", not \"1124167558781.3374\""
+    "Response 2 header Content-MD5 is \"629150022864.9574\", not \"1281117738979.267\""
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
@@ -17,21 +17,21 @@
   "304-etag-update-response-X-Content-Foo": true,
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
-    "Response 2 header X-Frame-Options is \"1218257374435.0708\", not \"169890821768.8472\""
+    "Response 2 header X-Frame-Options is \"1034802197634.9227\", not \"421730781180.3152\""
   ],
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
-    "Response 2 header X-XSS-Protection is \"316453053314.07855\", not \"1145744376167.2207\""
+    "Response 2 header X-XSS-Protection is \"159855603243.70535\", not \"334537034605.4713\""
   ],
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://cloud.mnot.net:8080/test/2f005d65-07aa-491c-9008-27884254250d/1066816799035.7764\", not \"946923928971.2451\""
+    "Response 3 header Content-Location is \"1359105508043.0351\", not \"1187221671398.105\""
   ],
   "304-etag-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"389490337441.9848\", not \"1124167558781.3374\""
+    "Response 3 header Content-MD5 is \"629150022864.9574\", not \"1281117738979.267\""
   ],
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
@@ -42,21 +42,21 @@
   "304-etag-update-stored-X-Content-Foo": true,
   "304-etag-update-stored-X-Frame-Options": [
     "Assertion",
-    "Response 3 header X-Frame-Options is \"1218257374435.0708\", not \"169890821768.8472\""
+    "Response 3 header X-Frame-Options is \"1034802197634.9227\", not \"421730781180.3152\""
   ],
   "304-etag-update-stored-X-Test-Header": true,
   "304-etag-update-stored-X-XSS-Protection": [
     "Assertion",
-    "Response 3 header X-XSS-Protection is \"316453053314.07855\", not \"1145744376167.2207\""
+    "Response 3 header X-XSS-Protection is \"159855603243.70535\", not \"334537034605.4713\""
   ],
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://cloud.mnot.net:8080/test/f61a26a6-827e-459d-8090-c046f8d0af40/1066816799035.7764\", not \"946923928971.2451\""
+    "Response 2 header Content-Location is \"1359105508043.0351\", not \"1187221671398.105\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"389490337441.9848\", not \"1124167558781.3374\""
+    "Response 2 header Content-MD5 is \"629150022864.9574\", not \"1281117738979.267\""
   ],
   "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
@@ -67,21 +67,21 @@
   "304-lm-update-response-X-Content-Foo": true,
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
-    "Response 2 header X-Frame-Options is \"1218257374435.0708\", not \"169890821768.8472\""
+    "Response 2 header X-Frame-Options is \"1034802197634.9227\", not \"421730781180.3152\""
   ],
   "304-lm-update-response-X-Test-Header": true,
   "304-lm-update-response-X-XSS-Protection": [
     "Assertion",
-    "Response 2 header X-XSS-Protection is \"316453053314.07855\", not \"1145744376167.2207\""
+    "Response 2 header X-XSS-Protection is \"159855603243.70535\", not \"334537034605.4713\""
   ],
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://cloud.mnot.net:8080/test/7ba1dad3-572b-486f-8d6f-800da5d0a407/1066816799035.7764\", not \"946923928971.2451\""
+    "Response 3 header Content-Location is \"1359105508043.0351\", not \"1187221671398.105\""
   ],
   "304-lm-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"389490337441.9848\", not \"1124167558781.3374\""
+    "Response 3 header Content-MD5 is \"629150022864.9574\", not \"1281117738979.267\""
   ],
   "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
@@ -92,12 +92,12 @@
   "304-lm-update-stored-X-Content-Foo": true,
   "304-lm-update-stored-X-Frame-Options": [
     "Assertion",
-    "Response 3 header X-Frame-Options is \"1218257374435.0708\", not \"169890821768.8472\""
+    "Response 3 header X-Frame-Options is \"1034802197634.9227\", not \"421730781180.3152\""
   ],
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": [
     "Assertion",
-    "Response 3 header X-XSS-Protection is \"316453053314.07855\", not \"1145744376167.2207\""
+    "Response 3 header X-XSS-Protection is \"159855603243.70535\", not \"334537034605.4713\""
   ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
