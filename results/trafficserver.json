@@ -2,7 +2,7 @@
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://localhost:81/test/52345dcf-daea-4848-ad1c-5405a7a71002/678191463829.6154\", not \"678191463829.6154\""
+    "Response 2 header Content-Location is \"http://localhost:81/test/1ed3f0cc-8ff2-429d-91e4-4eee720ed1e1/1536656893686.0903\", not \"1536656893686.0903\""
   ],
   "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Security-Policy": true,
@@ -18,7 +18,7 @@
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://localhost:81/test/73790184-d5a9-4365-9901-3dca0705e71d/678191463829.6154\", not \"678191463829.6154\""
+    "Response 3 header Content-Location is \"http://localhost:81/test/bb2de778-d9c8-4e27-bf28-9f365e7e726b/1536656893686.0903\", not \"1536656893686.0903\""
   ],
   "304-etag-update-stored-Content-MD5": true,
   "304-etag-update-stored-Content-Security-Policy": true,
@@ -34,7 +34,7 @@
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://localhost:81/test/04f346a0-e00a-409f-97da-ec8a667e4588/678191463829.6154\", not \"678191463829.6154\""
+    "Response 2 header Content-Location is \"http://localhost:81/test/60cf5f58-defc-41e4-93f8-9438f0679ec0/1536656893686.0903\", not \"1536656893686.0903\""
   ],
   "304-lm-update-response-Content-MD5": true,
   "304-lm-update-response-Content-Security-Policy": true,
@@ -50,7 +50,7 @@
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://localhost:81/test/5fb001b2-4e48-4cb0-bcd4-3b165feb0bda/678191463829.6154\", not \"678191463829.6154\""
+    "Response 3 header Content-Location is \"http://localhost:81/test/777db25e-184d-439f-93e3-5336390657f1/1536656893686.0903\", not \"1536656893686.0903\""
   ],
   "304-lm-update-stored-Content-MD5": true,
   "304-lm-update-stored-Content-Security-Policy": true,
@@ -67,7 +67,7 @@
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": [
     "Assertion",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "cc-resp-no-cache-revalidate-fresh": true,
   "cc-resp-no-store": true,

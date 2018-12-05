@@ -1,163 +1,163 @@
 {
   "304-etag-update-response-Content-Foo": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Content-Security-Policy": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Content-Type": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Test-Header": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-X-Content-Foo": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-X-Frame-Options": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-X-Test-Header": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-X-XSS-Protection": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Content-Foo": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Content-Location": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Content-MD5": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Content-Security-Policy": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Content-Type": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Test-Header": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-X-Content-Foo": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-X-Frame-Options": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-X-Test-Header": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-X-XSS-Protection": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Content-Foo": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Content-Security-Policy": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Content-Type": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Test-Header": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-X-Content-Foo": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-X-Frame-Options": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-X-Test-Header": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-X-XSS-Protection": [
-    "Assertion",
-    "Response 2 status is 999, not 200"
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Content-Foo": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Content-Location": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Content-MD5": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Content-Security-Policy": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Content-Type": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Test-Header": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-X-Content-Foo": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-X-Frame-Options": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-X-Test-Header": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-X-XSS-Protection": [
     "Setup",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
@@ -235,7 +235,7 @@
   "heuristic-503-not_cached": true,
   "heuristic-504-not_cached": true,
   "heuristic-599-cached": [
-    "Assertion",
+    "Setup",
     "Response 2 status is 500, not 599"
   ],
   "heuristic-599-not_cached": true,
@@ -244,7 +244,7 @@
   "other-age-update-max-age": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 05 Dec 2018 05:38:51 GMT, should be Wed, 05 Dec 2018 05:38:48 GMT"
+    "Response 2 header Date is Wed, 05 Dec 2018 06:46:28 GMT, should be Wed, 05 Dec 2018 06:46:24 GMT"
   ],
   "status-200-fresh": true,
   "status-200-stale": true,
@@ -253,7 +253,7 @@
   "status-204-fresh": true,
   "status-204-stale": true,
   "status-299-fresh": [
-    "Assertion",
+    "Setup",
     "Response 2 status is 500, not 299"
   ],
   "status-299-stale": true,
@@ -264,7 +264,7 @@
   "status-410-fresh": true,
   "status-410-stale": true,
   "status-499-fresh": [
-    "Assertion",
+    "Setup",
     "Response 2 status is 500, not 499"
   ],
   "status-499-stale": true,
@@ -277,7 +277,7 @@
   "status-504-fresh": true,
   "status-504-stale": true,
   "status-599-fresh": [
-    "Assertion",
+    "Setup",
     "Response 2 status is 500, not 599"
   ],
   "status-599-stale": true,

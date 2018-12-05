@@ -1,19 +1,19 @@
 {
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1034583932752.0568\", not \"1228683568355.0566\""
+    "Response 2 header Content-Foo is \"1201158173483.534\", not \"1146891510589.606\""
   ],
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/3a0ca9d3-98d4-4823-85fd-0e85cf637142/687149642043.433\", not \"1062287611038.685\""
+    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/d3430f38-0a22-462b-8159-89dd508881a0/1520681944785.9783\", not \"45376862446.9534\""
   ],
   "304-etag-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"879358988342.489\", not \"938851967049.6005\""
+    "Response 2 header Content-MD5 is \"874756734656.9393\", not \"1041839106323.9569\""
   ],
   "304-etag-update-response-Content-Security-Policy": [
     "Assertion",
-    "Response 2 header Content-Security-Policy is \"1072645792632.5538\", not \"1351723286287.7168\""
+    "Response 2 header Content-Security-Policy is \"353818549496.8973\", not \"198693713329.01364\""
   ],
   "304-etag-update-response-Content-Type": [
     "Assertion",
@@ -21,68 +21,68 @@
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"1096156278662.2263\", not \"201967737383.737\""
+    "Response 2 header Test-Header is \"1103245469104.2163\", not \"109430949344.14693\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"1491355129433.2656\", not \"1327119714010.227\""
+    "Response 2 header X-Content-Foo is \"1196324094960.0942\", not \"611254652081.0293\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
-    "Response 2 header X-Frame-Options is \"1257810006160.4292\", not \"269328505551.3341\""
+    "Response 2 header X-Frame-Options is \"1418131378099.2014\", not \"1379162711423.5767\""
   ],
   "304-etag-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"583776741810.2163\", not \"743184538358.3464\""
+    "Response 2 header X-Test-Header is \"586457998417.9883\", not \"890544023124.6024\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
-    "Response 2 header X-XSS-Protection is \"1346025591234.6392\", not \"437746599631.11127\""
+    "Response 2 header X-XSS-Protection is \"730514934028.438\", not \"495361331006.364\""
   ],
   "304-etag-update-stored-Content-Foo": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-Content-Location": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-Content-MD5": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-Content-Security-Policy": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-Content-Type": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-Test-Header": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-X-Content-Foo": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-X-Frame-Options": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-X-Test-Header": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-X-XSS-Protection": [
-    "Assertion",
+    "Setup",
     "Response 3 does not come from cache"
   ],
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/17a1cd61-9f81-4f88-b854-ef6a64e6cc3e/1062287611038.685\", not \"1062287611038.685\""
+    "Response 2 header Content-Location is \"http://cloud.mnot.net/test/b8611706-2135-4c31-ae94-f92a6a03a0c3/45376862446.9534\", not \"45376862446.9534\""
   ],
   "304-lm-update-response-Content-MD5": true,
   "304-lm-update-response-Content-Security-Policy": true,
@@ -95,7 +95,7 @@
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://cloud.mnot.net/test/20823610-a4aa-4306-934b-ff7c3b0bf6e3/1062287611038.685\", not \"1062287611038.685\""
+    "Response 3 header Content-Location is \"http://cloud.mnot.net/test/c5e9af85-c17c-4574-9908-1312454a146b/45376862446.9534\", not \"45376862446.9534\""
   ],
   "304-lm-update-stored-Content-MD5": true,
   "304-lm-update-stored-Content-Security-Policy": true,
@@ -112,11 +112,11 @@
   ],
   "cc-resp-no-cache-revalidate": [
     "Assertion",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "cc-resp-no-cache-revalidate-fresh": [
     "Assertion",
-    "Response 2 status is 999, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "cc-resp-no-store": true,
   "cc-resp-no-store-case-insensitive": true,
