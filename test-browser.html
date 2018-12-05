@@ -20,11 +20,11 @@
       client.runTests(tests, fetch, true)
         .then(function() {
           var resultsTarget = document.getElementById('results')
-          display.renderTestResults(tests, client.testResults, resultsTarget, true)
+          display.renderTestResults(tests, client.getResults(), resultsTarget, true)
         })
         .then(function() {
           var downloadTarget = document.getElementById('download')
-          display.downloadTestResults(downloadTarget, "results.json", client.testResults)
+          display.downloadTestResults(downloadTarget, "results.json", client.getResults())
         })
     </script>
   </head>

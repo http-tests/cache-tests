@@ -9,7 +9,7 @@ var theFetch = null
 var useBrowserCache = false
 var testArray = []
 var baseUrl = ""
-export var testResults = {}
+var testResults = {}
 
 export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
   theFetch = myFetch
@@ -27,6 +27,14 @@ export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
   })
   // return Promise.all(testArray)
   return runSome(testArray, chunkSize)
+}
+
+export function getResults() {
+  const ordered = {}
+  Object.keys(testResults).sort().forEach(key => {
+    ordered[key] = testResults[key]
+  })
+  return ordered
 }
 
 function runSome (tests, chunkSize) {

@@ -14,4 +14,4 @@ var tests = [ccResponse, ccRequest, ccFreshness, expires, heuristic, surrogate, 
 const baseUrl = process.env.npm_config_base || process.env.npm_package_config_base
 
 client.runTests(tests, fetch, false, baseUrl)
-  .then(function () { console.log(JSON.stringify(client.testResults, null, 2)) })
+  .then(function () { console.log(JSON.stringify(client.getResults(), null, 2)) })
