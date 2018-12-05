@@ -2,11 +2,11 @@
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://localhost:8000/test/7573c85d-c720-4c84-b462-1f1a00891643/241199849313.8339\", not \"57028933467.630905\""
+    "Response 2 header Content-Location is \"http://localhost:8000/test/4af8e3e2-be43-4c40-9a5e-70abd51f18c5/1147682461015.9644\", not \"1417311985487.6755\""
   ],
   "304-etag-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"359284495438.93933\", not \"196766701205.28445\""
+    "Response 2 header Content-MD5 is \"909490397307.2635\", not \"1216144320252.634\""
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
@@ -17,18 +17,15 @@
   "304-etag-update-response-X-Content-Foo": true,
   "304-etag-update-response-X-Frame-Options": true,
   "304-etag-update-response-X-Test-Header": true,
-  "304-etag-update-response-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-response-X-XSS-Protection": true,
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"http://localhost:8000/test/269c0cd4-10db-42d3-96e1-f4167837ef11/241199849313.8339\", not \"57028933467.630905\""
+    "Response 3 header Content-Location is \"http://localhost:8000/test/4e1dc1dc-a9e0-4360-9cf3-55099fd72a63/1147682461015.9644\", not \"1417311985487.6755\""
   ],
   "304-etag-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"359284495438.93933\", not \"196766701205.28445\""
+    "Response 3 header Content-MD5 is \"909490397307.2635\", not \"1216144320252.634\""
   ],
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
@@ -37,23 +34,17 @@
   ],
   "304-etag-update-stored-Test-Header": true,
   "304-etag-update-stored-X-Content-Foo": true,
-  "304-etag-update-stored-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-stored-X-Frame-Options": true,
   "304-etag-update-stored-X-Test-Header": true,
-  "304-etag-update-stored-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-stored-X-XSS-Protection": true,
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"http://localhost:8000/test/e61aa864-8e7f-42ab-bc31-867e8c3bd48a/241199849313.8339\", not \"57028933467.630905\""
+    "Response 2 header Content-Location is \"http://localhost:8000/test/2bdde6bf-512a-41d1-8c9a-ac192928aa95/1147682461015.9644\", not \"1417311985487.6755\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"359284495438.93933\", not \"196766701205.28445\""
+    "Response 2 header Content-MD5 is \"909490397307.2635\", not \"1216144320252.634\""
   ],
   "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
@@ -65,55 +56,28 @@
     "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-X-Content-Foo": true,
-  "304-lm-update-response-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-lm-update-response-X-Frame-Options": true,
   "304-lm-update-response-X-Test-Header": true,
-  "304-lm-update-response-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-stored-Content-Foo": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
+  "304-lm-update-response-X-XSS-Protection": true,
+  "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
-    "Setup",
-    "Response 3 does not come from cache"
+    "Assertion",
+    "Response 3 header Content-Location is \"http://localhost:8000/test/9f03caab-8cf1-497f-9d76-1490708d142b/1147682461015.9644\", not \"1417311985487.6755\""
   ],
   "304-lm-update-stored-Content-MD5": [
-    "Setup",
-    "Response 3 does not come from cache"
+    "Assertion",
+    "Response 3 header Content-MD5 is \"909490397307.2635\", not \"1216144320252.634\""
   ],
-  "304-lm-update-stored-Content-Security-Policy": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
+  "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
-    "Setup",
-    "Response 3 does not come from cache"
+    "Assertion",
+    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
-  "304-lm-update-stored-Test-Header": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-lm-update-stored-X-Content-Foo": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-lm-update-stored-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-stored-X-Test-Header": [
-    "Setup",
-    "Response 3 does not come from cache"
-  ],
-  "304-lm-update-stored-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-lm-update-stored-Test-Header": true,
+  "304-lm-update-stored-X-Content-Foo": true,
+  "304-lm-update-stored-X-Frame-Options": true,
+  "304-lm-update-stored-X-Test-Header": true,
+  "304-lm-update-stored-X-XSS-Protection": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
