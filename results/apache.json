@@ -1,164 +1,80 @@
 {
-  "304-etag-update-response-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 2 status is 409, not 200"
   ],
   "304-etag-update-response-Content-MD5": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 2 status is 409, not 200"
   ],
-  "304-etag-update-response-Content-Security-Policy": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 2 status is 409, not 200"
   ],
-  "304-etag-update-response-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-response-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-response-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-response-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-response-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-stored-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-response-Test-Header": true,
+  "304-etag-update-response-X-Content-Foo": true,
+  "304-etag-update-response-X-Frame-Options": true,
+  "304-etag-update-response-X-Test-Header": true,
+  "304-etag-update-response-X-XSS-Protection": true,
+  "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-Content-MD5": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 3 does not come from cache"
   ],
-  "304-etag-update-stored-Content-Security-Policy": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 3 does not come from cache"
   ],
-  "304-etag-update-stored-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-stored-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-stored-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-stored-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-stored-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-response-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-stored-Test-Header": true,
+  "304-etag-update-stored-X-Content-Foo": true,
+  "304-etag-update-stored-X-Frame-Options": true,
+  "304-etag-update-stored-X-Test-Header": true,
+  "304-etag-update-stored-X-XSS-Protection": true,
+  "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 2 status is 409, not 200"
   ],
   "304-lm-update-response-Content-MD5": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 2 status is 409, not 200"
   ],
-  "304-lm-update-response-Content-Security-Policy": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 2 status is 409, not 200"
   ],
-  "304-lm-update-response-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-response-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-response-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-response-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-response-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-stored-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-lm-update-response-Test-Header": true,
+  "304-lm-update-response-X-Content-Foo": true,
+  "304-lm-update-response-X-Frame-Options": true,
+  "304-lm-update-response-X-Test-Header": true,
+  "304-lm-update-response-X-XSS-Protection": true,
+  "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 3 does not come from cache"
   ],
   "304-lm-update-stored-Content-MD5": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 3 does not come from cache"
   ],
-  "304-lm-update-stored-Content-Security-Policy": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Response 3 does not come from cache"
   ],
-  "304-lm-update-stored-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-stored-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-stored-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-stored-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-stored-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-lm-update-stored-Test-Header": true,
+  "304-lm-update-stored-X-Content-Foo": true,
+  "304-lm-update-stored-X-Frame-Options": true,
+  "304-lm-update-stored-X-Test-Header": true,
+  "304-lm-update-stored-X-XSS-Protection": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
@@ -170,10 +86,7 @@
   "ccreq-ma0": true,
   "ccreq-ma1": true,
   "ccreq-magreaterage": true,
-  "ccreq-max-stale": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "ccreq-max-stale": true,
   "ccreq-max-stale-age": true,
   "ccreq-min-fresh": true,
   "ccreq-min-fresh-age": true,
@@ -185,7 +98,10 @@
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
-  "freshness-expires-invalid": true,
+  "freshness-expires-invalid": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-invalid-date": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
@@ -244,13 +160,16 @@
   "other-age-update-max-age": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 05 Dec 2018 06:46:28 GMT, should be Wed, 05 Dec 2018 06:46:24 GMT"
+    "Response 2 header Date is Wed, 05 Dec 2018 10:17:20 GMT, should be Wed, 05 Dec 2018 10:17:16 GMT"
   ],
   "status-200-fresh": true,
   "status-200-stale": true,
   "status-203-fresh": true,
   "status-203-stale": true,
-  "status-204-fresh": true,
+  "status-204-fresh": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "status-204-stale": true,
   "status-299-fresh": [
     "Setup",
@@ -292,10 +211,7 @@
   ],
   "surrogate-max-age-age": true,
   "surrogate-max-age-case-insensitive": true,
-  "surrogate-max-age-cc-max-age-invalid-expires": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "surrogate-max-age-cc-max-age-invalid-expires": true,
   "surrogate-max-age-expires": [
     "Assertion",
     "Response 2 does not come from cache"
