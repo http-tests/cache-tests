@@ -65,7 +65,7 @@ function addTest (testId, timeout, testFunc) {
       })
       .catch(function (err) { // fail
         if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
-        testResults[testId] = [err.name || 'unknown', err.message]
+        testResults[testId] = [(err.name || 'unknown'), err.message]
         resolve()
       })
   })
