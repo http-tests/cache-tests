@@ -329,6 +329,6 @@ function getServerState (uuid) {
     })
 }
 
-function setupCheck(config, memberName) {
-  return config.setup === true || 'setup_tests' in config && config.setup_tests.indexOf(memberName) > -1
+function setupCheck (config, memberName) {
+  return config.setup === true || ('setup_tests' in config && config.setup_tests.indexOf(memberName) > -1)
 }
