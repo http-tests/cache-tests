@@ -1,10 +1,10 @@
 
-function AssertionError (options) {
+export function AssertionError (options) {
   this.name = 'Assertion'
   this.message = options.message
 }
 
-function SetupError (options) {
+export function SetupError (options) {
   this.name = 'Setup'
   this.message = options.message
 }
