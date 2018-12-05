@@ -1,3 +1,4 @@
+/* global Blob */
 
 export function downloadTestResults (target, fileName, data) {
   var dataBlob = new Blob([JSON.stringify(data, null, 2)], {type: 'text/json'})
@@ -7,8 +8,8 @@ export function downloadTestResults (target, fileName, data) {
 }
 
 export function renderTestResults (tests, testResults, testUUIDs, target, useBrowserCache) {
-  var total_tests = 0
-  var total_passed = 0
+  var totalTests = 0
+  var totalPassed = 0
   tests.forEach(testSuite => {
     var headerElement = document.createElement('h3')
     target.appendChild(headerElement)
@@ -37,12 +38,12 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
     var summaryElement = document.createElement('p')
     var suiteSummary = target.appendChild(summaryElement)
     suiteSummary.appendChild(document.createTextNode(tests + ' tests, ' + passed + ' passed.'))
-    total_tests += tests
-    total_passed += passed
+    totalTests += tests
+    totalPassed += passed
   })
   var totalElement = document.createElement('p')
   var totalSummary = target.appendChild(totalElement)
-  var totalText = document.createTextNode('Total ' + total_tests + ' tests, ' + total_passed + ' passed.')
+  var totalText = document.createTextNode('Total ' + totalTests + ' tests, ' + totalPassed + ' passed.')
   totalSummary.appendChild(totalText)
 }
 

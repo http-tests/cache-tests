@@ -1,9 +1,8 @@
+/* global fetch */
 
-const useBrowserCache = false
-
-export function loadResults(index) {
+export function loadResults (index) {
   return Promise.all(index.map(item =>
-      fetch(`results/${item.file}`)
+    fetch(`results/${item.file}`)
       .then(response => {
         return response.json()
       })
@@ -11,11 +10,11 @@ export function loadResults(index) {
         item.results = results
         return item
       }
-  ))
+      ))
   )
 }
 
-export function showResults(target, tests, results) {
+export function showResults (target, tests, results) {
   tests.forEach(testSuite => {
     target.appendChild(showHeader(testSuite.name, results))
     testSuite.tests.forEach(test => {
@@ -24,7 +23,7 @@ export function showResults(target, tests, results) {
   })
 }
 
-function showHeader(headerName, results) {
+function showHeader (headerName, results) {
   var headerRow = tableRow()
   var firstHeader = tableCell('th', headerName, 'name category')
   headerRow.appendChild(firstHeader)
@@ -34,7 +33,7 @@ function showHeader(headerName, results) {
   return headerRow
 }
 
-function showTest(suiteName, test, results) {
+function showTest (suiteName, test, results) {
   var testRow = tableRow()
   testRow.appendChild(tableCell('th', test.name, 'name'))
   results.forEach(implementation => {
@@ -42,18 +41,15 @@ function showTest(suiteName, test, results) {
     var signal
     var hint
     if (result === undefined) {
-      signal = "-"
-    }
-    else if (result === true) {
-      signal = "✅"
+      signal = '-'
+    } else if (result === true) {
+      signal = '✅'
       hint = false
-    }
-    else if (test.required === false){
-      signal = "⚠️"
+    } else if (test.required === false) {
+      signal = '⚠️'
       hint = result
-    }
-    else {
-      signal = "⛔️"
+    } else {
+      signal = '⛔️'
       hint = result
     }
     testRow.appendChild(tableCell('th', signal, false, hint))
@@ -61,12 +57,12 @@ function showTest(suiteName, test, results) {
   return testRow
 }
 
-function tableRow() {
+function tableRow () {
   var rowElement = document.createElement('tr')
   return rowElement
 }
 
-function tableCell(cellType, content, CssClass, hint, link) {
+function tableCell (cellType, content, CssClass, hint, link) {
   var cellElement = document.createElement(cellType)
   if (CssClass) {
     cellElement.setAttribute('class', CssClass)
