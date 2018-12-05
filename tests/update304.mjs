@@ -5,7 +5,8 @@ function check304 (args) {
   var header = args[0]
   var valueA = args[1] || utils.httpContent(`${header}-value-A`)
   var valueB = args[2] || utils.httpContent(`${header}-value-B`)
-  var etag1 = utils.httpContent(`${header}-etag-1`)
+  var etag = utils.httpContent(`${header}-etag-1`)
+  var etag1 = `"${etag}"`
 
   tests.push({
     name: `HTTP cache must update returned ${header} from a Last-Modified 304`,
