@@ -1,76 +1,241 @@
 {
-  "304-etag-update-response-Content-Foo": "Response 2 status is 999, not 200",
-  "304-etag-update-response-Content-Location": "Response 2 status is 999, not 200",
-  "304-etag-update-response-Content-MD5": "Response 2 status is 999, not 200",
-  "304-etag-update-response-Content-Security-Policy": "Response 2 status is 999, not 200",
-  "304-etag-update-response-Content-Type": "Response 2 status is 999, not 200",
-  "304-etag-update-response-Test-Header": "Response 2 status is 999, not 200",
-  "304-etag-update-response-X-Content-Foo": "Response 2 status is 999, not 200",
-  "304-etag-update-response-X-Frame-Options": "Response 2 status is 999, not 200",
-  "304-etag-update-response-X-Test-Header": "Response 2 status is 999, not 200",
-  "304-etag-update-response-X-XSS-Protection": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-Content-Foo": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-Content-Location": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-Content-MD5": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-Content-Security-Policy": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-Content-Type": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-Test-Header": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-X-Content-Foo": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-X-Frame-Options": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-X-Test-Header": "Response 2 status is 999, not 200",
-  "304-etag-update-stored-X-XSS-Protection": "Response 2 status is 999, not 200",
-  "304-lm-update-response-Content-Foo": "Response 2 status is 999, not 200",
-  "304-lm-update-response-Content-Location": "Response 2 status is 999, not 200",
-  "304-lm-update-response-Content-MD5": "Response 2 status is 999, not 200",
-  "304-lm-update-response-Content-Security-Policy": "Response 2 status is 999, not 200",
-  "304-lm-update-response-Content-Type": "Response 2 status is 999, not 200",
-  "304-lm-update-response-Test-Header": "Response 2 status is 999, not 200",
-  "304-lm-update-response-X-Content-Foo": "Response 2 status is 999, not 200",
-  "304-lm-update-response-X-Frame-Options": "Response 2 status is 999, not 200",
-  "304-lm-update-response-X-Test-Header": "Response 2 status is 999, not 200",
-  "304-lm-update-response-X-XSS-Protection": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-Content-Foo": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-Content-Location": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-Content-MD5": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-Content-Security-Policy": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-Content-Type": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-Test-Header": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-X-Content-Foo": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-X-Frame-Options": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-X-Test-Header": "Response 2 status is 999, not 200",
-  "304-lm-update-stored-X-XSS-Protection": "Response 2 status is 999, not 200",
+  "304-etag-update-response-Content-Foo": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-response-Content-Location": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-response-Content-MD5": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-response-Content-Security-Policy": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-response-Content-Type": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-response-Test-Header": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-response-X-Content-Foo": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-response-X-Frame-Options": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-response-X-Test-Header": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-response-X-XSS-Protection": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-Content-Foo": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-Content-Location": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-Content-MD5": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-Content-Security-Policy": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-Content-Type": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-Test-Header": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-X-Content-Foo": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-X-Frame-Options": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-X-Test-Header": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-etag-update-stored-X-XSS-Protection": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-Content-Foo": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-Content-Location": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-Content-MD5": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-Content-Security-Policy": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-Content-Type": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-Test-Header": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-X-Content-Foo": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-X-Frame-Options": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-X-Test-Header": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-response-X-XSS-Protection": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-Content-Foo": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-Content-Location": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-Content-MD5": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-Content-Security-Policy": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-Content-Type": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-Test-Header": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-X-Content-Foo": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-X-Frame-Options": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-X-Test-Header": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
+  "304-lm-update-stored-X-XSS-Protection": [
+    "Setup",
+    "Response 2 status is 999, not 200"
+  ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
-  "cc-resp-no-cache-revalidate": "Response 2 status is 999, not 200",
-  "cc-resp-no-cache-revalidate-fresh": "Response 2 status is 999, not 200",
+  "cc-resp-no-cache-revalidate": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
+  "cc-resp-no-cache-revalidate-fresh": [
+    "Assertion",
+    "Response 2 status is 999, not 200"
+  ],
   "cc-resp-no-store": true,
   "cc-resp-no-store-case-insensitive": true,
   "cc-resp-no-store-fresh": true,
   "cc-resp-private-shared": true,
-  "ccreq-ma0": "Response 2 comes from cache",
-  "ccreq-ma1": "Response 2 comes from cache",
-  "ccreq-magreaterage": "Response 2 comes from cache",
-  "ccreq-max-stale": "Response 2 does not come from cache",
+  "ccreq-ma0": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "ccreq-ma1": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "ccreq-magreaterage": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "ccreq-max-stale": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "ccreq-max-stale-age": true,
-  "ccreq-min-fresh": "Response 2 comes from cache",
-  "ccreq-min-fresh-age": "Response 2 comes from cache",
-  "ccreq-no-cache": "Response 2 comes from cache",
+  "ccreq-min-fresh": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "ccreq-min-fresh-age": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "ccreq-no-cache": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "ccreq-no-cache-etag": true,
   "ccreq-no-cache-lm": true,
-  "ccreq-no-store": "Response 2 comes from cache",
-  "ccreq-oic": "Response 1 status is 200, not 504",
-  "freshness-expires-age-fast-date": "Response 2 comes from cache",
-  "freshness-expires-age-slow-date": "Response 2 comes from cache",
+  "ccreq-no-store": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "ccreq-oic": [
+    "Assertion",
+    "Response 1 status is 200, not 504"
+  ],
+  "freshness-expires-age-fast-date": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-expires-age-slow-date": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
   "freshness-expires-invalid-date": true,
-  "freshness-expires-old-date": "Response 2 comes from cache",
+  "freshness-expires-old-date": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-past": true,
-  "freshness-expires-present": "Response 2 comes from cache",
+  "freshness-expires-present": true,
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
-  "freshness-max-age-age": "Response 2 comes from cache",
+  "freshness-max-age-age": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-max-age-case-insenstive": true,
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
@@ -82,23 +247,56 @@
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,
-  "heuristic-203-cached": "Response 2 does not come from cache",
-  "heuristic-204-cached": "Response 2 does not come from cache",
+  "heuristic-203-cached": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-204-cached": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-403-not_cached": true,
   "heuristic-404-cached": true,
-  "heuristic-405-cached": "Response 2 does not come from cache",
-  "heuristic-410-cached": "Response 2 does not come from cache",
-  "heuristic-414-cached": "Response 2 does not come from cache",
-  "heuristic-501-cached": "Response 2 does not come from cache",
+  "heuristic-405-cached": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-410-cached": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-414-cached": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-501-cached": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-502-not_cached": true,
   "heuristic-503-not_cached": true,
   "heuristic-504-not_cached": true,
-  "heuristic-599-cached": "Response 2 does not come from cache",
+  "heuristic-599-cached": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-599-not_cached": true,
-  "other-age-gen": "Response 2 header Age is null, should be bigger",
-  "other-age-update-expires": "Response 2 header Age is 30, should be bigger",
-  "other-age-update-max-age": "Response 2 header Age is 30, should be bigger",
-  "other-date-update": "Response 2 header Date is Wed, 05 Dec 2018 04:25:23 GMT, should be Wed, 05 Dec 2018 04:25:20 GMT",
+  "other-age-gen": [
+    "Assertion",
+    "Response 2 header Age is null, should be bigger"
+  ],
+  "other-age-update-expires": [
+    "Assertion",
+    "Response 2 header Age is 30, should be bigger"
+  ],
+  "other-age-update-max-age": [
+    "Assertion",
+    "Response 2 header Age is 30, should be bigger"
+  ],
+  "other-date-update": [
+    "Assertion",
+    "Response 2 header Date is Wed, 05 Dec 2018 05:39:19 GMT, should be Wed, 05 Dec 2018 05:39:16 GMT"
+  ],
   "status-200-fresh": true,
   "status-200-stale": true,
   "status-203-fresh": true,
@@ -126,17 +324,44 @@
   "status-599-fresh": true,
   "status-599-stale": true,
   "surrogate-max-age": true,
-  "surrogate-max-age-0": "Response 2 comes from cache",
-  "surrogate-max-age-0-expires": "Response 2 comes from cache",
-  "surrogate-max-age-age": "Response 2 comes from cache",
+  "surrogate-max-age-0": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "surrogate-max-age-0-expires": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "surrogate-max-age-age": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "surrogate-max-age-case-insensitive": true,
-  "surrogate-max-age-cc-max-age-invalid-expires": "Response 2 does not come from cache",
-  "surrogate-max-age-expires": "Response 2 does not come from cache",
+  "surrogate-max-age-cc-max-age-invalid-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "surrogate-max-age-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age-extension": true,
-  "surrogate-max-age-long-cc-max-age": "Response 2 comes from cache",
-  "surrogate-max-age-short-cc-max-age": "Response 2 does not come from cache",
-  "surrogate-no-store": "Response 2 comes from cache",
-  "surrogate-no-store-cc-fresh": "Response 2 comes from cache",
+  "surrogate-max-age-long-cc-max-age": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "surrogate-max-age-short-cc-max-age": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "surrogate-no-store": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "surrogate-no-store-cc-fresh": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "vary-2-match": true,
   "vary-2-match-omit": true,
   "vary-2-no-match": true,
