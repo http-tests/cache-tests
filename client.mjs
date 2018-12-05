@@ -192,7 +192,8 @@ function makeCheckResponse (idx, config) {
         `Response ${reqNum} status is ${response.status}, not ${config.response_status[0]}`)
     } else if (response.status === 999) {
       // special condition; the server thought it should have received a conditional request.
-      assert(true, false, `Request ${reqNum} should have been conditional, but it was not.`)
+      assert(setupCheck(config, 'expected_type'), false,
+        `Request ${reqNum} should have been conditional, but it was not.`)
     } else {
       assert(true, // default status is always setup
         response.status === 200,
