@@ -104,13 +104,13 @@ function handleXhr (pathSegs, request, response) {
   var config = requests[serverState.length]
   var previousConfig = requests[serverState.length - 1]
   if (!config) {
-    sendResponse(response, 409, `WARN: config not found for request ${serverState.length + 1} of ${requests.length} for ${requests[0].name}`)
+    sendResponse(response, 409, `WARN: ${requests[0].id} config not found for request ${serverState.length + 1} of ${requests.length}`)
     return
   } else {
-    console.log(`      request ${serverState.length + 1} of ${requests.length} for ${config.name}`)
+    console.log(`      ${config.id} request ${serverState.length + 1} of ${requests.length}`)
   }
   if (config.expected_type === 'cached') {
-    console.log(`INFO: cached response not used for request ${requests.length} of ${config.name}`)
+    console.log(`INFO: ${config.id} cached response not used for request ${requests.length}`)
   }
   var state = {
     'now': Date.now(),
