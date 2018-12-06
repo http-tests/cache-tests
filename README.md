@@ -137,7 +137,11 @@ Possible members of a request object:
                      `false`.
 - `response_body` - String to send as the response body. If not set, it will contain
                   the test identifier.
-- `expected_type` - One of `["cached", "not_cached", "lm_validate", "etag_validate", "error"]`
+- `expected_type` - One of:
+  - `cached`: The response is served from cache
+  - `not_cached`: The response is not served from cache; it comes from the origin
+  - `lm_validate`: The response comes from cache, but was validated on the origin with Last-Modified
+  - `etag_validate`: The response comes from cache, but was validated on the origin with an ETag
 - `expected_status` - A number representing a HTTP status code to check the response for.
                     If not set, the value of `response_status[0]` will be used; if that
                     is not set, 200 will be used.
