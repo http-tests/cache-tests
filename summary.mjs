@@ -1,5 +1,7 @@
 /* global fetch */
 
+import * as display from './display.mjs'
+
 export function loadResults (index) {
   return Promise.all(index.map(item =>
     fetch(`results/${item.file}`)
@@ -38,27 +40,7 @@ function showTest (suiteName, test, results) {
   testRow.appendChild(tableCell('th', test.name, 'name'))
   results.forEach(implementation => {
     var result = implementation.results[test.id]
-    var signal
-    var hint
-    if (result === undefined) {
-      signal = '-'
-    } else if (result === true) {
-      signal = '✅'
-      hint = false
-    } else if (result[0] === 'Setup') {
-      signal = '🔹'
-      hint = result[1]
-    } else if (result[0] !== 'Assertion') {
-      signal = '⁉️'
-      hint = result[1]
-    } else if (test.required === false) {
-      signal = '⚠️'
-      hint = result[1]
-    } else {
-      signal = '⛔️'
-      hint = result[1]
-    }
-    testRow.appendChild(tableCell('th', signal, false, hint))
+    testRow.appendChild(tableCell('th', display.showTestResult(test, result)))
   })
   return testRow
 }
@@ -73,14 +55,19 @@ function tableCell (cellType, content, CssClass, hint, link) {
   if (CssClass) {
     cellElement.setAttribute('class', CssClass)
   }
-  var cellText = document.createTextNode(content)
+  var contentNode
+  if (typeof (content) === 'string') {
+    contentNode = document.createTextNode(content)
+  } else {
+    contentNode = content
+  }
   if (link) {
     var linkElement = document.createElement('a')
     linkElement.setAttribute('href', link)
-    linkElement.appendChild(cellText)
+    linkElement.appendChild(contentNode)
     cellElement.appendChild(linkElement)
   } else {
-    cellElement.appendChild(cellText)
+    cellElement.appendChild(contentNode)
   }
   if (hint) {
     cellElement.title = hint

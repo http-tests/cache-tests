@@ -25,7 +25,7 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
       test.suiteName = testSuite.name
       var testElement = resultList.appendChild(document.createElement('li'))
       var testName = document.createTextNode(test.name)
-      testElement.appendChild(showTestResult(test, testResults))
+      testElement.appendChild(showTestResult(test, testResults[test.id]))
       testElement.appendChild(testName)
       testElement.addEventListener('click', function (event) {
         copyTextToClipboard(testUUIDs[test.id])
@@ -47,8 +47,7 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
   totalSummary.appendChild(totalText)
 }
 
-function showTestResult (test, testResults) {
-  var result = testResults[test.id]
+export function showTestResult (test, result) {
   if (result === undefined) {
     return document.createTextNode(' - ')
   } else if (result === true) {
