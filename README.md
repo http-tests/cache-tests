@@ -16,7 +16,7 @@ Therefore, if you believe a test should change (based upon common behaviour or y
 
 ## Installation
 
-The tests require a recent version of [NodeJS](https://nodejs.org/), which includes the `npm` package manager.
+The tests require a recent version of [NodeJS](https://nodejs.org/) (10.8.0 or greater), which includes the `npm` package manager.
 
 To install the most recent source from GitHub (*recommended; things are moving fast*):
 
