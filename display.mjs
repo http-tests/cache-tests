@@ -24,9 +24,8 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
       if (test.browser_skip === true && useBrowserCache === true) return
       test.suiteName = testSuite.name
       var testElement = resultList.appendChild(document.createElement('li'))
-      var testName = document.createTextNode(test.name)
       testElement.appendChild(showTestResult(test, testResults[test.id]))
-      testElement.appendChild(testName)
+      testElement.appendChild(showTestName(test, testUUIDs[test.id]))
       testElement.addEventListener('click', function (event) {
         copyTextToClipboard(testUUIDs[test.id])
       })
@@ -45,6 +44,32 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
   var totalSummary = target.appendChild(totalElement)
   var totalText = document.createTextNode('Total ' + totalTests + ' tests, ' + totalPassed + ' passed.')
   totalSummary.appendChild(totalText)
+}
+
+export function showTestName (test, uuid) {
+  var span = document.createElement('span')
+  span.appendChild(document.createTextNode(test.name + ' '))
+
+  var idLinkElement = document.createElement('a')
+  idLinkElement.appendChild(document.createTextNode('⌾'))
+  idLinkElement.addEventListener('click', function (event) {
+    copyTextToClipboard(test.id)
+  })
+  idLinkElement.title = 'Test ID (click to copy)'
+  idLinkElement.setAttribute('class', 'clickhint')
+  span.appendChild(idLinkElement)
+
+  if (uuid) {
+    var uuidLinkElement = document.createElement('a')
+    uuidLinkElement.appendChild(document.createTextNode('⚙︎'))
+    uuidLinkElement.setAttribute('class', 'clickhint')
+    uuidLinkElement.addEventListener('click', function (event) {
+      copyTextToClipboard(uuid)
+    })
+    uuidLinkElement.title = 'Test UUID (click to copy)'
+    span.appendChild(uuidLinkElement)
+  }
+  return span
 }
 
 export function showTestResult (test, result) {

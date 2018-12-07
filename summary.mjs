@@ -37,7 +37,7 @@ function showHeader (headerName, results) {
 
 function showTest (suiteName, test, results) {
   var testRow = tableRow()
-  testRow.appendChild(tableCell('th', test.name, 'name'))
+  testRow.appendChild(tableCell('th', display.showTestName(test), 'name'))
   results.forEach(implementation => {
     var result = implementation.results[test.id]
     testRow.appendChild(tableCell('th', display.showTestResult(test, result)))
