@@ -46,6 +46,13 @@ ul {
   font-style: normal;
 }
 
+.warning {
+  padding: 0.5em;
+  margin: 0.5em auto;
+  background-color: #fde2e3;
+  border-left: solid 4px #f47477;
+}
+
 #download {
   display: none;
 }
