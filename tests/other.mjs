@@ -1,3 +1,4 @@
+import * as utils from '../utils.mjs'
 
 export default
 
@@ -94,6 +95,35 @@ export default
               assert(s, a === r.headers.get('Server-Now'), `${p} is ${a}, should be ${r.headers.get('Server-Now')}`)
             }]
           ]
+        }
+      ]
+    },
+    {
+      name: 'Different query arguments must be different cache keys',
+      id: 'query-args-different',
+      requests: [
+        {
+          template: 'fresh',
+          query_arg: 'test=' + utils.httpContent('query-args-different-1')
+        },
+        {
+          query_arg: 'test=' + utils.httpContent('query-args-different-2'),
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'Same query arguments should not affect cacheability',
+      id: 'query-args-same',
+      required: false,
+      requests: [
+        {
+          template: 'fresh',
+          query_arg: 'test=' + utils.httpContent('query-args-same')
+        },
+        {
+          query_arg: 'test=' + utils.httpContent('query-args-same'),
+          expected_type: 'cached'
         }
       ]
     }
