@@ -37,6 +37,83 @@ export default
       ]
     },
     {
+      name: 'HTTP cache must not reuse a response with an invalid Cache-Control: max-age (leading alpha)',
+      id: 'freshness-max-age-a100',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=a100']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not reuse a response with an invalid Cache-Control: max-age (trailing alpha)',
+      id: 'freshness-max-age-100a',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=100a']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not reuse a response with negative Cache-Control: max-age',
+      id: 'freshness-max-age-negative',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=-100']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should reuse a response with Cache-Control: max-age: 2147483648',
+      id: 'freshness-max-age-max',
+      required: false,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2147483648']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should reuse a response with Cache-Control: max-age: 99999999999',
+      id: 'freshness-max-age-max-plus',
+      required: false,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=99999999999']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not reuse a response when the Age header is greater than its Cache-Control: max-age freshness lifetime',
       id: 'freshness-max-age-age',
       requests: [
