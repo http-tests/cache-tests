@@ -71,24 +71,9 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with an invalid Expires (0)',
-      id: 'freshness-expires-invalid',
-      requests: [
-        {
-          response_headers: [
-            ['Expires', '0'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
-        {
-          expected_type: 'not_cached'
-        }
-      ]
-    },
-    {
-      name: 'HTTP cache must not reuse a response with an invalid Expires (wrong case weekday)',
-      id: 'freshness-expires-invalid-case-weekday',
+      name: 'HTTP cache should reuse a response with an Expires using wrong case (weekday)',
+      id: 'freshness-expires-wrong-case-weekday',
+      required: false,
       requests: [
         {
           response_headers: [
@@ -98,17 +83,51 @@ export default
           setup: true
         },
         {
-          expected_type: 'not_cached'
+          expected_type: 'cached'
         }
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with an invalid Expires (wrong case month)',
-      id: 'freshness-expires-invalid-case-month',
+      name: 'HTTP cache should reuse a response with an Expires using wrong case (month)',
+      id: 'freshness-expires-wrong-case-month',
+      required: false,
       requests: [
         {
           response_headers: [
             ['Expires', 'Thu, 18 AUG 2050 02:01:18 GMT'],
+            ['Date', 0]
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should reuse a response with an Expires using wrong case (tz)',
+      id: 'freshness-expires-wrong-case-tz',
+      required: false,
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Thu, 18 Aug 2050 02:01:18 gMT'],
+            ['Date', 0]
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not reuse a response with an invalid Expires (0)',
+      id: 'freshness-expires-invalid',
+      requests: [
+        {
+          response_headers: [
+            ['Expires', '0'],
             ['Date', 0]
           ],
           setup: true
