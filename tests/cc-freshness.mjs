@@ -22,6 +22,37 @@ export default
       ]
     },
     {
+      name: 'HTTP cache should reuse a response with quoted Cache-Control: max-age',
+      id: 'freshness-max-age-quoted',
+      required: false,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age="3600"']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should not reuse a response with single-quoted Cache-Control: max-age',
+      id: 'freshness-max-age-single-quoted',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=\'3600\'']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not reuse a response with Cache-Control: max-age=0',
       id: 'freshness-max-age-0',
       requests: [
