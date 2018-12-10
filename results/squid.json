@@ -89,14 +89,6 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-case-month": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-case-weekday": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": [
     "Assertion",
@@ -118,9 +110,20 @@
   ],
   "freshness-expires-past": true,
   "freshness-expires-present": true,
+  "freshness-expires-wrong-case-month": true,
+  "freshness-expires-wrong-case-tz": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-expires-wrong-case-weekday": true,
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
+  "freshness-max-age-100a": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-max-age-a100": true,
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": [
     "Assertion",
@@ -129,10 +132,21 @@
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
+  "freshness-max-age-max": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-max-plus": true,
+  "freshness-max-age-negative": true,
+  "freshness-max-age-quoted": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-s-maxage-shared-longer": true,
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
+  "freshness-max-age-single-quoted": true,
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,

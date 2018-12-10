@@ -1,21 +1,27 @@
 {
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"977716853979.9329\", not \"1365290568168.0488\""
-  ],
-  "304-etag-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 header Content-MD5 is \"840356023909.2723\", not \"423908634104.1212\""
-  ],
-  "304-etag-update-response-Content-Security-Policy": true,
-  "304-etag-update-response-Content-Type": [
     "Setup",
     "Request 2 should have been conditional, but it was not."
   ],
+  "304-etag-update-response-Content-MD5": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "304-etag-update-response-Content-Security-Policy": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "304-etag-update-response-Content-Type": [
+    "Assertion",
+    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+  ],
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": true,
-  "304-etag-update-response-X-Frame-Options": true,
+  "304-etag-update-response-X-Frame-Options": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": [
     "Setup",
@@ -23,22 +29,22 @@
   ],
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
-    "Assertion",
-    "Response 3 header Content-Location is \"977716853979.9329\", not \"1365290568168.0488\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Content-MD5": [
+    "Assertion",
+    "Response 3 header Content-MD5 is \"306398549037.88763\", not \"576460439504.7164\""
+  ],
+  "304-etag-update-stored-Content-Security-Policy": [
     "Setup",
     "Request 2 should have been conditional, but it was not."
   ],
-  "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
-  "304-etag-update-stored-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-stored-Test-Header": true,
   "304-etag-update-stored-X-Content-Foo": true,
   "304-etag-update-stored-X-Frame-Options": true,
   "304-etag-update-stored-X-Test-Header": true,
@@ -49,13 +55,16 @@
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"977716853979.9329\", not \"1365290568168.0488\""
+    "Response 2 header Content-Location is \"1034392946520.6854\", not \"878803364840.1613\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"840356023909.2723\", not \"423908634104.1212\""
+    "Response 2 header Content-MD5 is \"306398549037.88763\", not \"576460439504.7164\""
   ],
-  "304-lm-update-response-Content-Security-Policy": true,
+  "304-lm-update-response-Content-Security-Policy": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "304-lm-update-response-Content-Type": [
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
@@ -67,21 +76,27 @@
   "304-lm-update-response-X-XSS-Protection": true,
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
-    "Assertion",
-    "Response 3 header Content-Location is \"977716853979.9329\", not \"1365290568168.0488\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"840356023909.2723\", not \"423908634104.1212\""
+    "Response 3 header Content-MD5 is \"306398549037.88763\", not \"576460439504.7164\""
   ],
-  "304-lm-update-stored-Content-Security-Policy": true,
+  "304-lm-update-stored-Content-Security-Policy": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "304-lm-update-stored-Content-Type": [
     "Assertion",
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-stored-Test-Header": true,
   "304-lm-update-stored-X-Content-Foo": true,
-  "304-lm-update-stored-X-Frame-Options": true,
+  "304-lm-update-stored-X-Frame-Options": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": true,
   "cc-resp-no-cache": true,
@@ -119,14 +134,6 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-case-month": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-case-weekday": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": [
     "Assertion",
@@ -151,16 +158,35 @@
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,
+  "freshness-expires-wrong-case-month": true,
+  "freshness-expires-wrong-case-tz": true,
+  "freshness-expires-wrong-case-weekday": true,
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
+  "freshness-max-age-100a": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-max-age-a100": true,
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
+  "freshness-max-age-max": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-max-plus": true,
+  "freshness-max-age-negative": true,
+  "freshness-max-age-quoted": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-s-maxage-private": true,
   "freshness-max-age-s-maxage-private-multiple": true,
+  "freshness-max-age-single-quoted": true,
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,
