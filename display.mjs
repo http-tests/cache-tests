@@ -55,6 +55,7 @@ export function showTestName (test, uuid) {
   idLinkElement.addEventListener('click', function (event) {
     copyTextToClipboard(test.id)
   })
+  idLinkElement.id = test.id
   idLinkElement.title = 'Test ID (click to copy)'
   idLinkElement.setAttribute('class', 'clickhint')
   span.appendChild(idLinkElement)
