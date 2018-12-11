@@ -92,10 +92,7 @@
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
-  "freshness-expires-invalid": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-invalid": true,
   "freshness-expires-invalid-1-digit-hour": [
     "Assertion",
     "Response 2 comes from cache"
@@ -109,46 +106,28 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-multiple-spaces": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-invalid-multiple-spaces": true,
   "freshness-expires-invalid-no-comma": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-time-periods": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-invalid-time-periods": true,
   "freshness-expires-invalid-utc": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-old-date": [
+  "freshness-expires-old-date": true,
+  "freshness-expires-past": true,
+  "freshness-expires-present": true,
+  "freshness-expires-wrong-case-month": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-past": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-present": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
   "freshness-expires-wrong-case-weekday": true,
   "freshness-max-age": true,
-  "freshness-max-age-0": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-max-age-0-expires": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-max-age-0": true,
+  "freshness-max-age-0-expires": true,
   "freshness-max-age-100a": [
     "Assertion",
     "Response 2 comes from cache"
@@ -162,12 +141,12 @@
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
-  "freshness-max-age-max": true,
-  "freshness-max-age-max-plus": true,
-  "freshness-max-age-negative": [
+  "freshness-max-age-max": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
+  "freshness-max-age-max-plus": true,
+  "freshness-max-age-negative": true,
   "freshness-max-age-quoted": true,
   "freshness-max-age-s-maxage-shared-longer": true,
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
@@ -211,6 +190,58 @@
   "heuristic-504-not_cached": true,
   "heuristic-599-cached": true,
   "heuristic-599-not_cached": true,
+  "invalidate-DELETE": true,
+  "invalidate-DELETE-cl": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
+  "invalidate-DELETE-failed": [
+    "Assertion",
+    "Response 3 does not come from cache"
+  ],
+  "invalidate-DELETE-location": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
+  "invalidate-M-SEARCH": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
+  "invalidate-M-SEARCH-cl": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
+  "invalidate-M-SEARCH-failed": true,
+  "invalidate-M-SEARCH-location": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
+  "invalidate-POST": true,
+  "invalidate-POST-cl": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
+  "invalidate-POST-failed": [
+    "Assertion",
+    "Response 3 does not come from cache"
+  ],
+  "invalidate-POST-location": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
+  "invalidate-PUT": true,
+  "invalidate-PUT-cl": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
+  "invalidate-PUT-failed": [
+    "Assertion",
+    "Response 3 does not come from cache"
+  ],
+  "invalidate-PUT-location": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
   "other-age-gen": true,
   "other-age-update-expires": true,
   "other-age-update-max-age": true,
@@ -218,10 +249,7 @@
   "query-args-different": true,
   "query-args-same": true,
   "status-200-fresh": true,
-  "status-200-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-200-stale": true,
   "status-203-fresh": true,
   "status-203-stale": [
     "Assertion",
