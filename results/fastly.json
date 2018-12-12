@@ -1,19 +1,19 @@
 {
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1085948076134.0446\", not \"1318253817599.413\""
+    "Response 2 header Content-Foo is \"1208982787580.317\", not \"426868489677.6572\""
   ],
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"200047429878.51883\", not \"1488583563927.5034\""
+    "Response 2 header Content-Location is \"1249854128385.2617\", not \"1356857252966.7275\""
   ],
   "304-etag-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"407472962939.7991\", not \"1021436711409.2527\""
+    "Response 2 header Content-MD5 is \"38103967906.44003\", not \"998718458775.4626\""
   ],
   "304-etag-update-response-Content-Security-Policy": [
     "Assertion",
-    "Response 2 header Content-Security-Policy is \"270985740624.11948\", not \"28726078074.609486\""
+    "Response 2 header Content-Security-Policy is \"404382945088.91943\", not \"410871695967.3311\""
   ],
   "304-etag-update-response-Content-Type": [
     "Assertion",
@@ -21,39 +21,39 @@
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"291191012665.56555\", not \"730131941233.621\""
+    "Response 2 header Test-Header is \"1373711694465.639\", not \"621494113575.0072\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"1184172225471.7515\", not \"680800058322.742\""
+    "Response 2 header X-Content-Foo is \"1012843834266.6879\", not \"316904434383.2001\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
-    "Response 2 header X-Frame-Options is \"1426545577086.6487\", not \"294481649030.08167\""
+    "Response 2 header X-Frame-Options is \"471438162570.0294\", not \"142769750273.58615\""
   ],
   "304-etag-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"1293933600825.2375\", not \"1408309702289.4167\""
+    "Response 2 header X-Test-Header is \"1529052091081.7776\", not \"1218380589925.5342\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
-    "Response 2 header X-XSS-Protection is \"658313794071.1248\", not \"1280873321536.8843\""
+    "Response 2 header X-XSS-Protection is \"1071252492970.4623\", not \"703348605705.1621\""
   ],
   "304-etag-update-stored-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Foo is \"1208982787580.317\", not \"426868489677.6572\""
   ],
   "304-etag-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"200047429878.51883\", not \"1488583563927.5034\""
+    "Response 3 header Content-Location is \"1249854128385.2617\", not \"1356857252966.7275\""
   ],
   "304-etag-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"407472962939.7991\", not \"1021436711409.2527\""
+    "Response 3 header Content-MD5 is \"38103967906.44003\", not \"998718458775.4626\""
   ],
   "304-etag-update-stored-Content-Security-Policy": [
     "Assertion",
-    "Response 3 header Content-Security-Policy is \"270985740624.11948\", not \"28726078074.609486\""
+    "Response 3 header Content-Security-Policy is \"404382945088.91943\", not \"410871695967.3311\""
   ],
   "304-etag-update-stored-Content-Type": [
     "Assertion",
@@ -61,79 +61,79 @@
   ],
   "304-etag-update-stored-Test-Header": [
     "Assertion",
-    "Response 3 header Test-Header is \"291191012665.56555\", not \"730131941233.621\""
+    "Response 3 header Test-Header is \"1373711694465.639\", not \"621494113575.0072\""
   ],
   "304-etag-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"1184172225471.7515\", not \"680800058322.742\""
+    "Response 3 header X-Content-Foo is \"1012843834266.6879\", not \"316904434383.2001\""
   ],
   "304-etag-update-stored-X-Frame-Options": [
     "Assertion",
-    "Response 3 header X-Frame-Options is \"1426545577086.6487\", not \"294481649030.08167\""
+    "Response 3 header X-Frame-Options is \"471438162570.0294\", not \"142769750273.58615\""
   ],
   "304-etag-update-stored-X-Test-Header": [
     "Assertion",
-    "Response 3 header X-Test-Header is \"1293933600825.2375\", not \"1408309702289.4167\""
+    "Response 3 header X-Test-Header is \"1529052091081.7776\", not \"1218380589925.5342\""
   ],
   "304-etag-update-stored-X-XSS-Protection": [
     "Assertion",
-    "Response 3 header X-XSS-Protection is \"658313794071.1248\", not \"1280873321536.8843\""
+    "Response 3 header X-XSS-Protection is \"1071252492970.4623\", not \"703348605705.1621\""
   ],
   "304-lm-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1085948076134.0446\", not \"1318253817599.413\""
+    "Response 2 header Content-Foo is \"1208982787580.317\", not \"426868489677.6572\""
   ],
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"200047429878.51883\", not \"1488583563927.5034\""
+    "Response 2 header Content-Location is \"1249854128385.2617\", not \"1356857252966.7275\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"407472962939.7991\", not \"1021436711409.2527\""
+    "Response 2 header Content-MD5 is \"38103967906.44003\", not \"998718458775.4626\""
   ],
   "304-lm-update-response-Content-Security-Policy": [
     "Assertion",
-    "Response 2 header Content-Security-Policy is \"270985740624.11948\", not \"28726078074.609486\""
+    "Response 2 header Content-Security-Policy is \"404382945088.91943\", not \"410871695967.3311\""
   ],
   "304-lm-update-response-Content-Type": [
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-response-Test-Header": [
-    "Assertion",
-    "Response 2 header Test-Header is \"291191012665.56555\", not \"730131941233.621\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"1184172225471.7515\", not \"680800058322.742\""
+    "Response 2 header X-Content-Foo is \"1012843834266.6879\", not \"316904434383.2001\""
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
-    "Response 2 header X-Frame-Options is \"1426545577086.6487\", not \"294481649030.08167\""
+    "Response 2 header X-Frame-Options is \"471438162570.0294\", not \"142769750273.58615\""
   ],
   "304-lm-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"1293933600825.2375\", not \"1408309702289.4167\""
+    "Response 2 header X-Test-Header is \"1529052091081.7776\", not \"1218380589925.5342\""
   ],
   "304-lm-update-response-X-XSS-Protection": [
     "Assertion",
-    "Response 2 header X-XSS-Protection is \"658313794071.1248\", not \"1280873321536.8843\""
+    "Response 2 header X-XSS-Protection is \"1071252492970.4623\", not \"703348605705.1621\""
   ],
   "304-lm-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"1085948076134.0446\", not \"1318253817599.413\""
+    "Response 3 header Content-Foo is \"1208982787580.317\", not \"426868489677.6572\""
   ],
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"200047429878.51883\", not \"1488583563927.5034\""
+    "Response 3 header Content-Location is \"1249854128385.2617\", not \"1356857252966.7275\""
   ],
   "304-lm-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"407472962939.7991\", not \"1021436711409.2527\""
+    "Response 3 header Content-MD5 is \"38103967906.44003\", not \"998718458775.4626\""
   ],
   "304-lm-update-stored-Content-Security-Policy": [
     "Assertion",
-    "Response 3 header Content-Security-Policy is \"270985740624.11948\", not \"28726078074.609486\""
+    "Response 3 header Content-Security-Policy is \"404382945088.91943\", not \"410871695967.3311\""
   ],
   "304-lm-update-stored-Content-Type": [
     "Assertion",
@@ -141,24 +141,34 @@
   ],
   "304-lm-update-stored-Test-Header": [
     "Assertion",
-    "Response 3 header Test-Header is \"291191012665.56555\", not \"730131941233.621\""
+    "Response 3 header Test-Header is \"1373711694465.639\", not \"621494113575.0072\""
   ],
   "304-lm-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"1184172225471.7515\", not \"680800058322.742\""
+    "Response 3 header X-Content-Foo is \"1012843834266.6879\", not \"316904434383.2001\""
   ],
   "304-lm-update-stored-X-Frame-Options": [
     "Assertion",
-    "Response 3 header X-Frame-Options is \"1426545577086.6487\", not \"294481649030.08167\""
+    "Response 3 header X-Frame-Options is \"471438162570.0294\", not \"142769750273.58615\""
   ],
   "304-lm-update-stored-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-Test-Header is \"1529052091081.7776\", not \"1218380589925.5342\""
   ],
   "304-lm-update-stored-X-XSS-Protection": [
     "Assertion",
-    "Response 3 header X-XSS-Protection is \"658313794071.1248\", not \"1280873321536.8843\""
+    "Response 3 header X-XSS-Protection is \"1071252492970.4623\", not \"703348605705.1621\""
   ],
+  "304-lm-use-stored-Content-Foo": true,
+  "304-lm-use-stored-Content-Location": true,
+  "304-lm-use-stored-Content-MD5": true,
+  "304-lm-use-stored-Content-Security-Policy": true,
+  "304-lm-use-stored-Content-Type": true,
+  "304-lm-use-stored-Test-Header": true,
+  "304-lm-use-stored-X-Content-Foo": true,
+  "304-lm-use-stored-X-Frame-Options": true,
+  "304-lm-use-stored-X-Test-Header": true,
+  "304-lm-use-stored-X-XSS-Protection": true,
   "cc-resp-no-cache": [
     "Assertion",
     "Response 2 comes from cache"
@@ -385,7 +395,7 @@
   "other-age-update-max-age": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 12 Dec 2018 02:33:42 GMT, should be Wed, 12 Dec 2018 02:33:38 GMT"
+    "Response 2 header Date is Wed, 12 Dec 2018 04:48:03 GMT, should be Wed, 12 Dec 2018 04:47:59 GMT"
   ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,

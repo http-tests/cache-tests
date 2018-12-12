@@ -75,6 +75,16 @@
   "304-lm-update-stored-X-Frame-Options": true,
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": true,
+  "304-lm-use-stored-Content-Foo": true,
+  "304-lm-use-stored-Content-Location": true,
+  "304-lm-use-stored-Content-MD5": true,
+  "304-lm-use-stored-Content-Security-Policy": true,
+  "304-lm-use-stored-Content-Type": true,
+  "304-lm-use-stored-Test-Header": true,
+  "304-lm-use-stored-X-Content-Foo": true,
+  "304-lm-use-stored-X-Frame-Options": true,
+  "304-lm-use-stored-X-Test-Header": true,
+  "304-lm-use-stored-X-XSS-Protection": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
@@ -250,7 +260,7 @@
   "other-age-update-max-age": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 12 Dec 2018 02:32:26 GMT, should be Wed, 12 Dec 2018 02:32:22 GMT"
+    "Response 2 header Date is Wed, 12 Dec 2018 04:46:39 GMT, should be Wed, 12 Dec 2018 04:46:36 GMT"
   ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
