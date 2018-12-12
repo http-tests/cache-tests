@@ -2,11 +2,11 @@
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"191602500395.90836\", not \"1388033316828.1348\""
+    "Response 2 header Content-Location is \"918737130501.7373\", not \"554856951035.2534\""
   ],
   "304-etag-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"1246368400741.494\", not \"256380911433.54343\""
+    "Response 2 header Content-MD5 is \"146181263854.0233\", not \"1519437166789.576\""
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
@@ -21,11 +21,11 @@
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"191602500395.90836\", not \"1388033316828.1348\""
+    "Response 3 header Content-Location is \"918737130501.7373\", not \"554856951035.2534\""
   ],
   "304-etag-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"1246368400741.494\", not \"256380911433.54343\""
+    "Response 3 header Content-MD5 is \"146181263854.0233\", not \"1519437166789.576\""
   ],
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
@@ -40,11 +40,11 @@
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"191602500395.90836\", not \"1388033316828.1348\""
+    "Response 2 header Content-Location is \"918737130501.7373\", not \"554856951035.2534\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"1246368400741.494\", not \"256380911433.54343\""
+    "Response 2 header Content-MD5 is \"146181263854.0233\", not \"1519437166789.576\""
   ],
   "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
@@ -59,11 +59,11 @@
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"191602500395.90836\", not \"1388033316828.1348\""
+    "Response 3 header Content-Location is \"918737130501.7373\", not \"554856951035.2534\""
   ],
   "304-lm-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"1246368400741.494\", not \"256380911433.54343\""
+    "Response 3 header Content-MD5 is \"146181263854.0233\", not \"1519437166789.576\""
   ],
   "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
@@ -238,6 +238,38 @@
     "Response 2 header Age is 30, should be bigger"
   ],
   "other-date-update": true,
+  "partial-store-complete-reuse-partial": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "partial-store-complete-reuse-partial-no-last": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "partial-store-complete-reuse-partial-suffix": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "partial-store-partial-complete": [
+    "Assertion",
+    "request 2 header range value is \"undefined\", not \"bytes=5-\""
+  ],
+  "partial-store-partial-reuse-partial": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "partial-store-partial-reuse-partial-absent": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "partial-store-partial-reuse-partial-byterange": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "partial-store-partial-reuse-partial-suffix": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "query-args-different": true,
   "query-args-same": true,
   "status-200-fresh": true,
