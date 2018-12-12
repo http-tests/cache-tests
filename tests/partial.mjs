@@ -32,7 +32,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store complete response and serves smaller ranges from it (byte-range-spec)',
+      name: 'HTTP cache should store complete response and serve smaller ranges from it (byte-range-spec)',
       id: 'partial-store-complete-reuse-partial',
       required: false,
       requests: [
@@ -54,7 +54,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store complete response and serves smaller ranges from it (absent last-byte-pos)',
+      name: 'HTTP cache should store complete response and serve smaller ranges from it (absent last-byte-pos)',
       id: 'partial-store-complete-reuse-partial-no-last',
       required: false,
       requests: [
@@ -76,7 +76,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store complete response and serves smaller ranges from it (suffix-byte-range-spec)',
+      name: 'HTTP cache should store complete response and serve smaller ranges from it (suffix-byte-range-spec)',
       id: 'partial-store-complete-reuse-partial-suffix',
       required: false,
       requests: [
@@ -98,7 +98,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store partial response and serves smaller ranges from it (byte-range-spec)',
+      name: 'HTTP cache should store partial response and serve smaller ranges from it (byte-range-spec)',
       id: 'partial-store-partial-reuse-partial-byterange',
       required: false,
       requests: [
@@ -125,7 +125,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store partial response and serves smaller ranges from it (absent last-byte-pos)',
+      name: 'HTTP cache should store partial response and serve smaller ranges from it (absent last-byte-pos)',
       id: 'partial-store-partial-reuse-partial-absent',
       required: false,
       requests: [
@@ -152,7 +152,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store partial response and serves smaller ranges from it (suffix-byte-range-spec)',
+      name: 'HTTP cache should store partial response and serve smaller ranges from it (suffix-byte-range-spec)',
       id: 'partial-store-partial-reuse-partial-suffix',
       required: false,
       requests: [
@@ -179,7 +179,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store partial content and completes it',
+      name: 'HTTP cache should store partial content and complete it',
       id: 'partial-store-partial-complete',
       required: false,
       requests: [
