@@ -1,6 +1,39 @@
 import * as utils from '../utils.mjs'
 
 var tests = []
+
+var header = 'Test-Header'
+var valueA = utils.httpContent(`${header}-value-A`)
+var lm1 = utils.httpDate(Date.now(), -24 * 60 * 60)
+tests.push({
+  name: `HTTP cache must return stored ${header} from a 304 that omits it`,
+  id: `304-lm-use-stored-${header}`,
+  requests: [
+    {
+      response_headers: [
+        ['Cache-Control', 'max-age=1'],
+        ['Last-Modified', lm1],
+        ['Date', 0],
+        [header, valueA]
+      ],
+      setup: true,
+      pause_after: true
+    },
+    {
+      response_headers: [
+        ['Cache-Control', 'max-age=3600'],
+        ['Last-Modified', lm1],
+        ['Date', 0]
+      ],
+      expected_type: 'lm_validated',
+      expected_response_headers: [
+        [header, valueA]
+      ],
+      setup_tests: ['expected_type']
+    }
+  ]
+})
+
 function check304 (args) {
   var header = args[0]
   var valueA = args[1] || utils.httpContent(`${header}-value-A`)
@@ -67,34 +100,6 @@ function check304 (args) {
         expected_type: 'cached',
         expected_response_headers: [
           [header, valueB]
-        ],
-        setup_tests: ['expected_type']
-      }
-    ]
-  })
-  tests.push({
-    name: `HTTP cache must return stored ${header} from a 304 that omits it`,
-    id: `304-lm-use-stored-${header}`,
-    requests: [
-      {
-        response_headers: [
-          ['Cache-Control', 'max-age=1'],
-          ['Last-Modified', lm1],
-          ['Date', 0],
-          [header, valueA]
-        ],
-        setup: true,
-        pause_after: true
-      },
-      {
-        response_headers: [
-          ['Cache-Control', 'max-age=3600'],
-          ['Last-Modified', lm1],
-          ['Date', 0]
-        ],
-        expected_type: 'lm_validated',
-        expected_response_headers: [
-          [header, valueA]
         ],
         setup_tests: ['expected_type']
       }
