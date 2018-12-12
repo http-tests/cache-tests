@@ -10,7 +10,8 @@ export default [
     "file": "firefox.json",
     "name": "Firefox",
     "type": "browser",
-    "version": "64.0"
+    "version": "64.0",
+    "link": "https://github.com/http-tests/cache-tests/wiki/Firefox"
   },
   {
     "file": "safari.json",
