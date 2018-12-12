@@ -7,6 +7,7 @@ import statuses from './status.mjs'
 import vary from './vary.mjs'
 import update304 from './update304.mjs'
 import invalidation from './invalidation.mjs'
+import partial from './partial.mjs'
 import other from './other.mjs'
 
-export default [ccFreshness, expires, ccResponse, heuristic, statuses, ccRequest, vary, update304, invalidation, other]
+export default [ccFreshness, expires, ccResponse, heuristic, statuses, ccRequest, vary, update304, invalidation, partial, other]
