@@ -39,7 +39,7 @@ function check304 (args) {
     ]
   })
   tests.push({
-    name: `HTTP cache must update returned ${header} from a Last-Modified 304`,
+    name: `HTTP cache must update stored ${header} from a Last-Modified 304`,
     id: `304-lm-update-stored-${header}`,
     requests: [
       {
@@ -60,6 +60,11 @@ function check304 (args) {
           [header, valueB]
         ],
         expected_type: 'lm_validated',
+        setup: true,
+        pause_after: true
+      },
+      {
+        expected_type: 'cached',
         expected_response_headers: [
           [header, valueB]
         ],
@@ -68,7 +73,7 @@ function check304 (args) {
     ]
   })
   tests.push({
-    name: `HTTP cache must use stored ${header} from a 304 that omits it`,
+    name: `HTTP cache must return stored ${header} from a 304 that omits it`,
     id: `304-lm-use-stored-${header}`,
     requests: [
       {
@@ -85,14 +90,9 @@ function check304 (args) {
         response_headers: [
           ['Cache-Control', 'max-age=3600'],
           ['Last-Modified', lm1],
-          ['Date', 0],
+          ['Date', 0]
         ],
         expected_type: 'lm_validated',
-        setup: true,
-        pause_after: true
-      },
-      {
-        expected_type: 'cached',
         expected_response_headers: [
           [header, valueA]
         ],
