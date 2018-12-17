@@ -2,6 +2,7 @@ import * as utils from '../utils.mjs'
 
 export default {
   name: 'Cache-Control Request Directives',
+  id: 'cc-request',
   tests: [
     {
       name: 'HTTP cache should not reuse aged but fresh response when request contains Cache-Control: max-age=0',

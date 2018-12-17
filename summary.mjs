@@ -18,16 +18,17 @@ export function loadResults (index) {
 
 export function showResults (target, tests, results) {
   tests.forEach(testSuite => {
-    target.appendChild(showHeader(testSuite.name, results))
+    target.appendChild(showHeader(testSuite, results))
     testSuite.tests.forEach(test => {
       target.appendChild(showTest(testSuite.name, test, results))
     })
   })
 }
 
-function showHeader (headerName, results) {
+function showHeader (testSuite, results) {
   var headerRow = tableRow()
-  var firstHeader = tableCell('th', headerName, 'name category')
+  var firstHeader = tableCell('th', testSuite.name, 'name category')
+  firstHeader.id = testSuite.id
   headerRow.appendChild(firstHeader)
   results.forEach(implementation => {
     headerRow.appendChild(tableCell('th', implementation.name, 'category', implementation.version, implementation.link))

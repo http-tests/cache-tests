@@ -189,5 +189,6 @@ function check304 (args) {
 
 export default {
   name: 'Update Headers Upon a 304',
+  id: 'update304',
   tests: tests
 }

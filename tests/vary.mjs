@@ -2,6 +2,7 @@ import * as utils from '../utils.mjs'
 
 export default {
   name: 'Vary and Secondary Cache Keys',
+  id: 'vary',
   tests: [
     {
       name: 'HTTP cache should reuse Vary response when request matches',

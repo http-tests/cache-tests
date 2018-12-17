@@ -3,6 +3,7 @@ export default
 
 {
   name: 'Cache-Control Response Directives',
+  id: 'cc-response',
   tests: [
     {
       name: 'Shared HTTP cache must not store a response with Cache-Control: private',

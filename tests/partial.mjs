@@ -1,5 +1,6 @@
 export default {
   name: 'Partial Content',
+  id: 'partial',
   tests: [
     {
       name: 'HTTP cache should store partial content and reuse it',

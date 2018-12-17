@@ -3,6 +3,7 @@ export default
 
 {
   name: 'Surrogate-Control',
+  id: 'surrogate-control',
   tests: [
     // response directives
     {

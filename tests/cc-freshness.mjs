@@ -3,6 +3,7 @@ export default
 
 {
   name: 'Cache-Control Freshness',
+  id: 'cc-freshness',
   tests: [
     // response directives
     {

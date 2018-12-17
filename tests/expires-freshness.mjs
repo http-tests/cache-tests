@@ -3,6 +3,7 @@ export default
 
 {
   name: 'Expires Freshness',
+  id: 'expires',
   tests: [
     // response directives
     {

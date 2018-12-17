@@ -63,5 +63,6 @@ function checkStatus (status) {
 
 export default {
   name: 'Heuristic Freshness',
+  id: 'heuristic',
   tests: tests
 }

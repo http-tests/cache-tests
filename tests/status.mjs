@@ -60,5 +60,6 @@ function checkStatus (status) {
 
 export default {
   name: 'Status Code Cacheability',
+  id: 'status',
   tests: tests
 }

@@ -4,6 +4,7 @@ export default
 
 {
   name: 'Other Caching Requirements',
+  id: 'other',
   tests: [
     {
       name: 'HTTP cache must generate an Age header',

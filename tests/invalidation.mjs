@@ -93,5 +93,6 @@ methods.forEach(checkClInvalidation)
 
 export default {
   name: 'Cache Invalidation',
+  id: 'invalidation',
   tests: tests
 }
