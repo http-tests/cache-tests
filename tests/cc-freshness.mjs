@@ -54,6 +54,22 @@ export default
       ]
     },
     {
+      name: 'HTTP cache must ignore the phrase "max-age" in a quoted string',
+      id: 'freshness-max-age-ignore-quoted',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'extension="max-age=100", max-age="1"']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not reuse a response with Cache-Control: max-age=0',
       id: 'freshness-max-age-0',
       requests: [
