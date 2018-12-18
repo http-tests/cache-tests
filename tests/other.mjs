@@ -145,6 +145,24 @@ export default
         }
       ]
     },
-
+    {
+      name: 'HTTP cache should reuse a fresh response when the request has a Cookie header',
+      id: 'freshness-max-age',
+      required: false,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Cookie', 'a=b']
+          ],
+          expected_type: 'cached'
+        }
+      ]
+    }
   ]
 }
