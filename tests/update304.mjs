@@ -179,6 +179,7 @@ function check304 (args) {
   ['X-Test-Header'],
   ['Content-Foo'],
   ['X-Content-Foo'],
+  ['Expires', utils.httpDate(Date.now(), 1), utils.httpDate(Date.now(), 3600)],
   ['Content-Type', 'text/plain', 'text/plain;charset=utf-8'],
   ['Content-MD5'],
   ['Content-Location'],
