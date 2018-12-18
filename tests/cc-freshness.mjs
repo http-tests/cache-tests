@@ -59,7 +59,55 @@ export default
       requests: [
         {
           response_headers: [
+            ['Cache-Control', 'extension="max-age=100", max-age=1']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must ignore the phrase "max-age" in a quoted string (after "real" max-age)',
+      id: 'freshness-max-age-ignore-quoted-rev',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1, extension="max-age=100"']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must ignore the phrase "max-age" in a quoted string, even when max-age has a quoted value too',
+      id: 'freshness-max-age-ignore-quoted-all',
+      requests: [
+        {
+          response_headers: [
             ['Cache-Control', 'extension="max-age=100", max-age="1"']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must ignore the phrase "max-age" in a quoted string, even when previous max-age has a quoted value too',
+      id: 'freshness-max-age-ignore-quoted-all-rev',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age="1", extension="max-age=100"']
           ],
           setup: true,
           pause: true
