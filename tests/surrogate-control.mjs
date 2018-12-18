@@ -24,6 +24,40 @@ export default
       ]
     },
     {
+      name: 'HTTP cache must ignore Surrogate-Control: max-age with space before the =',
+      id: 'surrogate-max-age-space-before-equals',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1'],
+            ['Surrogate-Control', 'max-age =100']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must ignore Surrogate-Control: max-age with space after the =',
+      id: 'surrogate-max-age-space-after-equals',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1'],
+            ['Surrogate-Control', 'max-age= 100']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not reuse a response with Surrogate-Control: max-age=0',
       id: 'surrogate-max-age-0',
       browser_skip: true,
