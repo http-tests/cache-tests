@@ -118,6 +118,38 @@ export default
       ]
     },
     {
+      name: 'HTTP cache must ignore max-age with space before the =',
+      id: 'freshness-max-age-space-before-equals',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age =100']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must ignore max-age with space after the =',
+      id: 'freshness-max-age-space-after-equals',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age= 100']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not reuse a response with Cache-Control: max-age=0',
       id: 'freshness-max-age-0',
       requests: [
