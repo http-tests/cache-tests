@@ -130,7 +130,7 @@ export default
     },
     {
       name: 'HTTP cache should reuse a fresh response with a Set-Cookie header',
-      id: 'freshness-max-age',
+      id: 'other-set-cookie',
       required: false,
       requests: [
         {
@@ -147,7 +147,7 @@ export default
     },
     {
       name: 'HTTP cache should reuse a fresh response when the request has a Cookie header',
-      id: 'freshness-max-age',
+      id: 'other-cookie',
       required: false,
       requests: [
         {
