@@ -1,5 +1,6 @@
 {
   "304-etag-update-response-Cache-Control": true,
+  "304-etag-update-response-Clear-Site-Data": true,
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Setup",
@@ -15,12 +16,16 @@
     "Response 2 status is 409, not 200"
   ],
   "304-etag-update-response-Expires": true,
+  "304-etag-update-response-Public-Key-Pins": true,
+  "304-etag-update-response-Set-Cookie": true,
+  "304-etag-update-response-Set-Cookie2": true,
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": true,
   "304-etag-update-response-X-Frame-Options": true,
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": true,
   "304-etag-update-stored-Cache-Control": true,
+  "304-etag-update-stored-Clear-Site-Data": true,
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Setup",
@@ -36,12 +41,16 @@
     "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-Expires": true,
+  "304-etag-update-stored-Public-Key-Pins": true,
+  "304-etag-update-stored-Set-Cookie": true,
+  "304-etag-update-stored-Set-Cookie2": true,
   "304-etag-update-stored-Test-Header": true,
   "304-etag-update-stored-X-Content-Foo": true,
   "304-etag-update-stored-X-Frame-Options": true,
   "304-etag-update-stored-X-Test-Header": true,
   "304-etag-update-stored-X-XSS-Protection": true,
   "304-lm-update-response-Cache-Control": true,
+  "304-lm-update-response-Clear-Site-Data": true,
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Setup",
@@ -57,12 +66,16 @@
     "Response 2 status is 409, not 200"
   ],
   "304-lm-update-response-Expires": true,
+  "304-lm-update-response-Public-Key-Pins": true,
+  "304-lm-update-response-Set-Cookie": true,
+  "304-lm-update-response-Set-Cookie2": true,
   "304-lm-update-response-Test-Header": true,
   "304-lm-update-response-X-Content-Foo": true,
   "304-lm-update-response-X-Frame-Options": true,
   "304-lm-update-response-X-Test-Header": true,
   "304-lm-update-response-X-XSS-Protection": true,
   "304-lm-update-stored-Cache-Control": true,
+  "304-lm-update-stored-Clear-Site-Data": true,
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Setup",
@@ -78,6 +91,9 @@
     "Response 3 does not come from cache"
   ],
   "304-lm-update-stored-Expires": true,
+  "304-lm-update-stored-Public-Key-Pins": true,
+  "304-lm-update-stored-Set-Cookie": true,
+  "304-lm-update-stored-Set-Cookie2": true,
   "304-lm-update-stored-Test-Header": true,
   "304-lm-update-stored-X-Content-Foo": true,
   "304-lm-update-stored-X-Frame-Options": true,
@@ -275,10 +291,12 @@
   "other-age-gen": true,
   "other-age-update-expires": true,
   "other-age-update-max-age": true,
+  "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 18 Dec 2018 03:59:03 GMT, should be Tue, 18 Dec 2018 03:58:59 GMT"
+    "Response 2 header Date is Tue, 18 Dec 2018 05:56:24 GMT, should be Tue, 18 Dec 2018 05:56:21 GMT"
   ],
+  "other-set-cookie": true,
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,

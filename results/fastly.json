@@ -3,21 +3,25 @@
     "Assertion",
     "Response 2 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
   ],
+  "304-etag-update-response-Clear-Site-Data": [
+    "Assertion",
+    "Response 2 header Clear-Site-Data is \"cache\", not \"cookies\""
+  ],
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1180292811272.5254\", not \"1481091152465.014\""
+    "Response 2 header Content-Foo is \"1051072580712.7427\", not \"1166502519214.7747\""
   ],
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"1072181267675.0999\", not \"742237841946.5115\""
+    "Response 2 header Content-Location is \"/foo\", not \"/bar\""
   ],
   "304-etag-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"1370210745136.733\", not \"973415915950.0874\""
+    "Response 2 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
   ],
   "304-etag-update-response-Content-Security-Policy": [
     "Assertion",
-    "Response 2 header Content-Security-Policy is \"810887458613.7842\", not \"547749346931.6762\""
+    "Response 2 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
   ],
   "304-etag-update-response-Content-Type": [
     "Assertion",
@@ -25,39 +29,55 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 18 Dec 2018 04:00:35 GMT\", not \"Tue, 18 Dec 2018 05:00:34 GMT\""
+    "Response 2 header Expires is \"Tue, 18 Dec 2018 05:57:51 GMT\", not \"Tue, 18 Dec 2018 06:57:50 GMT\""
+  ],
+  "304-etag-update-response-Public-Key-Pins": [
+    "Assertion",
+    "Response 2 header Public-Key-Pins is \"329656614703.1334\", not \"509476907138.1682\""
+  ],
+  "304-etag-update-response-Set-Cookie": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "304-etag-update-response-Set-Cookie2": [
+    "Assertion",
+    "Response 2 header Set-Cookie2 is \"a=b\", not \"a=c\""
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"897616887475.6505\", not \"572480384369.1101\""
+    "Response 2 header Test-Header is \"1297477606498\", not \"315202911100.0479\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"64048615974.284134\", not \"1005643662362.9888\""
+    "Response 2 header X-Content-Foo is \"1014440620481.9464\", not \"1371994677923.7244\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
-    "Response 2 header X-Frame-Options is \"475647319972.17773\", not \"534831923160.0541\""
+    "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
   ],
   "304-etag-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"917676168613.2999\", not \"217497597725.698\""
+    "Response 2 header X-Test-Header is \"351284276500.3455\", not \"652555609839.5898\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
-    "Response 2 header X-XSS-Protection is \"39718951689.798355\", not \"1240385250978.3625\""
+    "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-etag-update-stored-Cache-Control": [
     "Assertion",
     "Response 3 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
   ],
+  "304-etag-update-stored-Clear-Site-Data": [
+    "Assertion",
+    "Response 3 header Clear-Site-Data is \"cache\", not \"cookies\""
+  ],
   "304-etag-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"1180292811272.5254\", not \"1481091152465.014\""
+    "Response 3 header Content-Foo is \"1051072580712.7427\", not \"1166502519214.7747\""
   ],
   "304-etag-update-stored-Content-Location": [
-    "Assertion",
-    "Response 3 header Content-Location is \"1072181267675.0999\", not \"742237841946.5115\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Content-MD5": [
     "Setup",
@@ -65,7 +85,7 @@
   ],
   "304-etag-update-stored-Content-Security-Policy": [
     "Assertion",
-    "Response 3 header Content-Security-Policy is \"810887458613.7842\", not \"547749346931.6762\""
+    "Response 3 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
   ],
   "304-etag-update-stored-Content-Type": [
     "Assertion",
@@ -73,47 +93,63 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 18 Dec 2018 04:00:35 GMT\", not \"Tue, 18 Dec 2018 05:00:34 GMT\""
+    "Response 3 header Expires is \"Tue, 18 Dec 2018 05:57:51 GMT\", not \"Tue, 18 Dec 2018 06:57:50 GMT\""
+  ],
+  "304-etag-update-stored-Public-Key-Pins": [
+    "Assertion",
+    "Response 3 header Public-Key-Pins is \"329656614703.1334\", not \"509476907138.1682\""
+  ],
+  "304-etag-update-stored-Set-Cookie": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "304-etag-update-stored-Set-Cookie2": [
+    "Assertion",
+    "Response 3 header Set-Cookie2 is \"a=b\", not \"a=c\""
   ],
   "304-etag-update-stored-Test-Header": [
     "Assertion",
-    "Response 3 header Test-Header is \"897616887475.6505\", not \"572480384369.1101\""
+    "Response 3 header Test-Header is \"1297477606498\", not \"315202911100.0479\""
   ],
   "304-etag-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"64048615974.284134\", not \"1005643662362.9888\""
+    "Response 3 header X-Content-Foo is \"1014440620481.9464\", not \"1371994677923.7244\""
   ],
   "304-etag-update-stored-X-Frame-Options": [
     "Assertion",
-    "Response 3 header X-Frame-Options is \"475647319972.17773\", not \"534831923160.0541\""
+    "Response 3 header X-Frame-Options is \"deny\", not \"sameorigin\""
   ],
   "304-etag-update-stored-X-Test-Header": [
     "Assertion",
-    "Response 3 header X-Test-Header is \"917676168613.2999\", not \"217497597725.698\""
+    "Response 3 header X-Test-Header is \"351284276500.3455\", not \"652555609839.5898\""
   ],
   "304-etag-update-stored-X-XSS-Protection": [
-    "Assertion",
-    "Response 3 header X-XSS-Protection is \"39718951689.798355\", not \"1240385250978.3625\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Cache-Control": [
     "Assertion",
     "Response 2 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
   ],
+  "304-lm-update-response-Clear-Site-Data": [
+    "Assertion",
+    "Response 2 header Clear-Site-Data is \"cache\", not \"cookies\""
+  ],
   "304-lm-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1180292811272.5254\", not \"1481091152465.014\""
+    "Response 2 header Content-Foo is \"1051072580712.7427\", not \"1166502519214.7747\""
   ],
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"1072181267675.0999\", not \"742237841946.5115\""
+    "Response 2 header Content-Location is \"/foo\", not \"/bar\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"1370210745136.733\", not \"973415915950.0874\""
+    "Response 2 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
   ],
   "304-lm-update-response-Content-Security-Policy": [
     "Assertion",
-    "Response 2 header Content-Security-Policy is \"810887458613.7842\", not \"547749346931.6762\""
+    "Response 2 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
   ],
   "304-lm-update-response-Content-Type": [
     "Assertion",
@@ -121,75 +157,103 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 18 Dec 2018 04:00:35 GMT\", not \"Tue, 18 Dec 2018 05:00:34 GMT\""
+    "Response 2 header Expires is \"Tue, 18 Dec 2018 05:57:51 GMT\", not \"Tue, 18 Dec 2018 06:57:50 GMT\""
+  ],
+  "304-lm-update-response-Public-Key-Pins": [
+    "Assertion",
+    "Response 2 header Public-Key-Pins is \"329656614703.1334\", not \"509476907138.1682\""
+  ],
+  "304-lm-update-response-Set-Cookie": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "304-lm-update-response-Set-Cookie2": [
+    "Assertion",
+    "Response 2 header Set-Cookie2 is \"a=b\", not \"a=c\""
   ],
   "304-lm-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"897616887475.6505\", not \"572480384369.1101\""
+    "Response 2 header Test-Header is \"1297477606498\", not \"315202911100.0479\""
   ],
   "304-lm-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"64048615974.284134\", not \"1005643662362.9888\""
+    "Response 2 header X-Content-Foo is \"1014440620481.9464\", not \"1371994677923.7244\""
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
-    "Response 2 header X-Frame-Options is \"475647319972.17773\", not \"534831923160.0541\""
+    "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
   ],
   "304-lm-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"917676168613.2999\", not \"217497597725.698\""
+    "Response 2 header X-Test-Header is \"351284276500.3455\", not \"652555609839.5898\""
   ],
   "304-lm-update-response-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-update-stored-Cache-Control": [
     "Assertion",
     "Response 3 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
   ],
+  "304-lm-update-stored-Clear-Site-Data": [
+    "Assertion",
+    "Response 3 header Clear-Site-Data is \"cache\", not \"cookies\""
+  ],
   "304-lm-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"1180292811272.5254\", not \"1481091152465.014\""
+    "Response 3 header Content-Foo is \"1051072580712.7427\", not \"1166502519214.7747\""
   ],
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"1072181267675.0999\", not \"742237841946.5115\""
+    "Response 3 header Content-Location is \"/foo\", not \"/bar\""
   ],
   "304-lm-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"1370210745136.733\", not \"973415915950.0874\""
+    "Response 3 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
   ],
   "304-lm-update-stored-Content-Security-Policy": [
     "Assertion",
-    "Response 3 header Content-Security-Policy is \"810887458613.7842\", not \"547749346931.6762\""
+    "Response 3 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
   ],
   "304-lm-update-stored-Content-Type": [
-    "Assertion",
-    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 18 Dec 2018 04:00:35 GMT\", not \"Tue, 18 Dec 2018 05:00:34 GMT\""
+    "Response 3 header Expires is \"Tue, 18 Dec 2018 05:57:51 GMT\", not \"Tue, 18 Dec 2018 06:57:50 GMT\""
+  ],
+  "304-lm-update-stored-Public-Key-Pins": [
+    "Assertion",
+    "Response 3 header Public-Key-Pins is \"329656614703.1334\", not \"509476907138.1682\""
+  ],
+  "304-lm-update-stored-Set-Cookie": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "304-lm-update-stored-Set-Cookie2": [
+    "Assertion",
+    "Response 3 header Set-Cookie2 is \"a=b\", not \"a=c\""
   ],
   "304-lm-update-stored-Test-Header": [
     "Assertion",
-    "Response 3 header Test-Header is \"897616887475.6505\", not \"572480384369.1101\""
+    "Response 3 header Test-Header is \"1297477606498\", not \"315202911100.0479\""
   ],
   "304-lm-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"64048615974.284134\", not \"1005643662362.9888\""
+    "Response 3 header X-Content-Foo is \"1014440620481.9464\", not \"1371994677923.7244\""
   ],
   "304-lm-update-stored-X-Frame-Options": [
     "Assertion",
-    "Response 3 header X-Frame-Options is \"475647319972.17773\", not \"534831923160.0541\""
+    "Response 3 header X-Frame-Options is \"deny\", not \"sameorigin\""
   ],
   "304-lm-update-stored-X-Test-Header": [
     "Assertion",
-    "Response 3 header X-Test-Header is \"917676168613.2999\", not \"217497597725.698\""
+    "Response 3 header X-Test-Header is \"351284276500.3455\", not \"652555609839.5898\""
   ],
   "304-lm-update-stored-X-XSS-Protection": [
     "Assertion",
-    "Response 3 header X-XSS-Protection is \"39718951689.798355\", not \"1240385250978.3625\""
+    "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
   "cc-resp-no-cache": [
@@ -318,7 +382,10 @@
     "Response 2 comes from cache"
   ],
   "freshness-max-age-ignore-quoted-all-rev": true,
-  "freshness-max-age-ignore-quoted-rev": true,
+  "freshness-max-age-ignore-quoted-rev": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-max-age-max": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-negative": [
@@ -434,9 +501,14 @@
     "Response 2 header Age is 4, should be bigger"
   ],
   "other-age-update-max-age": true,
+  "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 18 Dec 2018 04:00:41 GMT, should be Tue, 18 Dec 2018 04:00:37 GMT"
+    "Response 2 header Date is Tue, 18 Dec 2018 05:57:57 GMT, should be Tue, 18 Dec 2018 05:57:54 GMT"
+  ],
+  "other-set-cookie": [
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
