@@ -354,6 +354,82 @@ export default {
           expected_type: 'not_cached'
         }
       ]
+    },
+    {
+      name: "HTTP cache should normalise selecting header fields (removing whitespace)",
+      id: 'vary-normalise-space',
+      required: false,
+      requests: [
+        {
+          request_headers: [
+            ['Foo', '1,2']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'Foo']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Foo', ' 1, 2 ']
+          ],
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: "HTTP cache should normalise selecting header fields (combining fields)",
+      id: 'vary-normalise-combine',
+      required: false,
+      requests: [
+        {
+          request_headers: [
+            ['Foo', '1, 2']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'Foo']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Foo', '1'],
+            ['Foo', '2']
+          ],
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: "HTTP cache should normalise selecting header fields (language ordering)",
+      id: 'vary-normalise-lang-order',
+      required: false,
+      requests: [
+        {
+          request_headers: [
+            ['Accept-Language', 'en, de']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'Accept-Language']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Accept-Language', 'de, en']
+          ],
+          expected_type: 'cached'
+        }
+      ]
     }
   ]
 }
