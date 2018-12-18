@@ -127,6 +127,24 @@ export default
           expected_type: 'cached'
         }
       ]
-    }
+    },
+    {
+      name: 'HTTP cache should reuse a fresh response with a Set-Cookie header',
+      id: 'freshness-max-age',
+      required: false,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600'],
+            ['Set-Cookie', 'a=b']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+
   ]
 }
