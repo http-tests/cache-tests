@@ -48,6 +48,7 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
 
 export function showTestName (test, uuid) {
   var span = document.createElement('span')
+  span.title = JSON.stringify(test.requests, null, 2)
   span.appendChild(document.createTextNode(test.name + ' '))
 
   var idLinkElement = document.createElement('a')
