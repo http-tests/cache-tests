@@ -1,80 +1,89 @@
 {
+  "304-etag-update-response-Cache-Control": true,
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"918737130501.7373\", not \"554856951035.2534\""
+    "Response 2 header Content-Location is \"149419884925.64072\", not \"979819519209.1326\""
   ],
   "304-etag-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"146181263854.0233\", not \"1519437166789.576\""
+    "Response 2 header Content-MD5 is \"1337959677086.7886\", not \"351273312504.8122\""
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
+  "304-etag-update-response-Expires": true,
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": true,
   "304-etag-update-response-X-Frame-Options": true,
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": true,
+  "304-etag-update-stored-Cache-Control": true,
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"918737130501.7373\", not \"554856951035.2534\""
+    "Response 3 header Content-Location is \"149419884925.64072\", not \"979819519209.1326\""
   ],
   "304-etag-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"146181263854.0233\", not \"1519437166789.576\""
+    "Response 3 header Content-MD5 is \"1337959677086.7886\", not \"351273312504.8122\""
   ],
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
     "Assertion",
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
+  "304-etag-update-stored-Expires": true,
   "304-etag-update-stored-Test-Header": true,
   "304-etag-update-stored-X-Content-Foo": true,
   "304-etag-update-stored-X-Frame-Options": true,
   "304-etag-update-stored-X-Test-Header": true,
   "304-etag-update-stored-X-XSS-Protection": true,
+  "304-lm-update-response-Cache-Control": true,
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Assertion",
-    "Response 2 header Content-Location is \"918737130501.7373\", not \"554856951035.2534\""
+    "Response 2 header Content-Location is \"149419884925.64072\", not \"979819519209.1326\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
-    "Response 2 header Content-MD5 is \"146181263854.0233\", not \"1519437166789.576\""
+    "Response 2 header Content-MD5 is \"1337959677086.7886\", not \"351273312504.8122\""
   ],
   "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
+  "304-lm-update-response-Expires": true,
   "304-lm-update-response-Test-Header": true,
   "304-lm-update-response-X-Content-Foo": true,
   "304-lm-update-response-X-Frame-Options": true,
   "304-lm-update-response-X-Test-Header": true,
   "304-lm-update-response-X-XSS-Protection": true,
+  "304-lm-update-stored-Cache-Control": true,
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Assertion",
-    "Response 3 header Content-Location is \"918737130501.7373\", not \"554856951035.2534\""
+    "Response 3 header Content-Location is \"149419884925.64072\", not \"979819519209.1326\""
   ],
   "304-lm-update-stored-Content-MD5": [
     "Assertion",
-    "Response 3 header Content-MD5 is \"146181263854.0233\", not \"1519437166789.576\""
+    "Response 3 header Content-MD5 is \"1337959677086.7886\", not \"351273312504.8122\""
   ],
   "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
     "Assertion",
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
+  "304-lm-update-stored-Expires": true,
   "304-lm-update-stored-Test-Header": true,
   "304-lm-update-stored-X-Content-Foo": true,
   "304-lm-update-stored-X-Frame-Options": true,
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": true,
+  "304-lm-use-stored-Test-Header": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
@@ -150,6 +159,16 @@
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
+  "freshness-max-age-ignore-quoted": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-max-age-ignore-quoted-all": true,
+  "freshness-max-age-ignore-quoted-all-rev": true,
+  "freshness-max-age-ignore-quoted-rev": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-max-age-max": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -163,6 +182,14 @@
   "freshness-max-age-s-maxage-private": true,
   "freshness-max-age-s-maxage-private-multiple": true,
   "freshness-max-age-single-quoted": true,
+  "freshness-max-age-space-after-equals": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-max-age-space-before-equals": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,
@@ -342,6 +369,18 @@
   ],
   "vary-match": true,
   "vary-no-match": true,
+  "vary-normalise-combine": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-order": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-space": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "vary-omit": true,
   "vary-star": true
 }

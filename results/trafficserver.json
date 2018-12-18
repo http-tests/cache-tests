@@ -1,4 +1,5 @@
 {
+  "304-etag-update-response-Cache-Control": true,
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": true,
   "304-etag-update-response-Content-MD5": true,
@@ -7,11 +8,13 @@
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
+  "304-etag-update-response-Expires": true,
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": true,
   "304-etag-update-response-X-Frame-Options": true,
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": true,
+  "304-etag-update-stored-Cache-Control": true,
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": true,
   "304-etag-update-stored-Content-MD5": true,
@@ -20,11 +23,13 @@
     "Assertion",
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
+  "304-etag-update-stored-Expires": true,
   "304-etag-update-stored-Test-Header": true,
   "304-etag-update-stored-X-Content-Foo": true,
   "304-etag-update-stored-X-Frame-Options": true,
   "304-etag-update-stored-X-Test-Header": true,
   "304-etag-update-stored-X-XSS-Protection": true,
+  "304-lm-update-response-Cache-Control": true,
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": true,
   "304-lm-update-response-Content-MD5": true,
@@ -33,11 +38,13 @@
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
+  "304-lm-update-response-Expires": true,
   "304-lm-update-response-Test-Header": true,
   "304-lm-update-response-X-Content-Foo": true,
   "304-lm-update-response-X-Frame-Options": true,
   "304-lm-update-response-X-Test-Header": true,
   "304-lm-update-response-X-XSS-Protection": true,
+  "304-lm-update-stored-Cache-Control": true,
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": true,
   "304-lm-update-stored-Content-MD5": true,
@@ -46,21 +53,13 @@
     "Assertion",
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
+  "304-lm-update-stored-Expires": true,
   "304-lm-update-stored-Test-Header": true,
   "304-lm-update-stored-X-Content-Foo": true,
   "304-lm-update-stored-X-Frame-Options": true,
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": true,
-  "304-lm-use-stored-Content-Foo": true,
-  "304-lm-use-stored-Content-Location": true,
-  "304-lm-use-stored-Content-MD5": true,
-  "304-lm-use-stored-Content-Security-Policy": true,
-  "304-lm-use-stored-Content-Type": true,
   "304-lm-use-stored-Test-Header": true,
-  "304-lm-use-stored-X-Content-Foo": true,
-  "304-lm-use-stored-X-Frame-Options": true,
-  "304-lm-use-stored-X-Test-Header": true,
-  "304-lm-use-stored-X-XSS-Protection": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": [
@@ -151,6 +150,22 @@
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
+  "freshness-max-age-ignore-quoted": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-max-age-ignore-quoted-all": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-max-age-ignore-quoted-all-rev": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-max-age-ignore-quoted-rev": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-max-age-max": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -163,6 +178,14 @@
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
   "freshness-max-age-single-quoted": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-max-age-space-after-equals": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-max-age-space-before-equals": [
     "Assertion",
     "Response 2 comes from cache"
   ],
@@ -324,8 +347,14 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "surrogate-max-age-cc-max-age-invalid-expires": true,
-  "surrogate-max-age-expires": true,
+  "surrogate-max-age-cc-max-age-invalid-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "surrogate-max-age-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age-extension": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -337,6 +366,14 @@
   "surrogate-max-age-short-cc-max-age": [
     "Assertion",
     "Response 2 does not come from cache"
+  ],
+  "surrogate-max-age-space-after-equals": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "surrogate-max-age-space-before-equals": [
+    "Assertion",
+    "Response 2 comes from cache"
   ],
   "surrogate-no-store": true,
   "surrogate-no-store-cc-fresh": [
@@ -354,6 +391,12 @@
   "vary-invalidate": true,
   "vary-match": true,
   "vary-no-match": true,
+  "vary-normalise-combine": true,
+  "vary-normalise-lang-order": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-space": true,
   "vary-omit": true,
   "vary-star": true
 }
