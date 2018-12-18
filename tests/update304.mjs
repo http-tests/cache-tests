@@ -112,7 +112,6 @@ function check304 (args) {
       {
         response_headers: [
           (header == 'Cache-Control') && ['a', 'b'] || ['Cache-Control', 'max-age=1'],
-          //          ['Expires', 1],
           ['Date', 0],
           ['ETag', etag1],
           [header, valueA]
@@ -123,7 +122,6 @@ function check304 (args) {
       {
         response_headers: [
           (header == 'Cache-Control') && ['a', 'b'] || ['Cache-Control', 'max-age=3600'],
-          //          ['Expires', 3600],
           ['Date', 0],
           ['ETag', etag1],
           [header, valueB]
@@ -143,7 +141,6 @@ function check304 (args) {
       {
         response_headers: [
           (header == 'Cache-Control') && ['a', 'b'] || ['Cache-Control', 'max-age=1'],
-          //          ['Expires', 1],
           ['Date', 0],
           ['ETag', etag1],
           [header, valueA]
@@ -154,7 +151,6 @@ function check304 (args) {
       {
         response_headers: [
           (header == 'Cache-Control') && ['a', 'b'] || ['Cache-Control', 'max-age=3600'],
-          //          ['Expires', 3600],
           ['Date', 0],
           ['ETag', etag1],
           [header, valueB]
