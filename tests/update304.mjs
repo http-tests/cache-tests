@@ -144,14 +144,18 @@ function makeResponse(header, value, validatorType, validatorValue, lifetime) {
   ['X-Test-Header'],
   ['Content-Foo'],
   ['X-Content-Foo'],
+  ['Content-Type', 'text/plain', 'text/plain;charset=utf-8'],
+  ['Content-MD5', 'rL0Y20zC+Fzt72VPzMSk2A==', 'N7UdGUp1E+RbVvZSTy1R8g=='],
+  ['Content-Location', '/foo', '/bar'],
+  ['Content-Security-Policy', 'default-src \'self\'', 'default-src \'self\' cdn.example.com',],
+  ['X-Frame-Options', 'deny', 'sameorigin'],
+  ['X-XSS-Protection', '1', '1; mode=block'],
   ['Cache-Control', 'max-age=1', 'max-age=3600'],
   ['Expires', utils.httpDate(Date.now(), 1), utils.httpDate(Date.now(), 3600)],
-  ['Content-Type', 'text/plain', 'text/plain;charset=utf-8'],
-  ['Content-MD5'],
-  ['Content-Location'],
-  ['Content-Security-Policy'],
-  ['X-Frame-Options'],
-  ['X-XSS-Protection']
+  ['Clear-Site-Data', 'cache', 'cookies'],
+  ['Public-Key-Pins'],
+  ['Set-Cookie', 'a=b', 'a=c'],
+  ['Set-Cookie2', 'a=b', 'a=c']
 ].forEach(check304)
 
 export default {
