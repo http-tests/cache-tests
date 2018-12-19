@@ -75,25 +75,44 @@ export function showTestName (test, uuid) {
 }
 
 export function showTestResult (test, result) {
-  if (result === undefined) {
-    return document.createTextNode(' - ')
-  } else if (result === true) {
-    return document.createTextNode(' ✅ ')
-  } else {
+  var resultValue = determineTestResult(test, result)
+  var resultNode = document.createTextNode(` ${resultValue} `)
+  if (result && typeof(result[1]) === 'string') {
     var span = document.createElement('span')
     span.title = result[1]
-    if (result[0] === 'Setup') {
-      span.appendChild(document.createTextNode(' 🔹 '))
-    } else if (result[0] !== 'Assertion') {
-      span.appendChild(document.createTextNode(' ⁉️ '))
-    } else if (test.required === false) {
-      span.appendChild(document.createTextNode(' ⚠️ '))
-    } else {
-      span.appendChild(document.createTextNode(' ⛔️ '))
-    }
+    span.appendChild(resultNode)
     return span
   }
+  return resultNode
 }
+
+const resultTypes = {
+  untested: '-',
+  pass: '✅',
+  fail: '⛔️',
+  optional_fail: '⚠️',
+  setup_fail: '🔹',
+  harness_fail: '⁉️'
+}
+
+function determineTestResult (test, result) {
+  if (result == undefined) {
+    return resultTypes.untested
+  } else if (result === true) {
+    return resultTypes.pass
+  } else {
+    if (result[0] === 'Setup') {
+      return resultTypes.setup_fail
+    } else if (result[0] !== 'Assertion') {
+      return resultTypes.harness_fail
+    } else if (test.required === false) {
+      return resultTypes.optional_fail
+    } else {
+      return resultTypes.fail
+    }
+  }
+}
+
 
 function copyTextToClipboard (text) {
   var textArea = document.createElement('textarea')
