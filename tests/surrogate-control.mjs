@@ -26,6 +26,7 @@ export default
     {
       name: 'HTTP cache must ignore Surrogate-Control: max-age with space before the =',
       id: 'surrogate-max-age-space-before-equals',
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -43,6 +44,7 @@ export default
     {
       name: 'HTTP cache must ignore Surrogate-Control: max-age with space after the =',
       id: 'surrogate-max-age-space-after-equals',
+      browser_skip: true,
       requests: [
         {
           response_headers: [
