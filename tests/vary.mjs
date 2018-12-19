@@ -356,7 +356,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache should normalise selecting header fields (removing whitespace)",
+      name: 'HTTP cache should normalise selecting header fields (removing whitespace)',
       id: 'vary-normalise-space',
       required: false,
       requests: [
@@ -381,7 +381,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache should normalise selecting header fields (combining fields)",
+      name: 'HTTP cache should normalise selecting header fields (combining fields)',
       id: 'vary-normalise-combine',
       required: false,
       requests: [
@@ -407,7 +407,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache should normalise selecting header fields (language ordering)",
+      name: 'HTTP cache should normalise selecting header fields (language ordering)',
       id: 'vary-normalise-lang-order',
       required: false,
       requests: [

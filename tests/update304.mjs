@@ -130,9 +130,9 @@ function check304 (args) {
   })
 }
 
-function makeResponse(header, value, validatorType, validatorValue, lifetime) {
+function makeResponse (header, value, validatorType, validatorValue, lifetime) {
   return [
-    (header == 'Cache-Control') && ['a', 'b'] || ['Cache-Control', `max-age=${lifetime}`],
+    ((header === 'Cache-Control') && ['a', 'b']) || ['Cache-Control', `max-age=${lifetime}`],
     ['Date', 0],
     [validatorType, validatorValue],
     [header, value]
@@ -147,7 +147,7 @@ function makeResponse(header, value, validatorType, validatorValue, lifetime) {
   ['Content-Type', 'text/plain', 'text/plain;charset=utf-8'],
   ['Content-MD5', 'rL0Y20zC+Fzt72VPzMSk2A==', 'N7UdGUp1E+RbVvZSTy1R8g=='],
   ['Content-Location', '/foo', '/bar'],
-  ['Content-Security-Policy', 'default-src \'self\'', 'default-src \'self\' cdn.example.com',],
+  ['Content-Security-Policy', 'default-src \'self\'', 'default-src \'self\' cdn.example.com'],
   ['X-Frame-Options', 'deny', 'sameorigin'],
   ['X-XSS-Protection', '1', '1; mode=block'],
   ['Cache-Control', 'max-age=1', 'max-age=3600'],

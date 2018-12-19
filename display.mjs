@@ -77,7 +77,7 @@ export function showTestName (test, uuid) {
 export function showTestResult (test, result) {
   var resultValue = determineTestResult(test, result)
   var resultNode = document.createTextNode(` ${resultValue} `)
-  if (result && typeof(result[1]) === 'string') {
+  if (result && typeof (result[1]) === 'string') {
     var span = document.createElement('span')
     span.title = result[1]
     span.appendChild(resultNode)
@@ -96,7 +96,7 @@ const resultTypes = {
 }
 
 function determineTestResult (test, result) {
-  if (result == undefined) {
+  if (result === undefined) {
     return resultTypes.untested
   } else if (result === true) {
     return resultTypes.pass
@@ -112,7 +112,6 @@ function determineTestResult (test, result) {
     }
   }
 }
-
 
 function copyTextToClipboard (text) {
   var textArea = document.createElement('textarea')
