@@ -26,11 +26,11 @@ and then install dependencies for the command-line client:
 
 > cd cache-tests; npm i
 
+### Installing from NPM
+
 Alternatively, for the most recent release:
 
 > npm i --legacy-bundling http-cache-tests
-
-Then, change directory into `node_modules/http-cache-tests`.
 
 
 ## Running the Test Server
@@ -39,7 +39,9 @@ First, start the server-side by running:
 
 > npm run server
 
-inside the `http-cache-tests` directory. By default, the server runs on port 8000; to choose a different port, use the `--port` argument; e.g.,
+inside the directory (the repository's directory if you cloned from git, or `node_modules/http-cache-tests` if you installed from npm).
+
+By default, the server runs on port 8000; to choose a different port, use the `--port` argument; e.g.,
 
 > npm run server --port=8080
 
@@ -50,6 +52,7 @@ If you want to run an HTTPS origin, you'll need to specify the `protocol`, `keyf
 Note that the default port for HTTPS is still 8000.
 
 Make sure that the browser is not configured to use a proxy cache, and that the network being tested upon does not use an intercepting proxy cache.
+
 
 ## Testing Reverse Proxies and CDNs
 
@@ -88,7 +91,11 @@ To reflect this, the test descriptions use "must" and "should" to indicate wheth
 
 This is explicitly flagged in the tests with the `required` member.
 
-In the live browser tests (`/test-cdn.html` and `/test-browser.html`), if you click on the test name, it will copy that specific test's UUID (part of the URL used for requests associated with the test) to the clipboard; that makes it easier to find them in the browser's developer tools and proxy logs.
+Each test has an `id` that is a short name for the test; you can click on ⌾ next to the test name to copy it to the clipboard, and use that as a way to find the test in the `tests/` directory, as well as link directly to it; for example, the test ID `foo` can be linked to as `#foo` on the index and test pages.
+
+Each test also has a `uuid` that identifies that specific test run; this can be used to find its requests in the browser developer tools or proxy logs. Click ⚙︎ to copy it to the clipboard.
+
+Finally, you can hover over test names to get the raw JSON of the requests used to run the test. See below for details of that format.
 
 
 ## Test Format
