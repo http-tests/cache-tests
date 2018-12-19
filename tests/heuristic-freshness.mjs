@@ -43,21 +43,21 @@ function checkStatus (status) {
 }
 
 [
+  [true, 200, 'OK'],
   [false, 201, 'Created'],
   [false, 202, 'Accepted'],
-  [false, 403, 'Forbidden'],
-  [false, 502, 'Bad Gateway'],
-  [false, 503, 'Service Unavailable'],
-  [false, 504, 'Gateway Timeout'],
-  [false, 599, 'Unknown', undefined, 'when Cache-Control: public is not present'],
-  [true, 200, 'OK'],
   [true, 203, 'Non-Authoritative Information'],
   [true, 204, 'No Content', ''],
+  [false, 403, 'Forbidden'],
   [true, 404, 'Not Found'],
   [true, 405, 'Method Not Allowed'],
   [true, 410, 'Gone'],
   [true, 414, 'URI Too Long'],
   [true, 501, 'Not Implemented'],
+  [false, 502, 'Bad Gateway'],
+  [false, 503, 'Service Unavailable'],
+  [false, 504, 'Gateway Timeout'],
+  [false, 599, 'Unknown', undefined, 'when Cache-Control: public is not present'],
   [true, 599, 'Unknown', undefined, 'when Cache-Control: public is present', ['Cache-Control', 'public']]
 ].forEach(checkStatus)
 

@@ -24,7 +24,7 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
       if (test.browser_skip === true && useBrowserCache === true) return
       test.suiteName = testSuite.name
       var testElement = resultList.appendChild(document.createElement('li'))
-      testElement.appendChild(showTestResult(test, testResults[test.id]))
+      testElement.appendChild(showTestResult(testSuite.tests, testResults, test.id))
       testElement.appendChild(showTestName(test, testUUIDs[test.id]))
       testElement.addEventListener('click', function (event) {
         copyTextToClipboard(testUUIDs[test.id])
@@ -74,8 +74,9 @@ export function showTestName (test, uuid) {
   return span
 }
 
-export function showTestResult (test, result) {
-  var resultValue = determineTestResult(test, result)
+export function showTestResult (tests, results, testId) {
+  var result = results[testId]
+  var resultValue = determineTestResult(tests, results, testId)
   var resultNode = document.createTextNode(` ${resultValue} `)
   if (result && typeof (result[1]) === 'string') {
     var span = document.createElement('span')
@@ -92,25 +93,45 @@ const resultTypes = {
   fail: '⛔️',
   optional_fail: '⚠️',
   setup_fail: '🔹',
-  harness_fail: '⁉️'
+  harness_fail: '⁉️',
+  dependency_fail: '⚪️'
 }
 
-function determineTestResult (test, result) {
+function determineTestResult (tests, results, testId) {
+  var test = testLookup(tests, testId)
+  var result = results[testId]
   if (result === undefined) {
     return resultTypes.untested
-  } else if (result === true) {
-    return resultTypes.pass
-  } else {
-    if (result[0] === 'Setup') {
-      return resultTypes.setup_fail
-    } else if (result[0] !== 'Assertion') {
-      return resultTypes.harness_fail
-    } else if (test.required === false) {
-      return resultTypes.optional_fail
-    } else {
-      return resultTypes.fail
+  }
+  if (test.depends_on !== undefined) {
+    for (var dependencyId of test.depends_on) {
+      if (determineTestResult(tests, results, dependencyId) !== resultTypes.pass) {
+        return resultTypes.dependency_fail
+      }
     }
   }
+  if (result === true) {
+    return resultTypes.pass
+  }
+  if (result[0] === 'Setup') {
+    return resultTypes.setup_fail
+  }
+  if (result[0] !== 'Assertion') {
+    return resultTypes.harness_fail
+  }
+  if (test.required === false) {
+    return resultTypes.optional_fail
+  }
+  return resultTypes.fail
+}
+
+export function testLookup (tests, testId) {
+  for (var test of tests) {
+    if (test.id === testId) {
+      return test
+    }
+  }
+  throw new Error(`Cannot find test ${testId}`)
 }
 
 function copyTextToClipboard (text) {

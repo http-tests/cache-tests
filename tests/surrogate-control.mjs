@@ -27,6 +27,7 @@ export default
       name: 'HTTP cache must ignore Surrogate-Control: max-age with space before the =',
       id: 'surrogate-max-age-space-before-equals',
       browser_skip: true,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -45,6 +46,7 @@ export default
       name: 'HTTP cache must ignore Surrogate-Control: max-age with space after the =',
       id: 'surrogate-max-age-space-after-equals',
       browser_skip: true,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -63,6 +65,7 @@ export default
       name: 'HTTP cache must not reuse a response with Surrogate-Control: max-age=0',
       id: 'surrogate-max-age-0',
       browser_skip: true,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -80,6 +83,7 @@ export default
       id: 'surrogate-max-age-extension',
       browser_skip: true,
       required: false,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -97,6 +101,7 @@ export default
       id: 'surrogate-max-age-case-insensitive',
       browser_skip: true,
       required: false,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -115,6 +120,7 @@ export default
       id: 'surrogate-max-age-expires',
       browser_skip: true,
       required: false,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -134,6 +140,7 @@ export default
       id: 'surrogate-max-age-cc-max-age-invalid-expires',
       browser_skip: true,
       required: false,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -152,6 +159,7 @@ export default
       name: 'HTTP cache must not reuse a response with Surrogate-Control: max-age=0 and a future Expires',
       id: 'surrogate-max-age-0-expires',
       browser_skip: true,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -171,6 +179,7 @@ export default
       id: 'surrogate-max-age-short-cc-max-age',
       browser_skip: true,
       required: false,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -189,6 +198,7 @@ export default
       name: 'HTTP cache must prefer short Surrogate-Control: max-age over long Cache-Control: max-age',
       id: 'surrogate-max-age-long-cc-max-age',
       browser_skip: true,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -207,6 +217,7 @@ export default
       name: 'HTTP cache must not reuse a response when the Age header is greater than its Surrogate-Control lifetime',
       id: 'surrogate-max-age-age',
       browser_skip: true,
+      depends_on: ['surrogate-max-age'],
       requests: [
         {
           response_headers: [
@@ -240,6 +251,7 @@ export default
       name: 'HTTP cache must not store a response with Surrogate-Control: no-store, even with CC max-age and Expires',
       id: 'surrogate-no-store-cc-fresh',
       browser_skip: true,
+      depends_on: ['surrogate-no-store'],
       requests: [
         {
           response_headers: [

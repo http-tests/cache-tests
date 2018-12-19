@@ -22,6 +22,7 @@ function checkInvalidation (method) {
     name: `HTTP cache should not invalidate URL after a failed response to a ${method} request`,
     id: `invalidate-${method}-failed`,
     required: false,
+    depends_on: [`invalidate-${method}`],
     requests: [
       {
         template: 'fresh',

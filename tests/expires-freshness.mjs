@@ -58,6 +58,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an Expires older than Date, both fast',
       id: 'freshness-expires-old-date',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -75,6 +76,7 @@ export default
       name: 'HTTP cache should reuse a response with an Expires using wrong case (weekday)',
       id: 'freshness-expires-wrong-case-weekday',
       required: false,
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -92,6 +94,7 @@ export default
       name: 'HTTP cache should reuse a response with an Expires using wrong case (month)',
       id: 'freshness-expires-wrong-case-month',
       required: false,
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -109,6 +112,7 @@ export default
       name: 'HTTP cache should reuse a response with an Expires using wrong case (tz)',
       id: 'freshness-expires-wrong-case-tz',
       required: false,
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -125,6 +129,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Expires (0)',
       id: 'freshness-expires-invalid',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -141,6 +146,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Expires (UTC)',
       id: 'freshness-expires-invalid-utc',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -157,6 +163,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Expires (two-digit year)',
       id: 'freshness-expires-invalid-2-digit-year',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -173,6 +180,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Expires (missing comma)',
       id: 'freshness-expires-invalid-no-comma',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -189,6 +197,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Expires (multiple spaces)',
       id: 'freshness-expires-invalid-multiple-spaces',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -205,6 +214,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Expires (date dashes)',
       id: 'freshness-expires-invalid-date-dashes',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -221,6 +231,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Expires (time periods)',
       id: 'freshness-expires-invalid-time-periods',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -237,6 +248,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Expires (1-digit hour)',
       id: 'freshness-expires-invalid-1-digit-hour',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -253,6 +265,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with Expires, even if Date is invalid',
       id: 'freshness-expires-invalid-date',
+      depends_on: ['freshness-expires-future'],
       required: false,
       requests: [
         {
@@ -270,6 +283,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response when the Age header is greater than its Expires minus Date, and Date is slow',
       id: 'freshness-expires-age-slow-date',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -287,6 +301,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response when the Age header is greater than its Expires minus Date, and Date is fast',
       id: 'freshness-expires-age-fast-date',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
