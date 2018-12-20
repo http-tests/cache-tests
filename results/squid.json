@@ -368,6 +368,7 @@
   "surrogate-max-age-space-before-equals": true,
   "surrogate-no-store": true,
   "surrogate-no-store-cc-fresh": true,
+  "surrogate-none": true,
   "vary-2-match": true,
   "vary-2-match-omit": true,
   "vary-2-no-match": true,

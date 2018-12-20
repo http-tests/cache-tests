@@ -264,7 +264,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Thu, 20 Dec 2018 06:31:38 GMT, should be Thu, 20 Dec 2018 06:31:35 GMT"
+    "Response 2 header Date is Thu, 20 Dec 2018 07:22:26 GMT, should be Thu, 20 Dec 2018 07:22:22 GMT"
   ],
   "other-set-cookie": true,
   "partial-store-complete-reuse-partial": true,
@@ -371,6 +371,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "surrogate-none": true,
   "vary-2-match": true,
   "vary-2-match-omit": true,
   "vary-2-no-match": true,

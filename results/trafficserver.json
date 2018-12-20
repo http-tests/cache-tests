@@ -143,12 +143,18 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-multiple-spaces": true,
+  "freshness-expires-invalid-multiple-spaces": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-invalid-no-comma": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-time-periods": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-invalid-utc": [
     "Assertion",
     "Response 2 comes from cache"
@@ -156,7 +162,10 @@
   "freshness-expires-none": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-present": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-wrong-case-month": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -395,6 +404,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "surrogate-none": true,
   "vary-2-match": true,
   "vary-2-match-omit": true,
   "vary-2-no-match": true,
