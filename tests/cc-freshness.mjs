@@ -55,6 +55,7 @@ export default
     {
       name: 'HTTP cache should not reuse a response with single-quoted Cache-Control: max-age',
       id: 'freshness-max-age-single-quoted',
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -104,6 +105,7 @@ export default
     {
       name: 'HTTP cache must ignore the phrase "max-age" in a quoted string, even when max-age has a quoted value too',
       id: 'freshness-max-age-ignore-quoted-all',
+      depends_on: ['freshness-max-age-quoted'],
       requests: [
         {
           response_headers: [
@@ -120,6 +122,7 @@ export default
     {
       name: 'HTTP cache must ignore the phrase "max-age" in a quoted string, even when previous max-age has a quoted value too',
       id: 'freshness-max-age-ignore-quoted-all-rev',
+      depends_on: ['freshness-max-age-quoted'],
       requests: [
         {
           response_headers: [
@@ -136,6 +139,7 @@ export default
     {
       name: 'HTTP cache must ignore max-age with space before the =',
       id: 'freshness-max-age-space-before-equals',
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -152,6 +156,7 @@ export default
     {
       name: 'HTTP cache must ignore max-age with space after the =',
       id: 'freshness-max-age-space-after-equals',
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -168,6 +173,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with Cache-Control: max-age=0',
       id: 'freshness-max-age-0',
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -183,6 +189,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Cache-Control: max-age (leading alpha)',
       id: 'freshness-max-age-a100',
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -198,6 +205,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid Cache-Control: max-age (trailing alpha)',
       id: 'freshness-max-age-100a',
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -213,6 +221,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with negative Cache-Control: max-age',
       id: 'freshness-max-age-negative',
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -229,7 +238,7 @@ export default
       name: 'HTTP cache should reuse a response with Cache-Control: max-age: 2147483648',
       id: 'freshness-max-age-max',
       required: false,
-      depends_on: ['freshness-max-age'],
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -246,7 +255,7 @@ export default
       name: 'HTTP cache should reuse a response with Cache-Control: max-age: 99999999999',
       id: 'freshness-max-age-max-plus',
       required: false,
-      depends_on: ['freshness-max-age'],
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -318,6 +327,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with Cache-Control: max-age=0 and a future Expires',
       id: 'freshness-max-age-0-expires',
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
@@ -406,6 +416,7 @@ export default
     {
       name: 'Shared HTTP cache should reuse a response with positive Cache-Control: s-maxage',
       id: 'freshness-s-maxage-shared',
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
