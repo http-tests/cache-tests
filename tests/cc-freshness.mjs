@@ -5,11 +5,24 @@ export default
   name: 'Cache-Control Freshness',
   id: 'cc-freshness',
   tests: [
-    // response directives
+    {
+      name: 'HTTP cache may reuse a response without explict freshness information or a validator (but doing that messes up the tests)',
+      id: 'freshness-none',
+      required: false,
+      requests: [
+        {
+          setup: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
     {
       name: 'HTTP cache should reuse a response with positive Cache-Control: max-age',
       id: 'freshness-max-age',
       required: false,
+      depends_on: ['freshness-none'],
       requests: [
         {
           response_headers: [
