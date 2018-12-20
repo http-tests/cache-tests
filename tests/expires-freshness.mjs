@@ -5,11 +5,24 @@ export default
   name: 'Expires Freshness',
   id: 'expires',
   tests: [
-    // response directives
+    {
+      name: 'HTTP cache may reuse a response without explict freshness information or a validator (but doing that messes up the tests)',
+      id: 'freshness-expires-none',
+      required: false,
+      requests: [
+        {
+          setup: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
     {
       name: 'HTTP cache should reuse a response with a future Expires',
       id: 'freshness-expires-future',
       required: false,
+      depends_on: ['freshness-expires-none'],
       requests: [
         {
           response_headers: [
@@ -26,6 +39,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with a past Expires',
       id: 'freshness-expires-past',
+      depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
@@ -42,6 +56,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with a present Expires',
       id: 'freshness-expires-present',
+      depends_on: ['freshness-expires-none'],
       requests: [
         {
           response_headers: [
