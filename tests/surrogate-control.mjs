@@ -5,11 +5,25 @@ export default
   name: 'Surrogate-Control',
   id: 'surrogate-control',
   tests: [
-    // response directives
+    {
+      name: 'HTTP cache may reuse a response without explict freshness information or a validator (but doing that messes up the tests)',
+      id: 'surrogate-none',
+      required: false,
+      requests: [
+        {
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
     {
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age',
       id: 'surrogate-max-age',
       browser_skip: true,
+      depends_on: ['surrogate-none'],
       required: false,
       requests: [
         {
