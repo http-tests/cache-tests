@@ -11,7 +11,8 @@ export default
       required: false,
       requests: [
         {
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -29,7 +30,8 @@ export default
             ['Expires', 30 * 24 * 60 * 60],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -46,7 +48,8 @@ export default
             ['Expires', -30 * 24 * 60 * 60],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -80,7 +83,8 @@ export default
             ['Expires', 300],
             ['Date', 400]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -98,7 +102,8 @@ export default
             ['Expires', 'THU, 18 Aug 2050 02:01:18 GMT'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -116,7 +121,8 @@ export default
             ['Expires', 'Thu, 18 AUG 2050 02:01:18 GMT'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -134,7 +140,8 @@ export default
             ['Expires', 'Thu, 18 Aug 2050 02:01:18 gMT'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -151,7 +158,8 @@ export default
             ['Expires', '0'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -168,7 +176,8 @@ export default
             ['Expires', 'Thu, 18 Aug 2050 02:01:18 UTC'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -185,7 +194,8 @@ export default
             ['Expires', 'Thu, 18 Aug 50 02:01:18 GMT'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -202,7 +212,8 @@ export default
             ['Expires', 'Thu 18 Aug 2050 02:01:18 GMT'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'

@@ -16,7 +16,8 @@ export default
           response_headers: [
             ['Surrogate-Control', 'max-age=3600']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -35,7 +36,7 @@ export default
             ['Surrogate-Control', 'max-age =100']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -54,7 +55,7 @@ export default
             ['Surrogate-Control', 'max-age= 100']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -71,7 +72,8 @@ export default
           response_headers: [
             ['Surrogate-Control', 'max-age=0']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -89,7 +91,8 @@ export default
           response_headers: [
             ['Surrogate-Control', 'foobar, max-age=3600']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -107,7 +110,8 @@ export default
           response_headers: [
             ['Surrogate-Control', 'MaX-aGe=3600']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -128,7 +132,8 @@ export default
             ['Expires', -10000],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -148,7 +153,8 @@ export default
             ['Expires', '0'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -167,7 +173,8 @@ export default
             ['Expires', 10000],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -224,7 +231,8 @@ export default
             ['Surrogate-Control', 'max-age=3600'],
             ['Age', '12000']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -240,7 +248,8 @@ export default
           response_headers: [
             ['Surrogate-Control', 'no-store']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -260,7 +269,8 @@ export default
             ['Expires', 10000],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'

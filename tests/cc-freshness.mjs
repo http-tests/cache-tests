@@ -11,7 +11,8 @@ export default
       required: false,
       requests: [
         {
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -28,7 +29,8 @@ export default
           response_headers: [
             ['Cache-Control', 'max-age=3600']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -45,7 +47,8 @@ export default
           response_headers: [
             ['Cache-Control', 'max-age="3600"']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -61,7 +64,8 @@ export default
           response_headers: [
             ['Cache-Control', 'max-age=\'3600\'']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -78,7 +82,7 @@ export default
             ['Cache-Control', 'extension="max-age=100", max-age=1']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -95,7 +99,7 @@ export default
             ['Cache-Control', 'max-age=1, extension="max-age=100"']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -112,7 +116,7 @@ export default
             ['Cache-Control', 'extension="max-age=100", max-age="1"']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -129,7 +133,7 @@ export default
             ['Cache-Control', 'max-age="1", extension="max-age=100"']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -146,7 +150,7 @@ export default
             ['Cache-Control', 'max-age =100']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -163,7 +167,7 @@ export default
             ['Cache-Control', 'max-age= 100']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -179,7 +183,8 @@ export default
           response_headers: [
             ['Cache-Control', 'max-age=0']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -195,7 +200,8 @@ export default
           response_headers: [
             ['Cache-Control', 'max-age=a100']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -211,7 +217,8 @@ export default
           response_headers: [
             ['Cache-Control', 'max-age=100a']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -227,7 +234,8 @@ export default
           response_headers: [
             ['Cache-Control', 'max-age=-100']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -244,7 +252,8 @@ export default
           response_headers: [
             ['Cache-Control', 'max-age=2147483648']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -261,7 +270,8 @@ export default
           response_headers: [
             ['Cache-Control', 'max-age=99999999999']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -279,7 +289,8 @@ export default
             ['Cache-Control', 'max-age=10'],
             ['Age', '15']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -298,7 +309,8 @@ export default
             ['Expires', -10000],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -317,7 +329,8 @@ export default
             ['Expires', '0'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -335,7 +348,8 @@ export default
             ['Cache-Control', 'max-age=0'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'not_cached'
@@ -352,7 +366,8 @@ export default
           response_headers: [
             ['Cache-Control', 'foobar, max-age=3600']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
@@ -369,7 +384,8 @@ export default
           response_headers: [
             ['Cache-Control', 'MaX-aGe=3600']
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_type: 'cached'
