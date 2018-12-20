@@ -20,7 +20,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 18 Dec 2018 07:00:11 GMT\", not \"Tue, 18 Dec 2018 07:00:06 GMT\""
+    "Response 2 header Expires is \"Thu, 20 Dec 2018 07:55:20 GMT\", not \"Thu, 20 Dec 2018 07:55:15 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": true,
   "304-etag-update-response-Set-Cookie": [
@@ -63,7 +63,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 18 Dec 2018 07:00:11 GMT\", not \"Tue, 18 Dec 2018 07:00:06 GMT\""
+    "Response 3 header Expires is \"Thu, 20 Dec 2018 07:55:19 GMT\", not \"Thu, 20 Dec 2018 07:55:15 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": true,
   "304-etag-update-stored-Set-Cookie": [
@@ -106,7 +106,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 18 Dec 2018 07:00:11 GMT\", not \"Tue, 18 Dec 2018 07:00:06 GMT\""
+    "Response 2 header Expires is \"Thu, 20 Dec 2018 07:55:20 GMT\", not \"Thu, 20 Dec 2018 07:55:15 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": true,
   "304-lm-update-response-Set-Cookie": [
@@ -149,7 +149,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 18 Dec 2018 07:00:11 GMT\", not \"Tue, 18 Dec 2018 07:00:06 GMT\""
+    "Response 3 header Expires is \"Thu, 20 Dec 2018 07:55:19 GMT\", not \"Thu, 20 Dec 2018 07:55:15 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": true,
   "304-lm-update-stored-Set-Cookie": [
@@ -255,6 +255,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "freshness-expires-none": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,
@@ -274,16 +275,10 @@
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
-  "freshness-max-age-ignore-quoted": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-max-age-ignore-quoted": true,
   "freshness-max-age-ignore-quoted-all": true,
   "freshness-max-age-ignore-quoted-all-rev": true,
-  "freshness-max-age-ignore-quoted-rev": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-max": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-negative": true,
@@ -302,6 +297,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "freshness-none": true,
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,

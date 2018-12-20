@@ -141,6 +141,7 @@
   ],
   "freshness-expires-invalid-time-periods": true,
   "freshness-expires-invalid-utc": true,
+  "freshness-expires-none": true,
   "freshness-expires-old-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -193,6 +194,7 @@
     "Response 2 comes from cache"
   ],
   "freshness-max-age-space-before-equals": true,
+  "freshness-none": true,
   "freshness-s-maxage-shared": true,
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
