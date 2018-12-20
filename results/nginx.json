@@ -9,7 +9,7 @@
   ],
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"804297127063.7207\", not \"434894765582.7503\""
+    "Response 2 header Content-Foo is \"868779290817.6838\", not \"1447481096250.8142\""
   ],
   "304-etag-update-response-Content-Location": [
     "Assertion",
@@ -29,11 +29,11 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 18 Dec 2018 05:56:40 GMT\", not \"Tue, 18 Dec 2018 06:56:39 GMT\""
+    "Response 2 header Expires is \"Thu, 20 Dec 2018 00:28:56 GMT\", not \"Thu, 20 Dec 2018 01:28:55 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
-    "Response 2 header Public-Key-Pins is \"742485031028.831\", not \"538028965106.1744\""
+    "Response 2 header Public-Key-Pins is \"1190970280723.1396\", not \"604857075887.2759\""
   ],
   "304-etag-update-response-Set-Cookie": [
     "Setup",
@@ -45,11 +45,11 @@
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"850038316243.0934\", not \"930598566037.276\""
+    "Response 2 header Test-Header is \"866578170427.4575\", not \"1448115729586.1526\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"650549491257.5233\", not \"758397588610.1863\""
+    "Response 2 header X-Content-Foo is \"529853829463.3807\", not \"258054855231.86093\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
@@ -57,7 +57,7 @@
   ],
   "304-etag-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"22751032164.309868\", not \"40738558091.495804\""
+    "Response 2 header X-Test-Header is \"83075388783.66844\", not \"438882573702.3764\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
@@ -73,7 +73,7 @@
   ],
   "304-etag-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"804297127063.7207\", not \"434894765582.7503\""
+    "Response 3 header Content-Foo is \"868779290817.6838\", not \"1447481096250.8142\""
   ],
   "304-etag-update-stored-Content-Location": [
     "Assertion",
@@ -93,11 +93,11 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 18 Dec 2018 05:56:40 GMT\", not \"Tue, 18 Dec 2018 06:56:39 GMT\""
+    "Response 3 header Expires is \"Thu, 20 Dec 2018 00:28:56 GMT\", not \"Thu, 20 Dec 2018 01:28:55 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
-    "Response 3 header Public-Key-Pins is \"742485031028.831\", not \"538028965106.1744\""
+    "Response 3 header Public-Key-Pins is \"1190970280723.1396\", not \"604857075887.2759\""
   ],
   "304-etag-update-stored-Set-Cookie": [
     "Setup",
@@ -109,11 +109,11 @@
   ],
   "304-etag-update-stored-Test-Header": [
     "Assertion",
-    "Response 3 header Test-Header is \"850038316243.0934\", not \"930598566037.276\""
+    "Response 3 header Test-Header is \"866578170427.4575\", not \"1448115729586.1526\""
   ],
   "304-etag-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"650549491257.5233\", not \"758397588610.1863\""
+    "Response 3 header X-Content-Foo is \"529853829463.3807\", not \"258054855231.86093\""
   ],
   "304-etag-update-stored-X-Frame-Options": [
     "Assertion",
@@ -121,7 +121,7 @@
   ],
   "304-etag-update-stored-X-Test-Header": [
     "Assertion",
-    "Response 3 header X-Test-Header is \"22751032164.309868\", not \"40738558091.495804\""
+    "Response 3 header X-Test-Header is \"83075388783.66844\", not \"438882573702.3764\""
   ],
   "304-etag-update-stored-X-XSS-Protection": [
     "Assertion",
@@ -137,7 +137,7 @@
   ],
   "304-lm-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"804297127063.7207\", not \"434894765582.7503\""
+    "Response 2 header Content-Foo is \"868779290817.6838\", not \"1447481096250.8142\""
   ],
   "304-lm-update-response-Content-Location": [
     "Assertion",
@@ -157,11 +157,11 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 18 Dec 2018 05:56:40 GMT\", not \"Tue, 18 Dec 2018 06:56:39 GMT\""
+    "Response 2 header Expires is \"Thu, 20 Dec 2018 00:28:56 GMT\", not \"Thu, 20 Dec 2018 01:28:55 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
-    "Response 2 header Public-Key-Pins is \"742485031028.831\", not \"538028965106.1744\""
+    "Response 2 header Public-Key-Pins is \"1190970280723.1396\", not \"604857075887.2759\""
   ],
   "304-lm-update-response-Set-Cookie": [
     "Setup",
@@ -173,11 +173,11 @@
   ],
   "304-lm-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"850038316243.0934\", not \"930598566037.276\""
+    "Response 2 header Test-Header is \"866578170427.4575\", not \"1448115729586.1526\""
   ],
   "304-lm-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"650549491257.5233\", not \"758397588610.1863\""
+    "Response 2 header X-Content-Foo is \"529853829463.3807\", not \"258054855231.86093\""
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
@@ -185,7 +185,7 @@
   ],
   "304-lm-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"22751032164.309868\", not \"40738558091.495804\""
+    "Response 2 header X-Test-Header is \"83075388783.66844\", not \"438882573702.3764\""
   ],
   "304-lm-update-response-X-XSS-Protection": [
     "Assertion",
@@ -201,7 +201,7 @@
   ],
   "304-lm-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"804297127063.7207\", not \"434894765582.7503\""
+    "Response 3 header Content-Foo is \"868779290817.6838\", not \"1447481096250.8142\""
   ],
   "304-lm-update-stored-Content-Location": [
     "Assertion",
@@ -221,11 +221,11 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 18 Dec 2018 05:56:40 GMT\", not \"Tue, 18 Dec 2018 06:56:39 GMT\""
+    "Response 3 header Expires is \"Thu, 20 Dec 2018 00:28:56 GMT\", not \"Thu, 20 Dec 2018 01:28:55 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
-    "Response 3 header Public-Key-Pins is \"742485031028.831\", not \"538028965106.1744\""
+    "Response 3 header Public-Key-Pins is \"1190970280723.1396\", not \"604857075887.2759\""
   ],
   "304-lm-update-stored-Set-Cookie": [
     "Setup",
@@ -237,11 +237,11 @@
   ],
   "304-lm-update-stored-Test-Header": [
     "Assertion",
-    "Response 3 header Test-Header is \"850038316243.0934\", not \"930598566037.276\""
+    "Response 3 header Test-Header is \"866578170427.4575\", not \"1448115729586.1526\""
   ],
   "304-lm-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"650549491257.5233\", not \"758397588610.1863\""
+    "Response 3 header X-Content-Foo is \"529853829463.3807\", not \"258054855231.86093\""
   ],
   "304-lm-update-stored-X-Frame-Options": [
     "Assertion",
@@ -249,7 +249,7 @@
   ],
   "304-lm-update-stored-X-Test-Header": [
     "Assertion",
-    "Response 3 header X-Test-Header is \"22751032164.309868\", not \"40738558091.495804\""
+    "Response 3 header X-Test-Header is \"83075388783.66844\", not \"438882573702.3764\""
   ],
   "304-lm-update-stored-X-XSS-Protection": [
     "Assertion",
@@ -373,6 +373,7 @@
   "freshness-max-age-single-quoted": true,
   "freshness-max-age-space-after-equals": true,
   "freshness-max-age-space-before-equals": true,
+  "freshness-s-maxage-shared": true,
   "heuristic-200-cached": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -483,7 +484,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 18 Dec 2018 05:56:46 GMT, should be Tue, 18 Dec 2018 05:56:42 GMT"
+    "Response 2 header Date is Thu, 20 Dec 2018 00:29:00 GMT, should be Thu, 20 Dec 2018 00:28:57 GMT"
   ],
   "other-set-cookie": [
     "Assertion",

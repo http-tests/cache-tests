@@ -193,6 +193,7 @@
     "Response 2 comes from cache"
   ],
   "freshness-max-age-space-before-equals": true,
+  "freshness-s-maxage-shared": true,
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,

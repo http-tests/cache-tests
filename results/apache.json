@@ -208,6 +208,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "freshness-s-maxage-shared": true,
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,
@@ -294,7 +295,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 18 Dec 2018 05:56:24 GMT, should be Tue, 18 Dec 2018 05:56:21 GMT"
+    "Response 2 header Date is Thu, 20 Dec 2018 00:28:38 GMT, should be Thu, 20 Dec 2018 00:28:35 GMT"
   ],
   "other-set-cookie": true,
   "partial-store-complete-reuse-partial": true,
