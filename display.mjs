@@ -12,6 +12,7 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
   var totalPassed = 0
   tests.forEach(testSuite => {
     var headerElement = document.createElement('h3')
+    headerElement.id = testSuite.id;
     target.appendChild(headerElement)
     var headerText = document.createTextNode(testSuite.name)
     headerElement.appendChild(headerText)
@@ -24,6 +25,7 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
       if (test.browser_skip === true && useBrowserCache === true) return
       test.suiteName = testSuite.name
       var testElement = resultList.appendChild(document.createElement('li'))
+      testElement.id = test.id;
       testElement.appendChild(showTestResult(testSuite.tests, testResults, test.id))
       testElement.appendChild(showTestName(test, testUUIDs[test.id]))
       testElement.addEventListener('click', function (event) {
@@ -44,6 +46,12 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
   var totalSummary = target.appendChild(totalElement)
   var totalText = document.createTextNode('Total ' + totalTests + ' tests, ' + totalPassed + ' passed.')
   totalSummary.appendChild(totalText)
+
+  // Scroll to the URL's fragment if it has one, skipping the initial '#'.
+  if (document.location.hash.length > 1) {
+    let elem = document.getElementById(document.location.hash.slice(1))
+    if (elem) elem.scrollIntoView();
+  }
 }
 
 export function showTestName (test, uuid) {
