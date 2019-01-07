@@ -10,7 +10,7 @@ function defaultResponseHeaders (validatorType, validatorValue, additionalHeader
   ].concat(additionalHeaders);
 }
 
-function checkCached ({name, id, configuredHeaders, expectedHeaders}) {
+function checkCached ({name, id, configuredHeaders, expectedHeaders, unexpectedHeaders=[]}) {
   const etag = utils.httpContent(`${id}-etag-1`);
   const etag1 = `"${etag}"`;
   const lm1 = utils.httpDate(Date.now(), -24 * 60 * 60);
@@ -26,6 +26,7 @@ function checkCached ({name, id, configuredHeaders, expectedHeaders}) {
       {
         expected_type: 'cached',
         expected_response_headers: expectedHeaders,
+        expected_response_nonheaders: unexpectedHeaders,
         setup_tests: ['expected_type']
       }
     ]
@@ -42,6 +43,7 @@ function checkCached ({name, id, configuredHeaders, expectedHeaders}) {
       {
         expected_type: 'cached',
         expected_response_headers: expectedHeaders,
+        expected_response_nonheaders: unexpectedHeaders,
         setup_tests: ['expected_type']
       }
     ]
@@ -87,6 +89,7 @@ checkCached({
     ['c', '3'],
   ],
   expectedHeaders: [['c', '3']],
+  unexpectedHeaders: ['Connection', 'a', 'b']
 });
 
 checkCached({
@@ -99,6 +102,7 @@ checkCached({
     ['c', '3'],
   ],
   expectedHeaders: [['c', '3']],
+  unexpectedHeaders: ['a', 'b']
 });
 
 export default {
