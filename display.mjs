@@ -92,6 +92,8 @@ const resultTypes = {
   pass: '✅',
   fail: '⛔️',
   optional_fail: '⚠️',
+  yes: 'Y',
+  no: 'N',
   setup_fail: '🔹',
   harness_fail: '⁉️',
   dependency_fail: '⚪️'
@@ -110,19 +112,33 @@ function determineTestResult (tests, results, testId) {
       }
     }
   }
-  if (result === true) {
-    return resultTypes.pass
-  }
   if (result[0] === 'Setup') {
     return resultTypes.setup_fail
   }
-  if (result[0] !== 'Assertion') {
+  if (result === false && result[0] !== 'Assertion') {
     return resultTypes.harness_fail
   }
-  if (test.kind === 'optimal') {
-    return resultTypes.optional_fail
+  if (test.kind === 'required' || test.kind === undefined) {
+    if (result === true) {
+      return resultTypes.pass
+    } else {
+      return resultTypes.fail
+    }
+  } else if (test.kind === 'optimal') {
+    if (result === true) {
+      return resultTypes.pass
+    } else {
+      return resultTypes.optional_fail
+    }
+  } else if (test.kind === 'check') {
+    if (result === true) {
+      return resultTypes.yes
+    } else {
+      return resultTypes.no
+    }
+  } else {
+    throw new Error(`Unrecognised test kind ${test.kind}`)
   }
-  return resultTypes.fail
 }
 
 export function testLookup (tests, testId) {

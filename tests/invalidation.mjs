@@ -3,7 +3,7 @@ var tests = []
 
 function checkInvalidation (method) {
   tests.push({
-    name: `HTTP cache must invalidate URL after a successful response to a ${method} request`,
+    name: `HTTP cache must invalidate the URL after a successful response to a ${method} request`,
     id: `invalidate-${method}`,
     requests: [
       {
@@ -19,7 +19,7 @@ function checkInvalidation (method) {
     ]
   })
   tests.push({
-    name: `HTTP cache should not invalidate URL after a failed response to a ${method} request`,
+    name: `An optimal HTTP cache does not invalidate the URL after a failed response to a ${method} request`,
     id: `invalidate-${method}-failed`,
     kind: 'optimal',
     depends_on: [`invalidate-${method}`],

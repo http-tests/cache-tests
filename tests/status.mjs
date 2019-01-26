@@ -26,7 +26,7 @@ function checkStatus (status) {
     ]
   })
   tests.push({
-    name: 'HTTP cache should reuse a fresh ' + code + ' response with explict freshness',
+    name: 'An optimal HTTP cache reuses a fresh ' + code + ' response with explict freshness',
     id: `status-${code}-fresh`,
     kind: 'optimal',
     requests: [

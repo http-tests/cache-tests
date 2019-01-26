@@ -85,11 +85,9 @@ To test a browser, just point it at `https://{hostname:port}/test-browser.html` 
 
 HTTP caching by its nature is an optimisation; implementations aren't required to cache everything. However, when they do cache, their behaviour is constrained by [the specification](https://httpwg.org/specs/rfc7234.html).
 
-To reflect this, the test descriptions use "must" and "should" to indicate whether the behaviour is based in interoperability requirements, or just an optimisation.
+To reflect this, the test descriptions use "must" to indicate whether the behaviour is based in interoperability requirements, and "an optimal cache" or similar language to indicate when the test is just for an optimisation.
 
-"Should" tests are testing whether caching is happening (because the point of a cache is caching!), whereas the "must"-level tests indicate a spec violation (and usually it maps directly to a MUST in the RFC).
-
-This is explicitly flagged in the tests with the `required` member.
+This is explicitly flagged in the tests with the `kind` member.
 
 Each test has an `id` that is a short name for the test; you can click on ⌾ next to the test name to copy it to the clipboard, and use that as a way to find the test in the `tests/` directory, as well as link directly to it; for example, the test ID `foo` can be linked to as `#foo` on the index and test pages.
 
@@ -122,7 +120,7 @@ The `tests` member is an array of objects, with the following members:
 - `kind` - One of:
   - `required` - This is a conformance test for a requirement in the standard. Default.
   - `optimal` - This test is to see if the cache behaves optimally.
-  - `check` - This test is gathering information for future use.
+  - `check` - This test is gathering information about cache behaviour.
 - `requests` - a list of request objects (see below).
 - `browser_only` - if `true`, will not run on non-browser caches. Default `false`.
 - `browser_skip` - if `true, will not run on browser caches. Default `false`.

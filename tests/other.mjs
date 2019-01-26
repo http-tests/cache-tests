@@ -114,7 +114,7 @@ export default
       ]
     },
     {
-      name: 'Same query arguments should not affect cacheability',
+      name: 'An optimal HTTP cache should not be affected by the presence of a URL query',
       id: 'query-args-same',
       kind: 'optimal',
       requests: [
@@ -129,7 +129,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should reuse a fresh response with a Set-Cookie header',
+      name: 'An optimal HTTP cache reuses a fresh response with a Set-Cookie header',
       id: 'other-set-cookie',
       kind: 'optimal',
       requests: [
@@ -146,7 +146,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should reuse a fresh response when the request has a Cookie header',
+      name: 'An optimal HTTP cache reuses a fresh response when the request has a Cookie header',
       id: 'other-cookie',
       kind: 'optimal',
       requests: [

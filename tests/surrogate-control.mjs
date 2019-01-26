@@ -6,7 +6,7 @@ export default
   id: 'surrogate-control',
   tests: [
     {
-      name: 'HTTP cache may reuse a response without explict freshness information or a validator (but doing that messes up the tests)',
+      name: 'Surrogate cache can reuse a response without explict freshness information or a validator (but doing that messes up the tests)',
       id: 'surrogate-none',
       kind: 'optimal',
       requests: [
@@ -20,7 +20,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age',
+      name: 'An optimal surrogate cache reuses a response with positive Surrogate-Control: max-age',
       id: 'surrogate-max-age',
       browser_skip: true,
       depends_on: ['surrogate-none'],
@@ -39,9 +39,10 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must ignore Surrogate-Control: max-age with space before the =',
+      name: 'Does surrogate cache ignore Surrogate-Control: max-age with space before the =?',
       id: 'surrogate-max-age-space-before-equals',
       browser_skip: true,
+      kind: 'check',
       depends_on: ['surrogate-max-age'],
       requests: [
         {
@@ -58,9 +59,10 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must ignore Surrogate-Control: max-age with space after the =',
+      name: 'Does surrogate cache ignore Surrogate-Control: max-age with space after the =?',
       id: 'surrogate-max-age-space-after-equals',
       browser_skip: true,
+      kind: 'check',
       depends_on: ['surrogate-max-age'],
       requests: [
         {
@@ -77,7 +79,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with Surrogate-Control: max-age=0',
+      name: 'Surrogate cache must not reuse a response with Surrogate-Control: max-age=0',
       id: 'surrogate-max-age-0',
       browser_skip: true,
       depends_on: ['surrogate-max-age'],
@@ -95,7 +97,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age with an extension',
+      name: 'An optimal surrogate cache reuses a response with a positive Surrogate-Control: max-age with an extension',
       id: 'surrogate-max-age-extension',
       browser_skip: true,
       kind: 'optimal',
@@ -114,7 +116,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should reuse a response with positive Surrogate-Control: MaX-aGe',
+      name: 'An optimal surogate cache reuses a response with a positive Surrogate-Control: MaX-aGe',
       id: 'surrogate-max-age-case-insensitive',
       browser_skip: true,
       kind: 'optimal',
@@ -134,7 +136,7 @@ export default
     },
 
     {
-      name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age and a past Expires',
+      name: 'An optimal surrogate cache reuses a response with a positive Surrogate-Control: max-age and a past Expires',
       id: 'surrogate-max-age-expires',
       browser_skip: true,
       kind: 'optimal',
@@ -155,7 +157,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age and an invalid Expires',
+      name: 'An optimal surrogate cache reuses a response with a positive Surrogate-Control: max-age and an invalid Expires',
       id: 'surrogate-max-age-cc-max-age-invalid-expires',
       browser_skip: true,
       kind: 'optimal',
@@ -176,7 +178,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with Surrogate-Control: max-age=0 and a future Expires',
+      name: 'Surrogate cache must not reuse a response with a Surrogate-Control: max-age=0 and a future Expires',
       id: 'surrogate-max-age-0-expires',
       browser_skip: true,
       depends_on: ['surrogate-max-age'],
@@ -196,7 +198,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should prefer long Surrogate-Control: max-age over short Cache-Control: max-age',
+      name: 'An optimal surrogate cache prefers a long Surrogate-Control: max-age over a short Cache-Control: max-age',
       id: 'surrogate-max-age-short-cc-max-age',
       browser_skip: true,
       kind: 'optimal',
@@ -216,7 +218,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must prefer short Surrogate-Control: max-age over long Cache-Control: max-age',
+      name: 'Surrogate cache must prefer a short Surrogate-Control: max-age over a long Cache-Control: max-age',
       id: 'surrogate-max-age-long-cc-max-age',
       browser_skip: true,
       depends_on: ['surrogate-max-age'],
@@ -235,7 +237,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response when the Age header is greater than its Surrogate-Control lifetime',
+      name: 'Surrogate cache must not reuse a response when the Age header is greater than its Surrogate-Control lifetime',
       id: 'surrogate-max-age-age',
       browser_skip: true,
       depends_on: ['surrogate-max-age'],
@@ -254,7 +256,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not store a response with Surrogate-Control: no-store',
+      name: 'Surrogate cache must not store a response with Surrogate-Control: no-store',
       id: 'surrogate-no-store',
       browser_skip: true,
       requests: [
@@ -271,7 +273,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not store a response with Surrogate-Control: no-store, even with CC max-age and Expires',
+      name: 'Surrogate cache must not store a response with Surrogate-Control: no-store, even with CC max-age and Expires',
       id: 'surrogate-no-store-cc-fresh',
       browser_skip: true,
       depends_on: ['surrogate-no-store'],

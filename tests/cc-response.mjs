@@ -22,7 +22,7 @@ export default
       ]
     },
     {
-      name: 'Private HTTP cache should reuses a fresh response with Cache-Control: private',
+      name: 'An optimal private HTTP cache reuses a fresh response with Cache-Control: private',
       id: 'cc-resp-private-private',
       browser_only: true,
       kind: 'optimal',
@@ -123,7 +123,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should store a response with Cache-Control: no-cache, but revalidates upon use',
+      name: 'An optimal HTTP cache stores a response with Cache-Control: no-cache, but revalidates it upon use',
       id: 'cc-resp-no-cache-revalidate',
       kind: 'optimal',
       depends_on: ['cc-resp-no-cache'],
@@ -141,7 +141,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should store a response with Cache-Control: no-cache, but revalidates upon use, even with max-age and Expires',
+      name: 'An optimal HTTP cache stores a response with Cache-Control: no-cache, but revalidates it upon use, even with max-age and Expires',
       id: 'cc-resp-no-cache-revalidate-fresh',
       kind: 'optimal',
       depends_on: ['cc-resp-no-cache'],

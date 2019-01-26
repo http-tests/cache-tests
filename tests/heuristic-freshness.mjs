@@ -13,10 +13,10 @@ function checkStatus (status) {
   var extra = status[4] || ''
   var extraHdr = status[5]
   var expectedType = 'not_cached'
-  var desired = 'must not reuse'
+  var desired = 'HTTP cache must not reuse'
   if (succeed === true) {
     expectedType = 'cached'
-    desired = 'should reuse'
+    desired = 'An optimal HTTP cache should reuse'
   }
   var responseHeaders = [
     ['Last-Modified', -24 * 60 * 60],
@@ -26,7 +26,7 @@ function checkStatus (status) {
     responseHeaders.push(extraHdr)
   }
   tests.push({
-    name: `HTTP cache ${desired} a ${code} ${phrase} response with Last-Modified based upon heuristic freshness ${extra}`,
+    name: `${desired} a ${code} ${phrase} response with Last-Modified based upon heuristic freshness ${extra}`,
     id: `heuristic-${code}-${expectedType}`,
     kind: succeed && 'optimal' || 'required',
     requests: [{

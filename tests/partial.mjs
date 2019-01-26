@@ -3,7 +3,7 @@ export default {
   id: 'partial',
   tests: [
     {
-      name: 'HTTP cache should store partial content and reuse it',
+      name: 'An optimal HTTP cache stores partial content and reuses it',
       id: 'partial-store-partial-reuse-partial',
       kind: 'optimal',
       requests: [
@@ -33,7 +33,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store complete response and serve smaller ranges from it (byte-range-spec)',
+      name: 'An optimal HTTP cache stores complete responses and serves smaller ranges from them (byte-range-spec)',
       id: 'partial-store-complete-reuse-partial',
       kind: 'optimal',
       requests: [
@@ -55,7 +55,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store complete response and serve smaller ranges from it (absent last-byte-pos)',
+      name: 'An optimal HTTP cache stores complete responses and serves smaller ranges from them (absent last-byte-pos)',
       id: 'partial-store-complete-reuse-partial-no-last',
       kind: 'optimal',
       requests: [
@@ -77,7 +77,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store complete response and serve smaller ranges from it (suffix-byte-range-spec)',
+      name: 'An optimal HTTP cache stores complete responses and serves smaller ranges from them (suffix-byte-range-spec)',
       id: 'partial-store-complete-reuse-partial-suffix',
       kind: 'optimal',
       requests: [
@@ -99,7 +99,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store partial response and serve smaller ranges from it (byte-range-spec)',
+      name: 'An optimal HTTP cache stores partial responses and serves smaller ranges from them (byte-range-spec)',
       id: 'partial-store-partial-reuse-partial-byterange',
       kind: 'optimal',
       requests: [
@@ -126,7 +126,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store partial response and serve smaller ranges from it (absent last-byte-pos)',
+      name: 'An optimal HTTP cache stores partial responses and serves smaller ranges from them (absent last-byte-pos)',
       id: 'partial-store-partial-reuse-partial-absent',
       kind: 'optimal',
       requests: [
@@ -153,7 +153,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store partial response and serve smaller ranges from it (suffix-byte-range-spec)',
+      name: 'An optimal HTTP cache stores partial responses and serves smaller ranges from them (suffix-byte-range-spec)',
       id: 'partial-store-partial-reuse-partial-suffix',
       kind: 'optimal',
       requests: [
@@ -180,7 +180,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache should store partial content and complete it',
+      name: 'An optimal HTTP cache stores partial content and completes it',
       id: 'partial-store-partial-complete',
       kind: 'optimal',
       requests: [
