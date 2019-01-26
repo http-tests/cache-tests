@@ -21,7 +21,7 @@ function checkInvalidation (method) {
   tests.push({
     name: `HTTP cache should not invalidate URL after a failed response to a ${method} request`,
     id: `invalidate-${method}-failed`,
-    required: false,
+    kind: 'optimal',
     depends_on: [`invalidate-${method}`],
     requests: [
       {

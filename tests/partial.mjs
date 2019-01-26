@@ -5,7 +5,7 @@ export default {
     {
       name: 'HTTP cache should store partial content and reuse it',
       id: 'partial-store-partial-reuse-partial',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -35,7 +35,7 @@ export default {
     {
       name: 'HTTP cache should store complete response and serve smaller ranges from it (byte-range-spec)',
       id: 'partial-store-complete-reuse-partial',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -57,7 +57,7 @@ export default {
     {
       name: 'HTTP cache should store complete response and serve smaller ranges from it (absent last-byte-pos)',
       id: 'partial-store-complete-reuse-partial-no-last',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -79,7 +79,7 @@ export default {
     {
       name: 'HTTP cache should store complete response and serve smaller ranges from it (suffix-byte-range-spec)',
       id: 'partial-store-complete-reuse-partial-suffix',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -101,7 +101,7 @@ export default {
     {
       name: 'HTTP cache should store partial response and serve smaller ranges from it (byte-range-spec)',
       id: 'partial-store-partial-reuse-partial-byterange',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -128,7 +128,7 @@ export default {
     {
       name: 'HTTP cache should store partial response and serve smaller ranges from it (absent last-byte-pos)',
       id: 'partial-store-partial-reuse-partial-absent',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -155,7 +155,7 @@ export default {
     {
       name: 'HTTP cache should store partial response and serve smaller ranges from it (suffix-byte-range-spec)',
       id: 'partial-store-partial-reuse-partial-suffix',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -182,7 +182,7 @@ export default {
     {
       name: 'HTTP cache should store partial content and complete it',
       id: 'partial-store-partial-complete',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [

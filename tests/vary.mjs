@@ -7,7 +7,7 @@ export default {
     {
       name: 'HTTP cache should reuse Vary response when request matches',
       id: 'vary-match',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -32,7 +32,7 @@ export default {
     {
       name: "HTTP cache must not reuse Vary response when request doesn't match",
       id: 'vary-no-match',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -78,7 +78,7 @@ export default {
     {
       name: 'HTTP cache should not invalidate existing Vary response',
       id: 'vary-invalidate',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -119,7 +119,7 @@ export default {
     {
       name: 'HTTP cache should not include headers not listed in Vary in the cache key',
       id: 'vary-cache-key',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -146,7 +146,7 @@ export default {
     {
       name: 'HTTP cache should reuse two-way Vary response when request matches',
       id: 'vary-2-match',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -220,7 +220,7 @@ export default {
     {
       name: 'HTTP cache should reuse three-way Vary response when request matches',
       id: 'vary-3-match',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -305,7 +305,7 @@ export default {
     {
       name: 'HTTP cache should reuse three-way Vary response when both request and the original request omited a variant header',
       id: 'vary-3-omit',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -358,7 +358,7 @@ export default {
     {
       name: 'HTTP cache should normalise selecting header fields (removing whitespace)',
       id: 'vary-normalise-space',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -383,7 +383,7 @@ export default {
     {
       name: 'HTTP cache should normalise selecting header fields (combining fields)',
       id: 'vary-normalise-combine',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -409,7 +409,7 @@ export default {
     {
       name: 'HTTP cache should normalise selecting header fields (language ordering)',
       id: 'vary-normalise-lang-order',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [

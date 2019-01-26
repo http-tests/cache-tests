@@ -8,7 +8,7 @@ export default
     {
       name: 'HTTP cache may reuse a response without explict freshness information or a validator (but doing that messes up the tests)',
       id: 'freshness-none',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           setup: true,
@@ -22,7 +22,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with positive Cache-Control: max-age',
       id: 'freshness-max-age',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-none'],
       requests: [
         {
@@ -40,7 +40,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with quoted Cache-Control: max-age',
       id: 'freshness-max-age-quoted',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-max-age'],
       requests: [
         {
@@ -245,7 +245,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with Cache-Control: max-age: 2147483648',
       id: 'freshness-max-age-max',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-none'],
       requests: [
         {
@@ -263,7 +263,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with Cache-Control: max-age: 99999999999',
       id: 'freshness-max-age-max-plus',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-none'],
       requests: [
         {
@@ -301,7 +301,7 @@ export default
       name: 'HTTP cache should reuse a response with positive Cache-Control: max-age and a past Expires',
       id: 'freshness-max-age-expires',
       depends_on: ['freshness-max-age'],
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -321,7 +321,7 @@ export default
       name: 'HTTP cache should reuse a response with positive Cache-Control: max-age and an invalid Expires',
       id: 'freshness-max-age-expires-invalid',
       depends_on: ['freshness-max-age'],
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -359,7 +359,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with positive Cache-Control: max-age and a CC extension present',
       id: 'freshness-max-age-extension',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-max-age'],
       requests: [
         {
@@ -377,7 +377,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with positive Cache-Control: MaX-AgE',
       id: 'freshness-max-age-case-insenstive',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-max-age'],
       requests: [
         {
@@ -506,7 +506,7 @@ export default
       name: 'Shared HTTP cache should prefer Cache-Control: s-maxage over shorter Cache-Control: max-age',
       id: 'freshness-max-age-s-maxage-shared-shorter',
       depends_on: ['freshness-s-maxage-shared'],
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [

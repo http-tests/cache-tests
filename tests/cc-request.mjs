@@ -7,7 +7,7 @@ export default {
     {
       name: 'HTTP cache should not reuse aged but fresh response when request contains Cache-Control: max-age=0',
       id: 'ccreq-ma0',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           template: 'fresh',
@@ -25,7 +25,7 @@ export default {
     {
       name: 'HTTP cache should not reuse aged but fresh response when request contains Cache-Control: max-age=1',
       id: 'ccreq-ma1',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           template: 'fresh',
@@ -43,7 +43,7 @@ export default {
     {
       name: 'HTTP cache should not reuse fresh response with Age header when request contains Cache-Control: max-age that is greater than remaining freshness',
       id: 'ccreq-magreaterage',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -63,7 +63,7 @@ export default {
     {
       name: 'HTTP cache should reuse aged stale response when request contains Cache-Control: max-stale that permits its use',
       id: 'ccreq-max-stale',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -83,7 +83,7 @@ export default {
     {
       name: 'HTTP cache should reuse stale response with Age header when request contains Cache-Control: max-stale that permits its use',
       id: 'ccreq-max-stale-age',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -103,7 +103,7 @@ export default {
     {
       name: 'HTTP cache should not reuse fresh response when request contains Cache-Control: min-fresh that wants it fresher',
       id: 'ccreq-min-fresh',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -122,7 +122,7 @@ export default {
     {
       name: 'HTTP cache should not reuse fresh response with Age header when request contains Cache-Control: min-fresh that wants it fresher',
       id: 'ccreq-min-fresh-age',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -142,7 +142,7 @@ export default {
     {
       name: 'HTTP cache should not reuse fresh response when request contains Cache-Control: no-cache',
       id: 'ccreq-no-cache',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -161,7 +161,7 @@ export default {
     {
       name: 'HTTP cache should validate fresh response with Last-Modified when request contains Cache-Control: no-cache',
       id: 'ccreq-no-cache-lm',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -182,7 +182,7 @@ export default {
     {
       name: 'HTTP cache should validate fresh response with ETag when request contains Cache-Control: no-cache',
       id: 'ccreq-no-cache-etag',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -202,7 +202,7 @@ export default {
     {
       name: 'HTTP cache should not reuse fresh response when request contains Cache-Control: no-store',
       id: 'ccreq-no-store',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -221,7 +221,7 @@ export default {
     {
       name: 'HTTP cache should generate 504 status code when nothing is in cache and request contains Cache-Control: only-if-cached',
       id: 'ccreq-oic',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           request_headers: [

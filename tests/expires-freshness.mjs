@@ -8,7 +8,7 @@ export default
     {
       name: 'HTTP cache may reuse a response without explict freshness information or a validator (but doing that messes up the tests)',
       id: 'freshness-expires-none',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           setup: true,
@@ -22,7 +22,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with a future Expires',
       id: 'freshness-expires-future',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-expires-none'],
       requests: [
         {
@@ -94,7 +94,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with an Expires using wrong case (weekday)',
       id: 'freshness-expires-wrong-case-weekday',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -113,7 +113,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with an Expires using wrong case (month)',
       id: 'freshness-expires-wrong-case-month',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -132,7 +132,7 @@ export default
     {
       name: 'HTTP cache should reuse a response with an Expires using wrong case (tz)',
       id: 'freshness-expires-wrong-case-tz',
-      required: false,
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -292,7 +292,7 @@ export default
       name: 'HTTP cache should reuse a response with Expires, even if Date is invalid',
       id: 'freshness-expires-invalid-date',
       depends_on: ['freshness-expires-future'],
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [

@@ -116,13 +116,17 @@ export default {
 
 The `tests` member is an array of objects, with the following members:
 
-- `name` - The description of the test.
-- `id` - A short, stable identifier for the test.
+- `name` - A concise description of the test. Required.
+- `id` - A short, stable identifier for the test. Required.
+- `description` - Longer details of the test. Optional.
+- `kind` - One of:
+  - `required` - This is a conformance test for a requirement in the standard. Default.
+  - `optimal` - This test is to see if the cache behaves optimally.
+  - `check` - This test is gathering information for future use.
 - `requests` - a list of request objects (see below).
 - `browser_only` - if `true`, will not run on non-browser caches. Default `false`.
 - `browser_skip` - if `true, will not run on browser caches. Default `false`.
-- `required` - if `false`, test is advisory; e.g., testing cache efficiency. Default `true`.
-- `depends_on` - a list of test IDs that, when one fails, indicates that this test's results are not useful. Currently limited to test IDs in the same suite.
+- `depends_on` - a list of test IDs that, when one fails, indicates that this test's results are not useful. Currently limited to test IDs in the same suite. Optional.
 
 Possible members of a request object:
 

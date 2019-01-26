@@ -119,7 +119,7 @@ function determineTestResult (tests, results, testId) {
   if (result[0] !== 'Assertion') {
     return resultTypes.harness_fail
   }
-  if (test.required === false) {
+  if (test.kind === 'optimal') {
     return resultTypes.optional_fail
   }
   return resultTypes.fail

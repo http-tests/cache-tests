@@ -116,7 +116,7 @@ export default
     {
       name: 'Same query arguments should not affect cacheability',
       id: 'query-args-same',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           template: 'fresh',
@@ -131,7 +131,7 @@ export default
     {
       name: 'HTTP cache should reuse a fresh response with a Set-Cookie header',
       id: 'other-set-cookie',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -148,7 +148,7 @@ export default
     {
       name: 'HTTP cache should reuse a fresh response when the request has a Cookie header',
       id: 'other-cookie',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [

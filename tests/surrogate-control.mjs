@@ -8,7 +8,7 @@ export default
     {
       name: 'HTTP cache may reuse a response without explict freshness information or a validator (but doing that messes up the tests)',
       id: 'surrogate-none',
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           setup: true,
@@ -24,7 +24,7 @@ export default
       id: 'surrogate-max-age',
       browser_skip: true,
       depends_on: ['surrogate-none'],
-      required: false,
+      kind: 'optimal',
       requests: [
         {
           response_headers: [
@@ -98,7 +98,7 @@ export default
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age with an extension',
       id: 'surrogate-max-age-extension',
       browser_skip: true,
-      required: false,
+      kind: 'optimal',
       depends_on: ['surrogate-max-age'],
       requests: [
         {
@@ -117,7 +117,7 @@ export default
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: MaX-aGe',
       id: 'surrogate-max-age-case-insensitive',
       browser_skip: true,
-      required: false,
+      kind: 'optimal',
       depends_on: ['surrogate-max-age'],
       requests: [
         {
@@ -137,7 +137,7 @@ export default
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age and a past Expires',
       id: 'surrogate-max-age-expires',
       browser_skip: true,
-      required: false,
+      kind: 'optimal',
       depends_on: ['surrogate-max-age'],
       requests: [
         {
@@ -158,7 +158,7 @@ export default
       name: 'HTTP cache should reuse a response with positive Surrogate-Control: max-age and an invalid Expires',
       id: 'surrogate-max-age-cc-max-age-invalid-expires',
       browser_skip: true,
-      required: false,
+      kind: 'optimal',
       depends_on: ['surrogate-max-age'],
       requests: [
         {
@@ -199,7 +199,7 @@ export default
       name: 'HTTP cache should prefer long Surrogate-Control: max-age over short Cache-Control: max-age',
       id: 'surrogate-max-age-short-cc-max-age',
       browser_skip: true,
-      required: false,
+      kind: 'optimal',
       depends_on: ['surrogate-max-age'],
       requests: [
         {
