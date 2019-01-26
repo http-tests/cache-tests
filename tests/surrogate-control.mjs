@@ -6,24 +6,10 @@ export default
   id: 'surrogate-control',
   tests: [
     {
-      name: 'Surrogate cache can reuse a response without explict freshness information or a validator (but doing that messes up the tests)',
-      id: 'surrogate-none',
-      kind: 'optimal',
-      requests: [
-        {
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'not_cached'
-        }
-      ]
-    },
-    {
       name: 'An optimal surrogate cache reuses a response with positive `Surrogate-Control: max-age`',
       id: 'surrogate-max-age',
       browser_skip: true,
-      depends_on: ['surrogate-none'],
+      depends_on: ['freshness-none'],
       kind: 'optimal',
       requests: [
         {
