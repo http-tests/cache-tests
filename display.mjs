@@ -1,6 +1,6 @@
 /* global Blob */
 
-import './node_modules/marked/marked.min.js'
+import './marked.min.js'
 
 export function downloadTestResults (target, fileName, data) {
   var dataBlob = new Blob([JSON.stringify(data, null, 2)], {type: 'text/json'})
