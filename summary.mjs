@@ -18,7 +18,9 @@ export function loadResults (index) {
 
 export function showResults (target, tests, results) {
   tests.forEach(testSuite => {
-    target.appendChild(showHeader(testSuite, results))
+    showHeader(testSuite, results).forEach(row => {
+      target.appendChild(row)
+    })
     testSuite.tests.forEach(test => {
       target.appendChild(showTest(testSuite.tests, results, test.id))
     })
@@ -26,6 +28,10 @@ export function showResults (target, tests, results) {
 }
 
 function showHeader (testSuite, results) {
+  var rows = []
+  var blankRow = tableRow()
+  blankRow.appendChild(tableCell('td', '\xa0', undefined, undefined, undefined, results.length + 1))
+  rows.push(blankRow)
   var headerRow = tableRow()
   var headerLink = document.createElement('a')
   headerLink.href = '#' + testSuite.id
@@ -36,7 +42,8 @@ function showHeader (testSuite, results) {
   results.forEach(implementation => {
     headerRow.appendChild(tableCell('th', implementation.name, 'category', implementation.version, implementation.link))
   })
-  return headerRow
+  rows.push(headerRow)
+  return rows
 }
 
 function showTest (tests, results, testId) {
@@ -50,15 +57,21 @@ function showTest (tests, results, testId) {
   return testRow
 }
 
-function tableRow () {
+function tableRow (CssClass) {
   var rowElement = document.createElement('tr')
+  if (CssClass) {
+    rowElement.setAttribute('class', CssClass)
+  }
   return rowElement
 }
 
-function tableCell (cellType, content, CssClass, hint, link) {
+function tableCell (cellType, content, CssClass, hint, link, colspan) {
   var cellElement = document.createElement(cellType)
   if (CssClass) {
     cellElement.setAttribute('class', CssClass)
+  }
+  if (colspan) {
+    cellElement.colSpan = colspan
   }
   var contentNode
   if (typeof (content) === 'string') {
