@@ -100,6 +100,7 @@ const resultTypes = {
   harness_fail: '⁉️',
   dependency_fail: '⚪️'
 }
+const passTypes = [resultTypes.pass, resultTypes.yes]
 
 function determineTestResult (testSuites, testId, testResults) {
   var test = testLookup(testSuites, testId)
@@ -109,7 +110,7 @@ function determineTestResult (testSuites, testId, testResults) {
   }
   if (test.depends_on !== undefined) {
     for (var dependencyId of test.depends_on) {
-      if (determineTestResult(testSuites, dependencyId, testResults) !== resultTypes.pass) {
+      if (!passTypes.includes(determineTestResult(testSuites, dependencyId, testResults))) {
         return resultTypes.dependency_fail
       }
     }
