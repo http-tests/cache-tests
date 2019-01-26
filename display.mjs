@@ -1,5 +1,7 @@
 /* global Blob */
 
+import './node_modules/marked/marked.min.js'
+
 export function downloadTestResults (target, fileName, data) {
   var dataBlob = new Blob([JSON.stringify(data, null, 2)], {type: 'text/json'})
   target.setAttribute('href', window.URL.createObjectURL(dataBlob))
@@ -49,7 +51,7 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
 export function showTestName (test, uuid) {
   var span = document.createElement('span')
   span.title = JSON.stringify(test.requests, null, 2)
-  span.appendChild(document.createTextNode(test.name + ' '))
+  span.innerHTML = marked.parse(test.name).slice(3,-5)
 
   var idLinkElement = document.createElement('a')
   idLinkElement.appendChild(document.createTextNode('⌾'))

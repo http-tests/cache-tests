@@ -20,7 +20,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with positive Cache-Control: max-age',
+      name: 'An optimal HTTP cache reuses a response with positive `Cache-Control: max-age`',
       id: 'freshness-max-age',
       kind: 'optimal',
       depends_on: ['freshness-none'],
@@ -38,7 +38,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with quoted Cache-Control: max-age',
+      name: 'An optimal HTTP cache reuses a response with quoted `Cache-Control: max-age`',
       id: 'freshness-max-age-quoted',
       kind: 'optimal',
       depends_on: ['freshness-max-age'],
@@ -56,7 +56,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with single-quoted Cache-Control: max-age?',
+      name: 'Does HTTP cache reuse a response with single-quoted `Cache-Control: max-age`?',
       id: 'freshness-max-age-single-quoted',
       kind: 'check',
       depends_on: ['freshness-none'],
@@ -74,7 +74,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must ignore the phrase "max-age" in a quoted string',
+      name: 'HTTP cache must ignore the phrase `max-age` in a quoted string',
       id: 'freshness-max-age-ignore-quoted',
       depends_on: ['freshness-max-age'],
       requests: [
@@ -91,7 +91,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must ignore the phrase "max-age" in a quoted string (after "real" max-age)',
+      name: 'HTTP cache must ignore the phrase `max-age` in a quoted string (after "real" max-age)',
       id: 'freshness-max-age-ignore-quoted-rev',
       depends_on: ['freshness-max-age'],
       requests: [
@@ -108,7 +108,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must ignore the phrase "max-age" in a quoted string, even when max-age has a quoted value too',
+      name: 'HTTP cache must ignore the phrase `max-age` in a quoted string, even when max-age has a quoted value too',
       id: 'freshness-max-age-ignore-quoted-all',
       depends_on: ['freshness-max-age-quoted'],
       requests: [
@@ -125,7 +125,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must ignore the phrase "max-age" in a quoted string, even when previous max-age has a quoted value too',
+      name: 'HTTP cache must ignore the phrase `max-age` in a quoted string, even when previous max-age has a quoted value too',
       id: 'freshness-max-age-ignore-quoted-all-rev',
       depends_on: ['freshness-max-age-quoted'],
       requests: [
@@ -142,7 +142,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache ignore max-age with space before the =?',
+      name: 'Does HTTP cache ignore max-age with space before the `=`?',
       id: 'freshness-max-age-space-before-equals',
       kind: 'check',
       depends_on: ['freshness-none'],
@@ -160,7 +160,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache ignore max-age with space after the =?',
+      name: 'Does HTTP cache ignore max-age with space after the `=`?',
       id: 'freshness-max-age-space-after-equals',
       kind: 'check',
       depends_on: ['freshness-none'],
@@ -178,7 +178,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with Cache-Control: max-age=0',
+      name: 'HTTP cache must not reuse a response with `Cache-Control: max-age=0`',
       id: 'freshness-max-age-0',
       depends_on: ['freshness-none'],
       requests: [
@@ -195,7 +195,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with an invalid Cache-Control: max-age (leading alpha)',
+      name: 'HTTP cache must not reuse a response with an invalid `Cache-Control: max-age` (leading alpha)',
       id: 'freshness-max-age-a100',
       depends_on: ['freshness-none'],
       requests: [
@@ -212,7 +212,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with an invalid Cache-Control: max-age (trailing alpha)',
+      name: 'HTTP cache must not reuse a response with an invalid `Cache-Control: max-age` (trailing alpha)',
       id: 'freshness-max-age-100a',
       depends_on: ['freshness-none'],
       requests: [
@@ -229,7 +229,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with negative Cache-Control: max-age',
+      name: 'HTTP cache must not reuse a response with negative `Cache-Control: max-age`',
       id: 'freshness-max-age-negative',
       depends_on: ['freshness-none'],
       requests: [
@@ -246,7 +246,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with Cache-Control: max-age: 2147483648',
+      name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 2147483648`',
       id: 'freshness-max-age-max',
       kind: 'optimal',
       depends_on: ['freshness-none'],
@@ -264,7 +264,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with Cache-Control: max-age: 99999999999',
+      name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 99999999999`',
       id: 'freshness-max-age-max-plus',
       kind: 'optimal',
       depends_on: ['freshness-none'],
@@ -282,7 +282,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response when the Age header is greater than its Cache-Control: max-age freshness lifetime',
+      name: 'HTTP cache must not reuse a response when the `Age` header is greater than its `Cache-Control: max-age` freshness lifetime',
       id: 'freshness-max-age-age',
       depends_on: ['freshness-max-age'],
       requests: [
@@ -301,7 +301,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with positive Cache-Control: max-age and a past Expires',
+      name: 'An optimal HTTP cache reuses a response with positive `Cache-Control: max-age` and a past `Expires`',
       id: 'freshness-max-age-expires',
       depends_on: ['freshness-max-age'],
       kind: 'optimal',
@@ -321,7 +321,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with positive Cache-Control: max-age and an invalid Expires',
+      name: 'An optimal HTTP cache reuses a response with positive `Cache-Control: max-age` and an invalid `Expires`',
       id: 'freshness-max-age-expires-invalid',
       depends_on: ['freshness-max-age'],
       kind: 'optimal',
@@ -341,7 +341,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with Cache-Control: max-age=0 and a future Expires',
+      name: 'HTTP cache must not reuse a response with `Cache-Control: max-age=0` and a future `Expires`',
       id: 'freshness-max-age-0-expires',
       depends_on: ['freshness-none'],
       requests: [
@@ -360,7 +360,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with positive Cache-Control: max-age and a CC extension present',
+      name: 'An optimal HTTP cache reuses a response with positive `Cache-Control: max-age` and a CC extension present',
       id: 'freshness-max-age-extension',
       kind: 'optimal',
       depends_on: ['freshness-max-age'],
@@ -378,7 +378,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with positive Cache-Control: MaX-AgE',
+      name: 'An optimal HTTP cache reuses a response with positive `Cache-Control: MaX-AgE`',
       id: 'freshness-max-age-case-insenstive',
       kind: 'optimal',
       depends_on: ['freshness-max-age'],
@@ -396,7 +396,7 @@ export default
       ]
     },
     {
-      name: 'Private HTTP cache must not prefer Cache-Control: s-maxage over shorter Cache-Control: max-age',
+      name: 'Private HTTP cache must not prefer `Cache-Control: s-maxage` over shorter `Cache-Control: max-age`',
       id: 'freshness-max-age-s-maxage-private',
       depends_on: ['freshness-max-age'],
       requests: [
@@ -414,7 +414,7 @@ export default
       browser_only: true
     },
     {
-      name: 'Private HTTP cache must not prefer Cache-Control: s-maxage over shorter Cache-Control: max-age (multiple headers)',
+      name: 'Private HTTP cache must not prefer `Cache-Control: s-maxage` over shorter `Cache-Control: max-age` (multiple headers)',
       id: 'freshness-max-age-s-maxage-private-multiple',
       depends_on: ['freshness-max-age'],
       requests: [
@@ -433,7 +433,7 @@ export default
       browser_only: true
     },
     {
-      name: 'An optimal shared HTTP cache reuses a response with positive Cache-Control: s-maxage',
+      name: 'An optimal shared HTTP cache reuses a response with positive `Cache-Control: s-maxage`',
       id: 'freshness-s-maxage-shared',
       depends_on: ['freshness-none'],
       requests: [
@@ -451,7 +451,7 @@ export default
       browser_skip: true
     },
     {
-      name: 'Shared HTTP cache must prefer Cache-Control: s-maxage over a longer Cache-Control: max-age',
+      name: 'Shared HTTP cache must prefer `Cache-Control: s-maxage` over a longer `Cache-Control: max-age`',
       id: 'freshness-max-age-s-maxage-shared-longer',
       depends_on: ['freshness-s-maxage-shared'],
       requests: [
@@ -469,7 +469,7 @@ export default
       browser_skip: true
     },
     {
-      name: 'Shared HTTP cache must prefer Cache-Control: s-maxage over a longer Cache-Control: max-age (reversed)',
+      name: 'Shared HTTP cache must prefer `Cache-Control: s-maxage` over a longer `Cache-Control: max-age` (reversed)',
       id: 'freshness-max-age-s-maxage-shared-longer-reversed',
       depends_on: ['freshness-s-maxage-shared'],
       requests: [
@@ -487,7 +487,7 @@ export default
       browser_skip: true
     },
     {
-      name: 'Shared HTTP cache must prefer Cache-Control: s-maxage over a longer Cache-Control: max-age (multiple headers)',
+      name: 'Shared HTTP cache must prefer `Cache-Control: s-maxage` over a longer `Cache-Control: max-age` (multiple headers)',
       id: 'freshness-max-age-s-maxage-shared-longer-multiple',
       depends_on: ['freshness-s-maxage-shared'],
       requests: [
@@ -506,7 +506,7 @@ export default
       browser_skip: true
     },
     {
-      name: 'An optimal shared HTTP cache prefers Cache-Control: s-maxage over a shorter Cache-Control: max-age',
+      name: 'An optimal shared HTTP cache prefers `Cache-Control: s-maxage` over a shorter `Cache-Control: max-age`',
       id: 'freshness-max-age-s-maxage-shared-shorter',
       depends_on: ['freshness-s-maxage-shared'],
       kind: 'optimal',

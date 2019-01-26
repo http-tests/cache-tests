@@ -26,7 +26,7 @@ function checkStatus (status) {
     responseHeaders.push(extraHdr)
   }
   tests.push({
-    name: `${desired} a ${code} ${phrase} response with Last-Modified based upon heuristic freshness ${extra}`,
+    name: `${desired} a \`${code} ${phrase}\` response with \`Last-Modified\` based upon heuristic freshness ${extra}`,
     id: `heuristic-${code}-${expectedType}`,
     kind: succeed && 'optimal' || 'required',
     requests: [{
@@ -57,8 +57,8 @@ function checkStatus (status) {
   [false, 502, 'Bad Gateway'],
   [false, 503, 'Service Unavailable'],
   [false, 504, 'Gateway Timeout'],
-  [false, 599, 'Unknown', undefined, 'when Cache-Control: public is not present'],
-  [true, 599, 'Unknown', undefined, 'when Cache-Control: public is present', ['Cache-Control', 'public']]
+  [false, 599, 'Unknown', undefined, 'when `Cache-Control: public` is not present'],
+  [true, 599, 'Unknown', undefined, 'when `Cache-Control: public` is present', ['Cache-Control', 'public']]
 ].forEach(checkStatus)
 
 export default {

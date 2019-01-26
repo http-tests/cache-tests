@@ -6,7 +6,7 @@ var header = 'Test-Header'
 var valueA = utils.httpContent(`${header}-value-A`)
 var lm1 = utils.httpDate(Date.now(), -24 * 60 * 60)
 tests.push({
-  name: `HTTP cache must return stored ${header} from a 304 that omits it`,
+  name: `HTTP cache must return stored \`${header}\` from a \`304\` that omits it`,
   id: `304-lm-use-stored-${header}`,
   requests: [
     {
@@ -43,7 +43,7 @@ function check304 (args) {
   var lm1 = utils.httpDate(Date.now(), -24 * 60 * 60)
 
   tests.push({
-    name: `HTTP cache must update returned ${header} from a Last-Modified 304`,
+    name: `HTTP cache must update returned \`${header}\` from a \`Last-Modified 304\``,
     id: `304-lm-update-response-${header}`,
     requests: [
       {
@@ -62,7 +62,7 @@ function check304 (args) {
     ]
   })
   tests.push({
-    name: `HTTP cache must update stored ${header} from a Last-Modified 304`,
+    name: `HTTP cache must update stored \`${header}\` from a \`Last-Modified 304\``,
     id: `304-lm-update-stored-${header}`,
     requests: [
       {
@@ -86,7 +86,7 @@ function check304 (args) {
     ]
   })
   tests.push({
-    name: `HTTP cache must update returned ${header} from a ETag 304`,
+    name: `HTTP cache must update returned \`${header}\` from a \`ETag 304\``,
     id: `304-etag-update-response-${header}`,
     requests: [
       {
@@ -105,7 +105,7 @@ function check304 (args) {
     ]
   })
   tests.push({
-    name: `HTTP cache must update stored ${header} from a ETag 304`,
+    name: `HTTP cache must update stored \`${header}\` from a \`ETag 304\``,
     id: `304-etag-update-stored-${header}`,
     requests: [
       {

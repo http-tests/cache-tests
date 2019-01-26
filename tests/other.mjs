@@ -7,7 +7,7 @@ export default
   id: 'other',
   tests: [
     {
-      name: 'HTTP cache must generate an Age header',
+      name: 'HTTP cache must generate an `Age` header',
       id: 'other-age-gen',
       requests: [
         {
@@ -30,7 +30,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must update the Age header (Expires)',
+      name: 'HTTP cache must update the `Age` header (`Expires`)',
       id: 'other-age-update-expires',
       requests: [
         {
@@ -54,7 +54,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must update the Age header (CC: max-age)',
+      name: 'HTTP cache must update the `Age` header (`CC: max-age`)',
       id: 'other-age-update-max-age',
       requests: [
         {
@@ -78,7 +78,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not update the Date header',
+      name: 'HTTP cache must not update the `Date` header',
       id: 'other-date-update',
       requests: [
         {
@@ -129,7 +129,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a fresh response with a Set-Cookie header',
+      name: 'An optimal HTTP cache reuses a fresh response with a `Set-Cookie` header',
       id: 'other-set-cookie',
       kind: 'optimal',
       requests: [
@@ -146,7 +146,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a fresh response when the request has a Cookie header',
+      name: 'An optimal HTTP cache reuses a fresh response when the request has a `Cookie` header',
       id: 'other-cookie',
       kind: 'optimal',
       requests: [

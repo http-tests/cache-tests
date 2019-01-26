@@ -6,7 +6,7 @@ export default
   id: 'cc-response',
   tests: [
     {
-      name: 'Shared HTTP cache must not store a response with Cache-Control: private',
+      name: 'Shared HTTP cache must not store a response with `Cache-Control: private`',
       id: 'cc-resp-private-shared',
       browser_skip: true,
       requests: [
@@ -22,7 +22,7 @@ export default
       ]
     },
     {
-      name: 'An optimal private HTTP cache reuses a fresh response with Cache-Control: private',
+      name: 'An optimal private HTTP cache reuses a fresh response with `Cache-Control: private`',
       id: 'cc-resp-private-private',
       browser_only: true,
       kind: 'optimal',
@@ -39,7 +39,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not store a response with Cache-Control: no-store',
+      name: 'HTTP cache must not store a response with `Cache-Control: no-store`',
       id: 'cc-resp-no-store',
       requests: [
         {
@@ -54,7 +54,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not store a response with Cache-Control: nO-StOrE',
+      name: 'HTTP cache must not store a response with `Cache-Control: nO-StOrE`',
       id: 'cc-resp-no-store-case-insensitive',
       depends_on: ['cc-resp-no-store'],
       requests: [
@@ -70,7 +70,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not store a response with Cache-Control: no-store, even with max-age and Expires',
+      name: 'HTTP cache must not store a response with `Cache-Control: no-store`, even with `max-age` and `Expires`',
       id: 'cc-resp-no-store-fresh',
       depends_on: ['cc-resp-no-store'],
       requests: [
@@ -88,7 +88,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not use a cached response with Cache-Control: no-cache, even with max-age and Expires',
+      name: 'HTTP cache must not use a cached response with `Cache-Control: no-cache`, even with `max-age` and `Expires`',
       id: 'cc-resp-no-cache',
       requests: [
         {
@@ -105,7 +105,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not use a cached response with Cache-Control: No-CaChE, even with max-age and Expires',
+      name: 'HTTP cache must not use a cached response with `Cache-Control: No-CaChE`, even with `max-age` and `Expires`',
       id: 'cc-resp-no-cache-case-insensitive',
       depends_on: ['cc-resp-no-cache'],
       requests: [
@@ -123,7 +123,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache stores a response with Cache-Control: no-cache, but revalidates it upon use',
+      name: 'An optimal HTTP cache stores a response with `Cache-Control: no-cache`, but revalidates it upon use',
       id: 'cc-resp-no-cache-revalidate',
       kind: 'optimal',
       depends_on: ['cc-resp-no-cache'],
@@ -141,7 +141,7 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache stores a response with Cache-Control: no-cache, but revalidates it upon use, even with max-age and Expires',
+      name: 'An optimal HTTP cache stores a response with `Cache-Control: no-cache`, but revalidates it upon use, even with `max-age` and `Expires`',
       id: 'cc-resp-no-cache-revalidate-fresh',
       kind: 'optimal',
       depends_on: ['cc-resp-no-cache'],

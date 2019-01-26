@@ -22,7 +22,7 @@ To install the most recent source from GitHub (*recommended; things are moving f
 
 > git clone https://github.com/http-tests/cache-tests.git
 
-and then install dependencies for the command-line client:
+and then install dependencies:
 
 > cd cache-tests; npm i
 

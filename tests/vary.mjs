@@ -5,7 +5,7 @@ export default {
   id: 'vary',
   tests: [
     {
-      name: 'An optimal HTTP cache reuses a Vary response when the request matches',
+      name: 'An optimal HTTP cache reuses a `Vary` response when the request matches',
       id: 'vary-match',
       kind: 'optimal',
       requests: [
@@ -30,7 +30,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache must not reuse Vary response when request doesn't match",
+      name: "HTTP cache must not reuse `Vary` response when request doesn't match",
       id: 'vary-no-match',
       requests: [
         {
@@ -54,7 +54,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not reuse Vary response when request omits variant header',
+      name: 'HTTP cache must not reuse `Vary` response when request omits variant request header',
       id: 'vary-omit',
       requests: [
         {
@@ -116,7 +116,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache should not include headers not listed in Vary in the cache key',
+      name: 'An optimal HTTP cache should not include headers not listed in `Vary` in the cache key',
       id: 'vary-cache-key',
       kind: 'optimal',
       requests: [
@@ -143,7 +143,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a two-way Vary response when request matches',
+      name: 'An optimal HTTP cache reuses a two-way `Vary` response when request matches',
       id: 'vary-2-match',
       kind: 'optimal',
       requests: [
@@ -170,7 +170,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache must not reuse two-way Vary response when request doesn't match",
+      name: "HTTP cache must not reuse two-way `Vary` response when request doesn't match",
       id: 'vary-2-no-match',
       requests: [
         {
@@ -196,7 +196,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not reuse two-way Vary response when request omits variant header',
+      name: 'HTTP cache must not reuse two-way `Vary` response when request omits variant request header',
       id: 'vary-2-match-omit',
       requests: [
         {
@@ -217,7 +217,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a three-way Vary response when request matches',
+      name: 'An optimal HTTP cache reuses a three-way `Vary` response when request matches',
       id: 'vary-3-match',
       kind: 'optimal',
       requests: [
@@ -246,7 +246,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache must not reuse three-way Vary response when request doesn't match",
+      name: "HTTP cache must not reuse three-way `Vary` response when request doesn't match",
       id: 'vary-3-no-match',
       requests: [
         {
@@ -274,7 +274,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache must not reuse three-way Vary response when request doesn't match, regardless of header order",
+      name: "HTTP cache must not reuse three-way `Vary` response when request doesn't match, regardless of header order",
       id: 'vary-3-order',
       requests: [
         {
@@ -302,7 +302,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a three-way Vary response when both request and the original request omited a variant header',
+      name: 'An optimal HTTP cache reuses a three-way `Vary` response when both request and the original request omited a variant header',
       id: 'vary-3-omit',
       kind: 'optimal',
       requests: [
@@ -329,7 +329,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache must not reuse Vary response with a field value of '*'",
+      name: "HTTP cache must not reuse `Vary` response with a value of `*`",
       id: 'vary-star',
       requests: [
         {
@@ -355,7 +355,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache normalises selecting header fields by removing whitespace',
+      name: 'An optimal HTTP cache normalises selecting headers by removing whitespace',
       id: 'vary-normalise-space',
       kind: 'optimal',
       requests: [
@@ -380,7 +380,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache normalises selecting header fields by combining fields',
+      name: 'An optimal HTTP cache normalises selecting headers by combining fields',
       id: 'vary-normalise-combine',
       kind: 'optimal',
       requests: [
@@ -406,7 +406,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache normalises Accept-Language by ignoring language order',
+      name: 'An optimal HTTP cache normalises `Accept-Language` by ignoring language order',
       id: 'vary-normalise-lang-order',
       kind: 'optimal',
       requests: [
