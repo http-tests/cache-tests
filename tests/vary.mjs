@@ -329,7 +329,7 @@ export default {
       ]
     },
     {
-      name: "HTTP cache must not reuse `Vary` response with a value of `*`",
+      name: 'HTTP cache must not reuse `Vary` response with a value of `*`',
       id: 'vary-star',
       requests: [
         {

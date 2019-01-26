@@ -28,7 +28,7 @@ function checkStatus (status) {
   tests.push({
     name: `${desired} a \`${code} ${phrase}\` response with \`Last-Modified\` based upon heuristic freshness ${extra}`,
     id: `heuristic-${code}-${expectedType}`,
-    kind: succeed && 'optimal' || 'required',
+    kind: succeed ? 'optimal' : 'required',
     requests: [{
       response_status: [code, phrase],
       response_headers: responseHeaders,

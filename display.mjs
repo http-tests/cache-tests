@@ -1,4 +1,4 @@
-/* global Blob */
+/* global Blob marked */
 
 import './marked.min.js'
 
@@ -51,7 +51,7 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
 export function showTestName (test, uuid) {
   var span = document.createElement('span')
   span.title = JSON.stringify(test.requests, null, 2)
-  span.innerHTML = marked.parse(test.name).slice(3,-5)
+  span.innerHTML = marked.parse(test.name).slice(3, -5)
 
   var idLinkElement = document.createElement('a')
   idLinkElement.appendChild(document.createTextNode('⌾'))
