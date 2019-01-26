@@ -27,7 +27,10 @@ export function showResults (target, tests, results) {
 
 function showHeader (testSuite, results) {
   var headerRow = tableRow()
-  var firstHeader = tableCell('th', testSuite.name, 'name category')
+  var headerLink = document.createElement('a')
+  headerLink.href = '#' + testSuite.id
+  headerLink.appendChild(document.createTextNode(testSuite.name))
+  var firstHeader = tableCell('th', headerLink, 'name category')
   firstHeader.id = testSuite.id
   headerRow.appendChild(firstHeader)
   results.forEach(implementation => {
