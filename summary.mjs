@@ -16,13 +16,13 @@ export function loadResults (index) {
   )
 }
 
-export function showResults (target, tests, results) {
-  tests.forEach(testSuite => {
+export function showResults (target, testSuites, results) {
+  testSuites.forEach(testSuite => {
     showHeader(testSuite, results).forEach(row => {
       target.appendChild(row)
     })
     testSuite.tests.forEach(test => {
-      target.appendChild(showTest(testSuite.tests, results, test.id))
+      target.appendChild(showTest(testSuites, test.id, results))
     })
   })
 }
@@ -46,13 +46,13 @@ function showHeader (testSuite, results) {
   return rows
 }
 
-function showTest (tests, results, testId) {
-  var test = display.testLookup(tests, testId)
+function showTest (testSuites, testId, results) {
+  var test = display.testLookup(testSuites, testId)
   var testRow = tableRow()
   testRow.appendChild(tableCell('th', display.showTestName(test), 'name'))
   results.forEach(implementation => {
     testRow.appendChild(
-      tableCell('th', display.showTestResult(tests, implementation.results, test.id)))
+      tableCell('th', display.showTestResult(testSuites, test.id, implementation.results)))
   })
   return testRow
 }

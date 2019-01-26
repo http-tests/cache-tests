@@ -9,10 +9,10 @@ export function downloadTestResults (target, fileName, data) {
   target.style.display = 'inherit'
 }
 
-export function renderTestResults (tests, testResults, testUUIDs, target, useBrowserCache) {
+export function renderTestResults (testSuites, testResults, testUUIDs, target, useBrowserCache) {
   var totalTests = 0
   var totalPassed = 0
-  tests.forEach(testSuite => {
+  testSuites.forEach(testSuite => {
     var headerElement = document.createElement('h3')
     target.appendChild(headerElement)
     var headerText = document.createTextNode(testSuite.name)
@@ -26,7 +26,7 @@ export function renderTestResults (tests, testResults, testUUIDs, target, useBro
       if (test.browser_skip === true && useBrowserCache === true) return
       test.suiteName = testSuite.name
       var testElement = resultList.appendChild(document.createElement('li'))
-      testElement.appendChild(showTestResult(testSuite.tests, testResults, test.id))
+      testElement.appendChild(showTestResult(testSuites, test.id, testResults))
       testElement.appendChild(showTestName(test, testUUIDs[test.id]))
       testElement.addEventListener('click', function (event) {
         copyTextToClipboard(testUUIDs[test.id])
@@ -76,9 +76,9 @@ export function showTestName (test, uuid) {
   return span
 }
 
-export function showTestResult (tests, results, testId) {
-  var result = results[testId]
-  var resultValue = determineTestResult(tests, results, testId)
+export function showTestResult (testSuites, testId, testResults) {
+  var result = testResults[testId]
+  var resultValue = determineTestResult(testSuites, testId, testResults)
   var resultNode = document.createTextNode(` ${resultValue} `)
   if (result && typeof (result[1]) === 'string') {
     var span = document.createElement('span')
@@ -101,15 +101,15 @@ const resultTypes = {
   dependency_fail: '⚪️'
 }
 
-function determineTestResult (tests, results, testId) {
-  var test = testLookup(tests, testId)
-  var result = results[testId]
+function determineTestResult (testSuites, testId, testResults) {
+  var test = testLookup(testSuites, testId)
+  var result = testResults[testId]
   if (result === undefined) {
     return resultTypes.untested
   }
   if (test.depends_on !== undefined) {
     for (var dependencyId of test.depends_on) {
-      if (determineTestResult(tests, results, dependencyId) !== resultTypes.pass) {
+      if (determineTestResult(testSuites, dependencyId, testResults) !== resultTypes.pass) {
         return resultTypes.dependency_fail
       }
     }
@@ -143,10 +143,12 @@ function determineTestResult (tests, results, testId) {
   }
 }
 
-export function testLookup (tests, testId) {
-  for (var test of tests) {
-    if (test.id === testId) {
-      return test
+export function testLookup (testSuites, testId) {
+  for (var testSuite of testSuites) {
+    for (var test of testSuite.tests) {
+      if (test.id === testId) {
+        return test
+      }
     }
   }
   throw new Error(`Cannot find test ${testId}`)
