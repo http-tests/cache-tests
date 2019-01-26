@@ -205,6 +205,23 @@ export default
       ]
     },
     {
+      name: 'HTTP cache must not reuse a response with negative `Cache-Control: max-age`',
+      id: 'freshness-max-age-negative',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=-3600']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'Private HTTP cache must not prefer `Cache-Control: s-maxage` over shorter `Cache-Control: max-age`',
       id: 'freshness-max-age-s-maxage-private',
       depends_on: ['freshness-max-age'],
