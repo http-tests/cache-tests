@@ -81,6 +81,15 @@ To run a single test, use:
 To test a browser, just point it at `https://{hostname:port}/test-browser.html` after setting up the server.
 
 
+## Testing FAQ
+
+If you see a lot of failures, it might be one of a few different issues:
+
+* If you see lots of grey circles at the top (dependency failures), it's probably because the cache will store and reuse a response without explicit freshness or a validator. While this is technically legal in HTTP, it interferes with the tests. Disabling "default caching" or similar usually fixes this.
+
+* If you see lots of blue diamonds (setup failures), it's likely that the cache is refusing `PUT` requests. Enable them to clear this; the tests use PUT to synchronise state between the client and the server.
+
+
 ## Interpreting the Results
 
 HTTP caching by its nature is an optimisation; implementations aren't required to cache everything. However, when they do cache, their behaviour is constrained by [the specification](https://httpwg.org/specs/rfc7234.html).
