@@ -81,28 +81,38 @@ To run a single test, use:
 To test a browser, just point it at `https://{hostname:port}/test-browser.html` after setting up the server.
 
 
-## Testing FAQ
-
-If you see a lot of failures, it might be one of a few different issues:
-
-* If you see lots of grey circles at the top (dependency failures), it's probably because the cache will store and reuse a response without explicit freshness or a validator. While this is technically legal in HTTP, it interferes with the tests. Disabling "default caching" or similar usually fixes this.
-
-* If you see lots of blue diamonds (setup failures), it's likely that the cache is refusing `PUT` requests. Enable them to clear this; the tests use PUT to synchronise state between the client and the server.
-
-
 ## Interpreting the Results
 
 HTTP caching by its nature is an optimisation; implementations aren't required to cache everything. However, when they do cache, their behaviour is constrained by [the specification](https://httpwg.org/specs/rfc7234.html).
 
-To reflect this, the test descriptions use "must" to indicate whether the behaviour is based in interoperability requirements, and "an optimal cache" or similar language to indicate when the test is just for an optimisation.
+As a result, there are a few different kinds of test results:
 
-This is explicitly flagged in the tests with the `kind` member.
+* ✅ - The test was successful.
+* ⛔️ - The test failed, and likely indicates a specification conformance problem.
+* ⚠️ - The cache didn't behave in an optimal fashion (usually, it didn't use a stored response when it could have), but this is not a conformance problem.
+* `Y` / `N` - These are tests to see how deployed caches behave; we use them to gather information for future specification work.
+
+Some additional results might pop up from time to time:
+
+* ⁉️ - The test harness failed; this is an internal error, please [file a bug if one doesn't exist](https://github.com/http-tests/cache-tests/issues/).
+* 🔹 - The test failed during setup; something interfered with the harness's communication between the client and server. See below.
+* ⚪️ - Another test that this test depends on has failed; we use dependencies to help assure that we're actually testing the behaviour in question.
+* `-` - Not tested; usually because the test isn't applicable to this cache.
 
 Each test has an `id` that is a short name for the test; you can click on ⌾ next to the test name to copy it to the clipboard, and use that as a way to find the test in the `tests/` directory, as well as link directly to it; for example, the test ID `foo` can be linked to as `#foo` on the index and test pages.
 
 Each test also has a `uuid` that identifies that specific test run; this can be used to find its requests in the browser developer tools or proxy logs. Click ⚙︎ to copy it to the clipboard.
 
 Finally, you can hover over test names to get the raw JSON of the requests used to run the test. See below for details of that format.
+
+
+### Test Results FAQ
+
+If you see a lot of failures, it might be one of a few different issues:
+
+* If you see lots of grey circles at the top (dependency failures), it's probably because the cache will store and reuse a response without explicit freshness or a validator. While this is technically legal in HTTP, it interferes with the tests. Disabling "default caching" or similar usually fixes this.
+
+* If you see lots of blue diamonds (setup failures), it's likely that the cache is refusing `PUT` requests. Enable them to clear this; the tests use PUT to synchronise state between the client and the server.
 
 
 ## Test Format
