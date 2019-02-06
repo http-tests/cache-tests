@@ -95,5 +95,6 @@ methods.forEach(checkClInvalidation)
 export default {
   name: 'Cache Invalidation',
   id: 'invalidation',
+  description: 'These tests check conformance regarding [invalidation](https://httpwg.org/specs/rfc7234.html#invalidation), including when it is triggered by the `Location` and `Content-Location` response headers. Some also check for optimal behaviour, since a cache is only required to invalidate when the response is successful.',
   tests: tests
 }

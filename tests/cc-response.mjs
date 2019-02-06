@@ -4,6 +4,7 @@ export default
 {
   name: 'Cache-Control Response Directives',
   id: 'cc-response',
+  description: 'These tests check whether caches are conformant and optimal in handling response `Cache-Control` directives other than those related to freshness, like `no-cache` and `no-store`. See the [relevant specification text](https://httpwg.org/specs/rfc7234.html#cache-response-directive).',
   tests: [
     {
       name: 'Shared HTTP cache must not store a response with `Cache-Control: private`',

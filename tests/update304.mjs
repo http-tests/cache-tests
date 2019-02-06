@@ -161,5 +161,6 @@ function makeResponse (header, value, validatorType, validatorValue, lifetime) {
 export default {
   name: 'Update Headers Upon a 304',
   id: 'update304',
+  description: 'These tests check cache behaviour upon recieving a `304 Not Modified` response. See the [relevant specification section](https://httpwg.org/specs/rfc7234.html#freshening.responses), and [this issue](https://github.com/httpwg/http-core/issues/165) for relevant discussion.',
   tests: tests
 }

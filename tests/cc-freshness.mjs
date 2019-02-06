@@ -4,6 +4,7 @@ export default
 {
   name: 'Cache-Control Freshness',
   id: 'cc-freshness',
+  description: 'These tests check whether caches are conformant and optimal in calculating freshness using `Cache-Control`. See the [freshness section](https://httpwg.org/specs/rfc7234.html#expiration.model) of the HTTP caching specification, along with the specifics for [`Cache-Control`](https://httpwg.org/specs/rfc7234.html#header.cache-control).',
   tests: [
     {
       name: 'HTTP cache can reuse a response without explict freshness information or a validator (but doing that messes up the tests)',

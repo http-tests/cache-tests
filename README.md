@@ -121,19 +121,20 @@ Each test run gets its own URL, randomized content, and operates independently.
 
 Tests are kept in JavaScript files in `tests/`, each file representing a suite.
 
-A suite is an object with a `name` member, `id` member, and a `tests` member; e.g.,
+A suite is an object with a `name` member, `id` member, a `tests` member, and an optional `description` member that can contain Markdown; e.g.,
 
 ```javascript
 export default {
   name: 'Example Tests',
   id: 'example',
+  description: 'These are the `Foo` tests!'
   tests: [ ... ]
 }
 ```
 
 The `tests` member is an array of objects, with the following members:
 
-- `name` - A concise description of the test. Required.
+- `name` - A concise description of the test. Can contain Markdown. Required.
 - `id` - A short, stable identifier for the test. Required.
 - `description` - Longer details of the test. Optional.
 - `kind` - One of:

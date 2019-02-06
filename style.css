@@ -17,12 +17,12 @@ th {
   padding: 0.2em 0.4em;
 }
 
-th a {
-  color: white;
-}
-
 ul {
   list-style-type: none;
+}
+
+th.category a {
+  color: white;
 }
 
 .category {
@@ -44,6 +44,11 @@ ul {
 .hint {
   color: #999;
   font-style: normal;
+}
+
+.description {
+  background-color: #eee;
+  padding: 3px 6px;
 }
 
 .warning {

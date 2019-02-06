@@ -4,6 +4,7 @@ export default
 {
   name: 'Surrogate-Control',
   id: 'surrogate-control',
+  description: 'These tests check non-browser caches for behaviours around the `Surrogate-Control` response header. It was [specified in a W3C Note](https://www.w3.org/TR/edge-arch/) a long time ago, but interoperability around it is not clear.',
   tests: [
     {
       name: 'An optimal surrogate cache reuses a response with positive `Surrogate-Control: max-age`',

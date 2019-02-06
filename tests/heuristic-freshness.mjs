@@ -64,5 +64,6 @@ function checkStatus (status) {
 export default {
   name: 'Heuristic Freshness',
   id: 'heuristic',
+  description: 'These tests check whether caches are conformant and optimal in handling [heuristic freshness](https://httpwg.org/specs/rfc7234.html#heuristic.freshness). Certain status codes can be stored and reused even if they do not have an explicit freshness lifetime associated with them; these tests check to see if caches are taking advantage of that, and also make sure that other status codes are NOT cached in this way.',
   tests: tests
 }

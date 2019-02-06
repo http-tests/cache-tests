@@ -5,9 +5,10 @@ export default
 {
   name: 'Other Caching Requirements',
   id: 'other',
+  description: 'These tests check for conformance to other requirements that apply to HTTP caches. ',
   tests: [
     {
-      name: 'HTTP cache must generate an `Age` header',
+      name: 'HTTP cache [must generate](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) an [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when using a stored response.',
       id: 'other-age-gen',
       requests: [
         {
@@ -30,7 +31,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must update the `Age` header (`Expires`)',
+      name: 'HTTP cache [must update](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) the [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when freshness is based upon `Expires`',
       id: 'other-age-update-expires',
       requests: [
         {
@@ -54,7 +55,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must update the `Age` header (`CC: max-age`)',
+      name: 'HTTP cache [must update](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) the [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when freshness is based upon `CC: max-age`',
       id: 'other-age-update-max-age',
       requests: [
         {
@@ -78,7 +79,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not update the `Date` header',
+      name: 'HTTP cache must not update the [`Date` header](https://httpwg.org/specs/rfc7231.html#header.date)',
       id: 'other-date-update',
       requests: [
         {

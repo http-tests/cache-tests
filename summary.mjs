@@ -1,5 +1,6 @@
-/* global fetch */
+/* global fetch marked */
 
+import './marked.min.js'
 import * as display from './display.mjs'
 
 export function loadResults (index) {
@@ -29,8 +30,9 @@ export function showResults (target, testSuites, results) {
 
 function showHeader (testSuite, results) {
   var rows = []
+  var numCols = results.length + 1
   var blankRow = tableRow()
-  blankRow.appendChild(tableCell('td', '\xa0', undefined, undefined, undefined, results.length + 1))
+  blankRow.appendChild(tableCell('td', '\xa0', undefined, undefined, undefined, numCols))
   rows.push(blankRow)
   var headerRow = tableRow()
   var headerLink = document.createElement('a')
@@ -43,6 +45,13 @@ function showHeader (testSuite, results) {
     headerRow.appendChild(tableCell('th', implementation.name, 'category', implementation.version, implementation.link))
   })
   rows.push(headerRow)
+  if (testSuite.description !== undefined) {
+    var descriptionRow = tableRow()
+    var drCells = tableCell('td', '', 'description', undefined, undefined, numCols)
+    drCells.innerHTML = marked.parse(testSuite.description).slice(3, -5)
+    descriptionRow.appendChild(drCells)
+    rows.push(descriptionRow)
+  }
   return rows
 }
 
