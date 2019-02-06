@@ -130,36 +130,14 @@
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
-  "freshness-expires-invalid-1-digit-hour": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-2-digit-year": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-invalid-1-digit-hour": true,
+  "freshness-expires-invalid-2-digit-year": true,
   "freshness-expires-invalid-date": true,
-  "freshness-expires-invalid-date-dashes": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-multiple-spaces": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-no-comma": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-time-periods": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-utc": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-none": true,
+  "freshness-expires-invalid-date-dashes": true,
+  "freshness-expires-invalid-multiple-spaces": true,
+  "freshness-expires-invalid-no-comma": true,
+  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": [
@@ -175,14 +153,8 @@
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
-  "freshness-max-age-100a": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-max-age-a100": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-max-age-100a": true,
+  "freshness-max-age-a100": true,
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
   "freshness-max-age-expires": true,
@@ -203,10 +175,7 @@
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
-  "freshness-max-age-single-quoted": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-max-age-single-quoted": true,
   "freshness-max-age-space-after-equals": [
     "Assertion",
     "Response 2 comes from cache"
@@ -335,34 +304,70 @@
   "query-args-different": true,
   "query-args-same": true,
   "status-200-fresh": true,
-  "status-200-stale": true,
+  "status-200-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-203-fresh": true,
-  "status-203-stale": true,
+  "status-203-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-204-fresh": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "status-204-stale": true,
   "status-299-fresh": true,
-  "status-299-stale": true,
+  "status-299-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-400-fresh": true,
-  "status-400-stale": true,
+  "status-400-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-404-fresh": true,
-  "status-404-stale": true,
+  "status-404-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-410-fresh": true,
-  "status-410-stale": true,
+  "status-410-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-499-fresh": true,
-  "status-499-stale": true,
+  "status-499-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-500-fresh": true,
-  "status-500-stale": true,
+  "status-500-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-502-fresh": true,
-  "status-502-stale": true,
+  "status-502-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-503-fresh": true,
-  "status-503-stale": true,
+  "status-503-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-504-fresh": true,
-  "status-504-stale": true,
+  "status-504-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-599-fresh": true,
-  "status-599-stale": true,
+  "status-599-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "surrogate-max-age": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -404,7 +409,6 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "surrogate-none": true,
   "vary-2-match": true,
   "vary-2-match-omit": true,
   "vary-2-no-match": true,

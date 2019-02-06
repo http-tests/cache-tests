@@ -124,21 +124,29 @@
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
-  "freshness-expires-invalid-1-digit-hour": true,
-  "freshness-expires-invalid-2-digit-year": true,
+  "freshness-expires-invalid-1-digit-hour": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-expires-invalid-2-digit-year": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-date": true,
-  "freshness-expires-invalid-date-dashes": true,
-  "freshness-expires-invalid-multiple-spaces": true,
-  "freshness-expires-invalid-no-comma": [
+  "freshness-expires-invalid-date-dashes": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-invalid-time-periods": true,
-  "freshness-expires-invalid-utc": [
+  "freshness-expires-invalid-multiple-spaces": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-none": true,
+  "freshness-expires-invalid-no-comma": true,
+  "freshness-expires-invalid-time-periods": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,
@@ -151,8 +159,14 @@
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
-  "freshness-max-age-100a": true,
-  "freshness-max-age-a100": true,
+  "freshness-max-age-100a": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-a100": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
   "freshness-max-age-expires": true,
@@ -173,7 +187,10 @@
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
-  "freshness-max-age-single-quoted": true,
+  "freshness-max-age-single-quoted": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-space-after-equals": true,
   "freshness-max-age-space-before-equals": true,
   "freshness-none": true,
@@ -264,7 +281,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Thu, 20 Dec 2018 07:22:26 GMT, should be Thu, 20 Dec 2018 07:22:22 GMT"
+    "Response 2 header Date is Wed, 06 Feb 2019 02:41:53 GMT, should be Wed, 06 Feb 2019 02:41:50 GMT"
   ],
   "other-set-cookie": true,
   "partial-store-complete-reuse-partial": true,
@@ -371,7 +388,6 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "surrogate-none": true,
   "vary-2-match": true,
   "vary-2-match-omit": true,
   "vary-2-no-match": true,
