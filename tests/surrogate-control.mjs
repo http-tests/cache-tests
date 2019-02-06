@@ -279,6 +279,25 @@ export default
           expected_type: 'not_cached'
         }
       ]
+    },
+    {
+      name: 'Does the surrogate forward the `Surrogate-Control` response header?',
+      id: 'surrogate-remove-header',
+      browser_skip: true,
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=10000'],
+            ['Surrogate-Control', 'foo'],
+            ['Expires', 10000],
+            ['Date', 0]
+          ],
+          expected_response_headers: [
+            ['Surrogate-Control', 'foo']
+          ]
+        }
+      ]
     }
   ]
 }
