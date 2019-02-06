@@ -28,6 +28,17 @@ export function showResults (target, testSuites, results) {
   })
 }
 
+export function showToC (target, testSuites) {
+  testSuites.forEach(testSuite => {
+    var suiteLink = document.createElement('a')
+    suiteLink.href = '#' + testSuite.id
+    suiteLink.appendChild(document.createTextNode(testSuite.name))
+    var suiteLi = document.createElement('li')
+    suiteLi.appendChild(suiteLink)
+    target.appendChild(suiteLi)
+  })
+}
+
 function showHeader (testSuite, results) {
   var rows = []
   var numCols = results.length + 1

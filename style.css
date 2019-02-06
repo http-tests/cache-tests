@@ -21,6 +21,10 @@ ul {
   list-style-type: none;
 }
 
+ul#ToC {
+  column-count: 4;
+}
+
 th.category a {
   color: white;
 }

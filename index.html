@@ -11,9 +11,11 @@
       import surrogate from './tests/surrogate-control.mjs'
 
       baseTests.push(surrogate)
+      var ToC = document.getElementById('ToC')
       var target = document.getElementById('target')
 
       summary.loadResults(index).then(results => {
+        summary.showToC(ToC, baseTests)
         summary.showResults(target, baseTests, results)
       }).then(function () {
         if (window.location.hash !== "") {
@@ -44,8 +46,13 @@
       ⚪️: test dependency failed &nbsp;
       -: not tested
     </p>
+
     <p><i>Hover over failed tests for details. Click on <span class="hint">⌾</span> to copy the
     test ID to the clipboard.</i></p>
+
+    <ul id="ToC">
+    </ul>
+
     <table id="target">
     </table>
   </body>
