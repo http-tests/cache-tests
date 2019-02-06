@@ -43,7 +43,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache ignore the phrase `max-age` in a quoted string?',
+      name: 'Does HTTP cache ignore the phrase `max-age` in a quoted string (before the "real" `max-age`)?',
       id: 'freshness-max-age-ignore-quoted',
       kind: 'check',
       depends_on: ['freshness-max-age'],
@@ -61,7 +61,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache ignore the phrase `max-age` in a quoted string (after "real" max-age)?',
+      name: 'Does HTTP cache ignore the phrase `max-age` in a quoted string (after the "real" `max-age`)?',
       id: 'freshness-max-age-ignore-quoted-rev',
       kind: 'check',
       depends_on: ['freshness-max-age'],
