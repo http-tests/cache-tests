@@ -3,7 +3,7 @@
   "304-etag-update-response-Clear-Site-Data": true,
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1488341004795.3457\", not \"17895224675.257423\""
+    "Response 2 header Content-Foo is \"1365487608381.8855\", not \"1268335872857.4724\""
   ],
   "304-etag-update-response-Content-Location": [
     "Assertion",
@@ -34,7 +34,7 @@
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"1523982900072.2754\", not \"1537706144749.3472\""
+    "Response 2 header X-Content-Foo is \"63771416503.91507\", not \"627388293906.0033\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
@@ -49,7 +49,7 @@
   "304-etag-update-stored-Clear-Site-Data": true,
   "304-etag-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"1488341004795.3457\", not \"17895224675.257423\""
+    "Response 3 header Content-Foo is \"1365487608381.8855\", not \"1268335872857.4724\""
   ],
   "304-etag-update-stored-Content-Location": [
     "Assertion",
@@ -80,7 +80,7 @@
   "304-etag-update-stored-Test-Header": true,
   "304-etag-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"1523982900072.2754\", not \"1537706144749.3472\""
+    "Response 3 header X-Content-Foo is \"63771416503.91507\", not \"627388293906.0033\""
   ],
   "304-etag-update-stored-X-Frame-Options": [
     "Assertion",
@@ -95,7 +95,7 @@
   "304-lm-update-response-Clear-Site-Data": true,
   "304-lm-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1488341004795.3457\", not \"17895224675.257423\""
+    "Response 2 header Content-Foo is \"1365487608381.8855\", not \"1268335872857.4724\""
   ],
   "304-lm-update-response-Content-Location": [
     "Assertion",
@@ -126,7 +126,7 @@
   "304-lm-update-response-Test-Header": true,
   "304-lm-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"1523982900072.2754\", not \"1537706144749.3472\""
+    "Response 2 header X-Content-Foo is \"63771416503.91507\", not \"627388293906.0033\""
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
@@ -141,7 +141,7 @@
   "304-lm-update-stored-Clear-Site-Data": true,
   "304-lm-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"1488341004795.3457\", not \"17895224675.257423\""
+    "Response 3 header Content-Foo is \"1365487608381.8855\", not \"1268335872857.4724\""
   ],
   "304-lm-update-stored-Content-Location": [
     "Assertion",
@@ -172,7 +172,7 @@
   "304-lm-update-stored-Test-Header": true,
   "304-lm-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"1523982900072.2754\", not \"1537706144749.3472\""
+    "Response 3 header X-Content-Foo is \"63771416503.91507\", not \"627388293906.0033\""
   ],
   "304-lm-update-stored-X-Frame-Options": [
     "Assertion",
@@ -226,30 +226,20 @@
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
-  "freshness-expires-invalid-1-digit-hour": [
+  "freshness-expires-invalid-1-digit-hour": true,
+  "freshness-expires-invalid-2-digit-year": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-invalid-2-digit-year": true,
   "freshness-expires-invalid-date": true,
-  "freshness-expires-invalid-date-dashes": [
+  "freshness-expires-invalid-date-dashes": true,
+  "freshness-expires-invalid-multiple-spaces": true,
+  "freshness-expires-invalid-no-comma": true,
+  "freshness-expires-invalid-time-periods": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-invalid-multiple-spaces": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-no-comma": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-time-periods": true,
-  "freshness-expires-invalid-utc": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-none": true,
+  "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,
@@ -259,8 +249,14 @@
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
-  "freshness-max-age-100a": true,
-  "freshness-max-age-a100": true,
+  "freshness-max-age-100a": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-a100": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
   "freshness-max-age-expires": true,
@@ -276,7 +272,10 @@
   "freshness-max-age-quoted": true,
   "freshness-max-age-s-maxage-private": true,
   "freshness-max-age-s-maxage-private-multiple": true,
-  "freshness-max-age-single-quoted": true,
+  "freshness-max-age-single-quoted": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-space-after-equals": [
     "Assertion",
     "Response 2 comes from cache"
@@ -323,10 +322,7 @@
     "Assertion",
     "Response 3 comes from cache"
   ],
-  "invalidate-M-SEARCH-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
-  ],
+  "invalidate-M-SEARCH-failed": true,
   "invalidate-M-SEARCH-location": [
     "Assertion",
     "Response 3 comes from cache"
@@ -344,15 +340,15 @@
     "Assertion",
     "Response 3 comes from cache"
   ],
-  "invalidate-PUT": true,
+  "invalidate-PUT": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
   "invalidate-PUT-cl": [
     "Assertion",
     "Response 3 comes from cache"
   ],
-  "invalidate-PUT-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
-  ],
+  "invalidate-PUT-failed": true,
   "invalidate-PUT-location": [
     "Assertion",
     "Response 3 comes from cache"

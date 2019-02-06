@@ -20,7 +20,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Thu, 20 Dec 2018 07:55:20 GMT\", not \"Thu, 20 Dec 2018 07:55:15 GMT\""
+    "Response 2 header Expires is \"Wed, 06 Feb 2019 03:59:55 GMT\", not \"Wed, 06 Feb 2019 03:59:50 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": true,
   "304-etag-update-response-Set-Cookie": [
@@ -63,7 +63,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Thu, 20 Dec 2018 07:55:19 GMT\", not \"Thu, 20 Dec 2018 07:55:15 GMT\""
+    "Response 3 header Expires is \"Wed, 06 Feb 2019 03:59:55 GMT\", not \"Wed, 06 Feb 2019 03:59:50 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": true,
   "304-etag-update-stored-Set-Cookie": [
@@ -106,7 +106,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Thu, 20 Dec 2018 07:55:20 GMT\", not \"Thu, 20 Dec 2018 07:55:15 GMT\""
+    "Response 2 header Expires is \"Wed, 06 Feb 2019 03:59:55 GMT\", not \"Wed, 06 Feb 2019 03:59:50 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": true,
   "304-lm-update-response-Set-Cookie": [
@@ -149,7 +149,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Thu, 20 Dec 2018 07:55:19 GMT\", not \"Thu, 20 Dec 2018 07:55:15 GMT\""
+    "Response 3 header Expires is \"Wed, 06 Feb 2019 03:59:55 GMT\", not \"Wed, 06 Feb 2019 03:59:50 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": true,
   "304-lm-update-stored-Set-Cookie": [
@@ -226,36 +226,14 @@
   ],
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
-  "freshness-expires-invalid-1-digit-hour": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-2-digit-year": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-invalid-1-digit-hour": true,
+  "freshness-expires-invalid-2-digit-year": true,
   "freshness-expires-invalid-date": true,
-  "freshness-expires-invalid-date-dashes": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-multiple-spaces": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-no-comma": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-time-periods": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-invalid-utc": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-expires-none": true,
+  "freshness-expires-invalid-date-dashes": true,
+  "freshness-expires-invalid-multiple-spaces": true,
+  "freshness-expires-invalid-no-comma": true,
+  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,
@@ -265,11 +243,11 @@
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
-  "freshness-max-age-100a": [
+  "freshness-max-age-100a": true,
+  "freshness-max-age-a100": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
-  "freshness-max-age-a100": true,
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
   "freshness-max-age-expires": true,
@@ -288,7 +266,10 @@
   ],
   "freshness-max-age-s-maxage-private": true,
   "freshness-max-age-s-maxage-private-multiple": true,
-  "freshness-max-age-single-quoted": true,
+  "freshness-max-age-single-quoted": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-space-after-equals": [
     "Assertion",
     "Response 2 comes from cache"
