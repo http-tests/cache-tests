@@ -161,26 +161,26 @@ Possible members of a request object:
 - `pause_after` - Boolean controlling a 3-second pause after the request completes.
 - `magic_locations` - Boolean; if `true`, the `Location` and `Content-Location` headers will be rewritten to full URLs.
 - `response_status` - A `[number, string]` array containing the HTTP status code
-                    and phrase to return.
+                    and phrase to return from the origin.
 - `response_headers` - An array of `[header_name_string, header_value_string]` arrays to
-                     emit in the response. These values will also be checked like
+                     emit in the origin response. These values will also be checked like
                      expected_response_headers, unless there is a third value that is
                      `false`.
-- `response_body` - String to send as the response body. If not set, it will contain
+- `response_body` - String to send as the response body from the origin. If not set, it will contain
                   the test identifier.
 - `expected_type` - One of:
   - `cached`: The response is served from cache
   - `not_cached`: The response is not served from cache; it comes from the origin
   - `lm_validate`: The response comes from cache, but was validated on the origin with Last-Modified
   - `etag_validate`: The response comes from cache, but was validated on the origin with an ETag
-- `expected_status` - A number representing a HTTP status code to check the response for.
+- `expected_status` - A numeric HTTP status code; checked on the client.
                     If not set, the value of `response_status[0]` will be used; if that
                     is not set, 200 will be used.
 - `expected_request_headers` - An array of `[header_name_string, header_value_string]` representing
-                              headers to check the request for.
+                              headers to check the request for on the server.
 - `expected_response_headers` - An array of `[header_name_string, header_value_string]` representing
-                              headers to check the response for. See also response_headers.
-- `expected_response_text` - A string to check the response body against.
+                              headers to check the response for on the client. See also response_headers.
+- `expected_response_text` - A string to check the response body against on the client.
 - `setup` - Boolean to indicate whether this is a setup request; failures don't mean the actual test failed.
 - `setup_tests` - Array of values that indicate whether the specified check is part of setup;
   failures don't mean the actual test failed. One of: `["expected_type", "expected_status",
