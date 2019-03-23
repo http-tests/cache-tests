@@ -22,7 +22,7 @@ export default {
             ['If-None-Match', '"abcdef"']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -44,7 +44,7 @@ export default {
             ['If-None-Match', '"abcdefü"']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -66,7 +66,7 @@ export default {
             ['If-None-Match', 'abcdef']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -88,7 +88,7 @@ export default {
             ['If-None-Match', 'W/"abcdef"']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -110,7 +110,7 @@ export default {
             ['If-None-Match', 'w/"abcdef"']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -132,7 +132,7 @@ export default {
             ['If-None-Match', 'W\\"abcdef"']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -154,7 +154,7 @@ export default {
             ['If-None-Match', 'W"abcdef"']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -176,7 +176,7 @@ export default {
             ['If-None-Match', 'abcdef']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -198,7 +198,7 @@ export default {
             ['If-None-Match', '"abcdef", "1234", "5678"']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -220,7 +220,7 @@ export default {
             ['If-None-Match', '"1234", "abcdef", "5678"']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
@@ -242,7 +242,7 @@ export default {
             ['If-None-Match', '"1234", "5678", "abcdef"']
           ],
           expected_type: 'cached',
-          expected_status: '304'
+          expected_status: 304
         }
       ]
     },
