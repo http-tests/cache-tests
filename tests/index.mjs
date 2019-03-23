@@ -7,9 +7,10 @@ import expires from './expires-freshness.mjs'
 import heuristic from './heuristic-freshness.mjs'
 import statuses from './status.mjs'
 import vary from './vary.mjs'
+import conditional from './conditional.mjs'
 import update304 from './update304.mjs'
 import invalidation from './invalidation.mjs'
 import partial from './partial.mjs'
 import other from './other.mjs'
 
-export default [ccParse, ccFreshness, expiresParse, expires, ccResponse, heuristic, statuses, ccRequest, vary, update304, invalidation, partial, other]
+export default [ccParse, ccFreshness, expiresParse, expires, ccResponse, heuristic, statuses, ccRequest, vary, conditional, update304, invalidation, partial, other]
