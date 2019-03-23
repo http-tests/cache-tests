@@ -16,7 +16,9 @@
 
       summary.loadResults(index).then(results => {
         summary.showToC(ToC, baseTests)
-        summary.showResults(target, baseTests, results)
+        var loc = new URL(window.location)
+        var selected = loc.searchParams.getAll('id')
+        summary.showResults(target, baseTests, results, selected)
       }).then(function () {
         if (window.location.hash !== "") {
           var fragId = window.location.hash.substring(1)

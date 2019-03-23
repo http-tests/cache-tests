@@ -17,14 +17,22 @@ export function loadResults (index) {
   )
 }
 
-export function showResults (target, testSuites, results) {
+export function showResults (target, testSuites, results, selected) {
   testSuites.forEach(testSuite => {
-    showHeader(testSuite, results).forEach(row => {
-      target.appendChild(row)
-    })
+    var selectedTests = []
     testSuite.tests.forEach(test => {
-      target.appendChild(showTest(testSuites, test.id, results))
+      if (selected.length === 0 || selected.includes(test.id)) {
+        selectedTests.push(test)
+      }
     })
+    if (selectedTests.length) {
+      showHeader(testSuite, results).forEach(row => {
+        target.appendChild(row)
+      })
+      selectedTests.forEach(test => {
+        target.appendChild(showTest(testSuites, test.id, results))
+      })
+    }
   })
 }
 
