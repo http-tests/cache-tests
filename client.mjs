@@ -165,8 +165,8 @@ function makeCheckResponse (idx, config) {
   return function checkResponse (response) {
     var reqNum = idx + 1
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
-    if (config.dump) {
-      console.log(`${resNum}: HTTP ${response.status} ${response.statusmessage}`)
+    if (config.dump === true) {
+      console.log(`${resNum}: HTTP ${response.status} ${response.statusText}`)
       response.headers.forEach(header => {
         console.log(`    ${header[0]}: ${header[1]}`)
       })
