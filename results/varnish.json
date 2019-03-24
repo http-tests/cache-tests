@@ -9,7 +9,7 @@
   ],
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1111904816625.3757\", not \"832983968118.3105\""
+    "Response 2 header Content-Foo is \"1325534799482.839\", not \"1131284647977.0366\""
   ],
   "304-etag-update-response-Content-Location": [
     "Assertion",
@@ -29,11 +29,11 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Sun, 24 Mar 2019 12:28:43 GMT\", not \"Sun, 24 Mar 2019 13:28:42 GMT\""
+    "Response 2 header Expires is \"Sun, 24 Mar 2019 13:05:07 GMT\", not \"Sun, 24 Mar 2019 14:05:06 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
-    "Response 2 header Public-Key-Pins is \"169121210748.22858\", not \"1458297962987.5076\""
+    "Response 2 header Public-Key-Pins is \"1545805599411.8467\", not \"1101308304763.8142\""
   ],
   "304-etag-update-response-Set-Cookie": [
     "Setup",
@@ -45,11 +45,11 @@
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"64533752949.78054\", not \"1526929352927.0464\""
+    "Response 2 header Test-Header is \"615350185419.9304\", not \"1345537839197.2349\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"508474281627.8203\", not \"613416762429.3643\""
+    "Response 2 header X-Content-Foo is \"37705648974.14484\", not \"633435424274.0199\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
@@ -57,7 +57,7 @@
   ],
   "304-etag-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"391649513077.35693\", not \"52700647971.0257\""
+    "Response 2 header X-Test-Header is \"606454799003.989\", not \"9659853783.970547\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
@@ -92,7 +92,7 @@
   ],
   "304-lm-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1111904816625.3757\", not \"832983968118.3105\""
+    "Response 2 header Content-Foo is \"1325534799482.839\", not \"1131284647977.0366\""
   ],
   "304-lm-update-response-Content-Location": [
     "Assertion",
@@ -112,11 +112,11 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Sun, 24 Mar 2019 12:28:43 GMT\", not \"Sun, 24 Mar 2019 13:28:42 GMT\""
+    "Response 2 header Expires is \"Sun, 24 Mar 2019 13:05:07 GMT\", not \"Sun, 24 Mar 2019 14:05:06 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
-    "Response 2 header Public-Key-Pins is \"169121210748.22858\", not \"1458297962987.5076\""
+    "Response 2 header Public-Key-Pins is \"1545805599411.8467\", not \"1101308304763.8142\""
   ],
   "304-lm-update-response-Set-Cookie": [
     "Setup",
@@ -128,11 +128,11 @@
   ],
   "304-lm-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"64533752949.78054\", not \"1526929352927.0464\""
+    "Response 2 header Test-Header is \"615350185419.9304\", not \"1345537839197.2349\""
   ],
   "304-lm-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"508474281627.8203\", not \"613416762429.3643\""
+    "Response 2 header X-Content-Foo is \"37705648974.14484\", not \"633435424274.0199\""
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
@@ -140,7 +140,7 @@
   ],
   "304-lm-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"391649513077.35693\", not \"52700647971.0257\""
+    "Response 2 header X-Test-Header is \"606454799003.989\", not \"9659853783.970547\""
   ],
   "304-lm-update-response-X-XSS-Protection": [
     "Assertion",
@@ -227,13 +227,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "Request 2 should have been conditional, but it was not."
+    "request 2 header If-None-Match value is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": [
@@ -257,10 +254,7 @@
     "Response 2 status is 200, not 304"
   ],
   "conditional-etag-unquoted-respond-unquoted": true,
-  "conditional-etag-weak-generate-weak": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
