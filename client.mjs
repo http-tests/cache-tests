@@ -18,7 +18,7 @@ export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
   if (base !== undefined) baseUrl = base
   if (browserCache !== undefined) useBrowserCache = browserCache
   tests.forEach(testSet => {
-    testSet.tests.forEach(function (test) {
+    testSet.tests.forEach(test => {
       if (test.id === undefined) throw new Error('Missing test id')
       if (test.browser_only === true && !useBrowserCache === true) return
       if (test.browser_skip === true && useBrowserCache === true) return
@@ -58,12 +58,12 @@ function runSome (tests, chunkSize) {
 function addTest (testId, timeout, testFunc) {
   var wrapper = new Promise(function (resolve, reject) {
     testFunc()
-      .then(function (result) { // pass
+      .then(result => { // pass
         if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
         testResults[testId] = true
         resolve()
       })
-      .catch(function (err) { // fail
+      .catch(err => { // fail
         if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
         testResults[testId] = [(err.name || 'unknown'), err.message]
         resolve()
@@ -111,9 +111,9 @@ function makeCacheTest (test) {
     }
     return putTestConfig(uuid, requests)
       .then(runNextStep)
-      .then(function () {
+      .then(() => {
         return getServerState(uuid)
-      }).then(function (testState) {
+      }).then(testState => {
         checkRequests(requests, testState)
         return Promise.resolve()
       })
@@ -202,7 +202,7 @@ function makeCheckResponse (idx, config) {
         `Response ${reqNum} status is ${response.status}, not 200`)
     }
     if ('response_headers' in config) {
-      config.response_headers.forEach(function (header) {
+      config.response_headers.forEach(header => {
         if (header.len < 3 || header[2] === true) {
           assert(true, // default headers is always setup
             response.headers.get(header[0]) === header[1],
@@ -211,7 +211,7 @@ function makeCheckResponse (idx, config) {
       })
     }
     if ('expected_response_headers' in config) {
-      config.expected_response_headers.forEach(function (header) {
+      config.expected_response_headers.forEach(header => {
         var respSetup = setupCheck(config, 'expected_response_headers')
         if (typeof header[1] === 'function') {
           var prefix = `Response ${reqNum} header ${header[0]}`
@@ -291,7 +291,7 @@ function checkRequests (requests, testState) {
 
 function pause () {
   return new Promise(function (resolve, reject) {
-    setTimeout(function () {
+    setTimeout(() => {
       return resolve()
     }, 3000)
   })
@@ -315,7 +315,7 @@ function putTestConfig (uuid, requests) {
     'body': JSON.stringify(requests)
   }
   return theFetch(`${baseUrl}/config/${uuid}`, init)
-    .then(function (response) {
+    .then(response => {
       if (response.status !== 201) {
         throw new utils.SetupError({message: `PUT config resulted in ${response.status}`})
       }
@@ -324,11 +324,11 @@ function putTestConfig (uuid, requests) {
 
 function getServerState (uuid) {
   return theFetch(`${baseUrl}/state/${uuid}`)
-    .then(function (response) {
+    .then(response => {
       if (response.status === 200) {
         return response.text()
       }
-    }).then(function (text) {
+    }).then(text => {
       if (text === undefined) return []
       return JSON.parse(text)
     })

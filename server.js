@@ -67,10 +67,10 @@ function handleConfig (pathSegs, request, response) {
     return
   }
   var body = ''
-  request.on('data', function (chunk) {
+  request.on('data', chunk => {
     body += chunk
   })
-  request.on('end', function () {
+  request.on('end', () => {
     configs.set(uuid, JSON.parse(body))
     response.statusCode = 201
     response.end('OK')
