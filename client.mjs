@@ -226,9 +226,9 @@ function makeCheckResponse (idx, config, dump) {
         }
       })
     }
-    if ('expected_response_nonheaders' in config) {
-      config.expected_response_nonheaders.forEach(function (header) {
-        var respSetup = setupCheck(config, 'expected_response_nonheaders')
+    if ('expected_response_headers_missing' in config) {
+      config.expected_response_headers_missing.forEach(function (header) {
+        var respSetup = setupCheck(config, 'expected_response_headers_missing')
         assert(respSetup, !response.headers.has(header),
           `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
       })

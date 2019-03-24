@@ -10,13 +10,14 @@ function defaultResponseHeaders (validatorType, validatorValue, additionalHeader
   ].concat(additionalHeaders);
 }
 
-function checkCached ({name, id, configuredHeaders, expectedHeaders, unexpectedHeaders=[]}) {
+function checkCached ({name, id, kind='required', configuredHeaders, expectedHeaders, unexpectedHeaders=[]}) {
   const etag = utils.httpContent(`${id}-etag-1`);
   const etag1 = `"${etag}"`;
   const lm1 = utils.httpDate(Date.now(), -24 * 60 * 60);
   tests.push({
     name: `${name} with a Last-Modified validator`,
-    id: `uncached-lm-${id}`,
+    id: `headers-lm-${id}`,
+    kind,
     requests: [
       {
         response_headers: defaultResponseHeaders('Last-Modified', lm1, configuredHeaders),
@@ -26,14 +27,15 @@ function checkCached ({name, id, configuredHeaders, expectedHeaders, unexpectedH
       {
         expected_type: 'cached',
         expected_response_headers: expectedHeaders,
-        expected_response_nonheaders: unexpectedHeaders,
+        expected_response_headers_missing: unexpectedHeaders,
         setup_tests: ['expected_type']
       }
     ]
   });
   tests.push({
     name: `${name} with an ETag validator`,
-    id: `uncached-etag-${id}`,
+    id: `headers-etag-${id}`,
+    kind,
     requests: [
       {
         response_headers: defaultResponseHeaders('ETag', etag1, configuredHeaders),
@@ -43,7 +45,7 @@ function checkCached ({name, id, configuredHeaders, expectedHeaders, unexpectedH
       {
         expected_type: 'cached',
         expected_response_headers: expectedHeaders,
-        expected_response_nonheaders: unexpectedHeaders,
+        expected_response_headers_missing: unexpectedHeaders,
         setup_tests: ['expected_type']
       }
     ]
@@ -74,6 +76,7 @@ function checkCached ({name, id, configuredHeaders, expectedHeaders, unexpectedH
   checkCached({
     name: `HTTP cache must store ${header}`,
     id: `store-${header}`,
+    kind: 'check',
     configuredHeaders: [[header, value]],
     expectedHeaders: [[header, value]],
   });
@@ -82,6 +85,7 @@ function checkCached ({name, id, configuredHeaders, expectedHeaders, unexpectedH
 checkCached({
   name: `Connection header inhibits caching other headers`,
   id: `omit-headers-listed-in-Connection`,
+  kind: 'check',
   configuredHeaders: [
     ['Connection', 'a, b'],
     ['a', '1'],
@@ -107,6 +111,6 @@ checkCached({
 
 export default {
   name: 'Omit Headers From Cache',
-  id: 'uncached',
+  id: 'headers',
   tests
 };

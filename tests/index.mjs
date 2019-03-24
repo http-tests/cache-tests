@@ -8,10 +8,10 @@ import heuristic from './heuristic-freshness.mjs'
 import statuses from './status.mjs'
 import vary from './vary.mjs'
 import conditional from './conditional.mjs'
-import uncached from './uncached.mjs'
+import headers from './headers.mjs'
 import update304 from './update304.mjs'
 import invalidation from './invalidation.mjs'
 import partial from './partial.mjs'
 import other from './other.mjs'
 
-export default [ccParse, ccFreshness, expiresParse, expires, ccResponse, heuristic, statuses, ccRequest, vary, conditional, uncached, update304, invalidation, partial, other]
+export default [ccParse, ccFreshness, expiresParse, expires, ccResponse, heuristic, statuses, ccRequest, vary, conditional, headers, update304, invalidation, partial, other]
