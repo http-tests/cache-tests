@@ -432,6 +432,14 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "surrogate-max-age-max": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "surrogate-max-age-max-plus": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age-short-cc-max-age": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -456,6 +464,7 @@
   "vary-match": true,
   "vary-no-match": true,
   "vary-normalise-combine": true,
+  "vary-normalise-lang-case": true,
   "vary-normalise-lang-order": [
     "Assertion",
     "Response 2 does not come from cache"
