@@ -174,14 +174,14 @@ function makeCheckResponse (idx, config, dump) {
     if ('expected_type' in config) {
       var typeSetup = setupCheck(config, 'expected_type')
       if (config.expected_type === 'cached') {
-        assert(typeSetup, resNum < reqNum, `Response ${reqNum} does not come from cache`)
-      }
-      if (config.expected_type === 'not_cached') {
         if (response.status === 304 && isNaN(resNum)) { // some caches will not include the hdr
           // pass
         } else {
-          assert(typeSetup, resNum === reqNum, `Response ${reqNum} comes from cache`)
+          assert(typeSetup, resNum < reqNum, `Response ${reqNum} does not come from cache`)
         }
+      }
+      if (config.expected_type === 'not_cached') {
+        assert(typeSetup, resNum === reqNum, `Response ${reqNum} comes from cache`)
       }
     }
     //  browsers seem to squelch 304 even in no-store mode.
