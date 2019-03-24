@@ -279,25 +279,6 @@ export default
       ]
     },
     {
-      name: 'Surrogate cache must not reuse a response when the `Age` header is greater than its `Surrogate-Control` lifetime',
-      id: 'surrogate-max-age-age',
-      browser_skip: true,
-      depends_on: ['surrogate-max-age'],
-      requests: [
-        {
-          response_headers: [
-            ['Surrogate-Control', 'max-age=3600'],
-            ['Age', '12000']
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'not_cached'
-        }
-      ]
-    },
-    {
       name: 'Surrogate cache must not store a response with `Surrogate-Control: no-store`',
       id: 'surrogate-no-store',
       browser_skip: true,
