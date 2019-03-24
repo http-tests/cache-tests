@@ -316,7 +316,8 @@ export default {
             ['ETag', '"abcdef"'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_request_headers: [
@@ -337,7 +338,8 @@ export default {
             ['ETag', 'W/"abcdef"'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_request_headers: [
@@ -359,7 +361,8 @@ export default {
             ['ETag', 'abcdef'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           expected_request_headers: [
