@@ -13,10 +13,10 @@ if (testId !== '') {
   tests.forEach(suite => {
     suite.tests.forEach(test => {
       if (test.id === testId) {
+        test.dump = true
         testsToRun = [{
           name: suite.name,
-          tests: [test],
-          dump: true
+          tests: [test]
         }]
       }
     })
