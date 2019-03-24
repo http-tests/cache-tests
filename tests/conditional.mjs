@@ -44,6 +44,7 @@ export default {
             ['If-None-Match', '"abcdef"']
           ],
           expected_type: 'cached',
+          expected_status: 304,
           expected_response_headers: [
             ['ETag', '"abcdef"']
           ]
