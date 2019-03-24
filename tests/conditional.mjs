@@ -8,6 +8,7 @@ export default {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong ETag.',
       id: 'conditional-etag-strong-respond',
       kind: 'optimal',
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -30,6 +31,7 @@ export default {
       name: 'HTTP cache includes the `ETag` in a `304`.',
       id: 'conditional-304-etag',
       depends_on: ['conditional-etag-strong-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -56,6 +58,7 @@ export default {
       id: 'conditional-etag-strong-respond-obs-text',
       kind: 'optimal',
       depends_on: ['conditional-etag-strong-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -82,6 +85,7 @@ export default {
       id: 'conditional-etag-quoted-respond-unquoted',
       kind: 'check',
       depends_on: ['conditional-etag-strong-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -105,6 +109,7 @@ export default {
       id: 'conditional-etag-unquoted-respond-unquoted',
       kind: 'check',
       depends_on: ['conditional-etag-strong-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -128,6 +133,7 @@ export default {
       id: 'conditional-etag-unquoted-respond-quoted',
       kind: 'check',
       depends_on: ['conditional-etag-strong-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -150,6 +156,7 @@ export default {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak ETag.',
       id: 'conditional-etag-weak-respond',
       kind: 'optimal',
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -173,6 +180,7 @@ export default {
       id: 'conditional-etag-weak-respond-lowercase',
       kind: 'check',
       depends_on: ['conditional-etag-weak-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -196,6 +204,7 @@ export default {
       id: 'conditional-etag-weak-respond-backslash',
       kind: 'check',
       depends_on: ['conditional-etag-weak-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -219,6 +228,7 @@ export default {
       id: 'conditional-etag-weak-respond-omit-slash',
       depends_on: ['conditional-etag-weak-respond'],
       kind: 'check',
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -242,6 +252,7 @@ export default {
       id: 'conditional-etag-strong-respond-multiple-first',
       kind: 'optimal',
       depends_on: ['conditional-etag-strong-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -265,6 +276,7 @@ export default {
       id: 'conditional-etag-strong-respond-multiple-second',
       kind: 'optimal',
       depends_on: ['conditional-etag-strong-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
@@ -288,6 +300,7 @@ export default {
       id: 'conditional-etag-strong-respond-multiple-last',
       kind: 'optimal',
       depends_on: ['conditional-etag-strong-respond'],
+      browser_skip: true,
       requests: [
         {
           response_headers: [
