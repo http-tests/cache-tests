@@ -29,6 +29,7 @@ export default
       name: 'An optimal surrogate cache reuses a response with `Surrogate-Control: max-age: 2147483648`',
       id: 'surrogate-max-age-max',
       kind: 'optimal',
+      browser_skip: true,
       depends_on: ['freshness-none'],
       requests: [
         {
@@ -47,6 +48,7 @@ export default
       name: 'An optimal surrogate cache reuses a response with `Surrogate-Control: max-age: 99999999999`',
       id: 'surrogate-max-age-max-plus',
       kind: 'optimal',
+      browser_skip: true,
       depends_on: ['freshness-none'],
       requests: [
         {
@@ -64,6 +66,7 @@ export default
     {
       name: 'Surrogate cache must not reuse a response when the `Age` header is greater than its `Surrogate-Control: max-age` freshness lifetime',
       id: 'surrogate-max-age-age',
+      browser_skip: true,
       depends_on: ['surrogate-max-age'],
       requests: [
         {
