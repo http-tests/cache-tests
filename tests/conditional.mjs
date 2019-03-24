@@ -15,14 +15,18 @@ export default {
             ['ETag', '"abcdef"'],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           request_headers: [
             ['If-None-Match', '"abcdef"']
           ],
           expected_type: 'cached',
-          expected_status: 304
+          expected_status: 304,
+          expected_response_headers: [
+            ['ETag', '"abcdef"']
+          ]
         }
       ]
     },
