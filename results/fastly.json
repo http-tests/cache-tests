@@ -9,7 +9,7 @@
   ],
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"658044815686.7479\", not \"702839831729.6978\""
+    "Response 2 header Content-Foo is \"1138972682293.7808\", not \"582587091795.0355\""
   ],
   "304-etag-update-response-Content-Location": [
     "Assertion",
@@ -29,35 +29,35 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Wed, 06 Feb 2019 05:51:13 GMT\", not \"Wed, 06 Feb 2019 06:51:12 GMT\""
+    "Response 2 header Expires is \"Sun, 24 Mar 2019 12:29:15 GMT\", not \"Sun, 24 Mar 2019 13:29:14 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
-    "Response 2 header Public-Key-Pins is \"574502494694.7273\", not \"1233117275335.2083\""
+    "Response 2 header Public-Key-Pins is \"999622388090.3324\", not \"1144589602863.909\""
   ],
   "304-etag-update-response-Set-Cookie": [
     "Setup",
     "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Set-Cookie2": [
-    "Assertion",
-    "Response 2 header Set-Cookie2 is \"a=b\", not \"a=c\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"1279027683392.343\", not \"1144938377791.4995\""
+    "Response 2 header Test-Header is \"53064399420.63071\", not \"349702852084.46655\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"697432874412.9138\", not \"767522231280.5\""
+    "Response 2 header X-Content-Foo is \"975957238610.1937\", not \"114067909084.47957\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
     "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
   ],
   "304-etag-update-response-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Test-Header is \"1318158848675.4673\", not \"814851291289.5504\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
@@ -73,7 +73,7 @@
   ],
   "304-etag-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"658044815686.7479\", not \"702839831729.6978\""
+    "Response 3 header Content-Foo is \"1138972682293.7808\", not \"582587091795.0355\""
   ],
   "304-etag-update-stored-Content-Location": [
     "Assertion",
@@ -93,11 +93,11 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Wed, 06 Feb 2019 05:51:13 GMT\", not \"Wed, 06 Feb 2019 06:51:12 GMT\""
+    "Response 3 header Expires is \"Sun, 24 Mar 2019 12:29:15 GMT\", not \"Sun, 24 Mar 2019 13:29:14 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
-    "Response 3 header Public-Key-Pins is \"574502494694.7273\", not \"1233117275335.2083\""
+    "Response 3 header Public-Key-Pins is \"999622388090.3324\", not \"1144589602863.909\""
   ],
   "304-etag-update-stored-Set-Cookie": [
     "Setup",
@@ -109,11 +109,11 @@
   ],
   "304-etag-update-stored-Test-Header": [
     "Assertion",
-    "Response 3 header Test-Header is \"1279027683392.343\", not \"1144938377791.4995\""
+    "Response 3 header Test-Header is \"53064399420.63071\", not \"349702852084.46655\""
   ],
   "304-etag-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"697432874412.9138\", not \"767522231280.5\""
+    "Response 3 header X-Content-Foo is \"975957238610.1937\", not \"114067909084.47957\""
   ],
   "304-etag-update-stored-X-Frame-Options": [
     "Assertion",
@@ -121,11 +121,11 @@
   ],
   "304-etag-update-stored-X-Test-Header": [
     "Assertion",
-    "Response 3 header X-Test-Header is \"954157944626.3582\", not \"467327636432.65845\""
+    "Response 3 header X-Test-Header is \"1318158848675.4673\", not \"814851291289.5504\""
   ],
   "304-etag-update-stored-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-update-response-Cache-Control": [
     "Assertion",
@@ -137,7 +137,7 @@
   ],
   "304-lm-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"658044815686.7479\", not \"702839831729.6978\""
+    "Response 2 header Content-Foo is \"1138972682293.7808\", not \"582587091795.0355\""
   ],
   "304-lm-update-response-Content-Location": [
     "Assertion",
@@ -157,11 +157,11 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Wed, 06 Feb 2019 05:51:13 GMT\", not \"Wed, 06 Feb 2019 06:51:12 GMT\""
+    "Response 2 header Expires is \"Sun, 24 Mar 2019 12:29:15 GMT\", not \"Sun, 24 Mar 2019 13:29:14 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
-    "Response 2 header Public-Key-Pins is \"574502494694.7273\", not \"1233117275335.2083\""
+    "Response 2 header Public-Key-Pins is \"999622388090.3324\", not \"1144589602863.909\""
   ],
   "304-lm-update-response-Set-Cookie": [
     "Setup",
@@ -173,19 +173,19 @@
   ],
   "304-lm-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"1279027683392.343\", not \"1144938377791.4995\""
+    "Response 2 header Test-Header is \"53064399420.63071\", not \"349702852084.46655\""
   ],
   "304-lm-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"697432874412.9138\", not \"767522231280.5\""
+    "Response 2 header X-Content-Foo is \"975957238610.1937\", not \"114067909084.47957\""
   ],
   "304-lm-update-response-X-Frame-Options": [
-    "Assertion",
-    "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"954157944626.3582\", not \"467327636432.65845\""
+    "Response 2 header X-Test-Header is \"1318158848675.4673\", not \"814851291289.5504\""
   ],
   "304-lm-update-response-X-XSS-Protection": [
     "Assertion",
@@ -201,15 +201,15 @@
   ],
   "304-lm-update-stored-Content-Foo": [
     "Assertion",
-    "Response 3 header Content-Foo is \"658044815686.7479\", not \"702839831729.6978\""
+    "Response 3 header Content-Foo is \"1138972682293.7808\", not \"582587091795.0355\""
   ],
   "304-lm-update-stored-Content-Location": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Location is \"/foo\", not \"/bar\""
   ],
   "304-lm-update-stored-Content-MD5": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
   ],
   "304-lm-update-stored-Content-Security-Policy": [
     "Assertion",
@@ -221,11 +221,11 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Wed, 06 Feb 2019 05:51:13 GMT\", not \"Wed, 06 Feb 2019 06:51:12 GMT\""
+    "Response 3 header Expires is \"Sun, 24 Mar 2019 12:29:15 GMT\", not \"Sun, 24 Mar 2019 13:29:14 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
-    "Response 3 header Public-Key-Pins is \"574502494694.7273\", not \"1233117275335.2083\""
+    "Response 3 header Public-Key-Pins is \"999622388090.3324\", not \"1144589602863.909\""
   ],
   "304-lm-update-stored-Set-Cookie": [
     "Setup",
@@ -237,11 +237,11 @@
   ],
   "304-lm-update-stored-Test-Header": [
     "Assertion",
-    "Response 3 header Test-Header is \"1279027683392.343\", not \"1144938377791.4995\""
+    "Response 3 header Test-Header is \"53064399420.63071\", not \"349702852084.46655\""
   ],
   "304-lm-update-stored-X-Content-Foo": [
     "Assertion",
-    "Response 3 header X-Content-Foo is \"697432874412.9138\", not \"767522231280.5\""
+    "Response 3 header X-Content-Foo is \"975957238610.1937\", not \"114067909084.47957\""
   ],
   "304-lm-update-stored-X-Frame-Options": [
     "Assertion",
@@ -249,7 +249,7 @@
   ],
   "304-lm-update-stored-X-Test-Header": [
     "Assertion",
-    "Response 3 header X-Test-Header is \"954157944626.3582\", not \"467327636432.65845\""
+    "Response 3 header X-Test-Header is \"1318158848675.4673\", not \"814851291289.5504\""
   ],
   "304-lm-update-stored-X-XSS-Protection": [
     "Assertion",
@@ -321,16 +321,62 @@
     "Assertion",
     "Response 1 status is 200, not 504"
   ],
+  "conditional-304-etag": true,
+  "conditional-etag-quoted-respond-unquoted": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-etag-strong-generate": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "conditional-etag-strong-generate-unquoted": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "conditional-etag-strong-respond": true,
+  "conditional-etag-strong-respond-multiple-first": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-etag-strong-respond-multiple-last": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-etag-strong-respond-multiple-second": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-etag-strong-respond-obs-text": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-etag-unquoted-respond-quoted": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-etag-unquoted-respond-unquoted": true,
+  "conditional-etag-weak-generate-weak": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "conditional-etag-weak-respond": true,
+  "conditional-etag-weak-respond-backslash": true,
+  "conditional-etag-weak-respond-lowercase": true,
+  "conditional-etag-weak-respond-omit-slash": true,
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
   ],
   "freshness-expires-age-slow-date": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in 503"
   ],
   "freshness-expires-future": true,
-  "freshness-expires-invalid": true,
+  "freshness-expires-invalid": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "freshness-expires-invalid-1-digit-hour": true,
   "freshness-expires-invalid-2-digit-year": [
     "Assertion",
@@ -338,17 +384,17 @@
   ],
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in 503"
   ],
   "freshness-expires-invalid-multiple-spaces": true,
   "freshness-expires-invalid-no-comma": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in 503"
   ],
   "freshness-expires-invalid-time-periods": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in 503"
   ],
   "freshness-expires-invalid-utc": [
     "Assertion",
@@ -362,23 +408,35 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "freshness-expires-wrong-case-weekday": true,
+  "freshness-expires-wrong-case-weekday": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "freshness-max-age": true,
   "freshness-max-age-0": true,
-  "freshness-max-age-0-expires": true,
+  "freshness-max-age-0-expires": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "freshness-max-age-100a": true,
   "freshness-max-age-a100": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "freshness-max-age-age": true,
+  "freshness-max-age-age": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "freshness-max-age-case-insenstive": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
-  "freshness-max-age-extension": true,
+  "freshness-max-age-extension": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "freshness-max-age-ignore-quoted": [
     "Assertion",
     "Response 2 comes from cache"
@@ -390,17 +448,26 @@
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-max": true,
-  "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "freshness-max-age-negative": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in 503"
   ],
   "freshness-max-age-quoted": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "freshness-max-age-s-maxage-shared-longer": true,
-  "freshness-max-age-s-maxage-shared-longer-multiple": true,
+  "freshness-max-age-s-maxage-shared-longer": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
+  "freshness-max-age-s-maxage-shared-longer-multiple": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
   "freshness-max-age-single-quoted": [
@@ -421,7 +488,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "heuristic-201-not_cached": true,
+  "heuristic-201-not_cached": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "heuristic-202-not_cached": true,
   "heuristic-203-cached": [
     "Assertion",
@@ -462,7 +532,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "heuristic-599-not_cached": true,
+  "heuristic-599-not_cached": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "invalidate-DELETE": [
     "Assertion",
     "Response 3 comes from cache"
@@ -524,7 +597,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 06 Feb 2019 05:51:17 GMT, should be Wed, 06 Feb 2019 05:51:14 GMT"
+    "Response 2 header Date is Sun, 24 Mar 2019 12:29:18 GMT, should be Sun, 24 Mar 2019 12:29:15 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
@@ -557,7 +630,10 @@
   "query-args-same": true,
   "status-200-fresh": true,
   "status-200-stale": true,
-  "status-203-fresh": true,
+  "status-203-fresh": [
+    "Setup",
+    "PUT config resulted in 503"
+  ],
   "status-203-stale": true,
   "status-204-fresh": [
     "Assertion",

@@ -120,6 +120,46 @@
   "ccreq-no-cache-lm": true,
   "ccreq-no-store": true,
   "ccreq-oic": true,
+  "conditional-304-etag": true,
+  "conditional-etag-quoted-respond-unquoted": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "conditional-etag-strong-generate": true,
+  "conditional-etag-strong-generate-unquoted": [
+    "Assertion",
+    "request 2 header If-None-Match value is \"abcdef\", not \"\"abcdef\"\""
+  ],
+  "conditional-etag-strong-respond": true,
+  "conditional-etag-strong-respond-multiple-first": true,
+  "conditional-etag-strong-respond-multiple-last": true,
+  "conditional-etag-strong-respond-multiple-second": true,
+  "conditional-etag-strong-respond-obs-text": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "conditional-etag-unquoted-respond-quoted": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "conditional-etag-unquoted-respond-unquoted": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "conditional-etag-weak-generate-weak": true,
+  "conditional-etag-weak-respond": true,
+  "conditional-etag-weak-respond-backslash": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "conditional-etag-weak-respond-lowercase": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "conditional-etag-weak-respond-omit-slash": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
@@ -281,7 +321,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 06 Feb 2019 05:48:12 GMT, should be Wed, 06 Feb 2019 05:48:08 GMT"
+    "Response 2 header Date is Sun, 24 Mar 2019 12:27:52 GMT, should be Sun, 24 Mar 2019 12:27:49 GMT"
   ],
   "other-set-cookie": true,
   "partial-store-complete-reuse-partial": true,

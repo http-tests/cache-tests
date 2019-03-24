@@ -126,6 +126,40 @@
     "Response 2 comes from cache"
   ],
   "ccreq-oic": true,
+  "conditional-304-etag": true,
+  "conditional-etag-quoted-respond-unquoted": true,
+  "conditional-etag-strong-generate": true,
+  "conditional-etag-strong-generate-unquoted": [
+    "Assertion",
+    "request 2 header If-None-Match value is \"abcdef\", not \"\"abcdef\"\""
+  ],
+  "conditional-etag-strong-respond": true,
+  "conditional-etag-strong-respond-multiple-first": true,
+  "conditional-etag-strong-respond-multiple-last": true,
+  "conditional-etag-strong-respond-multiple-second": true,
+  "conditional-etag-strong-respond-obs-text": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-etag-unquoted-respond-quoted": true,
+  "conditional-etag-unquoted-respond-unquoted": true,
+  "conditional-etag-weak-generate-weak": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "conditional-etag-weak-respond": true,
+  "conditional-etag-weak-respond-backslash": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-etag-weak-respond-lowercase": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-etag-weak-respond-omit-slash": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
@@ -134,19 +168,16 @@
   "freshness-expires-invalid-2-digit-year": true,
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": true,
-  "freshness-expires-invalid-multiple-spaces": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-invalid-multiple-spaces": true,
   "freshness-expires-invalid-no-comma": true,
-  "freshness-expires-invalid-time-periods": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-invalid-time-periods": true,
   "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-present": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-wrong-case-month": [
     "Assertion",
     "Response 2 does not come from cache"
