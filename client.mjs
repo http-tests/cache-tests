@@ -165,6 +165,12 @@ function makeCheckResponse (idx, config) {
   return function checkResponse (response) {
     var reqNum = idx + 1
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
+    if (config.dump) {
+      console.log(`${resNum}: HTTP ${response.status} ${response.statusmessage}`)
+      response.headers.forEach(header => {
+        console.log(`    ${header[0]}: ${header[1]}`)
+      })
+    }
     if ('expected_type' in config) {
       var typeSetup = setupCheck(config, 'expected_type')
       if (config.expected_type === 'cached') {
