@@ -167,8 +167,8 @@ function makeCheckResponse (idx, config, dump) {
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
     if (dump === true) {
       console.log(`${resNum}: HTTP ${response.status} ${response.statusText}`)
-      response.headers.forEach((name, value) => {
-        console.log(`    ${name}: ${value}`)
+      response.headers.forEach((hname, hvalue) => {
+        console.log(`    ${hname}: ${hvalue}`)
       })
     }
     if ('expected_type' in config) {
