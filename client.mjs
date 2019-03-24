@@ -85,7 +85,7 @@ function makeCacheTest (test) {
           var url = makeTestUrl(uuid, config)
           var init = fetchInit(idx, config)
           return theFetch(url, init)
-            .then(makeCheckResponse(idx, config))
+            .then(makeCheckResponse(idx, config, test.dump))
             .then(makeCheckResponseBody(config, uuid), function (reason) {
               throw reason
             })
@@ -161,11 +161,11 @@ function fetchInit (idx, config) {
   return init
 }
 
-function makeCheckResponse (idx, config) {
+function makeCheckResponse (idx, config, dump) {
   return function checkResponse (response) {
     var reqNum = idx + 1
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
-    if (config.dump === true) {
+    if (dump === true) {
       console.log(`${resNum}: HTTP ${response.status} ${response.statusText}`)
       response.headers.forEach(header => {
         console.log(`    ${header[0]}: ${header[1]}`)

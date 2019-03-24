@@ -16,6 +16,7 @@ if (testId !== '') {
         test.dump = true
         testsToRun = [{
           name: suite.name,
+          id: suite.id,
           tests: [test]
         }]
       }
