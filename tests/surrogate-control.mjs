@@ -26,6 +26,61 @@ export default
       ]
     },
     {
+      name: 'An optimal surrogate cache reuses a response with `Surrogate-Control: max-age: 2147483648`',
+      id: 'surrogate-max-age-max',
+      kind: 'optimal',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Surrogate-Control', 'max-age=2147483648']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal surrogate cache reuses a response with `Surrogate-Control: max-age: 99999999999`',
+      id: 'surrogate-max-age-max-plus',
+      kind: 'optimal',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Surrogate-Control', 'max-age=99999999999']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Surrogate cache must not reuse a response when the `Age` header is greater than its `Surrogate-Control: max-age` freshness lifetime',
+      id: 'surrogate-max-age-age',
+      depends_on: ['surrogate-max-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Surrogate-Control', 'max-age=3600'],
+            ['Age', '7200']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'Does surrogate cache ignore `Surrogate-Control: max-age` with space before the `=`?',
       id: 'surrogate-max-age-space-before-equals',
       browser_skip: true,
