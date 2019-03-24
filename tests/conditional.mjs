@@ -326,7 +326,7 @@ export default {
       requests: [
         {
           'response_headers': [
-            ['Expires', 0],
+            ['Expires', 1],
             ['ETag', '"abcdef"'],
             ['Date', 0]
           ],
@@ -348,7 +348,7 @@ export default {
       requests: [
         {
           'response_headers': [
-            ['Expires', 0],
+            ['Expires', 1],
             ['ETag', 'W/"abcdef"'],
             ['Date', 0]
           ],
@@ -371,7 +371,7 @@ export default {
       requests: [
         {
           response_headers: [
-            ['Expires', 0],
+            ['Expires', 1],
             ['ETag', 'abcdef'],
             ['Date', 0]
           ],
