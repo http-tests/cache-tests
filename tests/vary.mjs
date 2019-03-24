@@ -430,6 +430,31 @@ export default {
           expected_type: 'cached'
         }
       ]
+    },
+    {
+      name: 'An optimal HTTP cache normalises `Accept-Language` by ignoring language case',
+      id: 'vary-normalise-lang-order',
+      kind: 'optimal',
+      requests: [
+        {
+          request_headers: [
+            ['Accept-Language', 'en, de']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'Accept-Language']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Accept-Language', 'eN, De']
+          ],
+          expected_type: 'cached'
+        }
+      ]
     }
   ]
 }
