@@ -55,6 +55,7 @@ export default {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong ETag containing obs-text.',
       id: 'conditional-etag-strong-respond-obs-text',
       kind: 'optimal',
+      depends_on: ['conditional-etag-strong-respond'],
       requests: [
         {
           response_headers: [
