@@ -15,8 +15,7 @@ export default {
             ['ETag', '"abcdef"'],
             ['Date', 0]
           ],
-          setup: true,
-          pause_after: true
+          setup: true
         },
         {
           request_headers: [
