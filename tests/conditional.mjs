@@ -22,7 +22,28 @@ export default {
             ['If-None-Match', '"abcdef"']
           ],
           expected_type: 'cached',
-          expected_status: 304,
+          expected_status: 304
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache includes the `ETag` in a `304`.',
+      id: 'conditional-304-etag',
+      depends_on: ['conditional-etag-strong-respond'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 100000],
+            ['ETag', '"abcdef"'],
+            ['Date', 0]
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['If-None-Match', '"abcdef"']
+          ],
+          expected_type: 'cached',
           expected_response_headers: [
             ['ETag', '"abcdef"']
           ]
@@ -47,14 +68,41 @@ export default {
             ['If-None-Match', '"abcdefü"']
           ],
           expected_type: 'cached',
+          expected_status: 304,
+          expected_response_headers: [
+            ['ETag', '"abcdefü"']
+          ]
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache responds to unquoted `If-None-Match` with a `304` when holding a fresh response with a matching strong ETag that is quoted.',
+      id: 'conditional-etag-quoted-respond-unquoted',
+      kind: 'check',
+      depends_on: ['conditional-etag-strong-respond'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 100000],
+            ['ETag', '"abcdef"'],
+            ['Date', 0]
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['If-None-Match', 'abcdef']
+          ],
+          expected_type: 'cached',
           expected_status: 304
         }
       ]
     },
     {
-      name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong ETag that is unquoted.',
-      id: 'conditional-etag-strong-respond-unquote',
-      kind: 'optimal',
+      name: 'HTTP cache responds to unquoted `If-None-Match` with a `304` when holding a fresh response with a matching strong ETag that is unquoted.',
+      id: 'conditional-etag-unquoted-respond-unquoted',
+      kind: 'check',
+      depends_on: ['conditional-etag-strong-respond'],
       requests: [
         {
           response_headers: [
@@ -67,6 +115,29 @@ export default {
         {
           request_headers: [
             ['If-None-Match', 'abcdef']
+          ],
+          expected_type: 'cached',
+          expected_status: 304
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache responds to quoted `If-None-Match` with a `304` when holding a fresh response with a matching strong ETag that is unquoted.',
+      id: 'conditional-etag-unquoted-respond-quoted',
+      kind: 'check',
+      depends_on: ['conditional-etag-strong-respond'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 100000],
+            ['ETag', 'abcdef'],
+            ['Date', 0]
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['If-None-Match', '"abcdef"']
           ],
           expected_type: 'cached',
           expected_status: 304
@@ -99,6 +170,7 @@ export default {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak ETag, and the entity-tag weakness flag is lowercase.',
       id: 'conditional-etag-weak-respond-lowercase',
       kind: 'check',
+      depends_on: ['conditional-etag-weak-respond'],
       requests: [
         {
           response_headers: [
@@ -121,6 +193,7 @@ export default {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak ETag, and the entity-tag weakness flag uses `\\` instead of `/`.',
       id: 'conditional-etag-weak-respond-backslash',
       kind: 'check',
+      depends_on: ['conditional-etag-weak-respond'],
       requests: [
         {
           response_headers: [
@@ -142,6 +215,7 @@ export default {
     {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak ETag, and the entity-tag weakness flag omits `/`.',
       id: 'conditional-etag-weak-respond-omit-slash',
+      depends_on: ['conditional-etag-weak-respond'],
       kind: 'check',
       requests: [
         {
@@ -162,31 +236,10 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache responds to `If-None-Match` with a `304` when request entity-tag is unquoted.',
-      id: 'conditional-etag-strong-quote-mismatch',
-      kind: 'check',
-      requests: [
-        {
-          response_headers: [
-            ['Expires', 100000],
-            ['ETag', '"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
-        {
-          request_headers: [
-            ['If-None-Match', 'abcdef']
-          ],
-          expected_type: 'cached',
-          expected_status: 304
-        }
-      ]
-    },
-    {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when it contains multiple entity-tags (first one).',
       id: 'conditional-etag-strong-respond-multiple-first',
       kind: 'optimal',
+      depends_on: ['conditional-etag-strong-respond'],
       requests: [
         {
           response_headers: [
@@ -209,6 +262,7 @@ export default {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when it contains multiple entity-tags (middle one).',
       id: 'conditional-etag-strong-respond-multiple-second',
       kind: 'optimal',
+      depends_on: ['conditional-etag-strong-respond'],
       requests: [
         {
           response_headers: [
@@ -231,6 +285,7 @@ export default {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when it contains multiple entity-tags (last one).',
       id: 'conditional-etag-strong-respond-multiple-last',
       kind: 'optimal',
+      depends_on: ['conditional-etag-strong-respond'],
       requests: [
         {
           response_headers: [
@@ -295,6 +350,7 @@ export default {
       name: 'HTTP cache generates a quoted `If-None-Match` request when holding a stale response with a matching, unquoted strong ETag.',
       id: 'conditional-etag-strong-generate-unquoted',
       kind: 'check',
+      depends_on: ['conditional-etag-strong-generate'],
       requests: [
         {
           response_headers: [
