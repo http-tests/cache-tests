@@ -433,7 +433,7 @@ export default {
     },
     {
       name: 'An optimal HTTP cache normalises `Accept-Language` by ignoring language case',
-      id: 'vary-normalise-lang-order',
+      id: 'vary-normalise-lang-case',
       kind: 'optimal',
       requests: [
         {
