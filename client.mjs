@@ -223,7 +223,9 @@ function makeCheckResponse (idx, config) {
 function makeCheckResponseBody (config, uuid) {
   return function checkResponseBody (resBody) {
     var statusCode = 200
-    if ('response_status' in config) {
+    if ('expected_status' in config) {
+      statusCode = config.expected_status
+    } else if ('response_status' in config) {
       statusCode = config.response_status[0]
     }
     if ('expected_response_text' in config) {
