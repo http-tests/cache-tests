@@ -112,5 +112,6 @@ checkCached({
 export default {
   name: 'Omit Headers From Cache',
   id: 'headers',
+  description: 'These tests examine how caches omit headers from stored responses and check whether they conform to the existing requirements to omit headers, for example around [no-cache](https://httpwg.org/specs/rfc7234.html#cache-response-directive.no-cache).',
   tests
 };

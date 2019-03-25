@@ -180,6 +180,8 @@ Possible members of a request object:
                               headers to check the request for on the server.
 - `expected_response_headers` - An array of `[header_name_string, header_value_string]` representing
                               headers to check the response for on the client. See also response_headers.
+- `expected_response_headers_missing` - An array of `header_name_string` representing headers to
+                                      check that the response on the client does not include.
 - `expected_response_text` - A string to check the response body against on the client.
 - `setup` - Boolean to indicate whether this is a setup request; failures don't mean the actual test failed.
 - `setup_tests` - Array of values that indicate whether the specified check is part of setup;
