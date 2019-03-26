@@ -18,12 +18,22 @@ export function assert (isSetup, expr, message) {
   }
 }
 
+const contentSeed = 1
 var contentStore = {}
-export function httpContent (csKey) {
+export function httpContent (csKey, contentLength = 15) {
   if (csKey in contentStore) {
     return contentStore[csKey]
   } else {
-    var content = (Math.random() * Date.now()).toString()
+    var keySeed = 0
+    for (let i = 0; i < csKey.length; i++) {
+      keySeed += csKey.charCodeAt(i)
+    }
+    var contents = []
+    for (let i = 0; i < contentLength; ++i) {
+      var idx = ((i * keySeed * contentSeed) % 26) + 65
+      contents.push(String.fromCharCode(idx))
+    }
+    var content = contents.join("")
     contentStore[csKey] = content
     return content
   }
