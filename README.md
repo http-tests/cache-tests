@@ -2,6 +2,24 @@
 
 This is a test suite for the protocol behaviours of [HTTP caches](http://httpwg.org/specs/rfc7234.html). The initial tests were derived from contributions to the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache).
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Goals](#goals)
+- [Installation](#installation)
+  - [Installing from NPM](#installing-from-npm)
+- [Running the Test Server](#running-the-test-server)
+- [Testing Reverse Proxies and CDNs](#testing-reverse-proxies-and-cdns)
+  - [Testing from the Command Line](#testing-from-the-command-line)
+- [Testing Browser Caches](#testing-browser-caches)
+- [Interpreting the Results](#interpreting-the-results)
+  - [Test Results FAQ](#test-results-faq)
+- [Getting your results onto cache-tests.fyi](#getting-your-results-onto-cache-testsfyi)
+- [Test Format](#test-format)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## Goals
 
