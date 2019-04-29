@@ -115,6 +115,15 @@ If you see a lot of failures, it might be one of a few different issues:
 * If you see lots of blue diamonds (setup failures), it's likely that the cache is refusing `PUT` requests. Enable them to clear this; the tests use PUT to synchronise state between the client and the server.
 
 
+## Getting your results onto cache-tests.fyi
+
+[cache-tests.fyi](https://cache-tests.fyi) collects results from caches in browsers, reverse proxies, and CDNs. Its purpose is to gather information about how HTTP caching works "in the wild", to help the [HTTP Working Group](https://httpwg.org) make decisions about how to evolve the specification.
+
+If your implementation isn't listed and you want it to be, please file an issue, or contact [Mark Nottingham](mailto:mnot@mnot.net). Both open source and proprietary implementations are welcome; if there are commercial concerns about disclosing your results, your identity can be anonymised (e.g., "CDN A"), and will not be disclosed to anyone.
+
+Right now, all of the reverse proxy and CDN implementations are run by a script on a server, using the command-line client; to keep results up-to-date as the tests evolve, it's most helpful if you can provide an endpoint to test (for reverse proxies and CDNs).
+
+
 ## Test Format
 
 Each test run gets its own URL, randomized content, and operates independently.
