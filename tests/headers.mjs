@@ -67,7 +67,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
   ['Set-Cookie2', 'a=b'],
   ['Strict-Transport-Security'],
   ['Strict-Transport-Security2'],
-  ['Trailer'],
+  //  ['Trailer'],   // nodejs server can't send Trailer on a 304
   ['Transfer-Encoding'],
   ['Upgrade'],
   ['WWW-Authenticate']
