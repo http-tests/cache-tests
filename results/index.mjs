@@ -4,20 +4,20 @@ export default [
     "file": "chrome.json",
     "name": "Chrome",
     "type": "browser",
-    "version": "70.0.3538.110"
+    "version": "74.0.3729.131"
   },
   {
     "file": "firefox.json",
     "name": "Firefox",
     "type": "browser",
-    "version": "64.0",
+    "version": "67.0b16",
     "link": "https://github.com/http-tests/cache-tests/wiki/Firefox"
   },
   {
     "file": "safari.json",
     "name": "Safari",
     "type": "browser",
-    "version": "12.0 (14606.1.36.1.9)"
+    "version": "12.1 (14607.1.40.1.4)"
   },
   {
     "file": "edge.json",
@@ -29,14 +29,14 @@ export default [
     "file": "nginx.json",
     "name": "nginx",
     "type": "rev-proxy",
-    "version": "1.15.6",
+    "version": "1.15.10",
     "link": "https://github.com/http-tests/cache-tests/wiki/nginx"
   },
   {
     "file": "squid.json",
     "name": "Squid",
     "type": "rev-proxy",
-    "version": "4.4",
+    "version": "4.5",
     "link": "https://github.com/http-tests/cache-tests/wiki/Squid"
   },
   {
@@ -50,7 +50,7 @@ export default [
     "file": "apache.json",
     "name": "httpd",
     "type": "rev-proxy",
-    "version": "2.4.37",
+    "version": "2.4.39",
     "link": "https://github.com/http-tests/cache-tests/wiki/Apache-httpd"
   },
   {
@@ -64,7 +64,7 @@ export default [
     "file": "fastly.json",
     "name": "Fastly",
     "type": "cdn",
-    "version": "04-12-2018",
+    "version": "06-05-2019",
     "link": "https://github.com/http-tests/cache-tests/wiki/Fastly"
   }
 ]
