@@ -90,6 +90,7 @@ function handleState (pathSegs, request, response) {
 }
 
 function handleXhr (pathSegs, request, response) {
+  // identify the desired configuration for this request
   var uuid = pathSegs[0]
   if (!uuid) {
     sendResponse(response, 404, `Config Not Found for ${uuid}`)
@@ -120,6 +121,27 @@ function handleXhr (pathSegs, request, response) {
   }
   serverState.push(state)
   stash.set(uuid, serverState)
+
+  // Determine what the response status should be
+  var httpStatus = config['response_status'] || [200, 'OK']
+  if ('expected_type' in config && config.expected_type.endsWith('validated')) {
+    let previousLm = getHeader(previousConfig.response_headers, 'Last-Modified')
+    if (previousLm && request.headers['if-modified-since'] === previousLm) {
+      httpStatus = [304, 'Not Modified']
+    }
+    let previousEtag = getHeader(previousConfig.response_headers, 'ETag')
+    if (previousEtag && request.headers['if-none-match'] === previousEtag) {
+      httpStatus = [304, 'Not Modified']
+    }
+    if (httpStatus[0] !== 304) {
+      console.log(`WARN: request ${serverState.length + 1} of ${requests.length} for ${requests[0].name} should have been a 304`)
+      httpStatus = [999, '304 Not Generated']
+    }
+  }
+  response.statusCode = httpStatus[0]
+  response.statusPhrase = httpStatus[1]
+
+  // header manipulation
   var notedHeaders = new Map()
   var responseHeaders = config.response_headers || []
   responseHeaders.forEach(header => {
@@ -141,24 +163,7 @@ function handleXhr (pathSegs, request, response) {
   response.setHeader('Server-Request-Count', serverState.length)
   response.setHeader('Server-Now', httpDate(state.now, 0))
 
-  var httpStatus = config['response_status'] || [200, 'OK']
-  if ('expected_type' in config && config.expected_type.endsWith('validated')) {
-    let previousLm = getHeader(previousConfig.response_headers, 'Last-Modified')
-    if (previousLm && request.headers['if-modified-since'] === previousLm) {
-      httpStatus = [304, 'Not Modified']
-    }
-    let previousEtag = getHeader(previousConfig.response_headers, 'ETag')
-    if (previousEtag && request.headers['if-none-match'] === previousEtag) {
-      httpStatus = [304, 'Not Modified']
-    }
-    if (httpStatus[0] !== 304) {
-      console.log(`WARN: request ${serverState.length + 1} of ${requests.length} for ${requests[0].name} should have been a 304`)
-      httpStatus = [999, '304 Not Generated']
-    }
-  }
-  response.statusCode = httpStatus[0]
-  response.statusPhrase = httpStatus[1]
-
+  // Response body generation
   var content = config['response_body'] || uuid
   if (noBodyStatus.has(response.statusCode)) {
     response.end()
