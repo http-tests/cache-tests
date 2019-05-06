@@ -1,19 +1,19 @@
-import * as utils from '../utils.mjs';
+import * as utils from '../utils.mjs'
 
-const tests = [];
+const tests = []
 
 function defaultResponseHeaders (validatorType, validatorValue, additionalHeaders) {
   return [
     ['Cache-Control', `max-age=3600`],
     ['Date', 0],
     [validatorType, validatorValue]
-  ].concat(additionalHeaders);
+  ].concat(additionalHeaders)
 }
 
-function checkCached ({name, id, kind='required', configuredHeaders, expectedHeaders, unexpectedHeaders=[]}) {
-  const etag = utils.httpContent(`${id}-etag-1`);
-  const etag1 = `"${etag}"`;
-  const lm1 = utils.httpDate(Date.now(), -24 * 60 * 60);
+function checkCached ({name, id, kind = 'required', configuredHeaders, expectedHeaders, unexpectedHeaders = []}) {
+  const etag = utils.httpContent(`${id}-etag-1`)
+  const etag1 = `"${etag}"`
+  const lm1 = utils.httpDate(Date.now(), -24 * 60 * 60)
   tests.push({
     name: `${name} with a Last-Modified validator`,
     id: `headers-lm-${id}`,
@@ -22,7 +22,7 @@ function checkCached ({name, id, kind='required', configuredHeaders, expectedHea
       {
         response_headers: defaultResponseHeaders('Last-Modified', lm1, configuredHeaders),
         setup: true,
-        pause_after: true,
+        pause_after: true
       },
       {
         expected_type: 'cached',
@@ -31,7 +31,7 @@ function checkCached ({name, id, kind='required', configuredHeaders, expectedHea
         setup_tests: ['expected_type']
       }
     ]
-  });
+  })
   tests.push({
     name: `${name} with an ETag validator`,
     id: `headers-etag-${id}`,
@@ -40,7 +40,7 @@ function checkCached ({name, id, kind='required', configuredHeaders, expectedHea
       {
         response_headers: defaultResponseHeaders('ETag', etag1, configuredHeaders),
         setup: true,
-        pause_after: true,
+        pause_after: true
       },
       {
         expected_type: 'cached',
@@ -49,7 +49,7 @@ function checkCached ({name, id, kind='required', configuredHeaders, expectedHea
         setup_tests: ['expected_type']
       }
     ]
-  });
+  })
 }
 
 [
@@ -70,17 +70,17 @@ function checkCached ({name, id, kind='required', configuredHeaders, expectedHea
   ['Trailer'],
   ['Transfer-Encoding'],
   ['Upgrade'],
-  ['WWW-Authenticate'],
-].forEach(function ([header, value=null]) {
-  if (value === null) value = utils.httpContent(`${header}-value`);
+  ['WWW-Authenticate']
+].forEach(function ([header, value = null]) {
+  if (value === null) value = utils.httpContent(`${header}-value`)
   checkCached({
     name: `HTTP cache must store ${header}`,
     id: `store-${header}`,
     kind: 'check',
     configuredHeaders: [[header, value]],
-    expectedHeaders: [[header, value]],
-  });
-});
+    expectedHeaders: [[header, value]]
+  })
+})
 
 checkCached({
   name: `Connection header inhibits caching other headers`,
@@ -90,11 +90,11 @@ checkCached({
     ['Connection', 'a, b'],
     ['a', '1'],
     ['b', '2'],
-    ['c', '3'],
+    ['c', '3']
   ],
   expectedHeaders: [['c', '3']],
   unexpectedHeaders: ['Connection', 'a', 'b']
-});
+})
 
 checkCached({
   name: `Cache-Control:no-cache directive inhibits caching other headers`,
@@ -103,15 +103,15 @@ checkCached({
     ['Cache-Control', 'no-cache="a, b"'],
     ['a', '1'],
     ['b', '2'],
-    ['c', '3'],
+    ['c', '3']
   ],
   expectedHeaders: [['c', '3']],
   unexpectedHeaders: ['a', 'b']
-});
+})
 
 export default {
   name: 'Omit Headers From Cache',
   id: 'headers',
   description: 'These tests examine how caches omit headers from stored responses and check whether they conform to the existing requirements to omit headers, for example around [no-cache](https://httpwg.org/specs/rfc7234.html#cache-response-directive.no-cache).',
   tests
-};
+}

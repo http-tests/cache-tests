@@ -33,7 +33,7 @@ export function httpContent (csKey, contentLength = 15) {
       var idx = ((i * keySeed * contentSeed) % 26) + 65
       contents.push(String.fromCharCode(idx))
     }
-    var content = contents.join("")
+    var content = contents.join('')
     contentStore[csKey] = content
     return content
   }
