@@ -94,8 +94,8 @@ const resultTypes = {
   pass: '✅',
   fail: '⛔️',
   optional_fail: '⚠️',
-  yes: 'Y',
-  no: 'N',
+  yes: '●',
+  no: '○',
   setup_fail: '🔹',
   harness_fail: '⁉️',
   dependency_fail: '⚪️'

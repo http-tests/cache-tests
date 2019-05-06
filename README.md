@@ -108,7 +108,7 @@ As a result, there are a few different kinds of test results:
 * ✅ - The test was successful.
 * ⛔️ - The test failed, and likely indicates a specification conformance problem.
 * ⚠️ - The cache didn't behave in an optimal fashion (usually, it didn't use a stored response when it could have), but this is not a conformance problem.
-* `Y` / `N` - These are tests to see how deployed caches behave; we use them to gather information for future specification work.
+* ● / ○ - These are tests to see how deployed caches behave; we use them to gather information for future specification work. "yes" and "no" respectively.
 
 Some additional results might pop up from time to time:
 
