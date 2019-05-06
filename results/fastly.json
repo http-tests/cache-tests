@@ -29,7 +29,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Mon, 06 May 2019 06:09:25 GMT\", not \"Mon, 06 May 2019 07:09:24 GMT\""
+    "Response 2 header Expires is \"Mon, 06 May 2019 06:30:43 GMT\", not \"Mon, 06 May 2019 07:30:42 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -48,8 +48,8 @@
     "Response 2 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
   ],
   "304-etag-update-response-X-Content-Foo": [
-    "Assertion",
-    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
@@ -88,16 +88,16 @@
     "Response 3 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
   ],
   "304-etag-update-stored-Content-Type": [
-    "Assertion",
-    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Mon, 06 May 2019 06:09:25 GMT\", not \"Mon, 06 May 2019 07:09:24 GMT\""
+    "Response 3 header Expires is \"Mon, 06 May 2019 06:30:43 GMT\", not \"Mon, 06 May 2019 07:30:42 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
-    "Assertion",
-    "Response 3 header Public-Key-Pins is \"AUOICWQKEYSMGAU\", not \"AVQLGBWRMHCXSNI\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Set-Cookie": [
     "Setup",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Mon, 06 May 2019 06:09:25 GMT\", not \"Mon, 06 May 2019 07:09:24 GMT\""
+    "Response 2 header Expires is \"Mon, 06 May 2019 06:30:43 GMT\", not \"Mon, 06 May 2019 07:30:42 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -176,8 +176,8 @@
     "Response 2 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
   ],
   "304-lm-update-response-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Mon, 06 May 2019 06:09:25 GMT\", not \"Mon, 06 May 2019 07:09:24 GMT\""
+    "Response 3 header Expires is \"Mon, 06 May 2019 06:30:43 GMT\", not \"Mon, 06 May 2019 07:30:42 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -641,7 +641,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Mon, 06 May 2019 06:09:30 GMT, should be Mon, 06 May 2019 06:09:26 GMT"
+    "Response 2 header Date is Mon, 06 May 2019 06:30:47 GMT, should be Mon, 06 May 2019 06:30:44 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
