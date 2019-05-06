@@ -9,7 +9,7 @@
   ],
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1526143603422.4385\", not \"857613143667.6847\""
+    "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
   ],
   "304-etag-update-response-Content-Location": [
     "Assertion",
@@ -29,11 +29,11 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Sun, 24 Mar 2019 14:41:41 GMT\", not \"Sun, 24 Mar 2019 15:41:40 GMT\""
+    "Response 2 header Expires is \"Mon, 06 May 2019 06:08:55 GMT\", not \"Mon, 06 May 2019 07:08:54 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
-    "Response 2 header Public-Key-Pins is \"105232658051.06519\", not \"174858996704.0466\""
+    "Response 2 header Public-Key-Pins is \"AUOICWQKEYSMGAU\", not \"AVQLGBWRMHCXSNI\""
   ],
   "304-etag-update-response-Set-Cookie": [
     "Setup",
@@ -45,11 +45,11 @@
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"899494441200.072\", not \"140379176409.32455\""
+    "Response 2 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"744824380069.3472\", not \"261814691791.08734\""
+    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
@@ -57,7 +57,7 @@
   ],
   "304-etag-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"717577148806.9587\", not \"1148969034249.6802\""
+    "Response 2 header X-Test-Header is \"ADGJMPSVYBEHKNQ\", not \"AEIMQUYCGKOSWAE\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
@@ -92,7 +92,7 @@
   ],
   "304-lm-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"1526143603422.4385\", not \"857613143667.6847\""
+    "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
   ],
   "304-lm-update-response-Content-Location": [
     "Assertion",
@@ -112,11 +112,11 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Sun, 24 Mar 2019 14:41:41 GMT\", not \"Sun, 24 Mar 2019 15:41:40 GMT\""
+    "Response 2 header Expires is \"Mon, 06 May 2019 06:08:55 GMT\", not \"Mon, 06 May 2019 07:08:54 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
-    "Response 2 header Public-Key-Pins is \"105232658051.06519\", not \"174858996704.0466\""
+    "Response 2 header Public-Key-Pins is \"AUOICWQKEYSMGAU\", not \"AVQLGBWRMHCXSNI\""
   ],
   "304-lm-update-response-Set-Cookie": [
     "Setup",
@@ -128,11 +128,11 @@
   ],
   "304-lm-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"899494441200.072\", not \"140379176409.32455\""
+    "Response 2 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
   ],
   "304-lm-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"744824380069.3472\", not \"261814691791.08734\""
+    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
@@ -140,7 +140,7 @@
   ],
   "304-lm-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"717577148806.9587\", not \"1148969034249.6802\""
+    "Response 2 header X-Test-Header is \"ADGJMPSVYBEHKNQ\", not \"AEIMQUYCGKOSWAE\""
   ],
   "304-lm-update-response-X-XSS-Protection": [
     "Assertion",
@@ -367,6 +367,86 @@
   ],
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
+  "headers-etag-omit-headers-listed-in-Cache-Control-no-cache": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "headers-etag-omit-headers-listed-in-Connection": [
+    "Assertion",
+    "Response 2 includes unexpected header Connection: \"close\""
+  ],
+  "headers-etag-store-Clear-Site-Data": true,
+  "headers-etag-store-Connection": [
+    "Assertion",
+    "Response 2 header Connection is \"close\", not \"AOCQESGUIWKYMAO\""
+  ],
+  "headers-etag-store-Content-Type": true,
+  "headers-etag-store-Proxy-Authenticate": [
+    "Assertion",
+    "Response 2 header Proxy-Authenticate is \"null\", not \"AGMSYEKQWCIOUAG\""
+  ],
+  "headers-etag-store-Proxy-Connection": true,
+  "headers-etag-store-Public-Key-Pins": true,
+  "headers-etag-store-Set-Cookie": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "headers-etag-store-Set-Cookie2": true,
+  "headers-etag-store-Strict-Transport-Security": true,
+  "headers-etag-store-Strict-Transport-Security2": true,
+  "headers-etag-store-Test-Header": true,
+  "headers-etag-store-Transfer-Encoding": [
+    "Setup",
+    "Response 1 status is 503, not 200"
+  ],
+  "headers-etag-store-Upgrade": [
+    "Assertion",
+    "Response 2 header Upgrade is \"null\", not \"AYWUSQOMKIGECAY\""
+  ],
+  "headers-etag-store-WWW-Authenticate": true,
+  "headers-etag-store-X-Frame-Options": true,
+  "headers-etag-store-X-Test-Header": true,
+  "headers-etag-store-X-XSS-Protection": true,
+  "headers-lm-omit-headers-listed-in-Cache-Control-no-cache": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "headers-lm-omit-headers-listed-in-Connection": [
+    "Assertion",
+    "Response 2 includes unexpected header Connection: \"close\""
+  ],
+  "headers-lm-store-Clear-Site-Data": true,
+  "headers-lm-store-Connection": [
+    "Assertion",
+    "Response 2 header Connection is \"close\", not \"AOCQESGUIWKYMAO\""
+  ],
+  "headers-lm-store-Content-Type": true,
+  "headers-lm-store-Proxy-Authenticate": [
+    "Assertion",
+    "Response 2 header Proxy-Authenticate is \"null\", not \"AGMSYEKQWCIOUAG\""
+  ],
+  "headers-lm-store-Proxy-Connection": true,
+  "headers-lm-store-Public-Key-Pins": true,
+  "headers-lm-store-Set-Cookie": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "headers-lm-store-Set-Cookie2": true,
+  "headers-lm-store-Strict-Transport-Security": true,
+  "headers-lm-store-Strict-Transport-Security2": true,
+  "headers-lm-store-Test-Header": true,
+  "headers-lm-store-Transfer-Encoding": [
+    "Setup",
+    "Response 1 status is 503, not 200"
+  ],
+  "headers-lm-store-Upgrade": [
+    "Assertion",
+    "Response 2 header Upgrade is \"null\", not \"AYWUSQOMKIGECAY\""
+  ],
+  "headers-lm-store-WWW-Authenticate": true,
+  "headers-lm-store-X-Frame-Options": true,
+  "headers-lm-store-X-Test-Header": true,
+  "headers-lm-store-X-XSS-Protection": true,
   "heuristic-200-cached": [
     "Assertion",
     "Response 2 does not come from cache"

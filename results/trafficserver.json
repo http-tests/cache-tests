@@ -168,16 +168,19 @@
   "freshness-expires-invalid-2-digit-year": true,
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": true,
-  "freshness-expires-invalid-multiple-spaces": true,
+  "freshness-expires-invalid-multiple-spaces": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-no-comma": true,
-  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-time-periods": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
-  "freshness-expires-present": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-present": true,
   "freshness-expires-wrong-case-month": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -220,6 +223,98 @@
   ],
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
+  "headers-etag-omit-headers-listed-in-Cache-Control-no-cache": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "headers-etag-omit-headers-listed-in-Connection": [
+    "Assertion",
+    "Response 2 includes unexpected header Connection: \"close\""
+  ],
+  "headers-etag-store-Clear-Site-Data": true,
+  "headers-etag-store-Connection": [
+    "Assertion",
+    "Response 2 header Connection is \"close\", not \"AOCQESGUIWKYMAO\""
+  ],
+  "headers-etag-store-Content-Type": true,
+  "headers-etag-store-Proxy-Authenticate": [
+    "Assertion",
+    "Response 2 header Proxy-Authenticate is \"null\", not \"AGMSYEKQWCIOUAG\""
+  ],
+  "headers-etag-store-Proxy-Connection": [
+    "Assertion",
+    "Response 2 header Proxy-Connection is \"null\", not \"AHOVCJQXELSZGNU\""
+  ],
+  "headers-etag-store-Public-Key-Pins": true,
+  "headers-etag-store-Set-Cookie": [
+    "Assertion",
+    "Response 2 header Set-Cookie is \"null\", not \"a=b\""
+  ],
+  "headers-etag-store-Set-Cookie2": true,
+  "headers-etag-store-Strict-Transport-Security": true,
+  "headers-etag-store-Strict-Transport-Security2": true,
+  "headers-etag-store-Test-Header": true,
+  "headers-etag-store-Transfer-Encoding": [
+    "Setup",
+    "Response body is \"24\r\nd05f7c9a-a8dd-42ac-a9d0-a0b0108c421e\r\n0\r\n\r\n\", not \"d05f7c9a-a8dd-42ac-a9d0-a0b0108c421e\""
+  ],
+  "headers-etag-store-Upgrade": [
+    "Assertion",
+    "Response 2 header Upgrade is \"null\", not \"AYWUSQOMKIGECAY\""
+  ],
+  "headers-etag-store-WWW-Authenticate": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "headers-etag-store-X-Frame-Options": true,
+  "headers-etag-store-X-Test-Header": true,
+  "headers-etag-store-X-XSS-Protection": true,
+  "headers-lm-omit-headers-listed-in-Cache-Control-no-cache": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "headers-lm-omit-headers-listed-in-Connection": [
+    "Assertion",
+    "Response 2 includes unexpected header Connection: \"close\""
+  ],
+  "headers-lm-store-Clear-Site-Data": true,
+  "headers-lm-store-Connection": [
+    "Assertion",
+    "Response 2 header Connection is \"close\", not \"AOCQESGUIWKYMAO\""
+  ],
+  "headers-lm-store-Content-Type": true,
+  "headers-lm-store-Proxy-Authenticate": [
+    "Assertion",
+    "Response 2 header Proxy-Authenticate is \"null\", not \"AGMSYEKQWCIOUAG\""
+  ],
+  "headers-lm-store-Proxy-Connection": [
+    "Assertion",
+    "Response 2 header Proxy-Connection is \"null\", not \"AHOVCJQXELSZGNU\""
+  ],
+  "headers-lm-store-Public-Key-Pins": true,
+  "headers-lm-store-Set-Cookie": [
+    "Assertion",
+    "Response 2 header Set-Cookie is \"null\", not \"a=b\""
+  ],
+  "headers-lm-store-Set-Cookie2": true,
+  "headers-lm-store-Strict-Transport-Security": true,
+  "headers-lm-store-Strict-Transport-Security2": true,
+  "headers-lm-store-Test-Header": true,
+  "headers-lm-store-Transfer-Encoding": [
+    "Setup",
+    "Response body is \"24\r\n66834dfd-8497-40f5-a111-790de2b32fb2\r\n0\r\n\r\n\", not \"66834dfd-8497-40f5-a111-790de2b32fb2\""
+  ],
+  "headers-lm-store-Upgrade": [
+    "Assertion",
+    "Response 2 header Upgrade is \"null\", not \"AYWUSQOMKIGECAY\""
+  ],
+  "headers-lm-store-WWW-Authenticate": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "headers-lm-store-X-Frame-Options": true,
+  "headers-lm-store-X-Test-Header": true,
+  "headers-lm-store-X-XSS-Protection": true,
   "heuristic-200-cached": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -338,45 +433,24 @@
   "query-args-different": true,
   "query-args-same": true,
   "status-200-fresh": true,
-  "status-200-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-200-stale": true,
   "status-203-fresh": true,
-  "status-203-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-203-stale": true,
   "status-204-fresh": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "status-204-stale": true,
   "status-299-fresh": true,
-  "status-299-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-299-stale": true,
   "status-400-fresh": true,
-  "status-400-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-400-stale": true,
   "status-404-fresh": true,
-  "status-404-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-404-stale": true,
   "status-410-fresh": true,
-  "status-410-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-410-stale": true,
   "status-499-fresh": true,
-  "status-499-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-499-stale": true,
   "status-500-fresh": true,
   "status-500-stale": [
     "Assertion",
