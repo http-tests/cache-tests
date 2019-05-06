@@ -50,6 +50,10 @@ th.category a {
   font-style: normal;
 }
 
+.shade {
+  background-color: #fafafa;
+}
+
 .description {
   background-color: #eee;
   padding: 3px 6px;

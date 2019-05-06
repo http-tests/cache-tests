@@ -30,7 +30,11 @@ export function showResults (target, testSuites, results, selected) {
         target.appendChild(row)
       })
       selectedTests.forEach(test => {
-        target.appendChild(showTest(testSuites, test.id, results))
+        var result = showTest(testSuites, test.id, results)
+        if (target.childElementCount % 2) {
+          result.setAttribute('class', 'shade')
+        }
+        target.appendChild(result)
       })
     }
   })
