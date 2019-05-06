@@ -15,7 +15,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
   const etag1 = `"${etag}"`
   const lm1 = utils.httpDate(Date.now(), -24 * 60 * 60)
   tests.push({
-    name: `${name} with a Last-Modified validator`,
+    name: `${name} with a \`Last-Modified\` validator?`,
     id: `headers-lm-${id}`,
     kind,
     requests: [
@@ -33,7 +33,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
     ]
   })
   tests.push({
-    name: `${name} with an ETag validator`,
+    name: `${name} with an \`ETag\` validator?`,
     id: `headers-etag-${id}`,
     kind,
     requests: [
@@ -74,7 +74,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
 ].forEach(function ([header, value = null]) {
   if (value === null) value = utils.httpContent(`${header}-value`)
   checkCached({
-    name: `Does HTTP cache store \`${header}\`?`,
+    name: `Does HTTP cache store \`${header}\``,
     id: `store-${header}`,
     kind: 'check',
     configuredHeaders: [[header, value]],
@@ -83,7 +83,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
 })
 
 checkCached({
-  name: 'Does `Connection` header inhibit caching listed headers?',
+  name: 'Does `Connection` header inhibit caching listed headers',
   id: `omit-headers-listed-in-Connection`,
   kind: 'check',
   configuredHeaders: [
@@ -97,7 +97,7 @@ checkCached({
 })
 
 checkCached({
-  name: 'Does `Cache-Control: no-cache` inhibit caching listed headers?',
+  name: 'Does `Cache-Control: no-cache` inhibit caching listed headers',
   id: `omit-headers-listed-in-Cache-Control-no-cache`,
   configuredHeaders: [
     ['Cache-Control', 'no-cache="a, b"'],
