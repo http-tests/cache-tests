@@ -74,7 +74,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
 ].forEach(function ([header, value = null]) {
   if (value === null) value = utils.httpContent(`${header}-value`)
   checkCached({
-    name: `HTTP cache must store ${header}`,
+    name: `Does HTTP cache store \`${header}\`?`,
     id: `store-${header}`,
     kind: 'check',
     configuredHeaders: [[header, value]],
@@ -83,7 +83,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
 })
 
 checkCached({
-  name: `Connection header inhibits caching other headers`,
+  name: 'Does `Connection` header inhibit caching listed headers?',
   id: `omit-headers-listed-in-Connection`,
   kind: 'check',
   configuredHeaders: [
@@ -97,7 +97,7 @@ checkCached({
 })
 
 checkCached({
-  name: `Cache-Control:no-cache directive inhibits caching other headers`,
+  name: 'Does `Cache-Control: no-cache` inhibit caching listed headers?',
   id: `omit-headers-listed-in-Cache-Control-no-cache`,
   configuredHeaders: [
     ['Cache-Control', 'no-cache="a, b"'],
