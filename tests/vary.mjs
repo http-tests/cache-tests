@@ -11,16 +11,7 @@ export default {
       kind: 'optimal',
       requests: [
         {
-          request_headers: [
-            ['Foo', '1']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo']
-          ],
-          setup: true
+          template: 'vary-setup'
         },
         {
           request_headers: [
@@ -35,16 +26,7 @@ export default {
       id: 'vary-no-match',
       requests: [
         {
-          request_headers: [
-            ['Foo', '1']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo']
-          ],
-          setup: true
+          template: 'vary-setup'
         },
         {
           request_headers: [
@@ -59,16 +41,7 @@ export default {
       id: 'vary-omit',
       requests: [
         {
-          request_headers: [
-            ['Foo', '1']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo']
-          ],
-          setup: true
+          template: 'vary-setup'
         },
         {
           expected_type: 'not_cached'
@@ -81,17 +54,8 @@ export default {
       kind: 'optimal',
       requests: [
         {
-          request_headers: [
-            ['Foo', '1']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo']
-          ],
-          response_body: utils.httpContent('foo_1'),
-          setup: true
+          template: 'vary-setup',
+          response_body: utils.httpContent('foo_1')
         },
         {
           request_headers: [
@@ -122,17 +86,11 @@ export default {
       kind: 'optimal',
       requests: [
         {
+          template: 'vary-setup',
           request_headers: [
             ['Foo', '1'],
             ['Other', '2']
           ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo']
-          ],
-          setup: true
         },
         {
           request_headers: [

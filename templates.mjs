@@ -36,5 +36,17 @@ export default {
       ['Last-Modified', 0],
       ['Date', 0]
     ]
+  },
+  'vary-setup': {
+    request_headers: [
+      ['Foo', '1']
+    ],
+    response_headers: [
+      ['Expires', 5000],
+      ['Last-Modified', -3000],
+      ['Date', 0],
+      ['Vary', 'Foo']
+    ],
+    setup: true
   }
 }
