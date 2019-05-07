@@ -128,30 +128,6 @@ function check304 (args) {
       }
     ]
   })
-  tests.push({
-    name: `HTTP cache must update stored \`${header}\` from a \`HEAD\` response`,
-    id: `head-update-stored-${header}`,
-    requests: [
-      {
-        response_headers: makeResponse(header, valueA, 3600),
-        setup: true,
-        pause_after: true
-      },
-      {
-        request_method: 'HEAD',
-        response_headers: makeResponse(header, valueB, 3600),
-        setup: true,
-        pause_after: true
-      },
-      {
-        expected_type: 'cached',
-        expected_response_headers: [
-          [header, valueB]
-        ],
-        setup_tests: ['expected_type']
-      }
-    ]
-  })
 }
 
 function makeResponse (header, value, lifetime, validatorType, validatorValue) {
