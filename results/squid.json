@@ -220,7 +220,12 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus-1": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",
@@ -386,6 +391,10 @@
   "other-cookie": true,
   "other-date-update": true,
   "other-set-cookie": true,
+  "other-warning": [
+    "Assertion",
+    "Response 2 warning header not present."
+  ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,
@@ -528,6 +537,14 @@
     "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-order": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-select": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-space": [
     "Assertion",
     "Response 2 does not come from cache"
   ],

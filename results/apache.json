@@ -217,7 +217,9 @@
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-max": true,
+  "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus-1": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",
@@ -398,9 +400,13 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Mon, 06 May 2019 06:13:51 GMT, should be Mon, 06 May 2019 06:13:47 GMT"
+    "Response 2 header Date is Tue, 07 May 2019 06:58:37 GMT, should be Tue, 07 May 2019 06:58:34 GMT"
   ],
   "other-set-cookie": true,
+  "other-warning": [
+    "Assertion",
+    "Response 2 warning header not present."
+  ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,
@@ -531,6 +537,14 @@
     "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-order": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-select": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-space": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
