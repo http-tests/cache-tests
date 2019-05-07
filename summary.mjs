@@ -53,11 +53,12 @@ export function showToC (target, testSuites) {
 
 function showHeader (testSuite, results) {
   var rows = []
-  var numCols = results.length + 1
+  var numCols = results.length + 2
   var blankRow = tableRow()
-  blankRow.appendChild(tableCell('td', '\xa0', undefined, undefined, undefined, numCols))
+  blankRow.appendChild(emptyCell(numCols))
   rows.push(blankRow)
   var headerRow = tableRow()
+  headerRow.appendChild(tableCell('th', '\xa0', 'name category'))
   var headerLink = document.createElement('a')
   headerLink.href = '#' + testSuite.id
   headerLink.appendChild(document.createTextNode(testSuite.name))
@@ -70,7 +71,7 @@ function showHeader (testSuite, results) {
   rows.push(headerRow)
   if (testSuite.description !== undefined) {
     var descriptionRow = tableRow()
-    var drCells = tableCell('td', '', 'description', undefined, undefined, numCols)
+    var drCells = emptyCell(numCols)
     drCells.innerHTML = marked.parse(testSuite.description).slice(3, -5)
     descriptionRow.appendChild(drCells)
     rows.push(descriptionRow)
@@ -81,6 +82,7 @@ function showHeader (testSuite, results) {
 function showTest (testSuites, testId, results) {
   var test = display.testLookup(testSuites, testId)
   var testRow = tableRow()
+  testRow.appendChild(tableCell('td', testSelector(test.id)))
   testRow.appendChild(tableCell('th', display.showTestName(test), 'name'))
   results.forEach(implementation => {
     testRow.appendChild(
@@ -123,4 +125,45 @@ function tableCell (cellType, content, CssClass, hint, link, colspan) {
     cellElement.title = hint
   }
   return cellElement
+}
+
+function testSelector (testId) {
+  var checkbox = document.createElement('input')
+  checkbox.type = 'checkbox'
+  checkbox.name = 'id'
+  checkbox.value = testId
+  checkbox.style.display = 'none'
+  checkbox.setAttribute('class', 'select')
+  return checkbox
+}
+
+export function selectClickListen () {
+  var select = document.getElementById('select')
+  select.addEventListener('click', selectClick, {
+    'once': true
+  })
+}
+
+function selectClick () {
+  var selectBoxes = document.getElementsByClassName('select')
+  for (let selectBox of selectBoxes) {
+    selectBox.style.display = 'inherit'
+  }
+  var submit = document.createElement('input')
+  submit.type = 'submit'
+  submit.value = 'Show only selected tests'
+  var select = document.getElementById('select')
+  select.replaceWith(submit)
+}
+
+export function selectClearShow () {
+  var clear = document.createElement('a')
+  clear.href = '?'
+  clear.appendChild(document.createTextNode('Clear selections'))
+  var select = document.getElementById('select')
+  select.replaceWith(clear)
+}
+
+function emptyCell (numCols = 1) {
+  return tableCell('td', '\xa0', undefined, undefined, undefined, numCols)
 }

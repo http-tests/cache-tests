@@ -53,16 +53,6 @@ export function showTestName (test, uuid) {
   span.title = JSON.stringify(test.requests, null, 2)
   span.innerHTML = marked.parse(test.name).slice(3, -5)
 
-  var idLinkElement = document.createElement('a')
-  idLinkElement.appendChild(document.createTextNode('⌾'))
-  idLinkElement.addEventListener('click', function (event) {
-    copyTextToClipboard(test.id)
-  })
-  idLinkElement.id = test.id
-  idLinkElement.title = 'Test ID (click to copy)'
-  idLinkElement.setAttribute('class', 'clickhint')
-  span.appendChild(idLinkElement)
-
   if (uuid) {
     var uuidLinkElement = document.createElement('a')
     uuidLinkElement.appendChild(document.createTextNode('⚙︎'))

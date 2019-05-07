@@ -21,10 +21,18 @@
           summary.showToC(ToC, baseTests)
         }
         summary.showResults(target, baseTests, results, selected)
-      }).then(function () {
+        return selected
+      }).then(function (selected) {
         if (window.location.hash !== "") {
           var fragId = window.location.hash.substring(1)
           document.getElementById(fragId).scrollIntoView()
+        }
+        return selected
+      }).then(function (selected) {
+        if (selected.length === 0) {
+          summary.selectClickListen()
+        } else {
+          summary.selectClearShow()
         }
       })
     </script>
@@ -51,13 +59,21 @@
       -: not tested
     </p>
 
-    <p><i>Hover over failed tests for details. Click on <span class="hint">⌾</span> to copy the
-    test ID to the clipboard.</i></p>
-
     <ul id="ToC">
     </ul>
 
-    <table id="target">
-    </table>
+    <form method="GET" id="selectForm">
+
+      <p><i>
+        Hover over failed tests for details, and test names for their configuration.
+      </i></p>
+
+      <p>
+        <a href="#" id="select">Select test results to display</a>
+      </p>
+
+      <table id="target">
+      </table>
+    </form>
   </body>
 </html>

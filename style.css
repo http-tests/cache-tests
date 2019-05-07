@@ -69,3 +69,7 @@ th.category a {
 #download {
   display: none;
 }
+
+input.select {
+  margin-left: 6px;
+}
