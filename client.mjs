@@ -258,7 +258,7 @@ function makeCheckResponseBody (config, uuid) {
       assert(true, // response_body is always setup
         resBody === config.response_body,
         `Response body is "${resBody}", not "${config.response_body}"`)
-    } else if (!noBodyStatus.has(statusCode)) {
+    } else if (!noBodyStatus.has(statusCode) && config.request_method !== 'HEAD') {
       assert(true, // no_body is always setup
         resBody === uuid,
         `Response body is "${resBody}", not "${uuid}"`)

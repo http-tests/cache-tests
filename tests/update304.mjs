@@ -47,12 +47,12 @@ function check304 (args) {
     id: `304-lm-update-response-${header}`,
     requests: [
       {
-        response_headers: makeResponse(header, valueA, 'Last-Modified', lm1, 1),
+        response_headers: makeResponse(header, valueA, 1, 'Last-Modified', lm1),
         setup: true,
         pause_after: true
       },
       {
-        response_headers: makeResponse(header, valueB, 'Last-Modified', lm1, 3600),
+        response_headers: makeResponse(header, valueB, 3600, 'Last-Modified', lm1),
         expected_type: 'lm_validated',
         expected_response_headers: [
           [header, valueB]
@@ -66,12 +66,12 @@ function check304 (args) {
     id: `304-lm-update-stored-${header}`,
     requests: [
       {
-        response_headers: makeResponse(header, valueA, 'Last-Modified', lm1, 1),
+        response_headers: makeResponse(header, valueA, 1, 'Last-Modified', lm1),
         setup: true,
         pause_after: true
       },
       {
-        response_headers: makeResponse(header, valueB, 'Last-Modified', lm1, 3600),
+        response_headers: makeResponse(header, valueB, 3600, 'Last-Modified', lm1),
         expected_type: 'lm_validated',
         setup: true,
         pause_after: true
@@ -90,12 +90,12 @@ function check304 (args) {
     id: `304-etag-update-response-${header}`,
     requests: [
       {
-        response_headers: makeResponse(header, valueA, 'ETag', etag1, 1),
+        response_headers: makeResponse(header, valueA, 1, 'ETag', etag1),
         setup: true,
         pause_after: true
       },
       {
-        response_headers: makeResponse(header, valueB, 'ETag', etag1, 3600),
+        response_headers: makeResponse(header, valueB, 3600, 'ETag', etag1),
         expected_type: 'etag_validated',
         expected_response_headers: [
           [header, valueB]
@@ -109,12 +109,12 @@ function check304 (args) {
     id: `304-etag-update-stored-${header}`,
     requests: [
       {
-        response_headers: makeResponse(header, valueA, 'ETag', etag1, 1),
+        response_headers: makeResponse(header, valueA, 1, 'ETag', etag1),
         setup: true,
         pause_after: true
       },
       {
-        response_headers: makeResponse(header, valueB, 'ETag', etag1, 3600),
+        response_headers: makeResponse(header, valueB, 3600, 'ETag', etag1),
         setup: true,
         pause_after: true,
         expected_type: 'etag_validated'
@@ -128,15 +128,44 @@ function check304 (args) {
       }
     ]
   })
+  tests.push({
+    name: `HTTP cache must update stored \`${header}\` from a \`HEAD\` response`,
+    id: `head-update-stored-${header}`,
+    requests: [
+      {
+        response_headers: makeResponse(header, valueA, 3600),
+        setup: true,
+        pause_after: true
+      },
+      {
+        request_method: 'HEAD',
+        response_headers: makeResponse(header, valueB, 3600),
+        setup: true,
+        pause_after: true
+      },
+      {
+        expected_type: 'cached',
+        expected_response_headers: [
+          [header, valueB]
+        ],
+        setup_tests: ['expected_type']
+      }
+    ]
+  })
 }
 
-function makeResponse (header, value, validatorType, validatorValue, lifetime) {
-  return [
-    ((header === 'Cache-Control') && ['a', 'b']) || ['Cache-Control', `max-age=${lifetime}`],
+function makeResponse (header, value, lifetime, validatorType, validatorValue) {
+  var responseHeaders = [
     ['Date', 0],
-    [validatorType, validatorValue],
     [header, value]
   ]
+  if (header !== 'Cache-Control') {
+    responseHeaders.push(['Cache-Control', `max-age=${lifetime}`])
+  }
+  if (validatorType) {
+    responseHeaders.push([validatorType, validatorValue])
+  }
+  return responseHeaders
 }
 
 [
