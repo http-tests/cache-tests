@@ -2,43 +2,17 @@ import * as utils from '../utils.mjs'
 
 const tests = []
 
-function defaultResponseHeaders (validatorType, validatorValue, additionalHeaders) {
-  return [
-    ['Cache-Control', `max-age=3600`],
-    ['Date', 0],
-    [validatorType, validatorValue]
-  ].concat(additionalHeaders)
-}
-
 function checkCached ({name, id, kind = 'required', configuredHeaders, expectedHeaders, unexpectedHeaders = []}) {
-  const etag = utils.httpContent(`${id}-etag-1`)
-  const etag1 = `"${etag}"`
-  const lm1 = utils.httpDate(Date.now(), -24 * 60 * 60)
   tests.push({
-    name: `${name} with a \`Last-Modified\` validator?`,
-    id: `headers-lm-${id}`,
+    name: name,
+    id: `headers-${id}`,
     kind,
     requests: [
       {
-        response_headers: defaultResponseHeaders('Last-Modified', lm1, configuredHeaders),
-        setup: true,
-        pause_after: true
-      },
-      {
-        expected_type: 'cached',
-        expected_response_headers: expectedHeaders,
-        expected_response_headers_missing: unexpectedHeaders,
-        setup_tests: ['expected_type']
-      }
-    ]
-  })
-  tests.push({
-    name: `${name} with an \`ETag\` validator?`,
-    id: `headers-etag-${id}`,
-    kind,
-    requests: [
-      {
-        response_headers: defaultResponseHeaders('ETag', etag1, configuredHeaders),
+        response_headers: configuredHeaders.concat([
+          ['Cache-Control', `max-age=3600`],
+          ['Date', 0]
+        ]),
         setup: true,
         pause_after: true
       },
@@ -72,9 +46,9 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
   ['Upgrade'],
   ['WWW-Authenticate']
 ].forEach(function ([header, value = null]) {
-  if (value === null) value = utils.httpContent(`${header}-value`)
+  if (value === null) value = utils.httpContent(`${header}-store-value`)
   checkCached({
-    name: `Does HTTP cache store \`${header}\``,
+    name: `Does HTTP cache store \`${header}\`?`,
     id: `store-${header}`,
     kind: 'check',
     configuredHeaders: [[header, value]],
@@ -83,7 +57,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
 })
 
 checkCached({
-  name: 'Does `Connection` header inhibit caching listed headers',
+  name: 'Does `Connection` header inhibit caching listed headers?',
   id: `omit-headers-listed-in-Connection`,
   kind: 'check',
   configuredHeaders: [
@@ -97,7 +71,7 @@ checkCached({
 })
 
 checkCached({
-  name: 'Does `Cache-Control: no-cache` inhibit caching listed headers',
+  name: 'Does `Cache-Control: no-cache` inhibit caching listed headers?',
   id: `omit-headers-listed-in-Cache-Control-no-cache`,
   configuredHeaders: [
     ['Cache-Control', 'no-cache="a, b"'],
@@ -110,8 +84,8 @@ checkCached({
 })
 
 export default {
-  name: 'Omit Headers From Cache',
+  name: 'Storing Headers',
   id: 'headers',
-  description: 'These tests examine how caches omit headers from stored responses and check whether they conform to the existing requirements to omit headers, for example around [no-cache](https://httpwg.org/specs/rfc7234.html#cache-response-directive.no-cache).',
+  description: 'These tests examine how caches store headers in responses and check whether they conform to the existing requirements to omit headers, for example around [no-cache](https://httpwg.org/specs/rfc7234.html#cache-response-directive.no-cache).',
   tests
 }
