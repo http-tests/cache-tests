@@ -16,7 +16,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           request_headers: [
@@ -39,7 +40,8 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0]
           ],
-          setup: true
+          setup: true,
+          pause_after: true
         },
         {
           request_headers: [
