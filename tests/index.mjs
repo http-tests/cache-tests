@@ -14,4 +14,4 @@ import invalidation from './invalidation.mjs'
 import partial from './partial.mjs'
 import other from './other.mjs'
 
-export default [ccParse, ccFreshness, expiresParse, expires, ccResponse, heuristic, statuses, ccRequest, vary, conditional, headers, update304, invalidation, partial, other]
+export default [ccFreshness, ccParse, expires, expiresParse, ccResponse, heuristic, statuses, ccRequest, vary, conditional, headers, update304, invalidation, partial, other]
