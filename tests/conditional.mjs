@@ -5,6 +5,76 @@ export default {
   description: 'Testing of HTTP [conditional requests](https://httpwg.org/specs/rfc7232.html); currently covering `If-None-Match` and `If-Modified-Since` for `ETag`s and `Last-Modified` respectively.',
   tests: [
     {
+      name: 'HTTP cache responds to `If-Modified-Since` with a `304` when holding a fresh response with a matching `Last-Modified`.',
+      id: 'conditional-lm-fresh',
+      kind: 'optimal',
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 100000],
+            ['Last-Modified', -3000],
+            ['Date', 0]
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['If-Modified-Since', -3000]
+          ],
+          expected_type: 'cached',
+          expected_status: 304
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache responds to `If-Modified-Since` with a `304` when holding a fresh response with an earlier `Last-Modified`.',
+      id: 'conditional-lm-fresh-earlier',
+      kind: 'optimal',
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 100000],
+            ['Last-Modified', -3000],
+            ['Date', 0]
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['If-Modified-Since', -2000]
+          ],
+          expected_type: 'cached',
+          expected_status: 304
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache responds to `If-Modified-Since` with a `304` when holding a stale response with a matching `Last-Modified`.',
+      id: 'conditional-lm-stale',
+      kind: 'optimal',
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 2],
+            ['Last-Modified', -3000],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          request_headers: [
+            ['If-Modified-Since', -3000]
+          ],
+          expected_type: 'cached',
+          expected_status: 304
+        }
+      ]
+    },
+    {
       name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag`.',
       id: 'conditional-etag-strong-respond',
       kind: 'optimal',
