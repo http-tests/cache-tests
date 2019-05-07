@@ -56,6 +56,24 @@ export default
       ]
     },
     {
+      name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 2147483647`',
+      id: 'freshness-max-age-max-minus-1',
+      kind: 'optimal',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2147483647']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 2147483648`',
       id: 'freshness-max-age-max',
       kind: 'optimal',
@@ -64,6 +82,24 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=2147483648']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 2147483649`',
+      id: 'freshness-max-age-max-plus-1',
+      kind: 'optimal',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2147483649']
           ],
           setup: true,
           pause_after: true
