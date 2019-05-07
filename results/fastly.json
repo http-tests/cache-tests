@@ -29,7 +29,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Mon, 06 May 2019 06:30:43 GMT\", not \"Mon, 06 May 2019 07:30:42 GMT\""
+    "Response 2 header Expires is \"Tue, 07 May 2019 07:03:30 GMT\", not \"Tue, 07 May 2019 08:03:29 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -44,12 +44,12 @@
     "Response 2 header Set-Cookie2 is \"a=b\", not \"a=c\""
   ],
   "304-etag-update-response-Test-Header": [
-    "Assertion",
-    "Response 2 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
-  ],
-  "304-etag-update-response-X-Content-Foo": [
     "Setup",
     "Request 2 should have been conditional, but it was not."
+  ],
+  "304-etag-update-response-X-Content-Foo": [
+    "Assertion",
+    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
@@ -84,20 +84,20 @@
     "Response 3 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
   ],
   "304-etag-update-stored-Content-Security-Policy": [
-    "Assertion",
-    "Response 3 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
-  ],
-  "304-etag-update-stored-Content-Type": [
     "Setup",
     "Request 2 should have been conditional, but it was not."
+  ],
+  "304-etag-update-stored-Content-Type": [
+    "Assertion",
+    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Mon, 06 May 2019 06:30:43 GMT\", not \"Mon, 06 May 2019 07:30:42 GMT\""
+    "Response 3 header Expires is \"Tue, 07 May 2019 07:03:30 GMT\", not \"Tue, 07 May 2019 08:03:29 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Public-Key-Pins is \"AUOICWQKEYSMGAU\", not \"AVQLGBWRMHCXSNI\""
   ],
   "304-etag-update-stored-Set-Cookie": [
     "Setup",
@@ -140,8 +140,8 @@
     "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
   ],
   "304-lm-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"/foo\", not \"/bar\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Mon, 06 May 2019 06:30:43 GMT\", not \"Mon, 06 May 2019 07:30:42 GMT\""
+    "Response 2 header Expires is \"Tue, 07 May 2019 07:03:30 GMT\", not \"Tue, 07 May 2019 08:03:29 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -176,8 +176,8 @@
     "Response 2 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
   ],
   "304-lm-update-response-X-Content-Foo": [
-    "Assertion",
-    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Mon, 06 May 2019 06:30:43 GMT\", not \"Mon, 06 May 2019 07:30:42 GMT\""
+    "Response 3 header Expires is \"Tue, 07 May 2019 07:03:30 GMT\", not \"Tue, 07 May 2019 08:03:29 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -326,7 +326,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": true,
+  "conditional-etag-strong-generate": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
     "request 2 header If-None-Match value is \"abcdef\", not \"\"abcdef\"\""
@@ -427,7 +430,9 @@
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-max": true,
+  "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus-1": true,
   "freshness-max-age-negative": [
     "Assertion",
     "Response 2 comes from cache"
@@ -641,11 +646,15 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Mon, 06 May 2019 06:30:47 GMT, should be Mon, 06 May 2019 06:30:44 GMT"
+    "Response 2 header Date is Tue, 07 May 2019 07:03:34 GMT, should be Tue, 07 May 2019 07:03:31 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
     "Response 2 does not come from cache"
+  ],
+  "other-warning": [
+    "Assertion",
+    "Response 2 warning header not present."
   ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
@@ -783,6 +792,14 @@
     "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-order": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-select": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-space": [
     "Assertion",
     "Response 2 does not come from cache"
   ],

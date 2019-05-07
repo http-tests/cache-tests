@@ -29,7 +29,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Mon, 06 May 2019 06:08:22 GMT\", not \"Mon, 06 May 2019 07:08:21 GMT\""
+    "Response 2 header Expires is \"Tue, 07 May 2019 07:03:03 GMT\", not \"Tue, 07 May 2019 08:03:02 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -93,7 +93,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Mon, 06 May 2019 06:08:22 GMT\", not \"Mon, 06 May 2019 07:08:21 GMT\""
+    "Response 3 header Expires is \"Tue, 07 May 2019 07:03:03 GMT\", not \"Tue, 07 May 2019 08:03:02 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Mon, 06 May 2019 06:08:22 GMT\", not \"Mon, 06 May 2019 07:08:21 GMT\""
+    "Response 2 header Expires is \"Tue, 07 May 2019 07:03:03 GMT\", not \"Tue, 07 May 2019 08:03:02 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Mon, 06 May 2019 06:08:22 GMT\", not \"Mon, 06 May 2019 07:08:21 GMT\""
+    "Response 3 header Expires is \"Tue, 07 May 2019 07:03:03 GMT\", not \"Tue, 07 May 2019 08:03:02 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -378,10 +378,7 @@
     "Response 2 comes from cache"
   ],
   "freshness-expires-past": true,
-  "freshness-expires-present": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-present": true,
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
   "freshness-expires-wrong-case-weekday": true,
@@ -409,7 +406,9 @@
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-max": true,
+  "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus-1": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",
@@ -605,11 +604,15 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Mon, 06 May 2019 06:08:26 GMT, should be Mon, 06 May 2019 06:08:23 GMT"
+    "Response 2 header Date is Tue, 07 May 2019 07:03:07 GMT, should be Tue, 07 May 2019 07:03:04 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
     "Response 2 does not come from cache"
+  ],
+  "other-warning": [
+    "Assertion",
+    "Response 2 warning header not present."
   ],
   "partial-store-complete-reuse-partial": [
     "Assertion",
@@ -744,6 +747,11 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "vary-normalise-lang-select": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-space": true,
   "vary-normalise-space": [
     "Assertion",
     "Response 2 does not come from cache"
