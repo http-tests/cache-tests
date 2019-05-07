@@ -417,7 +417,7 @@ export default {
     {
       name: 'Does HTTP cache select `Content-Language` by using the qvalue on `Accept-Language`?',
       id: 'vary-normalise-lang-select',
-      kind: 'optimal',
+      kind: 'check',
       requests: [
         {
           request_headers: [
