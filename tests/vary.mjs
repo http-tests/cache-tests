@@ -90,7 +90,7 @@ export default {
           request_headers: [
             ['Foo', '1'],
             ['Other', '2']
-          ],
+          ]
         },
         {
           request_headers: [
@@ -314,32 +314,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache normalises selecting headers by removing whitespace',
-      id: 'vary-normalise-space',
-      kind: 'optimal',
-      requests: [
-        {
-          request_headers: [
-            ['Foo', '1,2']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo']
-          ],
-          setup: true
-        },
-        {
-          request_headers: [
-            ['Foo', ' 1, 2 ']
-          ],
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'An optimal HTTP cache normalises selecting headers by combining fields',
+      name: 'An optimal HTTP cache normalises unknown selecting headers by combining fields',
       id: 'vary-normalise-combine',
       kind: 'optimal',
       requests: [
@@ -409,6 +384,82 @@ export default {
         {
           request_headers: [
             ['Accept-Language', 'eN, De']
+          ],
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal HTTP cache normalises `Accept-Language` by ignoring whitespace',
+      id: 'vary-normalise-lang-space',
+      kind: 'optimal',
+      requests: [
+        {
+          request_headers: [
+            ['Accept-Language', 'en, de']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'Accept-Language']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Accept-Language', ' en ,   de']
+          ],
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache select `Content-Language` by using the qvalue on `Accept-Language`?',
+      id: 'vary-normalise-lang-select',
+      kind: 'optimal',
+      requests: [
+        {
+          request_headers: [
+            ['Accept-Language', 'en, de']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'Accept-Language'],
+            ['Content-Language', 'de']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Accept-Language', 'fr;q=0.5, de;q=1.0']
+          ],
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache normalise unknown selecting headers by removing whitespace?',
+      id: 'vary-normalise-space',
+      kind: 'check',
+      requests: [
+        {
+          request_headers: [
+            ['Foo', '1,2']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'Foo']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Foo', ' 1, 2 ']
           ],
           expected_type: 'cached'
         }
