@@ -12,7 +12,7 @@ export default {
       requests: [
         {
           response_headers: [
-            ['Expires', 100000],
+            ['Cache-Control', 'max-age=100000'],
             ['Last-Modified', -3000],
             ['Date', 0]
           ],
@@ -36,7 +36,7 @@ export default {
       requests: [
         {
           response_headers: [
-            ['Expires', 100000],
+            ['Cache-Control', 'max-age=100000'],
             ['Last-Modified', -3000],
             ['Date', 0]
           ],
@@ -60,7 +60,7 @@ export default {
       requests: [
         {
           response_headers: [
-            ['Expires', 2],
+            ['Cache-Control', 'max-age=100000'],
             ['Last-Modified', -3000],
             ['Date', 0]
           ],
