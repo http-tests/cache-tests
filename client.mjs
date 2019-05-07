@@ -215,21 +215,24 @@ function makeCheckResponse (idx, config, dump) {
       })
     }
     if ('expected_response_headers' in config) {
+      var respPresentSetup = setupCheck(config, 'expected_response_headers')
       config.expected_response_headers.forEach(header => {
-        var respSetup = setupCheck(config, 'expected_response_headers')
-        if (typeof header[1] === 'function') {
+        if (typeof header === 'string') {
+          assert(respPresentSetup, response.headers.has(header),
+            `Response ${reqNum} ${header} header not present.`)
+        } else if (typeof header[1] === 'function') {
           var prefix = `Response ${reqNum} header ${header[0]}`
-          header[1](respSetup, assert, prefix, response.headers.get(header[0]), response)
+          header[1](respPresentSetup, assert, prefix, response.headers.get(header[0]), response)
         } else {
-          assert(respSetup, response.headers.get(header[0]) === header[1],
+          assert(respPresentSetup, response.headers.get(header[0]) === header[1],
             `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)
         }
       })
     }
     if ('expected_response_headers_missing' in config) {
+      var respMissingSetup = setupCheck(config, 'expected_response_headers_missing')
       config.expected_response_headers_missing.forEach(function (header) {
-        var respSetup = setupCheck(config, 'expected_response_headers_missing')
-        assert(respSetup, !response.headers.has(header),
+        assert(respMissingSetup, !response.headers.has(header),
           `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
       })
     }
