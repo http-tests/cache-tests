@@ -53,7 +53,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a stale response with a matching `Last-Modified`.',
+      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a stale response with a matching `Last-Modified`, after validation.',
       id: 'conditional-lm-stale',
       kind: 'optimal',
       browser_skip: true,
@@ -71,7 +71,7 @@ export default {
           request_headers: [
             ['If-Modified-Since', -3000]
           ],
-          expected_type: 'cached',
+          expected_type: 'lm_validate',
           expected_status: 304
         }
       ]
