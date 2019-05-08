@@ -509,6 +509,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "surrogate-max-age-me-target": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age-other-target": true,
   "surrogate-max-age-short-cc-max-age": [
     "Assertion",

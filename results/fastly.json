@@ -1,15 +1,15 @@
 {
   "304-etag-update-response-Cache-Control": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
   ],
   "304-etag-update-response-Clear-Site-Data": [
     "Assertion",
     "Response 2 header Clear-Site-Data is \"cache\", not \"cookies\""
   ],
   "304-etag-update-response-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
   ],
   "304-etag-update-response-Content-Location": [
     "Assertion",
@@ -29,7 +29,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Wed, 08 May 2019 06:41:16 GMT\", not \"Wed, 08 May 2019 07:41:15 GMT\""
+    "Response 2 header Expires is \"Wed, 08 May 2019 07:06:05 GMT\", not \"Wed, 08 May 2019 08:06:04 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -64,8 +64,8 @@
     "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-etag-update-stored-Cache-Control": [
-    "Assertion",
-    "Response 3 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Clear-Site-Data": [
     "Assertion",
@@ -92,8 +92,8 @@
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-stored-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Expires is \"Wed, 08 May 2019 07:06:05 GMT\", not \"Wed, 08 May 2019 08:06:04 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -132,8 +132,8 @@
     "Response 2 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
   ],
   "304-lm-update-response-Clear-Site-Data": [
-    "Assertion",
-    "Response 2 header Clear-Site-Data is \"cache\", not \"cookies\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Content-Foo": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Wed, 08 May 2019 06:41:16 GMT\", not \"Wed, 08 May 2019 07:41:15 GMT\""
+    "Response 2 header Expires is \"Wed, 08 May 2019 07:06:05 GMT\", not \"Wed, 08 May 2019 08:06:04 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -188,8 +188,8 @@
     "Response 2 header X-Test-Header is \"ADGJMPSVYBEHKNQ\", not \"AEIMQUYCGKOSWAE\""
   ],
   "304-lm-update-response-X-XSS-Protection": [
-    "Assertion",
-    "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Cache-Control": [
     "Assertion",
@@ -216,12 +216,12 @@
     "Response 3 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
   ],
   "304-lm-update-stored-Content-Type": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Wed, 08 May 2019 06:41:16 GMT\", not \"Wed, 08 May 2019 07:41:15 GMT\""
+    "Response 3 header Expires is \"Wed, 08 May 2019 07:06:05 GMT\", not \"Wed, 08 May 2019 08:06:04 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -353,10 +353,7 @@
     "Response 2 status is 200, not 304"
   ],
   "conditional-etag-unquoted-respond-unquoted": true,
-  "conditional-etag-weak-generate-weak": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
@@ -646,7 +643,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 08 May 2019 06:41:21 GMT, should be Wed, 08 May 2019 06:41:17 GMT"
+    "Response 2 header Date is Wed, 08 May 2019 07:06:09 GMT, should be Wed, 08 May 2019 07:06:06 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
@@ -758,6 +755,7 @@
   "surrogate-max-age-long-cc-max-age": true,
   "surrogate-max-age-max": true,
   "surrogate-max-age-max-plus": true,
+  "surrogate-max-age-me-target": true,
   "surrogate-max-age-other-target": true,
   "surrogate-max-age-short-cc-max-age": true,
   "surrogate-max-age-space-after-equals": [

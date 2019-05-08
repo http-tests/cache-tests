@@ -180,7 +180,10 @@
   "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-present": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-wrong-case-month": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -261,7 +264,7 @@
   "headers-etag-store-Test-Header": true,
   "headers-etag-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n74e65b2a-b15a-41be-800d-d97393078e4a\r\n0\r\n\r\n\", not \"74e65b2a-b15a-41be-800d-d97393078e4a\""
+    "Response body is \"24\r\n61384b87-1919-4c9c-9fbe-9e21fbb721d8\r\n0\r\n\r\n\", not \"61384b87-1919-4c9c-9fbe-9e21fbb721d8\""
   ],
   "headers-etag-store-Upgrade": [
     "Assertion",
@@ -307,7 +310,7 @@
   "headers-lm-store-Test-Header": true,
   "headers-lm-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n9041cdcc-a08f-4d14-ac0a-1ec4bc6894c0\r\n0\r\n\r\n\", not \"9041cdcc-a08f-4d14-ac0a-1ec4bc6894c0\""
+    "Response body is \"24\r\n611f5d7a-062d-438e-91c3-c28a2e3a0fab\r\n0\r\n\r\n\", not \"611f5d7a-062d-438e-91c3-c28a2e3a0fab\""
   ],
   "headers-lm-store-Upgrade": [
     "Assertion",
@@ -509,6 +512,10 @@
     "Response 2 does not come from cache"
   ],
   "surrogate-max-age-max-plus": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "surrogate-max-age-me-target": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
