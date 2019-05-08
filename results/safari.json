@@ -225,7 +225,7 @@
   "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "request 2 header If-None-Match value is \"abcdef\", not \"\"abcdef\"\""
+    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-weak-generate-weak": true,
   "freshness-expires-age-fast-date": true,
@@ -273,7 +273,9 @@
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-max": true,
+  "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus-1": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": true,
   "freshness-max-age-s-maxage-private": true,
@@ -291,68 +293,37 @@
     "Response 2 comes from cache"
   ],
   "freshness-none": true,
-  "headers-etag-omit-headers-listed-in-Cache-Control-no-cache": [
-    "Setup",
-    "Response 2 does not come from cache"
-  ],
-  "headers-etag-omit-headers-listed-in-Connection": [
-    "Assertion",
-    "Response 2 includes unexpected header Connection: \"a, b\""
-  ],
-  "headers-etag-store-Clear-Site-Data": true,
-  "headers-etag-store-Connection": true,
-  "headers-etag-store-Content-Type": true,
-  "headers-etag-store-Proxy-Authenticate": true,
-  "headers-etag-store-Proxy-Connection": true,
-  "headers-etag-store-Public-Key-Pins": true,
-  "headers-etag-store-Set-Cookie": [
-    "Assertion",
-    "Response 2 header Set-Cookie is \"null\", not \"a=b\""
-  ],
-  "headers-etag-store-Set-Cookie2": [
-    "Assertion",
-    "Response 2 header Set-Cookie2 is \"null\", not \"a=b\""
-  ],
-  "headers-etag-store-Strict-Transport-Security": true,
-  "headers-etag-store-Strict-Transport-Security2": true,
-  "headers-etag-store-Test-Header": true,
-  "headers-etag-store-Transfer-Encoding": true,
-  "headers-etag-store-Upgrade": true,
-  "headers-etag-store-WWW-Authenticate": true,
-  "headers-etag-store-X-Frame-Options": true,
-  "headers-etag-store-X-Test-Header": true,
-  "headers-etag-store-X-XSS-Protection": true,
-  "headers-lm-omit-headers-listed-in-Cache-Control-no-cache": [
+  "headers-omit-headers-listed-in-Cache-Control-no-cache": [
     "Assertion",
     "Response 2 includes unexpected header a: \"1\""
   ],
-  "headers-lm-omit-headers-listed-in-Connection": [
+  "headers-omit-headers-listed-in-Connection": [
     "Assertion",
     "Response 2 includes unexpected header Connection: \"a, b\""
   ],
-  "headers-lm-store-Clear-Site-Data": true,
-  "headers-lm-store-Connection": true,
-  "headers-lm-store-Content-Type": true,
-  "headers-lm-store-Proxy-Authenticate": true,
-  "headers-lm-store-Proxy-Connection": true,
-  "headers-lm-store-Public-Key-Pins": true,
-  "headers-lm-store-Set-Cookie": [
+  "headers-store-Clear-Site-Data": true,
+  "headers-store-Connection": true,
+  "headers-store-Content-Type": true,
+  "headers-store-Proxy-Authenticate": true,
+  "headers-store-Proxy-Connection": true,
+  "headers-store-Public-Key-Pins": true,
+  "headers-store-Set-Cookie": [
     "Assertion",
     "Response 2 header Set-Cookie is \"null\", not \"a=b\""
   ],
-  "headers-lm-store-Set-Cookie2": [
+  "headers-store-Set-Cookie2": [
     "Assertion",
     "Response 2 header Set-Cookie2 is \"null\", not \"a=b\""
   ],
-  "headers-lm-store-Strict-Transport-Security": true,
-  "headers-lm-store-Strict-Transport-Security2": true,
-  "headers-lm-store-Test-Header": true,
-  "headers-lm-store-Transfer-Encoding": true,
-  "headers-lm-store-Upgrade": true,
-  "headers-lm-store-WWW-Authenticate": true,
-  "headers-lm-store-X-Frame-Options": true,
-  "headers-lm-store-X-Test-Header": true,
-  "headers-lm-store-X-XSS-Protection": true,
+  "headers-store-Strict-Transport-Security": true,
+  "headers-store-Strict-Transport-Security2": true,
+  "headers-store-Test-Header": true,
+  "headers-store-Transfer-Encoding": true,
+  "headers-store-Upgrade": true,
+  "headers-store-WWW-Authenticate": true,
+  "headers-store-X-Frame-Options": true,
+  "headers-store-X-Test-Header": true,
+  "headers-store-X-XSS-Protection": true,
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,
@@ -439,6 +410,10 @@
   "other-cookie": true,
   "other-date-update": true,
   "other-set-cookie": true,
+  "other-warning": [
+    "Assertion",
+    "Response 2 warning header not present."
+  ],
   "partial-store-complete-reuse-partial": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -453,7 +428,7 @@
   ],
   "partial-store-partial-complete": [
     "Assertion",
-    "request 2 header range value is \"undefined\", not \"bytes=5-\""
+    "Request 2 header range is \"undefined\", not \"bytes=5-\""
   ],
   "partial-store-partial-reuse-partial": true,
   "partial-store-partial-reuse-partial-absent": [
@@ -540,6 +515,14 @@
     "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-order": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-select": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-normalise-lang-space": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
