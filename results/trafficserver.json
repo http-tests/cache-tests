@@ -168,16 +168,19 @@
   "freshness-expires-invalid-2-digit-year": true,
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": true,
-  "freshness-expires-invalid-multiple-spaces": true,
+  "freshness-expires-invalid-multiple-spaces": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-no-comma": true,
-  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-time-periods": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
-  "freshness-expires-present": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-present": true,
   "freshness-expires-wrong-case-month": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -229,6 +232,10 @@
     "Assertion",
     "Response 2 includes unexpected header a: \"1\""
   ],
+  "headers-omit-headers-listed-in-Cache-Control-no-cache-single": [
+    "Assertion",
+    "Response 2 includes unexpected header a: \"1\""
+  ],
   "headers-omit-headers-listed-in-Connection": [
     "Assertion",
     "Response 2 includes unexpected header Connection: \"close\""
@@ -258,7 +265,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n21f0d1ee-e9f1-4e6e-9555-29840a5dcd2a\r\n0\r\n\r\n\", not \"21f0d1ee-e9f1-4e6e-9555-29840a5dcd2a\""
+    "Response body is \"24\r\na5570398-439f-4ec6-b60b-9f64c1ac6b9e\r\n0\r\n\r\n\", not \"a5570398-439f-4ec6-b60b-9f64c1ac6b9e\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
@@ -393,70 +400,34 @@
   "query-args-different": true,
   "query-args-same": true,
   "status-200-fresh": true,
-  "status-200-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-200-stale": true,
   "status-203-fresh": true,
-  "status-203-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-203-stale": true,
   "status-204-fresh": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "status-204-stale": true,
   "status-299-fresh": true,
-  "status-299-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-299-stale": true,
   "status-400-fresh": true,
-  "status-400-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-400-stale": true,
   "status-404-fresh": true,
-  "status-404-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-404-stale": true,
   "status-410-fresh": true,
-  "status-410-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-410-stale": true,
   "status-499-fresh": true,
-  "status-499-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-499-stale": true,
   "status-500-fresh": true,
-  "status-500-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-500-stale": true,
   "status-502-fresh": true,
-  "status-502-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-502-stale": true,
   "status-503-fresh": true,
-  "status-503-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-503-stale": true,
   "status-504-fresh": true,
-  "status-504-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-504-stale": true,
   "status-599-fresh": true,
-  "status-599-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",
     "Request 1 Surrogate-Capability header not present."
