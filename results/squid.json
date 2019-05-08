@@ -246,92 +246,49 @@
   "freshness-max-age-space-before-equals": true,
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
-  "headers-etag-omit-headers-listed-in-Cache-Control-no-cache": [
-    "Setup",
-    "Response 2 does not come from cache"
+  "headers-omit-headers-listed-in-Cache-Control-no-cache": [
+    "Assertion",
+    "Response 2 includes unexpected header a: \"1\""
   ],
-  "headers-etag-omit-headers-listed-in-Connection": [
+  "headers-omit-headers-listed-in-Connection": [
     "Assertion",
     "Response 2 includes unexpected header Connection: \"close\""
   ],
-  "headers-etag-store-Clear-Site-Data": true,
-  "headers-etag-store-Connection": [
+  "headers-store-Clear-Site-Data": true,
+  "headers-store-Connection": [
     "Assertion",
-    "Response 2 header Connection is \"close\", not \"AOCQESGUIWKYMAO\""
+    "Response 2 header Connection is \"close\", not \"ASKCUMEWOGYQIAS\""
   ],
-  "headers-etag-store-Content-Type": true,
-  "headers-etag-store-Proxy-Authenticate": [
+  "headers-store-Content-Type": true,
+  "headers-store-Proxy-Authenticate": [
     "Assertion",
-    "Response 2 header Proxy-Authenticate is \"null\", not \"AGMSYEKQWCIOUAG\""
+    "Response 2 header Proxy-Authenticate is \"null\", not \"AKUEOYISCMWGQAK\""
   ],
-  "headers-etag-store-Proxy-Connection": [
+  "headers-store-Proxy-Connection": [
     "Assertion",
-    "Response 2 header Proxy-Connection is \"null\", not \"AHOVCJQXELSZGNU\""
+    "Response 2 header Proxy-Connection is \"null\", not \"ALWHSDOZKVGRCNY\""
   ],
-  "headers-etag-store-Public-Key-Pins": true,
-  "headers-etag-store-Set-Cookie": [
-    "Assertion",
-    "Response 2 header Set-Cookie is \"null\", not \"a=b\""
-  ],
-  "headers-etag-store-Set-Cookie2": true,
-  "headers-etag-store-Strict-Transport-Security": true,
-  "headers-etag-store-Strict-Transport-Security2": true,
-  "headers-etag-store-Test-Header": true,
-  "headers-etag-store-Transfer-Encoding": [
-    "Assertion",
-    "Response 2 header Transfer-Encoding is \"chunked\", not \"ANANANANANANANA\""
-  ],
-  "headers-etag-store-Upgrade": [
-    "Assertion",
-    "Response 2 header Upgrade is \"null\", not \"AYWUSQOMKIGECAY\""
-  ],
-  "headers-etag-store-WWW-Authenticate": true,
-  "headers-etag-store-X-Frame-Options": true,
-  "headers-etag-store-X-Test-Header": true,
-  "headers-etag-store-X-XSS-Protection": true,
-  "headers-lm-omit-headers-listed-in-Cache-Control-no-cache": [
-    "Setup",
-    "Response 2 does not come from cache"
-  ],
-  "headers-lm-omit-headers-listed-in-Connection": [
-    "Assertion",
-    "Response 2 includes unexpected header Connection: \"close\""
-  ],
-  "headers-lm-store-Clear-Site-Data": true,
-  "headers-lm-store-Connection": [
-    "Assertion",
-    "Response 2 header Connection is \"close\", not \"AOCQESGUIWKYMAO\""
-  ],
-  "headers-lm-store-Content-Type": true,
-  "headers-lm-store-Proxy-Authenticate": [
-    "Assertion",
-    "Response 2 header Proxy-Authenticate is \"null\", not \"AGMSYEKQWCIOUAG\""
-  ],
-  "headers-lm-store-Proxy-Connection": [
-    "Assertion",
-    "Response 2 header Proxy-Connection is \"null\", not \"AHOVCJQXELSZGNU\""
-  ],
-  "headers-lm-store-Public-Key-Pins": true,
-  "headers-lm-store-Set-Cookie": [
+  "headers-store-Public-Key-Pins": true,
+  "headers-store-Set-Cookie": [
     "Assertion",
     "Response 2 header Set-Cookie is \"null\", not \"a=b\""
   ],
-  "headers-lm-store-Set-Cookie2": true,
-  "headers-lm-store-Strict-Transport-Security": true,
-  "headers-lm-store-Strict-Transport-Security2": true,
-  "headers-lm-store-Test-Header": true,
-  "headers-lm-store-Transfer-Encoding": [
+  "headers-store-Set-Cookie2": true,
+  "headers-store-Strict-Transport-Security": true,
+  "headers-store-Strict-Transport-Security2": true,
+  "headers-store-Test-Header": true,
+  "headers-store-Transfer-Encoding": [
     "Assertion",
-    "Response 2 header Transfer-Encoding is \"chunked\", not \"ANANANANANANANA\""
+    "Response 2 header Transfer-Encoding is \"chunked\", not \"ARIZQHYPGXOFWNE\""
   ],
-  "headers-lm-store-Upgrade": [
+  "headers-store-Upgrade": [
     "Assertion",
-    "Response 2 header Upgrade is \"null\", not \"AYWUSQOMKIGECAY\""
+    "Response 2 header Upgrade is \"null\", not \"ACEGIKMOQSUWYAC\""
   ],
-  "headers-lm-store-WWW-Authenticate": true,
-  "headers-lm-store-X-Frame-Options": true,
-  "headers-lm-store-X-Test-Header": true,
-  "headers-lm-store-X-XSS-Protection": true,
+  "headers-store-WWW-Authenticate": true,
+  "headers-store-X-Frame-Options": true,
+  "headers-store-X-Test-Header": true,
+  "headers-store-X-XSS-Protection": true,
   "heuristic-200-cached": true,
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,
