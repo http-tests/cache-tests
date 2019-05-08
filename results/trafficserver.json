@@ -265,7 +265,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n3b99c854-05d5-4079-ad63-1064a772e5e0\r\n0\r\n\r\n\", not \"3b99c854-05d5-4079-ad63-1064a772e5e0\""
+    "Response body is \"24\r\n460855a4-1d7e-4b7c-aa60-5cc232e2a293\r\n0\r\n\r\n\", not \"460855a4-1d7e-4b7c-aa60-5cc232e2a293\""
   ],
   "headers-store-Upgrade": [
     "Assertion",

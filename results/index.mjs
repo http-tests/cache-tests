@@ -43,7 +43,7 @@ export default [
     "file": "trafficserver.json",
     "name": "ATS",
     "type": "rev-proxy",
-    "version": "8.0.1",
+    "version": "8.0.3",
     "link": "https://github.com/http-tests/cache-tests/wiki/Traffic-Server"
   },
   {
