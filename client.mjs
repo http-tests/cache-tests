@@ -294,10 +294,16 @@ function checkRequests (requests, testState) {
         `request ${reqNum} doesn't have ${vhdr} header`)
     })
     if ('expected_request_headers' in config) {
-      config.expected_request_headers.forEach(expectedHdr => {
-        assert(setupCheck(config, 'expected_request_headers'),
-          serverRequest.request_headers[expectedHdr[0].toLowerCase()] === expectedHdr[1],
-          `request ${reqNum} header ${expectedHdr[0]} value is "${serverRequest.request_headers[expectedHdr[0].toLowerCase()]}", not "${expectedHdr[1]}"`)
+      var reqPresentSetup = setupCheck(config, 'expected_request_headers')
+      config.expected_request_headers.forEach(header => {
+        if (typeof header === 'string') {
+          assert(reqPresentSetup, serverRequest.request_headers.has(header),
+            `Request ${reqNum} ${header} header not present.`)
+        } else {
+          var reqValue = serverRequest.request_headers[header[0].toLowerCase()]
+          assert(reqPresentSetup, reqValue === header[1],
+            `Request ${reqNum} header ${header[0]} is "${reqValue}", not "${header[1]}"`)
+        }
       })
     }
   }
