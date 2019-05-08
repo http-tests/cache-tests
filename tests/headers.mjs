@@ -66,7 +66,7 @@ checkCached({
     ['c', '3']
   ],
   expectedHeaders: [['c', '3']],
-  unexpectedHeaders: ['Connection', 'a', 'b']
+  unexpectedHeaders: ['a', 'b']
 })
 
 checkCached({
