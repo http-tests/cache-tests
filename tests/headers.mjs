@@ -57,7 +57,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
 })
 
 checkCached({
-  name: 'Does `Connection` header inhibit caching listed headers?',
+  name: 'Does `Connection` header inhibit storing listed headers?',
   id: `omit-headers-listed-in-Connection`,
   kind: 'check',
   configuredHeaders: [
@@ -71,7 +71,7 @@ checkCached({
 })
 
 checkCached({
-  name: 'Does `Cache-Control: no-cache` inhibit caching listed headers?',
+  name: 'Does `Cache-Control: no-cache` inhibit storing listed headers?',
   id: `omit-headers-listed-in-Cache-Control-no-cache`,
   configuredHeaders: [
     ['Cache-Control', 'no-cache="a, b"'],
