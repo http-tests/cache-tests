@@ -400,7 +400,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 08 May 2019 06:23:14 GMT, should be Wed, 08 May 2019 06:23:10 GMT"
+    "Response 2 header Date is Wed, 08 May 2019 06:40:11 GMT, should be Wed, 08 May 2019 06:40:06 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
@@ -512,6 +512,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "surrogate-max-age-other-target": true,
   "surrogate-max-age-short-cc-max-age": [
     "Assertion",
     "Response 2 does not come from cache"

@@ -168,16 +168,19 @@
   "freshness-expires-invalid-2-digit-year": true,
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": true,
-  "freshness-expires-invalid-multiple-spaces": true,
+  "freshness-expires-invalid-multiple-spaces": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-no-comma": true,
-  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-time-periods": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
-  "freshness-expires-present": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-present": true,
   "freshness-expires-wrong-case-month": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -258,7 +261,7 @@
   "headers-etag-store-Test-Header": true,
   "headers-etag-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\nc401eec5-bb9d-480c-9db2-dca11a050bfe\r\n0\r\n\r\n\", not \"c401eec5-bb9d-480c-9db2-dca11a050bfe\""
+    "Response body is \"24\r\n74e65b2a-b15a-41be-800d-d97393078e4a\r\n0\r\n\r\n\", not \"74e65b2a-b15a-41be-800d-d97393078e4a\""
   ],
   "headers-etag-store-Upgrade": [
     "Assertion",
@@ -304,7 +307,7 @@
   "headers-lm-store-Test-Header": true,
   "headers-lm-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n81299676-c857-489d-b0d6-4e46d9742f0d\r\n0\r\n\r\n\", not \"81299676-c857-489d-b0d6-4e46d9742f0d\""
+    "Response body is \"24\r\n9041cdcc-a08f-4d14-ac0a-1ec4bc6894c0\r\n0\r\n\r\n\", not \"9041cdcc-a08f-4d14-ac0a-1ec4bc6894c0\""
   ],
   "headers-lm-store-Upgrade": [
     "Assertion",
@@ -439,70 +442,34 @@
   "query-args-different": true,
   "query-args-same": true,
   "status-200-fresh": true,
-  "status-200-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-200-stale": true,
   "status-203-fresh": true,
-  "status-203-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-203-stale": true,
   "status-204-fresh": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "status-204-stale": true,
   "status-299-fresh": true,
-  "status-299-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-299-stale": true,
   "status-400-fresh": true,
-  "status-400-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-400-stale": true,
   "status-404-fresh": true,
-  "status-404-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-404-stale": true,
   "status-410-fresh": true,
-  "status-410-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-410-stale": true,
   "status-499-fresh": true,
-  "status-499-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-499-stale": true,
   "status-500-fresh": true,
-  "status-500-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-500-stale": true,
   "status-502-fresh": true,
-  "status-502-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-502-stale": true,
   "status-503-fresh": true,
-  "status-503-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-503-stale": true,
   "status-504-fresh": true,
-  "status-504-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-504-stale": true,
   "status-599-fresh": true,
-  "status-599-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",
     "Request 1 Surrogate-Capability header not present."
@@ -545,6 +512,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "surrogate-max-age-other-target": true,
   "surrogate-max-age-short-cc-max-age": [
     "Assertion",
     "Response 2 does not come from cache"
