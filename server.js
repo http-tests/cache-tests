@@ -145,15 +145,26 @@ function handleXhr (pathSegs, request, response) {
   var notedHeaders = new Map()
   var responseHeaders = config.response_headers || []
   responseHeaders.forEach(header => {
-    if (locationHeaders.has(header[0].toLowerCase()) && config.magic_locations === true) { // magic!
+    var headerName = header[0].toLowerCase()
+    if (locationHeaders.has(headerName) && config.magic_locations === true) { // magic!
       header[1] = `http://${request.headers['host']}${request.url}/${header[1]}` // FIXME
     }
-    if (dateHeaders.has(header[0].toLowerCase()) && Number.isInteger(header[1])) { // magic!
+    if (dateHeaders.has(headerName) && Number.isInteger(header[1])) { // magic!
       header[1] = httpDate(state.now, header[1])
     }
+    if (headerName === 'surrogate-control' && request.headers['surrogate-capability']) {
+      // right now we assume just one
+      var capabilityTarget = request.headers['surrogate-capability'].split('=')[0]
+      if (!capabilityTarget) {
+        console.log(`WARN: Capability target is empty`)
+      } else {
+        console.log(`INFO: Capability target is ${capabilityTarget}`)
+      }
+      header[1] = header[1].replace('CAPABILITY_TARGET', capabilityTarget)
+    }
     response.setHeader(header[0], header[1])
-    if (noteHeaders.has(header[0].toLowerCase())) {
-      notedHeaders.set(header[0].toLowerCase(), header[1])
+    if (noteHeaders.has(headerName)) {
+      notedHeaders.set(headerName, header[1])
     }
   })
 
