@@ -320,13 +320,13 @@ export default
       ]
     },
     {
-      name: 'Does the surrogate append the `Surrogate-Capabilities` request header?',
+      name: 'Does the surrogate append the `Surrogate-Capability` request header?',
       id: 'surrogate-append-capabilities',
       browser_skip: true,
       kind: 'check',
       requests: [
         {
-          expected_request_headers: ['Surrogate-Capabilities']
+          expected_request_headers: ['Surrogate-Capability']
         }
       ]
     },
