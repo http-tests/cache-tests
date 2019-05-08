@@ -297,7 +297,8 @@ function checkRequests (requests, testState) {
       var reqPresentSetup = setupCheck(config, 'expected_request_headers')
       config.expected_request_headers.forEach(header => {
         if (typeof header === 'string') {
-          assert(reqPresentSetup, serverRequest.request_headers.hasOwnProperty(header),
+          var headerName = header.toLowerCase()
+          assert(reqPresentSetup, serverRequest.request_headers.hasOwnProperty(headerName),
             `Request ${reqNum} ${header} header not present.`)
         } else {
           var reqValue = serverRequest.request_headers[header[0].toLowerCase()]
