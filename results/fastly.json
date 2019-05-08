@@ -29,7 +29,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 07 May 2019 07:03:30 GMT\", not \"Tue, 07 May 2019 08:03:29 GMT\""
+    "Response 2 header Expires is \"Wed, 08 May 2019 06:24:24 GMT\", not \"Wed, 08 May 2019 07:24:23 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -44,8 +44,8 @@
     "Response 2 header Set-Cookie2 is \"a=b\", not \"a=c\""
   ],
   "304-etag-update-response-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
@@ -64,8 +64,8 @@
     "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-etag-update-stored-Cache-Control": [
-    "Assertion",
-    "Response 3 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Clear-Site-Data": [
     "Assertion",
@@ -84,8 +84,8 @@
     "Response 3 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
   ],
   "304-etag-update-stored-Content-Security-Policy": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
   ],
   "304-etag-update-stored-Content-Type": [
     "Assertion",
@@ -93,7 +93,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 07 May 2019 07:03:30 GMT\", not \"Tue, 07 May 2019 08:03:29 GMT\""
+    "Response 3 header Expires is \"Wed, 08 May 2019 06:24:24 GMT\", not \"Wed, 08 May 2019 07:24:23 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -140,8 +140,8 @@
     "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
   ],
   "304-lm-update-response-Content-Location": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Location is \"/foo\", not \"/bar\""
   ],
   "304-lm-update-response-Content-MD5": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 07 May 2019 07:03:30 GMT\", not \"Tue, 07 May 2019 08:03:29 GMT\""
+    "Response 2 header Expires is \"Wed, 08 May 2019 06:24:24 GMT\", not \"Wed, 08 May 2019 07:24:23 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 07 May 2019 07:03:30 GMT\", not \"Tue, 07 May 2019 08:03:29 GMT\""
+    "Response 3 header Expires is \"Wed, 08 May 2019 06:24:24 GMT\", not \"Wed, 08 May 2019 07:24:23 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -326,13 +326,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "request 2 header If-None-Match value is \"abcdef\", not \"\"abcdef\"\""
+    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": [
@@ -646,7 +643,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 07 May 2019 07:03:34 GMT, should be Tue, 07 May 2019 07:03:31 GMT"
+    "Response 2 header Date is Wed, 08 May 2019 06:24:29 GMT, should be Wed, 08 May 2019 06:24:25 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
@@ -661,7 +658,7 @@
   "partial-store-complete-reuse-partial-suffix": true,
   "partial-store-partial-complete": [
     "Assertion",
-    "request 2 header range value is \"undefined\", not \"bytes=5-\""
+    "Request 2 header range is \"undefined\", not \"bytes=5-\""
   ],
   "partial-store-partial-reuse-partial": [
     "Assertion",
@@ -740,6 +737,10 @@
     "Response 2 does not come from cache"
   ],
   "status-599-stale": true,
+  "surrogate-append-capabilities": [
+    "Assertion",
+    "Request 1 Surrogate-Capability header not present."
+  ],
   "surrogate-max-age": true,
   "surrogate-max-age-0": true,
   "surrogate-max-age-0-expires": true,

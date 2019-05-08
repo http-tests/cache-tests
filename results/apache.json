@@ -128,7 +128,7 @@
   "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "request 2 header If-None-Match value is \"abcdef\", not \"\"abcdef\"\""
+    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": true,
@@ -400,7 +400,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 07 May 2019 06:58:37 GMT, should be Tue, 07 May 2019 06:58:34 GMT"
+    "Response 2 header Date is Wed, 08 May 2019 06:23:14 GMT, should be Wed, 08 May 2019 06:23:10 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
@@ -412,7 +412,7 @@
   "partial-store-complete-reuse-partial-suffix": true,
   "partial-store-partial-complete": [
     "Assertion",
-    "request 2 header range value is \"undefined\", not \"bytes=5-\""
+    "Request 2 header range is \"undefined\", not \"bytes=5-\""
   ],
   "partial-store-partial-reuse-partial": [
     "Assertion",
@@ -470,6 +470,10 @@
     "Response 2 status is 500, not 599"
   ],
   "status-599-stale": true,
+  "surrogate-append-capabilities": [
+    "Assertion",
+    "Request 1 Surrogate-Capability header not present."
+  ],
   "surrogate-max-age": [
     "Assertion",
     "Response 2 does not come from cache"
