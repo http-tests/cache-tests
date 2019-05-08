@@ -64,6 +64,26 @@ export default
       ]
     },
     {
+      name: 'Surrogate cache must not reuse a response when `max-age` directive is targetted at another device',
+      id: 'surrogate-max-age-other-target',
+      browser_skip: true,
+      depends_on: ['surrogate-max-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Surrogate-Control', 'max-age=3600;not-for-you'],
+            ['Age', '7200']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'Surrogate cache must not reuse a response when the `Age` header is greater than its `Surrogate-Control: max-age` freshness lifetime',
       id: 'surrogate-max-age-age',
       browser_skip: true,
