@@ -231,7 +231,7 @@ function makeCheckResponse (idx, config, dump) {
     }
     if ('expected_response_headers_missing' in config) {
       var respMissingSetup = setupCheck(config, 'expected_response_headers_missing')
-      config.expected_response_headers_missing.forEach(function (header) {
+      config.expected_response_headers_missing.forEach(header => {
         assert(respMissingSetup, !response.headers.has(header),
           `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
       })
