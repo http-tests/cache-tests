@@ -71,7 +71,19 @@ checkCached({
 })
 
 checkCached({
-  name: 'Does `Cache-Control: no-cache` inhibit storing listed headers?',
+  name: 'Does `Cache-Control: no-cache` inhibit storing a listed header?',
+  id: `omit-headers-listed-in-Cache-Control-no-cache-single`,
+  configuredHeaders: [
+    ['Cache-Control', 'no-cache="a"'],
+    ['a', '1'],
+    ['b', '2'],
+  ],
+  expectedHeaders: [['b', '2']],
+  unexpectedHeaders: ['a']
+})
+
+checkCached({
+  name: 'Does `Cache-Control: no-cache` inhibit storing multiple listed headers?',
   id: `omit-headers-listed-in-Cache-Control-no-cache`,
   configuredHeaders: [
     ['Cache-Control', 'no-cache="a, b"'],
