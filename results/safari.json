@@ -297,9 +297,13 @@
     "Assertion",
     "Response 2 includes unexpected header a: \"1\""
   ],
+  "headers-omit-headers-listed-in-Cache-Control-no-cache-single": [
+    "Assertion",
+    "Response 2 includes unexpected header a: \"1\""
+  ],
   "headers-omit-headers-listed-in-Connection": [
     "Assertion",
-    "Response 2 includes unexpected header Connection: \"a, b\""
+    "Response 2 includes unexpected header a: \"1\""
   ],
   "headers-store-Clear-Site-Data": true,
   "headers-store-Connection": true,
