@@ -238,7 +238,7 @@
   ],
   "headers-omit-headers-listed-in-Connection": [
     "Assertion",
-    "Response 2 includes unexpected header Connection: \"close\""
+    "Response 2 includes unexpected header a: \"1\""
   ],
   "headers-store-Clear-Site-Data": true,
   "headers-store-Connection": [
@@ -265,7 +265,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\na5570398-439f-4ec6-b60b-9f64c1ac6b9e\r\n0\r\n\r\n\", not \"a5570398-439f-4ec6-b60b-9f64c1ac6b9e\""
+    "Response body is \"24\r\n3b99c854-05d5-4079-ad63-1064a772e5e0\r\n0\r\n\r\n\", not \"3b99c854-05d5-4079-ad63-1064a772e5e0\""
   ],
   "headers-store-Upgrade": [
     "Assertion",

@@ -245,10 +245,7 @@
     "Assertion",
     "Response 2 includes unexpected header a: \"1\""
   ],
-  "headers-omit-headers-listed-in-Connection": [
-    "Assertion",
-    "Response 2 includes unexpected header Connection: \"close\""
-  ],
+  "headers-omit-headers-listed-in-Connection": true,
   "headers-store-Clear-Site-Data": true,
   "headers-store-Connection": [
     "Assertion",
@@ -367,7 +364,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 08 May 2019 07:55:28 GMT, should be Wed, 08 May 2019 07:55:23 GMT"
+    "Response 2 header Date is Wed, 08 May 2019 12:55:06 GMT, should be Wed, 08 May 2019 12:55:02 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
