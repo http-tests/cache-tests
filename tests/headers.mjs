@@ -59,7 +59,6 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
 checkCached({
   name: 'Does `Connection` header inhibit storing listed headers?',
   id: `omit-headers-listed-in-Connection`,
-  kind: 'check',
   configuredHeaders: [
     ['Connection', 'a, b'],
     ['a', '1'],
