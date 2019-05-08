@@ -19,7 +19,7 @@ const mimeTypes = {
   'mjs': 'application/javascript',
   'css': 'text/css'
 }
-const noteHeaders = new Set(['content-type', 'access-control-allow-origin', 'last-modified', 'etag'])
+const noteHeaders = new Set(['content-type', 'access-control-allow-origin', 'last-modified', 'etag', 'surrogate-capability'])
 const noBodyStatus = new Set([204, 304])
 const locationHeaders = new Set(['location', 'content-location'])
 const dateHeaders = new Set(['date', 'expires', 'last-modified'])
