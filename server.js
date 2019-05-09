@@ -175,7 +175,7 @@ function handleTest (pathSegs, request, response) {
   response.setHeader('Server-Now', httpDate(state.now, 0))
 
   if (reqConfig.dump) {
-    console.log(`=== Server response ${serverState.length + 1}`)
+    console.log(`=== Server response ${serverState.length}`)
     console.log(`    HTTP ${response.statusCode} ${response.statusPhrase}`)
     for (let [key, value] of Object.entries(response.getHeaders())) {
       console.log(`    ${key}: ${value}`)
