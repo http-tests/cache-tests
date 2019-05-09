@@ -32,7 +32,7 @@ function handleMain (request, response) {
   if (dispatch === 'config') {
     handleConfig(pathSegs, request, response)
   } else if (dispatch === 'test') {
-    handleXhr(pathSegs, request, response)
+    handleTest(pathSegs, request, response)
   } else if (dispatch === 'state') {
     handleState(pathSegs, request, response)
   } else {
@@ -89,7 +89,7 @@ function handleState (pathSegs, request, response) {
   response.end(JSON.stringify(state))
 }
 
-function handleXhr (pathSegs, request, response) {
+function handleTest (pathSegs, request, response) {
   // identify the desired configuration for this request
   var uuid = pathSegs[0]
   if (!uuid) {
