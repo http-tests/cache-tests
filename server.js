@@ -103,7 +103,6 @@ function handleTest (pathSegs, request, response) {
 
   var serverState = stash.get(uuid) || []
   var reqConfig = requests[serverState.length]
-  reqConfig.dump = requests.dump
   var previousConfig = requests[serverState.length - 1]
   if (!reqConfig) {
     sendResponse(response, 409, `${requests[0].id} config not found for request ${serverState.length + 1} of ${requests.length}`)

@@ -143,6 +143,7 @@ function expandTemplates (test) {
     var request = rawRequests[i]
     request.name = test.name
     request.id = test.id
+    request.dump = test.dump
     if ('template' in request) {
       var template = templates[request['template']]
       for (let member in template) {
