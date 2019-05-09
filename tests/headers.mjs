@@ -75,7 +75,7 @@ checkCached({
   configuredHeaders: [
     ['Cache-Control', 'no-cache="a"'],
     ['a', '1'],
-    ['b', '2'],
+    ['b', '2']
   ],
   expectedHeaders: [['b', '2']],
   unexpectedHeaders: ['a']
