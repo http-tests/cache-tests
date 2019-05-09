@@ -91,7 +91,7 @@ To run a single test, use:
 
 > npm run cli --base=http://server-url.example.org:8000/ --id=test-id
 
-... where `test-id` is the identifier for the test.
+... where `test-id` is the identifier for the test. This will output the request and response headers as seen by the client and server, along with the results. This is useful for debugging a particular failure.
 
 
 ## Testing Browser Caches
