@@ -84,9 +84,18 @@ function makeCacheTest (test) {
           var config = requests[idx]
           var url = makeTestUrl(uuid, config)
           var init = fetchInit(idx, config)
+          if (test.dump === true) {
+            console.log(`=== Client request ${idx}`)
+            console.log(`    ${init.method} ${url}`)
+            init.headers.forEach((hname, hvalue) => {
+              console.log(`    ${hname}: ${hvalue}`)
+            })
+            console.log('')
+            console.log(`init.body || ''`)
+          }
           return theFetch(url, init)
             .then(makeCheckResponse(idx, config, test.dump))
-            .then(makeCheckResponseBody(config, uuid), function (reason) {
+            .then(makeCheckResponseBody(config, uuid, test.dump), function (reason) {
               throw reason
             })
         },
@@ -166,10 +175,12 @@ function makeCheckResponse (idx, config, dump) {
     var reqNum = idx + 1
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
     if (dump === true) {
-      console.log(`${resNum}: HTTP ${response.status} ${response.statusText}`)
+      console.log(`=== Client response ${resNum}`)
+      console.log(`    ${response.status} ${response.statusText}`)
       response.headers.forEach((hvalue, hname) => { // for some reason, node-fetch reverses these
         console.log(`    ${hname}: ${hvalue}`)
       })
+      console.log('')
     }
     if ('expected_type' in config) {
       var typeSetup = setupCheck(config, 'expected_type')
@@ -240,8 +251,12 @@ function makeCheckResponse (idx, config, dump) {
   }
 }
 
-function makeCheckResponseBody (config, uuid) {
+function makeCheckResponseBody (config, uuid, dump) {
   return function checkResponseBody (resBody) {
+    if (dump === true) {
+      console.log(resBody)
+      console.log('')
+    }
     var statusCode = 200
     if ('expected_status' in config) {
       statusCode = config.expected_status
