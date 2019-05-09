@@ -119,11 +119,7 @@ Some additional results might pop up from time to time:
 * ⚪️ - Another test that this test depends on has failed; we use dependencies to help assure that we're actually testing the behaviour in question.
 * `-` - Not tested; usually because the test isn't applicable to this cache.
 
-Each test has an `id` that is a short name for the test; you can click on ⌾ next to the test name to copy it to the clipboard, and use that as a way to find the test in the `tests/` directory, as well as link directly to it; for example, the test ID `foo` can be linked to as `#foo` on the index and test pages.
-
-Each test also has a `uuid` that identifies that specific test run; this can be used to find its requests in the browser developer tools or proxy logs. Click ⚙︎ to copy it to the clipboard.
-
-Finally, you can hover over test names to get the raw JSON of the requests used to run the test. See below for details of that format.
+When you're testing with a browser, each test has a `uuid` that identifies that specific test run; this can be used to find its requests in the browser developer tools or proxy logs. Click ⚙︎ to copy it to the clipboard.
 
 
 ### Test Results FAQ
