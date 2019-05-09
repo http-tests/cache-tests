@@ -109,7 +109,7 @@ function handleTest (pathSegs, request, response) {
     return
   }
   if (reqConfig.dump) {
-    console.log(`=== Server request ${serverState.length}`)
+    console.log(`=== Server request ${serverState.length + 1}`)
     for (let [key, value] of Object.entries(request.headers)) {
       console.log(`    ${key}: ${value}`)
     }
