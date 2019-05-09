@@ -113,7 +113,7 @@ function handleTest (pathSegs, request, response) {
     for (let [key, value] of Object.entries(request.headers)) {
       console.log(`    ${key}: ${value}`)
     }
-    console.log()
+    console.log('')
   }
   var state = {
     'now': Date.now(),
@@ -135,6 +135,7 @@ function handleTest (pathSegs, request, response) {
     if (previousEtag && request.headers['if-none-match'] === previousEtag) {
       httpStatus = [304, 'Not Modified']
     }
+    if (httpStatus[0] !== 304) {
       httpStatus = [999, '304 Not Generated']
     }
   }
