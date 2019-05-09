@@ -27,4 +27,8 @@ if (testId !== '') {
 }
 
 client.runTests(testsToRun, fetch, false, baseUrl)
-  .then(() => { console.log(JSON.stringify(client.getResults(), null, 2)) })
+  .then(() => {
+    console.log("==== Results")
+    console.log(JSON.stringify(client.getResults(), null, 2))
+  }
+)
