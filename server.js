@@ -102,13 +102,13 @@ function handleTest (pathSegs, request, response) {
   }
 
   var serverState = stash.get(uuid) || []
-  var config = requests[serverState.length]
+  var reqConfig = requests[serverState.length]
   var previousConfig = requests[serverState.length - 1]
-  if (!config) {
+  if (!reqConfig) {
     sendResponse(response, 409, `${requests[0].id} config not found for request ${serverState.length + 1} of ${requests.length}`)
     return
   }
-  if (config.dump) {
+  if (reqConfig.dump) {
     console.log(`=== Server request ${serverState.length}`)
     for (let [key, value] of Object.entries(request.headers)) {
       console.log(`    ${key}: ${value}`)
@@ -125,8 +125,8 @@ function handleTest (pathSegs, request, response) {
   stash.set(uuid, serverState)
 
   // Determine what the response status should be
-  var httpStatus = config['response_status'] || [200, 'OK']
-  if ('expected_type' in config && config.expected_type.endsWith('validated')) {
+  var httpStatus = reqConfig['response_status'] || [200, 'OK']
+  if ('expected_type' in reqConfig && reqConfig.expected_type.endsWith('validated')) {
     let previousLm = getHeader(previousConfig.response_headers, 'Last-Modified')
     if (previousLm && request.headers['if-modified-since'] === previousLm) {
       httpStatus = [304, 'Not Modified']
@@ -144,10 +144,10 @@ function handleTest (pathSegs, request, response) {
 
   // header manipulation
   var notedHeaders = new Map()
-  var responseHeaders = config.response_headers || []
+  var responseHeaders = reqConfig.response_headers || []
   responseHeaders.forEach(header => {
     var headerName = header[0].toLowerCase()
-    if (locationHeaders.has(headerName) && config.magic_locations === true) { // magic!
+    if (locationHeaders.has(headerName) && reqConfig.magic_locations === true) { // magic!
       header[1] = `http://${request.headers['host']}${request.url}/${header[1]}` // FIXME
     }
     if (dateHeaders.has(headerName) && Number.isInteger(header[1])) { // magic!
@@ -174,7 +174,7 @@ function handleTest (pathSegs, request, response) {
   response.setHeader('Server-Now', httpDate(state.now, 0))
 
   // Response body generation
-  var content = config['response_body'] || uuid
+  var content = reqConfig['response_body'] || uuid
   if (noBodyStatus.has(response.statusCode)) {
     response.end()
   } else {

@@ -81,9 +81,9 @@ function makeCacheTest (test) {
     for (let i = 0; i < requests.length; ++i) {
       fetchFunctions.push({
         code: function (idx) {
-          var config = requests[idx]
-          var url = makeTestUrl(uuid, config)
-          var init = fetchInit(idx, config)
+          var reqConfig = requests[idx]
+          var url = makeTestUrl(uuid, reqConfig)
+          var init = fetchInit(idx, reqConfig)
           if (test.dump === true) {
             console.log(`=== Client request ${idx}`)
             if ('method' in init) {
@@ -100,8 +100,8 @@ function makeCacheTest (test) {
             }
           }
           return theFetch(url, init)
-            .then(makeCheckResponse(idx, config, test.dump))
-            .then(makeCheckResponseBody(config, uuid, test.dump), function (reason) {
+            .then(makeCheckResponse(idx, reqConfig, test.dump))
+            .then(makeCheckResponseBody(reqConfig, uuid, test.dump), function (reason) {
               throw reason
             })
         },
@@ -155,7 +155,7 @@ function expandTemplates (test) {
   return requests
 }
 
-function fetchInit (idx, config) {
+function fetchInit (idx, reqConfig) {
   var init = {
     'headers': []
   }
@@ -164,19 +164,19 @@ function fetchInit (idx, config) {
     init.headers.push(['Pragma', 'foo']) // dirty hack for Fetch
     init.headers.push(['Cache-Control', 'nothing-to-see-here']) // ditto
   }
-  if ('request_method' in config) init.method = config['request_method']
-  if ('request_headers' in config) init.headers = config['request_headers']
-  if ('name' in config) init.headers.push(['Test-Name', config.name])
-  if ('request_body' in config) init.body = config['request_body']
-  if ('mode' in config) init.mode = config['mode']
-  if ('credentials' in config) init.mode = config['credentials']
-  if ('cache' in config) init.cache = config['cache']
-  init.headers.push(['Test-ID', config.id])
+  if ('request_method' in reqConfig) init.method = reqConfig['request_method']
+  if ('request_headers' in reqConfig) init.headers = reqConfig['request_headers']
+  if ('name' in reqConfig) init.headers.push(['Test-Name', reqConfig.name])
+  if ('request_body' in reqConfig) init.body = reqConfig['request_body']
+  if ('mode' in reqConfig) init.mode = reqConfig['mode']
+  if ('credentials' in reqConfig) init.mode = reqConfig['credentials']
+  if ('cache' in reqConfig) init.cache = reqConfig['cache']
+  init.headers.push(['Test-ID', reqConfig.id])
   init.headers.push(['Req-Num', (idx + 1).toString()])
   return init
 }
 
-function makeCheckResponse (idx, config, dump) {
+function makeCheckResponse (idx, reqConfig, dump) {
   return function checkResponse (response) {
     var reqNum = idx + 1
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
@@ -188,42 +188,42 @@ function makeCheckResponse (idx, config, dump) {
       })
       console.log('')
     }
-    if ('expected_type' in config) {
-      var typeSetup = setupCheck(config, 'expected_type')
-      if (config.expected_type === 'cached') {
+    if ('expected_type' in reqConfig) {
+      var typeSetup = setupCheck(reqConfig, 'expected_type')
+      if (reqConfig.expected_type === 'cached') {
         if (response.status === 304 && isNaN(resNum)) { // some caches will not include the hdr
           // pass
         } else {
           assert(typeSetup, resNum < reqNum, `Response ${reqNum} does not come from cache`)
         }
       }
-      if (config.expected_type === 'not_cached') {
+      if (reqConfig.expected_type === 'not_cached') {
         assert(typeSetup, resNum === reqNum, `Response ${reqNum} comes from cache`)
       }
     }
     //  browsers seem to squelch 304 even in no-store mode.
-    //    if (!useBrowserCache && 'expected_type' in config && config.expected_type.endsWith('validated')) {
-    //      config.expected_status = 304
+    //    if (!useBrowserCache && 'expected_type' in reqConfig && reqConfig.expected_type.endsWith('validated')) {
+    //      reqConfig.expected_status = 304
     //    }
-    if ('expected_status' in config) {
-      assert(setupCheck(config, 'expected_status'),
-        response.status === config.expected_status,
-        `Response ${reqNum} status is ${response.status}, not ${config.expected_status}`)
-    } else if ('response_status' in config) {
+    if ('expected_status' in reqConfig) {
+      assert(setupCheck(reqConfig, 'expected_status'),
+        response.status === reqConfig.expected_status,
+        `Response ${reqNum} status is ${response.status}, not ${reqConfig.expected_status}`)
+    } else if ('response_status' in reqConfig) {
       assert(true, // response status is always setup
-        response.status === config.response_status[0],
-        `Response ${reqNum} status is ${response.status}, not ${config.response_status[0]}`)
+        response.status === reqConfig.response_status[0],
+        `Response ${reqNum} status is ${response.status}, not ${reqConfig.response_status[0]}`)
     } else if (response.status === 999) {
       // special condition; the server thought it should have received a conditional request.
-      assert(setupCheck(config, 'expected_type'), false,
+      assert(setupCheck(reqConfig, 'expected_type'), false,
         `Request ${reqNum} should have been conditional, but it was not.`)
     } else {
       assert(true, // default status is always setup
         response.status === 200,
         `Response ${reqNum} status is ${response.status}, not 200`)
     }
-    if ('response_headers' in config) {
-      config.response_headers.forEach(header => {
+    if ('response_headers' in reqConfig) {
+      reqConfig.response_headers.forEach(header => {
         if (header.len < 3 || header[2] === true) {
           assert(true, // default headers is always setup
             response.headers.get(header[0]) === header[1],
@@ -231,9 +231,9 @@ function makeCheckResponse (idx, config, dump) {
         }
       })
     }
-    if ('expected_response_headers' in config) {
-      var respPresentSetup = setupCheck(config, 'expected_response_headers')
-      config.expected_response_headers.forEach(header => {
+    if ('expected_response_headers' in reqConfig) {
+      var respPresentSetup = setupCheck(reqConfig, 'expected_response_headers')
+      reqConfig.expected_response_headers.forEach(header => {
         if (typeof header === 'string') {
           assert(respPresentSetup, response.headers.has(header),
             `Response ${reqNum} ${header} header not present.`)
@@ -246,9 +246,9 @@ function makeCheckResponse (idx, config, dump) {
         }
       })
     }
-    if ('expected_response_headers_missing' in config) {
-      var respMissingSetup = setupCheck(config, 'expected_response_headers_missing')
-      config.expected_response_headers_missing.forEach(header => {
+    if ('expected_response_headers_missing' in reqConfig) {
+      var respMissingSetup = setupCheck(reqConfig, 'expected_response_headers_missing')
+      reqConfig.expected_response_headers_missing.forEach(header => {
         assert(respMissingSetup, !response.headers.has(header),
           `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
       })
@@ -257,29 +257,29 @@ function makeCheckResponse (idx, config, dump) {
   }
 }
 
-function makeCheckResponseBody (config, uuid, dump) {
+function makeCheckResponseBody (reqConfig, uuid) {
   return function checkResponseBody (resBody) {
-    if (dump === true) {
+    if (reqConfig.dump === true) {
       console.log(resBody)
       console.log('')
     }
     var statusCode = 200
-    if ('expected_status' in config) {
-      statusCode = config.expected_status
-    } else if ('response_status' in config) {
-      statusCode = config.response_status[0]
+    if ('expected_status' in reqConfig) {
+      statusCode = reqConfig.expected_status
+    } else if ('response_status' in reqConfig) {
+      statusCode = reqConfig.response_status[0]
     }
-    if ('expected_response_text' in config) {
-      if (config.expected_response_text !== null) {
-        assert(setupCheck(config, 'expected_response_text'),
-          resBody === config.expected_response_text,
-          `Response body is "${resBody}", not "${config.expected_response_text}"`)
+    if ('expected_response_text' in reqConfig) {
+      if (reqConfig.expected_response_text !== null) {
+        assert(setupCheck(reqConfig, 'expected_response_text'),
+          resBody === reqConfig.expected_response_text,
+          `Response body is "${resBody}", not "${reqConfig.expected_response_text}"`)
       }
-    } else if ('response_body' in config && config.response_body !== null) {
+    } else if ('response_body' in reqConfig && reqConfig.response_body !== null) {
       assert(true, // response_body is always setup
-        resBody === config.response_body,
-        `Response body is "${resBody}", not "${config.response_body}"`)
-    } else if (!noBodyStatus.has(statusCode) && config.request_method !== 'HEAD') {
+        resBody === reqConfig.response_body,
+        `Response body is "${resBody}", not "${reqConfig.response_body}"`)
+    } else if (!noBodyStatus.has(statusCode) && reqConfig.request_method !== 'HEAD') {
       assert(true, // no_body is always setup
         resBody === uuid,
         `Response body is "${resBody}", not "${uuid}"`)
@@ -292,19 +292,19 @@ function checkRequests (requests, testState) {
   var testIdx = 0
   for (let i = 0; i < requests.length; ++i) {
     var expectedValidatingHeaders = []
-    var config = requests[i]
+    var reqConfig = requests[i]
     var serverRequest = testState[testIdx]
     var reqNum = i + 1
-    if ('expected_type' in config) {
-      var typeSetup = setupCheck(config, 'expected_type')
-      if (config.expected_type === 'cached') continue // the server will not see the request
-      if (config.expected_type === 'not_cached') {
+    if ('expected_type' in reqConfig) {
+      var typeSetup = setupCheck(reqConfig, 'expected_type')
+      if (reqConfig.expected_type === 'cached') continue // the server will not see the request
+      if (reqConfig.expected_type === 'not_cached') {
         assert(typeSetup, serverRequest.request_num === reqNum, `Response ${reqNum} comes from cache (${serverRequest.request_num} on server)`)
       }
-      if (config.expected_type === 'etag_validated') {
+      if (reqConfig.expected_type === 'etag_validated') {
         expectedValidatingHeaders.push('if-none-match')
       }
-      if (config.expected_type === 'lm_validated') {
+      if (reqConfig.expected_type === 'lm_validated') {
         expectedValidatingHeaders.push('if-modified-since')
       }
     }
@@ -314,9 +314,9 @@ function checkRequests (requests, testState) {
       assert(typeSetup, serverRequest.request_headers.hasOwnProperty(vhdr),
         `request ${reqNum} doesn't have ${vhdr} header`)
     })
-    if ('expected_request_headers' in config) {
-      var reqPresentSetup = setupCheck(config, 'expected_request_headers')
-      config.expected_request_headers.forEach(header => {
+    if ('expected_request_headers' in reqConfig) {
+      var reqPresentSetup = setupCheck(reqConfig, 'expected_request_headers')
+      reqConfig.expected_request_headers.forEach(header => {
         if (typeof header === 'string') {
           var headerName = header.toLowerCase()
           assert(reqPresentSetup, serverRequest.request_headers.hasOwnProperty(headerName),
@@ -339,13 +339,13 @@ function pause () {
   })
 }
 
-function makeTestUrl (uuid, config) {
+function makeTestUrl (uuid, reqConfig) {
   var extra = ''
-  if ('filename' in config) {
-    extra += `/${config.filename}`
+  if ('filename' in reqConfig) {
+    extra += `/${reqConfig.filename}`
   }
-  if ('query_arg' in config) {
-    extra += `?${config.query_arg}`
+  if ('query_arg' in reqConfig) {
+    extra += `?${reqConfig.query_arg}`
   }
   return `${baseUrl}/test/${uuid}${extra}`
 }
@@ -376,6 +376,6 @@ function getServerState (uuid) {
     })
 }
 
-function setupCheck (config, memberName) {
-  return config.setup === true || ('setup_tests' in config && config.setup_tests.indexOf(memberName) > -1)
+function setupCheck (reqConfig, memberName) {
+  return reqConfig.setup === true || ('setup_tests' in reqConfig && reqConfig.setup_tests.indexOf(memberName) > -1)
 }
