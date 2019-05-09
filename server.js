@@ -108,6 +108,13 @@ function handleTest (pathSegs, request, response) {
     sendResponse(response, 409, `${requests[0].id} config not found for request ${serverState.length + 1} of ${requests.length}`)
     return
   }
+  if (config.dump) {
+    console.log(`=== Server request ${serverState.length}`)
+    for (let [key, value] of Object.entries(request.headers)) {
+      console.log(`    ${key}: ${value}`)
+    }
+    console.log()
+  }
   var state = {
     'now': Date.now(),
     'request_method': request.method,
