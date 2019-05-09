@@ -174,6 +174,15 @@ function handleTest (pathSegs, request, response) {
   response.setHeader('Server-Request-Count', serverState.length)
   response.setHeader('Server-Now', httpDate(state.now, 0))
 
+  if (reqConfig.dump) {
+    console.log(`=== Server response ${serverState.length + 1}`)
+    console.log(`    HTTP ${response.statusCode} ${response.statusPhrase}`)
+    for (let [key, value] of Object.entries(response.headers)) {
+      console.log(`    ${key}: ${value}`)
+    }
+    console.log('')
+  }
+
   // Response body generation
   var content = reqConfig['response_body'] || uuid
   if (noBodyStatus.has(response.statusCode)) {
