@@ -86,12 +86,18 @@ function makeCacheTest (test) {
           var init = fetchInit(idx, config)
           if (test.dump === true) {
             console.log(`=== Client request ${idx}`)
-            console.log(`    ${init.method} ${url}`)
-            init.headers.forEach((hname, hvalue) => {
-              console.log(`    ${hname}: ${hvalue}`)
+            if ('method' in init) {
+              console.log(`    ${init.method} ${url}`)
+            } else {
+              console.log(`    GET ${url}`)
+            }
+            init.headers.forEach(header => {
+              console.log(`    ${header[0]}: ${header[1]}`)
             })
             console.log('')
-            console.log(`init.body || ''`)
+            if ('body' in init) {
+              console.log(`init.body`)
+            }
           }
           return theFetch(url, init)
             .then(makeCheckResponse(idx, config, test.dump))
