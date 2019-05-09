@@ -1,6 +1,8 @@
 # Tests for HTTP Caches
 
-This is a test suite for the protocol behaviours of [HTTP caches](http://httpwg.org/specs/rfc7234.html). The initial tests were derived from contributions to the [WPT tests for caching](https://github.com/web-platform-tests/wpt/tree/master/fetch/http-cache).
+This is a test suite for the behaviours of [HTTP caches](http://httpwg.org/specs/rfc7234.html),
+including browsers, proxy caches and CDNs. Its public results are available at
+[cache-tests.fyi](https://cache-tests.fyi).
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
