@@ -50,7 +50,6 @@ function handleFile (url, request, response) {
   }
   var mimeType = mimeTypes[path.extname(filename).split('.')[1]] || 'application/octet-stream'
   response.writeHead(200, {'Content-Type': mimeType})
-  console.log(`${urlPath} 200 ${mimeType}`)
   var fileStream = fs.createReadStream(filename)
   fileStream.pipe(response)
 }
@@ -101,17 +100,13 @@ function handleTest (pathSegs, request, response) {
     sendResponse(response, 409, `Requests not found for ${uuid}`)
     return
   }
+
   var serverState = stash.get(uuid) || []
   var config = requests[serverState.length]
   var previousConfig = requests[serverState.length - 1]
   if (!config) {
-    sendResponse(response, 409, `WARN: ${requests[0].id} config not found for request ${serverState.length + 1} of ${requests.length}`)
+    sendResponse(response, 409, `${requests[0].id} config not found for request ${serverState.length + 1} of ${requests.length}`)
     return
-  } else {
-    console.log(`      ${config.id} request ${serverState.length + 1} of ${requests.length}`)
-  }
-  if (config.expected_type === 'cached') {
-    console.log(`INFO: ${config.id} cached response not used for request ${requests.length}`)
   }
   var state = {
     'now': Date.now(),
@@ -133,8 +128,6 @@ function handleTest (pathSegs, request, response) {
     if (previousEtag && request.headers['if-none-match'] === previousEtag) {
       httpStatus = [304, 'Not Modified']
     }
-    if (httpStatus[0] !== 304) {
-      console.log(`WARN: request ${serverState.length + 1} of ${requests.length} for ${requests[0].name} should have been a 304`)
       httpStatus = [999, '304 Not Generated']
     }
   }
@@ -157,8 +150,6 @@ function handleTest (pathSegs, request, response) {
       var capabilityTarget = request.headers['surrogate-capability'].split('=')[0]
       if (!capabilityTarget) {
         console.log(`WARN: Capability target is empty`)
-      } else {
-        console.log(`INFO: Capability target is ${capabilityTarget}`)
       }
       header[1] = header[1].replace('CAPABILITY_TARGET', capabilityTarget)
     }
@@ -184,7 +175,7 @@ function handleTest (pathSegs, request, response) {
 }
 
 function sendResponse (response, statusCode, message) {
-  console.log(message)
+  console.log(`SERVER WARNING: ${message}`)
   response.writeHead(statusCode, {'Content-Type': 'text/plain'})
   response.write(`${message}\n`)
   response.end()
