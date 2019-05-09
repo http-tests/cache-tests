@@ -183,7 +183,7 @@ function makeCheckResponse (idx, reqConfig, dump) {
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
     if (dump === true) {
       console.log(`=== Client response ${reqNum}`)
-      console.log(`    ${response.status} ${response.statusText}`)
+      console.log(`    HTTP ${response.status} ${response.statusText}`)
       response.headers.forEach((hvalue, hname) => { // for some reason, node-fetch reverses these
         console.log(`    ${hname}: ${hvalue}`)
       })
