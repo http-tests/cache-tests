@@ -96,9 +96,6 @@ function makeCacheTest (test) {
               console.log(`    ${header[0]}: ${header[1]}`)
             })
             console.log('')
-            if ('body' in init) {
-              console.log(`init.body`)
-            }
           }
           return theFetch(url, init)
             .then(makeCheckResponse(idx, reqConfig, test.dump))
@@ -261,10 +258,6 @@ function makeCheckResponse (idx, reqConfig, dump) {
 
 function makeCheckResponseBody (reqConfig, uuid) {
   return function checkResponseBody (resBody) {
-    if (reqConfig.dump === true) {
-      console.log(resBody)
-      console.log('')
-    }
     var statusCode = 200
     if ('expected_status' in reqConfig) {
       statusCode = reqConfig.expected_status
