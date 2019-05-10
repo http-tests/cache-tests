@@ -21,7 +21,7 @@ export function renderTestResults (testSuites, testResults, testUUIDs, target, u
     var resultList = target.appendChild(listElement)
     var tests = 0
     var passed = 0
-    testSuite.tests.forEach(function (test) {
+    testSuite.tests.forEach(test => {
       if (test.browser_only === true && !useBrowserCache === true) return
       if (test.browser_skip === true && useBrowserCache === true) return
       test.suiteName = testSuite.name
@@ -50,7 +50,7 @@ export function showTestName (test, uuid) {
   var span = document.createElement('span')
   span.title = JSON.stringify(test.requests, null, 2)
   span.innerHTML = marked.parse(test.name).slice(3, -5)
-  span.addEventListener('click', function (event) {
+  span.addEventListener('click', event => {
     copyTextToClipboard(test.id)
   })
   wrapper.appendChild(span)
@@ -59,7 +59,7 @@ export function showTestName (test, uuid) {
     var uuidLinkElement = document.createElement('a')
     uuidLinkElement.appendChild(document.createTextNode('⚙︎'))
     uuidLinkElement.setAttribute('class', 'clickhint')
-    uuidLinkElement.addEventListener('click', function (event) {
+    uuidLinkElement.addEventListener('click', event => {
       copyTextToClipboard(uuid)
     })
     uuidLinkElement.title = 'Test UUID (click to copy)'

@@ -40,7 +40,7 @@ export function getResults () {
 }
 
 function runSome (tests, chunkSize) {
-  return new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     var index = 0
     function next () {
       if (index < tests.length) {
@@ -56,7 +56,7 @@ function runSome (tests, chunkSize) {
 }
 
 function addTest (testId, timeout, testFunc) {
-  var wrapper = new Promise(function (resolve, reject) {
+  var wrapper = new Promise((resolve, reject) => {
     testFunc()
       .then(result => { // pass
         if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
@@ -73,14 +73,14 @@ function addTest (testId, timeout, testFunc) {
 }
 
 function makeCacheTest (test) {
-  return function () {
+  return () => {
     var uuid = utils.token()
     testUUIDs[test.id] = uuid
     var requests = expandTemplates(test)
     var fetchFunctions = []
     for (let i = 0; i < requests.length; ++i) {
       fetchFunctions.push({
-        code: function (idx) {
+        code: idx => {
           var reqConfig = requests[idx]
           var reqNum = idx + 1
           var url = makeTestUrl(uuid, reqConfig)
@@ -99,7 +99,7 @@ function makeCacheTest (test) {
           }
           return theFetch(url, init)
             .then(makeCheckResponse(idx, reqConfig, test.dump))
-            .then(makeCheckResponseBody(reqConfig, uuid, test.dump), function (reason) {
+            .then(makeCheckResponseBody(reqConfig, uuid, test.dump), reason => {
               throw reason
             })
         },
