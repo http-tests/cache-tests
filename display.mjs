@@ -28,9 +28,6 @@ export function renderTestResults (testSuites, testResults, testUUIDs, target, u
       var testElement = resultList.appendChild(document.createElement('li'))
       testElement.appendChild(showTestResult(testSuites, test.id, testResults))
       testElement.appendChild(showTestName(test, testUUIDs[test.id]))
-      testElement.addEventListener('click', function (event) {
-        copyTextToClipboard(testUUIDs[test.id])
-      })
       tests++
       if (testResults[test.id] === true) {
         passed++
@@ -49,9 +46,14 @@ export function renderTestResults (testSuites, testResults, testUUIDs, target, u
 }
 
 export function showTestName (test, uuid) {
+  var wrapper = document.createElement('span')
   var span = document.createElement('span')
   span.title = JSON.stringify(test.requests, null, 2)
   span.innerHTML = marked.parse(test.name).slice(3, -5)
+  span.addEventListener('click', function (event) {
+    copyTextToClipboard(test.id)
+  })
+  wrapper.appendChild(span)
 
   if (uuid) {
     var uuidLinkElement = document.createElement('a')
@@ -61,9 +63,9 @@ export function showTestName (test, uuid) {
       copyTextToClipboard(uuid)
     })
     uuidLinkElement.title = 'Test UUID (click to copy)'
-    span.appendChild(uuidLinkElement)
+    wrapper.appendChild(uuidLinkElement)
   }
-  return span
+  return wrapper
 }
 
 export function showTestResult (testSuites, testId, testResults) {
@@ -164,7 +166,7 @@ function copyTextToClipboard (text) {
   try {
     var successful = document.execCommand('copy')
     var msg = successful ? 'successful' : 'unsuccessful'
-    console.log('Copying text command was ' + msg)
+    console.log(`Copying text "${text}" was ${msg}`)
   } catch (err) {
     console.log('Unable to copy')
   }
