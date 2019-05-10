@@ -54,9 +54,9 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag` containing obs-text.',
+      name: 'Does HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag` containing obs-text?',
       id: 'conditional-etag-strong-respond-obs-text',
-      kind: 'optimal',
+      kind: 'check',
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
