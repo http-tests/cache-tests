@@ -389,7 +389,7 @@ export default
     },
     {
       name: 'An optimal shared HTTP cache prefers long `Cache-Control: s-maxage` over `Cache-Control: max-age=0`, even with a past `Expires`',
-      id: 'freshness-max-age-s-maxage-shared-shorter',
+      id: 'freshness-max-age-s-maxage-shared-shorter-expires',
       depends_on: ['freshness-s-maxage-shared'],
       kind: 'optimal',
       requests: [
