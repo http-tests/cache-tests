@@ -314,7 +314,7 @@ export default
       browser_skip: true
     },
     {
-      name: 'Shared HTTP cache must prefer `Cache-Control: s-maxage` over a longer `Cache-Control: max-age`',
+      name: 'Shared HTTP cache must prefer short `Cache-Control: s-maxage` over a longer `Cache-Control: max-age`',
       id: 'freshness-max-age-s-maxage-shared-longer',
       depends_on: ['freshness-s-maxage-shared'],
       requests: [
@@ -332,7 +332,7 @@ export default
       browser_skip: true
     },
     {
-      name: 'Shared HTTP cache must prefer `Cache-Control: s-maxage` over a longer `Cache-Control: max-age` (reversed)',
+      name: 'Shared HTTP cache must prefer short `Cache-Control: s-maxage` over a longer `Cache-Control: max-age` (reversed)',
       id: 'freshness-max-age-s-maxage-shared-longer-reversed',
       depends_on: ['freshness-s-maxage-shared'],
       requests: [
@@ -350,7 +350,7 @@ export default
       browser_skip: true
     },
     {
-      name: 'Shared HTTP cache must prefer `Cache-Control: s-maxage` over a longer `Cache-Control: max-age` (multiple headers)',
+      name: 'Shared HTTP cache must prefer short `Cache-Control: s-maxage` over a longer `Cache-Control: max-age` (multiple headers)',
       id: 'freshness-max-age-s-maxage-shared-longer-multiple',
       depends_on: ['freshness-s-maxage-shared'],
       requests: [
@@ -369,7 +369,7 @@ export default
       browser_skip: true
     },
     {
-      name: 'An optimal shared HTTP cache prefers `Cache-Control: s-maxage` over a shorter `Cache-Control: max-age`',
+      name: 'An optimal shared HTTP cache prefers long `Cache-Control: s-maxage` over a shorter `Cache-Control: max-age`',
       id: 'freshness-max-age-s-maxage-shared-shorter',
       depends_on: ['freshness-s-maxage-shared'],
       kind: 'optimal',
