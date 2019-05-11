@@ -1,3 +1,4 @@
+==== Results
 {
   "304-etag-update-response-Cache-Control": true,
   "304-etag-update-response-Clear-Site-Data": true,
@@ -217,6 +218,7 @@
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
+  "freshness-max-age-s-maxage-shared-shorter-expires": true,
   "freshness-max-age-single-quoted": true,
   "freshness-max-age-space-after-equals": [
     "Assertion",
@@ -265,7 +267,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n460855a4-1d7e-4b7c-aa60-5cc232e2a293\r\n0\r\n\r\n\", not \"460855a4-1d7e-4b7c-aa60-5cc232e2a293\""
+    "Response body is \"24\r\n8df4f49a-9710-48f9-b65a-616ff7e64752\r\n0\r\n\r\n\", not \"8df4f49a-9710-48f9-b65a-616ff7e64752\""
   ],
   "headers-store-Upgrade": [
     "Assertion",

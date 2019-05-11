@@ -1,3 +1,4 @@
+==== Results
 {
   "304-etag-update-response-Cache-Control": true,
   "304-etag-update-response-Clear-Site-Data": true,
@@ -229,6 +230,7 @@
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
+  "freshness-max-age-s-maxage-shared-shorter-expires": true,
   "freshness-max-age-single-quoted": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -364,7 +366,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 08 May 2019 12:55:06 GMT, should be Wed, 08 May 2019 12:55:02 GMT"
+    "Response 2 header Date is Sat, 11 May 2019 00:19:02 GMT, should be Sat, 11 May 2019 00:18:58 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
