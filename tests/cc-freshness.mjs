@@ -386,6 +386,26 @@ export default
         }
       ],
       browser_skip: true
+    },
+    {
+      name: 'An optimal shared HTTP cache prefers long `Cache-Control: s-maxage` over `Cache-Control: max-age=0`, even with a past `Expires`',
+      id: 'freshness-max-age-s-maxage-shared-shorter',
+      depends_on: ['freshness-s-maxage-shared'],
+      kind: 'optimal',
+      requests: [
+        {
+          response_headers: [
+            ['Expires', -10],
+            ['Cache-Control', 'max-age=0, s-maxage=3600']
+          ],
+          pause_after: true,
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ],
+      browser_skip: true
     }
   ]
 }
