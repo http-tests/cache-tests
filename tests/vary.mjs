@@ -81,6 +81,72 @@ export default {
       ]
     },
     {
+      name: 'An optimal HTTP cache stores and correctly serves multiple object variants when the `Vary` response header value depends on one or more request header values',
+      id: 'vary-dynamic',
+      kind: 'optional',
+      browser_skip: true,
+      requests: [
+        {
+          request_headers: [
+            ['v1', 'one'],
+            ['v2', 'two'],
+            ['ctrl', 'a']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'v1, ctrl']
+          ],
+          expected_type: 'not_cached'
+        },
+        {
+          request_headers: [
+            ['v1', 'one'],
+            ['v2', 'two'],
+            ['ctrl', 'a']
+          ],
+          expected_type: 'cached'
+        },
+        {
+          request_headers: [
+            ['v1', 'one'],
+            ['v2', 'two'],
+            ['ctrl', 'b']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'v1, v2, ctrl']
+          ],
+          expected_type: 'not_cached'
+        },
+        {
+          request_headers: [
+            ['v1', 'one'],
+            ['v2', 'two'],
+            ['ctrl', 'b']
+          ],
+          expected_type: 'cached'
+        },
+        {
+          request_headers: [
+            ['v1', 'one'],
+            ['v2', 'two'],
+            ['ctrl', 'a']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'v1, ctrl']
+          ],
+          expected_type: 'cached'
+        },
+      ]
+    },
+    {
       name: 'An optimal HTTP cache should not include headers not listed in `Vary` in the cache key',
       id: 'vary-cache-key',
       kind: 'optimal',
