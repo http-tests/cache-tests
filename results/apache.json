@@ -365,7 +365,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Sat, 11 May 2019 00:19:02 GMT, should be Sat, 11 May 2019 00:18:58 GMT"
+    "Response 2 header Date is Thu, 16 May 2019 15:46:55 GMT, should be Thu, 16 May 2019 15:46:52 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
@@ -411,6 +411,16 @@
     "Response 2 status is 500, not 299"
   ],
   "status-299-stale": true,
+  "status-301-fresh": true,
+  "status-301-stale": true,
+  "status-302-fresh": true,
+  "status-302-stale": true,
+  "status-303-fresh": true,
+  "status-303-stale": true,
+  "status-307-fresh": true,
+  "status-307-stale": true,
+  "status-308-fresh": true,
+  "status-308-stale": true,
   "status-400-fresh": true,
   "status-400-stale": true,
   "status-404-fresh": true,

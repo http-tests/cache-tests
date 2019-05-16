@@ -266,7 +266,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n8df4f49a-9710-48f9-b65a-616ff7e64752\r\n0\r\n\r\n\", not \"8df4f49a-9710-48f9-b65a-616ff7e64752\""
+    "Response body is \"24\r\n39c3cd67-19ef-44d4-9fc7-58b1fe4921af\r\n0\r\n\r\n\", not \"39c3cd67-19ef-44d4-9fc7-58b1fe4921af\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
@@ -411,6 +411,16 @@
   "status-204-stale": true,
   "status-299-fresh": true,
   "status-299-stale": true,
+  "status-301-fresh": true,
+  "status-301-stale": true,
+  "status-302-fresh": true,
+  "status-302-stale": true,
+  "status-303-fresh": true,
+  "status-303-stale": true,
+  "status-307-fresh": true,
+  "status-307-stale": true,
+  "status-308-fresh": true,
+  "status-308-stale": true,
   "status-400-fresh": true,
   "status-400-stale": true,
   "status-404-fresh": true,
