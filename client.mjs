@@ -170,6 +170,7 @@ function fetchInit (idx, reqConfig) {
   if ('mode' in reqConfig) init.mode = reqConfig['mode']
   if ('credentials' in reqConfig) init.mode = reqConfig['credentials']
   if ('cache' in reqConfig) init.cache = reqConfig['cache']
+  if ('redirect' in reqConfig) init.redirect = reqConfig['redirect']
   init.headers.push(['Test-ID', reqConfig.id])
   init.headers.push(['Req-Num', (idx + 1).toString()])
   return init

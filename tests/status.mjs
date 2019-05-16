@@ -18,9 +18,11 @@ function checkStatus (status) {
         template: 'stale',
         response_status: [code, phrase],
         response_body: body,
+        redirect: 'manual',
         setup: true
       }, {
         expected_type: 'not_cached',
+        redirect: 'manual',
         response_body: body
       }
     ]
@@ -34,10 +36,12 @@ function checkStatus (status) {
         template: 'fresh',
         response_status: [code, phrase],
         response_body: body,
+        redirect: 'manual',
         setup: true
       }, {
         expected_type: 'cached',
         response_status: [code, phrase],
+        redirect: 'manual',
         response_body: body
       }
     ]
@@ -48,6 +52,11 @@ function checkStatus (status) {
   [203, 'Non-Authoritative Information'],
   [204, 'No Content', null],
   [299, 'Whatever'],
+  [301, 'Moved Permanently'],
+  [302, 'Found'],
+  [303, 'See Other'],
+  [307, 'Temporary Redirect'],
+  [308, 'Permanent Redirect'],
   [400, 'Bad Request'],
   [404, 'Not Found'],
   [410, 'Gone'],
