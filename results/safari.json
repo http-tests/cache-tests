@@ -460,6 +460,19 @@
     "Response 2 does not come from cache"
   ],
   "status-299-stale": true,
+  "status-301-fresh": true,
+  "status-301-stale": true,
+  "status-302-fresh": true,
+  "status-302-stale": true,
+  "status-303-fresh": true,
+  "status-303-stale": true,
+  "status-307-fresh": true,
+  "status-307-stale": true,
+  "status-308-fresh": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "status-308-stale": true,
   "status-400-fresh": [
     "Assertion",
     "Response 2 does not come from cache"
