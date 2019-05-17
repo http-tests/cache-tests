@@ -387,10 +387,25 @@ export default {
       ]
     },
     {
+      name: 'Does HTTP cache forward `If-None-Match` request header when no stored response is available?',
+      id: 'conditional-etag-forward',
+      kind: 'check',
+      requests: [
+        {
+          request_headers: [
+            ['If-None-Match', '"abcdef"']
+          ],
+          expected_request_headers: [
+            ['If-None-Match', '"abcdef"']
+          ]
+        }
+      ]
+    }
+    {
       name: 'Does HTTP cache add quotes to an unquoted `If-None-Match` request when forwarding it?',
       id: 'conditional-etag-forward-unquoted',
+      depends_on: ['conditional-etag-forward']
       kind: 'check',
-      depends_on: ['conditional-etag-strong-generate'],
       requests: [
         {
           request_headers: [
