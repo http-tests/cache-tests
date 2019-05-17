@@ -1,0 +1,82 @@
+
+export default
+
+{
+  name: 'Pragma',
+  id: 'pragma',
+  description: 'These tests check for how caches handle the [`Pragma` header](https://httpwg.org/specs/rfc7234.html#header.pragma) in reqeusts and responses.',
+  tests: [
+    {
+      name: 'Does HTTP cache use a stored fresh response when request contains `Pragma: no-cache`?',
+      id: 'pragma-request-no-cache',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Pragma', 'no-cache']
+          ],
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache use a stored fresh response when request contains `Pragma: unrecognised-extension`?',
+      id: 'pragma-request-extension',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Pragma', 'unrecognised-extension']
+          ],
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache use a stored and otherwise fresh response when it contains `Pragma: no-cache`?',
+      id: 'pragma-response-no-cache',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600'],
+            ['Pragma', 'no-cache']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache use a stored and otherwise fresh response when it contains `Pragma: unrecognised-extension`?',
+      id: 'pragma-response-extension',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600'],
+            ['Pragma', 'unrecognised-extension']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    }
+  ]
+}
