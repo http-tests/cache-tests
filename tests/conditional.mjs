@@ -400,7 +400,7 @@ export default {
           ]
         }
       ]
-    }
+    },
     {
       name: 'Does HTTP cache add quotes to an unquoted `If-None-Match` request when forwarding it?',
       id: 'conditional-etag-forward-unquoted',
