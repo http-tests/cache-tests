@@ -404,7 +404,7 @@ export default {
     {
       name: 'Does HTTP cache add quotes to an unquoted `If-None-Match` request when forwarding it?',
       id: 'conditional-etag-forward-unquoted',
-      depends_on: ['conditional-etag-forward']
+      depends_on: ['conditional-etag-forward'],
       kind: 'check',
       requests: [
         {
