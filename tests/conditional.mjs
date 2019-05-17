@@ -364,7 +364,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache generates a quoted `If-None-Match` request when holding a stale response with a matching, unquoted strong `ETag`.',
+      name: 'Does HTTP cache generate a quoted `If-None-Match` request when holding a stale response with a matching, unquoted strong `ETag`?',
       id: 'conditional-etag-strong-generate-unquoted',
       kind: 'check',
       depends_on: ['conditional-etag-strong-generate'],
@@ -383,6 +383,22 @@ export default {
             ['If-None-Match', '"abcdef"']
           ],
           expected_type: 'etag_validated'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache add quotes to an unquoted `If-None-Match` request when forwarding it?',
+      id: 'conditional-etag-forward-unquoted',
+      kind: 'check',
+      depends_on: ['conditional-etag-strong-generate'],
+      requests: [
+        {
+          request_headers: [
+            ['If-None-Match', 'abcdef']
+          ]
+          expected_request_headers: [
+            ['If-None-Match', '"abcdef"']
+          ]
         }
       ]
     }
