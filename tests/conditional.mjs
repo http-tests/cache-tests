@@ -395,7 +395,7 @@ export default {
         {
           request_headers: [
             ['If-None-Match', 'abcdef']
-          ]
+          ],
           expected_request_headers: [
             ['If-None-Match', '"abcdef"']
           ]
