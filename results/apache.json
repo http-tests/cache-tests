@@ -365,7 +365,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Thu, 16 May 2019 15:46:55 GMT, should be Thu, 16 May 2019 15:46:52 GMT"
+    "Response 2 header Date is Fri, 17 May 2019 09:22:38 GMT, should be Fri, 17 May 2019 09:22:35 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
@@ -392,6 +392,16 @@
     "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-suffix": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "pragma-request-extension": true,
+  "pragma-request-no-cache": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "pragma-response-extension": true,
+  "pragma-response-no-cache": [
     "Assertion",
     "Response 2 does not come from cache"
   ],

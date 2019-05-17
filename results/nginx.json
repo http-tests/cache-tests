@@ -578,7 +578,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Thu, 16 May 2019 15:46:40 GMT, should be Thu, 16 May 2019 15:46:37 GMT"
+    "Response 2 header Date is Fri, 17 May 2019 09:22:23 GMT, should be Fri, 17 May 2019 09:22:20 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
@@ -620,6 +620,10 @@
     "Assertion",
     "Response body is \"01234\", not \"4\""
   ],
+  "pragma-request-extension": true,
+  "pragma-request-no-cache": true,
+  "pragma-response-extension": true,
+  "pragma-response-no-cache": true,
   "query-args-different": true,
   "query-args-same": true,
   "status-200-fresh": true,
