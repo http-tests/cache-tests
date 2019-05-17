@@ -310,6 +310,14 @@
     "Response 1 status is 200, not 504"
   ],
   "conditional-304-etag": true,
+  "conditional-etag-forward": [
+    "Assertion",
+    "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
+  "conditional-etag-forward-unquoted": [
+    "Assertion",
+    "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
   "conditional-etag-quoted-respond-unquoted": [
     "Assertion",
     "Response 2 status is 200, not 304"
@@ -578,7 +586,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Fri, 17 May 2019 09:22:23 GMT, should be Fri, 17 May 2019 09:22:20 GMT"
+    "Response 2 header Date is Fri, 17 May 2019 09:50:05 GMT, should be Fri, 17 May 2019 09:50:02 GMT"
   ],
   "other-set-cookie": [
     "Assertion",

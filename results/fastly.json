@@ -28,8 +28,8 @@
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-response-Expires": [
-    "Assertion",
-    "Response 2 header Expires is \"Fri, 17 May 2019 09:23:53 GMT\", not \"Fri, 17 May 2019 10:23:52 GMT\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -93,7 +93,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Fri, 17 May 2019 09:23:53 GMT\", not \"Fri, 17 May 2019 10:23:52 GMT\""
+    "Response 3 header Expires is \"Fri, 17 May 2019 09:51:36 GMT\", not \"Fri, 17 May 2019 10:51:35 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Fri, 17 May 2019 09:23:53 GMT\", not \"Fri, 17 May 2019 10:23:52 GMT\""
+    "Response 2 header Expires is \"Fri, 17 May 2019 09:51:36 GMT\", not \"Fri, 17 May 2019 10:51:35 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -208,8 +208,8 @@
     "Response 3 header Content-Location is \"/foo\", not \"/bar\""
   ],
   "304-lm-update-stored-Content-MD5": [
-    "Assertion",
-    "Response 3 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Content-Security-Policy": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Fri, 17 May 2019 09:23:53 GMT\", not \"Fri, 17 May 2019 10:23:52 GMT\""
+    "Response 3 header Expires is \"Fri, 17 May 2019 09:51:36 GMT\", not \"Fri, 17 May 2019 10:51:35 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -255,10 +255,7 @@
     "Assertion",
     "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
-  "304-lm-use-stored-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-lm-use-stored-Test-Header": true,
   "cc-resp-no-cache": [
     "Assertion",
     "Response 2 comes from cache"
@@ -325,6 +322,14 @@
     "Response 1 status is 200, not 504"
   ],
   "conditional-304-etag": true,
+  "conditional-etag-forward": [
+    "Assertion",
+    "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
+  "conditional-etag-forward-unquoted": [
+    "Assertion",
+    "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
   "conditional-etag-quoted-respond-unquoted": [
     "Assertion",
     "Response 2 status is 200, not 304"
@@ -611,7 +616,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Fri, 17 May 2019 09:23:58 GMT, should be Fri, 17 May 2019 09:23:55 GMT"
+    "Response 2 header Date is Fri, 17 May 2019 09:51:41 GMT, should be Fri, 17 May 2019 09:51:37 GMT"
   ],
   "other-set-cookie": [
     "Assertion",

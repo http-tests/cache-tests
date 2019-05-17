@@ -127,6 +127,14 @@
   ],
   "ccreq-oic": true,
   "conditional-304-etag": true,
+  "conditional-etag-forward": [
+    "Assertion",
+    "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
+  "conditional-etag-forward-unquoted": [
+    "Assertion",
+    "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
   "conditional-etag-quoted-respond-unquoted": true,
   "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
@@ -266,7 +274,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n8686b6a8-c767-4ec9-8e20-677f823bd31a\r\n0\r\n\r\n\", not \"8686b6a8-c767-4ec9-8e20-677f823bd31a\""
+    "Response body is \"24\r\n8a0ee48e-74a1-4189-9eb9-19eeacae2bf9\r\n0\r\n\r\n\", not \"8a0ee48e-74a1-4189-9eb9-19eeacae2bf9\""
   ],
   "headers-store-Upgrade": [
     "Assertion",

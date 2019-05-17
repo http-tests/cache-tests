@@ -222,6 +222,11 @@
     "Assertion",
     "Response 1 status is 200, not 504"
   ],
+  "conditional-etag-forward": true,
+  "conditional-etag-forward-unquoted": [
+    "Assertion",
+    "Request 1 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
+  ],
   "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",

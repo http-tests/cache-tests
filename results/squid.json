@@ -118,6 +118,11 @@
     "Assertion",
     "Response 2 header ETag is \"null\", not \"\"abcdef\"\""
   ],
+  "conditional-etag-forward": true,
+  "conditional-etag-forward-unquoted": [
+    "Assertion",
+    "Request 1 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
+  ],
   "conditional-etag-quoted-respond-unquoted": [
     "Assertion",
     "Response 2 status is 200, not 304"
