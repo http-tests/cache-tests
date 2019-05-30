@@ -84,7 +84,8 @@ export default {
       name: 'An optimal HTTP cache stores and correctly serves multiple object variants when the `Vary` response header value depends on one or more request header values',
       id: 'vary-dynamic',
       kind: 'optional',
-      browser_skip: true,
+      browser_skip: false,
+      depends_on: ['vary-invalidate'],
       requests: [
         {
           request_headers: [
