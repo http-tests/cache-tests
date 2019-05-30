@@ -81,7 +81,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache stores and correctly serves multiple object variants when the `Vary` response header value depends on one or more request header values',
+      name: 'An optimal HTTP cache stores and correctly serves multiple object variants when responses have different Vary response header values, depending on the value of request header(s)',
       id: 'vary-dynamic',
       kind: 'optional',
       browser_skip: false,
