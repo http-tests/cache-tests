@@ -98,7 +98,8 @@ export default {
             ['Date', 0],
             ['Vary', 'v1, ctrl']
           ],
-          expected_type: 'not_cached'
+          expected_type: 'not_cached',
+          setup: true
         },
         {
           request_headers: [
@@ -106,7 +107,8 @@ export default {
             ['v2', 'two'],
             ['ctrl', 'a']
           ],
-          expected_type: 'cached'
+          expected_type: 'cached',
+          setup: true
         },
         {
           request_headers: [
@@ -120,7 +122,8 @@ export default {
             ['Date', 0],
             ['Vary', 'v1, v2, ctrl']
           ],
-          expected_type: 'not_cached'
+          expected_type: 'not_cached',
+          setup: true
         },
         {
           request_headers: [
@@ -128,7 +131,8 @@ export default {
             ['v2', 'two'],
             ['ctrl', 'b']
           ],
-          expected_type: 'cached'
+          expected_type: 'cached',
+          setup: true
         },
         {
           request_headers: [
