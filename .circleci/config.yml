@@ -25,7 +25,7 @@ jobs:
           command: npm run --silent cli --base=http://localhost:8003 | tee results/trafficserver.json
       - run:
           name: test apache
-          command: npm run --silent cli --base=http://localhost:8004
+          command: npm run --silent cli --base=http://localhost:8004 | tee results/apache.json
       - deploy:
           name: Upload results
           command: |
