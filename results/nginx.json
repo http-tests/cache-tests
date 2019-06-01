@@ -28,8 +28,8 @@
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-response-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Expires is \"Sat, 01 Jun 2019 06:06:20 GMT\", not \"Sat, 01 Jun 2019 07:06:19 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -92,8 +92,8 @@
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-stored-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Expires is \"Sat, 01 Jun 2019 06:06:20 GMT\", not \"Sat, 01 Jun 2019 07:06:19 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -156,8 +156,8 @@
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-response-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Expires is \"Sat, 01 Jun 2019 06:06:20 GMT\", not \"Sat, 01 Jun 2019 07:06:19 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -220,8 +220,8 @@
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-stored-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Expires is \"Sat, 01 Jun 2019 06:06:20 GMT\", not \"Sat, 01 Jun 2019 07:06:19 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -386,7 +386,10 @@
     "Response 2 comes from cache"
   ],
   "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-present": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
   "freshness-expires-wrong-case-weekday": true,
@@ -586,7 +589,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Fri, 17 May 2019 09:50:05 GMT, should be Fri, 17 May 2019 09:50:02 GMT"
+    "Response 2 header Date is Sat, 01 Jun 2019 06:06:22 GMT, should be Sat, 01 Jun 2019 06:06:19 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
