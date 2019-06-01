@@ -56,7 +56,7 @@ function runSome (tests, chunkSize) {
 }
 
 function addTest (testId, timeout, testFunc) {
-  var wrapper = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     testFunc()
       .then(result => { // pass
         if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
@@ -69,7 +69,6 @@ function addTest (testId, timeout, testFunc) {
         resolve()
       })
   })
-  return wrapper
 }
 
 function makeCacheTest (test) {
