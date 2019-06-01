@@ -6,6 +6,7 @@ jobs:
       - image: mnot/squid
       - image: mnot/nginx
       - image: mnot/trafficserver
+      - image: mnot/apache
     steps:
       - checkout
       - run: npm install
