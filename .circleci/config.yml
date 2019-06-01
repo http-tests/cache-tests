@@ -14,6 +14,9 @@ jobs:
       - run:
           name: test squid
           command: npm run --silent cli --base=http://localhost:8001
+      - run:
+          name: test nginx
+          command: npm run --silent cli --base=http://localhost:8002
 workflows:
   version: 2
   test:
