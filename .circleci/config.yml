@@ -6,6 +6,7 @@ jobs:
       - image: mnot/squid
     steps:
       - checkout
+      - run: yarn install
       - run:
           name: start test server
           background: Y
