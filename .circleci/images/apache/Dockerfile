@@ -8,9 +8,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-RUN mkdir /var/cache/apache
-RUN mkdir /var/run/apache2
-
 RUN a2enmod cache_socache
 RUN a2enmod cache_disk
 RUN a2enmod proxy_http
