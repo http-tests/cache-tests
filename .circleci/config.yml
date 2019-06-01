@@ -22,6 +22,14 @@ jobs:
       - run:
           name: test trafficserver
           command: npm run --silent cli --base=http://localhost:8003
+      - deploy:
+          name: Upload results
+          command: |
+            git config user.email "mnot@mnot.net"
+            git config user.name "CI"
+            git add results/*.json
+            git commit --allow-empty -m "Update results"
+            git push -q https://${GH_TOKEN}@github.com/http-tests/cache-tests.git master
 workflows:
   version: 2
   test:
