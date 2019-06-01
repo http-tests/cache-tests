@@ -13,7 +13,7 @@ jobs:
           command: npm run server --port=8000
       - run:
           name: test squid
-          command: npm run --silent cli --base=http://localhost:8001 > results/squid.json
+          command: npm run --silent cli --base=http://localhost:8001
 workflows:
   version: 2
   test:
