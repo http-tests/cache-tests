@@ -2,13 +2,13 @@ version: 2
 jobs:
   proxy_tests:
     docker:
-      - image: circleci/node:latest
+      - image: mnot/node-server
       - image: mnot/squid
     steps:
       - checkout
       - run: npm install
       - run:
-          name: start test server
+          name: run test server
           background: Y
           command: npm run server --port=8000
       - run:
