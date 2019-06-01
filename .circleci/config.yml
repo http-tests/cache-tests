@@ -5,6 +5,7 @@ jobs:
       - image: mnot/node-server
       - image: mnot/squid
       - image: mnot/nginx
+      - image: mnot/trafficserver
     steps:
       - checkout
       - run: npm install
@@ -18,6 +19,9 @@ jobs:
       - run:
           name: test nginx
           command: npm run --silent cli --base=http://localhost:8002
+      - run:
+          name: test trafficserver
+          command: npm run --silent cli --base=http://localhost:8003
 workflows:
   version: 2
   test:
