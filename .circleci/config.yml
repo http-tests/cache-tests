@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: mnot/node-server
       - image: mnot/squid
+      - image: mnot/nginx
     steps:
       - checkout
       - run: npm install
