@@ -235,7 +235,10 @@
     "Setup",
     "PUT config resulted in 500 Internal Server Error"
   ],
-  "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus": [
+    "Setup",
+    "PUT config resulted in 500 Internal Server Error"
+  ],
   "freshness-max-age-max-plus-1": [
     "Setup",
     "PUT config resulted in 500 Internal Server Error"
