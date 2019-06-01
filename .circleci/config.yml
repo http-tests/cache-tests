@@ -15,20 +15,20 @@ jobs:
           command: npm run server --port=8000
       - run:
           name: test squid
-          command: npm run --silent cli --base=http://localhost:8001
+          command: npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
       - run:
           name: test nginx
-          command: npm run --silent cli --base=http://localhost:8002
+          command: npm run --silent cli --base=http://localhost:8002 | tee results/nginx.json
       - run:
           name: test trafficserver
-          command: npm run --silent cli --base=http://localhost:8003
+          command: npm run --silent cli --base=http://localhost:8003 | tee results/trafficserver.json
       - deploy:
           name: Upload results
           command: |
             git config user.email "mnot@mnot.net"
             git config user.name "CI"
             git add results/*.json
-            git commit --allow-empty -m "Update results [ci-skip]"
+            git commit --allow-empty -m "Update results [ci skip]"
             git push -q https://${GH_TOKEN}@github.com/http-tests/cache-tests.git master
 workflows:
   version: 2
