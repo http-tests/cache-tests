@@ -25,7 +25,6 @@
   "304-etag-update-stored-Clear-Site-Data": true,
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": true,
-  "304-etag-update-stored-Content-MD5": true,
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
     "Assertion",
@@ -274,7 +273,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n59b6ffe1-46ca-4884-9f7c-df4250a5a3f0\r\n0\r\n\r\n\", not \"59b6ffe1-46ca-4884-9f7c-df4250a5a3f0\""
+    "Response body is \"24\r\n00e0ad4d-c1e3-41e4-8b2f-b904c7677244\r\n0\r\n\r\n\", not \"00e0ad4d-c1e3-41e4-8b2f-b904c7677244\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
