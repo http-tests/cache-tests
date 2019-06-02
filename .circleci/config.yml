@@ -17,7 +17,7 @@ jobs:
       - run:
           name: test squid
           command: |
-            sleep 3 # a bit slow to start up
+            sleep 5 # a bit slow to start up
             npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
       - run:
           name: test nginx
