@@ -168,68 +168,80 @@
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
-  "freshness-expires-invalid": [
+  "freshness-expires-invalid": true,
+  "freshness-expires-invalid-1-digit-hour": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-invalid-1-digit-hour": true,
-  "freshness-expires-invalid-2-digit-year": true,
+  "freshness-expires-invalid-2-digit-year": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-date": true,
-  "freshness-expires-invalid-date-dashes": true,
-  "freshness-expires-invalid-multiple-spaces": true,
+  "freshness-expires-invalid-date-dashes": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-expires-invalid-multiple-spaces": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-no-comma": true,
-  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-time-periods": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,
-  "freshness-expires-wrong-case-month": true,
+  "freshness-expires-wrong-case-month": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-wrong-case-tz": true,
   "freshness-expires-wrong-case-weekday": true,
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
-  "freshness-max-age-100a": true,
-  "freshness-max-age-a100": true,
+  "freshness-max-age-100a": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-a100": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
   "freshness-max-age-ignore-quoted": true,
-  "freshness-max-age-ignore-quoted-all": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-max-age-ignore-quoted-all-rev": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-max-age-ignore-quoted-all": true,
+  "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-max": true,
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": true,
   "freshness-max-age-negative": true,
-  "freshness-max-age-quoted": true,
+  "freshness-max-age-quoted": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-s-maxage-shared-longer": true,
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
   "freshness-max-age-s-maxage-shared-shorter-expires": true,
-  "freshness-max-age-single-quoted": true,
-  "freshness-max-age-space-after-equals": [
+  "freshness-max-age-single-quoted": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
-  "freshness-max-age-space-before-equals": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "freshness-none": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-max-age-space-after-equals": true,
+  "freshness-max-age-space-before-equals": true,
+  "freshness-none": true,
   "freshness-s-maxage-shared": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache": [
     "Assertion",
@@ -358,7 +370,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Sat, 01 Jun 2019 09:14:59 GMT, should be Sat, 01 Jun 2019 09:14:56 GMT"
+    "Response 2 header Date is Sat, 01 Jun 2019 09:25:33 GMT, should be Sat, 01 Jun 2019 09:25:30 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
@@ -452,30 +464,48 @@
     "Assertion",
     "Request 1 Surrogate-Capability header not present."
   ],
-  "surrogate-max-age": true,
-  "surrogate-max-age-0": [
+  "surrogate-max-age": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
+  "surrogate-max-age-0": true,
   "surrogate-max-age-0-expires": [
     "Assertion",
     "Response 2 comes from cache"
   ],
   "surrogate-max-age-age": true,
-  "surrogate-max-age-case-insensitive": true,
-  "surrogate-max-age-cc-max-age-invalid-expires": true,
+  "surrogate-max-age-case-insensitive": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "surrogate-max-age-cc-max-age-invalid-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age-expires": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "surrogate-max-age-extension": true,
+  "surrogate-max-age-extension": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age-long-cc-max-age": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "surrogate-max-age-max": true,
-  "surrogate-max-age-max-plus": true,
-  "surrogate-max-age-me-target": true,
+  "surrogate-max-age-max": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "surrogate-max-age-max-plus": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "surrogate-max-age-me-target": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age-other-target": true,
   "surrogate-max-age-short-cc-max-age": [
     "Assertion",
@@ -483,10 +513,7 @@
   ],
   "surrogate-max-age-space-after-equals": true,
   "surrogate-max-age-space-before-equals": true,
-  "surrogate-no-store": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "surrogate-no-store": true,
   "surrogate-no-store-cc-fresh": [
     "Assertion",
     "Response 2 comes from cache"
