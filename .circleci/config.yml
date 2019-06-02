@@ -16,7 +16,9 @@ jobs:
           command: npm run server --port=8000
       - run:
           name: test squid
-          command: npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
+          command: |
+            sleep 3 # a bit slow to start up
+            npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
       - run:
           name: test nginx
           command: npm run --silent cli --base=http://localhost:8002 | tee results/nginx.json
