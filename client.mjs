@@ -23,11 +23,10 @@ export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
       if (test.browser_only === true && !useBrowserCache === true) return
       if (test.browser_skip === true && useBrowserCache === true) return
       testArray.push(
-        addTest(test.id, test.timeout, makeCacheTest(test))
+        makeCacheTest(test)
       )
     })
   })
-  // return Promise.all(testArray)
   return runSome(testArray, chunkSize)
 }
 
@@ -55,24 +54,8 @@ function runSome (tests, chunkSize) {
   })
 }
 
-function addTest (testId, timeout, testFunc) {
-  return new Promise((resolve, reject) => {
-    testFunc()
-      .then(result => { // pass
-        if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
-        testResults[testId] = true
-        resolve()
-      })
-      .catch(err => { // fail
-        if (testId in testResults) throw new Error(`Duplicate test ${testId}`)
-        testResults[testId] = [(err.name || 'unknown'), err.message]
-        resolve()
-      })
-  })
-}
-
 function makeCacheTest (test) {
-  return () => {
+  return new Promise((resolve, reject) => {
     var uuid = utils.token()
     testUUIDs[test.id] = uuid
     var requests = expandTemplates(test)
@@ -118,18 +101,28 @@ function makeCacheTest (test) {
             .then(runNextStep)
         }
       } else {
-        return Promise.resolve()
+        resolve()
       }
     }
     return putTestConfig(uuid, requests)
       .then(runNextStep)
       .then(() => {
         return getServerState(uuid)
-      }).then(testState => {
-        checkRequests(requests, testState)
-        return Promise.resolve()
       })
-  }
+      .then(testState => {
+        checkRequests(requests, testState)
+      })
+      .then(() => { // pass
+        if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
+        testResults[test.id] = true
+        resolve()
+      })
+      .catch(err => { // fail
+        if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
+        testResults[test.id] = [(err.name || 'unknown'), err.message]
+        resolve()
+      })
+  })
 }
 
 function expandTemplates (test) {
