@@ -1,540 +1,1198 @@
 {
-  "304-etag-update-response-Cache-Control": true,
-  "304-etag-update-response-Clear-Site-Data": true,
-  "304-etag-update-response-Content-Foo": true,
-  "304-etag-update-response-Content-Location": true,
-  "304-etag-update-response-Content-MD5": true,
-  "304-etag-update-response-Content-Security-Policy": true,
+  "304-etag-update-response-Cache-Control": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-Clear-Site-Data": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-Content-Foo": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-Content-Location": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-Content-MD5": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-Content-Security-Policy": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "304-etag-update-response-Content-Type": [
-    "Assertion",
-    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "304-etag-update-response-Expires": true,
-  "304-etag-update-response-Public-Key-Pins": true,
+  "304-etag-update-response-Expires": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-Public-Key-Pins": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "304-etag-update-response-Set-Cookie": [
-    "Assertion",
-    "Response 2 header Set-Cookie is \"null\", not \"a=c\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "304-etag-update-response-Set-Cookie2": true,
-  "304-etag-update-response-Test-Header": true,
-  "304-etag-update-response-X-Content-Foo": true,
-  "304-etag-update-response-X-Frame-Options": true,
-  "304-etag-update-response-X-Test-Header": true,
-  "304-etag-update-response-X-XSS-Protection": true,
-  "304-etag-update-stored-Cache-Control": true,
-  "304-etag-update-stored-Clear-Site-Data": true,
-  "304-etag-update-stored-Content-Foo": true,
-  "304-etag-update-stored-Content-Location": true,
-  "304-etag-update-stored-Content-MD5": true,
-  "304-etag-update-stored-Content-Security-Policy": true,
+  "304-etag-update-response-Set-Cookie2": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-X-Content-Foo": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-X-Frame-Options": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-X-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-response-X-XSS-Protection": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-Cache-Control": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-Clear-Site-Data": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-Content-Foo": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-Content-Location": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-Content-MD5": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-Content-Security-Policy": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "304-etag-update-stored-Content-Type": [
-    "Assertion",
-    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "304-etag-update-stored-Expires": true,
-  "304-etag-update-stored-Public-Key-Pins": true,
+  "304-etag-update-stored-Expires": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-Public-Key-Pins": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "304-etag-update-stored-Set-Cookie": [
-    "Assertion",
-    "Response 3 header Set-Cookie is \"null\", not \"a=c\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "304-etag-update-stored-Set-Cookie2": true,
-  "304-etag-update-stored-Test-Header": true,
-  "304-etag-update-stored-X-Content-Foo": true,
-  "304-etag-update-stored-X-Frame-Options": true,
-  "304-etag-update-stored-X-Test-Header": true,
-  "304-etag-update-stored-X-XSS-Protection": true,
-  "304-lm-update-response-Cache-Control": true,
-  "304-lm-update-response-Clear-Site-Data": true,
-  "304-lm-update-response-Content-Foo": true,
-  "304-lm-update-response-Content-Location": true,
-  "304-lm-update-response-Content-MD5": true,
-  "304-lm-update-response-Content-Security-Policy": true,
+  "304-etag-update-stored-Set-Cookie2": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-X-Content-Foo": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-X-Frame-Options": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-X-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-etag-update-stored-X-XSS-Protection": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-Cache-Control": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-Clear-Site-Data": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-Content-Foo": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-Content-Location": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-Content-MD5": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-Content-Security-Policy": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "304-lm-update-response-Content-Type": [
-    "Assertion",
-    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "304-lm-update-response-Expires": true,
-  "304-lm-update-response-Public-Key-Pins": true,
+  "304-lm-update-response-Expires": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-Public-Key-Pins": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "304-lm-update-response-Set-Cookie": [
-    "Assertion",
-    "Response 2 header Set-Cookie is \"null\", not \"a=c\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "304-lm-update-response-Set-Cookie2": true,
-  "304-lm-update-response-Test-Header": true,
-  "304-lm-update-response-X-Content-Foo": true,
-  "304-lm-update-response-X-Frame-Options": true,
-  "304-lm-update-response-X-Test-Header": true,
-  "304-lm-update-response-X-XSS-Protection": true,
-  "304-lm-update-stored-Cache-Control": true,
-  "304-lm-update-stored-Clear-Site-Data": true,
-  "304-lm-update-stored-Content-Foo": true,
-  "304-lm-update-stored-Content-Location": true,
-  "304-lm-update-stored-Content-MD5": true,
-  "304-lm-update-stored-Content-Security-Policy": true,
+  "304-lm-update-response-Set-Cookie2": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-X-Content-Foo": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-X-Frame-Options": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-X-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-response-X-XSS-Protection": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-Cache-Control": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-Clear-Site-Data": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-Content-Foo": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-Content-Location": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-Content-MD5": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-Content-Security-Policy": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "304-lm-update-stored-Content-Type": [
-    "Assertion",
-    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "304-lm-update-stored-Public-Key-Pins": true,
+  "304-lm-update-stored-Expires": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-Public-Key-Pins": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "304-lm-update-stored-Set-Cookie": [
-    "Assertion",
-    "Response 3 header Set-Cookie is \"null\", not \"a=c\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "304-lm-update-stored-Set-Cookie2": true,
-  "304-lm-update-stored-Test-Header": true,
-  "304-lm-update-stored-X-Content-Foo": true,
-  "304-lm-update-stored-X-Frame-Options": true,
-  "304-lm-update-stored-X-Test-Header": true,
-  "304-lm-update-stored-X-XSS-Protection": true,
-  "304-lm-use-stored-Test-Header": true,
-  "cc-resp-no-cache": true,
-  "cc-resp-no-cache-case-insensitive": true,
+  "304-lm-update-stored-Set-Cookie2": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-X-Content-Foo": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-X-Frame-Options": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-X-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-update-stored-X-XSS-Protection": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "304-lm-use-stored-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "cc-resp-no-cache": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "cc-resp-no-cache-case-insensitive": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "cc-resp-no-cache-revalidate": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "cc-resp-no-cache-revalidate-fresh": true,
-  "cc-resp-no-store": true,
-  "cc-resp-no-store-case-insensitive": true,
-  "cc-resp-no-store-fresh": true,
-  "cc-resp-private-shared": true,
+  "cc-resp-no-cache-revalidate-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "cc-resp-no-store": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "cc-resp-no-store-case-insensitive": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "cc-resp-no-store-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "cc-resp-private-shared": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "ccreq-ma0": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "ccreq-ma1": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "ccreq-magreaterage": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "ccreq-max-stale": true,
-  "ccreq-max-stale-age": true,
-  "ccreq-min-fresh": true,
-  "ccreq-min-fresh-age": true,
+  "ccreq-max-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "ccreq-max-stale-age": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "ccreq-min-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "ccreq-min-fresh-age": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "ccreq-no-cache": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "ccreq-no-cache-etag": true,
-  "ccreq-no-cache-lm": true,
+  "ccreq-no-cache-etag": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "ccreq-no-cache-lm": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "ccreq-no-store": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "ccreq-oic": true,
-  "conditional-304-etag": true,
+  "ccreq-oic": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "conditional-304-etag": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "conditional-etag-forward": [
-    "Assertion",
-    "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "conditional-etag-forward-unquoted": [
-    "Assertion",
-    "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "conditional-etag-quoted-respond-unquoted": true,
-  "conditional-etag-strong-generate": true,
+  "conditional-etag-quoted-respond-unquoted": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "conditional-etag-strong-generate": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "conditional-etag-strong-generate-unquoted": [
-    "Assertion",
-    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "conditional-etag-strong-respond": true,
-  "conditional-etag-strong-respond-multiple-first": true,
-  "conditional-etag-strong-respond-multiple-last": true,
-  "conditional-etag-strong-respond-multiple-second": true,
+  "conditional-etag-strong-respond": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "conditional-etag-strong-respond-multiple-first": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "conditional-etag-strong-respond-multiple-last": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "conditional-etag-strong-respond-multiple-second": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "conditional-etag-strong-respond-obs-text": [
-    "Assertion",
-    "Response 2 status is 200, not 304"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "conditional-etag-unquoted-respond-quoted": true,
-  "conditional-etag-unquoted-respond-unquoted": true,
+  "conditional-etag-unquoted-respond-quoted": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "conditional-etag-unquoted-respond-unquoted": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "conditional-etag-weak-generate-weak": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "conditional-etag-weak-respond": true,
+  "conditional-etag-weak-respond": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "conditional-etag-weak-respond-backslash": [
-    "Assertion",
-    "Response 2 status is 200, not 304"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "conditional-etag-weak-respond-lowercase": [
-    "Assertion",
-    "Response 2 status is 200, not 304"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "conditional-etag-weak-respond-omit-slash": [
-    "Assertion",
-    "Response 2 status is 200, not 304"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "freshness-expires-age-fast-date": true,
-  "freshness-expires-age-slow-date": true,
-  "freshness-expires-future": true,
-  "freshness-expires-invalid": true,
-  "freshness-expires-invalid-1-digit-hour": true,
-  "freshness-expires-invalid-2-digit-year": true,
-  "freshness-expires-invalid-date": true,
-  "freshness-expires-invalid-date-dashes": true,
+  "freshness-expires-age-fast-date": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-age-slow-date": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-future": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-invalid": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-invalid-1-digit-hour": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-invalid-2-digit-year": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-invalid-date": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-invalid-date-dashes": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "freshness-expires-invalid-multiple-spaces": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "freshness-expires-invalid-no-comma": true,
+  "freshness-expires-invalid-no-comma": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "freshness-expires-invalid-time-periods": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "freshness-expires-invalid-utc": true,
-  "freshness-expires-old-date": true,
-  "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-invalid-utc": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-old-date": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-past": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-present": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "freshness-expires-wrong-case-month": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "freshness-expires-wrong-case-tz": true,
-  "freshness-expires-wrong-case-weekday": true,
-  "freshness-max-age": true,
-  "freshness-max-age-0": true,
-  "freshness-max-age-0-expires": true,
-  "freshness-max-age-100a": true,
-  "freshness-max-age-a100": true,
-  "freshness-max-age-age": true,
-  "freshness-max-age-case-insenstive": true,
-  "freshness-max-age-expires": true,
-  "freshness-max-age-expires-invalid": true,
-  "freshness-max-age-extension": true,
-  "freshness-max-age-ignore-quoted": true,
-  "freshness-max-age-ignore-quoted-all": true,
-  "freshness-max-age-ignore-quoted-all-rev": true,
-  "freshness-max-age-ignore-quoted-rev": true,
+  "freshness-expires-wrong-case-tz": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-expires-wrong-case-weekday": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-0": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-0-expires": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-100a": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-a100": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-age": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-case-insenstive": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-expires": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-expires-invalid": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-extension": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-ignore-quoted": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-ignore-quoted-all": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-ignore-quoted-all-rev": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-ignore-quoted-rev": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "freshness-max-age-max": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "freshness-max-age-max-minus-1": true,
-  "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-minus-1": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-max-plus": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "freshness-max-age-max-plus-1": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "freshness-max-age-negative": true,
-  "freshness-max-age-quoted": true,
-  "freshness-max-age-s-maxage-shared-longer": true,
-  "freshness-max-age-s-maxage-shared-longer-multiple": true,
-  "freshness-max-age-s-maxage-shared-longer-reversed": true,
-  "freshness-max-age-s-maxage-shared-shorter": true,
-  "freshness-max-age-s-maxage-shared-shorter-expires": true,
-  "freshness-max-age-single-quoted": true,
+  "freshness-max-age-negative": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-quoted": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-s-maxage-shared-longer": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-s-maxage-shared-longer-multiple": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-s-maxage-shared-longer-reversed": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-s-maxage-shared-shorter": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-s-maxage-shared-shorter-expires": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-max-age-single-quoted": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "freshness-max-age-space-after-equals": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "freshness-max-age-space-before-equals": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "freshness-none": true,
-  "freshness-s-maxage-shared": true,
+  "freshness-none": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "freshness-s-maxage-shared": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "headers-omit-headers-listed-in-Cache-Control-no-cache": [
-    "Assertion",
-    "Response 2 includes unexpected header a: \"1\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "headers-omit-headers-listed-in-Cache-Control-no-cache-single": [
-    "Assertion",
-    "Response 2 includes unexpected header a: \"1\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "headers-omit-headers-listed-in-Connection": [
-    "Assertion",
-    "Response 2 includes unexpected header a: \"1\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "headers-store-Clear-Site-Data": true,
+  "headers-store-Clear-Site-Data": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "headers-store-Connection": [
-    "Assertion",
-    "Response 2 header Connection is \"close\", not \"ASKCUMEWOGYQIAS\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "headers-store-Content-Type": true,
+  "headers-store-Content-Type": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "headers-store-Proxy-Authenticate": [
-    "Assertion",
-    "Response 2 header Proxy-Authenticate is \"null\", not \"AKUEOYISCMWGQAK\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "headers-store-Proxy-Connection": [
-    "Assertion",
-    "Response 2 header Proxy-Connection is \"null\", not \"ALWHSDOZKVGRCNY\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "headers-store-Public-Key-Pins": true,
+  "headers-store-Public-Key-Pins": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "headers-store-Set-Cookie": [
-    "Assertion",
-    "Response 2 header Set-Cookie is \"null\", not \"a=b\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "headers-store-Set-Cookie2": true,
-  "headers-store-Strict-Transport-Security": true,
-  "headers-store-Strict-Transport-Security2": true,
-  "headers-store-Test-Header": true,
+  "headers-store-Set-Cookie2": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "headers-store-Strict-Transport-Security": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "headers-store-Strict-Transport-Security2": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "headers-store-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\na2c7a729-6b5e-4358-9fef-661c130e4caa\r\n0\r\n\r\n\", not \"a2c7a729-6b5e-4358-9fef-661c130e4caa\""
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "headers-store-Upgrade": [
-    "Assertion",
-    "Response 2 header Upgrade is \"null\", not \"ACEGIKMOQSUWYAC\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "headers-store-WWW-Authenticate": [
     "Setup",
-    "Response 2 does not come from cache"
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "headers-store-X-Frame-Options": true,
-  "headers-store-X-Test-Header": true,
-  "headers-store-X-XSS-Protection": true,
+  "headers-store-X-Frame-Options": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "headers-store-X-Test-Header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "headers-store-X-XSS-Protection": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "heuristic-200-cached": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "heuristic-201-not_cached": true,
-  "heuristic-202-not_cached": true,
-  "heuristic-203-cached": true,
+  "heuristic-201-not_cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "heuristic-202-not_cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "heuristic-203-cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "heuristic-204-cached": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "heuristic-403-not_cached": true,
+  "heuristic-403-not_cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "heuristic-404-cached": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "heuristic-405-cached": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "heuristic-410-cached": true,
+  "heuristic-410-cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "heuristic-414-cached": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "heuristic-501-cached": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "heuristic-502-not_cached": true,
-  "heuristic-503-not_cached": true,
-  "heuristic-504-not_cached": true,
-  "heuristic-599-cached": true,
-  "heuristic-599-not_cached": true,
-  "invalidate-DELETE": true,
+  "heuristic-502-not_cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "heuristic-503-not_cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "heuristic-504-not_cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "heuristic-599-cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "heuristic-599-not_cached": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "invalidate-DELETE": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "invalidate-DELETE-cl": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "invalidate-DELETE-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "invalidate-DELETE-location": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "invalidate-M-SEARCH": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "invalidate-M-SEARCH-cl": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "invalidate-M-SEARCH-failed": true,
+  "invalidate-M-SEARCH-failed": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "invalidate-M-SEARCH-location": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "invalidate-POST": true,
+  "invalidate-POST": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "invalidate-POST-cl": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "invalidate-POST-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "invalidate-POST-location": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "invalidate-PUT": true,
+  "invalidate-PUT": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "invalidate-PUT-cl": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "invalidate-PUT-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "invalidate-PUT-location": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "other-age-gen": true,
-  "other-age-update-expires": true,
-  "other-age-update-max-age": true,
-  "other-cookie": true,
-  "other-date-update": true,
-  "other-set-cookie": true,
+  "other-age-gen": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "other-age-update-expires": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "other-age-update-max-age": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "other-cookie": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "other-date-update": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "other-set-cookie": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "other-warning": [
-    "Assertion",
-    "Response 2 warning header not present."
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "partial-store-complete-reuse-partial": true,
-  "partial-store-complete-reuse-partial-no-last": true,
-  "partial-store-complete-reuse-partial-suffix": true,
+  "partial-store-complete-reuse-partial": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "partial-store-complete-reuse-partial-no-last": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "partial-store-complete-reuse-partial-suffix": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "partial-store-partial-complete": [
-    "Assertion",
-    "Request 2 header range is \"undefined\", not \"bytes=5-\""
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "partial-store-partial-reuse-partial": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "partial-store-partial-reuse-partial-absent": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "partial-store-partial-reuse-partial-byterange": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "partial-store-partial-reuse-partial-suffix": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "pragma-request-extension": true,
-  "pragma-request-no-cache": true,
-  "pragma-response-extension": true,
+  "pragma-request-extension": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "pragma-request-no-cache": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "pragma-response-extension": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "pragma-response-no-cache": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "query-args-different": true,
-  "query-args-same": true,
-  "status-200-fresh": true,
-  "status-200-stale": true,
-  "status-203-fresh": true,
-  "status-203-stale": true,
+  "query-args-different": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "query-args-same": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-200-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-200-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-203-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-203-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "status-204-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "status-204-stale": true,
-  "status-299-fresh": true,
-  "status-299-stale": true,
-  "status-301-fresh": true,
-  "status-301-stale": true,
-  "status-302-fresh": true,
-  "status-302-stale": true,
-  "status-303-fresh": true,
-  "status-303-stale": true,
-  "status-307-fresh": true,
-  "status-307-stale": true,
-  "status-308-fresh": true,
-  "status-308-stale": true,
-  "status-400-fresh": true,
-  "status-400-stale": true,
-  "status-404-fresh": true,
-  "status-404-stale": true,
-  "status-410-fresh": true,
-  "status-410-stale": true,
-  "status-499-fresh": true,
-  "status-499-stale": true,
-  "status-500-fresh": true,
-  "status-500-stale": true,
-  "status-502-fresh": true,
-  "status-502-stale": true,
-  "status-503-fresh": true,
-  "status-503-stale": true,
-  "status-504-fresh": true,
-  "status-504-stale": true,
-  "status-599-fresh": true,
-  "status-599-stale": true,
+  "status-204-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-299-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-299-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-301-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-301-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-302-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-302-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-303-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-303-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-307-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-307-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-308-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-308-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-400-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-400-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-404-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-404-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-410-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-410-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-499-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-499-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-500-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-500-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-502-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-502-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-503-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-503-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-504-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-504-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-599-fresh": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "status-599-stale": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "surrogate-append-capabilities": [
-    "Assertion",
-    "Request 1 Surrogate-Capability header not present."
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "surrogate-max-age": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "surrogate-max-age-0": true,
+  "surrogate-max-age-0": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "surrogate-max-age-0-expires": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "surrogate-max-age-age": true,
+  "surrogate-max-age-age": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "surrogate-max-age-case-insensitive": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "surrogate-max-age-cc-max-age-invalid-expires": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "surrogate-max-age-expires": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "surrogate-max-age-extension": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "surrogate-max-age-long-cc-max-age": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "surrogate-max-age-max": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "surrogate-max-age-max-plus": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "surrogate-max-age-me-target": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "surrogate-max-age-other-target": true,
+  "surrogate-max-age-other-target": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "surrogate-max-age-short-cc-max-age": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "surrogate-max-age-space-after-equals": true,
-  "surrogate-max-age-space-before-equals": true,
-  "surrogate-no-store": true,
+  "surrogate-max-age-space-after-equals": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "surrogate-max-age-space-before-equals": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "surrogate-no-store": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "surrogate-no-store-cc-fresh": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "surrogate-remove-header": true,
-  "vary-2-match": true,
-  "vary-2-match-omit": true,
-  "vary-2-no-match": true,
-  "vary-3-match": true,
-  "vary-3-no-match": true,
-  "vary-3-omit": true,
-  "vary-3-order": true,
-  "vary-cache-key": true,
-  "vary-invalidate": true,
-  "vary-match": true,
-  "vary-no-match": true,
-  "vary-normalise-combine": true,
-  "vary-normalise-lang-case": true,
+  "surrogate-remove-header": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-2-match": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-2-match-omit": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-2-no-match": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-3-match": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-3-no-match": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-3-omit": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-3-order": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-cache-key": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-invalidate": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-match": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-no-match": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-normalise-combine": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-normalise-lang-case": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
   "vary-normalise-lang-order": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
   "vary-normalise-lang-select": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
   ],
-  "vary-normalise-lang-space": true,
-  "vary-normalise-space": true,
-  "vary-omit": true,
-  "vary-star": true
+  "vary-normalise-lang-space": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-normalise-space": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-omit": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ],
+  "vary-star": [
+    "Setup",
+    "PUT config resulted in undefined undefined - undefined"
+  ]
 }
