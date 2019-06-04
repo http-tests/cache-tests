@@ -215,7 +215,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "freshness-max-age-age": true,
+  "freshness-max-age-age": [
+    "Setup",
+    "PUT config resulted in 500 Internal Server Error"
+  ],
   "freshness-max-age-case-insenstive": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -235,10 +238,13 @@
     "Setup",
     "PUT config resulted in 500 Internal Server Error"
   ],
-  "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus": [
+    "Setup",
+    "PUT config resulted in 500 Internal Server Error"
+  ],
   "freshness-max-age-max-plus-1": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in 500 Internal Server Error"
   ],
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
