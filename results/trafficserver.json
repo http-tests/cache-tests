@@ -75,7 +75,6 @@
     "Assertion",
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
-  "304-lm-update-stored-Expires": true,
   "304-lm-update-stored-Public-Key-Pins": true,
   "304-lm-update-stored-Set-Cookie": [
     "Assertion",
@@ -274,7 +273,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n827113f7-7854-4268-bd8f-4703fb70af2e\r\n0\r\n\r\n\", not \"827113f7-7854-4268-bd8f-4703fb70af2e\""
+    "Response body is \"24\r\na2c7a729-6b5e-4358-9fef-661c130e4caa\r\n0\r\n\r\n\", not \"a2c7a729-6b5e-4358-9fef-661c130e4caa\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
