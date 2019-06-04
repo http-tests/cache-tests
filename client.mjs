@@ -346,8 +346,11 @@ function putTestConfig (uuid, requests) {
   }
   return theFetch(`${baseUrl}/config/${uuid}`, init)
     .then(response => {
+      return [response, response.text()]
+    })
+    .then((response, text) => {
       if (response.status !== 201) {
-        throw new utils.SetupError({message: `PUT config resulted in ${response.status} ${response.statusText} - ${response.text()}`})
+        throw new utils.SetupError({message: `PUT config resulted in ${response.status} ${response.statusText} - ${text}`})
       }
     })
 }
