@@ -1,4 +1,5 @@
 import * as client from './client.mjs'
+import * as display from './display.mjs'
 import { GREEN, NC } from './utils.mjs'
 import fetch from 'node-fetch'
 import tests from './tests/index.mjs'
@@ -33,9 +34,13 @@ client.runTests(testsToRun, fetch, false, baseUrl)
   .then(() => {
     if (testId !== '') {
       console.log(`${GREEN}==== Results${NC}`)
-      console.log(client.getResults())
+      var result = client.getResults()
+      var resultSymbol = display.determineTestResult(tests, testId, result, false)
+      var resultDetails = result[1] || ''
+      console.log(`${resultSymbol} - ${resultDetails}`)
+    } else {
+      console.log(JSON.stringify(client.getResults(), null, 2))
     }
-    console.log(JSON.stringify(client.getResults(), null, 2))
   })
   .catch(err => {
     console.error(err)
