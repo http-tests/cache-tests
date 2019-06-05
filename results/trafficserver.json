@@ -70,6 +70,7 @@
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": true,
   "304-lm-update-stored-Content-MD5": true,
+  "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
     "Assertion",
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
@@ -273,7 +274,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n780fc942-d2da-4079-bd57-59fc85983c7d\r\n0\r\n\r\n\", not \"780fc942-d2da-4079-bd57-59fc85983c7d\""
+    "Response body is \"24\r\n5ae8a619-e9eb-40f2-b329-f03217959d51\r\n0\r\n\r\n\", not \"5ae8a619-e9eb-40f2-b329-f03217959d51\""
   ],
   "headers-store-Upgrade": [
     "Assertion",

@@ -370,7 +370,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 05 Jun 2019 05:21:13 GMT, should be Wed, 05 Jun 2019 05:21:10 GMT"
+    "Response 2 header Date is Wed, 05 Jun 2019 13:08:08 GMT, should be Wed, 05 Jun 2019 13:08:05 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
