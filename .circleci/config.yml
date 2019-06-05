@@ -10,16 +10,14 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: ulimit -n
       - run:
           name: run test server
           background: Y
           command: npm run server --port=8000
+      - run: sleep 10  # let everything get settled first
       - run:
           name: test squid
-          command: |
-            sleep 8 # a bit slow to start up
-            npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
+          command: npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
       - run:
           name: test nginx
           command: npm run --silent cli --base=http://localhost:8002 | tee results/nginx.json
