@@ -223,4 +223,4 @@ if (protocol.toLowerCase() === 'https') {
   http.createServer(handleMain).listen(port)
 }
 
-console.log(`Serving ${protocol} on port ${port}`)
+console.log(`Serving ${protocol} on port ${port} at ${httpDate(Date.now(), 0)}`)
