@@ -18,8 +18,8 @@ jobs:
       - run:
           name: test squid
           command: |
-          date -u
-          npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
+            date -u
+            npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
       - run:
           name: test nginx
           command: npm run --silent cli --base=http://localhost:8002 | tee results/nginx.json
