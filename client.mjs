@@ -338,6 +338,8 @@ function makeTestUrl (uuid, reqConfig) {
   return `${baseUrl}/test/${uuid}${extra}`
 }
 
+const uninterestingHeaders = new Set(['date', 'expires', 'last-modified', 'content-length', 'content-type', 'connection', 'content-language', 'vary', 'mime-version'])
+
 function putTestConfig (uuid, requests) {
   var init = {
     'method': 'PUT',
@@ -346,11 +348,14 @@ function putTestConfig (uuid, requests) {
   }
   return theFetch(`${baseUrl}/config/${uuid}`, init)
     .then(response => {
-      return [response, response.text()]
-    })
-    .then((response, text) => {
       if (response.status !== 201) {
-        throw new utils.SetupError({message: `PUT config resulted in ${response.status} ${response.statusText} - ${text}`})
+        var headers = ''
+        response.headers.forEach((hvalue, hname) => { // for some reason, node-fetch reverses these
+          if (!uninterestingHeaders.has(hname.toLowerCase())) {
+            headers += `${hname}: ${hvalue}    `
+          }
+        })
+        throw new utils.SetupError({message: `PUT config resulted in ${response.status} ${response.statusText} - ${headers}`})
       }
     })
 }
