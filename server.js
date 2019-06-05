@@ -10,6 +10,9 @@ const protocol = process.env.npm_config_protocol || process.env.npm_package_conf
 const port = process.env.npm_config_port || process.env.npm_package_config_port
 const baseUrl = `${protocol}://localhost:${port}/`
 
+const BLUE = '\x1b[34m'
+const NC = '\x1b[0m'
+
 const mimeTypes = {
   'html': 'text/html',
   'jpeg': 'image/jpeg',
@@ -109,7 +112,7 @@ function handleTest (pathSegs, request, response) {
     return
   }
   if (reqConfig.dump) {
-    console.log(`=== Server request ${serverState.length + 1}`)
+    console.log(`${BLUE}=== Server request ${serverState.length + 1}${NC}`)
     console.log(`    ${request.method} /test/${pathSegs.join('/')}`)
     for (let [key, value] of Object.entries(request.headers)) {
       console.log(`    ${key}: ${value}`)
@@ -158,7 +161,7 @@ function handleTest (pathSegs, request, response) {
       // right now we assume just one
       var capabilityTarget = request.headers['surrogate-capability'].split('=')[0]
       if (!capabilityTarget) {
-        console.log(`WARN: Capability target is empty`)
+        console.error(`WARN: Capability target is empty`)
       }
       header[1] = header[1].replace('CAPABILITY_TARGET', capabilityTarget)
     }
@@ -175,7 +178,7 @@ function handleTest (pathSegs, request, response) {
   response.setHeader('Server-Now', httpDate(state.now, 0))
 
   if (reqConfig.dump) {
-    console.log(`=== Server response ${serverState.length}`)
+    console.log(`${BLUE}=== Server response ${serverState.length}${NC}`)
     console.log(`    HTTP ${response.statusCode} ${response.statusPhrase}`)
     for (let [key, value] of Object.entries(response.getHeaders())) {
       console.log(`    ${key}: ${value}`)
@@ -222,5 +225,3 @@ if (protocol.toLowerCase() === 'https') {
 } else {
   http.createServer(handleMain).listen(port)
 }
-
-console.log(`Serving ${protocol} on port ${port} at ${httpDate(Date.now(), 0)}`)

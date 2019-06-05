@@ -68,7 +68,7 @@ function makeCacheTest (test) {
           var url = makeTestUrl(uuid, reqConfig)
           var init = fetchInit(idx, reqConfig)
           if (test.dump === true) {
-            console.log(`=== Client request ${reqNum}`)
+            console.log(`${utils.GREEN}=== Client request ${reqNum}${utils.NC}`)
             if ('method' in init) {
               console.log(`    ${init.method} ${url}`)
             } else {
@@ -173,7 +173,7 @@ function makeCheckResponse (idx, reqConfig, dump) {
     var reqNum = idx + 1
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
     if (dump === true) {
-      console.log(`=== Client response ${reqNum}`)
+      console.log(`${utils.GREEN}=== Client response ${reqNum}${utils.NC}`)
       console.log(`    HTTP ${response.status} ${response.statusText}`)
       response.headers.forEach((hvalue, hname) => { // for some reason, node-fetch reverses these
         console.log(`    ${hname}: ${hvalue}`)
