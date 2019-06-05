@@ -2,11 +2,7 @@ version: 2
 jobs:
   proxy_tests:
     docker:
-      - image: mnot/node-server
-      - image: mnot/squid
-      - image: mnot/nginx
-      - image: mnot/trafficserver
-      - image: mnot/apache
+      - image: mnot/proxy-cache-tests
     steps:
       - checkout
       - run: npm install
@@ -14,12 +10,26 @@ jobs:
           name: run test server
           background: Y
           command: npm run server --port=8000
-      - run: sleep 10  # let everything get settled first
+      - run:
+          name: start squid
+          background: Y
+          command: squid -f /etc/squid/squid.conf -N -d 5
+      - run:
+          name: start nginx
+          background: Y
+          command: /usr/sbin/nginx -g "daemon off;"
+      - run:
+          name: start trafficserver
+          background: Y
+          command: /usr/bin/traffic_manager
+      - run:
+          name: start apache
+          background: Y
+          command: /usr/sbin/apache2 -X
+      - run: sleep 5
       - run:
           name: test squid
-          command: |
-            date -u
-            npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
+          command: npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
       - run:
           name: test nginx
           command: npm run --silent cli --base=http://localhost:8002 | tee results/nginx.json
