@@ -94,13 +94,13 @@ const resultTypes = {
 }
 const passTypes = [resultTypes.pass, resultTypes.yes]
 
-function determineTestResult (testSuites, testId, testResults) {
+export function determineTestResult (testSuites, testId, testResults, honorDependencies = true) {
   var test = testLookup(testSuites, testId)
   var result = testResults[testId]
   if (result === undefined) {
     return resultTypes.untested
   }
-  if (test.depends_on !== undefined) {
+  if (honorDependencies && test.depends_on !== undefined) {
     for (var dependencyId of test.depends_on) {
       if (!passTypes.includes(determineTestResult(testSuites, dependencyId, testResults))) {
         return resultTypes.dependency_fail
