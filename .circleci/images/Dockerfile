@@ -3,6 +3,7 @@ LABEL maintainer="Mark Nottingham <mnot@mnot.net>"
 
 
 # package installs
+
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     nodejs npm git openssh-client \
@@ -47,8 +48,9 @@ ENV TS_LOG_DIR=/var/log/trafficserver
 ENV TS_USER=trafficserver
 
 
-# entrypoint
-COPY entrypoint.sh /sbin/entrypoint.sh
-RUN chmod 755 /sbin/entrypoint.sh
-RUN /sbin/entrypoint.sh
+# setup
+
+COPY setup.sh /sbin/setup.sh
+RUN chmod 755 /sbin/setup.sh
+RUN /sbin/setup.sh
 CMD []
