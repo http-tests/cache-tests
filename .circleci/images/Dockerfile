@@ -19,22 +19,14 @@ COPY squid/squid.conf /etc/squid/conf.d/cache-test.conf
 ENV SQUID_CACHE_DIR=/var/spool/squid
 ENV SQUID_LOG_DIR=/var/log/squid
 ENV SQUID_USER=proxy
+EXPOSE 8001
 
 
 # nginx
 
 RUN mkdir /var/cache/nginx
 COPY nginx/nginx.conf /etc/nginx/sites-enabled/cache-test.conf
-
-
-# apache
-
-RUN a2enmod cache_socache
-RUN a2enmod cache_disk
-RUN a2enmod proxy_http
-
-COPY apache/ports.conf /etc/apache2/ports.conf
-COPY apache/apache.conf /etc/apache2/sites-enabled/cache-test.conf
+EXPOSE 8002
 
 
 # trafficserver
@@ -46,6 +38,18 @@ COPY trafficserver/remap.config /etc/trafficserver/remap.config
 ENV TS_CACHE_DIR=/var/run/trafficserver
 ENV TS_LOG_DIR=/var/log/trafficserver
 ENV TS_USER=trafficserver
+EXPOSE 8003
+
+
+# apache
+
+RUN a2enmod cache_socache
+RUN a2enmod cache_disk
+RUN a2enmod proxy_http
+
+COPY apache/ports.conf /etc/apache2/ports.conf
+COPY apache/apache.conf /etc/apache2/sites-enabled/cache-test.conf
+EXPOSE 8004
 
 
 # setup
