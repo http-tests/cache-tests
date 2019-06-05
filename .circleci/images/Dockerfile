@@ -57,4 +57,16 @@ EXPOSE 8004
 COPY setup.sh /sbin/setup.sh
 RUN chmod 755 /sbin/setup.sh
 RUN /sbin/setup.sh
+
+# serve
+
+COPY serve.sh /sbin/serve.sh
+RUN chmod 755 /sbin/serve.sh
+
+
+# entrypoint
+
+COPY entrypoint.sh /sbin/entrypoint.sh
+RUN chmod 755 /sbin/entrypoint.sh
+ENTRYPOINT ["/sbin/entrypoint.sh"]
 CMD []

@@ -10,26 +10,9 @@ jobs:
           name: run test server
           background: Y
           command: npm run server --port=8000
-      - run: sleep 5
       - run:
-          name: start squid
-          background: Y
-          command: squid -f /etc/squid/squid.conf -N -d 5
-      - run:
-          name: start nginx
-          background: Y
-          command: /usr/sbin/nginx -g "daemon off;"
-      - run:
-          name: start trafficserver
-          background: Y
-          command: /usr/bin/traffic_manager
-      - run:
-          name: start apache
-          background: Y
-          command: |
-            source /etc/apache2/envvars
-            /usr/sbin/apache2 -X
-      - run: sleep 5
+          name: start servers
+          command: serve.sh
       - run:
           name: test squid
           command: npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
