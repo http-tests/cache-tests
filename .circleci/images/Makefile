@@ -1,10 +1,7 @@
 
-TARGETS = nginx squid trafficserver apache
-
 
 .PHONY: all
-all: $(TARGETS)
+all:
+	docker build -t mnot/proxy-cache-tests .; docker push mnot/proxy-cache-tests
 
-.PHONY: $(TARGETS)
-$(TARGETS):
-	cd $@; docker build -t mnot/$@ .; docker push mnot/$@
+
