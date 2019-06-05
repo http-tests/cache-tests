@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# If an argument is passed, make it the hostname for the origin server in proxy configs.
+# If an argument is passed, make it the hostname for the origin server in proxy configs, and start the servers.
+
 if [[ ! -z $1 ]] ; then
 
     # squid
@@ -15,6 +16,9 @@ if [[ ! -z $1 ]] ; then
     # apache
     sed -i s/localhost/$1/g /etc/apache2/sites-enabled/cache-test.conf
 
-fi
+    serve.sh
+  fi
+
 
 /bin/bash
+
