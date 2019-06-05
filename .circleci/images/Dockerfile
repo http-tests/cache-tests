@@ -5,7 +5,7 @@ LABEL maintainer="Mark Nottingham <mnot@mnot.net>"
 # package installs
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    nodejs npm git \
+    nodejs npm git openssh-client \
     squid nginx apache2 trafficserver \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
