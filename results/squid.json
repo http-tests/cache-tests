@@ -203,11 +203,11 @@
   "freshness-expires-wrong-case-weekday": true,
   "freshness-max-age": [
     "Setup",
-    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 a8b390700e1d (squid/4.4)    x-cache: MISS from a8b390700e1d    x-cache-lookup: MISS from a8b390700e1d:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
+    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 4f7aba23f429 (squid/4.4)    x-cache: MISS from 4f7aba23f429    x-cache-lookup: MISS from 4f7aba23f429:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
   ],
   "freshness-max-age-0": [
     "Setup",
-    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 a8b390700e1d (squid/4.4)    x-cache: MISS from a8b390700e1d    x-cache-lookup: MISS from a8b390700e1d:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
+    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 4f7aba23f429 (squid/4.4)    x-cache: MISS from 4f7aba23f429    x-cache-lookup: MISS from 4f7aba23f429:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
   ],
   "freshness-max-age-0-expires": true,
   "freshness-max-age-100a": true,
@@ -228,20 +228,17 @@
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-max": [
-    "Setup",
-    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 a8b390700e1d (squid/4.4)    x-cache: MISS from a8b390700e1d    x-cache-lookup: MISS from a8b390700e1d:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "freshness-max-age-max-minus-1": [
     "Setup",
-    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 a8b390700e1d (squid/4.4)    x-cache: MISS from a8b390700e1d    x-cache-lookup: MISS from a8b390700e1d:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
+    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 4f7aba23f429 (squid/4.4)    x-cache: MISS from 4f7aba23f429    x-cache-lookup: MISS from 4f7aba23f429:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
   ],
-  "freshness-max-age-max-plus": [
-    "Setup",
-    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 a8b390700e1d (squid/4.4)    x-cache: MISS from a8b390700e1d    x-cache-lookup: MISS from a8b390700e1d:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
-  ],
+  "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": [
-    "Setup",
-    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 a8b390700e1d (squid/4.4)    x-cache: MISS from a8b390700e1d    x-cache-lookup: MISS from a8b390700e1d:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
@@ -264,7 +261,7 @@
   "freshness-max-age-space-before-equals": true,
   "freshness-none": [
     "Setup",
-    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 a8b390700e1d (squid/4.4)    x-cache: MISS from a8b390700e1d    x-cache-lookup: MISS from a8b390700e1d:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
+    "PUT config resulted in 500 Internal Server Error - server: squid/4.4    via: 1.1 4f7aba23f429 (squid/4.4)    x-cache: MISS from 4f7aba23f429    x-cache-lookup: MISS from 4f7aba23f429:8001    x-squid-error: ERR_CANNOT_FORWARD 0    "
   ],
   "freshness-s-maxage-shared": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache": [
