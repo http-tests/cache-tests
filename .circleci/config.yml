@@ -17,7 +17,9 @@ jobs:
       - run: sleep 10  # let everything get settled first
       - run:
           name: test squid
-          command: npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
+          command: |
+          date -u
+          npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
       - run:
           name: test nginx
           command: npm run --silent cli --base=http://localhost:8002 | tee results/nginx.json
