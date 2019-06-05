@@ -83,7 +83,6 @@
   ],
   "304-lm-update-stored-Set-Cookie2": true,
   "304-lm-update-stored-Test-Header": true,
-  "304-lm-update-stored-X-Content-Foo": true,
   "304-lm-update-stored-X-Frame-Options": true,
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": true,
@@ -274,7 +273,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n93501219-500e-4c0c-8688-19456d8506da\r\n0\r\n\r\n\", not \"93501219-500e-4c0c-8688-19456d8506da\""
+    "Response body is \"24\r\n728fd9b9-b282-4649-8363-902eaddd0695\r\n0\r\n\r\n\", not \"728fd9b9-b282-4649-8363-902eaddd0695\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
