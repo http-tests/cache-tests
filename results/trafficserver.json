@@ -39,7 +39,6 @@
   ],
   "304-etag-update-stored-Set-Cookie2": true,
   "304-etag-update-stored-Test-Header": true,
-  "304-etag-update-stored-X-Content-Foo": true,
   "304-etag-update-stored-X-Frame-Options": true,
   "304-etag-update-stored-X-Test-Header": true,
   "304-etag-update-stored-X-XSS-Protection": true,
@@ -69,7 +68,7 @@
   "304-lm-update-stored-Clear-Site-Data": true,
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": true,
-  "304-lm-update-stored-Content-MD5": true,
+  "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
     "Assertion",
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
@@ -273,7 +272,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\ncabb0773-5579-4b00-b03a-548ee0c5800b\r\n0\r\n\r\n\", not \"cabb0773-5579-4b00-b03a-548ee0c5800b\""
+    "Response body is \"24\r\nd23c4698-d3c4-4225-966f-f96e162ab37c\r\n0\r\n\r\n\", not \"d23c4698-d3c4-4225-966f-f96e162ab37c\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
