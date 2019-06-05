@@ -88,6 +88,7 @@ function makeCacheTest (test) {
         pauseAfter: 'pause_after' in requests[i]
       })
     }
+
     var idx = 0
     function runNextStep () {
       if (fetchFunctions.length) {
@@ -100,10 +101,9 @@ function makeCacheTest (test) {
           return nextFetchFunction.code(idx++)
             .then(runNextStep)
         }
-      } else {
-        resolve()
       }
     }
+
     return putTestConfig(uuid, requests)
       .then(runNextStep)
       .then(() => {
