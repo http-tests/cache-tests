@@ -12,5 +12,6 @@ To add a new reverse proxy:
 2. In `setup.sh`, run any additional configuration steps that are necessary
 3. In `entrypoint.sh`, add the needed commands (usually `sed`) to change the origin server hostname (for when the docker runs on desktop)
 4. In `serve.sh`, start the server in the background
+5. In `/test-docker.sh`, add the `PROXY_PORT` to the case statement
 
 To run on the CI server, modify `/.circleci/config.yml` suitably.
