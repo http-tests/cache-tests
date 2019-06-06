@@ -7,7 +7,11 @@ LABEL maintainer="Mark Nottingham <mnot@mnot.net>"
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     nodejs npm git openssh-client \
-    squid nginx apache2 trafficserver \
+    squid \
+    nginx \
+    trafficserver \
+    apache2 \
+    varnish \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
@@ -50,6 +54,11 @@ RUN a2enmod proxy_http
 COPY apache/ports.conf /etc/apache2/ports.conf
 COPY apache/apache.conf /etc/apache2/sites-enabled/cache-test.conf
 EXPOSE 8004
+
+
+# varnish
+
+EXPOSE 8005
 
 
 # setup

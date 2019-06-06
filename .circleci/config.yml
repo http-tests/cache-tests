@@ -27,6 +27,9 @@ jobs:
       - run:
           name: test apache
           command: npm run --silent cli --base=http://localhost:8004 | tee results/apache.json
+      - run:
+          name: test varnish
+          command: npm run --silent cli --base=http://localhost:8005 | tee results/varnish.json
       - deploy:
           name: Upload results
           command: |

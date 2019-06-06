@@ -28,6 +28,9 @@ case $1 in
   apache)
     PROXY_PORT=8004
     ;;
+  varnish)
+    PROXY_PORT=8005
+    ;;
   *)
     usage "Proxy not recognised."
     ;;

@@ -17,6 +17,9 @@ if [[ ! -z $1 ]] ; then
     # apache
     sed -i s/localhost/$1/g /etc/apache2/sites-enabled/cache-test.conf
 
+    # varnish
+    sed -i s/127.0.0.1/$1/ /etc/varnish/default.vcl
+
     serve.sh
   fi
 

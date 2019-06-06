@@ -1,15 +1,17 @@
 #!/bin/bash
 
-# squid
+echo "* Starting squid"
 squid -f /etc/squid/squid.conf -N &
 
-# nginx
+echo "* Starting nginx"
 /usr/sbin/nginx -g "daemon off;" &
 
-# trafficserver
+echo "* starting TrafficServer"
 /usr/bin/traffic_manager &
 
-# apache
+echo "* Starting Apache"
 source /etc/apache2/envvars
 /usr/sbin/apache2 -X &
 
+echo "* Starting Varnish"
+/usr/sbin/varnishd -j unix -a 0.0.0.0:8005 -f /etc/varnish/default.vcl -p default_ttl=0 -p default_grace=0 -p default_keep=3600 -s malloc,64M
