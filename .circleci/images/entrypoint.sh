@@ -9,6 +9,7 @@ if [[ ! -z $1 ]] ; then
 
     # nginx
     sed -i s/localhost/$1/g /etc/nginx/sites-enabled/cache-test.conf
+    sed -i s/worker_connections 768/worker_connections 2048/ /etc/nginx/nginx.conf
 
     # trafficserver
     sed -i s/localhost:8000/$1:8000/g /etc/trafficserver/remap.config

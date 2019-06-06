@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sleep 5
-
 # squid
 squid -f /etc/squid/squid.conf -N &
 
@@ -15,4 +13,3 @@ squid -f /etc/squid/squid.conf -N &
 source /etc/apache2/envvars
 /usr/sbin/apache2 -X &
 
-sleep 5

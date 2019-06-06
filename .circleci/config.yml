@@ -10,9 +10,11 @@ jobs:
           name: run test server
           background: Y
           command: npm run server --port=8000
+      - run: sleep 5
       - run:
           name: start servers
           command: serve.sh
+      - run: sleep 5
       - run:
           name: test squid
           command: npm run --silent cli --base=http://localhost:8001 | tee results/squid.json
