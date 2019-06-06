@@ -96,6 +96,17 @@ To run a single test, use:
 ... where `test-id` is the identifier for the test. This will output the request and response headers as seen by the client and server, along with the results. This is useful for debugging a particular failure.
 
 
+### Testing with Docker
+
+There's also a docker image, `mnot/proxy-cache-tests`, that can be used to test reverse proxy caches. Once you have docker running, you can run the CLI tests against a given proxy like this:
+
+> ./test-docker.sh squid
+
+To run an individual test case, try:
+
+> ./test-docker.sh nginx freshness-none
+
+
 ## Testing Browser Caches
 
 To test a browser, just point it at `https://{hostname:port}/test-browser.html` after setting up the server.
