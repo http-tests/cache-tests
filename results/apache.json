@@ -1,1198 +1,556 @@
 {
-  "304-etag-update-response-Cache-Control": [
-    "FetchError",
-    "request to http://localhost:8004/config/4fefeca3-8359-4dc3-a8fc-43df6e3d63f5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-Clear-Site-Data": [
-    "FetchError",
-    "request to http://localhost:8004/config/53636097-d8d5-412e-90fc-73faacd543c0 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-Content-Foo": [
-    "FetchError",
-    "request to http://localhost:8004/config/797c04e2-3a09-4033-93ff-90e4c5579c73 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "304-etag-update-response-Cache-Control": true,
+  "304-etag-update-response-Clear-Site-Data": true,
+  "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
-    "FetchError",
-    "request to http://localhost:8004/config/c9482b50-dfeb-4f5a-979c-cfa33594542b failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 409, not 200"
   ],
   "304-etag-update-response-Content-MD5": [
-    "FetchError",
-    "request to http://localhost:8004/config/1b082171-2280-46ac-a2eb-0f7972df18db failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 409, not 200"
   ],
-  "304-etag-update-response-Content-Security-Policy": [
-    "FetchError",
-    "request to http://localhost:8004/config/b23c67be-1055-4d76-8ca6-52d3408e6156 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
-    "FetchError",
-    "request to http://localhost:8004/config/249a0d99-da40-4b57-a253-1309f7783a49 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 409, not 200"
   ],
-  "304-etag-update-response-Expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/d67483fc-14a3-4d3e-b385-c8158ddba92b failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-Public-Key-Pins": [
-    "FetchError",
-    "request to http://localhost:8004/config/e08dfe37-9afb-4404-b2d9-034e49ceaf8a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-Set-Cookie": [
-    "FetchError",
-    "request to http://localhost:8004/config/ae73a28e-3b2c-4e20-8c59-6f56f8f2921d failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-Set-Cookie2": [
-    "FetchError",
-    "request to http://localhost:8004/config/eea3594d-b29d-405c-b73f-4fdc0280c5d0 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/be75ce3e-4c49-4073-85ca-28ee547f701f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-X-Content-Foo": [
-    "FetchError",
-    "request to http://localhost:8004/config/a2ad7482-2e9c-4ba8-a0ce-3c93608046dd failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-X-Frame-Options": [
-    "FetchError",
-    "request to http://localhost:8004/config/4a30d837-ffb7-4b79-bbec-b943907b913c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-X-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/8556ffec-9877-4fee-8bdb-ce5dfdd37da6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-response-X-XSS-Protection": [
-    "FetchError",
-    "request to http://localhost:8004/config/ced156c4-1876-4254-950d-242da7b5361c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-Cache-Control": [
-    "FetchError",
-    "request to http://localhost:8004/config/5961ec60-e3a3-41e1-80b1-7c4629dee8e6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-Clear-Site-Data": [
-    "FetchError",
-    "request to http://localhost:8004/config/39642f41-1160-4b2c-aecf-f253e3c4a82b failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-Content-Foo": [
-    "FetchError",
-    "request to http://localhost:8004/config/0f4fdbb3-c488-406e-9145-117337a26688 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "304-etag-update-response-Expires": true,
+  "304-etag-update-response-Public-Key-Pins": true,
+  "304-etag-update-response-Set-Cookie": true,
+  "304-etag-update-response-Set-Cookie2": true,
+  "304-etag-update-response-Test-Header": true,
+  "304-etag-update-response-X-Content-Foo": true,
+  "304-etag-update-response-X-Frame-Options": true,
+  "304-etag-update-response-X-Test-Header": true,
+  "304-etag-update-response-X-XSS-Protection": true,
+  "304-etag-update-stored-Cache-Control": true,
+  "304-etag-update-stored-Clear-Site-Data": true,
+  "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
-    "FetchError",
-    "request to http://localhost:8004/config/02e6f1da-500e-474c-84eb-72883164d352 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 3 does not come from cache"
   ],
   "304-etag-update-stored-Content-MD5": [
-    "FetchError",
-    "request to http://localhost:8004/config/428c3eb9-20b6-41b1-a6a0-767e6249a796 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 3 does not come from cache"
   ],
-  "304-etag-update-stored-Content-Security-Policy": [
-    "FetchError",
-    "request to http://localhost:8004/config/6ce1e0dd-ceba-4ec1-abc4-1372b3e32533 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
-    "FetchError",
-    "request to http://localhost:8004/config/c55f7b78-979c-4aeb-b2c0-b9881f07ce45 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 3 does not come from cache"
   ],
-  "304-etag-update-stored-Expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/94561c91-1034-4e55-9ed7-2340c89032c4 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-Public-Key-Pins": [
-    "FetchError",
-    "request to http://localhost:8004/config/a0ce8a59-62c2-4826-97e5-9fe060b7ecdd failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-Set-Cookie": [
-    "FetchError",
-    "request to http://localhost:8004/config/0b929c4c-891f-47e4-aa4b-a8999a3715f6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-Set-Cookie2": [
-    "FetchError",
-    "request to http://localhost:8004/config/25d1f00f-02ef-410f-9e5a-d67d2c20bfbb failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/8f8f75f5-1688-4de3-b55b-566bda289661 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-X-Content-Foo": [
-    "FetchError",
-    "request to http://localhost:8004/config/25a80aeb-0782-44d4-a23a-a2b73b406256 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-X-Frame-Options": [
-    "FetchError",
-    "request to http://localhost:8004/config/55d5f0a1-cac3-4f64-a467-8dca3caf19f2 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-X-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/263d64bf-dfbc-4e5e-b49c-95bc39efe48e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-etag-update-stored-X-XSS-Protection": [
-    "FetchError",
-    "request to http://localhost:8004/config/dcfd9c79-6520-484c-9af7-44e8e6b7bde0 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-Cache-Control": [
-    "FetchError",
-    "request to http://localhost:8004/config/59dca3cf-c22d-4ccc-9458-5a49c64f8675 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-Clear-Site-Data": [
-    "FetchError",
-    "request to http://localhost:8004/config/e6f552ae-afa9-4750-8ee5-4a7a84952bfd failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-Content-Foo": [
-    "FetchError",
-    "request to http://localhost:8004/config/54d99ad4-3842-4251-bff2-92813903f241 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "304-etag-update-stored-Expires": true,
+  "304-etag-update-stored-Public-Key-Pins": true,
+  "304-etag-update-stored-Set-Cookie": true,
+  "304-etag-update-stored-Set-Cookie2": true,
+  "304-etag-update-stored-Test-Header": true,
+  "304-etag-update-stored-X-Content-Foo": true,
+  "304-etag-update-stored-X-Frame-Options": true,
+  "304-etag-update-stored-X-Test-Header": true,
+  "304-etag-update-stored-X-XSS-Protection": true,
+  "304-lm-update-response-Cache-Control": true,
+  "304-lm-update-response-Clear-Site-Data": true,
+  "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
-    "FetchError",
-    "request to http://localhost:8004/config/9fb428bc-f695-4ef9-87dc-ad9862f85774 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 409, not 200"
   ],
   "304-lm-update-response-Content-MD5": [
-    "FetchError",
-    "request to http://localhost:8004/config/0d8fa84b-a681-4570-8f6d-370c5d516b4e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 409, not 200"
   ],
-  "304-lm-update-response-Content-Security-Policy": [
-    "FetchError",
-    "request to http://localhost:8004/config/4c2b17ee-b96b-4628-9ce3-1bcbad845248 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
-    "FetchError",
-    "request to http://localhost:8004/config/4b5f1917-004f-46f7-8498-ab9e3a7dcbc6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 409, not 200"
   ],
-  "304-lm-update-response-Expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/10d2dff0-6cda-4382-b145-3775c3371192 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-Public-Key-Pins": [
-    "FetchError",
-    "request to http://localhost:8004/config/4b8bfec2-256c-4e7b-af63-abf036977176 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-Set-Cookie": [
-    "FetchError",
-    "request to http://localhost:8004/config/be2fc3e5-6155-49e5-b2a5-f7be661574d6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-Set-Cookie2": [
-    "FetchError",
-    "request to http://localhost:8004/config/619196c7-5cec-4579-87f5-8909cb1a9b9f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/397d647e-1964-43fe-952e-f5c436181bd4 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-X-Content-Foo": [
-    "FetchError",
-    "request to http://localhost:8004/config/6f30c327-2388-4c3f-9b42-31ca5892bbd2 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-X-Frame-Options": [
-    "FetchError",
-    "request to http://localhost:8004/config/5748481b-a4e5-4199-a6eb-ef0b9386c701 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-X-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/6a2be9bf-ffc2-44e3-b7aa-5a1d1fee6cff failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-response-X-XSS-Protection": [
-    "FetchError",
-    "request to http://localhost:8004/config/1baa1e17-1b20-4e07-9d78-dba9996b9800 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-Cache-Control": [
-    "FetchError",
-    "request to http://localhost:8004/config/cfefdc36-cfdd-44d8-8332-5781401ae2ec failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-Clear-Site-Data": [
-    "FetchError",
-    "request to http://localhost:8004/config/d42c5df7-9156-4a45-8295-3b395c20889c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-Content-Foo": [
-    "FetchError",
-    "request to http://localhost:8004/config/0647a67e-e279-4b9a-baa1-cc31db4141c7 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "304-lm-update-response-Expires": true,
+  "304-lm-update-response-Public-Key-Pins": true,
+  "304-lm-update-response-Set-Cookie": true,
+  "304-lm-update-response-Set-Cookie2": true,
+  "304-lm-update-response-Test-Header": true,
+  "304-lm-update-response-X-Content-Foo": true,
+  "304-lm-update-response-X-Frame-Options": true,
+  "304-lm-update-response-X-Test-Header": true,
+  "304-lm-update-response-X-XSS-Protection": true,
+  "304-lm-update-stored-Cache-Control": true,
+  "304-lm-update-stored-Clear-Site-Data": true,
+  "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
-    "FetchError",
-    "request to http://localhost:8004/config/f0d7aef7-0dd8-46e4-8475-fc7095327534 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 3 does not come from cache"
   ],
   "304-lm-update-stored-Content-MD5": [
-    "FetchError",
-    "request to http://localhost:8004/config/726ec5a2-2664-4275-8a45-3ce0a3c28d5c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 3 does not come from cache"
   ],
-  "304-lm-update-stored-Content-Security-Policy": [
-    "FetchError",
-    "request to http://localhost:8004/config/2fe05033-e4da-4dfd-9fce-7175560a066a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
-    "FetchError",
-    "request to http://localhost:8004/config/b790b09a-b714-4a5f-805f-39bb164b7170 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 3 does not come from cache"
   ],
-  "304-lm-update-stored-Expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/02178b64-ef54-4ef5-bc9b-506d4dc6e966 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-Public-Key-Pins": [
-    "FetchError",
-    "request to http://localhost:8004/config/4e5529e6-1d33-4f71-8285-021d834edf6b failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-Set-Cookie": [
-    "FetchError",
-    "request to http://localhost:8004/config/540ea4e1-27f1-489d-a360-7d5c456e266a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-Set-Cookie2": [
-    "FetchError",
-    "request to http://localhost:8004/config/c9ad1f36-dd9f-4184-8101-a37f78292d5d failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/e9b9265d-8826-471f-848f-64a94e49576f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-X-Content-Foo": [
-    "FetchError",
-    "request to http://localhost:8004/config/38cc6403-bc2f-4c76-9e14-ac7342e78419 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-X-Frame-Options": [
-    "FetchError",
-    "request to http://localhost:8004/config/9f3f6b95-8958-42e1-aa55-4e91b41117b8 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-X-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/39a6849b-f6f0-418c-a017-c7e34c96e4b8 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-update-stored-X-XSS-Protection": [
-    "FetchError",
-    "request to http://localhost:8004/config/0c959c40-ed94-4fca-814a-156f0dba99a6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "304-lm-use-stored-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/61269d9b-d8d8-4c85-a2f5-b8374a822dfe failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "cc-resp-no-cache": [
-    "FetchError",
-    "request to http://localhost:8004/config/47d68c67-bb35-4613-961c-9e00a26fdee3 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "cc-resp-no-cache-case-insensitive": [
-    "FetchError",
-    "request to http://localhost:8004/config/f75e4e56-ebe2-4ec4-8baf-e887be1db360 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "cc-resp-no-cache-revalidate": [
-    "FetchError",
-    "request to http://localhost:8004/config/d83be8bb-dc23-447f-90e5-76ba72152944 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "cc-resp-no-cache-revalidate-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/f23e694d-ac96-48d3-b3fd-9d395e304b06 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "cc-resp-no-store": [
-    "FetchError",
-    "request to http://localhost:8004/config/3aa0ac85-d45b-4075-ae47-58493abb8da2 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "cc-resp-no-store-case-insensitive": [
-    "FetchError",
-    "request to http://localhost:8004/config/07eaa972-723a-4e67-a510-e3296e20d9f6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "cc-resp-no-store-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/01db0b11-98a5-4f0e-ad77-812b22642f22 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "cc-resp-private-shared": [
-    "FetchError",
-    "request to http://localhost:8004/config/4e3635c8-e6ff-4a98-86c4-2e8f0b6b3b91 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-ma0": [
-    "FetchError",
-    "request to http://localhost:8004/config/17f78e30-072f-49e9-8b2e-16de56230842 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-ma1": [
-    "FetchError",
-    "request to http://localhost:8004/config/729c426e-540b-4beb-8204-691376e8494e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-magreaterage": [
-    "FetchError",
-    "request to http://localhost:8004/config/edbb5eab-eccb-48b8-9120-d30a7cd69095 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-max-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/5368f7d9-0068-4594-aae5-c00398fe0b57 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-max-stale-age": [
-    "FetchError",
-    "request to http://localhost:8004/config/d6892e18-75c9-4e41-89b8-705eb98ffcae failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-min-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/4dbbaf23-5426-4e0f-9ed3-05b340243b38 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-min-fresh-age": [
-    "FetchError",
-    "request to http://localhost:8004/config/763120d1-ae1c-473d-b738-4b4a12fa9690 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-no-cache": [
-    "FetchError",
-    "request to http://localhost:8004/config/d2d318b8-0bc3-4a14-b891-69dacdfdad38 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-no-cache-etag": [
-    "FetchError",
-    "request to http://localhost:8004/config/1842b989-01bd-448d-97fc-cb8f0168ce4d failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-no-cache-lm": [
-    "FetchError",
-    "request to http://localhost:8004/config/8ddbd774-37af-4168-a8f7-ee32fa0d4256 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-no-store": [
-    "FetchError",
-    "request to http://localhost:8004/config/b610fb26-a034-4627-b620-7ad23f1644d4 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "ccreq-oic": [
-    "FetchError",
-    "request to http://localhost:8004/config/11005f0b-ed27-4a82-bb7e-31b784473757 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "conditional-304-etag": [
-    "FetchError",
-    "request to http://localhost:8004/config/79dda580-2b42-4216-94ea-344c8ecdb135 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "conditional-etag-forward": [
-    "FetchError",
-    "request to http://localhost:8004/config/cf2a90ac-ff67-4e73-a26c-85a9bfdf107f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "304-lm-update-stored-Expires": true,
+  "304-lm-update-stored-Public-Key-Pins": true,
+  "304-lm-update-stored-Set-Cookie": true,
+  "304-lm-update-stored-Set-Cookie2": true,
+  "304-lm-update-stored-Test-Header": true,
+  "304-lm-update-stored-X-Content-Foo": true,
+  "304-lm-update-stored-X-Frame-Options": true,
+  "304-lm-update-stored-X-Test-Header": true,
+  "304-lm-update-stored-X-XSS-Protection": true,
+  "304-lm-use-stored-Test-Header": true,
+  "cc-resp-no-cache": true,
+  "cc-resp-no-cache-case-insensitive": true,
+  "cc-resp-no-cache-revalidate": true,
+  "cc-resp-no-cache-revalidate-fresh": true,
+  "cc-resp-no-store": true,
+  "cc-resp-no-store-case-insensitive": true,
+  "cc-resp-no-store-fresh": true,
+  "cc-resp-private-shared": true,
+  "ccreq-ma0": true,
+  "ccreq-ma1": true,
+  "ccreq-magreaterage": true,
+  "ccreq-max-stale": true,
+  "ccreq-max-stale-age": true,
+  "ccreq-min-fresh": true,
+  "ccreq-min-fresh-age": true,
+  "ccreq-no-cache": true,
+  "ccreq-no-cache-etag": true,
+  "ccreq-no-cache-lm": true,
+  "ccreq-no-store": true,
+  "ccreq-oic": true,
+  "conditional-304-etag": true,
+  "conditional-etag-forward": true,
   "conditional-etag-forward-unquoted": [
-    "FetchError",
-    "request to http://localhost:8004/config/72706ac3-f5ed-4e21-bf25-575d12c79df4 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Request 1 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-quoted-respond-unquoted": [
-    "FetchError",
-    "request to http://localhost:8004/config/2de32c24-9de7-4c1d-89e0-895a0bb1a918 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "conditional-etag-strong-generate": [
-    "FetchError",
-    "request to http://localhost:8004/config/c9c0e0b4-37c4-4632-bebd-63a93ee1f54b failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
-    "FetchError",
-    "request to http://localhost:8004/config/0e7a63fd-f631-43b1-ba96-53044748abe2 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
-  "conditional-etag-strong-respond": [
-    "FetchError",
-    "request to http://localhost:8004/config/08f980c5-3280-4de1-a445-a01817d75cb9 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "conditional-etag-strong-respond-multiple-first": [
-    "FetchError",
-    "request to http://localhost:8004/config/90064846-43f7-4384-986c-d925798c3935 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "conditional-etag-strong-respond-multiple-last": [
-    "FetchError",
-    "request to http://localhost:8004/config/d4748fcc-1a74-44d9-a0bb-bb5151338ff6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "conditional-etag-strong-respond-multiple-second": [
-    "FetchError",
-    "request to http://localhost:8004/config/9ba2f2eb-b527-4790-bb83-f9406c2c1934 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "conditional-etag-strong-respond": true,
+  "conditional-etag-strong-respond-multiple-first": true,
+  "conditional-etag-strong-respond-multiple-last": true,
+  "conditional-etag-strong-respond-multiple-second": true,
   "conditional-etag-strong-respond-obs-text": [
-    "FetchError",
-    "request to http://localhost:8004/config/ece54b93-bf7d-4793-80a4-efaa05605896 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "conditional-etag-unquoted-respond-quoted": [
-    "FetchError",
-    "request to http://localhost:8004/config/54692724-fb41-4b29-942c-facd8d12473a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "conditional-etag-unquoted-respond-unquoted": [
-    "FetchError",
-    "request to http://localhost:8004/config/772cb1a7-b706-4e15-8ae8-06a1eecfeb0e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "conditional-etag-weak-generate-weak": [
-    "FetchError",
-    "request to http://localhost:8004/config/6f27ae67-3b21-4c80-94f6-7eda784d26a8 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "conditional-etag-weak-respond": [
-    "FetchError",
-    "request to http://localhost:8004/config/2b1f8063-4a70-4be4-a922-fd9e184c28fa failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "conditional-etag-weak-generate-weak": true,
+  "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": [
-    "FetchError",
-    "request to http://localhost:8004/config/037b450b-9d87-49dd-abc1-2c6e403bc63e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "conditional-etag-weak-respond-lowercase": [
-    "FetchError",
-    "request to http://localhost:8004/config/3457bd17-fd47-4c25-9632-5013735969e3 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "conditional-etag-weak-respond-omit-slash": [
-    "FetchError",
-    "request to http://localhost:8004/config/51141d04-f434-40f3-9b7b-171d74e19692 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-age-fast-date": [
-    "FetchError",
-    "request to http://localhost:8004/config/b757f1aa-da97-43ee-bf99-ff648ac3ece9 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-expires-age-slow-date": [
-    "FetchError",
-    "request to http://localhost:8004/config/7daffd73-5a5d-4950-9602-d381c11fa995 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-expires-future": [
-    "FetchError",
-    "request to http://localhost:8004/config/e8c0534a-e9c3-46bd-8dbe-a71f1c31377e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-expires-invalid": [
-    "FetchError",
-    "request to http://localhost:8004/config/568c784c-401a-4adb-856f-7293e1944761 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "freshness-expires-age-fast-date": true,
+  "freshness-expires-age-slow-date": true,
+  "freshness-expires-future": true,
+  "freshness-expires-invalid": true,
   "freshness-expires-invalid-1-digit-hour": [
-    "FetchError",
-    "request to http://localhost:8004/config/d3914d0a-bd45-4914-8acd-41cc7a7d8c59 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "freshness-expires-invalid-2-digit-year": [
-    "FetchError",
-    "request to http://localhost:8004/config/13c4ce4d-bd52-4365-ae11-0c331f441cf5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-invalid-date": [
-    "FetchError",
-    "request to http://localhost:8004/config/52f35ecb-a4a0-46a3-b0ea-8247b97f5e6d failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": [
-    "FetchError",
-    "request to http://localhost:8004/config/81538265-2391-4f29-82c0-425edf4c2711 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "freshness-expires-invalid-multiple-spaces": [
-    "FetchError",
-    "request to http://localhost:8004/config/6f059105-08a0-4c20-a10d-7752dc9819bf failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-invalid-no-comma": [
-    "FetchError",
-    "request to http://localhost:8004/config/b5c2cba6-8030-4389-89cf-51afe8419941 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "freshness-expires-invalid-no-comma": true,
   "freshness-expires-invalid-time-periods": [
-    "FetchError",
-    "request to http://localhost:8004/config/d52af705-18cf-40e2-9b11-8e759fb5ce4e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-invalid-utc": [
-    "FetchError",
-    "request to http://localhost:8004/config/b280ac3f-cbbb-418c-ab09-1f7b133ae175 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-expires-old-date": [
-    "FetchError",
-    "request to http://localhost:8004/config/3d02ed19-64cc-4930-a92b-e010539be577 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-expires-past": [
-    "FetchError",
-    "request to http://localhost:8004/config/5f5cc4d7-b2c5-47d9-9d3d-8f3e935a3499 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-expires-present": [
-    "FetchError",
-    "request to http://localhost:8004/config/02e7a41b-2d24-4cfd-aa91-0c2e69aea8dd failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "freshness-expires-invalid-utc": true,
+  "freshness-expires-old-date": true,
+  "freshness-expires-past": true,
+  "freshness-expires-present": true,
   "freshness-expires-wrong-case-month": [
-    "FetchError",
-    "request to http://localhost:8004/config/61be67d3-0298-45af-b006-b87210e5629a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "freshness-expires-wrong-case-tz": [
-    "FetchError",
-    "request to http://localhost:8004/config/42d4e394-a4b9-448a-bdb1-c6af543db7c1 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-expires-wrong-case-weekday": [
-    "FetchError",
-    "request to http://localhost:8004/config/4ca08010-f632-445e-87bd-8df7d1d8f7b2 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age": [
-    "FetchError",
-    "request to http://localhost:8004/config/facd32a3-801f-41b3-bf6c-5570845cebdd failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-0": [
-    "FetchError",
-    "request to http://localhost:8004/config/c76c8692-55be-4d90-a166-f83d8c6ba3a3 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-0-expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/88356b01-f5c7-4e6f-891b-aed13ae2f670 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "freshness-expires-wrong-case-tz": true,
+  "freshness-expires-wrong-case-weekday": true,
+  "freshness-max-age": true,
+  "freshness-max-age-0": true,
+  "freshness-max-age-0-expires": true,
   "freshness-max-age-100a": [
-    "FetchError",
-    "request to http://localhost:8004/config/681b01d1-3562-45b6-929f-59b335b6d975 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "freshness-max-age-a100": [
-    "FetchError",
-    "request to http://localhost:8004/config/4c36eef6-63f7-488c-ab08-3bc0623c15fa failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "freshness-max-age-age": [
-    "FetchError",
-    "request to http://localhost:8004/config/ee0a2490-f484-454f-a384-a92e446881fa failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-case-insenstive": [
-    "FetchError",
-    "request to http://localhost:8004/config/fe13683f-74c3-47c6-a90f-fda041a7e527 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/20f65e25-63c9-439c-bc73-9cd453d288a5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-expires-invalid": [
-    "FetchError",
-    "request to http://localhost:8004/config/3bbd50ec-57e3-4631-babd-c18fe735a2dd failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-extension": [
-    "FetchError",
-    "request to http://localhost:8004/config/ad38f5fa-d405-4ae1-8fd3-d4ab5bf8173c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-ignore-quoted": [
-    "FetchError",
-    "request to http://localhost:8004/config/0ed20a8a-bcb7-40e3-8541-bd0b08dcdac0 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-ignore-quoted-all": [
-    "FetchError",
-    "request to http://localhost:8004/config/d03be7df-4625-4cd2-be78-f17b8536c070 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-ignore-quoted-all-rev": [
-    "FetchError",
-    "request to http://localhost:8004/config/869a7cc7-a387-417d-956a-3b16dc9106b7 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-ignore-quoted-rev": [
-    "FetchError",
-    "request to http://localhost:8004/config/e4eb9cf4-b42d-41e8-8740-7c9a7b1b6b34 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-max": [
-    "FetchError",
-    "request to http://localhost:8004/config/3005dd70-66b0-493a-9c49-b6ebe6905e87 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-max-minus-1": [
-    "FetchError",
-    "request to http://localhost:8004/config/d553828d-4846-4ea7-af4a-ebe36498e1ce failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-max-plus": [
-    "FetchError",
-    "request to http://localhost:8004/config/d6ee5fdd-89b3-4ea0-bf42-428b83a0ff11 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-max-plus-1": [
-    "FetchError",
-    "request to http://localhost:8004/config/5fa0d3db-4171-4e02-81e8-048187c5998c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-negative": [
-    "FetchError",
-    "request to http://localhost:8004/config/75e22a53-eb90-4d09-9831-2a2460f88119 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "freshness-max-age-age": true,
+  "freshness-max-age-case-insenstive": true,
+  "freshness-max-age-expires": true,
+  "freshness-max-age-expires-invalid": true,
+  "freshness-max-age-extension": true,
+  "freshness-max-age-ignore-quoted": true,
+  "freshness-max-age-ignore-quoted-all": true,
+  "freshness-max-age-ignore-quoted-all-rev": true,
+  "freshness-max-age-ignore-quoted-rev": true,
+  "freshness-max-age-max": true,
+  "freshness-max-age-max-minus-1": true,
+  "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus-1": true,
+  "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
-    "FetchError",
-    "request to http://localhost:8004/config/85cdf614-5888-4901-9e15-8c13fbc9648f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "freshness-max-age-s-maxage-shared-longer": [
-    "FetchError",
-    "request to http://localhost:8004/config/6848ff83-058d-49ca-ab6a-9e7a7de3387c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-s-maxage-shared-longer-multiple": [
-    "FetchError",
-    "request to http://localhost:8004/config/8c810699-b1bb-4f14-b3c2-961e17f3d1e5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-s-maxage-shared-longer-reversed": [
-    "FetchError",
-    "request to http://localhost:8004/config/520ab122-f1ed-410f-97e4-fef38b84ba36 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-s-maxage-shared-shorter": [
-    "FetchError",
-    "request to http://localhost:8004/config/62fb27e4-be78-47ea-b304-29564184f859 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-s-maxage-shared-shorter-expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/51a4d507-3a4e-471d-88ba-dc2d5d86a81e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "freshness-max-age-s-maxage-shared-longer": true,
+  "freshness-max-age-s-maxage-shared-longer-multiple": true,
+  "freshness-max-age-s-maxage-shared-longer-reversed": true,
+  "freshness-max-age-s-maxage-shared-shorter": true,
+  "freshness-max-age-s-maxage-shared-shorter-expires": true,
   "freshness-max-age-single-quoted": [
-    "FetchError",
-    "request to http://localhost:8004/config/1f8eed18-f793-4159-962f-c6ffda86297f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "freshness-max-age-space-after-equals": [
-    "FetchError",
-    "request to http://localhost:8004/config/8880ec86-255e-42ff-b54b-e8dacdffac91 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-max-age-space-before-equals": [
-    "FetchError",
-    "request to http://localhost:8004/config/050f9523-ec7f-4b5b-a623-c9abdcb45e9f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-none": [
-    "FetchError",
-    "request to http://localhost:8004/config/6e235f68-104d-4e44-b48e-6eebab8d7206 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "freshness-s-maxage-shared": [
-    "FetchError",
-    "request to http://localhost:8004/config/13148ce4-bae0-4ea6-9dd2-0f7535057023 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "freshness-max-age-space-after-equals": true,
+  "freshness-max-age-space-before-equals": true,
+  "freshness-none": true,
+  "freshness-s-maxage-shared": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache": [
-    "FetchError",
-    "request to http://localhost:8004/config/68dcdbd6-0e95-446a-9b6d-c55d42c42f66 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 includes unexpected header a: \"1\""
   ],
   "headers-omit-headers-listed-in-Cache-Control-no-cache-single": [
-    "FetchError",
-    "request to http://localhost:8004/config/f5f88918-dfa7-4b28-9248-929f7809bfa4 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 includes unexpected header a: \"1\""
   ],
-  "headers-omit-headers-listed-in-Connection": [
-    "FetchError",
-    "request to http://localhost:8004/config/464a9b99-cc80-4453-bc82-413d9166dc03 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "headers-store-Clear-Site-Data": [
-    "FetchError",
-    "request to http://localhost:8004/config/cbe1030d-99b5-4563-a540-7dc12c144d24 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "headers-omit-headers-listed-in-Connection": true,
+  "headers-store-Clear-Site-Data": true,
   "headers-store-Connection": [
-    "FetchError",
-    "request to http://localhost:8004/config/8a3f6521-886e-4576-9d16-089e1d722791 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 header Connection is \"close\", not \"ASKCUMEWOGYQIAS\""
   ],
-  "headers-store-Content-Type": [
-    "FetchError",
-    "request to http://localhost:8004/config/03dd8269-458f-40b2-bd5b-0fa4390efe88 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "headers-store-Content-Type": true,
   "headers-store-Proxy-Authenticate": [
-    "FetchError",
-    "request to http://localhost:8004/config/52d9c14b-90c3-44ba-85d6-6050dcef124a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 header Proxy-Authenticate is \"null\", not \"AKUEOYISCMWGQAK\""
   ],
   "headers-store-Proxy-Connection": [
-    "FetchError",
-    "request to http://localhost:8004/config/106e32c4-385f-44e2-b92b-46543e2faaaa failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 header Proxy-Connection is \"null\", not \"ALWHSDOZKVGRCNY\""
   ],
-  "headers-store-Public-Key-Pins": [
-    "FetchError",
-    "request to http://localhost:8004/config/f67605e9-7678-420e-aeb8-f41f9a908de8 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "headers-store-Set-Cookie": [
-    "FetchError",
-    "request to http://localhost:8004/config/c8d418e5-5e7c-4fe5-8de5-557423e5cac7 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "headers-store-Set-Cookie2": [
-    "FetchError",
-    "request to http://localhost:8004/config/efcf8ac5-e1a0-4f2a-b601-c24f224dfa6d failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "headers-store-Strict-Transport-Security": [
-    "FetchError",
-    "request to http://localhost:8004/config/7f708cfc-63c6-41d1-9815-9736e3f2efcb failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "headers-store-Strict-Transport-Security2": [
-    "FetchError",
-    "request to http://localhost:8004/config/03943510-7f15-491e-84fd-dd181c3d1a31 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "headers-store-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/d6696420-c6bb-4a56-8632-408c0ba7a07d failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "headers-store-Public-Key-Pins": true,
+  "headers-store-Set-Cookie": true,
+  "headers-store-Set-Cookie2": true,
+  "headers-store-Strict-Transport-Security": true,
+  "headers-store-Strict-Transport-Security2": true,
+  "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
-    "FetchError",
-    "request to http://localhost:8004/config/3fedff67-9270-457c-8a49-10c7a9efc620 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 header Transfer-Encoding is \"null\", not \"ARIZQHYPGXOFWNE\""
   ],
   "headers-store-Upgrade": [
-    "FetchError",
-    "request to http://localhost:8004/config/08d8721b-342c-4996-8823-90204d34579e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 header Upgrade is \"null\", not \"ACEGIKMOQSUWYAC\""
   ],
-  "headers-store-WWW-Authenticate": [
-    "FetchError",
-    "request to http://localhost:8004/config/4b3c4bea-0651-480d-9eaf-a17e50828d93 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "headers-store-X-Frame-Options": [
-    "FetchError",
-    "request to http://localhost:8004/config/146a01fb-33ad-431b-afb0-c0b00b92f525 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "headers-store-X-Test-Header": [
-    "FetchError",
-    "request to http://localhost:8004/config/2130dbc9-729a-4bbe-9438-c1880634b6ad failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "headers-store-X-XSS-Protection": [
-    "FetchError",
-    "request to http://localhost:8004/config/268de3d5-651a-4eb7-979f-59912a38c68c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "heuristic-200-cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/f9f846a7-8d97-4997-80ee-b5d319f0e1b7 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "heuristic-201-not_cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/86f4ada3-ee06-4d8d-b00b-8cd7d1181643 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "heuristic-202-not_cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/7680d369-0b53-4210-9607-a9fb741ca33e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "heuristic-203-cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/59f46a21-561f-4d6b-9482-4e3d00731276 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "headers-store-WWW-Authenticate": true,
+  "headers-store-X-Frame-Options": true,
+  "headers-store-X-Test-Header": true,
+  "headers-store-X-XSS-Protection": true,
+  "heuristic-200-cached": true,
+  "heuristic-201-not_cached": true,
+  "heuristic-202-not_cached": true,
+  "heuristic-203-cached": true,
   "heuristic-204-cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/45a3f62e-e570-4c35-99a1-068d272e607f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "heuristic-403-not_cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/71907bf9-240e-4bb3-8fb4-86b515702f7a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "heuristic-403-not_cached": true,
   "heuristic-404-cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/2c6b6e07-c417-4918-beaa-f0c3033b7f02 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "heuristic-405-cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/26d0b0c1-3591-4e88-9b16-47f20be5606b failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "heuristic-410-cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/7bd12be9-8474-41f3-bdcc-8b6200421946 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "heuristic-414-cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/c5828494-accf-46b0-90f2-d7222041df70 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "heuristic-501-cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/8bf7ae8b-20c0-4a99-a36a-dfff6c09ee32 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "heuristic-502-not_cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/0bc34dea-d6a4-46b7-9bf7-90ca5f384cdc failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "heuristic-503-not_cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/b8355b56-9c1d-49f7-b415-2eeb2387ee94 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "heuristic-504-not_cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/7270e27c-0542-409c-bced-1f92a8b60bc4 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "heuristic-502-not_cached": true,
+  "heuristic-503-not_cached": true,
+  "heuristic-504-not_cached": true,
   "heuristic-599-cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/f46a906d-907f-4095-8a05-22fa29eaaca5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 500, not 599"
   ],
-  "heuristic-599-not_cached": [
-    "FetchError",
-    "request to http://localhost:8004/config/212e9a97-2484-45e6-858f-298347395486 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "invalidate-DELETE": [
-    "FetchError",
-    "request to http://localhost:8004/config/22b90013-982a-4141-8928-35aa0983d979 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "heuristic-599-not_cached": true,
+  "invalidate-DELETE": true,
   "invalidate-DELETE-cl": [
-    "FetchError",
-    "request to http://localhost:8004/config/cdba6f92-b0f6-4151-a414-4fe2ca72865b failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
-  "invalidate-DELETE-failed": [
-    "FetchError",
-    "request to http://localhost:8004/config/9458c814-ae2e-4369-b024-e34e04a96f86 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "invalidate-DELETE-failed": true,
   "invalidate-DELETE-location": [
-    "FetchError",
-    "request to http://localhost:8004/config/678a8545-865a-4461-ae9a-c2f9936e557e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
   "invalidate-M-SEARCH": [
-    "FetchError",
-    "request to http://localhost:8004/config/dd405862-4b8c-47fc-9f7b-af42db77e462 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
   "invalidate-M-SEARCH-cl": [
-    "FetchError",
-    "request to http://localhost:8004/config/4d391710-614f-465e-b2e3-83bc3668316f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
-  "invalidate-M-SEARCH-failed": [
-    "FetchError",
-    "request to http://localhost:8004/config/ef56ec10-37ca-4b8c-8340-f85c3c1d8562 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "invalidate-M-SEARCH-failed": true,
   "invalidate-M-SEARCH-location": [
-    "FetchError",
-    "request to http://localhost:8004/config/15393443-6ead-479c-946a-5dc29078eb0c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
-  "invalidate-POST": [
-    "FetchError",
-    "request to http://localhost:8004/config/6eb6fe88-93fa-46ec-91a6-1223ae8e44f6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "invalidate-POST": true,
   "invalidate-POST-cl": [
-    "FetchError",
-    "request to http://localhost:8004/config/8dc35ffc-f066-4389-8e1e-291d577bceb5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
-  "invalidate-POST-failed": [
-    "FetchError",
-    "request to http://localhost:8004/config/5d271226-63b5-4a5a-8f7e-4feaaa6765d3 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "invalidate-POST-failed": true,
   "invalidate-POST-location": [
-    "FetchError",
-    "request to http://localhost:8004/config/f843f493-9124-4833-abf8-fd1132250fc5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
-  "invalidate-PUT": [
-    "FetchError",
-    "request to http://localhost:8004/config/0dde873a-3763-4127-92c7-22c393d8e13b failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "invalidate-PUT": true,
   "invalidate-PUT-cl": [
-    "FetchError",
-    "request to http://localhost:8004/config/a0f22a89-6657-45bd-ba0f-b191e87984d1 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
-  "invalidate-PUT-failed": [
-    "FetchError",
-    "request to http://localhost:8004/config/36941896-30a2-432c-ac60-a5eb02044758 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "invalidate-PUT-failed": true,
   "invalidate-PUT-location": [
-    "FetchError",
-    "request to http://localhost:8004/config/775f69a1-afc5-4860-a6f7-d8fe5302a1f5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
-  "other-age-gen": [
-    "FetchError",
-    "request to http://localhost:8004/config/e5103e82-cbc0-4b47-8cb5-88979c73070d failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "other-age-update-expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/efa4b7b4-7245-4db4-978c-c3489671eb87 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "other-age-update-max-age": [
-    "FetchError",
-    "request to http://localhost:8004/config/07abb79e-c513-470e-81fe-71c70ec3c619 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "other-cookie": [
-    "FetchError",
-    "request to http://localhost:8004/config/47db4dad-c178-4485-9a2b-959f8dcf7de8 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "other-age-gen": true,
+  "other-age-update-expires": true,
+  "other-age-update-max-age": true,
+  "other-cookie": true,
   "other-date-update": [
-    "FetchError",
-    "request to http://localhost:8004/config/8132f7f9-7927-4834-9605-e8e17cf55ab0 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 header Date is Thu, 06 Jun 2019 08:47:29 GMT, should be Thu, 06 Jun 2019 08:47:26 GMT"
   ],
-  "other-set-cookie": [
-    "FetchError",
-    "request to http://localhost:8004/config/2686824b-5923-4518-8fe3-90ecb230bb33 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "other-set-cookie": true,
   "other-warning": [
-    "FetchError",
-    "request to http://localhost:8004/config/e6cef890-597c-4433-bc2d-1db7ff836399 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 warning header not present."
   ],
-  "partial-store-complete-reuse-partial": [
-    "FetchError",
-    "request to http://localhost:8004/config/c9424c27-8bcc-4da5-a1ce-c87ad3f65988 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "partial-store-complete-reuse-partial-no-last": [
-    "FetchError",
-    "request to http://localhost:8004/config/33893ef8-c8e7-48bf-a047-94b86c689452 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "partial-store-complete-reuse-partial-suffix": [
-    "FetchError",
-    "request to http://localhost:8004/config/de978796-d80d-4d4e-a375-6e8893a18710 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "partial-store-complete-reuse-partial": true,
+  "partial-store-complete-reuse-partial-no-last": true,
+  "partial-store-complete-reuse-partial-suffix": true,
   "partial-store-partial-complete": [
-    "FetchError",
-    "request to http://localhost:8004/config/20bd4cca-30be-41ce-bb86-75b54bd26d13 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Request 2 header range is \"undefined\", not \"bytes=5-\""
   ],
   "partial-store-partial-reuse-partial": [
-    "FetchError",
-    "request to http://localhost:8004/config/3edf91a4-14fd-4f4f-b341-588bd0127c56 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-absent": [
-    "FetchError",
-    "request to http://localhost:8004/config/340cd37b-72ef-4da3-80a0-999321944073 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-byterange": [
-    "FetchError",
-    "request to http://localhost:8004/config/26a476b5-3dad-45b3-bd38-d6605804e740 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-suffix": [
-    "FetchError",
-    "request to http://localhost:8004/config/85b26efb-e12d-46b9-9400-898bb1103848 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "pragma-request-extension": [
-    "FetchError",
-    "request to http://localhost:8004/config/e69a610a-55ed-48a4-8791-da77de213b3a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "pragma-request-extension": true,
   "pragma-request-no-cache": [
-    "FetchError",
-    "request to http://localhost:8004/config/46e2a7f8-ecd4-4b05-ab36-34f7f904c3a3 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "pragma-response-extension": [
-    "FetchError",
-    "request to http://localhost:8004/config/d5cf8fa8-b5f3-408b-a890-973785ac2c90 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "pragma-response-extension": true,
   "pragma-response-no-cache": [
-    "FetchError",
-    "request to http://localhost:8004/config/fe2581b9-d2c1-4cca-9ee0-50b049c2f5a7 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "query-args-different": [
-    "FetchError",
-    "request to http://localhost:8004/config/efea84a3-1c74-45fc-9d25-e6733272f31a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "query-args-same": [
-    "FetchError",
-    "request to http://localhost:8004/config/b7774379-1055-44f9-a4bc-cae0fd4148e1 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-200-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/1d419f60-3213-4847-a347-7d10331e9609 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-200-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/1e7d697b-b54e-4bcc-ac1e-24895db160fe failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-203-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/24437ac8-a53b-4b26-ae68-8570012cd066 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-203-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/01e3ca4e-83b8-465b-90b8-07f403ccfe62 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "query-args-different": true,
+  "query-args-same": true,
+  "status-200-fresh": true,
+  "status-200-stale": true,
+  "status-203-fresh": true,
+  "status-203-stale": true,
   "status-204-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/5bbd7191-fd5b-4a52-b634-e8cdbd955816 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "status-204-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/f2281bea-1ec7-44ed-a50a-013cfb77253f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "status-204-stale": true,
   "status-299-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/6c0a133f-1df5-4511-9094-71b8f3f82e70 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 500, not 299"
   ],
-  "status-299-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/96c6ace5-49ce-492a-ab16-0d43cc188825 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-301-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/7379b98b-8dee-4b05-a383-eda2d1d87c69 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-301-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/cfe79813-1cff-4fcc-840b-74033094a4cf failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-302-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/8f725c36-7179-460a-bd63-0dbae15fb5b5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-302-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/48c4f600-ebc4-477d-b9d4-c1f1b29ee284 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-303-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/181991fc-5028-427a-b8d8-6650de2d9a01 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-303-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/759d130f-422d-4f16-b946-6eb45c7b8bfe failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-307-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/6ab8e0e8-753c-4df0-925e-aaed25025f8b failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-307-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/9824bb24-e5bd-4505-a514-8b52c184cf05 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-308-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/aa43008c-bc05-4681-83f2-5a3fa1983b66 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-308-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/c20c5658-792e-484c-b6dd-5bb3d2ac5777 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-400-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/eae61dd5-df97-48b4-aba2-e4991face3dc failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-400-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/31ac03f4-5e66-4f2a-9610-7222e6e6abba failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-404-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/fbac4b6b-6c00-4442-ba06-24267eb8e760 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-404-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/81110ae4-997a-4ebe-bd6a-48ba0fcf330a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-410-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/bd286d2a-a78a-4330-995f-89280f6cb0ea failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-410-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/bf91bfb7-69ca-4673-94b9-025d80591558 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "status-299-stale": true,
+  "status-301-fresh": true,
+  "status-301-stale": true,
+  "status-302-fresh": true,
+  "status-302-stale": true,
+  "status-303-fresh": true,
+  "status-303-stale": true,
+  "status-307-fresh": true,
+  "status-307-stale": true,
+  "status-308-fresh": true,
+  "status-308-stale": true,
+  "status-400-fresh": true,
+  "status-400-stale": true,
+  "status-404-fresh": true,
+  "status-404-stale": true,
+  "status-410-fresh": true,
+  "status-410-stale": true,
   "status-499-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/bd9245f8-c792-458a-9615-7176437c4338 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 500, not 499"
   ],
-  "status-499-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/f055fe90-86b2-41fc-9e37-0de7725c2575 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-500-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/8d0c3e66-fd17-4238-b0b5-d25b1c16d86e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-500-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/e6a6c78b-4f41-4e53-9fd1-d7916c4a3f1e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-502-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/a35d0478-35fb-4176-ba37-399be7dddb1a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-502-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/be0d54f4-1c59-48af-9a31-c714021b2d35 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-503-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/1aacbe77-1165-4455-825e-75069a82fd7e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-503-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/251fa784-ea7f-438b-ab67-510c9e90e7f5 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-504-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/fd02a5db-81f4-4743-834d-1ec9a1ce3a42 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "status-504-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/d8e6c884-ce72-4a54-a9cb-21f856e7980e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "status-499-stale": true,
+  "status-500-fresh": true,
+  "status-500-stale": true,
+  "status-502-fresh": true,
+  "status-502-stale": true,
+  "status-503-fresh": true,
+  "status-503-stale": true,
+  "status-504-fresh": true,
+  "status-504-stale": true,
   "status-599-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/eeedb800-a31d-4a69-acb8-e3037fcbe81c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Setup",
+    "Response 2 status is 500, not 599"
   ],
-  "status-599-stale": [
-    "FetchError",
-    "request to http://localhost:8004/config/fc2176b5-fc7e-4483-9730-53aa8a8ec916 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "status-599-stale": true,
   "surrogate-append-capabilities": [
-    "FetchError",
-    "request to http://localhost:8004/config/af4f1e46-f449-45f3-8098-1e543d0490f3 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Request 1 Surrogate-Capability header not present."
   ],
   "surrogate-max-age": [
-    "FetchError",
-    "request to http://localhost:8004/config/15f86d5f-06ed-4cac-8945-954cb5b5f7c6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "surrogate-max-age-0": [
-    "FetchError",
-    "request to http://localhost:8004/config/d17cea90-d77a-435c-93bd-9a4ce0b9bf2a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "surrogate-max-age-0": true,
   "surrogate-max-age-0-expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/a3a01f75-c6f1-4632-bff9-a6ffa0ea0172 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 comes from cache"
   ],
-  "surrogate-max-age-age": [
-    "FetchError",
-    "request to http://localhost:8004/config/f48ffae2-c863-49d7-bd16-f6deebc3eba9 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "surrogate-max-age-age": true,
   "surrogate-max-age-case-insensitive": [
-    "FetchError",
-    "request to http://localhost:8004/config/d1a2a74b-1ce8-4811-95b7-903d886b6f69 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "surrogate-max-age-cc-max-age-invalid-expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/ad559133-8c81-4b14-8a69-47bac6f45f09 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "surrogate-max-age-expires": [
-    "FetchError",
-    "request to http://localhost:8004/config/32d5eb8c-a9d8-4c56-90a3-b3aba8be3017 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "surrogate-max-age-extension": [
-    "FetchError",
-    "request to http://localhost:8004/config/88204502-3353-4ee8-b9b5-3c8110b31877 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "surrogate-max-age-long-cc-max-age": [
-    "FetchError",
-    "request to http://localhost:8004/config/6d5dc1d8-f3f0-4597-89f8-7358079a45f2 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 comes from cache"
   ],
   "surrogate-max-age-max": [
-    "FetchError",
-    "request to http://localhost:8004/config/b45312ff-7ab3-4c51-b3a6-b30edce7b2e9 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "surrogate-max-age-max-plus": [
-    "FetchError",
-    "request to http://localhost:8004/config/4f3514c2-e877-442e-b618-480fe21b2b7a failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "surrogate-max-age-me-target": [
-    "FetchError",
-    "request to http://localhost:8004/config/59c0a948-efdf-449b-818f-05f722e8c643 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "surrogate-max-age-other-target": [
-    "FetchError",
-    "request to http://localhost:8004/config/ce627828-462e-49e0-a3eb-a98a19d262a9 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "surrogate-max-age-other-target": true,
   "surrogate-max-age-short-cc-max-age": [
-    "FetchError",
-    "request to http://localhost:8004/config/671bf191-56ba-4547-97c3-59cdf829a077 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "surrogate-max-age-space-after-equals": [
-    "FetchError",
-    "request to http://localhost:8004/config/c8449f58-a8c7-4127-bdf4-f6d2f12af213 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "surrogate-max-age-space-before-equals": [
-    "FetchError",
-    "request to http://localhost:8004/config/5a00a499-4299-4b8b-b4c5-556d759b55a7 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "surrogate-no-store": [
-    "FetchError",
-    "request to http://localhost:8004/config/7c14fb47-a731-4312-bc16-eeeabcbe07f8 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "surrogate-max-age-space-after-equals": true,
+  "surrogate-max-age-space-before-equals": true,
+  "surrogate-no-store": true,
   "surrogate-no-store-cc-fresh": [
-    "FetchError",
-    "request to http://localhost:8004/config/b0d3b166-b201-49c8-aae9-4f88d130b58f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 comes from cache"
   ],
-  "surrogate-remove-header": [
-    "FetchError",
-    "request to http://localhost:8004/config/d54be1c2-26aa-495a-9d7b-9e07aff30192 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-2-match": [
-    "FetchError",
-    "request to http://localhost:8004/config/72c55bd5-aaba-4085-b754-6a8dd9b7c75e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-2-match-omit": [
-    "FetchError",
-    "request to http://localhost:8004/config/76be8fee-cd83-4f2d-b476-9685fa825410 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-2-no-match": [
-    "FetchError",
-    "request to http://localhost:8004/config/9e9df2de-a708-418a-8979-dea48a6d07c6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-3-match": [
-    "FetchError",
-    "request to http://localhost:8004/config/dab1622f-affc-447e-8081-be9398d9ee70 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-3-no-match": [
-    "FetchError",
-    "request to http://localhost:8004/config/86cb747d-c5e0-4408-a26e-c948e76a7e10 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-3-omit": [
-    "FetchError",
-    "request to http://localhost:8004/config/fe48df16-87f6-4c17-8fb0-7e6d5b11ace8 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-3-order": [
-    "FetchError",
-    "request to http://localhost:8004/config/fd65a95e-d997-44b3-b89d-48ab73907e43 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-cache-key": [
-    "FetchError",
-    "request to http://localhost:8004/config/938c1615-81c0-4a0b-b1a0-3f3cc10335b6 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-invalidate": [
-    "FetchError",
-    "request to http://localhost:8004/config/75015f7f-8221-4ea4-89ed-d4f165f9490c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-match": [
-    "FetchError",
-    "request to http://localhost:8004/config/15c6010b-f183-4e58-8789-848b5f6ba56e failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-no-match": [
-    "FetchError",
-    "request to http://localhost:8004/config/55c82029-4244-446d-825b-91cb976546a7 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-normalise-combine": [
-    "FetchError",
-    "request to http://localhost:8004/config/4d21163d-518f-4663-b696-b532c50aed9c failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
+  "surrogate-remove-header": true,
+  "vary-2-match": true,
+  "vary-2-match-omit": true,
+  "vary-2-no-match": true,
+  "vary-3-match": true,
+  "vary-3-no-match": true,
+  "vary-3-omit": true,
+  "vary-3-order": true,
+  "vary-cache-key": true,
+  "vary-invalidate": true,
+  "vary-match": true,
+  "vary-no-match": true,
+  "vary-normalise-combine": true,
   "vary-normalise-lang-case": [
-    "FetchError",
-    "request to http://localhost:8004/config/69fcde5c-c375-4d32-99fd-47a3c0aa48f0 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-order": [
-    "FetchError",
-    "request to http://localhost:8004/config/57865c97-d31b-49d6-843f-09e004051b6d failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-select": [
-    "FetchError",
-    "request to http://localhost:8004/config/2745802f-62b5-408b-ac23-f5929d7d2141 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-space": [
-    "FetchError",
-    "request to http://localhost:8004/config/5a64e32c-d286-4f6d-bf4b-31159c389313 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "vary-normalise-space": [
-    "FetchError",
-    "request to http://localhost:8004/config/fceae34a-6e60-4306-b036-17005a2ee505 failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "vary-omit": [
-    "FetchError",
-    "request to http://localhost:8004/config/dcbea7f8-c375-4d4c-9b7e-1aeea98c11fc failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ],
-  "vary-star": [
-    "FetchError",
-    "request to http://localhost:8004/config/6b1c8859-5eed-4d1e-a722-6d9b2c29fe6f failed, reason: connect ECONNREFUSED 127.0.0.1:8004"
-  ]
+  "vary-omit": true,
+  "vary-star": true
 }
