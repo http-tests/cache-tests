@@ -13,6 +13,7 @@ jobs:
       - run: sleep 5
       - run:
           name: start servers
+          background: Y
           command: serve.sh
       - run: sleep 5
       - run:
