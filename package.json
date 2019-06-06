@@ -16,8 +16,7 @@
   "scripts": {
     "server": "node server.js",
     "cli": "node --experimental-modules --no-warnings cli.mjs",
-    "lint": "standard --fix *.js *.mjs   tests/*.mjs",
-    "foo": "node --experimental-modules --no-warnings foo.mjs"
+    "lint": "standard --fix *.js *.mjs   tests/*.mjs"
   },
   "config": {
     "protocol": "http",
