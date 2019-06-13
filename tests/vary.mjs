@@ -106,15 +106,6 @@ export default {
           request_headers: [
             ['v1', 'one'],
             ['v2', 'two'],
-            ['ctrl', 'a']
-          ],
-          expected_type: 'cached',
-          setup: true
-        },
-        {
-          request_headers: [
-            ['v1', 'one'],
-            ['v2', 'two'],
             ['ctrl', 'b']
           ],
           response_headers: [
@@ -123,8 +114,7 @@ export default {
             ['Date', 0],
             ['Vary', 'v1, v2, ctrl']
           ],
-          expected_type: 'not_cached',
-          setup: true
+          expected_type: 'not_cached'
         },
         {
           request_headers: [
