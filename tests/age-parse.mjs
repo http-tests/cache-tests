@@ -146,6 +146,88 @@ export default
           expected_type: 'cached'
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache reuse an aged response when the `Age` header has a duplicate 0 value, comma-separated?',
+      id: 'age-parse-dup-0',
+      kind: 'check',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '7200, 7200']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse an aged response when the `Age` header has a duplicate 0 value on two separate lines?',
+      id: 'age-parse-dup-0-twoline',
+      kind: 'check',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '7200'],
+            ['Age', '7200']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse an aged response when the `Age` header has a duplicate old value, comma-separated?',
+      id: 'age-parse-dup-old',
+      kind: 'check',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '7200, 7200']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse an aged response when the `Age` header has a duplicate old value on two separate lines?',
+      id: 'age-parse-dup-old-twoline',
+      kind: 'check',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '7200'],
+            ['Age', '7200']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
     }
   ]
 }
