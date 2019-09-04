@@ -53,4 +53,9 @@ do
     break
   fi
 done
+
+if [ -f "${TARGET}" ] ; then
+  mv "${TARGET}" results/
+fi
+
 kill `cat server.PID` && rm server.PID

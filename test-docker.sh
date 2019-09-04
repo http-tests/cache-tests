@@ -46,7 +46,7 @@ sleep 7
 
 # run tests
 if [[ -z $2 ]]; then
-  npm run --silent cli --base=http://localhost:$PROXY_PORT
+  npm run --silent cli --base=http://localhost:$PROXY_PORT > "results/${1}.json"
 else
   npm run --silent cli --base=http://localhost:$PROXY_PORT --id=$2
 fi
