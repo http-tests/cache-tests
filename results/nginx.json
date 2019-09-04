@@ -29,7 +29,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Wed, 04 Sep 2019 10:12:08 GMT\", not \"Wed, 04 Sep 2019 11:12:07 GMT\""
+    "Response 2 header Expires is \"Wed, 04 Sep 2019 10:16:41 GMT\", not \"Wed, 04 Sep 2019 11:16:40 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -93,7 +93,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Wed, 04 Sep 2019 10:12:08 GMT\", not \"Wed, 04 Sep 2019 11:12:07 GMT\""
+    "Response 3 header Expires is \"Wed, 04 Sep 2019 10:16:41 GMT\", not \"Wed, 04 Sep 2019 11:16:40 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Wed, 04 Sep 2019 10:12:08 GMT\", not \"Wed, 04 Sep 2019 11:12:07 GMT\""
+    "Response 2 header Expires is \"Wed, 04 Sep 2019 10:16:41 GMT\", not \"Wed, 04 Sep 2019 11:16:40 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Wed, 04 Sep 2019 10:12:08 GMT\", not \"Wed, 04 Sep 2019 11:12:07 GMT\""
+    "Response 3 header Expires is \"Wed, 04 Sep 2019 10:16:41 GMT\", not \"Wed, 04 Sep 2019 11:16:40 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -600,7 +600,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 04 Sep 2019 10:12:12 GMT, should be Wed, 04 Sep 2019 10:12:08 GMT"
+    "Response 2 header Date is Wed, 04 Sep 2019 10:16:44 GMT, should be Wed, 04 Sep 2019 10:16:41 GMT"
   ],
   "other-set-cookie": [
     "Assertion",

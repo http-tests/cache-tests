@@ -101,10 +101,7 @@
   "304-lm-update-stored-X-XSS-Protection": true,
   "304-lm-use-stored-Test-Header": true,
   "age-parse-dup-0": true,
-  "age-parse-dup-0-twoline": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
   "age-parse-dup-old-twoline": [
     "Assertion",
@@ -390,7 +387,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 04 Sep 2019 10:11:55 GMT, should be Wed, 04 Sep 2019 10:11:52 GMT"
+    "Response 2 header Date is Wed, 04 Sep 2019 10:18:20 GMT, should be Wed, 04 Sep 2019 10:18:17 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [

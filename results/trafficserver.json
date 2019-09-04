@@ -88,14 +88,8 @@
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": true,
   "304-lm-use-stored-Test-Header": true,
-  "age-parse-dup-0": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "age-parse-dup-0-twoline": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-dup-0": true,
+  "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -306,7 +300,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\ndace3e5b-4834-4316-996e-7b05dd08fcb5\r\n0\r\n\r\n\", not \"dace3e5b-4834-4316-996e-7b05dd08fcb5\""
+    "Response body is \"24\r\n7fad6b97-07b0-4547-86da-b48cdea5cc6a\r\n0\r\n\r\n\", not \"7fad6b97-07b0-4547-86da-b48cdea5cc6a\""
   ],
   "headers-store-Upgrade": [
     "Assertion",

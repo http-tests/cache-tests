@@ -185,10 +185,7 @@
   ],
   "304-lm-use-stored-Test-Header": true,
   "age-parse-dup-0": true,
-  "age-parse-dup-0-twoline": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
   "age-parse-dup-old-twoline": [
     "Assertion",
