@@ -104,7 +104,12 @@
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
   "age-parse-prefix": true,
+  "age-parse-prefix-twoline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "age-parse-suffix": true,
+  "age-parse-suffix-twoline": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
@@ -375,7 +380,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 04 Sep 2019 06:51:24 GMT, should be Wed, 04 Sep 2019 06:51:21 GMT"
+    "Response 2 header Date is Wed, 04 Sep 2019 09:45:49 GMT, should be Wed, 04 Sep 2019 09:45:46 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [

@@ -95,10 +95,15 @@
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
   "age-parse-prefix": true,
+  "age-parse-prefix-twoline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "age-parse-suffix": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "age-parse-suffix-twoline": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": [
@@ -285,7 +290,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\nf720914c-0470-4f65-affb-a2a24306a608\r\n0\r\n\r\n\", not \"f720914c-0470-4f65-affb-a2a24306a608\""
+    "Response body is \"24\r\n3f1a1697-6186-496a-aaa5-6c31d1f6f5c0\r\n0\r\n\r\n\", not \"3f1a1697-6186-496a-aaa5-6c31d1f6f5c0\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
