@@ -124,6 +124,20 @@
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": true,
   "304-lm-use-stored-Test-Header": true,
+  "age-parse-float": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-negative": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-nonnumeric": true,
+  "age-parse-prefix": true,
+  "age-parse-suffix": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
@@ -280,10 +294,7 @@
   "heuristic-201-not_cached": true,
   "heuristic-202-not_cached": true,
   "heuristic-203-cached": true,
-  "heuristic-204-cached": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "heuristic-204-cached": true,
   "heuristic-403-not_cached": true,
   "heuristic-404-cached": [
     "Assertion",
@@ -402,10 +413,7 @@
   "status-200-stale": true,
   "status-203-fresh": true,
   "status-203-stale": true,
-  "status-204-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-204-fresh": true,
   "status-204-stale": true,
   "status-299-fresh": [
     "Assertion",

@@ -62,10 +62,7 @@
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-stored-Expires": true,
-  "304-etag-update-stored-Public-Key-Pins": [
-    "Assertion",
-    "Response 3 header Public-Key-Pins is \"null\", not \"AVQLGBWRMHCXSNI\""
-  ],
+  "304-etag-update-stored-Public-Key-Pins": true,
   "304-etag-update-stored-Set-Cookie": [
     "Assertion",
     "Response 3 header Set-Cookie is \"null\", not \"a=c\""
@@ -151,10 +148,7 @@
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-stored-Expires": true,
-  "304-lm-update-stored-Public-Key-Pins": [
-    "Assertion",
-    "Response 3 header Public-Key-Pins is \"null\", not \"AVQLGBWRMHCXSNI\""
-  ],
+  "304-lm-update-stored-Public-Key-Pins": true,
   "304-lm-update-stored-Set-Cookie": [
     "Assertion",
     "Response 3 header Set-Cookie is \"null\", not \"a=c\""
@@ -178,6 +172,14 @@
     "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
+  "age-parse-float": true,
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": true,
+  "age-parse-prefix": true,
+  "age-parse-suffix": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
@@ -318,10 +320,7 @@
     "Assertion",
     "Response 2 header Proxy-Connection is \"null\", not \"ALWHSDOZKVGRCNY\""
   ],
-  "headers-store-Public-Key-Pins": [
-    "Assertion",
-    "Response 2 header Public-Key-Pins is \"null\", not \"ASKCUMEWOGYQIAS\""
-  ],
+  "headers-store-Public-Key-Pins": true,
   "headers-store-Set-Cookie": [
     "Assertion",
     "Response 2 header Set-Cookie is \"null\", not \"a=b\""

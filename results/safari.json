@@ -184,6 +184,14 @@
     "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
+  "age-parse-float": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": true,
+  "age-parse-prefix": true,
+  "age-parse-suffix": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
