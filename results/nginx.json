@@ -28,13 +28,8 @@
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-response-Expires": [
-<<<<<<< HEAD
     "Setup",
     "Request 2 should have been conditional, but it was not."
-=======
-    "Assertion",
-    "Response 2 header Expires is \"Wed, 04 Sep 2019 06:49:58 GMT\", not \"Wed, 04 Sep 2019 07:49:57 GMT\""
->>>>>>> 86b9fa09b4580578ff2ccb75905af7afa52ad9f7
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -97,13 +92,8 @@
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-stored-Expires": [
-<<<<<<< HEAD
     "Setup",
     "Request 2 should have been conditional, but it was not."
-=======
-    "Assertion",
-    "Response 3 header Expires is \"Wed, 04 Sep 2019 06:49:58 GMT\", not \"Wed, 04 Sep 2019 07:49:57 GMT\""
->>>>>>> 86b9fa09b4580578ff2ccb75905af7afa52ad9f7
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -166,13 +156,8 @@
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-response-Expires": [
-<<<<<<< HEAD
     "Setup",
     "Request 2 should have been conditional, but it was not."
-=======
-    "Assertion",
-    "Response 2 header Expires is \"Wed, 04 Sep 2019 06:49:58 GMT\", not \"Wed, 04 Sep 2019 07:49:57 GMT\""
->>>>>>> 86b9fa09b4580578ff2ccb75905af7afa52ad9f7
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -235,13 +220,8 @@
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-stored-Expires": [
-<<<<<<< HEAD
     "Setup",
     "Request 2 should have been conditional, but it was not."
-=======
-    "Assertion",
-    "Response 3 header Expires is \"Wed, 04 Sep 2019 06:49:58 GMT\", not \"Wed, 04 Sep 2019 07:49:57 GMT\""
->>>>>>> 86b9fa09b4580578ff2ccb75905af7afa52ad9f7
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -614,11 +594,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-<<<<<<< HEAD
     "Response 2 header Date is Wed, 04 Sep 2019 06:50:37 GMT, should be Wed, 04 Sep 2019 06:50:34 GMT"
-=======
-    "Response 2 header Date is Wed, 04 Sep 2019 06:50:01 GMT, should be Wed, 04 Sep 2019 06:49:58 GMT"
->>>>>>> 86b9fa09b4580578ff2ccb75905af7afa52ad9f7
   ],
   "other-set-cookie": [
     "Assertion",
