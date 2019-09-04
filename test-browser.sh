@@ -3,6 +3,7 @@
 ## Run tests against a local browser on OSX.
 
 PORT=8000
+DOWNLOADS=~/Downloads
 
 function usage {
   echo $1
@@ -13,6 +14,9 @@ function usage {
 if [[ $# -eq 0 ]]; then
   usage "Please specify a browser."
 fi
+
+TARGET="${DOWNLOADS}/${1}.json"
+rm -f "${TARGET}"
 
 URL="http://localhost:${PORT}/test-browser.html?auto=1&download=$1"
 
@@ -37,7 +41,16 @@ sleep 2
 
 # run tests
 open -a "$BROWSER_CMD" $URL
-sleep 15
 
 # stop test server
+i=0
+while [ ! -f "${TARGET}" ]
+do
+  sleep 1
+  i=$((i+1))
+  if [ "$i" -gt "60" ] ; then
+    echo "Timeout." >&2
+    break
+  fi
+done
 kill `cat server.PID` && rm server.PID
