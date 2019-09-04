@@ -29,7 +29,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Wed, 04 Sep 2019 09:46:23 GMT\", not \"Wed, 04 Sep 2019 10:46:22 GMT\""
+    "Response 2 header Expires is \"Wed, 04 Sep 2019 10:12:08 GMT\", not \"Wed, 04 Sep 2019 11:12:07 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -93,7 +93,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Wed, 04 Sep 2019 09:46:23 GMT\", not \"Wed, 04 Sep 2019 10:46:22 GMT\""
+    "Response 3 header Expires is \"Wed, 04 Sep 2019 10:12:08 GMT\", not \"Wed, 04 Sep 2019 11:12:07 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Wed, 04 Sep 2019 09:46:23 GMT\", not \"Wed, 04 Sep 2019 10:46:22 GMT\""
+    "Response 2 header Expires is \"Wed, 04 Sep 2019 10:12:08 GMT\", not \"Wed, 04 Sep 2019 11:12:07 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Wed, 04 Sep 2019 09:46:23 GMT\", not \"Wed, 04 Sep 2019 10:46:22 GMT\""
+    "Response 3 header Expires is \"Wed, 04 Sep 2019 10:12:08 GMT\", not \"Wed, 04 Sep 2019 11:12:07 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -256,6 +256,10 @@
     "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
+  "age-parse-dup-0": true,
+  "age-parse-dup-0-twoline": true,
+  "age-parse-dup-old": true,
+  "age-parse-dup-old-twoline": true,
   "age-parse-float": true,
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
@@ -393,7 +397,10 @@
     "Response 2 comes from cache"
   ],
   "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-present": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
   "freshness-expires-wrong-case-weekday": true,
@@ -593,7 +600,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 04 Sep 2019 09:46:26 GMT, should be Wed, 04 Sep 2019 09:46:23 GMT"
+    "Response 2 header Date is Wed, 04 Sep 2019 10:12:12 GMT, should be Wed, 04 Sep 2019 10:12:08 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
