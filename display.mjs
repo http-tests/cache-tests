@@ -2,11 +2,14 @@
 
 import './marked.min.js'
 
-export function downloadTestResults (target, fileName, data) {
+export function downloadTestResults (target, fileName, data, auto) {
   var dataBlob = new Blob([JSON.stringify(data, null, 2)], {type: 'text/json'})
   target.setAttribute('href', window.URL.createObjectURL(dataBlob))
   target.setAttribute('download', fileName)
   target.style.display = 'inherit'
+  if (auto) {
+    target.click()
+  }
 }
 
 export function renderTestResults (testSuites, testResults, testUUIDs, target, useBrowserCache) {

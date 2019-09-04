@@ -15,13 +15,17 @@
           display.renderTestResults(baseTests, client.getResults(), client.testUUIDs, resultsTarget, true)
         })
         .then(function() {
-          let filename = 'results.json'
           let params = (new URL(location)).searchParams
+          let filename = 'results.json'
           if (params.get('download')) {
             filename = `${params.get('download')}.json`
           }
+          let auto = false
+          if (params.get('auto')) {
+            auto = true
+          }
           let downloadTarget = document.getElementById('download')
-          display.downloadTestResults(downloadTarget, filename, client.getResults())
+          display.downloadTestResults(downloadTarget, filename, client.getResults(), auto)
         })
     </script>
   </head>
