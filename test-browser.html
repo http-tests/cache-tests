@@ -11,12 +11,17 @@
 
       client.runTests(baseTests, fetch, true)
         .then(function() {
-          var resultsTarget = document.getElementById('results')
+          let resultsTarget = document.getElementById('results')
           display.renderTestResults(baseTests, client.getResults(), client.testUUIDs, resultsTarget, true)
         })
         .then(function() {
-          var downloadTarget = document.getElementById('download')
-          display.downloadTestResults(downloadTarget, "results.json", client.getResults())
+          let filename = 'results.json'
+          let params = (new URL(location)).searchParams
+          if (params.get('download')) {
+            filename = `${params.get('download')}.json`
+          }
+          let downloadTarget = document.getElementById('download')
+          display.downloadTestResults(downloadTarget, filename, client.getResults())
         })
     </script>
   </head>
