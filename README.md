@@ -111,6 +111,8 @@ To run an individual test case, try:
 
 To test a browser, just point it at `https://{hostname:port}/test-browser.html` after setting up the server.
 
+On OSX, you can use `test-browser.sh` to automate this, somewhat.
+
 
 ## Interpreting the Results
 
