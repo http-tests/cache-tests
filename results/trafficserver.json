@@ -285,11 +285,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-<<<<<<< HEAD
-    "Response body is \"24\r\nf720914c-0470-4f65-affb-a2a24306a608\r\n0\r\n\r\n\", not \"f720914c-0470-4f65-affb-a2a24306a608\""
-=======
-    "Response body is \"24\r\nd956bd2d-7517-4062-9806-a92f7ac7fdcd\r\n0\r\n\r\n\", not \"d956bd2d-7517-4062-9806-a92f7ac7fdcd\""
->>>>>>> 86b9fa09b4580578ff2ccb75905af7afa52ad9f7
+    "Response body is \"24\r\n253590bd-1f0d-4d54-87d0-d1adb488f20d\r\n0\r\n\r\n\", not \"253590bd-1f0d-4d54-87d0-d1adb488f20d\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
