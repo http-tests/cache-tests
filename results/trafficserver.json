@@ -88,6 +88,17 @@
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": true,
   "304-lm-use-stored-Test-Header": true,
+  "age-parse-float": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": true,
+  "age-parse-prefix": true,
+  "age-parse-suffix": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": [
@@ -274,7 +285,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n58eecb0e-ed64-474b-af6d-41e5ff7ccc3a\r\n0\r\n\r\n\", not \"58eecb0e-ed64-474b-af6d-41e5ff7ccc3a\""
+    "Response body is \"24\r\nf720914c-0470-4f65-affb-a2a24306a608\r\n0\r\n\r\n\", not \"f720914c-0470-4f65-affb-a2a24306a608\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
