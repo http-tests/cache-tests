@@ -29,7 +29,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Thu, 06 Jun 2019 08:47:11 GMT\", not \"Thu, 06 Jun 2019 09:47:10 GMT\""
+    "Response 2 header Expires is \"Wed, 04 Sep 2019 06:49:58 GMT\", not \"Wed, 04 Sep 2019 07:49:57 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -93,7 +93,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Thu, 06 Jun 2019 08:47:11 GMT\", not \"Thu, 06 Jun 2019 09:47:10 GMT\""
+    "Response 3 header Expires is \"Wed, 04 Sep 2019 06:49:58 GMT\", not \"Wed, 04 Sep 2019 07:49:57 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Thu, 06 Jun 2019 08:47:11 GMT\", not \"Thu, 06 Jun 2019 09:47:10 GMT\""
+    "Response 2 header Expires is \"Wed, 04 Sep 2019 06:49:58 GMT\", not \"Wed, 04 Sep 2019 07:49:57 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Thu, 06 Jun 2019 08:47:11 GMT\", not \"Thu, 06 Jun 2019 09:47:10 GMT\""
+    "Response 3 header Expires is \"Wed, 04 Sep 2019 06:49:58 GMT\", not \"Wed, 04 Sep 2019 07:49:57 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -256,6 +256,11 @@
     "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
+  "age-parse-float": true,
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": true,
+  "age-parse-prefix": true,
+  "age-parse-suffix": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": [
@@ -589,7 +594,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Thu, 06 Jun 2019 08:47:14 GMT, should be Thu, 06 Jun 2019 08:47:11 GMT"
+    "Response 2 header Date is Wed, 04 Sep 2019 06:50:01 GMT, should be Wed, 04 Sep 2019 06:49:58 GMT"
   ],
   "other-set-cookie": [
     "Assertion",

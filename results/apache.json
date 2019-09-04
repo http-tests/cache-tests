@@ -100,6 +100,11 @@
   "304-lm-update-stored-X-Test-Header": true,
   "304-lm-update-stored-X-XSS-Protection": true,
   "304-lm-use-stored-Test-Header": true,
+  "age-parse-float": true,
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": true,
+  "age-parse-prefix": true,
+  "age-parse-suffix": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
@@ -370,7 +375,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Thu, 06 Jun 2019 08:47:29 GMT, should be Thu, 06 Jun 2019 08:47:26 GMT"
+    "Response 2 header Date is Wed, 04 Sep 2019 06:50:16 GMT, should be Wed, 04 Sep 2019 06:50:13 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
