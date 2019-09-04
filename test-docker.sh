@@ -7,7 +7,7 @@ SERVER_HOST=host.docker.internal
 
 function usage {
   echo $1
-  echo "Usage: $0 proxy-name [ test-id ]"
+  echo "Usage: $0 proxy-name [ test-id ]" >&2
   exit 1
 }
 
@@ -45,8 +45,6 @@ docker run --name=tmp_proxies -p $PROXY_PORT:$PROXY_PORT -dt mnot/proxy-cache-te
 sleep 7
 
 # run tests
-
-echo "Testing $1 on port $PROXY_PORT"
 if [[ -z $2 ]]; then
   npm run --silent cli --base=http://localhost:$PROXY_PORT
 else
