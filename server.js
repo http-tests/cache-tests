@@ -165,7 +165,18 @@ function handleTest (pathSegs, request, response) {
       }
       header[1] = header[1].replace('CAPABILITY_TARGET', capabilityTarget)
     }
-    response.setHeader(header[0], header[1])
+    if (response.hasHeader(header[0])) {
+      var currentVal = response.getHeader(header[0])
+      if (typeof currentVal === 'string') {
+        response.setHeader(header[0], [currentVal, header[1]])
+      } else if (Array.isArray(currentVal)) {
+        response.setHeader(header[0], currentVal.concat(header[1]))
+      } else {
+        console.log(`ERROR: Unanticipated header type of ${typeof currentVal} for ${header[0]}`)
+      }
+    } else {
+      response.setHeader(header[0], header[1])
+    }
     if (noteHeaders.has(headerName)) {
       notedHeaders.set(headerName, header[1])
     }
