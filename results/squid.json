@@ -93,15 +93,15 @@
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
   "age-parse-prefix": true,
-  "age-parse-prefix-twoline": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-prefix-twoline": true,
   "age-parse-suffix": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "age-parse-suffix-twoline": true,
+  "age-parse-suffix-twoline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": [
     "Assertion",
@@ -279,12 +279,12 @@
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache": [
-    "Assertion",
-    "Response 2 includes unexpected header a: \"1\""
+    "Setup",
+    "Response 2 does not come from cache"
   ],
   "headers-omit-headers-listed-in-Cache-Control-no-cache-single": [
-    "Assertion",
-    "Response 2 includes unexpected header a: \"1\""
+    "Setup",
+    "Response 2 does not come from cache"
   ],
   "headers-omit-headers-listed-in-Connection": true,
   "headers-store-Clear-Site-Data": true,

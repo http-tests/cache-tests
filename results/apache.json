@@ -111,12 +111,12 @@
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
   "age-parse-prefix": true,
-  "age-parse-prefix-twoline": [
+  "age-parse-prefix-twoline": true,
+  "age-parse-suffix": true,
+  "age-parse-suffix-twoline": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "age-parse-suffix": true,
-  "age-parse-suffix-twoline": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
@@ -260,14 +260,8 @@
   "freshness-max-age-space-before-equals": true,
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
-  "headers-omit-headers-listed-in-Cache-Control-no-cache": [
-    "Assertion",
-    "Response 2 includes unexpected header a: \"1\""
-  ],
-  "headers-omit-headers-listed-in-Cache-Control-no-cache-single": [
-    "Assertion",
-    "Response 2 includes unexpected header a: \"1\""
-  ],
+  "headers-omit-headers-listed-in-Cache-Control-no-cache": true,
+  "headers-omit-headers-listed-in-Cache-Control-no-cache-single": true,
   "headers-omit-headers-listed-in-Connection": true,
   "headers-store-Clear-Site-Data": true,
   "headers-store-Connection": [
@@ -387,7 +381,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 04 Sep 2019 10:18:20 GMT, should be Wed, 04 Sep 2019 10:18:17 GMT"
+    "Response 2 header Date is Tue, 04 Feb 2020 08:57:34 GMT, should be Tue, 04 Feb 2020 08:57:30 GMT"
   ],
   "other-set-cookie": true,
   "other-warning": [
