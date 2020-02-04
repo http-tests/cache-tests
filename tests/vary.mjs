@@ -1,9 +1,9 @@
 import * as utils from '../utils.mjs'
 
 export default {
-  name: 'Vary and Secondary Cache Keys',
+  name: 'Vary and Cache Keys',
   id: 'vary',
-  description: 'These tests check for conformance and optimal behaviour when calculating a [secondary cache key] in HTTP; also known as `Vary` handling.',
+  description: 'These tests check for conformance and optimal behaviour when calculating a [cache key using Vary] in HTTP.',
   tests: [
     {
       name: 'An optimal HTTP cache reuses a `Vary` response when the request matches',
