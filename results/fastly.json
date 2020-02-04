@@ -28,12 +28,12 @@
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-response-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Expires is \"Tue, 04 Feb 2020 09:39:26 GMT\", not \"Tue, 04 Feb 2020 10:39:25 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
-    "Assertion",
-    "Response 2 header Public-Key-Pins is \"AUOICWQKEYSMGAU\", not \"AVQLGBWRMHCXSNI\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Set-Cookie": [
     "Setup",
@@ -41,7 +41,7 @@
   ],
   "304-etag-update-response-Set-Cookie2": [
     "Assertion",
-    "Response 2 header Set-Cookie2 is \"a=b\", not \"a=c\""
+    "Response 2 header Set-Cookie2 is \"null\", not \"a=c\""
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
@@ -93,7 +93,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Fri, 17 May 2019 09:51:36 GMT\", not \"Fri, 17 May 2019 10:51:35 GMT\""
+    "Response 3 header Expires is \"Tue, 04 Feb 2020 09:39:26 GMT\", not \"Tue, 04 Feb 2020 10:39:25 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -105,7 +105,7 @@
   ],
   "304-etag-update-stored-Set-Cookie2": [
     "Assertion",
-    "Response 3 header Set-Cookie2 is \"a=b\", not \"a=c\""
+    "Response 3 header Set-Cookie2 is \"null\", not \"a=c\""
   ],
   "304-etag-update-stored-Test-Header": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Fri, 17 May 2019 09:51:36 GMT\", not \"Fri, 17 May 2019 10:51:35 GMT\""
+    "Response 2 header Expires is \"Tue, 04 Feb 2020 09:39:26 GMT\", not \"Tue, 04 Feb 2020 10:39:25 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -169,7 +169,7 @@
   ],
   "304-lm-update-response-Set-Cookie2": [
     "Assertion",
-    "Response 2 header Set-Cookie2 is \"a=b\", not \"a=c\""
+    "Response 2 header Set-Cookie2 is \"null\", not \"a=c\""
   ],
   "304-lm-update-response-Test-Header": [
     "Assertion",
@@ -208,8 +208,8 @@
     "Response 3 header Content-Location is \"/foo\", not \"/bar\""
   ],
   "304-lm-update-stored-Content-MD5": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
   ],
   "304-lm-update-stored-Content-Security-Policy": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Fri, 17 May 2019 09:51:36 GMT\", not \"Fri, 17 May 2019 10:51:35 GMT\""
+    "Response 3 header Expires is \"Tue, 04 Feb 2020 09:39:26 GMT\", not \"Tue, 04 Feb 2020 10:39:25 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -233,7 +233,7 @@
   ],
   "304-lm-update-stored-Set-Cookie2": [
     "Assertion",
-    "Response 3 header Set-Cookie2 is \"a=b\", not \"a=c\""
+    "Response 3 header Set-Cookie2 is \"null\", not \"a=c\""
   ],
   "304-lm-update-stored-Test-Header": [
     "Assertion",
@@ -256,6 +256,35 @@
     "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
+  "age-parse-dup-0": true,
+  "age-parse-dup-0-twoline": true,
+  "age-parse-dup-old": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-dup-old-twoline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-float": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-negative": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-nonnumeric": true,
+  "age-parse-prefix": true,
+  "age-parse-prefix-twoline": true,
+  "age-parse-suffix": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-suffix-twoline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "cc-resp-no-cache": [
     "Assertion",
     "Response 2 comes from cache"
@@ -318,8 +347,8 @@
     "Response 2 comes from cache"
   ],
   "ccreq-oic": [
-    "Assertion",
-    "Response 1 status is 200, not 504"
+    "TypeError",
+    "can’t load from network"
   ],
   "conditional-304-etag": true,
   "conditional-etag-forward": [
@@ -399,7 +428,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "freshness-expires-old-date": true,
+  "freshness-expires-old-date": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-past": true,
   "freshness-expires-present": true,
   "freshness-expires-wrong-case-month": true,
@@ -480,7 +512,7 @@
   "headers-store-Clear-Site-Data": true,
   "headers-store-Connection": [
     "Assertion",
-    "Response 2 header Connection is \"close\", not \"ASKCUMEWOGYQIAS\""
+    "Response 2 header Connection is \"keep-alive\", not \"ASKCUMEWOGYQIAS\""
   ],
   "headers-store-Content-Type": true,
   "headers-store-Proxy-Authenticate": [
@@ -493,13 +525,16 @@
     "Setup",
     "Response 2 does not come from cache"
   ],
-  "headers-store-Set-Cookie2": true,
+  "headers-store-Set-Cookie2": [
+    "Assertion",
+    "Response 2 header Set-Cookie2 is \"null\", not \"a=b\""
+  ],
   "headers-store-Strict-Transport-Security": true,
   "headers-store-Strict-Transport-Security2": true,
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response 1 status is 503, not 200"
+    "Response 2 does not come from cache"
   ],
   "headers-store-Upgrade": [
     "Assertion",
@@ -546,8 +581,8 @@
   ],
   "heuristic-502-not_cached": true,
   "heuristic-503-not_cached": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "Response 1 status is 409, not 503"
   ],
   "heuristic-504-not_cached": true,
   "heuristic-599-cached": [
@@ -610,13 +645,13 @@
   "other-age-gen": true,
   "other-age-update-expires": [
     "Assertion",
-    "Response 2 header Age is 3, should be bigger"
+    "Response 2 header Age is 10, should be bigger"
   ],
   "other-age-update-max-age": true,
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Fri, 17 May 2019 09:51:41 GMT, should be Fri, 17 May 2019 09:51:37 GMT"
+    "Response 2 header Date is Tue, 04 Feb 2020 09:39:57 GMT, should be Tue, 04 Feb 2020 09:39:47 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
@@ -703,8 +738,8 @@
   ],
   "status-499-stale": true,
   "status-500-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "Response 1 status is 409, not 500"
   ],
   "status-500-stale": [
     "Setup",
@@ -716,8 +751,8 @@
   ],
   "status-502-stale": true,
   "status-503-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "Response 1 status is 409, not 503"
   ],
   "status-503-stale": [
     "Setup",
@@ -782,10 +817,7 @@
   "vary-invalidate": true,
   "vary-match": true,
   "vary-no-match": true,
-  "vary-normalise-combine": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "vary-normalise-combine": true,
   "vary-normalise-lang-case": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -807,5 +839,15 @@
     "Response 2 does not come from cache"
   ],
   "vary-omit": true,
-  "vary-star": true
+  "vary-star": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-empty-star": true,
+  "vary-syntax-empty-star-lines": true,
+  "vary-syntax-foo-star": true,
+  "vary-syntax-star": true,
+  "vary-syntax-star-foo": true,
+  "vary-syntax-star-star": true,
+  "vary-syntax-star-star-lines": true
 }
