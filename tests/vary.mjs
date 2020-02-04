@@ -306,7 +306,7 @@ export default {
         },
         {
           request_headers: [
-            ['*', '1'],
+            ['Foo', '1'],
             ['Baz', '789']
           ],
           expected_type: 'not_cached'
