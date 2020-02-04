@@ -4,20 +4,20 @@ export default [
     "file": "chrome.json",
     "name": "Chrome",
     "type": "browser",
-    "version": "74.0.3729.131"
+    "version": "79.0.3945.130"
   },
   {
     "file": "firefox.json",
     "name": "Firefox",
     "type": "browser",
-    "version": "67.0b16",
+    "version": "73.0b9",
     "link": "https://github.com/http-tests/cache-tests/wiki/Firefox"
   },
   {
     "file": "safari.json",
     "name": "Safari",
     "type": "browser",
-    "version": "12.1 (14607.1.40.1.4)"
+    "version": "13.0.5 (15608.5.11)"
   },
   {
     "file": "nginx.json",

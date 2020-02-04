@@ -186,15 +186,15 @@
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
   "age-parse-prefix": true,
-  "age-parse-prefix-twoline": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-prefix-twoline": true,
   "age-parse-suffix": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "age-parse-suffix-twoline": true,
+  "age-parse-suffix-twoline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
@@ -306,14 +306,8 @@
   ],
   "freshness-max-age-space-before-equals": true,
   "freshness-none": true,
-  "headers-omit-headers-listed-in-Cache-Control-no-cache": [
-    "Assertion",
-    "Response 2 includes unexpected header a: \"1\""
-  ],
-  "headers-omit-headers-listed-in-Cache-Control-no-cache-single": [
-    "Assertion",
-    "Response 2 includes unexpected header a: \"1\""
-  ],
+  "headers-omit-headers-listed-in-Cache-Control-no-cache": true,
+  "headers-omit-headers-listed-in-Cache-Control-no-cache-single": true,
   "headers-omit-headers-listed-in-Connection": [
     "Assertion",
     "Response 2 includes unexpected header a: \"1\""
@@ -598,5 +592,33 @@
     "Response 2 does not come from cache"
   ],
   "vary-omit": true,
-  "vary-star": true
+  "vary-star": true,
+  "vary-syntax-empty-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-empty-star-lines": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-foo-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star-foo": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star-star-lines": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ]
 }

@@ -187,10 +187,7 @@
   "age-parse-dup-0": true,
   "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
-  "age-parse-dup-old-twoline": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-dup-old-twoline": true,
   "age-parse-float": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -198,10 +195,7 @@
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
   "age-parse-prefix": true,
-  "age-parse-prefix-twoline": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-prefix-twoline": true,
   "age-parse-suffix": true,
   "age-parse-suffix-twoline": true,
   "cc-resp-no-cache": true,
@@ -583,5 +577,33 @@
     "Response 2 does not come from cache"
   ],
   "vary-omit": true,
-  "vary-star": true
+  "vary-star": true,
+  "vary-syntax-empty-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-empty-star-lines": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-foo-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star-foo": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star-star-lines": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ]
 }

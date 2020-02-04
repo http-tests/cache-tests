@@ -55,7 +55,10 @@
   "304-lm-update-response-X-Content-Foo": true,
   "304-lm-update-response-X-Frame-Options": true,
   "304-lm-update-response-X-Test-Header": true,
-  "304-lm-update-response-X-XSS-Protection": true,
+  "304-lm-update-response-X-XSS-Protection": [
+    "FetchError",
+    "request to http://localhost:8005/config/95feeb50-417c-4c0b-a13d-9dc5da50f938 failed, reason: connect ECONNRESET 127.0.0.1:8005"
+  ],
   "304-lm-update-stored-Cache-Control": true,
   "304-lm-update-stored-Clear-Site-Data": true,
   "304-lm-update-stored-Content-Foo": true,
@@ -644,5 +647,15 @@
     "Response 2 does not come from cache"
   ],
   "vary-omit": true,
-  "vary-star": true
+  "vary-star": true,
+  "vary-syntax-empty-star": true,
+  "vary-syntax-empty-star-lines": true,
+  "vary-syntax-foo-star": true,
+  "vary-syntax-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star-foo": true,
+  "vary-syntax-star-star": true,
+  "vary-syntax-star-star-lines": true
 }

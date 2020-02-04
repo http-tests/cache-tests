@@ -28,8 +28,8 @@
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-response-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Expires is \"Tue, 04 Feb 2020 09:21:10 GMT\", not \"Tue, 04 Feb 2020 10:21:09 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -92,8 +92,8 @@
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-etag-update-stored-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Expires is \"Tue, 04 Feb 2020 09:21:10 GMT\", not \"Tue, 04 Feb 2020 10:21:09 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -156,8 +156,8 @@
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-response-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Expires is \"Tue, 04 Feb 2020 09:21:10 GMT\", not \"Tue, 04 Feb 2020 10:21:09 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -220,8 +220,8 @@
     "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
   "304-lm-update-stored-Expires": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Expires is \"Tue, 04 Feb 2020 09:21:10 GMT\", not \"Tue, 04 Feb 2020 10:21:09 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -240,8 +240,8 @@
     "Response 3 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
   ],
   "304-lm-update-stored-X-Content-Foo": [
-    "Assertion",
-    "Response 3 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
+    "FetchError",
+    "request to http://localhost:8002/config/fc7b84f3-d33a-41ad-b6c0-188ed2ec2f44 failed, reason: connect ECONNRESET 127.0.0.1:8002"
   ],
   "304-lm-update-stored-X-Frame-Options": [
     "Assertion",
@@ -600,7 +600,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 04 Feb 2020 08:57:13 GMT, should be Tue, 04 Feb 2020 08:57:10 GMT"
+    "Response 2 header Date is Tue, 04 Feb 2020 09:21:14 GMT, should be Tue, 04 Feb 2020 09:21:10 GMT"
   ],
   "other-set-cookie": [
     "Assertion",
@@ -776,5 +776,21 @@
     "Response 2 does not come from cache"
   ],
   "vary-omit": true,
-  "vary-star": true
+  "vary-star": true,
+  "vary-syntax-empty-star": true,
+  "vary-syntax-empty-star-lines": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-foo-star": true,
+  "vary-syntax-star": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "vary-syntax-star-foo": true,
+  "vary-syntax-star-star": true,
+  "vary-syntax-star-star-lines": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ]
 }
