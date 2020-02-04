@@ -137,7 +137,7 @@ export default
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
             ['Age', '0'],
-            ['Age','7200']
+            ['Age', '7200']
           ],
           setup: true,
           pause_after: true
