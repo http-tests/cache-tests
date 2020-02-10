@@ -381,7 +381,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 04 Feb 2020 09:19:19 GMT, should be Tue, 04 Feb 2020 09:19:16 GMT"
+    "Response 2 header Date is Tue, 11 Feb 2020 17:30:16 GMT, should match Server-Now (Tue, 11 Feb 2020 17:30:13 GMT)"
   ],
   "other-set-cookie": true,
   "other-warning": [
@@ -582,11 +582,11 @@
     "Response 2 does not come from cache"
   ],
   "vary-syntax-star-star": [
-    "FetchError",
-    "request to http://localhost:8004/config/d5c28cca-9d95-41e6-883b-7615076ff5a5 failed, reason: connect ECONNRESET 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "vary-syntax-star-star-lines": [
-    "FetchError",
-    "request to http://localhost:8004/config/8c1fb144-480a-475e-aa60-2941d2cb7265 failed, reason: connect ECONNRESET 127.0.0.1:8004"
+    "Assertion",
+    "Response 2 does not come from cache"
   ]
 }
