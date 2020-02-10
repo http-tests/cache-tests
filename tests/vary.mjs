@@ -1,3 +1,5 @@
+
+import * as templates from '../templates.mjs'
 import * as utils from '../utils.mjs'
 
 export default {
@@ -10,9 +12,7 @@ export default {
       id: 'vary-match',
       kind: 'optimal',
       requests: [
-        {
-          template: 'vary-setup'
-        },
+        templates.vary_setup({}),
         {
           request_headers: [
             ['Foo', '1']
@@ -25,9 +25,7 @@ export default {
       name: "HTTP cache must not reuse `Vary` response when request doesn't match",
       id: 'vary-no-match',
       requests: [
-        {
-          template: 'vary-setup'
-        },
+        templates.vary_setup({}),
         {
           request_headers: [
             ['Foo', '2']
@@ -40,9 +38,7 @@ export default {
       name: 'HTTP cache must not reuse `Vary` response when request omits variant request header',
       id: 'vary-omit',
       requests: [
-        {
-          template: 'vary-setup'
-        },
+        templates.vary_setup({}),
         {
           expected_type: 'not_cached'
         }
@@ -53,10 +49,9 @@ export default {
       id: 'vary-invalidate',
       kind: 'optimal',
       requests: [
-        {
-          template: 'vary-setup',
+        templates.vary_setup({
           response_body: utils.httpContent('foo_1')
-        },
+        }),
         {
           request_headers: [
             ['Foo', '2']
@@ -85,13 +80,12 @@ export default {
       id: 'vary-cache-key',
       kind: 'optimal',
       requests: [
-        {
-          template: 'vary-setup',
+        templates.vary_setup({
           request_headers: [
             ['Foo', '1'],
             ['Other', '2']
           ]
-        },
+        }),
         {
           request_headers: [
             ['Foo', '1'],

@@ -1,3 +1,5 @@
+
+import * as templates from '../templates.mjs'
 import * as utils from '../utils.mjs'
 
 export default
@@ -104,10 +106,9 @@ export default
       name: 'Different query arguments must be different cache keys',
       id: 'query-args-different',
       requests: [
-        {
-          template: 'fresh',
+        templates.fresh({
           query_arg: 'test=' + utils.httpContent('query-args-different-1')
-        },
+        }),
         {
           query_arg: 'test=' + utils.httpContent('query-args-different-2'),
           expected_type: 'not_cached'
@@ -119,10 +120,9 @@ export default
       id: 'query-args-same',
       kind: 'optimal',
       requests: [
-        {
-          template: 'fresh',
+        templates.fresh({
           query_arg: 'test=' + utils.httpContent('query-args-same')
-        },
+        }),
         {
           query_arg: 'test=' + utils.httpContent('query-args-same'),
           expected_type: 'cached'
@@ -170,9 +170,7 @@ export default
       id: 'other-warning',
       kind: 'check',
       requests: [
-        {
-          template: 'stale'
-        },
+        templates.stale({}),
         {
           expected_response_headers: ['warning']
         }

@@ -1,5 +1,4 @@
 
-import templates from './templates.mjs'
 import * as utils from './utils.mjs'
 
 const noBodyStatus = new Set([204, 304])
@@ -133,14 +132,6 @@ function expandTemplates (test) {
     request.name = test.name
     request.id = test.id
     request.dump = test.dump
-    if ('template' in request) {
-      var template = templates[request['template']]
-      for (let member in template) {
-        if (!request.hasOwnProperty(member)) {
-          request[member] = template[member]
-        }
-      }
-    }
     requests.push(request)
   }
   return requests
