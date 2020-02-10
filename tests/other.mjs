@@ -24,10 +24,7 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (s, assert, p, a) {
-              assert(s, a !== undefined, `${p} isn't present`)
-              assert(s, parseInt(a) > 2, `${p} is ${a}, should be bigger`)
-            }]
+            ['Age', '>', 2]
           ]
         }
       ]
@@ -48,10 +45,7 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (s, assert, p, a) {
-              assert(s, a !== undefined, `${p} isn't present`)
-              assert(s, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
-            }]
+            ['Age', '>', 32]
           ]
         }
       ]
@@ -72,10 +66,7 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (s, assert, p, a) {
-              assert(s, a !== undefined, `${p} isn't present`)
-              assert(s, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
-            }]
+            ['Age', '>', 32]
           ]
         }
       ]
@@ -95,9 +86,7 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Date', function (s, assert, p, a, r) {
-              assert(s, a === r.headers.get('Server-Now'), `${p} is ${a}, should be ${r.headers.get('Server-Now')}`)
-            }]
+            ['Date', '=', 'Server-Now']
           ]
         }
       ]

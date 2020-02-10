@@ -217,10 +217,11 @@ Possible members of a request object:
                               headers to check the request for on the server, or an array of
                               strings representing header names to check for presence in the
                               request.
-- `expected_response_headers` - An array of `[header_name_string, header_value_string]` representing
-                              headers to check the response for on the client, or an array of
-                              strings representing header names to check for presence in the
-                              response. See also response_headers.
+- `expected_response_headers` - An array of any combination of the following. See also `response_headers`.
+  - `header_name_string`: assert that the named header is present
+  - `[header_name_string, header_value_string]`: assert that the header has the given value
+  - `[header_name_string, '=', other_header_name]`: assert that the two headers have the same value
+  - `[header_name_string, '>', number]`: assert that the header's value is numerically greater than specified
 - `expected_response_headers_missing` - An array of `header_name_string` representing headers to
                                       check that the response on the client does not include.
 - `expected_response_text` - A string to check the response body against on the client.
