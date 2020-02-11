@@ -80,10 +80,7 @@ function makeCacheTest (test) {
             console.log('')
           }
           return theFetch(url, init)
-            .then(makeCheckResponse(idx, reqConfig, test.dump))
-            .then(makeCheckResponseBody(reqConfig, uuid, test.dump), reason => {
-              throw reason
-            })
+            .then(makeCheckResponse(idx, reqConfig, uuid, test.dump))
         },
         pauseAfter: 'pause_after' in requests[i]
       })
@@ -168,7 +165,7 @@ function fetchInit (idx, reqConfig) {
   return init
 }
 
-function makeCheckResponse (idx, reqConfig, dump) {
+function makeCheckResponse (idx, reqConfig, uuid, dump) {
   return function checkResponse (response) {
     var reqNum = idx + 1
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
@@ -245,18 +242,12 @@ function makeCheckResponse (idx, reqConfig, dump) {
           `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
       })
     }
-    return response.text()
+    return response.text().then(makeCheckResponseBody(reqConfig, uuid, response.status))
   }
 }
 
-function makeCheckResponseBody (reqConfig, uuid) {
+function makeCheckResponseBody (reqConfig, uuid, statusCode) {
   return function checkResponseBody (resBody) {
-    var statusCode = 200
-    if ('expected_status' in reqConfig) {
-      statusCode = reqConfig.expected_status
-    } else if ('response_status' in reqConfig) {
-      statusCode = reqConfig.response_status[0]
-    }
     if ('expected_response_text' in reqConfig) {
       if (reqConfig.expected_response_text !== null) {
         assert(setupCheck(reqConfig, 'expected_response_text'),
