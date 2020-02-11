@@ -22,7 +22,6 @@ const mimeTypes = {
   'mjs': 'application/javascript',
   'css': 'text/css'
 }
-const noteHeaders = new Set(['content-type', 'access-control-allow-origin', 'last-modified', 'etag', 'surrogate-capability'])
 const noBodyStatus = new Set([204, 304])
 const locationHeaders = new Set(['location', 'content-location'])
 const dateHeaders = new Set(['date', 'expires', 'last-modified'])
@@ -147,7 +146,6 @@ function handleTest (pathSegs, request, response) {
   response.statusPhrase = httpStatus[1]
 
   // header manipulation
-  var notedHeaders = new Map()
   var responseHeaders = reqConfig.response_headers || []
   responseHeaders.forEach(header => {
     var headerName = header[0].toLowerCase()
@@ -177,12 +175,9 @@ function handleTest (pathSegs, request, response) {
     } else {
       response.setHeader(header[0], header[1])
     }
-    if (noteHeaders.has(headerName)) {
-      notedHeaders.set(headerName, header[1])
-    }
   })
 
-  if (!notedHeaders.has('content-type')) {
+  if (!response.hasHeader('content-type')) {
     response.setHeader('Content-Type', 'text/plain')
   }
   response.setHeader('Server-Request-Count', serverState.length)
