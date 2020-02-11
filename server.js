@@ -141,6 +141,7 @@ function handleTest (pathSegs, request, response) {
 
   // header manipulation
   var responseHeaders = reqConfig.response_headers || []
+  let savedHeaders = new Map()
   responseHeaders.forEach(header => {
     var headerName = header[0].toLowerCase()
     if (locationHeaders.has(headerName) && reqConfig.magic_locations === true) { // magic!
@@ -169,6 +170,9 @@ function handleTest (pathSegs, request, response) {
     } else {
       response.setHeader(header[0], header[1])
     }
+    if (header.length < 3 || header[2] === true) {
+      savedHeaders.set(header[0], response.getHeader(header[0]))
+    }
   })
 
   if (!response.hasHeader('content-type')) {
@@ -179,6 +183,7 @@ function handleTest (pathSegs, request, response) {
     'request_num': parseInt(request.headers['req-num']),
     'request_method': request.method,
     'request_headers': request.headers,
+    'response_headers': Array.from(savedHeaders.entries()),
   })
   stash.set(uuid, serverState)
 

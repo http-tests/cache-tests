@@ -5,6 +5,9 @@ import * as utils from './utils.mjs'
 const noBodyStatus = new Set([204, 304])
 const assert = utils.assert
 
+// https://fetch.spec.whatwg.org/#forbidden-response-header-name
+const forbiddenResponseHeaders = new Set(['set-cookie', 'set-cookie2'])
+
 var theFetch = null
 var useBrowserCache = false
 var testArray = []
@@ -59,6 +62,7 @@ function makeCacheTest (test) {
     var uuid = utils.token()
     testUUIDs[test.id] = uuid
     var requests = expandTemplates(test)
+    var responses = []
     var fetchFunctions = []
     for (let i = 0; i < requests.length; ++i) {
       fetchFunctions.push({
@@ -79,8 +83,12 @@ function makeCacheTest (test) {
             })
             console.log('')
           }
+          const checkResponse = makeCheckResponse(idx, reqConfig, uuid, test.dump)
           return theFetch(url, init)
-            .then(makeCheckResponse(idx, reqConfig, uuid, test.dump))
+            .then(response => {
+              responses.push(response)
+              return checkResponse(response)
+            })
         },
         pauseAfter: 'pause_after' in requests[i]
       })
@@ -107,7 +115,7 @@ function makeCacheTest (test) {
         return getServerState(uuid)
       })
       .then(testState => {
-        checkRequests(requests, testState)
+        checkRequests(requests, responses, testState)
       })
       .then(() => { // pass
         if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
@@ -211,15 +219,6 @@ function makeCheckResponse (idx, reqConfig, uuid, dump) {
         response.status === 200,
         `Response ${reqNum} status is ${response.status}, not 200`)
     }
-    if ('response_headers' in reqConfig) {
-      reqConfig.response_headers.forEach(header => {
-        if (header.len < 3 || header[2] === true) {
-          assert(true, // default headers is always setup
-            response.headers.get(header[0]) === header[1],
-            `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)
-        }
-      })
-    }
     if ('expected_response_headers' in reqConfig) {
       var respPresentSetup = setupCheck(reqConfig, 'expected_response_headers')
       reqConfig.expected_response_headers.forEach(header => {
@@ -266,12 +265,13 @@ function makeCheckResponseBody (reqConfig, uuid, statusCode) {
   }
 }
 
-function checkRequests (requests, testState) {
+function checkRequests (requests, responses, testState) {
   // compare a test's requests array against the server-side testState
   var testIdx = 0
   for (let i = 0; i < requests.length; ++i) {
     var expectedValidatingHeaders = []
     var reqConfig = requests[i]
+    var response = responses[i]
     var serverRequest = testState[testIdx]
     var reqNum = i + 1
     if ('expected_type' in reqConfig) {
@@ -305,6 +305,25 @@ function checkRequests (requests, testState) {
           assert(reqPresentSetup, reqValue === header[1],
             `Request ${reqNum} header ${header[0]} is "${reqValue}", not "${header[1]}"`)
         }
+      })
+    }
+    if (typeof serverRequest !== 'undefined' && 'response_headers' in serverRequest) {
+      serverRequest.response_headers.forEach(header => {
+        if (useBrowserCache && forbiddenResponseHeaders.has(header[0].toLowerCase())) {
+          // browsers prevent reading these headers through the Fetch API so we can't verify them
+          return
+        }
+        let received = response.headers.get(header[0])
+        // XXX: assumes that if a proxy joins headers, it'll separate them with a comma and exactly one space
+        if (Array.isArray(received)) {
+          received = received.join(', ')
+        }
+        if (Array.isArray(header[1])) {
+          header[1] = header[1].join(', ')
+        }
+        assert(true, // default headers is always setup
+          received === header[1],
+          `Response ${reqNum} header ${header[0]} is "${received}", not "${header[1]}"`)
       })
     }
   }
