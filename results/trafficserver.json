@@ -148,13 +148,10 @@
   "ccreq-no-cache-etag": true,
   "ccreq-no-cache-lm": true,
   "ccreq-no-store": [
-    "FetchError",
-    "request to http://localhost:8003/config/e666089d-49ad-4b40-a2da-609e8d00daef failed, reason: connect ECONNRESET 127.0.0.1:8003"
+    "Assertion",
+    "Response 2 comes from cache"
   ],
-  "ccreq-oic": [
-    "FetchError",
-    "request to http://localhost:8003/config/94a11fea-f777-4482-a009-92418052b509 failed, reason: connect ECONNRESET 127.0.0.1:8003"
-  ],
+  "ccreq-oic": true,
   "conditional-304-etag": true,
   "conditional-etag-forward": [
     "Assertion",
@@ -303,7 +300,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\n2818d650-b94d-4b45-9a82-8d9cf9da5b80\r\n0\r\n\r\n\", not \"2818d650-b94d-4b45-9a82-8d9cf9da5b80\""
+    "Response body is \"24\r\n4d01797a-b27d-4046-bd40-f2e7d72dfaa4\r\n0\r\n\r\n\", not \"4d01797a-b27d-4046-bd40-f2e7d72dfaa4\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
@@ -435,14 +432,8 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "pragma-request-extension": [
-    "FetchError",
-    "request to http://localhost:8003/config/2a272841-09d2-47f5-9bcf-724f17c10aa1 failed, reason: connect ECONNRESET 127.0.0.1:8003"
-  ],
-  "pragma-request-no-cache": [
-    "FetchError",
-    "request to http://localhost:8003/config/f73c6b81-9224-431a-a2e9-9497085ac89f failed, reason: connect ECONNRESET 127.0.0.1:8003"
-  ],
+  "pragma-request-extension": true,
+  "pragma-request-no-cache": true,
   "pragma-response-extension": true,
   "pragma-response-no-cache": [
     "Assertion",
