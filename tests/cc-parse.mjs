@@ -14,7 +14,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age="3600"']
+            ['Cache-Control', 'max-age="3600"', false]
           ],
           setup: true,
           pause_after: true
@@ -32,7 +32,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age=\'3600\'']
+            ['Cache-Control', 'max-age=\'3600\'', false]
           ],
           setup: true,
           pause_after: true
@@ -50,7 +50,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'extension="max-age=3600", max-age=1']
+            ['Cache-Control', 'extension="max-age=3600", max-age=1', false]
           ],
           setup: true,
           pause_after: true
@@ -68,7 +68,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age=1, extension="max-age=3600"']
+            ['Cache-Control', 'max-age=1, extension="max-age=3600"', false]
           ],
           setup: true,
           pause_after: true
@@ -86,7 +86,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'extension="max-age=3600", max-age="1"']
+            ['Cache-Control', 'extension="max-age=3600", max-age="1"', false]
           ],
           setup: true,
           pause_after: true
@@ -104,7 +104,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age="1", extension="max-age=3600"']
+            ['Cache-Control', 'max-age="1", extension="max-age=3600"', false]
           ],
           setup: true,
           pause_after: true
@@ -122,7 +122,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age =3600']
+            ['Cache-Control', 'max-age =3600', false]
           ],
           setup: true,
           pause_after: true
@@ -140,7 +140,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age= 3600']
+            ['Cache-Control', 'max-age= 3600', false]
           ],
           setup: true,
           pause_after: true
@@ -158,7 +158,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age=a3600']
+            ['Cache-Control', 'max-age=a3600', false]
           ],
           setup: true,
           pause_after: true
@@ -176,7 +176,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age=3600a']
+            ['Cache-Control', 'max-age=3600a', false]
           ],
           setup: true,
           pause_after: true

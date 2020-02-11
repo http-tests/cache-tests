@@ -175,7 +175,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=3600'],
-            ['Expires', '0'],
+            ['Expires', '0', false],
             ['Date', 0]
           ],
           setup: true,

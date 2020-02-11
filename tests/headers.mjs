@@ -51,7 +51,8 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
     name: `Does HTTP cache store \`${header}\`?`,
     id: `store-${header}`,
     kind: 'check',
-    configuredHeaders: [[header, value]],
+    // defer checking the header value until the second request
+    configuredHeaders: [[header, value, false]],
     expectedHeaders: [[header, value]]
   })
 })
@@ -60,10 +61,10 @@ checkCached({
   name: 'Does `Connection` header inhibit storing listed headers?',
   id: `omit-headers-listed-in-Connection`,
   configuredHeaders: [
-    ['Connection', 'a, b'],
-    ['a', '1'],
-    ['b', '2'],
-    ['c', '3']
+    ['Connection', 'a, b', false],
+    ['a', '1', false],
+    ['b', '2', false],
+    ['c', '3', false]
   ],
   expectedHeaders: [['c', '3']],
   unexpectedHeaders: ['a', 'b']

@@ -14,7 +14,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'THU, 18 Aug 2050 02:01:18 GMT'],
+            ['Expires', 'THU, 18 Aug 2050 02:01:18 GMT', false],
             ['Date', 0]
           ],
           setup: true,
@@ -33,7 +33,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu, 18 AUG 2050 02:01:18 GMT'],
+            ['Expires', 'Thu, 18 AUG 2050 02:01:18 GMT', false],
             ['Date', 0]
           ],
           setup: true,
@@ -52,7 +52,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu, 18 Aug 2050 02:01:18 gMT'],
+            ['Expires', 'Thu, 18 Aug 2050 02:01:18 gMT', false],
             ['Date', 0]
           ],
           setup: true,
@@ -71,7 +71,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu, 18 Aug 2050 02:01:18 UTC'],
+            ['Expires', 'Thu, 18 Aug 2050 02:01:18 UTC', false],
             ['Date', 0]
           ],
           setup: true,
@@ -90,7 +90,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu, 18 Aug 50 02:01:18 GMT'],
+            ['Expires', 'Thu, 18 Aug 50 02:01:18 GMT', false],
             ['Date', 0]
           ],
           setup: true,
@@ -109,7 +109,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu 18 Aug 2050 02:01:18 GMT'],
+            ['Expires', 'Thu 18 Aug 2050 02:01:18 GMT', false],
             ['Date', 0]
           ],
           setup: true,
@@ -128,7 +128,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu, 18  Aug  2050 02:01:18 GMT'],
+            ['Expires', 'Thu, 18  Aug  2050 02:01:18 GMT', false],
             ['Date', 0]
           ],
           setup: true
@@ -146,7 +146,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu, 18-Aug-2050 02:01:18 GMT'],
+            ['Expires', 'Thu, 18-Aug-2050 02:01:18 GMT', false],
             ['Date', 0]
           ],
           setup: true
@@ -164,7 +164,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu, 18 Aug 2050 02.01.18 GMT'],
+            ['Expires', 'Thu, 18 Aug 2050 02.01.18 GMT', false],
             ['Date', 0]
           ],
           setup: true
@@ -182,7 +182,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu, 18 Aug 2050 2:01:18 GMT'],
+            ['Expires', 'Thu, 18 Aug 2050 2:01:18 GMT', false],
             ['Date', 0]
           ],
           setup: true

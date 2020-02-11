@@ -19,7 +19,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', '*']
+            ['Vary', '*', false]
           ],
           setup: true
         },
@@ -46,7 +46,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', '*, *']
+            ['Vary', '*, *', false]
           ],
           setup: true
         },
@@ -73,8 +73,8 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', '*'],
-            ['Vary', '*'],
+            ['Vary', '*', false],
+            ['Vary', '*', false],
           ],
           setup: true
         },
@@ -101,7 +101,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', ', *']
+            ['Vary', ', *', false]
           ],
           setup: true
         },
@@ -128,8 +128,8 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', ''],
-            ['Vary', '*'],
+            ['Vary', '', false],
+            ['Vary', '*', false],
           ],
           setup: true
         },
@@ -156,7 +156,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', '*, Foo'],
+            ['Vary', '*, Foo', false],
           ],
           setup: true
         },
@@ -183,7 +183,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', 'Foo, *'],
+            ['Vary', 'Foo, *', false],
           ],
           setup: true
         },

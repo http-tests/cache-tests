@@ -15,7 +15,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'max-age=3600']
+            ['Surrogate-Control', 'max-age=3600', false]
           ],
           setup: true,
           pause_after: true
@@ -34,7 +34,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'max-age=2147483648']
+            ['Surrogate-Control', 'max-age=2147483648', false]
           ],
           setup: true,
           pause_after: true
@@ -53,7 +53,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'max-age=99999999999']
+            ['Surrogate-Control', 'max-age=99999999999', false]
           ],
           setup: true,
           pause_after: true
@@ -72,7 +72,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'max-age=3600;CAPABILITY_TARGET']
+            ['Surrogate-Control', 'max-age=3600;CAPABILITY_TARGET', false]
           ],
           setup: true,
           pause_after: true
@@ -91,7 +91,7 @@ export default
         {
           response_headers: [
             ['Date', 0],
-            ['Surrogate-Control', 'max-age=3600;not-for-you'],
+            ['Surrogate-Control', 'max-age=3600;not-for-you', false],
             ['Age', '7200']
           ],
           setup: true,
@@ -111,7 +111,7 @@ export default
         {
           response_headers: [
             ['Date', 0],
-            ['Surrogate-Control', 'max-age=3600'],
+            ['Surrogate-Control', 'max-age=3600', false],
             ['Age', '7200']
           ],
           setup: true,
@@ -132,7 +132,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=1'],
-            ['Surrogate-Control', 'max-age =100']
+            ['Surrogate-Control', 'max-age =100', false]
           ],
           setup: true,
           pause_after: true
@@ -152,7 +152,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=1'],
-            ['Surrogate-Control', 'max-age= 100']
+            ['Surrogate-Control', 'max-age= 100', false]
           ],
           setup: true,
           pause_after: true
@@ -170,7 +170,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'max-age=0']
+            ['Surrogate-Control', 'max-age=0', false]
           ],
           setup: true,
           pause_after: true
@@ -189,7 +189,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'foobar, max-age=3600']
+            ['Surrogate-Control', 'foobar, max-age=3600', false]
           ],
           setup: true,
           pause_after: true
@@ -208,7 +208,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'MaX-aGe=3600']
+            ['Surrogate-Control', 'MaX-aGe=3600', false]
           ],
           setup: true,
           pause_after: true
@@ -228,7 +228,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'max-age=3600'],
+            ['Surrogate-Control', 'max-age=3600', false],
             ['Expires', -10000],
             ['Date', 0]
           ],
@@ -249,8 +249,8 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'max-age=3600'],
-            ['Expires', '0'],
+            ['Surrogate-Control', 'max-age=3600', false],
+            ['Expires', '0', false],
             ['Date', 0]
           ],
           setup: true,
@@ -269,7 +269,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'max-age=0'],
+            ['Surrogate-Control', 'max-age=0', false],
             ['Expires', 10000],
             ['Date', 0]
           ],
@@ -291,7 +291,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=1'],
-            ['Surrogate-Control', 'max-age=3600']
+            ['Surrogate-Control', 'max-age=3600', false]
           ],
           pause_after: true,
           setup: true
@@ -310,7 +310,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=3600'],
-            ['Surrogate-Control', 'max-age=1']
+            ['Surrogate-Control', 'max-age=1', false]
           ],
           pause_after: true,
           setup: true
@@ -327,7 +327,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Surrogate-Control', 'no-store']
+            ['Surrogate-Control', 'no-store', false]
           ],
           setup: true,
           pause_after: true
@@ -346,7 +346,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=10000'],
-            ['Surrogate-Control', 'no-store'],
+            ['Surrogate-Control', 'no-store', false],
             ['Expires', 10000],
             ['Date', 0]
           ],
@@ -376,9 +376,11 @@ export default
       kind: 'check',
       requests: [
         {
+          // only check for the header in expected_response_headers, so failing
+          // this is an assertion failure and not a setup error
           response_headers: [
             ['Cache-Control', 'max-age=10000'],
-            ['Surrogate-Control', 'foo'],
+            ['Surrogate-Control', 'foo', false],
             ['Expires', 10000],
             ['Date', 0]
           ],
