@@ -118,14 +118,6 @@ function handleTest (pathSegs, request, response) {
     }
     console.log('')
   }
-  var state = {
-    'now': Date.now(),
-    'request_method': request.method,
-    'request_headers': request.headers,
-    'request_num': parseInt(request.headers['req-num'])
-  }
-  serverState.push(state)
-  stash.set(uuid, serverState)
 
   // Determine what the response status should be
   var httpStatus = reqConfig['response_status'] || [200, 'OK']
@@ -145,6 +137,8 @@ function handleTest (pathSegs, request, response) {
   response.statusCode = httpStatus[0]
   response.statusPhrase = httpStatus[1]
 
+  const now = Date.now()
+
   // header manipulation
   var responseHeaders = reqConfig.response_headers || []
   responseHeaders.forEach(header => {
@@ -153,7 +147,7 @@ function handleTest (pathSegs, request, response) {
       header[1] = `http://${request.headers['host']}${request.url}/${header[1]}` // FIXME
     }
     if (dateHeaders.has(headerName) && Number.isInteger(header[1])) { // magic!
-      header[1] = httpDate(state.now, header[1])
+      header[1] = httpDate(now, header[1])
     }
     if (headerName === 'surrogate-control' && request.headers['surrogate-capability']) {
       // right now we assume just one
@@ -180,8 +174,16 @@ function handleTest (pathSegs, request, response) {
   if (!response.hasHeader('content-type')) {
     response.setHeader('Content-Type', 'text/plain')
   }
+
+  serverState.push({
+    'request_num': parseInt(request.headers['req-num']),
+    'request_method': request.method,
+    'request_headers': request.headers,
+  })
+  stash.set(uuid, serverState)
+
   response.setHeader('Server-Request-Count', serverState.length)
-  response.setHeader('Server-Now', httpDate(state.now, 0))
+  response.setHeader('Server-Now', httpDate(now, 0))
 
   if (reqConfig.dump) {
     console.log(`${BLUE}=== Server response ${serverState.length}${NC}`)
