@@ -29,7 +29,7 @@
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 11 Feb 2020 23:05:50 GMT\", not \"Wed, 12 Feb 2020 00:05:49 GMT\""
+    "Response 2 header Expires is \"Fri, 01 Jan 2038 01:01:01 GMT\", not \"Mon, 11 Jan 2038 11:11:11 GMT\""
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -93,7 +93,7 @@
   ],
   "304-etag-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 11 Feb 2020 23:05:50 GMT\", not \"Wed, 12 Feb 2020 00:05:49 GMT\""
+    "Response 3 header Expires is \"Fri, 01 Jan 2038 01:01:01 GMT\", not \"Mon, 11 Jan 2038 11:11:11 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -157,7 +157,7 @@
   ],
   "304-lm-update-response-Expires": [
     "Assertion",
-    "Response 2 header Expires is \"Tue, 11 Feb 2020 23:05:50 GMT\", not \"Wed, 12 Feb 2020 00:05:49 GMT\""
+    "Response 2 header Expires is \"Fri, 01 Jan 2038 01:01:01 GMT\", not \"Mon, 11 Jan 2038 11:11:11 GMT\""
   ],
   "304-lm-update-response-Public-Key-Pins": [
     "Assertion",
@@ -221,7 +221,7 @@
   ],
   "304-lm-update-stored-Expires": [
     "Assertion",
-    "Response 3 header Expires is \"Tue, 11 Feb 2020 23:05:50 GMT\", not \"Wed, 12 Feb 2020 00:05:49 GMT\""
+    "Response 3 header Expires is \"Fri, 01 Jan 2038 01:01:01 GMT\", not \"Mon, 11 Jan 2038 11:11:11 GMT\""
   ],
   "304-lm-update-stored-Public-Key-Pins": [
     "Assertion",
@@ -590,20 +590,20 @@
   ],
   "other-age-gen": [
     "Assertion",
-    "Response 2 header Age is null, should be bigger"
+    "Response 2 Age header not present."
   ],
   "other-age-update-expires": [
     "Assertion",
-    "Response 2 header Age is 30, should be bigger"
+    "Response 2 header Age is 30, should be bigger than 32"
   ],
   "other-age-update-max-age": [
     "Assertion",
-    "Response 2 header Age is 30, should be bigger"
+    "Response 2 header Age is 30, should be bigger than 32"
   ],
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 11 Feb 2020 23:05:53 GMT, should be Tue, 11 Feb 2020 23:05:50 GMT"
+    "Response 2 header Date is Tue, 11 Feb 2020 17:30:01 GMT, should match Server-Now (Tue, 11 Feb 2020 17:29:58 GMT)"
   ],
   "other-set-cookie": [
     "Assertion",

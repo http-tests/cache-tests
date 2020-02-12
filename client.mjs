@@ -1,5 +1,4 @@
 
-import templates from './templates.mjs'
 import * as utils from './utils.mjs'
 
 const noBodyStatus = new Set([204, 304])
@@ -138,14 +137,6 @@ function expandTemplates (test) {
     request.name = test.name
     request.id = test.id
     request.dump = test.dump
-    if ('template' in request) {
-      var template = templates[request['template']]
-      for (let member in template) {
-        if (!request.hasOwnProperty(member)) {
-          request[member] = template[member]
-        }
-      }
-    }
     requests.push(request)
   }
   return requests
@@ -225,9 +216,26 @@ function makeCheckResponse (idx, reqConfig, uuid, dump) {
         if (typeof header === 'string') {
           assert(respPresentSetup, response.headers.has(header),
             `Response ${reqNum} ${header} header not present.`)
-        } else if (typeof header[1] === 'function') {
-          var prefix = `Response ${reqNum} header ${header[0]}`
-          header[1](respPresentSetup, assert, prefix, response.headers.get(header[0]), response)
+        } else if (header.length > 2) {
+          assert(respPresentSetup, response.headers.has(header[0]),
+            `Response ${reqNum} ${header[0]} header not present.`)
+
+          const value = response.headers.get(header[0])
+          let msg, condition
+          if (header[1] === '=') {
+            const expected = response.headers.get(header[2])
+            condition = value === expected
+            msg = `match ${header[2]} (${expected})`
+          } else if (header[1] === '>') {
+            const expected = header[2]
+            condition = parseInt(value) > expected
+            msg = `be bigger than ${expected}`
+          } else {
+            throw new Error(`Unknown expected-header operator '${header[1]}'`)
+          }
+
+          assert(respPresentSetup, condition,
+            `Response ${reqNum} header ${header[0]} is ${value}, should ${msg}`)
         } else {
           assert(respPresentSetup, response.headers.get(header[0]) === header[1],
             `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)

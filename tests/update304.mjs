@@ -4,7 +4,7 @@ var tests = []
 
 var header = 'Test-Header'
 var valueA = utils.httpContent(`${header}-value-A`)
-var lm1 = utils.httpDate(Date.now(), -24 * 60 * 60)
+var lm1 = "Wed, 01 Jan 2020 00:00:00 GMT"
 tests.push({
   name: `HTTP cache must return stored \`${header}\` from a \`304\` that omits it`,
   id: `304-lm-use-stored-${header}`,
@@ -40,7 +40,7 @@ function check304 (args) {
   var valueB = args[2] || utils.httpContent(`${header}-value-B`)
   var etag = utils.httpContent(`${header}-etag-1`)
   var etag1 = `"${etag}"`
-  var lm1 = utils.httpDate(Date.now(), -24 * 60 * 60)
+  var lm1 = "Wed, 01 Jan 2020 00:00:00 GMT"
 
   tests.push({
     name: `HTTP cache must update returned \`${header}\` from a \`Last-Modified 304\``,
@@ -156,7 +156,7 @@ function makeResponse (header, value, lifetime, validatorType, validatorValue) {
   ['X-Frame-Options', 'deny', 'sameorigin'],
   ['X-XSS-Protection', '1', '1; mode=block'],
   ['Cache-Control', 'max-age=1', 'max-age=3600'],
-  ['Expires', utils.httpDate(Date.now(), 1), utils.httpDate(Date.now(), 3600)],
+  ['Expires', 'Fri, 01 Jan 2038 01:01:01 GMT', 'Mon, 11 Jan 2038 11:11:11 GMT'],
   ['Clear-Site-Data', 'cache', 'cookies'],
   ['Public-Key-Pins'],
   ['Set-Cookie', 'a=b', 'a=c'],

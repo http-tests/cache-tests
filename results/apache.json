@@ -381,7 +381,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 11 Feb 2020 23:06:08 GMT, should be Tue, 11 Feb 2020 23:06:05 GMT"
+    "Response 2 header Date is Tue, 11 Feb 2020 17:30:16 GMT, should match Server-Now (Tue, 11 Feb 2020 17:30:13 GMT)"
   ],
   "other-set-cookie": true,
   "other-warning": [

@@ -1,3 +1,5 @@
+
+import * as templates from '../templates.mjs'
 import * as utils from '../utils.mjs'
 
 var tests = []
@@ -14,13 +16,12 @@ function checkStatus (status) {
     id: `status-${code}-stale`,
     depends_on: [`status-${code}-fresh`],
     requests: [
-      {
-        template: 'stale',
+      templates.stale({
         response_status: [code, phrase],
         response_body: body,
         redirect: 'manual',
         setup: true
-      }, {
+      }), {
         expected_type: 'not_cached',
         redirect: 'manual',
         response_body: body
@@ -32,13 +33,12 @@ function checkStatus (status) {
     id: `status-${code}-fresh`,
     kind: 'optimal',
     requests: [
-      {
-        template: 'fresh',
+      templates.fresh({
         response_status: [code, phrase],
         response_body: body,
         redirect: 'manual',
         setup: true
-      }, {
+      }), {
         expected_type: 'cached',
         response_status: [code, phrase],
         redirect: 'manual',
