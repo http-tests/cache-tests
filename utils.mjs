@@ -17,9 +17,9 @@ export function SetupError (options) {
 export function assert (isSetup, expr, message) {
   if (expr) return
   if (isSetup) {
-    throw new SetupError({message: message})
+    throw new SetupError({ message: message })
   } else {
-    throw new AssertionError({message: message})
+    throw new AssertionError({ message: message })
   }
 }
 

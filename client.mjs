@@ -144,21 +144,21 @@ function expandTemplates (test) {
 
 function fetchInit (idx, reqConfig) {
   var init = {
-    'headers': []
+    headers: []
   }
   if (!useBrowserCache) {
     init.cache = 'no-store'
     init.headers.push(['Pragma', 'foo']) // dirty hack for Fetch
     init.headers.push(['Cache-Control', 'nothing-to-see-here']) // ditto
   }
-  if ('request_method' in reqConfig) init.method = reqConfig['request_method']
-  if ('request_headers' in reqConfig) init.headers = reqConfig['request_headers']
+  if ('request_method' in reqConfig) init.method = reqConfig.request_method
+  if ('request_headers' in reqConfig) init.headers = reqConfig.request_headers
   if ('name' in reqConfig) init.headers.push(['Test-Name', reqConfig.name])
-  if ('request_body' in reqConfig) init.body = reqConfig['request_body']
-  if ('mode' in reqConfig) init.mode = reqConfig['mode']
-  if ('credentials' in reqConfig) init.mode = reqConfig['credentials']
-  if ('cache' in reqConfig) init.cache = reqConfig['cache']
-  if ('redirect' in reqConfig) init.redirect = reqConfig['redirect']
+  if ('request_body' in reqConfig) init.body = reqConfig.request_body
+  if ('mode' in reqConfig) init.mode = reqConfig.mode
+  if ('credentials' in reqConfig) init.mode = reqConfig.credentials
+  if ('cache' in reqConfig) init.cache = reqConfig.cache
+  if ('redirect' in reqConfig) init.redirect = reqConfig.redirect
   init.headers.push(['Test-ID', reqConfig.id])
   init.headers.push(['Req-Num', (idx + 1).toString()])
   return init
@@ -298,7 +298,7 @@ function checkRequests (requests, responses, testState) {
     testIdx++ // only increment for requests the server sees
     expectedValidatingHeaders.forEach(vhdr => {
       assert(typeSetup, typeof (serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
-      assert(typeSetup, serverRequest.request_headers.hasOwnProperty(vhdr),
+      assert(typeSetup, Object.prototype.hasOwnProperty.call(serverRequest, vhdr),
         `request ${reqNum} doesn't have ${vhdr} header`)
     })
     if ('expected_request_headers' in reqConfig) {
@@ -306,7 +306,7 @@ function checkRequests (requests, responses, testState) {
       reqConfig.expected_request_headers.forEach(header => {
         if (typeof header === 'string') {
           var headerName = header.toLowerCase()
-          assert(reqPresentSetup, serverRequest.request_headers.hasOwnProperty(headerName),
+          assert(reqPresentSetup, Object.prototype.hasOwnProperty.call(serverRequest, headerName),
             `Request ${reqNum} ${header} header not present.`)
         } else {
           var reqValue = serverRequest.request_headers[header[0].toLowerCase()]
@@ -360,9 +360,9 @@ const uninterestingHeaders = new Set(['date', 'expires', 'last-modified', 'conte
 
 function putTestConfig (uuid, requests) {
   var init = {
-    'method': 'PUT',
-    'headers': [['content-type', 'application/json']],
-    'body': JSON.stringify(requests)
+    method: 'PUT',
+    headers: [['content-type', 'application/json']],
+    body: JSON.stringify(requests)
   }
   return theFetch(`${baseUrl}/config/${uuid}`, init)
     .then(response => {
@@ -373,7 +373,7 @@ function putTestConfig (uuid, requests) {
             headers += `${hname}: ${hvalue}    `
           }
         })
-        throw new utils.SetupError({message: `PUT config resulted in ${response.status} ${response.statusText} - ${headers}`})
+        throw new utils.SetupError({ message: `PUT config resulted in ${response.status} ${response.statusText} - ${headers}` })
       }
     })
 }

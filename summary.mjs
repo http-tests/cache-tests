@@ -140,13 +140,13 @@ function testSelector (testId) {
 export function selectClickListen () {
   var select = document.getElementById('select')
   select.addEventListener('click', selectClick, {
-    'once': true
+    once: true
   })
 }
 
 function selectClick () {
   var selectBoxes = document.getElementsByClassName('select')
-  for (let selectBox of selectBoxes) {
+  for (const selectBox of selectBoxes) {
     selectBox.style.display = 'inherit'
   }
   var submit = document.createElement('input')

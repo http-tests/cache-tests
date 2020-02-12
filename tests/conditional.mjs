@@ -325,7 +325,7 @@ export default {
       kind: 'optimal',
       requests: [
         {
-          'response_headers': [
+          response_headers: [
             ['Expires', 1],
             ['ETag', '"abcdef"'],
             ['Date', 0]
@@ -347,7 +347,7 @@ export default {
       kind: 'optimal',
       requests: [
         {
-          'response_headers': [
+          response_headers: [
             ['Expires', 1],
             ['ETag', 'W/"abcdef"'],
             ['Date', 0]

@@ -14,13 +14,13 @@ const BLUE = '\x1b[34m'
 const NC = '\x1b[0m'
 
 const mimeTypes = {
-  'html': 'text/html',
-  'jpeg': 'image/jpeg',
-  'jpg': 'image/jpeg',
-  'png': 'image/png',
-  'js': 'application/javascript',
-  'mjs': 'application/javascript',
-  'css': 'text/css'
+  html: 'text/html',
+  jpeg: 'image/jpeg',
+  jpg: 'image/jpeg',
+  png: 'image/png',
+  js: 'application/javascript',
+  mjs: 'application/javascript',
+  css: 'text/css'
 }
 const noBodyStatus = new Set([204, 304])
 const locationHeaders = new Set(['location', 'content-location'])
@@ -51,7 +51,7 @@ function handleFile (url, request, response) {
     return
   }
   var mimeType = mimeTypes[path.extname(filename).split('.')[1]] || 'application/octet-stream'
-  response.writeHead(200, {'Content-Type': mimeType})
+  response.writeHead(200, { 'Content-Type': mimeType })
   var fileStream = fs.createReadStream(filename)
   fileStream.pipe(response)
 }
@@ -113,20 +113,20 @@ function handleTest (pathSegs, request, response) {
   if (reqConfig.dump) {
     console.log(`${BLUE}=== Server request ${serverState.length + 1}${NC}`)
     console.log(`    ${request.method} /test/${pathSegs.join('/')}`)
-    for (let [key, value] of Object.entries(request.headers)) {
+    for (const [key, value] of Object.entries(request.headers)) {
       console.log(`    ${key}: ${value}`)
     }
     console.log('')
   }
 
   // Determine what the response status should be
-  var httpStatus = reqConfig['response_status'] || [200, 'OK']
+  var httpStatus = reqConfig.response_status || [200, 'OK']
   if ('expected_type' in reqConfig && reqConfig.expected_type.endsWith('validated')) {
-    let previousLm = getHeader(previousConfig.response_headers, 'Last-Modified')
+    const previousLm = getHeader(previousConfig.response_headers, 'Last-Modified')
     if (previousLm && request.headers['if-modified-since'] === previousLm) {
       httpStatus = [304, 'Not Modified']
     }
-    let previousEtag = getHeader(previousConfig.response_headers, 'ETag')
+    const previousEtag = getHeader(previousConfig.response_headers, 'ETag')
     if (previousEtag && request.headers['if-none-match'] === previousEtag) {
       httpStatus = [304, 'Not Modified']
     }
@@ -141,11 +141,11 @@ function handleTest (pathSegs, request, response) {
 
   // header manipulation
   var responseHeaders = reqConfig.response_headers || []
-  let savedHeaders = new Map()
+  const savedHeaders = new Map()
   responseHeaders.forEach(header => {
     var headerName = header[0].toLowerCase()
     if (locationHeaders.has(headerName) && reqConfig.magic_locations === true) { // magic!
-      header[1] = `http://${request.headers['host']}${request.url}/${header[1]}` // FIXME
+      header[1] = `http://${request.headers.host}${request.url}/${header[1]}` // FIXME
     }
     if (dateHeaders.has(headerName) && Number.isInteger(header[1])) { // magic!
       header[1] = httpDate(now, header[1])
@@ -154,7 +154,7 @@ function handleTest (pathSegs, request, response) {
       // right now we assume just one
       var capabilityTarget = request.headers['surrogate-capability'].split('=')[0]
       if (!capabilityTarget) {
-        console.error(`WARN: Capability target is empty`)
+        console.error('WARN: Capability target is empty')
       }
       header[1] = header[1].replace('CAPABILITY_TARGET', capabilityTarget)
     }
@@ -180,10 +180,10 @@ function handleTest (pathSegs, request, response) {
   }
 
   serverState.push({
-    'request_num': parseInt(request.headers['req-num']),
-    'request_method': request.method,
-    'request_headers': request.headers,
-    'response_headers': Array.from(savedHeaders.entries())
+    request_num: parseInt(request.headers['req-num']),
+    request_method: request.method,
+    request_headers: request.headers,
+    response_headers: Array.from(savedHeaders.entries())
   })
   stash.set(uuid, serverState)
 
@@ -193,14 +193,14 @@ function handleTest (pathSegs, request, response) {
   if (reqConfig.dump) {
     console.log(`${BLUE}=== Server response ${serverState.length}${NC}`)
     console.log(`    HTTP ${response.statusCode} ${response.statusPhrase}`)
-    for (let [key, value] of Object.entries(response.getHeaders())) {
+    for (const [key, value] of Object.entries(response.getHeaders())) {
       console.log(`    ${key}: ${value}`)
     }
     console.log('')
   }
 
   // Response body generation
-  var content = reqConfig['response_body'] || uuid
+  var content = reqConfig.response_body || uuid
   if (noBodyStatus.has(response.statusCode)) {
     response.end()
   } else {
@@ -210,7 +210,7 @@ function handleTest (pathSegs, request, response) {
 
 function sendResponse (response, statusCode, message) {
   console.log(`SERVER WARNING: ${message}`)
-  response.writeHead(statusCode, {'Content-Type': 'text/plain'})
+  response.writeHead(statusCode, { 'Content-Type': 'text/plain' })
   response.write(`${message}\n`)
   response.end()
 }

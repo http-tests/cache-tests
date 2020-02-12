@@ -3,7 +3,7 @@
 import './marked.min.js'
 
 export function downloadTestResults (target, fileName, data, auto) {
-  var dataBlob = new Blob([JSON.stringify(data, null, 2)], {type: 'text/json'})
+  var dataBlob = new Blob([JSON.stringify(data, null, 2)], { type: 'text/json' })
   target.setAttribute('href', window.URL.createObjectURL(dataBlob))
   target.setAttribute('download', fileName)
   target.style.display = 'inherit'

@@ -2,7 +2,7 @@ import * as utils from '../utils.mjs'
 
 const tests = []
 
-function checkCached ({name, id, kind = 'required', configuredHeaders, expectedHeaders, unexpectedHeaders = []}) {
+function checkCached ({ name, id, kind = 'required', configuredHeaders, expectedHeaders, unexpectedHeaders = [] }) {
   tests.push({
     name: name,
     id: `headers-${id}`,
@@ -10,7 +10,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
     requests: [
       {
         response_headers: configuredHeaders.concat([
-          ['Cache-Control', `max-age=3600`],
+          ['Cache-Control', 'max-age=3600'],
           ['Date', 0]
         ]),
         setup: true,
@@ -59,7 +59,7 @@ function checkCached ({name, id, kind = 'required', configuredHeaders, expectedH
 
 checkCached({
   name: 'Does `Connection` header inhibit storing listed headers?',
-  id: `omit-headers-listed-in-Connection`,
+  id: 'omit-headers-listed-in-Connection',
   configuredHeaders: [
     ['Connection', 'a, b', false],
     ['a', '1', false],
@@ -72,7 +72,7 @@ checkCached({
 
 checkCached({
   name: 'Does `Cache-Control: no-cache` inhibit storing a listed header?',
-  id: `omit-headers-listed-in-Cache-Control-no-cache-single`,
+  id: 'omit-headers-listed-in-Cache-Control-no-cache-single',
   configuredHeaders: [
     ['Cache-Control', 'no-cache="a"'],
     ['a', '1'],
@@ -84,7 +84,7 @@ checkCached({
 
 checkCached({
   name: 'Does `Cache-Control: no-cache` inhibit storing multiple listed headers?',
-  id: `omit-headers-listed-in-Cache-Control-no-cache`,
+  id: 'omit-headers-listed-in-Cache-Control-no-cache',
   configuredHeaders: [
     ['Cache-Control', 'no-cache="a, b"'],
     ['a', '1'],

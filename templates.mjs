@@ -5,7 +5,7 @@ function makeTemplate (template) {
 }
 
 export const fresh = makeTemplate({
-  'response_headers': [
+  response_headers: [
     ['Expires', 100000],
     ['Last-Modified', 0],
     ['Date', 0]
@@ -13,7 +13,7 @@ export const fresh = makeTemplate({
 })
 
 export const stale = makeTemplate({
-  'response_headers': [
+  response_headers: [
     ['Expires', -5000],
     ['Last-Modified', -100000],
     ['Date', 0]
@@ -21,7 +21,7 @@ export const stale = makeTemplate({
 })
 
 export const lclResponse = makeTemplate({
-  'response_headers': [
+  response_headers: [
     ['Location', 'location_target'],
     ['Content-Location', 'content_location_target']
   ],
@@ -29,8 +29,8 @@ export const lclResponse = makeTemplate({
 })
 
 export const location = makeTemplate({
-  'filename': 'location_target',
-  'response_headers': [
+  filename: 'location_target',
+  response_headers: [
     ['Expires', 100000],
     ['Last-Modified', 0],
     ['Date', 0]
@@ -38,8 +38,8 @@ export const location = makeTemplate({
 })
 
 export const contentLocation = makeTemplate({
-  'filename': 'content_location_target',
-  'response_headers': [
+  filename: 'content_location_target',
+  response_headers: [
     ['Expires', 100000],
     ['Last-Modified', 0],
     ['Date', 0]
