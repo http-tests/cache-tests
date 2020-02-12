@@ -1,4 +1,3 @@
-import * as utils from '../utils.mjs'
 
 export default {
   name: 'Vary Parsing',
@@ -74,7 +73,7 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', '*', false],
-            ['Vary', '*', false],
+            ['Vary', '*', false]
           ],
           setup: true
         },
@@ -129,7 +128,7 @@ export default {
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', '', false],
-            ['Vary', '*', false],
+            ['Vary', '*', false]
           ],
           setup: true
         },
@@ -156,7 +155,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', '*, Foo', false],
+            ['Vary', '*, Foo', false]
           ],
           setup: true
         },
@@ -183,7 +182,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', 'Foo, *', false],
+            ['Vary', 'Foo, *', false]
           ],
           setup: true
         },
@@ -195,6 +194,6 @@ export default {
           expected_type: 'cached'
         }
       ]
-    },
+    }
   ]
 }

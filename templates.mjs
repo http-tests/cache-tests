@@ -1,10 +1,10 @@
-function make_template (template) {
+function makeTemplate (template) {
   return function (request) {
     return Object.assign({}, template, request)
   }
 }
 
-export const fresh = make_template({
+export const fresh = makeTemplate({
   'response_headers': [
     ['Expires', 100000],
     ['Last-Modified', 0],
@@ -12,7 +12,7 @@ export const fresh = make_template({
   ]
 })
 
-export const stale = make_template({
+export const stale = makeTemplate({
   'response_headers': [
     ['Expires', -5000],
     ['Last-Modified', -100000],
@@ -20,7 +20,7 @@ export const stale = make_template({
   ]
 })
 
-export const lcl_response = make_template({
+export const lclResponse = makeTemplate({
   'response_headers': [
     ['Location', 'location_target'],
     ['Content-Location', 'content_location_target']
@@ -28,7 +28,7 @@ export const lcl_response = make_template({
   magic_locations: true
 })
 
-export const location = make_template({
+export const location = makeTemplate({
   'filename': 'location_target',
   'response_headers': [
     ['Expires', 100000],
@@ -37,7 +37,7 @@ export const location = make_template({
   ]
 })
 
-export const content_location = make_template({
+export const contentLocation = makeTemplate({
   'filename': 'content_location_target',
   'response_headers': [
     ['Expires', 100000],
@@ -46,7 +46,7 @@ export const content_location = make_template({
   ]
 })
 
-export const vary_setup = make_template({
+export const varySetup = makeTemplate({
   request_headers: [
     ['Foo', '1']
   ],

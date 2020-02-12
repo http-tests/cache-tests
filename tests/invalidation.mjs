@@ -46,7 +46,7 @@ function checkLocationInvalidation (method) {
     requests: [
       templates.location({
         setup: true
-      }), templates.lcl_response({
+      }), templates.lclResponse({
         request_method: 'POST',
         request_body: 'abc',
         setup: true
@@ -62,13 +62,13 @@ function checkClInvalidation (method) {
     name: `HTTP cache must invalidate \`Content-Location\` URL after a successful response to a \`${method}\` request`,
     id: `invalidate-${method}-cl`,
     requests: [
-      templates.content_location({
+      templates.contentLocation({
         setup: true
-      }), templates.lcl_response({
+      }), templates.lclResponse({
         request_method: method,
         request_body: 'abc',
         setup: true
-      }), templates.content_location({
+      }), templates.contentLocation({
         expected_type: 'not_cached'
       })
     ]

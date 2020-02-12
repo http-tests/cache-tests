@@ -4,7 +4,7 @@ var tests = []
 
 var header = 'Test-Header'
 var valueA = utils.httpContent(`${header}-value-A`)
-var lm1 = "Wed, 01 Jan 2020 00:00:00 GMT"
+var lm1 = 'Wed, 01 Jan 2020 00:00:00 GMT'
 tests.push({
   name: `HTTP cache must return stored \`${header}\` from a \`304\` that omits it`,
   id: `304-lm-use-stored-${header}`,
@@ -40,7 +40,7 @@ function check304 (args) {
   var valueB = args[2] || utils.httpContent(`${header}-value-B`)
   var etag = utils.httpContent(`${header}-etag-1`)
   var etag1 = `"${etag}"`
-  var lm1 = "Wed, 01 Jan 2020 00:00:00 GMT"
+  var lm1 = 'Wed, 01 Jan 2020 00:00:00 GMT'
 
   tests.push({
     name: `HTTP cache must update returned \`${header}\` from a \`Last-Modified 304\``,

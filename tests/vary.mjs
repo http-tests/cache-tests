@@ -12,7 +12,7 @@ export default {
       id: 'vary-match',
       kind: 'optimal',
       requests: [
-        templates.vary_setup({}),
+        templates.varySetup({}),
         {
           request_headers: [
             ['Foo', '1']
@@ -25,7 +25,7 @@ export default {
       name: "HTTP cache must not reuse `Vary` response when request doesn't match",
       id: 'vary-no-match',
       requests: [
-        templates.vary_setup({}),
+        templates.varySetup({}),
         {
           request_headers: [
             ['Foo', '2']
@@ -38,7 +38,7 @@ export default {
       name: 'HTTP cache must not reuse `Vary` response when request omits variant request header',
       id: 'vary-omit',
       requests: [
-        templates.vary_setup({}),
+        templates.varySetup({}),
         {
           expected_type: 'not_cached'
         }
@@ -49,7 +49,7 @@ export default {
       id: 'vary-invalidate',
       kind: 'optimal',
       requests: [
-        templates.vary_setup({
+        templates.varySetup({
           response_body: utils.httpContent('foo_1')
         }),
         {
@@ -80,7 +80,7 @@ export default {
       id: 'vary-cache-key',
       kind: 'optimal',
       requests: [
-        templates.vary_setup({
+        templates.varySetup({
           request_headers: [
             ['Foo', '1'],
             ['Other', '2']

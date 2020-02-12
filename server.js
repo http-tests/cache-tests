@@ -183,7 +183,7 @@ function handleTest (pathSegs, request, response) {
     'request_num': parseInt(request.headers['req-num']),
     'request_method': request.method,
     'request_headers': request.headers,
-    'response_headers': Array.from(savedHeaders.entries()),
+    'response_headers': Array.from(savedHeaders.entries())
   })
   stash.set(uuid, serverState)
 
