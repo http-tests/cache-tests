@@ -109,7 +109,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', 'Foo, Bar']
+            ['Vary', 'Foo, Bar', false] // FIXME: allow whitespace changes
           ],
           setup: true
         },
@@ -135,7 +135,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', 'Foo, Bar']
+            ['Vary', 'Foo, Bar', false] // FIXME: allow whitespace changes
           ],
           setup: true
         },
@@ -160,7 +160,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', 'Foo, Bar']
+            ['Vary', 'Foo, Bar', false] // FIXME: allow whitespace changes
           ],
           setup: true
         },
@@ -184,7 +184,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', 'Foo, Bar, Baz']
+            ['Vary', 'Foo, Bar, Baz', false] // FIXME: allow whitespace changes
           ],
           setup: true
         },
@@ -212,7 +212,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', 'Foo, Bar, Baz']
+            ['Vary', 'Foo, Bar, Baz', false] // FIXME: allow whitespace changes
           ],
           setup: true
         },
@@ -240,7 +240,7 @@ export default {
             ['Expires', 5000],
             ['Last-Modified', -3000],
             ['Date', 0],
-            ['Vary', 'Foo, Bar, Baz']
+            ['Vary', 'Foo, Bar, Baz', false] // FIXME: allow whitespace changes
           ],
           setup: true
         },
@@ -268,7 +268,7 @@ export default {
             ['Expires', 5000],
             ['Date', 0],
             ['Last-Modified', -3000],
-            ['Vary', 'Foo, Bar, Baz']
+            ['Vary', 'Foo, Bar, Baz', false] // FIXME: allow whitespace changes
           ],
           setup: true
         },

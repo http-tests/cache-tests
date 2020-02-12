@@ -86,7 +86,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', '0'],
+            ['Expires', '0', false],
             ['Date', 0]
           ],
           setup: true,
@@ -105,7 +105,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Date', 'foo'],
+            ['Date', 'foo', false],
             ['Expires', 10]
           ],
           setup: true

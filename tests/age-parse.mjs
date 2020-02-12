@@ -15,7 +15,7 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', 'abc']
+            ['Age', 'abc', false]
           ],
           setup: true,
           pause_after: true
@@ -35,7 +35,7 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '-7200']
+            ['Age', '-7200', false]
           ],
           setup: true,
           pause_after: true
@@ -55,7 +55,7 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '7200.0']
+            ['Age', '7200.0', false]
           ],
           setup: true,
           pause_after: true
@@ -75,7 +75,7 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '7200,0']
+            ['Age', '7200,0', false]
           ],
           setup: true,
           pause_after: true
@@ -95,8 +95,8 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '7200'],
-            ['Age', '0']
+            ['Age', '7200', false],
+            ['Age', '0', false]
           ],
           setup: true,
           pause_after: true
@@ -116,7 +116,7 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '0,7200']
+            ['Age', '0,7200', false]
           ],
           setup: true,
           pause_after: true
@@ -136,8 +136,8 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '0'],
-            ['Age', '7200']
+            ['Age', '0', false],
+            ['Age', '7200', false]
           ],
           setup: true,
           pause_after: true
@@ -157,7 +157,7 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '0, 0']
+            ['Age', '0, 0', false]
           ],
           setup: true,
           pause_after: true
@@ -177,8 +177,8 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '0'],
-            ['Age', '0']
+            ['Age', '0', false],
+            ['Age', '0', false]
           ],
           setup: true,
           pause_after: true
@@ -198,7 +198,7 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '7200, 7200']
+            ['Age', '7200, 7200', false]
           ],
           setup: true,
           pause_after: true
@@ -218,8 +218,8 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
-            ['Age', '7200'],
-            ['Age', '7200']
+            ['Age', '7200', false],
+            ['Age', '7200', false]
           ],
           setup: true,
           pause_after: true

@@ -22,7 +22,6 @@ const mimeTypes = {
   'mjs': 'application/javascript',
   'css': 'text/css'
 }
-const noteHeaders = new Set(['content-type', 'access-control-allow-origin', 'last-modified', 'etag', 'surrogate-capability'])
 const noBodyStatus = new Set([204, 304])
 const locationHeaders = new Set(['location', 'content-location'])
 const dateHeaders = new Set(['date', 'expires', 'last-modified'])
@@ -119,14 +118,6 @@ function handleTest (pathSegs, request, response) {
     }
     console.log('')
   }
-  var state = {
-    'now': Date.now(),
-    'request_method': request.method,
-    'request_headers': request.headers,
-    'request_num': parseInt(request.headers['req-num'])
-  }
-  serverState.push(state)
-  stash.set(uuid, serverState)
 
   // Determine what the response status should be
   var httpStatus = reqConfig['response_status'] || [200, 'OK']
@@ -146,16 +137,18 @@ function handleTest (pathSegs, request, response) {
   response.statusCode = httpStatus[0]
   response.statusPhrase = httpStatus[1]
 
+  const now = Date.now()
+
   // header manipulation
-  var notedHeaders = new Map()
   var responseHeaders = reqConfig.response_headers || []
+  let savedHeaders = new Map()
   responseHeaders.forEach(header => {
     var headerName = header[0].toLowerCase()
     if (locationHeaders.has(headerName) && reqConfig.magic_locations === true) { // magic!
       header[1] = `http://${request.headers['host']}${request.url}/${header[1]}` // FIXME
     }
     if (dateHeaders.has(headerName) && Number.isInteger(header[1])) { // magic!
-      header[1] = httpDate(state.now, header[1])
+      header[1] = httpDate(now, header[1])
     }
     if (headerName === 'surrogate-control' && request.headers['surrogate-capability']) {
       // right now we assume just one
@@ -177,16 +170,25 @@ function handleTest (pathSegs, request, response) {
     } else {
       response.setHeader(header[0], header[1])
     }
-    if (noteHeaders.has(headerName)) {
-      notedHeaders.set(headerName, header[1])
+    if (header.length < 3 || header[2] === true) {
+      savedHeaders.set(header[0], response.getHeader(header[0]))
     }
   })
 
-  if (!notedHeaders.has('content-type')) {
+  if (!response.hasHeader('content-type')) {
     response.setHeader('Content-Type', 'text/plain')
   }
+
+  serverState.push({
+    'request_num': parseInt(request.headers['req-num']),
+    'request_method': request.method,
+    'request_headers': request.headers,
+    'response_headers': Array.from(savedHeaders.entries()),
+  })
+  stash.set(uuid, serverState)
+
   response.setHeader('Server-Request-Count', serverState.length)
-  response.setHeader('Server-Now', httpDate(state.now, 0))
+  response.setHeader('Server-Now', httpDate(now, 0))
 
   if (reqConfig.dump) {
     console.log(`${BLUE}=== Server response ${serverState.length}${NC}`)
