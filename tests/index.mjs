@@ -2,6 +2,7 @@ import ccParse from './cc-parse.mjs'
 import ccRequest from './cc-request.mjs'
 import ccResponse from './cc-response.mjs'
 import ccFreshness from './cc-freshness.mjs'
+import ccStale from './cc-stale.mjs'
 import ageParse from './age-parse.mjs'
 import pragma from './pragma.mjs'
 import expiresParse from './expires-parse.mjs'
@@ -17,4 +18,4 @@ import invalidation from './invalidation.mjs'
 import partial from './partial.mjs'
 import other from './other.mjs'
 
-export default [ccFreshness, ccParse, ageParse, expires, expiresParse, ccResponse, heuristic, statuses, ccRequest, pragma, vary, varyParse, conditional, headers, update304, invalidation, partial, other]
+export default [ccFreshness, ccParse, ageParse, expires, expiresParse, ccResponse, heuristic, statuses, ccRequest, pragma, vary, varyParse, conditional, headers, update304, invalidation, partial, ccStale, other]
