@@ -1,3 +1,5 @@
+
+import * as templates from '../templates.mjs'
 import * as utils from '../utils.mjs'
 
 export default {
@@ -10,11 +12,10 @@ export default {
       id: 'ccreq-ma0',
       kind: 'check',
       requests: [
-        {
-          template: 'fresh',
+        templates.fresh({
           pause_after: true,
           setup: true
-        },
+        }),
         {
           request_headers: [
             ['Cache-Control', 'max-age=0']
@@ -28,11 +29,10 @@ export default {
       id: 'ccreq-ma1',
       kind: 'check',
       requests: [
-        {
-          template: 'fresh',
+        templates.fresh({
           pause_after: true,
           setup: true
-        },
+        }),
         {
           request_headers: [
             ['Cache-Control', 'max-age=1']

@@ -1,3 +1,5 @@
+
+import * as templates from '../templates.mjs'
 import * as utils from '../utils.mjs'
 
 export default
@@ -22,10 +24,7 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (s, assert, p, a) {
-              assert(s, a !== undefined, `${p} isn't present`)
-              assert(s, parseInt(a) > 2, `${p} is ${a}, should be bigger`)
-            }]
+            ['Age', '>', 2]
           ]
         }
       ]
@@ -46,10 +45,7 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (s, assert, p, a) {
-              assert(s, a !== undefined, `${p} isn't present`)
-              assert(s, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
-            }]
+            ['Age', '>', 32]
           ]
         }
       ]
@@ -70,10 +66,7 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Age', function (s, assert, p, a) {
-              assert(s, a !== undefined, `${p} isn't present`)
-              assert(s, parseInt(a) > 32, `${p} is ${a}, should be bigger`)
-            }]
+            ['Age', '>', 32]
           ]
         }
       ]
@@ -93,9 +86,7 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Date', function (s, assert, p, a, r) {
-              assert(s, a === r.headers.get('Server-Now'), `${p} is ${a}, should be ${r.headers.get('Server-Now')}`)
-            }]
+            ['Date', '=', 'Server-Now']
           ]
         }
       ]
@@ -104,10 +95,9 @@ export default
       name: 'Different query arguments must be different cache keys',
       id: 'query-args-different',
       requests: [
-        {
-          template: 'fresh',
+        templates.fresh({
           query_arg: 'test=' + utils.httpContent('query-args-different-1')
-        },
+        }),
         {
           query_arg: 'test=' + utils.httpContent('query-args-different-2'),
           expected_type: 'not_cached'
@@ -119,10 +109,9 @@ export default
       id: 'query-args-same',
       kind: 'optimal',
       requests: [
-        {
-          template: 'fresh',
+        templates.fresh({
           query_arg: 'test=' + utils.httpContent('query-args-same')
-        },
+        }),
         {
           query_arg: 'test=' + utils.httpContent('query-args-same'),
           expected_type: 'cached'
@@ -170,9 +159,7 @@ export default
       id: 'other-warning',
       kind: 'check',
       requests: [
-        {
-          template: 'stale'
-        },
+        templates.stale({}),
         {
           expected_response_headers: ['warning']
         }

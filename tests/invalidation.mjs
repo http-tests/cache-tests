@@ -1,4 +1,6 @@
 
+import * as templates from '../templates.mjs'
+
 var tests = []
 
 function checkInvalidation (method) {
@@ -6,10 +8,9 @@ function checkInvalidation (method) {
     name: `HTTP cache must invalidate the URL after a successful response to a \`${method}\` request`,
     id: `invalidate-${method}`,
     requests: [
-      {
-        template: 'fresh',
+      templates.fresh({
         setup: true
-      }, {
+      }), {
         request_method: method,
         request_body: 'abc',
         setup: true
@@ -24,10 +25,9 @@ function checkInvalidation (method) {
     kind: 'optimal',
     depends_on: [`invalidate-${method}`],
     requests: [
-      {
-        template: 'fresh',
+      templates.fresh({
         setup: true
-      }, {
+      }), {
         request_method: method,
         request_body: 'abc',
         response_status: [500, 'Internal Server Error'],
@@ -44,18 +44,15 @@ function checkLocationInvalidation (method) {
     name: `HTTP cache must invalidate \`Location\` URL after a successful response to a \`${method}\` request`,
     id: `invalidate-${method}-location`,
     requests: [
-      {
-        template: 'location',
+      templates.location({
         setup: true
-      }, {
+      }), templates.lcl_response({
         request_method: 'POST',
         request_body: 'abc',
-        template: 'lcl_response',
         setup: true
-      }, {
-        template: 'location',
+      }), templates.location({
         expected_type: 'not_cached'
-      }
+      })
     ]
   })
 }
@@ -65,18 +62,15 @@ function checkClInvalidation (method) {
     name: `HTTP cache must invalidate \`Content-Location\` URL after a successful response to a \`${method}\` request`,
     id: `invalidate-${method}-cl`,
     requests: [
-      {
-        template: 'content_location',
+      templates.content_location({
         setup: true
-      }, {
+      }), templates.lcl_response({
         request_method: method,
         request_body: 'abc',
-        template: 'lcl_response',
         setup: true
-      }, {
-        template: 'content_location',
+      }), templates.content_location({
         expected_type: 'not_cached'
-      }
+      })
     ]
   })
 }
