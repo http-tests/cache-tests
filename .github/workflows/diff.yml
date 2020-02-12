@@ -1,0 +1,16 @@
+name: Diff
+
+on: [push, pull_request]
+
+jobs:
+  diff:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - run: npm install
+    - run: ./test-browser.sh safari
+    - run: ./test-browser.sh chrome
+    - run: git diff
