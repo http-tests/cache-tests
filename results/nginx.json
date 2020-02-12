@@ -400,10 +400,7 @@
     "Response 2 comes from cache"
   ],
   "freshness-expires-past": true,
-  "freshness-expires-present": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-present": true,
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
   "freshness-expires-wrong-case-weekday": true,
@@ -603,7 +600,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Tue, 11 Feb 2020 17:30:01 GMT, should match Server-Now (Tue, 11 Feb 2020 17:29:58 GMT)"
+    "Response 2 header Date is Wed, 12 Feb 2020 11:51:31 GMT, should match Server-Now (Wed, 12 Feb 2020 11:51:28 GMT)"
   ],
   "other-set-cookie": [
     "Assertion",

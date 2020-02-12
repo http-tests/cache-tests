@@ -420,15 +420,15 @@
   ],
   "other-age-gen": [
     "Assertion",
-    "Response 2 header Age is null, should be bigger"
+    "Response 2 Age header not present."
   ],
   "other-age-update-expires": [
     "Assertion",
-    "Response 2 header Age is 30, should be bigger"
+    "Response 2 header Age is 30, should be bigger than 32"
   ],
   "other-age-update-max-age": [
     "Assertion",
-    "Response 2 header Age is 30, should be bigger"
+    "Response 2 header Age is 30, should be bigger than 32"
   ],
   "other-cookie": true,
   "other-date-update": true,

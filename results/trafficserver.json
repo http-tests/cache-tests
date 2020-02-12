@@ -300,7 +300,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
-    "Response body is \"24\r\na7aac498-9ecf-45c6-b53d-4da6006379b5\r\n0\r\n\r\n\", not \"a7aac498-9ecf-45c6-b53d-4da6006379b5\""
+    "Response body is \"24\r\n43c632fd-cf97-4624-b254-0ec17d307019\r\n0\r\n\r\n\", not \"43c632fd-cf97-4624-b254-0ec17d307019\""
   ],
   "headers-store-Upgrade": [
     "Assertion",
