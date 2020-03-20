@@ -228,6 +228,66 @@ export default
           expected_type: 'cached'
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache reuse an aged response when the `Age` header has a parameter?',
+      id: 'age-parse-parameter',
+      kind: 'check',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '7200;foo=bar', false],
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse an aged response when the `Age` header has a numeric parameter?',
+      id: 'age-parse-numeric-parameter',
+      kind: 'check',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '7200;foo=111', false],
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse an under-aged response when the `Age` header has a numeric parameter?',
+      id: 'age-parse-numeric-parameter-under',
+      kind: 'check',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '1800;foo=7200', false],
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
     }
   ]
 }
