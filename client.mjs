@@ -298,7 +298,7 @@ function checkRequests (requests, responses, testState) {
     testIdx++ // only increment for requests the server sees
     expectedValidatingHeaders.forEach(vhdr => {
       assert(typeSetup, typeof (serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
-      assert(typeSetup, Object.prototype.hasOwnProperty.call(serverRequest, vhdr),
+      assert(typeSetup, Object.prototype.hasOwnProperty.call(serverRequest.request_headers, vhdr),
         `request ${reqNum} doesn't have ${vhdr} header`)
     })
     if ('expected_request_headers' in reqConfig) {
@@ -306,7 +306,7 @@ function checkRequests (requests, responses, testState) {
       reqConfig.expected_request_headers.forEach(header => {
         if (typeof header === 'string') {
           var headerName = header.toLowerCase()
-          assert(reqPresentSetup, Object.prototype.hasOwnProperty.call(serverRequest, headerName),
+          assert(reqPresentSetup, Object.prototype.hasOwnProperty.call(serverRequest.request_headers, headerName),
             `Request ${reqNum} ${header} header not present.`)
         } else {
           var reqValue = serverRequest.request_headers[header[0].toLowerCase()]
