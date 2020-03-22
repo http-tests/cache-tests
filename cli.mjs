@@ -36,7 +36,7 @@ client.runTests(testsToRun, fetch, false, baseUrl)
       console.log(`${GREEN}==== Results${NC}`)
       var result = client.getResults()
       var resultSymbol = display.determineTestResult(tests, testId, result, false)
-      var resultDetails = result[1] || ''
+      var resultDetails = result[testId][1] || ''
       console.log(`${resultSymbol} - ${resultDetails}`)
     } else {
       console.log(JSON.stringify(client.getResults(), null, 2))
