@@ -185,6 +185,9 @@
   "age-parse-float": true,
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
+  "age-parse-numeric-parameter": true,
+  "age-parse-numeric-parameter-under": true,
+  "age-parse-parameter": true,
   "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": [

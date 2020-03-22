@@ -110,6 +110,9 @@
   "age-parse-float": true,
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
+  "age-parse-numeric-parameter": true,
+  "age-parse-numeric-parameter-under": true,
+  "age-parse-parameter": true,
   "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": true,
@@ -381,7 +384,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Wed, 12 Feb 2020 11:53:35 GMT, should match Server-Now (Wed, 12 Feb 2020 11:53:32 GMT)"
+    "Response 2 header Date is Sun, 22 Mar 2020 03:27:36 GMT, should match Server-Now (Sun, 22 Mar 2020 03:27:33 GMT)"
   ],
   "other-set-cookie": true,
   "other-warning": [

@@ -104,6 +104,15 @@
   ],
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
+  "age-parse-numeric-parameter": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-numeric-parameter-under": true,
+  "age-parse-parameter": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": [
@@ -194,7 +203,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "freshness-expires-age-fast-date": true,
+  "freshness-expires-age-fast-date": [
+    "Setup",
+    "Response 1 header Age is \"16\", not \"15\""
+  ],
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
@@ -299,8 +311,8 @@
   "headers-store-Strict-Transport-Security2": true,
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
-    "Setup",
-    "Response body is \"24\r\n43c632fd-cf97-4624-b254-0ec17d307019\r\n0\r\n\r\n\", not \"43c632fd-cf97-4624-b254-0ec17d307019\""
+    "FetchError",
+    "request to http://localhost:8003/test/d34b2681-f259-4f0b-9459-c7faf9e43d38 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": [
     "Assertion",

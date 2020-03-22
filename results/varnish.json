@@ -95,6 +95,15 @@
     "Response 2 does not come from cache"
   ],
   "age-parse-nonnumeric": true,
+  "age-parse-numeric-parameter": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-numeric-parameter-under": true,
+  "age-parse-parameter": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": [
@@ -180,7 +189,7 @@
   "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "Request 2 should have been conditional, but it was not."
+    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": [

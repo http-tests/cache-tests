@@ -92,6 +92,15 @@
   ],
   "age-parse-negative": true,
   "age-parse-nonnumeric": true,
+  "age-parse-numeric-parameter": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "age-parse-numeric-parameter-under": true,
+  "age-parse-parameter": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": [
