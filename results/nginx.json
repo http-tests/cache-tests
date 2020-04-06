@@ -606,7 +606,12 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Sun, 22 Mar 2020 03:27:53 GMT, should match Server-Now (Sun, 22 Mar 2020 03:27:50 GMT)"
+    "Response 2 header Date is Mon, 06 Apr 2020 22:48:26 GMT, should match Server-Now (Mon, 06 Apr 2020 22:48:23 GMT)"
+  ],
+  "other-fresh-content-disposition-attachment": true,
+  "other-heuristic-content-disposition-attachment": [
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "other-set-cookie": [
     "Assertion",

@@ -458,6 +458,11 @@
     "Response 2 does not come from cache"
   ],
   "other-date-update": true,
+  "other-fresh-content-disposition-attachment": true,
+  "other-heuristic-content-disposition-attachment": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "other-set-cookie": [
     "Assertion",
     "Response 2 does not come from cache"

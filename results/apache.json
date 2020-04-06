@@ -355,8 +355,8 @@
   ],
   "invalidate-M-SEARCH-failed": true,
   "invalidate-M-SEARCH-location": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "FetchError",
+    "request to http://localhost:8004/config/27a31812-b67b-40ce-b8e9-0ba11afec9c1 failed, reason: connect ECONNRESET 127.0.0.1:8004"
   ],
   "invalidate-POST": true,
   "invalidate-POST-cl": [
@@ -384,8 +384,10 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Sun, 22 Mar 2020 03:27:36 GMT, should match Server-Now (Sun, 22 Mar 2020 03:27:33 GMT)"
+    "Response 2 header Date is Mon, 06 Apr 2020 22:48:08 GMT, should match Server-Now (Mon, 06 Apr 2020 22:48:05 GMT)"
   ],
+  "other-fresh-content-disposition-attachment": true,
+  "other-heuristic-content-disposition-attachment": true,
   "other-set-cookie": true,
   "other-warning": [
     "Assertion",

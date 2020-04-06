@@ -435,6 +435,8 @@
   ],
   "other-cookie": true,
   "other-date-update": true,
+  "other-fresh-content-disposition-attachment": true,
+  "other-heuristic-content-disposition-attachment": true,
   "other-set-cookie": true,
   "other-warning": [
     "Assertion",
@@ -492,19 +494,46 @@
     "Response 2 does not come from cache"
   ],
   "status-299-stale": true,
-  "status-301-fresh": true,
-  "status-301-stale": true,
-  "status-302-fresh": true,
-  "status-302-stale": true,
-  "status-303-fresh": true,
-  "status-303-stale": true,
-  "status-307-fresh": true,
-  "status-307-stale": true,
-  "status-308-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
+  "status-301-fresh": [
+    "Setup",
+    "Response 1 status is 0, not 301"
   ],
-  "status-308-stale": true,
+  "status-301-stale": [
+    "Setup",
+    "Response 1 status is 0, not 301"
+  ],
+  "status-302-fresh": [
+    "Setup",
+    "Response 1 status is 0, not 302"
+  ],
+  "status-302-stale": [
+    "Setup",
+    "Response 1 status is 0, not 302"
+  ],
+  "status-303-fresh": [
+    "Setup",
+    "Response 1 status is 0, not 303"
+  ],
+  "status-303-stale": [
+    "Setup",
+    "Response 1 status is 0, not 303"
+  ],
+  "status-307-fresh": [
+    "Setup",
+    "Response 1 status is 0, not 307"
+  ],
+  "status-307-stale": [
+    "Setup",
+    "Response 1 status is 0, not 307"
+  ],
+  "status-308-fresh": [
+    "Setup",
+    "Response 1 status is 0, not 308"
+  ],
+  "status-308-stale": [
+    "Setup",
+    "Response 1 status is 0, not 308"
+  ],
   "status-400-fresh": [
     "Assertion",
     "Response 2 does not come from cache"

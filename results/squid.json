@@ -389,6 +389,8 @@
   "other-age-update-max-age": true,
   "other-cookie": true,
   "other-date-update": true,
+  "other-fresh-content-disposition-attachment": true,
+  "other-heuristic-content-disposition-attachment": true,
   "other-set-cookie": true,
   "other-warning": [
     "Assertion",

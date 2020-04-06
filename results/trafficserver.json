@@ -203,10 +203,7 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "freshness-expires-age-fast-date": [
-    "Setup",
-    "Response 1 header Age is \"16\", not \"15\""
-  ],
+  "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
@@ -312,7 +309,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/d34b2681-f259-4f0b-9459-c7faf9e43d38 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/e82f9450-2b50-451b-b6c3-10f04d2a117f failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": [
     "Assertion",
@@ -416,6 +413,11 @@
   "other-age-update-max-age": true,
   "other-cookie": true,
   "other-date-update": true,
+  "other-fresh-content-disposition-attachment": true,
+  "other-heuristic-content-disposition-attachment": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "other-set-cookie": true,
   "other-warning": [
     "Assertion",
