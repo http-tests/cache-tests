@@ -119,6 +119,41 @@ export default
       ]
     },
     {
+      name: 'Does HTTP heuristically cache a response with a `Content-Disposition: attachment` header?',
+      id: 'other-heuristic-content-disposition-attachment',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+		    ['Last-Modified', -100000],
+		    ['Date', 0],
+            ['Content-Disposition', 'attachment; filename=example.txt']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP reuse a fresh response with a `Content-Disposition: attachment` header?',
+      id: 'other-fresh-content-disposition-attachment',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+		    ['Cache-Control', 'max-age=3600'],
+            ['Content-Disposition', 'attachment; filename=example.txt']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'An optimal HTTP cache reuses a fresh response with a `Set-Cookie` header',
       id: 'other-set-cookie',
       kind: 'optimal',
