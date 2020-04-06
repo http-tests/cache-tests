@@ -61,6 +61,29 @@ function checkStatus (status) {
   [true, 599, 'Unknown', undefined, 'when `Cache-Control: public` is present', ['Cache-Control', 'public']]
 ].forEach(checkStatus)
 
+function checkHeuristic (delta) {
+  tests.push({
+    name: `Does HTTP cache reuse a response with a \`Last-Modified\` ${delta} seconds ago?`,
+    id: `heuristic-delta-${delta}`,
+    kind: 'check',
+    requests: [{
+      response_headers: [
+        ['Last-Modified', -delta],
+        ['Date', 0]
+      ],
+      setup: true,
+      pause: true
+    },
+    {
+      expected_type: 'cached'
+    }]
+  })
+}
+
+[
+  5, 10, 30, 60, 300, 600, 1200, 1800, 3600, 3600 * 12, 3600 * 24
+].forEach(checkHeuristic)
+
 export default {
   name: 'Heuristic Freshness',
   id: 'heuristic',
