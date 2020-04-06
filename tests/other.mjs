@@ -125,8 +125,8 @@ export default
       requests: [
         {
           response_headers: [
-		    ['Last-Modified', -100000],
-		    ['Date', 0],
+            ['Last-Modified', -100000],
+            ['Date', 0],
             ['Content-Disposition', 'attachment; filename=example.txt']
           ],
           setup: true
@@ -143,7 +143,7 @@ export default
       requests: [
         {
           response_headers: [
-		    ['Cache-Control', 'max-age=3600'],
+            ['Cache-Control', 'max-age=3600'],
             ['Content-Disposition', 'attachment; filename=example.txt']
           ],
           setup: true
