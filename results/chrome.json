@@ -403,7 +403,10 @@
   "heuristic-delta-300": true,
   "heuristic-delta-3600": true,
   "heuristic-delta-43200": true,
-  "heuristic-delta-5": true,
+  "heuristic-delta-5": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-delta-60": true,
   "heuristic-delta-600": true,
   "heuristic-delta-86400": true,
@@ -518,46 +521,6 @@
   "status-204-stale": true,
   "status-299-fresh": true,
   "status-299-stale": true,
-  "status-301-fresh": [
-    "Setup",
-    "Response 1 status is 0, not 301"
-  ],
-  "status-301-stale": [
-    "Setup",
-    "Response 1 status is 0, not 301"
-  ],
-  "status-302-fresh": [
-    "Setup",
-    "Response 1 status is 0, not 302"
-  ],
-  "status-302-stale": [
-    "Setup",
-    "Response 1 status is 0, not 302"
-  ],
-  "status-303-fresh": [
-    "Setup",
-    "Response 1 status is 0, not 303"
-  ],
-  "status-303-stale": [
-    "Setup",
-    "Response 1 status is 0, not 303"
-  ],
-  "status-307-fresh": [
-    "Setup",
-    "Response 1 status is 0, not 307"
-  ],
-  "status-307-stale": [
-    "Setup",
-    "Response 1 status is 0, not 307"
-  ],
-  "status-308-fresh": [
-    "Setup",
-    "Response 1 status is 0, not 308"
-  ],
-  "status-308-stale": [
-    "Setup",
-    "Response 1 status is 0, not 308"
-  ],
   "status-400-fresh": true,
   "status-400-stale": true,
   "status-404-fresh": true,
