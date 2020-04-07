@@ -17,7 +17,10 @@
   ],
   "304-etag-update-response-Expires": true,
   "304-etag-update-response-Public-Key-Pins": true,
-  "304-etag-update-response-Set-Cookie": true,
+  "304-etag-update-response-Set-Cookie": [
+    "FetchError",
+    "request to http://localhost:8004/config/d80f48f2-b8fa-4988-9af2-0ecb946e3c9a failed, reason: connect ECONNRESET 127.0.0.1:8004"
+  ],
   "304-etag-update-response-Set-Cookie2": true,
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": true,
@@ -26,7 +29,10 @@
   "304-etag-update-response-X-XSS-Protection": true,
   "304-etag-update-stored-Cache-Control": true,
   "304-etag-update-stored-Clear-Site-Data": true,
-  "304-etag-update-stored-Content-Foo": true,
+  "304-etag-update-stored-Content-Foo": [
+    "FetchError",
+    "request to http://localhost:8004/config/5610f317-9463-4937-afde-3877991d4ff1 failed, reason: connect ECONNRESET 127.0.0.1:8004"
+  ],
   "304-etag-update-stored-Content-Location": [
     "Setup",
     "Response 3 does not come from cache"
@@ -90,7 +96,10 @@
     "Setup",
     "Response 3 does not come from cache"
   ],
-  "304-lm-update-stored-Expires": true,
+  "304-lm-update-stored-Expires": [
+    "FetchError",
+    "request to http://localhost:8004/config/5b752f12-dbe6-4f1c-adfc-ee64227b5ce8 failed, reason: connect ECONNRESET 127.0.0.1:8004"
+  ],
   "304-lm-update-stored-Public-Key-Pins": true,
   "304-lm-update-stored-Set-Cookie": true,
   "304-lm-update-stored-Set-Cookie2": true,
@@ -335,6 +344,20 @@
     "Response 2 status is 500, not 599"
   ],
   "heuristic-599-not_cached": true,
+  "heuristic-delta-10": true,
+  "heuristic-delta-1200": true,
+  "heuristic-delta-1800": true,
+  "heuristic-delta-30": true,
+  "heuristic-delta-300": true,
+  "heuristic-delta-3600": true,
+  "heuristic-delta-43200": true,
+  "heuristic-delta-5": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-60": true,
+  "heuristic-delta-600": true,
+  "heuristic-delta-86400": true,
   "invalidate-DELETE": true,
   "invalidate-DELETE-cl": [
     "Assertion",
@@ -355,8 +378,8 @@
   ],
   "invalidate-M-SEARCH-failed": true,
   "invalidate-M-SEARCH-location": [
-    "FetchError",
-    "request to http://localhost:8004/config/27a31812-b67b-40ce-b8e9-0ba11afec9c1 failed, reason: connect ECONNRESET 127.0.0.1:8004"
+    "Assertion",
+    "Response 3 comes from cache"
   ],
   "invalidate-POST": true,
   "invalidate-POST-cl": [
@@ -384,7 +407,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is Mon, 06 Apr 2020 22:48:08 GMT, should match Server-Now (Mon, 06 Apr 2020 22:48:05 GMT)"
+    "Response 2 header Date is Tue, 07 Apr 2020 01:53:05 GMT, should match Server-Now (Tue, 07 Apr 2020 01:53:02 GMT)"
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
@@ -423,6 +446,10 @@
   ],
   "pragma-response-extension": true,
   "pragma-response-no-cache": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "pragma-response-no-cache-heuristic": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
