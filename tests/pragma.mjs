@@ -26,7 +26,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache use a stored fresh response when request contains `Pragma: unrecognised-extension`?',
+      name: 'Does HTTP cache reuse a stored fresh response when request contains `Pragma: unrecognised-extension`?',
       id: 'pragma-request-extension',
       kind: 'check',
       requests: [
@@ -45,13 +45,30 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache use a stored and otherwise fresh response when it contains `Pragma: no-cache`?',
+      name: 'Does HTTP cache reuse a stored and otherwise fresh response when it contains `Pragma: no-cache`?',
       id: 'pragma-response-no-cache',
       kind: 'check',
       requests: [
         {
           response_headers: [
             ['Cache-Control', 'max-age=3600'],
+            ['Pragma', 'no-cache']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a stored and heuristically fresh response when it contains `Pragma: no-cache`?',
+      id: 'pragma-response-no-cache-heuristic',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Last-Modified', -10000],
             ['Pragma', 'no-cache']
           ],
           setup: true
