@@ -71,29 +71,41 @@ export function showTestName (test, uuid) {
   return wrapper
 }
 
+export function showKey (element) {
+  var spans = element.getElementsByTagName('span')
+  for (const span of spans) {
+    var kind = span.getAttribute('data-kind')
+    var styling = resultTypes[kind]
+    var contentNode = document.createTextNode(styling[0])
+    span.style.color = styling[1]
+    span.appendChild(contentNode)
+  }
+}
+
 export function showTestResult (testSuites, testId, testResults) {
   var result = testResults[testId]
   var resultValue = determineTestResult(testSuites, testId, testResults)
-  var resultNode = document.createTextNode(` ${resultValue} `)
+  var resultNode = document.createTextNode(` ${resultValue[0]} `)
+  var span = document.createElement('span')
+  span.className = 'fa'
+  span.style.color = resultValue[1]
+  span.appendChild(resultNode)
   if (result && typeof (result[1]) === 'string') {
-    var span = document.createElement('span')
     span.title = result[1]
-    span.appendChild(resultNode)
-    return span
   }
-  return resultNode
+  return span
 }
 
 const resultTypes = {
-  untested: '-',
-  pass: '✅',
-  fail: '⛔️',
-  optional_fail: '⚠️',
-  yes: '●',
-  no: '○',
-  setup_fail: '🔹',
-  harness_fail: '⁉️',
-  dependency_fail: '⚪️'
+  untested: ['-', ''],
+  pass: ['\uf058', '#1aa123'],
+  fail: ['\uf057', '#c33131'],
+  optional_fail: ['\uf05a', '#bbbd15'],
+  yes: ['\uf055', '#999696'],
+  no: ['\uf056', '#999696'],
+  setup_fail: ['\uf059', '#4c61ae'],
+  harness_fail: ['\uf06a', '#4c61ae'],
+  dependency_fail: ['\uf192', '#b4b2b2']
 }
 const passTypes = [resultTypes.pass, resultTypes.yes]
 

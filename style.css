@@ -73,3 +73,19 @@ th.category a {
 input.select {
   margin-left: 6px;
 }
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('/asset/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('/asset/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('/asset/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('/asset/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('/asset/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('/asset/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 18px/22px FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 10px;
+}

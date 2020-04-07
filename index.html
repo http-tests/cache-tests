@@ -13,13 +13,16 @@
     <script type="module">
       import index from './results/index.mjs'
       import * as summary from './summary.mjs'
+      import * as display from './display.mjs'
       import baseTests from './tests/index.mjs'
       import surrogate from './tests/surrogate-control.mjs'
 
       baseTests.push(surrogate)
       var ToC = document.getElementById('ToC')
       var target = document.getElementById('target')
+      var key = document.getElementById('key')
 
+      display.showKey(key)
       summary.loadResults(index).then(results => {
         var loc = new URL(window.location)
         var selected = loc.searchParams.getAll('id')
@@ -55,15 +58,15 @@
     contributions, add your implementation's results, file issues or learn more, see <a
     href="https://github.com/http-tests/cache-tests">the repository</a>.</p>
 
-    <p><strong>Key:</strong>
-      ✅: passed &nbsp;
-      ⚠️: optional test failed &nbsp;
-      ⛔️: conformance test failed &nbsp;
-      ● / ○: behaviour check results &nbsp;
-      ⁉️: test harness failure &nbsp;
-      🔹: test failed during setup &nbsp;
-      ⚪️: test dependency failed &nbsp;
-      -: not tested
+    <p id="key"><strong>Key: </strong>
+      <span class="fa" data-kind="pass"></span>passed &nbsp;
+      <span class="fa" data-kind="optional_fail"></span>optional test failed &nbsp;
+      <span class="fa" data-kind="fail"></span>conformance test failed &nbsp;
+      <span class="fa" data-kind="yes"></span> / <span class="fa" data-kind="no"></span>behaviour check results &nbsp;
+      <span class="fa" data-kind="harness_fail"></span>test harness failure &nbsp;
+      <span class="fa" data-kind="setup_fail"></span>test failed during setup &nbsp;
+      <span class="fa" data-kind="dependency_fail"></span>test dependency failed &nbsp;
+      <span class="fa" data-kind="untested"></span>not tested
     </p>
 
     <ul id="ToC">
