@@ -6,6 +6,8 @@ const assert = utils.assert
 
 // https://fetch.spec.whatwg.org/#forbidden-response-header-name
 const forbiddenResponseHeaders = new Set(['set-cookie', 'set-cookie2'])
+// headers to skip when checking response_headers (not expected)
+const skipResponseHeaders = new Set(['date'])
 
 var theFetch = null
 var useBrowserCache = false
@@ -319,6 +321,10 @@ function checkRequests (requests, responses, testState) {
       serverRequest.response_headers.forEach(header => {
         if (useBrowserCache && forbiddenResponseHeaders.has(header[0].toLowerCase())) {
           // browsers prevent reading these headers through the Fetch API so we can't verify them
+          return
+        }
+        if (skipResponseHeaders.has(header[0].toLowerCase())) {
+          // these just cause spurious failures
           return
         }
         let received = response.headers.get(header[0])
