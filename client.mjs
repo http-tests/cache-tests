@@ -17,7 +17,7 @@ var testResults = {}
 
 export var testUUIDs = {}
 
-export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
+export function runTests (tests, myFetch, browserCache, base, chunkSize = 100) {
   theFetch = myFetch
   if (base !== undefined) baseUrl = base
   if (browserCache !== undefined) useBrowserCache = browserCache
@@ -26,9 +26,7 @@ export function runTests (tests, myFetch, browserCache, base, chunkSize = 10) {
       if (test.id === undefined) throw new Error('Missing test id')
       if (test.browser_only === true && !useBrowserCache === true) return
       if (test.browser_skip === true && useBrowserCache === true) return
-      testArray.push(
-        makeCacheTest(test)
-      )
+      testArray.push(test)
     })
   })
   return runSome(testArray, chunkSize)
@@ -47,7 +45,7 @@ function runSome (tests, chunkSize) {
     var index = 0
     function next () {
       if (index < tests.length) {
-        var these = tests.slice(index, index + chunkSize)
+        var these = tests.slice(index, index + chunkSize).map(makeCacheTest)
         index += chunkSize
         Promise.all(these).then(next)
       } else {
