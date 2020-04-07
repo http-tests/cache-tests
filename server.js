@@ -229,12 +229,19 @@ function httpDate (now, deltaSecs) {
   return new Date(now + (deltaSecs * 1000)).toGMTString()
 }
 
+var server
 if (protocol.toLowerCase() === 'https') {
   const options = {
-    key: process.env.npm_config_keyfile,
-    cert: process.env.npm_config_certfile
+    key: fs.readFileSync(process.env.npm_config_keyfile),
+    cert: fs.readFileSync(process.env.npm_config_certfile),
   }
-  https.createServer(options, handleMain).listen(port)
+  server = https.createServer(options, handleMain)
 } else {
-  http.createServer(handleMain).listen(port)
+  server = http.createServer(handleMain)
 }
+server.on('listening', () => {
+  const host = (server.address().family === 'IPv6')
+    ? `[${server.address().address}]` : server.address().address;
+  console.log(`Listening on ${protocol.toLowerCase()}://${host}:${server.address().port}/`);
+})
+server.listen(port)
