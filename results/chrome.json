@@ -396,6 +396,17 @@
     "Response 2 does not come from cache"
   ],
   "heuristic-599-not_cached": true,
+  "heuristic-delta-10": true,
+  "heuristic-delta-1200": true,
+  "heuristic-delta-1800": true,
+  "heuristic-delta-30": true,
+  "heuristic-delta-300": true,
+  "heuristic-delta-3600": true,
+  "heuristic-delta-43200": true,
+  "heuristic-delta-5": true,
+  "heuristic-delta-60": true,
+  "heuristic-delta-600": true,
+  "heuristic-delta-86400": true,
   "invalidate-DELETE": true,
   "invalidate-DELETE-cl": [
     "Assertion",
@@ -490,6 +501,10 @@
   ],
   "pragma-response-extension": true,
   "pragma-response-no-cache": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "pragma-response-no-cache-heuristic": [
     "Assertion",
     "Response 2 does not come from cache"
   ],

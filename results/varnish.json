@@ -398,6 +398,50 @@
     "Response 2 does not come from cache"
   ],
   "heuristic-599-not_cached": true,
+  "heuristic-delta-10": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-1200": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-1800": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-30": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-300": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-3600": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-43200": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-5": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-60": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-600": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-86400": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "invalidate-DELETE": [
     "Assertion",
     "Response 3 comes from cache"
@@ -498,6 +542,10 @@
   "pragma-request-no-cache": true,
   "pragma-response-extension": true,
   "pragma-response-no-cache": true,
+  "pragma-response-no-cache-heuristic": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "query-args-different": true,
   "query-args-same": true,
   "status-200-fresh": true,

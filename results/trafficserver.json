@@ -309,7 +309,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/e82f9450-2b50-451b-b6c3-10f04d2a117f failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/2a917728-5fc7-4d90-bd80-573bebd73787 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": [
     "Assertion",
@@ -356,6 +356,50 @@
   "heuristic-504-not_cached": true,
   "heuristic-599-cached": true,
   "heuristic-599-not_cached": true,
+  "heuristic-delta-10": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-1200": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-1800": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-30": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-300": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-3600": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-43200": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-5": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-60": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-600": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "heuristic-delta-86400": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "invalidate-DELETE": true,
   "invalidate-DELETE-cl": [
     "Assertion",
@@ -450,6 +494,10 @@
   "pragma-request-no-cache": true,
   "pragma-response-extension": true,
   "pragma-response-no-cache": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "pragma-response-no-cache-heuristic": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
