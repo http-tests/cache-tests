@@ -11,10 +11,12 @@ function checkStatus (status) {
   if (body === undefined) {
     body = utils.httpContent(code)
   }
+  var is3xx = code > 299 && code < 400
   tests.push({
     name: 'HTTP cache must not reuse a stale `' + code + '` response with explicit freshness',
     id: `status-${code}-stale`,
     depends_on: [`status-${code}-fresh`],
+    browser_skip: is3xx,
     requests: [
       templates.stale({
         response_status: [code, phrase],
@@ -32,6 +34,7 @@ function checkStatus (status) {
     name: 'An optimal HTTP cache reuses a fresh `' + code + '` response with explict freshness',
     id: `status-${code}-fresh`,
     kind: 'optimal',
+    browser_skip: is3xx,
     requests: [
       templates.fresh({
         response_status: [code, phrase],
