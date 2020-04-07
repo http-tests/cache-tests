@@ -118,7 +118,7 @@ On OSX, you can use `test-browser.sh` to automate this, somewhat.
 
 HTTP caching by its nature is an optimisation; implementations aren't required to cache everything. However, when they do cache, their behaviour is constrained by [the specification](https://httpwg.org/specs/rfc7234.html).
 
-As a result, there are a few different kinds of test results:
+As a result, there are a few different kinds of test results (note that the HTML results use similar but slightly different symbols):
 
 * ✅ - The test was successful.
 * ⛔️ - The test failed, and likely indicates a specification conformance problem.
