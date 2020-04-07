@@ -240,8 +240,8 @@ if (protocol.toLowerCase() === 'https') {
   server = http.createServer(handleMain)
 }
 server.on('listening', () => {
-  const host = (server.address().family === 'IPv6')
-    ? `[${server.address().address}]` : server.address().address;
-  console.log(`Listening on ${protocol.toLowerCase()}://${host}:${server.address().port}/`);
+  const host = (server.address().family === 'IPv6') ?
+    `[${server.address().address}]` : server.address().address
+  console.log(`Listening on ${protocol.toLowerCase()}://${host}:${server.address().port}/`)
 })
 server.listen(port)
