@@ -1,5 +1,9 @@
 /* global URL */
 
+/*
+  This is JavaScript that is only expected to be run in NodeJS.
+*/
+
 const http = require('http')
 const https = require('https')
 const path = require('path')
