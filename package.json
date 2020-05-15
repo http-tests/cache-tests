@@ -30,5 +30,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mnot/cdn-tests.git"
+  },
+  "devDependencies": {
+    "standard": "^14.3.4"
   }
 }
