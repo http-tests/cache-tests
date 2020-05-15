@@ -1,8 +1,8 @@
 
 export default {
-  name: 'Conditional Requests',
-  id: 'conditional',
-  description: 'Testing of HTTP [conditional requests](https://httpwg.org/specs/rfc7232.html); currently covering `If-None-Match` and `If-Modified-Since` for `ETag`s and `Last-Modified` respectively.',
+  name: 'Conditional Requests: If-None-Match and ETag',
+  id: 'conditional-inm',
+  description: 'Testing of HTTP [conditional requests](https://httpwg.org/specs/rfc7232.html) using `If-None-Match` and `ETag`.',
   tests: [
     {
       name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag`.',
