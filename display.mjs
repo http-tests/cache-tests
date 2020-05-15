@@ -97,15 +97,15 @@ export function showTestResult (testSuites, testId, testResults) {
 }
 
 const resultTypes = {
-  untested: ['-', ''],
-  pass: ['\uf058', '#1aa123'],
-  fail: ['\uf057', '#c33131'],
-  optional_fail: ['\uf05a', '#bbbd15'],
-  yes: ['\uf055', '#999696'],
-  no: ['\uf056', '#999696'],
-  setup_fail: ['\uf059', '#4c61ae'],
-  harness_fail: ['\uf06a', '#4c61ae'],
-  dependency_fail: ['\uf192', '#b4b2b2']
+  untested: ['-', '', '-'],
+  pass: ['\uf058', '#1aa123', '✅'],
+  fail: ['\uf057', '#c33131', '⛔️'],
+  optional_fail: ['\uf05a', '#bbbd15', '⚠️'],
+  yes: ['\uf055', '#999696', 'Y'],
+  no: ['\uf056', '#999696', 'N'],
+  setup_fail: ['\uf059', '#4c61ae', '🔹'],
+  harness_fail: ['\uf06a', '#4c61ae', '⁉️'],
+  dependency_fail: ['\uf192', '#b4b2b2', '⚪️']
 }
 const passTypes = [resultTypes.pass, resultTypes.yes]
 
