@@ -28,7 +28,6 @@ const mimeTypes = {
 }
 const noBodyStatus = new Set([204, 304])
 const locationHeaders = new Set(['location', 'content-location'])
-const dateHeaders = new Set(['date', 'expires', 'last-modified'])
 
 function handleMain (request, response) {
   var url = new URL(request.url, baseUrl)
@@ -150,9 +149,6 @@ function handleTest (pathSegs, request, response) {
     var headerName = header[0].toLowerCase()
     if (locationHeaders.has(headerName) && reqConfig.magic_locations === true) { // magic!
       header[1] = `http://${request.headers.host}${request.url}/${header[1]}` // FIXME
-    }
-    if (dateHeaders.has(headerName) && Number.isInteger(header[1])) { // magic!
-      header[1] = httpDate(now, header[1])
     }
     if (headerName === 'surrogate-control' && request.headers['surrogate-capability']) {
       // right now we assume just one

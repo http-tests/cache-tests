@@ -64,7 +64,7 @@ function makeCacheTest (test) {
   return new Promise((resolve, reject) => {
     var uuid = utils.token()
     testUUIDs[test.id] = uuid
-    var requests = expandTemplates(test)
+    var requests = inflateRequests(test)
     var responses = []
     var fetchFunctions = []
     for (let i = 0; i < requests.length; ++i) {
@@ -133,17 +133,41 @@ function makeCacheTest (test) {
   })
 }
 
-function expandTemplates (test) {
+const magicHeaderProperties = ['request_headers', 'response_headers', 'expected_request_headers', 'expected_response_headers']
+function inflateRequests (test) {
   var rawRequests = test.requests
   var requests = []
   for (let i = 0; i < rawRequests.length; i++) {
-    var request = rawRequests[i]
-    request.name = test.name
-    request.id = test.id
-    request.dump = test.dump
-    requests.push(request)
+    var reqConfig = rawRequests[i]
+    reqConfig.name = test.name
+    reqConfig.id = test.id
+    reqConfig.dump = test.dump
+    reqConfig.now = Date.now()
+    magicHeaderProperties.forEach(magicProperty => {
+      if (magicProperty in reqConfig) {
+        var tmpProperty = []
+        reqConfig[magicProperty].forEach(header => {
+          tmpProperty.push(magicHeader(header, reqConfig))
+        })
+        reqConfig[magicProperty] = tmpProperty
+      }
+    })
+    requests.push(reqConfig)
   }
   return requests
+}
+
+const dateHeaders = new Set(['date', 'expires', 'last-modified', 'if-modified-since', 'if-unmodified-since'])
+
+function magicHeader (header, reqConfig) {
+  if (typeof header === 'string') return header
+  var headerName = header[0].toLowerCase()
+  var headerValue = header[1]
+  if (dateHeaders.has(headerName) && Number.isInteger(header[1])) {
+    headerValue = utils.httpDate(reqConfig.now, header[1])
+  }
+  header[1] = headerValue
+  return header
 }
 
 function fetchInit (idx, reqConfig) {

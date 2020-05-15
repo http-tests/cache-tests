@@ -74,3 +74,7 @@ function toHex (x, length) {
   }
   return rv
 }
+
+export function httpDate (now, deltaSecs) {
+  return new Date(now + (deltaSecs * 1000)).toGMTString()
+}

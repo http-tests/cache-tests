@@ -86,7 +86,7 @@ export default
         {
           expected_type: 'cached',
           expected_response_headers: [
-            ['Date', '=', 'Server-Now']
+            ['Date', 0]
           ]
         }
       ]
