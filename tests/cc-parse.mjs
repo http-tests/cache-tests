@@ -115,6 +115,60 @@ export default
       ]
     },
     {
+      name: 'Does HTTP cache reuse max-age with `003600` value?',
+      id: 'freshness-max-age-leading-zero',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=003600', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse max-age with `3600.0` value?',
+      id: 'freshness-max-age-decimal-zero',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600.0', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse max-age with `3600.5` value?',
+      id: 'freshness-max-age-decimal-five',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600.5', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'Does HTTP cache ignore max-age with space before the `=`?',
       id: 'freshness-max-age-space-before-equals',
       kind: 'check',
