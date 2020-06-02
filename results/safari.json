@@ -287,6 +287,8 @@
   ],
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
+  "freshness-max-age-decimal-five": true,
+  "freshness-max-age-decimal-zero": true,
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
@@ -294,6 +296,7 @@
   "freshness-max-age-ignore-quoted-all": true,
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
+  "freshness-max-age-leading-zero": true,
   "freshness-max-age-max": true,
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
@@ -369,7 +372,10 @@
     "Response 2 does not come from cache"
   ],
   "heuristic-599-not_cached": true,
-  "heuristic-delta-10": true,
+  "heuristic-delta-10": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-delta-1200": true,
   "heuristic-delta-1800": true,
   "heuristic-delta-30": true,

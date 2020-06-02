@@ -200,6 +200,7 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
+  "conditional-precedence-etag": true,
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -249,6 +250,8 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "freshness-max-age-decimal-five": true,
+  "freshness-max-age-decimal-zero": true,
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
@@ -256,6 +259,7 @@
   "freshness-max-age-ignore-quoted-all": true,
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
+  "freshness-max-age-leading-zero": true,
   "freshness-max-age-max": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -372,7 +376,10 @@
   "heuristic-delta-300": true,
   "heuristic-delta-3600": true,
   "heuristic-delta-43200": true,
-  "heuristic-delta-5": true,
+  "heuristic-delta-5": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-delta-60": true,
   "heuristic-delta-600": true,
   "heuristic-delta-86400": true,

@@ -203,6 +203,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
+  "conditional-precedence-etag": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
@@ -237,6 +241,8 @@
   "freshness-max-age-a100": true,
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
+  "freshness-max-age-decimal-five": true,
+  "freshness-max-age-decimal-zero": true,
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
@@ -244,6 +250,7 @@
   "freshness-max-age-ignore-quoted-all": true,
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
+  "freshness-max-age-leading-zero": true,
   "freshness-max-age-max": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -309,7 +316,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/34e6cdd1-3eb1-49e0-9c8c-5bef29451a46 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/be11fcbf-9db6-4750-968a-6acf6ea143c5 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": [
     "Assertion",
