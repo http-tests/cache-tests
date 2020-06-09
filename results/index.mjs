@@ -55,6 +55,13 @@ export default [
     "link": "https://github.com/http-tests/cache-tests/wiki/Varnish"
   },
   {
+    "file": "nuster.json",
+    "name": "nuster",
+    "type": "rev-proxy",
+    "version": "master",
+    "link": "https://github.com/http-tests/cache-tests/wiki/nuster"
+  },
+  {
     "file": "fastly.json",
     "name": "Fastly",
     "type": "cdn",

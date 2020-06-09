@@ -16,6 +16,8 @@ if [[ $# -eq 0 ]]; then
 fi
 
 PKG=$1
+CONTAINER=mnot/proxy-cache-tests
+EXTRA=""
 case $1 in
   squid)
     PROXY_PORT=8001
@@ -33,6 +35,12 @@ case $1 in
   varnish)
     PROXY_PORT=8005
     ;;
+  nuster)
+    PROXY_PORT=8006
+    CONTAINER=nuster/nuster:latest
+    EXTRA="-v ${PWD}/docker/nuster/nuster.cfg:/etc/nuster/nuster.cfg:ro"
+    SERVER_HOST=""
+    ;;
   *)
     usage "Proxy not recognised."
     ;;
@@ -42,11 +50,8 @@ esac
 npm run --silent server --port=8000 & echo $! > server.PID
 
 # run proxies
-docker run --name=tmp_proxies -p $PROXY_PORT:$PROXY_PORT -dt mnot/proxy-cache-tests ${SERVER_HOST} \
+docker run --name=tmp_proxies -p $PROXY_PORT:$PROXY_PORT $EXTRA -dt ${CONTAINER} ${SERVER_HOST} \
   > /dev/null
-
-echo "Testing $1"
-docker container exec tmp_proxies /usr/bin/apt-cache show $PKG | grep Version
 
 sleep 7
 
