@@ -160,6 +160,46 @@ export default
           expected_type: 'etag_validated'
         }
       ]
+    },
+    {
+      name: 'An optimal HTTP cache reuses a response with positive `Cache-Control: max-age, must-revalidate`',
+      id: 'cc-resp-must-revalidate-fresh',
+      kind: 'optimal',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=10000, must-revalidate'],
+            ['ETag', 'abcd']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must revalidate a stale response with positive `Cache-Control: max-age, must-revalidate`',
+      id: 'cc-resp-must-revalidate-stale',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2, must-revalidate'],
+            ['ETag', 'abcd']
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached',
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'etag_validated'
+        }
+      ]
     }
   ]
 }
