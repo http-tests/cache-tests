@@ -8,3 +8,4 @@
 ./test-docker.sh squid
 ./test-docker.sh trafficserver
 ./test-docker.sh varnish
+./test-docker.sh nuster
