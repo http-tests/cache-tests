@@ -273,6 +273,11 @@
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": true,
   "age-parse-suffix-twoline": true,
+  "cc-resp-must-revalidate-fresh": true,
+  "cc-resp-must-revalidate-stale": [
+    "Assertion",
+    "request 3 doesn't have if-none-match header"
+  ],
   "cc-resp-no-cache": [
     "Assertion",
     "Response 2 comes from cache"

@@ -111,6 +111,11 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "cc-resp-must-revalidate-fresh": true,
+  "cc-resp-must-revalidate-stale": [
+    "Assertion",
+    "request 3 doesn't have if-none-match header"
+  ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": [
     "Assertion",
@@ -200,7 +205,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-precedence-etag": true,
+  "conditional-precedence-etag": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -376,10 +384,7 @@
   "heuristic-delta-300": true,
   "heuristic-delta-3600": true,
   "heuristic-delta-43200": true,
-  "heuristic-delta-5": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "heuristic-delta-5": true,
   "heuristic-delta-60": true,
   "heuristic-delta-600": true,
   "heuristic-delta-86400": true,

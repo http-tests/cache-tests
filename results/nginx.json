@@ -273,6 +273,8 @@
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": true,
   "age-parse-suffix-twoline": true,
+  "cc-resp-must-revalidate-fresh": true,
+  "cc-resp-must-revalidate-stale": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": [
@@ -660,7 +662,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 02 Jun 2020 07:22:04 GMT\", not \"Tue, 02 Jun 2020 07:22:01 GMT\""
+    "Response 2 header Date is \"Tue, 23 Jun 2020 06:37:46 GMT\", not \"Tue, 23 Jun 2020 06:37:43 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
