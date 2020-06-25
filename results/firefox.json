@@ -162,6 +162,11 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "cc-resp-immutable-fresh": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cc-resp-immutable-stale": true,
   "cc-resp-must-revalidate-fresh": true,
   "cc-resp-must-revalidate-stale": true,
   "cc-resp-no-cache": true,

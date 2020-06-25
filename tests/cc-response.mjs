@@ -200,6 +200,46 @@ export default
           expected_type: 'etag_validated'
         }
       ]
+    },
+    {
+      name: 'An optimal HTTP cache reuses a fresh response with `Cache-Control: immutable` without revalidation.',
+      id: 'cc-resp-immutable-fresh',
+      kind: 'optimal',
+      browser_only: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=10000, immutable'],
+            ['ETag', 'abcd']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          cache: 'no-cache',
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'A HTTP cache MUST revalidate a stale response with `Cache-Control: immutable`.',
+      id: 'cc-resp-immutable-stale',
+      browser_only: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2, immutable'],
+            ['ETag', 'abcd']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          cache: 'no-cache',
+          expected_type: 'etag_validated',
+          expected_request_headers: [['cache-control', 'max-age=0']]
+        }
+      ]
     }
   ]
 }
