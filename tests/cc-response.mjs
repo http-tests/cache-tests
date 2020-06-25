@@ -132,7 +132,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'no-cache'],
-            ['ETag', 'abcd']
+            ['ETag', '"abcd"']
           ],
           setup: true
         },
@@ -152,7 +152,7 @@ export default
             ['Cache-Control', 'max-age=10000, no-cache'],
             ['Expires', 10000],
             ['Date', 0],
-            ['ETag', 'abcd']
+            ['ETag', '"abcd"']
           ],
           setup: true
         },
@@ -170,7 +170,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=10000, must-revalidate'],
-            ['ETag', 'abcd']
+            ['ETag', '"abcd"']
           ],
           setup: true
         },
@@ -187,7 +187,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=2, must-revalidate'],
-            ['ETag', 'abcd']
+            ['ETag', '"abcd"']
           ],
           setup: true
         },
@@ -210,7 +210,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=10000, immutable'],
-            ['ETag', 'abcd']
+            ['ETag', '"abcd"']
           ],
           setup: true,
           pause_after: true
@@ -229,7 +229,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=2, immutable'],
-            ['ETag', 'abcd']
+            ['ETag', '"abcd"']
           ],
           setup: true,
           pause_after: true
