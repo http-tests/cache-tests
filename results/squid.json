@@ -112,23 +112,14 @@
     "Response 2 does not come from cache"
   ],
   "cc-resp-must-revalidate-fresh": true,
-  "cc-resp-must-revalidate-stale": [
-    "Assertion",
-    "request 3 doesn't have if-none-match header"
-  ],
+  "cc-resp-must-revalidate-stale": true,
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "cc-resp-no-cache-revalidate": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "cc-resp-no-cache-revalidate-fresh": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "cc-resp-no-cache-revalidate": true,
+  "cc-resp-no-cache-revalidate-fresh": true,
   "cc-resp-no-store": true,
   "cc-resp-no-store-case-insensitive": true,
   "cc-resp-no-store-fresh": true,
@@ -258,6 +249,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "freshness-max-age-date": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-decimal-five": true,
   "freshness-max-age-decimal-zero": true,
   "freshness-max-age-expires": true,
@@ -384,7 +379,10 @@
   "heuristic-delta-300": true,
   "heuristic-delta-3600": true,
   "heuristic-delta-43200": true,
-  "heuristic-delta-5": true,
+  "heuristic-delta-5": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-delta-60": true,
   "heuristic-delta-600": true,
   "heuristic-delta-86400": true,

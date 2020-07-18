@@ -480,6 +480,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "freshness-max-age-date": true,
   "freshness-max-age-decimal-five": [
     "Assertion",
     "Response 2 does not come from cache"
