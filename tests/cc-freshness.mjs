@@ -147,10 +147,10 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with a `Cache-Control: max-age` freshness lifetime even if `Date` is older',
+      name: 'Does HTTP cache consider `Date` when applying `Cache-Control: max-age` (i.e., is `apparent_age` used)?',
       id: 'freshness-max-age-date',
       depends_on: ['freshness-max-age'],
-      kind: 'optimal',
+      kind: 'check',
       requests: [
         {
           response_headers: [
@@ -161,7 +161,7 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
