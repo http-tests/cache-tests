@@ -237,10 +237,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "freshness-max-age-date": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-max-age-date": true,
   "freshness-max-age-decimal-five": true,
   "freshness-max-age-decimal-zero": true,
   "freshness-max-age-expires": true,
@@ -362,10 +359,7 @@
     "Response 2 does not come from cache"
   ],
   "heuristic-599-not_cached": true,
-  "heuristic-delta-10": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "heuristic-delta-10": true,
   "heuristic-delta-1200": true,
   "heuristic-delta-1800": true,
   "heuristic-delta-30": true,

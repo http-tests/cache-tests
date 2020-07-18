@@ -243,10 +243,7 @@
   "freshness-max-age-a100": true,
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
-  "freshness-max-age-date": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-max-age-date": true,
   "freshness-max-age-decimal-five": true,
   "freshness-max-age-decimal-zero": true,
   "freshness-max-age-expires": true,
@@ -322,7 +319,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/fda34baf-e83c-44d9-820f-e4e24d09106c failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/987061d6-0900-4f43-aa43-83814eb76a08 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": [
     "Assertion",

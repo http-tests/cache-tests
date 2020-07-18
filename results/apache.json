@@ -237,10 +237,7 @@
   ],
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
-  "freshness-max-age-date": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-max-age-date": true,
   "freshness-max-age-decimal-five": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -414,7 +411,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Sat, 18 Jul 2020 01:16:12 GMT\", not \"Sat, 18 Jul 2020 01:16:09 GMT\""
+    "Response 2 header Date is \"Sat, 18 Jul 2020 01:28:10 GMT\", not \"Sat, 18 Jul 2020 01:28:07 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
