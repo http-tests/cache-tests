@@ -147,6 +147,25 @@ export default
       ]
     },
     {
+      name: 'An optimal HTTP cache reuses a response with a `Cache-Control: max-age` freshness lifetime even if the `Date` is older',
+      id: 'freshness-max-age-date',
+      depends_on: ['freshness-max-age'],
+      kind: 'optimal',
+      requests: [
+        {
+          response_headers: [
+            ['Date', -7200],
+            ['Cache-Control', 'max-age=3600']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'An optimal HTTP cache reuses a response with positive `Cache-Control: max-age` and a past `Expires`',
       id: 'freshness-max-age-expires',
       depends_on: ['freshness-max-age'],
