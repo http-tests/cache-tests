@@ -359,6 +359,24 @@ export default
       ]
     },
     {
+      name: 'Does surrogate cache store a response with `Surrogate-Control: max-age`, even with `Cache-Control: no-store`?',
+      id: 'surrogate-fresh-cc-nostore',
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'no-store'],
+            ['Surrogate-Control', 'max-age=10000;CAPABILITY_TARGET', false],
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'Does the surrogate append the `Surrogate-Capability` request header?',
       id: 'surrogate-append-capabilities',
       browser_skip: true,
