@@ -276,7 +276,7 @@
   "cc-resp-must-revalidate-fresh": true,
   "cc-resp-must-revalidate-stale": [
     "Assertion",
-    "request 3 doesn't have if-none-match header"
+    "Request 3 should have been conditional, but it was not."
   ],
   "cc-resp-no-cache": [
     "Assertion",
@@ -840,6 +840,10 @@
   "surrogate-append-capabilities": [
     "Assertion",
     "Request 1 Surrogate-Capability header not present."
+  ],
+  "surrogate-fresh-cc-nostore": [
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "surrogate-max-age": [
     "Assertion",

@@ -520,6 +520,10 @@
   ],
   "status-599-stale": true,
   "surrogate-append-capabilities": true,
+  "surrogate-fresh-cc-nostore": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age": [
     "Assertion",
     "Response 2 does not come from cache"

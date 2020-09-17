@@ -631,6 +631,10 @@
     "Assertion",
     "Request 1 Surrogate-Capability header not present."
   ],
+  "surrogate-fresh-cc-nostore": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "surrogate-max-age": [
     "Assertion",
     "Response 2 does not come from cache"

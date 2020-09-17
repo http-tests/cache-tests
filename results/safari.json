@@ -387,10 +387,7 @@
   "heuristic-delta-300": true,
   "heuristic-delta-3600": true,
   "heuristic-delta-43200": true,
-  "heuristic-delta-5": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "heuristic-delta-5": true,
   "heuristic-delta-60": true,
   "heuristic-delta-600": true,
   "heuristic-delta-86400": true,

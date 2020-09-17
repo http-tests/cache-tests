@@ -4,16 +4,16 @@
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Setup",
-    "Response 2 status is 409, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Content-MD5": [
     "Setup",
-    "Response 2 status is 409, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
     "Setup",
-    "Response 2 status is 409, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Expires": true,
   "304-etag-update-response-Public-Key-Pins": true,
@@ -29,16 +29,16 @@
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Setup",
-    "Response 3 does not come from cache"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Content-MD5": [
     "Setup",
-    "Response 3 does not come from cache"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
     "Setup",
-    "Response 3 does not come from cache"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-stored-Expires": true,
   "304-etag-update-stored-Public-Key-Pins": true,
@@ -54,16 +54,16 @@
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Setup",
-    "Response 2 status is 409, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Content-MD5": [
     "Setup",
-    "Response 2 status is 409, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
     "Setup",
-    "Response 2 status is 409, not 200"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-response-Expires": true,
   "304-lm-update-response-Public-Key-Pins": true,
@@ -79,16 +79,16 @@
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Setup",
-    "Response 3 does not come from cache"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Content-MD5": [
     "Setup",
-    "Response 3 does not come from cache"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
     "Setup",
-    "Response 3 does not come from cache"
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-update-stored-Expires": true,
   "304-lm-update-stored-Public-Key-Pins": true,
@@ -411,7 +411,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Sat, 18 Jul 2020 01:28:10 GMT\", not \"Sat, 18 Jul 2020 01:28:07 GMT\""
+    "Response 2 header Date is \"Thu, 17 Sep 2020 06:25:26 GMT\", not \"Thu, 17 Sep 2020 06:25:23 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
@@ -510,6 +510,10 @@
   "surrogate-append-capabilities": [
     "Assertion",
     "Request 1 Surrogate-Capability header not present."
+  ],
+  "surrogate-fresh-cc-nostore": [
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "surrogate-max-age": [
     "Assertion",
