@@ -194,7 +194,11 @@ export default
         {
           expected_type: 'cached',
           setup: true,
-          pause_after: true
+          pause_after: true,
+          response_headers: [
+            ['Cache-Control', 'max-age=2, must-revalidate'],
+            ['ETag', '"abcd"']
+          ]
         },
         {
           expected_type: 'etag_validated'

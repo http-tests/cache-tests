@@ -107,14 +107,16 @@ function handleTest (pathSegs, request, response) {
   }
 
   var serverState = stash.get(uuid) || []
-  var reqConfig = requests[serverState.length]
-  var previousConfig = requests[serverState.length - 1]
+  var srvReqNum = serverState.length + 1
+  var cliReqNum = parseInt(request.headers['req-num']) || srvReqNum
+  var reqConfig = requests[cliReqNum - 1]
+  var previousConfig = requests[cliReqNum - 2]
   if (!reqConfig) {
-    sendResponse(response, 409, `${requests[0].id} config not found for request ${serverState.length + 1} of ${requests.length}`)
+    sendResponse(response, 409, `${requests[0].id} config not found for request ${srvReqNum} (anticipating ${requests.length})`)
     return
   }
   if (reqConfig.dump) {
-    console.log(`${BLUE}=== Server request ${serverState.length + 1}${NC}`)
+    console.log(`${BLUE}=== Server request ${srvReqNum}${NC}`)
     console.log(`    ${request.method} /test/${pathSegs.join('/')}`)
     for (const [key, value] of Object.entries(request.headers)) {
       console.log(`    ${key}: ${value}`)
@@ -187,11 +189,11 @@ function handleTest (pathSegs, request, response) {
   })
   stash.set(uuid, serverState)
 
-  response.setHeader('Server-Request-Count', serverState.length)
+  response.setHeader('Server-Request-Count', srvReqNum)
   response.setHeader('Server-Now', httpDate(now, 0))
 
   if (reqConfig.dump) {
-    console.log(`${BLUE}=== Server response ${serverState.length}${NC}`)
+    console.log(`${BLUE}=== Server response ${srvReqNum}${NC}`)
     console.log(`    HTTP ${response.statusCode} ${response.statusPhrase}`)
     for (const [key, value] of Object.entries(response.getHeaders())) {
       console.log(`    ${key}: ${value}`)
