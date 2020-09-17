@@ -366,7 +366,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'no-store'],
-            ['Surrogate-Control', 'max-age=10000;CAPABILITY_TARGET', false],
+            ['Surrogate-Control', 'max-age=10000;CAPABILITY_TARGET', false]
           ],
           setup: true,
           pause_after: true
