@@ -17,7 +17,7 @@ export default [
     "file": "safari.json",
     "name": "Safari",
     "type": "browser",
-    "version": "13.0.5 (15608.5.11)"
+    "version": "14.0 (15610.1.28.1.9, 15610)"
   },
   {
     "file": "nginx.json",
