@@ -18,8 +18,8 @@
     "server": "node server.js",
     "cli": "node --experimental-modules --no-warnings cli.mjs",
     "export": "node --experimental-modules --no-warnings export.mjs",
-    "lint": "standard *.js *.mjs   tests/*.mjs",
-    "fix": "standard --fix *.js *.mjs   tests/*.mjs"
+    "lint": "standard *.js *.mjs client/*.mjs tests/*.mjs",
+    "fix": "standard --fix *.js *.mjs client/*.mjs  tests/*.mjs"
   },
   "config": {
     "protocol": "http",
