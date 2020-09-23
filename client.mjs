@@ -283,7 +283,9 @@ function makeCheckResponse (idx, reqConfig, uuid, dump) {
 
 function makeCheckResponseBody (reqConfig, uuid, statusCode) {
   return function checkResponseBody (resBody) {
-    if ('expected_response_text' in reqConfig) {
+    if ('check_body' in reqConfig && reqConfig.check_body === false) {
+
+    } else if ('expected_response_text' in reqConfig) {
       if (reqConfig.expected_response_text !== null) {
         assert(setupCheck(reqConfig, 'expected_response_text'),
           resBody === reqConfig.expected_response_text,

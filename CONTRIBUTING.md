@@ -58,6 +58,7 @@ Possible members of a request object:
                      `false`.
 - `response_body` - String to send as the response body from the origin. If not set, it will contain
                   the test identifier.
+- `check_body` - Whether to check the response body. Default `true`.
 - `expected_type` - One of:
   - `cached`: The response is served from cache
   - `not_cached`: The response is not served from cache; it comes from the origin
