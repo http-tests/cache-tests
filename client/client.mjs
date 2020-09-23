@@ -32,7 +32,7 @@ export function makeCacheTest (test) {
           return config.fetch(url, init)
             .then(response => {
               responses.push(response)
-              return makeCheckResponse(test, requests, idx)(response)
+              return checkResponse(test, requests, idx, response)
             })
         },
         pauseAfter: 'pause_after' in requests[i]
@@ -75,83 +75,81 @@ export function makeCacheTest (test) {
   })
 }
 
-function makeCheckResponse (test, requests, idx) {
-  return function checkResponse (response) {
-    var reqNum = idx + 1
-    var reqConfig = requests[idx]
-    var resNum = parseInt(response.headers.get('Server-Request-Count'))
-    if (test.dump === true) clientUtils.logResponse(response, reqNum)
-    if ('expected_type' in reqConfig) {
-      var typeSetup = setupCheck(reqConfig, 'expected_type')
-      if (reqConfig.expected_type === 'cached') {
-        if (response.status === 304 && isNaN(resNum)) { // some caches will not include the hdr
-          // pass
-        } else {
-          assert(typeSetup, resNum < reqNum, `Response ${reqNum} does not come from cache`)
-        }
-      }
-      if (reqConfig.expected_type === 'not_cached') {
-        assert(typeSetup, resNum === reqNum, `Response ${reqNum} comes from cache`)
+function checkResponse (test, requests, idx, response) {
+  var reqNum = idx + 1
+  var reqConfig = requests[idx]
+  var resNum = parseInt(response.headers.get('Server-Request-Count'))
+  if (test.dump === true) clientUtils.logResponse(response, reqNum)
+  if ('expected_type' in reqConfig) {
+    var typeSetup = setupCheck(reqConfig, 'expected_type')
+    if (reqConfig.expected_type === 'cached') {
+      if (response.status === 304 && isNaN(resNum)) { // some caches will not include the hdr
+        // pass
+      } else {
+        assert(typeSetup, resNum < reqNum, `Response ${reqNum} does not come from cache`)
       }
     }
-    if ('expected_status' in reqConfig) {
-      assert(setupCheck(reqConfig, 'expected_status'),
-        response.status === reqConfig.expected_status,
-        `Response ${reqNum} status is ${response.status}, not ${reqConfig.expected_status}`)
-    } else if ('response_status' in reqConfig) {
-      assert(true, // response status is always setup
-        response.status === reqConfig.response_status[0],
-        `Response ${reqNum} status is ${response.status}, not ${reqConfig.response_status[0]}`)
-    } else if (response.status === 999) {
-      // special condition; the server thought it should have received a conditional request.
-      assert(setupCheck(reqConfig, 'expected_type'), false,
-        `Request ${reqNum} should have been conditional, but it was not.`)
-    } else {
-      assert(true, // default status is always setup
-        response.status === 200,
-        `Response ${reqNum} status is ${response.status}, not 200`)
+    if (reqConfig.expected_type === 'not_cached') {
+      assert(typeSetup, resNum === reqNum, `Response ${reqNum} comes from cache`)
     }
-    if ('expected_response_headers' in reqConfig) {
-      var respPresentSetup = setupCheck(reqConfig, 'expected_response_headers')
-      reqConfig.expected_response_headers.forEach(header => {
-        if (typeof header === 'string') {
-          assert(respPresentSetup, response.headers.has(header),
-            `Response ${reqNum} ${header} header not present.`)
-        } else if (header.length > 2) {
-          assert(respPresentSetup, response.headers.has(header[0]),
-            `Response ${reqNum} ${header[0]} header not present.`)
-
-          const value = response.headers.get(header[0])
-          let msg, condition
-          if (header[1] === '=') {
-            const expected = response.headers.get(header[2])
-            condition = value === expected
-            msg = `match ${header[2]} (${expected})`
-          } else if (header[1] === '>') {
-            const expected = header[2]
-            condition = parseInt(value) > expected
-            msg = `be bigger than ${expected}`
-          } else {
-            throw new Error(`Unknown expected-header operator '${header[1]}'`)
-          }
-
-          assert(respPresentSetup, condition,
-            `Response ${reqNum} header ${header[0]} is ${value}, should ${msg}`)
-        } else {
-          assert(respPresentSetup, response.headers.get(header[0]) === header[1],
-            `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)
-        }
-      })
-    }
-    if ('expected_response_headers_missing' in reqConfig) {
-      var respMissingSetup = setupCheck(reqConfig, 'expected_response_headers_missing')
-      reqConfig.expected_response_headers_missing.forEach(header => {
-        assert(respMissingSetup, !response.headers.has(header),
-          `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
-      })
-    }
-    return response.text().then(makeCheckResponseBody(test, reqConfig, response.status))
   }
+  if ('expected_status' in reqConfig) {
+    assert(setupCheck(reqConfig, 'expected_status'),
+      response.status === reqConfig.expected_status,
+      `Response ${reqNum} status is ${response.status}, not ${reqConfig.expected_status}`)
+  } else if ('response_status' in reqConfig) {
+    assert(true, // response status is always setup
+      response.status === reqConfig.response_status[0],
+      `Response ${reqNum} status is ${response.status}, not ${reqConfig.response_status[0]}`)
+  } else if (response.status === 999) {
+    // special condition; the server thought it should have received a conditional request.
+    assert(setupCheck(reqConfig, 'expected_type'), false,
+      `Request ${reqNum} should have been conditional, but it was not.`)
+  } else {
+    assert(true, // default status is always setup
+      response.status === 200,
+      `Response ${reqNum} status is ${response.status}, not 200`)
+  }
+  if ('expected_response_headers' in reqConfig) {
+    var respPresentSetup = setupCheck(reqConfig, 'expected_response_headers')
+    reqConfig.expected_response_headers.forEach(header => {
+      if (typeof header === 'string') {
+        assert(respPresentSetup, response.headers.has(header),
+          `Response ${reqNum} ${header} header not present.`)
+      } else if (header.length > 2) {
+        assert(respPresentSetup, response.headers.has(header[0]),
+          `Response ${reqNum} ${header[0]} header not present.`)
+
+        const value = response.headers.get(header[0])
+        let msg, condition
+        if (header[1] === '=') {
+          const expected = response.headers.get(header[2])
+          condition = value === expected
+          msg = `match ${header[2]} (${expected})`
+        } else if (header[1] === '>') {
+          const expected = header[2]
+          condition = parseInt(value) > expected
+          msg = `be bigger than ${expected}`
+        } else {
+          throw new Error(`Unknown expected-header operator '${header[1]}'`)
+        }
+
+        assert(respPresentSetup, condition,
+          `Response ${reqNum} header ${header[0]} is ${value}, should ${msg}`)
+      } else {
+        assert(respPresentSetup, response.headers.get(header[0]) === header[1],
+          `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)
+      }
+    })
+  }
+  if ('expected_response_headers_missing' in reqConfig) {
+    var respMissingSetup = setupCheck(reqConfig, 'expected_response_headers_missing')
+    reqConfig.expected_response_headers_missing.forEach(header => {
+      assert(respMissingSetup, !response.headers.has(header),
+        `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
+    })
+  }
+  return response.text().then(makeCheckResponseBody(test, reqConfig, response.status))
 }
 
 function makeCheckResponseBody (test, reqConfig, statusCode) {
