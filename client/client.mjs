@@ -29,11 +29,10 @@ export function makeCacheTest (test) {
           var url = clientUtils.makeTestUrl(uuid, reqConfig)
           var init = fetching.init(idx, reqConfig)
           if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
-          const checkResponse = makeCheckResponse(test, requests, idx)
           return config.fetch(url, init)
             .then(response => {
               responses.push(response)
-              return checkResponse(response)
+              return makeCheckResponse(test, requests, idx)(response)
             })
         },
         pauseAfter: 'pause_after' in requests[i]
