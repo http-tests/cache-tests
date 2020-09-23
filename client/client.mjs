@@ -4,26 +4,24 @@
 */
 
 import * as utils from '../utils.mjs'
-import { assert } from '../utils.mjs'
 import * as defines from './defines.mjs'
+import * as config from './config.mjs'
+const assert = utils.assert
 
-var theFetch = null
-var useBrowserCache = false
 var testArray = []
-var baseUrl = ''
 var testResults = {}
 
 export var testUUIDs = {}
 
 export function runTests (tests, myFetch, browserCache, base, chunkSize = 100) {
-  theFetch = myFetch
-  if (base !== undefined) baseUrl = base
-  if (browserCache !== undefined) useBrowserCache = browserCache
+  config.setFetch(myFetch)
+  config.setBaseUrl(base)
+  config.setUseBrowserCache(browserCache)
   tests.forEach(testSet => {
     testSet.tests.forEach(test => {
       if (test.id === undefined) throw new Error('Missing test id')
-      if (test.browser_only === true && !useBrowserCache === true) return
-      if (test.browser_skip === true && useBrowserCache === true) return
+      if (test.browser_only === true && !config.useBrowserCache === true) return
+      if (test.browser_skip === true && config.useBrowserCache === true) return
       testArray.push(test)
     })
   })
@@ -81,7 +79,7 @@ function makeCacheTest (test) {
             console.log('')
           }
           const checkResponse = makeCheckResponse(idx, reqConfig, uuid, test.dump)
-          return theFetch(url, init)
+          return config.fetch(url, init)
             .then(response => {
               responses.push(response)
               return checkResponse(response)
@@ -166,7 +164,7 @@ function fetchInit (idx, reqConfig) {
   var init = {
     headers: []
   }
-  if (!useBrowserCache) {
+  if (!config.useBrowserCache) {
     init.cache = 'no-store'
     init.headers.push(['Pragma', 'foo']) // dirty hack for Fetch
     init.headers.push(['Cache-Control', 'nothing-to-see-here']) // ditto
@@ -210,7 +208,7 @@ function makeCheckResponse (idx, reqConfig, uuid, dump) {
       }
     }
     //  browsers seem to squelch 304 even in no-store mode.
-    //    if (!useBrowserCache && 'expected_type' in reqConfig && reqConfig.expected_type.endsWith('validated')) {
+    //    if (!config.useBrowserCache && 'expected_type' in reqConfig && reqConfig.expected_type.endsWith('validated')) {
     //      reqConfig.expected_status = 304
     //    }
     if ('expected_status' in reqConfig) {
@@ -339,7 +337,7 @@ function checkRequests (requests, responses, testState) {
     }
     if (typeof serverRequest !== 'undefined' && 'response_headers' in serverRequest) {
       serverRequest.response_headers.forEach(header => {
-        if (useBrowserCache && defines.forbiddenResponseHeaders.has(header[0].toLowerCase())) {
+        if (config.useBrowserCache && defines.forbiddenResponseHeaders.has(header[0].toLowerCase())) {
           // browsers prevent reading these headers through the Fetch API so we can't verify them
           return
         }
@@ -379,7 +377,7 @@ function makeTestUrl (uuid, reqConfig) {
   if ('query_arg' in reqConfig) {
     extra += `?${reqConfig.query_arg}`
   }
-  return `${baseUrl}/test/${uuid}${extra}`
+  return `${config.baseUrl}/test/${uuid}${extra}`
 }
 
 const uninterestingHeaders = new Set(['date', 'expires', 'last-modified', 'content-length', 'content-type', 'connection', 'content-language', 'vary', 'mime-version'])
@@ -390,7 +388,7 @@ function putTestConfig (uuid, requests) {
     headers: [['content-type', 'application/json']],
     body: JSON.stringify(requests)
   }
-  return theFetch(`${baseUrl}/config/${uuid}`, init)
+  return config.fetch(`${config.baseUrl}/config/${uuid}`, init)
     .then(response => {
       if (response.status !== 201) {
         var headers = ''
@@ -405,7 +403,7 @@ function putTestConfig (uuid, requests) {
 }
 
 function getServerState (uuid) {
-  return theFetch(`${baseUrl}/state/${uuid}`)
+  return config.fetch(`${config.baseUrl}/state/${uuid}`)
     .then(response => {
       if (response.status === 200) {
         return response.text()
