@@ -60,8 +60,8 @@ export function makeCacheTest (test) {
       .then(() => {
         return clientUtils.getServerState(uuid)
       })
-      .then(testState => {
-        checkRequests(requests, responses, testState)
+      .then(serverState => {
+        checkRequests(requests, responses, serverState)
       })
       .then(() => { // pass
         if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
@@ -182,14 +182,14 @@ function makeCheckResponseBody (test, reqConfig, statusCode) {
   }
 }
 
-function checkRequests (requests, responses, testState) {
-  // compare a test's requests array against the server-side testState
+function checkRequests (requests, responses, serverState) {
+  // compare a test's requests array against the server-side serverState
   var testIdx = 0
   for (let i = 0; i < requests.length; ++i) {
     var expectedValidatingHeaders = []
     var reqConfig = requests[i]
     var response = responses[i]
-    var serverRequest = testState[testIdx]
+    var serverRequest = serverState[testIdx]
     var reqNum = i + 1
     if ('expected_type' in reqConfig) {
       var typeSetup = setupCheck(reqConfig, 'expected_type')
