@@ -95,10 +95,6 @@ function makeCheckResponse (test, requests, idx) {
         assert(typeSetup, resNum === reqNum, `Response ${reqNum} comes from cache`)
       }
     }
-    //  browsers seem to squelch 304 even in no-store mode.
-    //    if (!config.useBrowserCache && 'expected_type' in reqConfig && reqConfig.expected_type.endsWith('validated')) {
-    //      reqConfig.expected_status = 304
-    //    }
     if ('expected_status' in reqConfig) {
       assert(setupCheck(reqConfig, 'expected_status'),
         response.status === reqConfig.expected_status,
