@@ -29,7 +29,7 @@ export function makeCacheTest (test) {
           var url = clientUtils.makeTestUrl(uuid, reqConfig)
           var init = fetching.init(idx, reqConfig)
           if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
-          const checkResponse = makeCheckResponse(idx, reqConfig, uuid, test.dump)
+          const checkResponse = makeCheckResponse(test, requests, idx)
           return config.fetch(url, init)
             .then(response => {
               responses.push(response)
@@ -76,11 +76,12 @@ export function makeCacheTest (test) {
   })
 }
 
-function makeCheckResponse (idx, reqConfig, uuid, dump) {
+function makeCheckResponse (test, requests, idx) {
   return function checkResponse (response) {
     var reqNum = idx + 1
+    var reqConfig = requests[idx]
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
-    if (dump === true) clientUtils.logResponse(response, reqNum)
+    if (test.dump === true) clientUtils.logResponse(response, reqNum)
     if ('expected_type' in reqConfig) {
       var typeSetup = setupCheck(reqConfig, 'expected_type')
       if (reqConfig.expected_type === 'cached') {
@@ -154,11 +155,11 @@ function makeCheckResponse (idx, reqConfig, uuid, dump) {
           `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
       })
     }
-    return response.text().then(makeCheckResponseBody(reqConfig, uuid, response.status))
+    return response.text().then(makeCheckResponseBody(test, reqConfig, response.status))
   }
 }
 
-function makeCheckResponseBody (reqConfig, uuid, statusCode) {
+function makeCheckResponseBody (test, reqConfig, statusCode) {
   return function checkResponseBody (resBody) {
     if ('check_body' in reqConfig && reqConfig.check_body === false) {
 
@@ -173,6 +174,7 @@ function makeCheckResponseBody (reqConfig, uuid, statusCode) {
         resBody === reqConfig.response_body,
         `Response body is "${resBody}", not "${reqConfig.response_body}"`)
     } else if (!defines.noBodyStatus.has(statusCode) && reqConfig.request_method !== 'HEAD') {
+      var uuid = testUUIDs[test.id]
       assert(true, // no_body is always setup
         resBody === uuid,
         `Response body is "${resBody}", not "${uuid}"`)
