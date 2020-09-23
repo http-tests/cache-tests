@@ -5,14 +5,15 @@
     <title>Browser HTTP Caching Tests</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="module">
-      import * as client from './client/client.mjs'
+      import { runTests, getResults } from './client/runner.mjs'
+      import { testUUIDs } from './client/client.mjs'
       import * as display from './display.mjs'
       import baseTests from './tests/index.mjs'
 
-      client.runTests(baseTests, fetch, true)
+      runTests(baseTests, fetch, true)
         .then(function() {
           let resultsTarget = document.getElementById('results')
-          display.renderTestResults(baseTests, client.getResults(), client.testUUIDs, resultsTarget, true)
+          display.renderTestResults(baseTests, getResults(), testUUIDs, resultsTarget, true)
         })
         .then(function() {
           let params = (new URL(location)).searchParams
@@ -25,7 +26,7 @@
             auto = true
           }
           let downloadTarget = document.getElementById('download')
-          display.downloadTestResults(downloadTarget, filename, client.getResults(), auto)
+          display.downloadTestResults(downloadTarget, filename, getResults(), auto)
         })
     </script>
   </head>

@@ -1,4 +1,4 @@
-import * as client from './client/client.mjs'
+import { runTests, getResults } from './client/runner.mjs'
 import * as display from './display.mjs'
 import { GREEN, NC } from './utils.mjs'
 import fetch from 'node-fetch'
@@ -30,16 +30,16 @@ if (testId !== '') {
   testsToRun = tests
 }
 
-client.runTests(testsToRun, fetch, false, baseUrl)
+runTests(testsToRun, fetch, false, baseUrl)
   .then(() => {
     if (testId !== '') {
       console.log(`${GREEN}==== Results${NC}`)
-      var result = client.getResults()
+      var result = getResults()
       var resultSymbol = display.determineTestResult(tests, testId, result, false)
       var resultDetails = result[testId][1] || ''
       console.log(`${resultSymbol[2]} - ${resultDetails}`)
     } else {
-      console.log(JSON.stringify(client.getResults(), null, 2))
+      console.log(JSON.stringify(getResults(), null, 2))
     }
   })
   .catch(err => {
