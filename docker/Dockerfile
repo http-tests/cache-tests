@@ -1,4 +1,4 @@
-FROM ubuntu:19.10
+FROM ubuntu:devel
 LABEL maintainer="Mark Nottingham <mnot@mnot.net>"
 
 
