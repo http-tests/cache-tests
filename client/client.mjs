@@ -3,7 +3,7 @@
   This is JavaScript that needs to be run in both browsers and NodeJS.
 */
 
-import * as utils from './utils.mjs'
+import * as utils from '../utils.mjs'
 
 const noBodyStatus = new Set([204, 304])
 const assert = utils.assert

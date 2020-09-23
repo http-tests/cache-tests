@@ -1,4 +1,4 @@
-import * as client from './client.mjs'
+import * as client from './client/client.mjs'
 import * as display from './display.mjs'
 import { GREEN, NC } from './utils.mjs'
 import fetch from 'node-fetch'
