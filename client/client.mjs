@@ -4,14 +4,8 @@
 */
 
 import * as utils from '../utils.mjs'
-
-const noBodyStatus = new Set([204, 304])
-const assert = utils.assert
-
-// https://fetch.spec.whatwg.org/#forbidden-response-header-name
-const forbiddenResponseHeaders = new Set(['set-cookie', 'set-cookie2'])
-// headers to skip when checking response_headers (not expected)
-const skipResponseHeaders = new Set(['date'])
+import { assert } from '../utils.mjs'
+import * as defines from './defines.mjs'
 
 var theFetch = null
 var useBrowserCache = false
@@ -157,13 +151,11 @@ function inflateRequests (test) {
   return requests
 }
 
-const dateHeaders = new Set(['date', 'expires', 'last-modified', 'if-modified-since', 'if-unmodified-since'])
-
 function magicHeader (header, reqConfig) {
   if (typeof header === 'string') return header
   var headerName = header[0].toLowerCase()
   var headerValue = header[1]
-  if (dateHeaders.has(headerName) && Number.isInteger(header[1])) {
+  if (defines.dateHeaders.has(headerName) && Number.isInteger(header[1])) {
     headerValue = utils.httpDate(reqConfig.now, header[1])
   }
   header[1] = headerValue
@@ -295,7 +287,7 @@ function makeCheckResponseBody (reqConfig, uuid, statusCode) {
       assert(true, // response_body is always setup
         resBody === reqConfig.response_body,
         `Response body is "${resBody}", not "${reqConfig.response_body}"`)
-    } else if (!noBodyStatus.has(statusCode) && reqConfig.request_method !== 'HEAD') {
+    } else if (!defines.noBodyStatus.has(statusCode) && reqConfig.request_method !== 'HEAD') {
       assert(true, // no_body is always setup
         resBody === uuid,
         `Response body is "${resBody}", not "${uuid}"`)
@@ -347,11 +339,11 @@ function checkRequests (requests, responses, testState) {
     }
     if (typeof serverRequest !== 'undefined' && 'response_headers' in serverRequest) {
       serverRequest.response_headers.forEach(header => {
-        if (useBrowserCache && forbiddenResponseHeaders.has(header[0].toLowerCase())) {
+        if (useBrowserCache && defines.forbiddenResponseHeaders.has(header[0].toLowerCase())) {
           // browsers prevent reading these headers through the Fetch API so we can't verify them
           return
         }
-        if (skipResponseHeaders.has(header[0].toLowerCase())) {
+        if (defines.skipResponseHeaders.has(header[0].toLowerCase())) {
           // these just cause spurious failures
           return
         }
