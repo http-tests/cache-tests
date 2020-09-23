@@ -60,7 +60,7 @@ export function makeCacheTest (test) {
         return clientUtils.getServerState(uuid)
       })
       .then(serverState => {
-        checkRequests(requests, responses, serverState)
+        checkServerRequests(requests, responses, serverState)
       })
       .then(() => { // pass
         if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
@@ -177,7 +177,7 @@ function makeCheckResponseBody (test, reqConfig, statusCode) {
   }
 }
 
-function checkRequests (requests, responses, serverState) {
+function checkServerRequests (requests, responses, serverState) {
   // compare a test's requests array against the server-side serverState
   var testIdx = 0
   for (let i = 0; i < requests.length; ++i) {
