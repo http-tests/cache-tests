@@ -80,6 +80,8 @@ function checkResponse (test, requests, idx, response) {
   var reqConfig = requests[idx]
   var resNum = parseInt(response.headers.get('Server-Request-Count'))
   if (test.dump === true) clientUtils.logResponse(response, reqNum)
+
+  // check response type
   if ('expected_type' in reqConfig) {
     var typeSetup = setupCheck(reqConfig, 'expected_type')
     if (reqConfig.expected_type === 'cached') {
@@ -93,6 +95,8 @@ function checkResponse (test, requests, idx, response) {
       assert(typeSetup, resNum === reqNum, `Response ${reqNum} comes from cache`)
     }
   }
+
+  // check response status
   if ('expected_status' in reqConfig) {
     assert(setupCheck(reqConfig, 'expected_status'),
       response.status === reqConfig.expected_status,
@@ -110,6 +114,8 @@ function checkResponse (test, requests, idx, response) {
       response.status === 200,
       `Response ${reqNum} status is ${response.status}, not 200`)
   }
+
+  // check response headers
   if ('expected_response_headers' in reqConfig) {
     var respPresentSetup = setupCheck(reqConfig, 'expected_response_headers')
     reqConfig.expected_response_headers.forEach(header => {
