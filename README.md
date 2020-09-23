@@ -31,7 +31,7 @@ The underlying aim is to provide a basis for discussion about how HTTP caches --
 
 In other words, **passing all of the tests currently means nothing** -- this is not a conformance test suite, it's just the start of a conversation, and a **tool to assess how a cache behaves**.
 
-Therefore, if you believe a test should change (based upon common behaviour or your interpretation of the specifications), or have additional tests, please [contribute](CONTRIBUTING.md).
+Therefore, if you believe a test should change (based upon common behaviour or your interpretation of the specifications), or have additional tests, please [contribute](.github/CONTRIBUTING.md).
 
 
 ## Installation
@@ -150,4 +150,4 @@ Right now, all of the reverse proxy and CDN implementations are run by a script 
 
 ## Creating new tests
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+See [CONTRIBUTING.md](.github/CONTRIBUTING.md)
