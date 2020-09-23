@@ -58,3 +58,25 @@ export function getServerState (uuid) {
 export function setupCheck (reqConfig, memberName) {
   return reqConfig.setup === true || ('setup_tests' in reqConfig && reqConfig.setup_tests.indexOf(memberName) > -1)
 }
+
+export function logRequest (url, init, reqNum) {
+  console.log(`${utils.GREEN}=== Client request ${reqNum}${utils.NC}`)
+  if ('method' in init) {
+    console.log(`    ${init.method} ${url}`)
+  } else {
+    console.log(`    GET ${url}`)
+  }
+  init.headers.forEach(header => {
+    console.log(`    ${header[0]}: ${header[1]}`)
+  })
+  console.log('')
+}
+
+export function logResponse (response, reqNum) {
+  console.log(`${utils.GREEN}=== Client response ${reqNum}${utils.NC}`)
+  console.log(`    HTTP ${response.status} ${response.statusText}`)
+  response.headers.forEach((hvalue, hname) => { // for some reason, node-fetch reverses these
+    console.log(`    ${hname}: ${hvalue}`)
+  })
+  console.log('')
+}

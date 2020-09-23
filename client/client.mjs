@@ -5,10 +5,11 @@
 
 import * as config from './config.mjs'
 import * as utils from '../utils.mjs'
-import { pause, makeTestUrl, putTestConfig, getServerState, setupCheck } from './utils.mjs'
+import * as clientUtils from './utils.mjs'
 import * as defines from './defines.mjs'
 import * as fetching from './fetching.mjs'
 const assert = utils.assert
+const setupCheck = clientUtils.setupCheck
 
 export var testUUIDs = {}
 export var testResults = {}
@@ -25,20 +26,9 @@ export function makeCacheTest (test) {
         code: idx => {
           var reqConfig = requests[idx]
           var reqNum = idx + 1
-          var url = makeTestUrl(uuid, reqConfig)
+          var url = clientUtils.makeTestUrl(uuid, reqConfig)
           var init = fetching.init(idx, reqConfig)
-          if (test.dump === true) {
-            console.log(`${utils.GREEN}=== Client request ${reqNum}${utils.NC}`)
-            if ('method' in init) {
-              console.log(`    ${init.method} ${url}`)
-            } else {
-              console.log(`    GET ${url}`)
-            }
-            init.headers.forEach(header => {
-              console.log(`    ${header[0]}: ${header[1]}`)
-            })
-            console.log('')
-          }
+          if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
           const checkResponse = makeCheckResponse(idx, reqConfig, uuid, test.dump)
           return config.fetch(url, init)
             .then(response => {
@@ -56,7 +46,7 @@ export function makeCacheTest (test) {
         var nextFetchFunction = fetchFunctions.shift()
         if (nextFetchFunction.pauseAfter === true) {
           return nextFetchFunction.code(idx++)
-            .then(pause)
+            .then(clientUtils.pause)
             .then(runNextStep)
         } else {
           return nextFetchFunction.code(idx++)
@@ -65,10 +55,10 @@ export function makeCacheTest (test) {
       }
     }
 
-    return putTestConfig(uuid, requests)
+    return clientUtils.putTestConfig(uuid, requests)
       .then(runNextStep)
       .then(() => {
-        return getServerState(uuid)
+        return clientUtils.getServerState(uuid)
       })
       .then(testState => {
         checkRequests(requests, responses, testState)
@@ -90,14 +80,7 @@ function makeCheckResponse (idx, reqConfig, uuid, dump) {
   return function checkResponse (response) {
     var reqNum = idx + 1
     var resNum = parseInt(response.headers.get('Server-Request-Count'))
-    if (dump === true) {
-      console.log(`${utils.GREEN}=== Client response ${reqNum}${utils.NC}`)
-      console.log(`    HTTP ${response.status} ${response.statusText}`)
-      response.headers.forEach((hvalue, hname) => { // for some reason, node-fetch reverses these
-        console.log(`    ${hname}: ${hvalue}`)
-      })
-      console.log('')
-    }
+    if (dump === true) clientUtils.logResponse(response, reqNum)
     if ('expected_type' in reqConfig) {
       var typeSetup = setupCheck(reqConfig, 'expected_type')
       if (reqConfig.expected_type === 'cached') {
