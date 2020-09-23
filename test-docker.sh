@@ -53,6 +53,7 @@ npm run --silent server --port=8000 & echo $! > server.PID
 docker run --name=tmp_proxies -p $PROXY_PORT:$PROXY_PORT $EXTRA -dt ${CONTAINER} ${SERVER_HOST} \
   > /dev/null
 
+echo "* ${PKG} " `docker container exec tmp_proxies /usr/bin/apt-cache show $PKG | grep Version`
 sleep 7
 
 
