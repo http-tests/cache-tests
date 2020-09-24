@@ -1,6 +1,6 @@
 
 import * as templates from '../templates.mjs'
-import * as utils from '../utils.mjs'
+import * as utils from '../lib/utils.mjs'
 
 export default {
   name: 'Cache-Control Request Directives',

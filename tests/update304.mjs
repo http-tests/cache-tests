@@ -1,4 +1,4 @@
-import * as utils from '../utils.mjs'
+import * as utils from '../lib/utils.mjs'
 
 var tests = []
 

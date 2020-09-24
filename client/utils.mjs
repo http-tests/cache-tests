@@ -1,6 +1,6 @@
 
 import * as config from './config.mjs'
-import * as utils from '../utils.mjs'
+import * as utils from '../lib/utils.mjs'
 
 export function pause () {
   return new Promise(function (resolve, reject) {
