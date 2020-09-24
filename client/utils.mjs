@@ -1,6 +1,7 @@
 
 import * as config from './config.mjs'
 import * as utils from '../lib/utils.mjs'
+import * as defines from '../lib/defines.mjs'
 
 export function pause () {
   return new Promise(function (resolve, reject) {
@@ -60,7 +61,7 @@ export function setupCheck (reqConfig, memberName) {
 }
 
 export function logRequest (url, init, reqNum) {
-  console.log(`${utils.GREEN}=== Client request ${reqNum}${utils.NC}`)
+  console.log(`${defines.GREEN}=== Client request ${reqNum}${defines.NC}`)
   if ('method' in init) {
     console.log(`    ${init.method} ${url}`)
   } else {
@@ -73,7 +74,7 @@ export function logRequest (url, init, reqNum) {
 }
 
 export function logResponse (response, reqNum) {
-  console.log(`${utils.GREEN}=== Client response ${reqNum}${utils.NC}`)
+  console.log(`${defines.GREEN}=== Client response ${reqNum}${defines.NC}`)
   console.log(`    HTTP ${response.status} ${response.statusText}`)
   response.headers.forEach((hvalue, hname) => { // for some reason, node-fetch reverses these
     console.log(`    ${hname}: ${hvalue}`)

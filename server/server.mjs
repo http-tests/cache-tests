@@ -7,12 +7,11 @@ import path from 'path'
 import fs from 'fs'
 import process from 'process'
 
+import { BLUE, NC } from '../lib/defines.mjs'
+
 const protocol = process.env.npm_config_protocol || process.env.npm_package_config_protocol
 const port = process.env.npm_config_port || process.env.npm_package_config_port
 const baseUrl = `${protocol}://localhost:${port}/`
-
-const BLUE = '\x1b[34m'
-const NC = '\x1b[0m'
 
 const mimeTypes = {
   html: 'text/html',
