@@ -1,5 +1,5 @@
 
-import * as templates from '../templates.mjs'
+import * as templates from '../lib/templates.mjs'
 
 var tests = []
 

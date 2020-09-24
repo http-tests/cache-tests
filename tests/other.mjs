@@ -1,5 +1,5 @@
 
-import * as templates from '../templates.mjs'
+import * as templates from '../lib/templates.mjs'
 import * as utils from '../lib/utils.mjs'
 
 export default
