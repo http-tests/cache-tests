@@ -1,6 +1,6 @@
 
-import { sendResponse, getHeader, configs, stash, setStash } from './utils.mjs'
-import { BLUE, NC, noBodyStatus, locationHeaders } from '../lib/defines.mjs'
+import { sendResponse, getHeader, configs, stash, setStash, logRequest, logResponse } from './utils.mjs'
+import { noBodyStatus, locationHeaders } from '../lib/defines.mjs'
 
 export default function handleTest (pathSegs, request, response) {
   // identify the desired configuration for this request
@@ -24,14 +24,7 @@ export default function handleTest (pathSegs, request, response) {
     sendResponse(response, 409, `${requests[0].id} config not found for request ${srvReqNum} (anticipating ${requests.length})`)
     return
   }
-  if (reqConfig.dump) {
-    console.log(`${BLUE}=== Server request ${srvReqNum}${NC}`)
-    console.log(`    ${request.method} /test/${pathSegs.join('/')}`)
-    for (const [key, value] of Object.entries(request.headers)) {
-      console.log(`    ${key}: ${value}`)
-    }
-    console.log('')
-  }
+  if (reqConfig.dump) logRequest(request, srvReqNum)
 
   // Determine what the response status should be
   var httpStatus = reqConfig.response_status || [200, 'OK']
@@ -101,14 +94,7 @@ export default function handleTest (pathSegs, request, response) {
   response.setHeader('Server-Request-Count', srvReqNum)
   response.setHeader('Server-Now', now, 0)
 
-  if (reqConfig.dump) {
-    console.log(`${BLUE}=== Server response ${srvReqNum}${NC}`)
-    console.log(`    HTTP ${response.statusCode} ${response.statusPhrase}`)
-    for (const [key, value] of Object.entries(response.getHeaders())) {
-      console.log(`    ${key}: ${value}`)
-    }
-    console.log('')
-  }
+  if (reqConfig.dump) logResponse(response, srvReqNum)
 
   // Response body generation
   var content = reqConfig.response_body || uuid

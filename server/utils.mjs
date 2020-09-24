@@ -1,4 +1,6 @@
 
+import { BLUE, NC } from '../lib/defines.mjs'
+
 export function sendResponse (response, statusCode, message) {
   console.log(`SERVER WARNING: ${message}`)
   response.writeHead(statusCode, { 'Content-Type': 'text/plain' })
@@ -28,4 +30,22 @@ export var configs = new Map()
 
 export function setConfig (key, value) {
   configs.set(key, value)
+}
+
+export function logRequest (request, reqNum) {
+  console.log(`${BLUE}=== Server request ${reqNum}${NC}`)
+  console.log(`    ${request.method} ${request.url}`)
+  for (const [key, value] of Object.entries(request.headers)) {
+    console.log(`    ${key}: ${value}`)
+  }
+  console.log('')
+}
+
+export function logResponse (response, resNum) {
+  console.log(`${BLUE}=== Server response ${resNum}${NC}`)
+  console.log(`    HTTP ${response.statusCode} ${response.statusPhrase}`)
+  for (const [key, value] of Object.entries(response.getHeaders())) {
+    console.log(`    ${key}: ${value}`)
+  }
+  console.log('')
 }
