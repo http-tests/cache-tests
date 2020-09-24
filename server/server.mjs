@@ -1,29 +1,16 @@
 /* global URL */
 
-
 import http from 'http'
 import https from 'https'
 import path from 'path'
 import fs from 'fs'
 import process from 'process'
 
-import { BLUE, NC } from '../lib/defines.mjs'
+import { BLUE, NC, mimeTypes, noBodyStatus, locationHeaders } from '../lib/defines.mjs'
 
 const protocol = process.env.npm_config_protocol || process.env.npm_package_config_protocol
 const port = process.env.npm_config_port || process.env.npm_package_config_port
 const baseUrl = `${protocol}://localhost:${port}/`
-
-const mimeTypes = {
-  html: 'text/html',
-  jpeg: 'image/jpeg',
-  jpg: 'image/jpeg',
-  png: 'image/png',
-  js: 'application/javascript',
-  mjs: 'application/javascript',
-  css: 'text/css'
-}
-const noBodyStatus = new Set([204, 304])
-const locationHeaders = new Set(['location', 'content-location'])
 
 function handleMain (request, response) {
   var url = new URL(request.url, baseUrl)
