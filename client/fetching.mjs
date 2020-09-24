@@ -1,7 +1,7 @@
 
 import * as config from './config.mjs'
 import * as utils from '../utils.mjs'
-import * as defines from './defines.mjs'
+import * as defines from '../lib/defines.mjs'
 
 export function init (idx, reqConfig) {
   var init = {
