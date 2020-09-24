@@ -190,7 +190,7 @@ function handleTest (pathSegs, request, response) {
   stash.set(uuid, serverState)
 
   response.setHeader('Server-Request-Count', srvReqNum)
-  response.setHeader('Server-Now', httpDate(now, 0))
+  response.setHeader('Server-Now', now, 0)
 
   if (reqConfig.dump) {
     console.log(`${BLUE}=== Server response ${srvReqNum}${NC}`)
@@ -225,10 +225,6 @@ function getHeader (headers, headerName) {
     }
   })
   return result
-}
-
-function httpDate (now, deltaSecs) {
-  return new Date(now + (deltaSecs * 1000)).toGMTString()
 }
 
 var server
