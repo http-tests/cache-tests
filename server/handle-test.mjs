@@ -16,10 +16,12 @@ export default function handleTest (pathSegs, request, response) {
   }
 
   var serverState = stash.get(uuid) || []
-  var srvReqNum = serverState.length + 1
-  var cliReqNum = parseInt(request.headers['req-num']) || srvReqNum
+  const srvReqNum = serverState.length + 1
+  const cliReqNum = parseInt(request.headers['req-num']) || srvReqNum
   var reqConfig = requests[cliReqNum - 1]
   var previousConfig = requests[cliReqNum - 2]
+  const now = Date.now()
+
   if (!reqConfig) {
     sendResponse(response, 409, `${requests[0].id} config not found for request ${srvReqNum} (anticipating ${requests.length})`)
     return
@@ -43,8 +45,6 @@ export default function handleTest (pathSegs, request, response) {
   }
   response.statusCode = httpStatus[0]
   response.statusPhrase = httpStatus[1]
-
-  const now = Date.now()
 
   // header manipulation
   var responseHeaders = reqConfig.response_headers || []
@@ -82,7 +82,10 @@ export default function handleTest (pathSegs, request, response) {
   if (!response.hasHeader('content-type')) {
     response.setHeader('Content-Type', 'text/plain')
   }
+  response.setHeader('Server-Request-Count', srvReqNum)
+  response.setHeader('Server-Now', now, 0)
 
+  // stash information about this request for the client
   serverState.push({
     request_num: parseInt(request.headers['req-num']),
     request_method: request.method,
@@ -91,16 +94,14 @@ export default function handleTest (pathSegs, request, response) {
   })
   setStash(uuid, serverState)
 
-  response.setHeader('Server-Request-Count', srvReqNum)
-  response.setHeader('Server-Now', now, 0)
-
-  if (reqConfig.dump) logResponse(response, srvReqNum)
-
   // Response body generation
-  var content = reqConfig.response_body || uuid
   if (noBodyStatus.has(response.statusCode)) {
     response.end()
   } else {
+    var content = reqConfig.response_body || uuid
     response.end(content)
   }
+
+  // logging
+  if (reqConfig.dump) logResponse(response, srvReqNum)
 }
