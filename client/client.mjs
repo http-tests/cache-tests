@@ -1,8 +1,4 @@
 
-/*
-  This is JavaScript that needs to be run in both browsers and NodeJS.
-*/
-
 import * as config from './config.mjs'
 import * as utils from '../utils.mjs'
 import * as clientUtils from './utils.mjs'

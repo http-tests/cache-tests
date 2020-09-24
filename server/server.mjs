@@ -1,8 +1,5 @@
 /* global URL */
 
-/*
-  This is JavaScript that is only expected to be run in NodeJS.
-*/
 
 import http from 'http'
 import https from 'https'
