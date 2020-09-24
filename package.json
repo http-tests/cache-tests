@@ -15,11 +15,11 @@
     "node-fetch": "^2.2.0"
   },
   "scripts": {
-    "server": "node server.js",
+    "server": "node server/server.js",
     "cli": "node --experimental-modules --no-warnings cli.mjs",
     "export": "node --experimental-modules --no-warnings export.mjs",
-    "lint": "standard *.js *.mjs client/*.mjs tests/*.mjs",
-    "fix": "standard --fix *.js *.mjs client/*.mjs  tests/*.mjs"
+    "lint": "standard *.js *.mjs client/*.mjs server/*.js tests/*.mjs",
+    "fix": "standard --fix *.js *.mjs client/*.mjs server/*.js tests/*.mjs"
   },
   "config": {
     "protocol": "http",
