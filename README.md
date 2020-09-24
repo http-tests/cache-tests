@@ -82,7 +82,7 @@ To test a reverse proxy or CDN from the command line::
 
 > npm run --silent cli --base=http://server-url.example.org:8000/
 
-... using the URL of the server you want to test. This will output the test results in JSON to STDOUT, suitable for inclusion in the `results` directory. See `summary.mjs` for details of how to interpret that.
+... using the URL of the server you want to test. This will output the test results in JSON to STDOUT, suitable for inclusion in the `results` directory. See `lib/summary.mjs` for details of how to interpret that.
 
 To run a single test, use:
 

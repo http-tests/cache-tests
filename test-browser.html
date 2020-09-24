@@ -7,7 +7,7 @@
     <script type="module">
       import { runTests, getResults } from './client/runner.mjs'
       import { testUUIDs } from './client/client.mjs'
-      import * as display from './display.mjs'
+      import * as display from './lib/display.mjs'
       import baseTests from './tests/index.mjs'
 
       runTests(baseTests, fetch, true)

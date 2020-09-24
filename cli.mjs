@@ -1,5 +1,5 @@
 import { runTests, getResults } from './client/runner.mjs'
-import * as display from './display.mjs'
+import * as display from './lib/display.mjs'
 import { GREEN, NC } from './lib/utils.mjs'
 import fetch from 'node-fetch'
 import tests from './tests/index.mjs'
