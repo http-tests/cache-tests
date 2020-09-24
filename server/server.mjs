@@ -4,11 +4,11 @@
   This is JavaScript that is only expected to be run in NodeJS.
 */
 
-const http = require('http')
-const https = require('https')
-const path = require('path')
-const fs = require('fs')
-const process = require('process')
+import http from 'http'
+import https from 'https'
+import path from 'path'
+import fs from 'fs'
+import process from 'process'
 
 const protocol = process.env.npm_config_protocol || process.env.npm_package_config_protocol
 const port = process.env.npm_config_port || process.env.npm_package_config_port
