@@ -1,8 +1,8 @@
 
-import * as config from './config.mjs'
-import * as utils from '../lib/utils.mjs'
-import * as clientUtils from './utils.mjs'
 import * as defines from '../lib/defines.mjs'
+import * as utils from '../lib/utils.mjs'
+import * as config from './config.mjs'
+import * as clientUtils from './utils.mjs'
 import * as fetching from './fetching.mjs'
 const assert = utils.assert
 const setupCheck = clientUtils.setupCheck
