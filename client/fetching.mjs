@@ -1,7 +1,5 @@
 
 import * as config from './config.mjs'
-import * as utils from '../lib/utils.mjs'
-import * as defines from '../lib/defines.mjs'
 
 export function init (idx, reqConfig) {
   var init = {
@@ -25,8 +23,6 @@ export function init (idx, reqConfig) {
   return init
 }
 
-const magicHeaderProperties = ['request_headers', 'response_headers', 'expected_request_headers', 'expected_response_headers']
-
 export function inflateRequests (test) {
   var rawRequests = test.requests
   var requests = []
@@ -35,28 +31,7 @@ export function inflateRequests (test) {
     reqConfig.name = test.name
     reqConfig.id = test.id
     reqConfig.dump = test.dump
-    reqConfig.now = Date.now()
-    magicHeaderProperties.forEach(magicProperty => {
-      if (magicProperty in reqConfig) {
-        var tmpProperty = []
-        reqConfig[magicProperty].forEach(header => {
-          tmpProperty.push(magicHeader(header, reqConfig))
-        })
-        reqConfig[magicProperty] = tmpProperty
-      }
-    })
     requests.push(reqConfig)
   }
   return requests
-}
-
-function magicHeader (header, reqConfig) {
-  if (typeof header === 'string') return header
-  var headerName = header[0].toLowerCase()
-  var headerValue = header[1]
-  if (defines.dateHeaders.has(headerName) && Number.isInteger(header[1])) {
-    headerValue = utils.httpDate(reqConfig.now, header[1])
-  }
-  header[1] = headerValue
-  return header
 }

@@ -1,6 +1,7 @@
 
+import { noBodyStatus } from '../lib/defines.mjs'
+import { fixupResponseHeader } from '../lib/header-fixup.mjs'
 import { sendResponse, getHeader, configs, stash, setStash, logRequest, logResponse } from './utils.mjs'
-import { noBodyStatus, locationHeaders } from '../lib/defines.mjs'
 
 export default function handleTest (pathSegs, request, response) {
   // identify the desired configuration for this request
@@ -20,6 +21,7 @@ export default function handleTest (pathSegs, request, response) {
   const cliReqNum = parseInt(request.headers['req-num']) || srvReqNum
   var reqConfig = requests[cliReqNum - 1]
   var previousConfig = requests[cliReqNum - 2]
+
   const now = Date.now()
 
   if (!reqConfig) {
@@ -49,19 +51,12 @@ export default function handleTest (pathSegs, request, response) {
   // header manipulation
   var responseHeaders = reqConfig.response_headers || []
   const savedHeaders = new Map()
+  response.setHeader('Server-Base-Url', request.url)
+  response.setHeader('Server-Request-Count', srvReqNum)
+  response.setHeader('Server-Now', now, 0)
+  response.setHeader('Capability-Seen', request.headers['surrogate-capability'] || '')
   responseHeaders.forEach(header => {
-    var headerName = header[0].toLowerCase()
-    if (locationHeaders.has(headerName) && reqConfig.magic_locations === true) { // magic!
-      header[1] = `http://${request.headers.host}${request.url}/${header[1]}` // FIXME
-    }
-    if (headerName === 'surrogate-control' && request.headers['surrogate-capability']) {
-      // right now we assume just one
-      var capabilityTarget = request.headers['surrogate-capability'].split('=')[0]
-      if (!capabilityTarget) {
-        console.error('WARN: Capability target is empty')
-      }
-      header[1] = header[1].replace('CAPABILITY_TARGET', capabilityTarget)
-    }
+    header = fixupResponseHeader(header, response.getHeaders(), reqConfig)
     if (response.hasHeader(header[0])) {
       var currentVal = response.getHeader(header[0])
       if (typeof currentVal === 'string') {
@@ -82,8 +77,6 @@ export default function handleTest (pathSegs, request, response) {
   if (!response.hasHeader('content-type')) {
     response.setHeader('Content-Type', 'text/plain')
   }
-  response.setHeader('Server-Request-Count', srvReqNum)
-  response.setHeader('Server-Now', now, 0)
 
   // stash information about this request for the client
   serverState.push({

@@ -1,5 +1,6 @@
 
 import * as defines from '../lib/defines.mjs'
+import { fixupResponseHeader } from '../lib/header-fixup.mjs'
 import * as utils from '../lib/utils.mjs'
 import * as config from './config.mjs'
 import * as clientUtils from './utils.mjs'
@@ -139,8 +140,10 @@ function checkResponse (test, requests, idx, response) {
         assert(respPresentSetup, condition,
           `Response ${reqNum} header ${header[0]} is ${value}, should ${msg}`)
       } else {
-        assert(respPresentSetup, response.headers.get(header[0]) === header[1],
-          `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${header[1]}"`)
+        var expectedValue = fixupResponseHeader(
+          header, Object.fromEntries(response.headers), reqConfig)[1]
+        assert(respPresentSetup, response.headers.get(header[0]) === expectedValue,
+          `Response ${reqNum} header ${header[0]} is "${response.headers.get(header[0])}", not "${expectedValue}"`)
       }
     })
   }
