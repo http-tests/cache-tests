@@ -90,20 +90,11 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "age-parse-negative": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-negative": true,
   "age-parse-nonnumeric": true,
-  "age-parse-numeric-parameter": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-numeric-parameter": true,
   "age-parse-numeric-parameter-under": true,
-  "age-parse-parameter": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-parameter": true,
   "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": [
@@ -117,10 +108,7 @@
   "cc-resp-must-revalidate-fresh": true,
   "cc-resp-must-revalidate-stale": true,
   "cc-resp-no-cache": true,
-  "cc-resp-no-cache-case-insensitive": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": [
     "Assertion",
     "Request 2 should have been conditional, but it was not."
@@ -191,7 +179,7 @@
   "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
+    "Request 2 should have been conditional, but it was not."
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": [
@@ -220,10 +208,6 @@
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
   "conditional-etag-weak-respond-omit-slash": true,
-  "conditional-precedence-etag": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -278,7 +262,10 @@
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
-  "freshness-max-age-100a": true,
+  "freshness-max-age-100a": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-a100": [
     "Assertion",
     "Response 2 does not come from cache"

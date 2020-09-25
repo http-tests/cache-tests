@@ -406,7 +406,6 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "conditional-precedence-etag": true,
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": [

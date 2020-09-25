@@ -196,10 +196,6 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-precedence-etag": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -324,8 +320,8 @@
   "headers-store-Strict-Transport-Security2": true,
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
-    "Assertion",
-    "Response 2 header Transfer-Encoding is \"chunked\", not \"ARIZQHYPGXOFWNE\""
+    "Setup",
+    "Response 1 status is 502, not 200"
   ],
   "headers-store-Upgrade": [
     "Assertion",

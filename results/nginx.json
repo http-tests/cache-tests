@@ -364,10 +364,6 @@
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
   "conditional-etag-weak-respond-omit-slash": true,
-  "conditional-precedence-etag": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -409,7 +405,10 @@
     "Response 2 comes from cache"
   ],
   "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-present": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
   "freshness-expires-wrong-case-weekday": true,
@@ -666,7 +665,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 17 Sep 2020 06:26:25 GMT\", not \"Thu, 17 Sep 2020 06:26:22 GMT\""
+    "Response 2 header Date is \"Fri, 25 Sep 2020 07:36:32 GMT\", not \"Fri, 25 Sep 2020 07:36:29 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

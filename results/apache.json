@@ -187,7 +187,6 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "conditional-precedence-etag": true,
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
   "freshness-expires-future": true,
@@ -348,7 +347,10 @@
     "Response 2 status is 500, not 599"
   ],
   "heuristic-599-not_cached": true,
-  "heuristic-delta-10": true,
+  "heuristic-delta-10": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-delta-1200": true,
   "heuristic-delta-1800": true,
   "heuristic-delta-30": true,
@@ -411,7 +413,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 17 Sep 2020 06:25:26 GMT\", not \"Thu, 17 Sep 2020 06:25:23 GMT\""
+    "Response 2 header Date is \"Fri, 25 Sep 2020 07:36:06 GMT\", not \"Fri, 25 Sep 2020 07:36:03 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
