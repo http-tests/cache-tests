@@ -40,8 +40,8 @@
     "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Set-Cookie2": [
-    "Assertion",
-    "Response 2 header Set-Cookie2 is \"a=b\", not \"a=c\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
@@ -96,8 +96,8 @@
     "Response 3 header Expires is \"Fri, 01 Jan 2038 01:01:01 GMT\", not \"Mon, 11 Jan 2038 11:11:11 GMT\""
   ],
   "304-etag-update-stored-Public-Key-Pins": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 3 header Public-Key-Pins is \"AUOICWQKEYSMGAU\", not \"AVQLGBWRMHCXSNI\""
   ],
   "304-etag-update-stored-Set-Cookie": [
     "Setup",
@@ -176,8 +176,8 @@
     "Response 2 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
   ],
   "304-lm-update-response-X-Content-Foo": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
   ],
   "304-lm-update-response-X-Frame-Options": [
     "Assertion",
@@ -377,13 +377,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "Request 2 should have been conditional, but it was not."
+    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": true,
@@ -398,15 +395,11 @@
     "Response 2 status is 200, not 304"
   ],
   "conditional-etag-unquoted-respond-unquoted": true,
-  "conditional-etag-weak-generate-weak": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
   "conditional-etag-weak-respond-omit-slash": true,
-  "conditional-precedence-etag": true,
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -711,7 +704,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 17 Sep 2020 06:32:44 GMT\", not \"Thu, 17 Sep 2020 06:32:39 GMT\""
+    "Response 2 header Date is \"Fri, 25 Sep 2020 07:40:28 GMT\", not \"Fri, 25 Sep 2020 07:40:25 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
