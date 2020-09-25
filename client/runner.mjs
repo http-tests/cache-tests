@@ -1,6 +1,6 @@
 
 import * as config from './config.mjs'
-import { makeCacheTest, testResults } from './client.mjs'
+import { makeCacheTest, testResults } from './test.mjs'
 
 var testArray = []
 
