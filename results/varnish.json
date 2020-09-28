@@ -179,7 +179,7 @@
   "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "Request 2 should have been conditional, but it was not."
+    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": [

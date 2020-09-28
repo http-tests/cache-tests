@@ -4,16 +4,16 @@
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Location": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-etag-update-response-Content-MD5": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-etag-update-response-Expires": true,
   "304-etag-update-response-Public-Key-Pins": true,
@@ -29,16 +29,16 @@
   "304-etag-update-stored-Content-Foo": true,
   "304-etag-update-stored-Content-Location": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-etag-update-stored-Content-MD5": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-etag-update-stored-Content-Security-Policy": true,
   "304-etag-update-stored-Content-Type": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-etag-update-stored-Expires": true,
   "304-etag-update-stored-Public-Key-Pins": true,
@@ -54,16 +54,16 @@
   "304-lm-update-response-Content-Foo": true,
   "304-lm-update-response-Content-Location": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-lm-update-response-Content-MD5": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-lm-update-response-Content-Security-Policy": true,
   "304-lm-update-response-Content-Type": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-lm-update-response-Expires": true,
   "304-lm-update-response-Public-Key-Pins": true,
@@ -79,16 +79,16 @@
   "304-lm-update-stored-Content-Foo": true,
   "304-lm-update-stored-Content-Location": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-lm-update-stored-Content-MD5": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-lm-update-stored-Content-Security-Policy": true,
   "304-lm-update-stored-Content-Type": [
     "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "retry"
   ],
   "304-lm-update-stored-Expires": true,
   "304-lm-update-stored-Public-Key-Pins": true,
@@ -347,10 +347,7 @@
     "Response 2 status is 500, not 599"
   ],
   "heuristic-599-not_cached": true,
-  "heuristic-delta-10": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "heuristic-delta-10": true,
   "heuristic-delta-1200": true,
   "heuristic-delta-1800": true,
   "heuristic-delta-30": true,
@@ -413,7 +410,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 25 Sep 2020 07:36:06 GMT\", not \"Fri, 25 Sep 2020 07:36:03 GMT\""
+    "Response 2 header Date is \"Mon, 28 Sep 2020 06:56:13 GMT\", not \"Mon, 28 Sep 2020 06:56:10 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

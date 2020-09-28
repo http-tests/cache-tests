@@ -315,7 +315,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/06318fee-f256-4f55-857b-df056d26a5bf failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/010899c9-e0cb-4a5b-9799-46de2d456956 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": [
     "Assertion",
