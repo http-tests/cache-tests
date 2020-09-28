@@ -18,10 +18,10 @@ export default function handleTest (pathSegs, request, response) {
 
   var serverState = stash.get(uuid) || []
   const srvReqNum = serverState.length + 1
-  const cliReqNum = parseInt(request.headers['req-num']) || srvReqNum
-  var reqConfig = requests[cliReqNum - 1]
-  var previousConfig = requests[cliReqNum - 2]
-
+  const cliReqNum = parseInt(request.headers['req-num'])
+  const reqNum = cliReqNum || srvReqNum
+  const reqConfig = requests[reqNum - 1]
+  const previousConfig = requests[reqNum - 2]
   const now = Date.now()
 
   if (!reqConfig) {
@@ -53,6 +53,7 @@ export default function handleTest (pathSegs, request, response) {
   const savedHeaders = new Map()
   response.setHeader('Server-Base-Url', request.url)
   response.setHeader('Server-Request-Count', srvReqNum)
+  response.setHeader('Client-Request-Count', cliReqNum)
   response.setHeader('Server-Now', now, 0)
   response.setHeader('Capability-Seen', request.headers['surrogate-capability'] || '')
   responseHeaders.forEach(header => {
@@ -80,11 +81,12 @@ export default function handleTest (pathSegs, request, response) {
 
   // stash information about this request for the client
   serverState.push({
-    request_num: parseInt(request.headers['req-num']),
+    request_num: cliReqNum,
     request_method: request.method,
     request_headers: request.headers,
     response_headers: Array.from(savedHeaders.entries())
   })
+  response.setHeader('Request-Numbers', serverState.map(item => item.request_num).join(' '))
   setStash(uuid, serverState)
 
   // Response body generation

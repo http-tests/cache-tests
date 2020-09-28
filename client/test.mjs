@@ -78,6 +78,14 @@ function checkResponse (test, requests, idx, response) {
   var resNum = parseInt(response.headers.get('Server-Request-Count'))
   if (test.dump === true) clientUtils.logResponse(response, reqNum)
 
+  // catch retries
+  if (response.headers.has('Request-Numbers')) {
+    var serverRequests = response.headers.get('Request-Numbers').split(' ').map(item => parseInt(item))
+    if (serverRequests.length !== new Set(serverRequests).size) {
+      assert(true, false, 'retry')
+    }
+  }
+
   // check response type
   if ('expected_type' in reqConfig) {
     var typeSetup = setupCheck(reqConfig, 'expected_type')

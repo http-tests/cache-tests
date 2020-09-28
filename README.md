@@ -124,6 +124,7 @@ Some additional results might pop up from time to time:
 
 * ⁉️ - The test harness failed; this is an internal error, please [file a bug if one doesn't exist](https://github.com/http-tests/cache-tests/issues/).
 * 🔹 - The test failed during setup; something interfered with the harness's communication between the client and server. See below.
+* ↻ - The cache retried a request; this means the test result needs to be interpreted manually, as it may or may not have behaved correctly.
 * ⚪️ - Another test that this test depends on has failed; we use dependencies to help assure that we're actually testing the behaviour in question.
 * `-` - Not tested; usually because the test isn't applicable to this cache.
 
