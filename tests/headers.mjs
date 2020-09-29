@@ -1,98 +1,123 @@
 import * as utils from '../lib/utils.mjs'
+import headerList from './header-list.mjs'
 
 const tests = []
 
-function checkCached ({ name, id, kind = 'required', configuredHeaders, expectedHeaders, unexpectedHeaders = [] }) {
+function checkStoreHeader (config) {
+  const id = `store-${config.name}`
+  const value = 'valB' in config ? config.valB : utils.httpContent(`${config.name}-store-value`)
+  const storeHeader = 'noStore' in config ? !config.noStore : true
+  const requirement = storeHeader ? 'must' : 'must not'
+  const expectedHeaders = storeHeader ? [[config.name, value]] : []
+  const unexpectedHeaders = storeHeader ? [] : [[config.name, value]]
+
+  var respHeaders = [
+    ['Date', 0],
+    [config.name, value, storeHeader]
+  ]
+  if (config.name !== 'Cache-Control') {
+    respHeaders.push(['Cache-Control', 'max-age=3600'])
+  }
+
   tests.push({
-    name: name,
+    name: `HTTP cache ${requirement} store \`${config.name}\` header field`,
     id: `headers-${id}`,
-    kind,
+    kind: 'required',
     requests: [
       {
-        response_headers: configuredHeaders.concat([
-          ['Cache-Control', 'max-age=3600'],
-          ['Date', 0]
-        ]),
+        response_headers: respHeaders,
         setup: true,
-        pause_after: true
+        pause_after: true,
+        check_body: 'checkBody' in config ? config.checkBody : true
       },
       {
         expected_type: 'cached',
         expected_response_headers: expectedHeaders,
         expected_response_headers_missing: unexpectedHeaders,
-        setup_tests: ['expected_type']
+        setup_tests: ['expected_type'],
+        check_body: 'checkBody' in config ? config.checkBody : true
       }
     ]
   })
 }
 
-[
-  ['Test-Header'],
-  ['X-Test-Header'],
-  ['Content-Type', 'text/plain'],
-  ['X-Frame-Options', 'deny'],
-  ['X-XSS-Protection', '1'],
-  ['Clear-Site-Data', 'cookies'],
-  ['Connection'],
-  ['Proxy-Authenticate'],
-  ['Proxy-Connection'],
-  ['Public-Key-Pins'],
-  ['Set-Cookie', 'a=b'],
-  ['Set-Cookie2', 'a=b'],
-  ['Strict-Transport-Security'],
-  ['Strict-Transport-Security2'],
-  //  ['Trailer'],   // nodejs server can't send Trailer on a 304
-  ['Transfer-Encoding'],
-  ['Upgrade'],
-  ['WWW-Authenticate']
-].forEach(function ([header, value = null]) {
-  if (value === null) value = utils.httpContent(`${header}-store-value`)
-  checkCached({
-    name: `Does HTTP cache store \`${header}\`?`,
-    id: `store-${header}`,
-    kind: 'check',
-    // defer checking the header value until the second request
-    configuredHeaders: [[header, value, false]],
-    expectedHeaders: [[header, value]]
-  })
-})
+headerList.forEach(checkStoreHeader)
 
-checkCached({
+tests.push({
   name: 'Does `Connection` header inhibit storing listed headers?',
-  id: 'omit-headers-listed-in-Connection',
-  configuredHeaders: [
-    ['Connection', 'a, b', false],
-    ['a', '1', false],
-    ['b', '2', false],
-    ['c', '3', false]
-  ],
-  expectedHeaders: [['c', '3']],
-  unexpectedHeaders: ['a', 'b']
+  id: 'headers-omit-headers-listed-in-Connection',
+  kind: 'required',
+  requests: [
+    {
+      response_headers: [
+        ['Connection', 'a, b', false],
+        ['a', '1', false],
+        ['b', '2', false],
+        ['c', '3', false],
+        ['Cache-Control', 'max-age=3600'],
+        ['Date', 0]
+      ],
+      setup: true,
+      pause_after: true
+    },
+    {
+      expected_type: 'cached',
+      expected_response_headers: [['c', '3']],
+      expected_response_headers_missing: ['a', 'b'],
+      setup_tests: ['expected_type']
+    }
+  ]
 })
 
-checkCached({
+tests.push({
   name: 'Does `Cache-Control: no-cache` inhibit storing a listed header?',
-  id: 'omit-headers-listed-in-Cache-Control-no-cache-single',
-  configuredHeaders: [
-    ['Cache-Control', 'no-cache="a"'],
-    ['a', '1'],
-    ['b', '2']
-  ],
-  expectedHeaders: [['b', '2']],
-  unexpectedHeaders: ['a']
+  id: 'headers-omit-headers-listed-in-Cache-Control-no-cache-single',
+  kind: 'required',
+  requests: [
+    {
+      response_headers: [
+        ['Cache-Control', 'no-cache="a"'],
+        ['a', '1'],
+        ['b', '2'],
+        ['Cache-Control', 'max-age=3600'],
+        ['Date', 0]
+      ],
+      setup: true,
+      pause_after: true
+    },
+    {
+      expected_type: 'cached',
+      expected_response_headers: [['b', '2']],
+      expected_response_headers_missing: ['a'],
+      setup_tests: ['expected_type']
+    }
+  ]
 })
 
-checkCached({
+tests.push({
   name: 'Does `Cache-Control: no-cache` inhibit storing multiple listed headers?',
-  id: 'omit-headers-listed-in-Cache-Control-no-cache',
-  configuredHeaders: [
-    ['Cache-Control', 'no-cache="a, b"'],
-    ['a', '1'],
-    ['b', '2'],
-    ['c', '3']
-  ],
-  expectedHeaders: [['c', '3']],
-  unexpectedHeaders: ['a', 'b']
+  id: 'headers-omit-headers-listed-in-Cache-Control-no-cache',
+  kind: 'required',
+  requests: [
+    {
+      response_headers: [
+        ['Cache-Control', 'no-cache="a, b"'],
+        ['a', '1'],
+        ['b', '2'],
+        ['c', '3'],
+        ['Cache-Control', 'max-age=3600'],
+        ['Date', 0]
+      ],
+      setup: true,
+      pause_after: true
+    },
+    {
+      expected_type: 'cached',
+      expected_response_headers: [['c', '3']],
+      expected_response_headers_missing: ['a', 'b'],
+      setup_tests: ['expected_type']
+    }
+  ]
 })
 
 export default {
