@@ -1,11 +1,27 @@
 {
   "304-etag-update-response-Cache-Control": true,
   "304-etag-update-response-Clear-Site-Data": true,
+  "304-etag-update-response-Content-Encoding": [
+    "Assertion",
+    "Response 2 header Content-Encoding is \"ASKCUMEWOGYQIAS\", not \"ARIZQHYPGXOFWNE\""
+  ],
   "304-etag-update-response-Content-Foo": true,
+  "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": true,
-  "304-etag-update-response-Content-MD5": true,
+  "304-etag-update-response-Content-MD5": [
+    "Assertion",
+    "Response 2 header Content-MD5 is \"N7UdGUp1E+RbVvZSTy1R8g==\", not \"rL0Y20zC+Fzt72VPzMSk2A==\""
+  ],
+  "304-etag-update-response-Content-Range": [
+    "Assertion",
+    "Response 2 header Content-Range is \"null\", not \"APETIXMBQFUJYNC\""
+  ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": true,
+  "304-etag-update-response-ETag": [
+    "Assertion",
+    "Response 2 header ETag is \"\"ghijkl\"\", not \"\"abcdef\"\""
+  ],
   "304-etag-update-response-Expires": true,
   "304-etag-update-response-Public-Key-Pins": true,
   "304-etag-update-response-Set-Cookie": [
@@ -18,63 +34,6 @@
   "304-etag-update-response-X-Frame-Options": true,
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": true,
-  "304-etag-update-stored-Cache-Control": true,
-  "304-etag-update-stored-Clear-Site-Data": true,
-  "304-etag-update-stored-Content-Foo": true,
-  "304-etag-update-stored-Content-Location": true,
-  "304-etag-update-stored-Content-MD5": true,
-  "304-etag-update-stored-Content-Security-Policy": true,
-  "304-etag-update-stored-Content-Type": true,
-  "304-etag-update-stored-Expires": true,
-  "304-etag-update-stored-Public-Key-Pins": true,
-  "304-etag-update-stored-Set-Cookie": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-etag-update-stored-Set-Cookie2": true,
-  "304-etag-update-stored-Test-Header": true,
-  "304-etag-update-stored-X-Content-Foo": true,
-  "304-etag-update-stored-X-Frame-Options": true,
-  "304-etag-update-stored-X-Test-Header": true,
-  "304-etag-update-stored-X-XSS-Protection": true,
-  "304-lm-update-response-Cache-Control": true,
-  "304-lm-update-response-Clear-Site-Data": true,
-  "304-lm-update-response-Content-Foo": true,
-  "304-lm-update-response-Content-Location": true,
-  "304-lm-update-response-Content-MD5": true,
-  "304-lm-update-response-Content-Security-Policy": true,
-  "304-lm-update-response-Content-Type": true,
-  "304-lm-update-response-Expires": true,
-  "304-lm-update-response-Public-Key-Pins": true,
-  "304-lm-update-response-Set-Cookie": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-response-Set-Cookie2": true,
-  "304-lm-update-response-Test-Header": true,
-  "304-lm-update-response-X-Content-Foo": true,
-  "304-lm-update-response-X-Frame-Options": true,
-  "304-lm-update-response-X-Test-Header": true,
-  "304-lm-update-response-X-XSS-Protection": true,
-  "304-lm-update-stored-Cache-Control": true,
-  "304-lm-update-stored-Clear-Site-Data": true,
-  "304-lm-update-stored-Content-Foo": true,
-  "304-lm-update-stored-Content-Location": true,
-  "304-lm-update-stored-Content-MD5": true,
-  "304-lm-update-stored-Content-Security-Policy": true,
-  "304-lm-update-stored-Content-Type": true,
-  "304-lm-update-stored-Expires": true,
-  "304-lm-update-stored-Public-Key-Pins": true,
-  "304-lm-update-stored-Set-Cookie": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
-  "304-lm-update-stored-Set-Cookie2": true,
-  "304-lm-update-stored-Test-Header": true,
-  "304-lm-update-stored-X-Content-Foo": true,
-  "304-lm-update-stored-X-Frame-Options": true,
-  "304-lm-update-stored-X-Test-Header": true,
-  "304-lm-update-stored-X-XSS-Protection": true,
   "304-lm-use-stored-Test-Header": true,
   "age-parse-dup-0": true,
   "age-parse-dup-0-twoline": true,

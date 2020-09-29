@@ -4,20 +4,21 @@
     "Assertion",
     "Response 2 header Clear-Site-Data is \"null\", not \"cookies\""
   ],
+  "304-etag-update-response-Content-Encoding": true,
   "304-etag-update-response-Content-Foo": true,
+  "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": [
     "Assertion",
     "Response 2 header Content-Location is \"/foo\", not \"/bar\""
   ],
-  "304-etag-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
-  ],
+  "304-etag-update-response-Content-MD5": true,
+  "304-etag-update-response-Content-Range": true,
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
+  "304-etag-update-response-ETag": true,
   "304-etag-update-response-Expires": true,
   "304-etag-update-response-Public-Key-Pins": true,
   "304-etag-update-response-Set-Cookie": [
@@ -41,135 +42,6 @@
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
     "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
-  ],
-  "304-etag-update-stored-Cache-Control": true,
-  "304-etag-update-stored-Clear-Site-Data": [
-    "Assertion",
-    "Response 3 header Clear-Site-Data is \"null\", not \"cookies\""
-  ],
-  "304-etag-update-stored-Content-Foo": true,
-  "304-etag-update-stored-Content-Location": [
-    "Assertion",
-    "Response 3 header Content-Location is \"/foo\", not \"/bar\""
-  ],
-  "304-etag-update-stored-Content-MD5": [
-    "Assertion",
-    "Response 3 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
-  ],
-  "304-etag-update-stored-Content-Security-Policy": true,
-  "304-etag-update-stored-Content-Type": [
-    "Assertion",
-    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
-  ],
-  "304-etag-update-stored-Expires": true,
-  "304-etag-update-stored-Public-Key-Pins": true,
-  "304-etag-update-stored-Set-Cookie": [
-    "Assertion",
-    "Response 3 header Set-Cookie is \"null\", not \"a=c\""
-  ],
-  "304-etag-update-stored-Set-Cookie2": [
-    "Assertion",
-    "Response 3 header Set-Cookie2 is \"null\", not \"a=c\""
-  ],
-  "304-etag-update-stored-Test-Header": true,
-  "304-etag-update-stored-X-Content-Foo": [
-    "Assertion",
-    "Response 3 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
-  ],
-  "304-etag-update-stored-X-Frame-Options": [
-    "Assertion",
-    "Response 3 header X-Frame-Options is \"deny\", not \"sameorigin\""
-  ],
-  "304-etag-update-stored-X-Test-Header": true,
-  "304-etag-update-stored-X-XSS-Protection": [
-    "Assertion",
-    "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
-  ],
-  "304-lm-update-response-Cache-Control": true,
-  "304-lm-update-response-Clear-Site-Data": [
-    "Assertion",
-    "Response 2 header Clear-Site-Data is \"null\", not \"cookies\""
-  ],
-  "304-lm-update-response-Content-Foo": true,
-  "304-lm-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"/foo\", not \"/bar\""
-  ],
-  "304-lm-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
-  ],
-  "304-lm-update-response-Content-Security-Policy": true,
-  "304-lm-update-response-Content-Type": [
-    "Assertion",
-    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
-  ],
-  "304-lm-update-response-Expires": true,
-  "304-lm-update-response-Public-Key-Pins": true,
-  "304-lm-update-response-Set-Cookie": [
-    "Assertion",
-    "Response 2 header Set-Cookie is \"null\", not \"a=c\""
-  ],
-  "304-lm-update-response-Set-Cookie2": [
-    "Assertion",
-    "Response 2 header Set-Cookie2 is \"null\", not \"a=c\""
-  ],
-  "304-lm-update-response-Test-Header": true,
-  "304-lm-update-response-X-Content-Foo": [
-    "Assertion",
-    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
-  ],
-  "304-lm-update-response-X-Frame-Options": [
-    "Assertion",
-    "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
-  ],
-  "304-lm-update-response-X-Test-Header": true,
-  "304-lm-update-response-X-XSS-Protection": [
-    "Assertion",
-    "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
-  ],
-  "304-lm-update-stored-Cache-Control": true,
-  "304-lm-update-stored-Clear-Site-Data": [
-    "Assertion",
-    "Response 3 header Clear-Site-Data is \"null\", not \"cookies\""
-  ],
-  "304-lm-update-stored-Content-Foo": true,
-  "304-lm-update-stored-Content-Location": [
-    "Assertion",
-    "Response 3 header Content-Location is \"/foo\", not \"/bar\""
-  ],
-  "304-lm-update-stored-Content-MD5": [
-    "Assertion",
-    "Response 3 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
-  ],
-  "304-lm-update-stored-Content-Security-Policy": true,
-  "304-lm-update-stored-Content-Type": [
-    "Assertion",
-    "Response 3 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
-  ],
-  "304-lm-update-stored-Expires": true,
-  "304-lm-update-stored-Public-Key-Pins": true,
-  "304-lm-update-stored-Set-Cookie": [
-    "Assertion",
-    "Response 3 header Set-Cookie is \"null\", not \"a=c\""
-  ],
-  "304-lm-update-stored-Set-Cookie2": [
-    "Assertion",
-    "Response 3 header Set-Cookie2 is \"null\", not \"a=c\""
-  ],
-  "304-lm-update-stored-Test-Header": true,
-  "304-lm-update-stored-X-Content-Foo": [
-    "Assertion",
-    "Response 3 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
-  ],
-  "304-lm-update-stored-X-Frame-Options": [
-    "Assertion",
-    "Response 3 header X-Frame-Options is \"deny\", not \"sameorigin\""
-  ],
-  "304-lm-update-stored-X-Test-Header": true,
-  "304-lm-update-stored-X-XSS-Protection": [
-    "Assertion",
-    "Response 3 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
   "age-parse-dup-0": true,
@@ -414,7 +286,10 @@
   "heuristic-delta-300": true,
   "heuristic-delta-3600": true,
   "heuristic-delta-43200": true,
-  "heuristic-delta-5": true,
+  "heuristic-delta-5": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-delta-60": true,
   "heuristic-delta-600": true,
   "heuristic-delta-86400": true,

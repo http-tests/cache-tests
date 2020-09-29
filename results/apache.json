@@ -1,7 +1,15 @@
 {
   "304-etag-update-response-Cache-Control": true,
   "304-etag-update-response-Clear-Site-Data": true,
+  "304-etag-update-response-Content-Encoding": [
+    "Setup",
+    "retry"
+  ],
   "304-etag-update-response-Content-Foo": true,
+  "304-etag-update-response-Content-Length": [
+    "Setup",
+    "retry"
+  ],
   "304-etag-update-response-Content-Location": [
     "Setup",
     "retry"
@@ -10,8 +18,16 @@
     "Setup",
     "retry"
   ],
+  "304-etag-update-response-Content-Range": [
+    "Setup",
+    "retry"
+  ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
+    "Setup",
+    "retry"
+  ],
+  "304-etag-update-response-ETag": [
     "Setup",
     "retry"
   ],
@@ -24,81 +40,6 @@
   "304-etag-update-response-X-Frame-Options": true,
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": true,
-  "304-etag-update-stored-Cache-Control": true,
-  "304-etag-update-stored-Clear-Site-Data": true,
-  "304-etag-update-stored-Content-Foo": true,
-  "304-etag-update-stored-Content-Location": [
-    "Setup",
-    "retry"
-  ],
-  "304-etag-update-stored-Content-MD5": [
-    "Setup",
-    "retry"
-  ],
-  "304-etag-update-stored-Content-Security-Policy": true,
-  "304-etag-update-stored-Content-Type": [
-    "Setup",
-    "retry"
-  ],
-  "304-etag-update-stored-Expires": true,
-  "304-etag-update-stored-Public-Key-Pins": true,
-  "304-etag-update-stored-Set-Cookie": true,
-  "304-etag-update-stored-Set-Cookie2": true,
-  "304-etag-update-stored-Test-Header": true,
-  "304-etag-update-stored-X-Content-Foo": true,
-  "304-etag-update-stored-X-Frame-Options": true,
-  "304-etag-update-stored-X-Test-Header": true,
-  "304-etag-update-stored-X-XSS-Protection": true,
-  "304-lm-update-response-Cache-Control": true,
-  "304-lm-update-response-Clear-Site-Data": true,
-  "304-lm-update-response-Content-Foo": true,
-  "304-lm-update-response-Content-Location": [
-    "Setup",
-    "retry"
-  ],
-  "304-lm-update-response-Content-MD5": [
-    "Setup",
-    "retry"
-  ],
-  "304-lm-update-response-Content-Security-Policy": true,
-  "304-lm-update-response-Content-Type": [
-    "Setup",
-    "retry"
-  ],
-  "304-lm-update-response-Expires": true,
-  "304-lm-update-response-Public-Key-Pins": true,
-  "304-lm-update-response-Set-Cookie": true,
-  "304-lm-update-response-Set-Cookie2": true,
-  "304-lm-update-response-Test-Header": true,
-  "304-lm-update-response-X-Content-Foo": true,
-  "304-lm-update-response-X-Frame-Options": true,
-  "304-lm-update-response-X-Test-Header": true,
-  "304-lm-update-response-X-XSS-Protection": true,
-  "304-lm-update-stored-Cache-Control": true,
-  "304-lm-update-stored-Clear-Site-Data": true,
-  "304-lm-update-stored-Content-Foo": true,
-  "304-lm-update-stored-Content-Location": [
-    "Setup",
-    "retry"
-  ],
-  "304-lm-update-stored-Content-MD5": [
-    "Setup",
-    "retry"
-  ],
-  "304-lm-update-stored-Content-Security-Policy": true,
-  "304-lm-update-stored-Content-Type": [
-    "Setup",
-    "retry"
-  ],
-  "304-lm-update-stored-Expires": true,
-  "304-lm-update-stored-Public-Key-Pins": true,
-  "304-lm-update-stored-Set-Cookie": true,
-  "304-lm-update-stored-Set-Cookie2": true,
-  "304-lm-update-stored-Test-Header": true,
-  "304-lm-update-stored-X-Content-Foo": true,
-  "304-lm-update-stored-X-Frame-Options": true,
-  "304-lm-update-stored-X-Test-Header": true,
-  "304-lm-update-stored-X-XSS-Protection": true,
   "304-lm-use-stored-Test-Header": true,
   "age-parse-dup-0": true,
   "age-parse-dup-0-twoline": true,
@@ -410,7 +351,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 28 Sep 2020 06:56:13 GMT\", not \"Mon, 28 Sep 2020 06:56:10 GMT\""
+    "Response 2 header Date is \"Mon, 28 Sep 2020 23:56:36 GMT\", not \"Mon, 28 Sep 2020 23:56:33 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
