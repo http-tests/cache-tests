@@ -1,167 +1,104 @@
 import * as utils from '../lib/utils.mjs'
+import headerList from './header-list.mjs'
 
 var tests = []
 
-var header = 'Test-Header'
-var valueA = utils.httpContent(`${header}-value-A`)
+// first, check to see that the cache actually returns a stored header
+var storedHeader = 'Test-Header'
+var valueA = utils.httpContent(`${storedHeader}-value-A`)
 var lm1 = 'Wed, 01 Jan 2020 00:00:00 GMT'
 tests.push({
-  name: `HTTP cache must return stored \`${header}\` from a \`304\` that omits it`,
-  id: `304-lm-use-stored-${header}`,
+  name: `HTTP cache must return stored \`${storedHeader}\` from a \`304\` that omits it`,
+  id: `304-lm-use-stored-${storedHeader}`,
   requests: [
     {
       response_headers: [
         ['Cache-Control', 'max-age=1'],
         ['Last-Modified', lm1],
         ['Date', 0],
-        [header, valueA]
+        [storedHeader, valueA]
       ],
       setup: true,
       pause_after: true
     },
     {
       response_headers: [
-        ['Cache-Control', 'max-age=3600'],
         ['Last-Modified', lm1],
         ['Date', 0]
       ],
       expected_type: 'lm_validated',
       expected_response_headers: [
-        [header, valueA]
+        [storedHeader, valueA]
       ],
       setup_tests: ['expected_type']
     }
   ]
 })
 
-function check304 (args) {
-  var header = args[0]
-  var valueA = args[1] || utils.httpContent(`${header}-value-A`)
-  var valueB = args[2] || utils.httpContent(`${header}-value-B`)
-  var etag = utils.httpContent(`${header}-etag-1`)
-  var etag1 = `"${etag}"`
-  var lm1 = 'Wed, 01 Jan 2020 00:00:00 GMT'
+// now check headers in the list
+function check304 (config) {
+  if (config.noStore) return
+  config.valueA = config.valA || utils.httpContent(`${config.name}-value-A`)
+  config.valueB = config.valB || utils.httpContent(`${config.name}-value-B`)
+  config.expectedValue = config.noUpdate ? config.valueA : config.valueB
+  config.requirement = config.noUpdate ? 'must **not**' : 'must'
+  config.etagVal = utils.httpContent(`${config.name}-etag-1`)
+  config.etag = `"${config.etagVal}"`
+  config.lm = 'Wed, 01 Jan 2020 00:00:00 GMT'
 
   tests.push({
-    name: `HTTP cache must update returned \`${header}\` from a \`Last-Modified 304\``,
-    id: `304-lm-update-response-${header}`,
-    requests: [
-      {
-        response_headers: makeResponse(header, valueA, 1, 'Last-Modified', lm1),
-        setup: true,
-        pause_after: true
-      },
-      {
-        response_headers: makeResponse(header, valueB, 3600, 'Last-Modified', lm1),
-        expected_type: 'lm_validated',
-        expected_response_headers: [
-          [header, valueB]
-        ],
-        setup_tests: ['expected_type']
-      }
-    ]
-  })
-  tests.push({
-    name: `HTTP cache must update stored \`${header}\` from a \`Last-Modified 304\``,
-    id: `304-lm-update-stored-${header}`,
-    requests: [
-      {
-        response_headers: makeResponse(header, valueA, 1, 'Last-Modified', lm1),
-        setup: true,
-        pause_after: true
-      },
-      {
-        response_headers: makeResponse(header, valueB, 3600, 'Last-Modified', lm1),
-        expected_type: 'lm_validated',
-        setup: true,
-        pause_after: true
-      },
-      {
-        expected_type: 'cached',
-        expected_response_headers: [
-          [header, valueB]
-        ],
-        setup_tests: ['expected_type']
-      }
-    ]
-  })
-  tests.push({
-    name: `HTTP cache must update returned \`${header}\` from a \`ETag 304\``,
-    id: `304-etag-update-response-${header}`,
-    requests: [
-      {
-        response_headers: makeResponse(header, valueA, 1, 'ETag', etag1),
-        setup: true,
-        pause_after: true
-      },
-      {
-        response_headers: makeResponse(header, valueB, 3600, 'ETag', etag1),
-        expected_type: 'etag_validated',
-        expected_response_headers: [
-          [header, valueB]
-        ],
-        setup_tests: ['expected_type']
-      }
-    ]
-  })
-  tests.push({
-    name: `HTTP cache must update stored \`${header}\` from a \`ETag 304\``,
-    id: `304-etag-update-stored-${header}`,
-    requests: [
-      {
-        response_headers: makeResponse(header, valueA, 1, 'ETag', etag1),
-        setup: true,
-        pause_after: true
-      },
-      {
-        response_headers: makeResponse(header, valueB, 3600, 'ETag', etag1),
-        setup: true,
-        pause_after: true,
-        expected_type: 'etag_validated'
-      },
-      {
-        expected_type: 'cached',
-        expected_response_headers: [
-          [header, valueB]
-        ],
-        setup_tests: ['expected_type']
-      }
-    ]
+    name: `HTTP cache ${config.requirement} update and return \`${config.name}\` from a \`304\``,
+    id: `304-etag-update-response-${config.name}`,
+    depends_on: [`304-lm-use-stored-${storedHeader}`],
+    requests: makeRequests(config, 'ETag', config.etag)
   })
 }
 
-function makeResponse (header, value, lifetime, validatorType, validatorValue) {
+function makeRequests (config, validatorType, validatorValue) {
+  return [
+    {
+      response_headers: makeResponse(config, config.valueA, validatorType, validatorValue),
+      setup: true,
+      pause_after: true,
+      check_body: 'checkBody' in config ? config.checkBody : true
+    },
+    {
+      response_headers: makeResponse(config, config.valueB, validatorType, validatorValue),
+      expected_type: validatorType === 'ETag' ? 'etag_validated' : 'lm_validated',
+      setup_tests: ['expected_type'],
+      expected_response_headers: [
+        [config.name, config.expectedValue]
+      ],
+      check_body: 'checkBody' in config ? config.checkBody : true
+    },
+    {
+      response_headers: makeResponse(config, config.expectedValue),
+      expected_type: 'cached',
+      setup_tests: ['expected_type'],
+      expected_response_headers: [
+        [config.name, config.expectedValue]
+      ],
+      check_body: 'checkBody' in config ? config.checkBody : true
+    }
+  ]
+}
+
+function makeResponse (config, value, validatorType, validatorValue) {
+  var checkHeader = 'noUpdate' in config ? !config.noUpdate : true
   var responseHeaders = [
     ['Date', 0],
-    [header, value]
+    [config.name, value, checkHeader]
   ]
-  if (header !== 'Cache-Control') {
-    responseHeaders.push(['Cache-Control', `max-age=${lifetime}`])
+  if (config.name !== 'Cache-Control') {
+    responseHeaders.push(['Cache-Control', 'max-age=2'])
   }
-  if (validatorType) {
+  if (validatorType && validatorType !== config.name) {
     responseHeaders.push([validatorType, validatorValue])
   }
   return responseHeaders
 }
 
-[
-  ['Test-Header'],
-  ['X-Test-Header'],
-  ['Content-Foo'],
-  ['X-Content-Foo'],
-  ['Content-Type', 'text/plain', 'text/plain;charset=utf-8'],
-  ['Content-MD5', 'rL0Y20zC+Fzt72VPzMSk2A==', 'N7UdGUp1E+RbVvZSTy1R8g=='],
-  ['Content-Location', '/foo', '/bar'],
-  ['Content-Security-Policy', 'default-src \'self\'', 'default-src \'self\' cdn.example.com'],
-  ['X-Frame-Options', 'deny', 'sameorigin'],
-  ['X-XSS-Protection', '1', '1; mode=block'],
-  ['Cache-Control', 'max-age=1', 'max-age=3600'],
-  ['Expires', 'Fri, 01 Jan 2038 01:01:01 GMT', 'Mon, 11 Jan 2038 11:11:11 GMT'],
-  ['Clear-Site-Data', 'cache', 'cookies'],
-  ['Public-Key-Pins'],
-  ['Set-Cookie', 'a=b', 'a=c'],
-  ['Set-Cookie2', 'a=b', 'a=c']
-].forEach(check304)
+headerList.forEach(check304)
 
 export default {
   name: 'Update Headers Upon a 304',
