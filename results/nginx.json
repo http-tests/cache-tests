@@ -291,13 +291,23 @@
     "Assertion",
     "Response 2 includes unexpected header a: \"1\""
   ],
+  "headers-store-Cache-Control": true,
   "headers-store-Clear-Site-Data": true,
-  "headers-store-Connection": [
-    "Assertion",
-    "Response 2 header Connection is \"close\", not \"ASKCUMEWOGYQIAS\""
-  ],
+  "headers-store-Connection": true,
+  "headers-store-Content-Encoding": true,
+  "headers-store-Content-Foo": true,
+  "headers-store-Content-Length": true,
+  "headers-store-Content-Location": true,
+  "headers-store-Content-MD5": true,
+  "headers-store-Content-Range": true,
+  "headers-store-Content-Security-Policy": true,
   "headers-store-Content-Type": true,
+  "headers-store-ETag": true,
+  "headers-store-Expires": true,
+  "headers-store-Keep-Alive": true,
   "headers-store-Proxy-Authenticate": true,
+  "headers-store-Proxy-Authentication-Info": true,
+  "headers-store-Proxy-Authorization": true,
   "headers-store-Proxy-Connection": true,
   "headers-store-Public-Key-Pins": true,
   "headers-store-Set-Cookie": [
@@ -305,15 +315,11 @@
     "Response 2 does not come from cache"
   ],
   "headers-store-Set-Cookie2": true,
-  "headers-store-Strict-Transport-Security": true,
-  "headers-store-Strict-Transport-Security2": true,
+  "headers-store-TE": true,
   "headers-store-Test-Header": true,
-  "headers-store-Transfer-Encoding": [
-    "Assertion",
-    "Response 2 header Transfer-Encoding is \"chunked\", not \"ARIZQHYPGXOFWNE\""
-  ],
+  "headers-store-Transfer-Encoding": true,
   "headers-store-Upgrade": true,
-  "headers-store-WWW-Authenticate": true,
+  "headers-store-X-Content-Foo": true,
   "headers-store-X-Frame-Options": true,
   "headers-store-X-Test-Header": true,
   "headers-store-X-XSS-Protection": true,
@@ -471,7 +477,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 28 Sep 2020 23:57:00 GMT\", not \"Mon, 28 Sep 2020 23:56:57 GMT\""
+    "Response 2 header Date is \"Tue, 29 Sep 2020 07:49:32 GMT\", not \"Tue, 29 Sep 2020 07:49:28 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

@@ -282,16 +282,26 @@
     "Response 2 does not come from cache"
   ],
   "headers-omit-headers-listed-in-Connection": true,
+  "headers-store-Cache-Control": true,
   "headers-store-Clear-Site-Data": true,
-  "headers-store-Connection": [
+  "headers-store-Connection": true,
+  "headers-store-Content-Encoding": true,
+  "headers-store-Content-Foo": true,
+  "headers-store-Content-Length": true,
+  "headers-store-Content-Location": true,
+  "headers-store-Content-MD5": true,
+  "headers-store-Content-Range": [
     "Assertion",
-    "Response 2 header Connection is \"close\", not \"ASKCUMEWOGYQIAS\""
+    "Response 2 header Content-Range is \"null\", not \"ANANANANANANANA\""
   ],
+  "headers-store-Content-Security-Policy": true,
   "headers-store-Content-Type": true,
-  "headers-store-Proxy-Authenticate": [
-    "Assertion",
-    "Response 2 header Proxy-Authenticate is \"null\", not \"AKUEOYISCMWGQAK\""
-  ],
+  "headers-store-ETag": true,
+  "headers-store-Expires": true,
+  "headers-store-Keep-Alive": true,
+  "headers-store-Proxy-Authenticate": true,
+  "headers-store-Proxy-Authentication-Info": true,
+  "headers-store-Proxy-Authorization": true,
   "headers-store-Proxy-Connection": true,
   "headers-store-Public-Key-Pins": true,
   "headers-store-Set-Cookie": [
@@ -299,18 +309,14 @@
     "Response 2 does not come from cache"
   ],
   "headers-store-Set-Cookie2": true,
-  "headers-store-Strict-Transport-Security": true,
-  "headers-store-Strict-Transport-Security2": true,
+  "headers-store-TE": true,
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",
     "Response 1 status is 503, not 200"
   ],
-  "headers-store-Upgrade": [
-    "Assertion",
-    "Response 2 header Upgrade is \"null\", not \"ACEGIKMOQSUWYAC\""
-  ],
-  "headers-store-WWW-Authenticate": true,
+  "headers-store-Upgrade": true,
+  "headers-store-X-Content-Foo": true,
   "headers-store-X-Frame-Options": true,
   "headers-store-X-Test-Header": true,
   "headers-store-X-XSS-Protection": true,
