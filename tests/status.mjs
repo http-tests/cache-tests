@@ -13,24 +13,6 @@ function checkStatus (status) {
   }
   var is3xx = code > 299 && code < 400
   tests.push({
-    name: 'HTTP cache must not reuse a stale `' + code + '` response with explicit freshness',
-    id: `status-${code}-stale`,
-    depends_on: [`status-${code}-fresh`],
-    browser_skip: is3xx,
-    requests: [
-      templates.stale({
-        response_status: [code, phrase],
-        response_body: body,
-        redirect: 'manual',
-        setup: true
-      }), {
-        expected_type: 'not_cached',
-        redirect: 'manual',
-        response_body: body
-      }
-    ]
-  })
-  tests.push({
     name: 'An optimal HTTP cache reuses a fresh `' + code + '` response with explict freshness',
     id: `status-${code}-fresh`,
     kind: 'optimal',
@@ -44,6 +26,24 @@ function checkStatus (status) {
       }), {
         expected_type: 'cached',
         response_status: [code, phrase],
+        redirect: 'manual',
+        response_body: body
+      }
+    ]
+  })
+  tests.push({
+    name: 'HTTP cache must not reuse a stale `' + code + '` response with explicit freshness',
+    id: `status-${code}-stale`,
+    depends_on: [`status-${code}-fresh`],
+    browser_skip: is3xx,
+    requests: [
+      templates.stale({
+        response_status: [code, phrase],
+        response_body: body,
+        redirect: 'manual',
+        setup: true
+      }), {
+        expected_type: 'not_cached',
         redirect: 'manual',
         response_body: body
       }
