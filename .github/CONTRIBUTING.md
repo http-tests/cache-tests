@@ -76,8 +76,9 @@ Possible members of a request object:
   - `[header_name_string, header_value_string]`: assert that the header has the given value
   - `[header_name_string, '=', other_header_name]`: assert that the two headers have the same value
   - `[header_name_string, '>', number]`: assert that the header's value is numerically greater than specified
-- `expected_response_headers_missing` - An array of `header_name_string` representing headers to
-                                      check that the response on the client does not include.
+- `expected_response_headers_missing` - An array of any combination of the following.
+  - `header_name_string` representing headers to check that the response on the client does not include.
+  - `[header_name_string, header_value_string]`: headers to check that the response is either missing, or if they're present, that they do _not_ contain the given value string (evaluated against the whole header value).
 - `expected_response_text` - A string to check the response body against on the client.
 - `setup` - Boolean to indicate whether this is a setup request; failures don't mean the actual test failed.
 - `setup_tests` - Array of values that indicate whether the specified check is part of setup;

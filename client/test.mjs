@@ -158,8 +158,17 @@ function checkResponse (test, requests, idx, response) {
   if ('expected_response_headers_missing' in reqConfig) {
     var respMissingSetup = setupCheck(reqConfig, 'expected_response_headers_missing')
     reqConfig.expected_response_headers_missing.forEach(header => {
-      assert(respMissingSetup, !response.headers.has(header),
-        `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
+      if (typeof header === 'string') {
+        assert(respMissingSetup, !response.headers.has(header),
+          `Response ${reqNum} includes unexpected header ${header}: "${response.headers.get(header)}"`)
+      } else if (header.length === 2) {
+        if (response.headers.has(header[0]) && response.headers[header[0]]) {
+          var hdrValue = response.headers[header[0]]
+          assert(respMissingSetup, hdrValue.indexOf(header[1]) === -1, `Response ${reqNum} header ${header[0]} still has value "${hdrValue}"`)
+        }
+      } else {
+        throw new Error(`Unknown unexpected-header form '${header}'`)
+      }
     })
   }
   return response.text().then(makeCheckResponseBody(test, reqConfig, response.status))
