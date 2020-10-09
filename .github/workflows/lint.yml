@@ -12,6 +12,7 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '14'
-    - run: npm install -g standard ajv
+    - run: npm install -g standard
+    - run: npm install ajv
     - run: npm run lint
     - run: npm run validate
