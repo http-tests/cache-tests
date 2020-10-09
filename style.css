@@ -66,6 +66,10 @@ th.category a {
   border-left: solid 4px #f47477;
 }
 
+.key-item {
+  white-space: nowrap;
+}
+
 #download {
   display: none;
 }
