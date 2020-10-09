@@ -3,12 +3,11 @@ export default
 {
   name: 'Age Parsing',
   id: 'age-parse',
-  description: 'These tests check how implementations parse the `Age` response header. They are not conformance tests because error handling is not clearly specified; rather, they are being used to gather information as input to spec revisions.',
+  description: 'These tests check how implementations parse the [`Age` response header](https://httpwg.org/http-core/draft-ietf-httpbis-cache-latest.html#field.age). They are not conformance tests because error handling is not clearly specified; rather, they are being used to gather information as input to spec revisions.',
   tests: [
     {
-      name: 'Does HTTP cache reuse a response when the `Age` header is non-numeric?',
+      name: 'HTTP cache should consider a response with a non-numeric `Age` header to be stale',
       id: 'age-parse-nonnumeric',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
@@ -21,14 +20,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response when the `Age` header is negative?',
+      name: 'HTTP cache should consider a response with a negative `Age` header to be stale',
       id: 'age-parse-negative',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
@@ -41,14 +39,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response when the `Age` header is a float?',
+      name: 'HTTP cache should consider a response with a float `Age` header to be stale',
       id: 'age-parse-float',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
@@ -61,14 +58,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has ",0" appended?',
+      name: 'HTTP cache should consider a response with a `Age` header with ",0" appended to be stale',
       id: 'age-parse-suffix',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
@@ -81,33 +77,12 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has "0" in a header following?',
-      id: 'age-parse-suffix-twoline',
-      kind: 'check',
-      depends_on: ['freshness-max-age-age'],
-      requests: [
-        {
-          response_headers: [
-            ['Date', 0],
-            ['Cache-Control', 'max-age=3600'],
-            ['Age', '7200', false],
-            ['Age', '0', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has "0," prepended?',
+      name: 'HTTP cache should consider a response with a `Age` header with "0," prepended to be stale',
       id: 'age-parse-prefix',
       kind: 'check',
       depends_on: ['freshness-max-age-age'],
@@ -127,9 +102,28 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has "0" in a header preceding?',
+      name: 'HTTP cache should consider a response with two `Age` header lines to be stale',
+      id: 'age-parse-suffix-twoline',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '7200', false],
+            ['Age', '0', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should consider a response with two `Age` header lines to be stale (reversed)',
       id: 'age-parse-prefix-twoline',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
@@ -143,14 +137,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has a duplicate 0 value, comma-separated?',
+      name: 'HTTP cache should consider a response with `Age: 0,0` to be stale',
       id: 'age-parse-dup-0',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
@@ -163,14 +156,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has a duplicate 0 value on two separate lines?',
+      name: 'HTTP cache should consider a response with two `Age: 0` header lines to be stale',
       id: 'age-parse-dup-0-twoline',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
@@ -184,55 +176,32 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has a duplicate old value, comma-separated?',
+      name: 'HTTP cache should consider a response with two `Age: 3600` header lines to be stale',
       id: 'age-parse-dup-old',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
           response_headers: [
             ['Date', 0],
-            ['Cache-Control', 'max-age=3600'],
-            ['Age', '7200, 7200', false]
+            ['Cache-Control', 'max-age=10000'],
+            ['Age', '3600, 3600', false]
           ],
           setup: true,
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has a duplicate old value on two separate lines?',
-      id: 'age-parse-dup-old-twoline',
-      kind: 'check',
-      depends_on: ['freshness-max-age-age'],
-      requests: [
-        {
-          response_headers: [
-            ['Date', 0],
-            ['Cache-Control', 'max-age=3600'],
-            ['Age', '7200', false],
-            ['Age', '7200', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has a parameter?',
+      name: 'HTTP cache should consider a response with parameter on `Age` header to be stale',
       id: 'age-parse-parameter',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
@@ -245,14 +214,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse an aged response when the `Age` header has a numeric parameter?',
+      name: 'HTTP cache should consider a response with numeric parameter on `Age` header to be stale',
       id: 'age-parse-numeric-parameter',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
@@ -265,27 +233,7 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'Does HTTP cache reuse an under-aged response when the `Age` header has a numeric parameter?',
-      id: 'age-parse-numeric-parameter-under',
-      kind: 'check',
-      depends_on: ['freshness-max-age-age'],
-      requests: [
-        {
-          response_headers: [
-            ['Date', 0],
-            ['Cache-Control', 'max-age=3600'],
-            ['Age', '1800;foo=7200', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     }
