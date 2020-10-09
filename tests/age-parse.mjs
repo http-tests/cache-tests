@@ -63,7 +63,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with a `Age` header with `,0` appended to an old value to be stale',
+      name: 'HTTP cache should consider a response with a `Age` header with `old, 0` to be stale',
       id: 'age-parse-suffix',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -82,7 +82,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with a `Age` header with `0,` prepended to an old value to be stale',
+      name: 'HTTP cache should consider a response with a `Age` header with `0, old` to be stale',
       id: 'age-parse-prefix',
       depends_on: ['freshness-max-age-age'],
       requests: [
