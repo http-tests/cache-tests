@@ -48,6 +48,7 @@ Possible members of a request object:
 - `mode` - The mode string to pass to `fetch()`.
 - `credentials` - The credentials string to pass to `fetch()`.
 - `cache` - The cache string to pass to `fetch()`.
+- `redirect` - The redirect string to pass to `fetch()`.
 - `pause_after` - Boolean controlling a 3-second pause after the request completes.
 - `magic_locations` - Boolean; if `true`, the `Location` and `Content-Location` headers will be rewritten to full URLs.
 - `response_status` - A `[number, string]` array containing the HTTP status code
@@ -83,8 +84,7 @@ Possible members of a request object:
 - `setup` - Boolean to indicate whether this is a setup request; failures don't mean the actual test failed.
 - `setup_tests` - Array of values that indicate whether the specified check is part of setup;
   failures don't mean the actual test failed. One of: `["expected_type", "expected_status",
-  "expected_response_headers", "expected_response_text", "expected_type",
-  "expected_request_headers"]`
+  "expected_response_headers", "expected_response_text", "expected_request_headers"]`
 
 `server.js` stashes an entry containing observed headers for each request it receives. When the
 test fetches have run, this state is retrieved and the expected_* lists are checked, including
