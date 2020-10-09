@@ -12,7 +12,10 @@ if (process.argv[2] === 'validate') {
   var schema = JSON.parse(fs.readFileSync('lib/testsuite-schema.json', 'utf8'))
   var validate = ajv.compile(schema)
   var valid = validate(tests)
-  if (!valid) console.log(validate.errors)
+  if (!valid) {
+    console.log(validate.errors)
+    process.exit(1)
+  }
 } else {
   console.log(JSON.stringify(tests, null, 2))
 }
