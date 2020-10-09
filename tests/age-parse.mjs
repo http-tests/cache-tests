@@ -63,7 +63,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with a `Age` header with ",0" appended to be stale',
+      name: 'HTTP cache should consider a response with a `Age` header with `,0` appended to an old value to be stale',
       id: 'age-parse-suffix',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -82,7 +82,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with a `Age` header with "0," prepended to be stale',
+      name: 'HTTP cache should consider a response with a `Age` header with `0,` prepended to an old value to be stale',
       id: 'age-parse-prefix',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -101,7 +101,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with two `Age` header lines to be stale',
+      name: 'HTTP cache should consider a response with two `Age` header lines to be stale (old, `0`)',
       id: 'age-parse-suffix-twoline',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -121,7 +121,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with two `Age` header lines to be stale (reversed)',
+      name: 'HTTP cache should consider a response with two `Age` header lines to be stale (`0`, old)',
       id: 'age-parse-prefix-twoline',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -141,7 +141,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with `Age: 0,0` to be stale',
+      name: 'HTTP cache should consider a response with `Age: 0, 0` to be stale',
       id: 'age-parse-dup-0',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -199,7 +199,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with parameter on `Age` header to be stale',
+      name: 'HTTP cache should consider a response with alphabetic parameter on `Age` header to be stale',
       id: 'age-parse-parameter',
       depends_on: ['freshness-max-age-age'],
       requests: [
