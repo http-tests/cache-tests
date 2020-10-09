@@ -44,7 +44,7 @@ function checkStoreHeader (config) {
 headerList.forEach(checkStoreHeader)
 
 tests.push({
-  name: 'Does `Connection` header inhibit storing listed headers?',
+  name: '`Connection` header must inhibit a HTTP cache from storing listed headers',
   id: 'headers-omit-headers-listed-in-Connection',
   kind: 'required',
   requests: [
