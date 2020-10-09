@@ -35,6 +35,6 @@
     "url": "https://github.com/mnot/cdn-tests.git"
   },
   "devDependencies": {
-    "standard": "^14.3.4",
+    "standard": "^14.3.4"
   }
 }
