@@ -176,7 +176,7 @@ export default {
           request_headers: [
             ['Cache-Control', 'no-cache']
           ],
-          expected_type: 'lm_validate'
+          expected_type: 'lm_validated'
         }
       ]
     },
@@ -196,7 +196,7 @@ export default {
           request_headers: [
             ['Cache-Control', 'no-cache']
           ],
-          expected_type: 'etag_validate'
+          expected_type: 'etag_validated'
         }
       ]
     },
