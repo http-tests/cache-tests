@@ -41,26 +41,48 @@
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": true,
   "304-lm-use-stored-Test-Header": true,
-  "age-parse-dup-0": true,
-  "age-parse-dup-0-twoline": true,
-  "age-parse-dup-old": true,
-  "age-parse-dup-old-twoline": [
+  "age-parse-dup-0": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "age-parse-float": true,
-  "age-parse-negative": true,
-  "age-parse-nonnumeric": true,
-  "age-parse-numeric-parameter": true,
-  "age-parse-numeric-parameter-under": true,
-  "age-parse-parameter": true,
+  "age-parse-dup-0-twoline": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "age-parse-dup-old": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "age-parse-float": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "age-parse-negative": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "age-parse-nonnumeric": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "age-parse-numeric-parameter": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "age-parse-parameter": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "age-parse-prefix": true,
-  "age-parse-prefix-twoline": true,
-  "age-parse-suffix": true,
-  "age-parse-suffix-twoline": [
+  "age-parse-prefix-twoline": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
+  "age-parse-suffix": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "age-parse-suffix-twoline": true,
   "cc-resp-must-revalidate-fresh": true,
   "cc-resp-must-revalidate-stale": true,
   "cc-resp-no-cache": true,
@@ -79,8 +101,14 @@
   "ccreq-min-fresh": true,
   "ccreq-min-fresh-age": true,
   "ccreq-no-cache": true,
-  "ccreq-no-cache-etag": true,
-  "ccreq-no-cache-lm": true,
+  "ccreq-no-cache-etag": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
+  "ccreq-no-cache-lm": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "ccreq-no-store": true,
   "ccreq-oic": true,
   "conditional-304-etag": true,
@@ -285,10 +313,16 @@
     "Response 2 status is 500, not 599"
   ],
   "heuristic-599-not_cached": true,
-  "heuristic-delta-10": true,
+  "heuristic-delta-10": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-delta-1200": true,
   "heuristic-delta-1800": true,
-  "heuristic-delta-30": true,
+  "heuristic-delta-30": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "heuristic-delta-300": true,
   "heuristic-delta-3600": true,
   "heuristic-delta-43200": true,
@@ -348,7 +382,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 29 Sep 2020 07:49:01 GMT\", not \"Tue, 29 Sep 2020 07:48:58 GMT\""
+    "Response 2 header Date is \"Fri, 09 Oct 2020 07:23:13 GMT\", not \"Fri, 09 Oct 2020 07:23:10 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
