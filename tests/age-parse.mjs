@@ -84,7 +84,6 @@ export default
     {
       name: 'HTTP cache should consider a response with a `Age` header with "0," prepended to be stale',
       id: 'age-parse-prefix',
-      kind: 'check',
       depends_on: ['freshness-max-age-age'],
       requests: [
         {
