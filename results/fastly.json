@@ -60,54 +60,46 @@
     "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
   ],
   "304-etag-update-response-X-Test-Header": [
-    "Assertion",
-    "Response 2 header X-Test-Header is \"ADGJMPSVYBEHKNQ\", not \"AEIMQUYCGKOSWAE\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
     "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
-  "age-parse-dup-0": true,
-  "age-parse-dup-0-twoline": true,
+  "age-parse-dup-0": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "age-parse-dup-0-twoline": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "age-parse-dup-old": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "age-parse-dup-old-twoline": [
+  "age-parse-float": true,
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "age-parse-float": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "age-parse-negative": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "age-parse-nonnumeric": true,
-  "age-parse-numeric-parameter": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "age-parse-numeric-parameter-under": true,
-  "age-parse-parameter": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-numeric-parameter": true,
+  "age-parse-parameter": true,
   "age-parse-prefix": true,
-  "age-parse-prefix-twoline": true,
-  "age-parse-suffix": [
+  "age-parse-prefix-twoline": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "age-parse-suffix-twoline": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-suffix": true,
+  "age-parse-suffix-twoline": true,
   "cc-resp-must-revalidate-fresh": true,
-  "cc-resp-must-revalidate-stale": true,
+  "cc-resp-must-revalidate-stale": [
+    "Assertion",
+    "Request 3 should have been conditional, but it was not."
+  ],
   "cc-resp-no-cache": [
     "Assertion",
     "Response 2 comes from cache"
@@ -163,8 +155,14 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "ccreq-no-cache-etag": true,
-  "ccreq-no-cache-lm": true,
+  "ccreq-no-cache-etag": [
+    "Assertion",
+    "request 2 wasn't sent to server"
+  ],
+  "ccreq-no-cache-lm": [
+    "Assertion",
+    "request 2 wasn't sent to server"
+  ],
   "ccreq-no-store": [
     "Assertion",
     "Response 2 comes from cache"
@@ -519,7 +517,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 29 Sep 2020 08:04:39 GMT\", not \"Tue, 29 Sep 2020 08:04:36 GMT\""
+    "Response 2 header Date is \"Fri, 09 Oct 2020 07:28:47 GMT\", not \"Fri, 09 Oct 2020 07:28:43 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
