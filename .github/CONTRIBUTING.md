@@ -63,8 +63,8 @@ Possible members of a request object:
 - `expected_type` - One of:
   - `cached`: The response is served from cache
   - `not_cached`: The response is not served from cache; it comes from the origin
-  - `lm_validate`: The response comes from cache, but was validated on the origin with Last-Modified
-  - `etag_validate`: The response comes from cache, but was validated on the origin with an ETag
+  - `lm_validated`: The response comes from cache, but was validated on the origin with Last-Modified
+  - `etag_validated`: The response comes from cache, but was validated on the origin with an ETag
 - `expected_status` - A numeric HTTP status code; checked on the client.
                     If not set, the value of `response_status[0]` will be used; if that
                     is not set, 200 will be used.
