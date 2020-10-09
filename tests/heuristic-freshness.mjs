@@ -47,7 +47,7 @@ function checkStatus (status) {
   [false, 201, 'Created'],
   [false, 202, 'Accepted'],
   [true, 203, 'Non-Authoritative Information'],
-  [true, 204, 'No Content', ''],
+  [true, 204, 'No Content', null],
   [false, 403, 'Forbidden'],
   [true, 404, 'Not Found'],
   [true, 405, 'Method Not Allowed'],
@@ -72,7 +72,7 @@ function checkHeuristic (delta) {
         ['Date', 0]
       ],
       setup: true,
-      pause: true
+      pause_after: true
     },
     {
       expected_type: 'cached'
