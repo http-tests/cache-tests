@@ -93,3 +93,51 @@ input.select {
   -moz-osx-font-smoothing: grayscale;
   margin: 0 10px;
 }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  height: 70vh;
+  transform: translate(-50%, -50%);
+  background-color: #fafafa;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+.modal-open {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.modal-exit {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  outline: none;
+  appearance: none;
+  color: red;
+  background: none;
+  border: 0px;
+  font-weight: bold;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal ul {
+  list-style-type: disc;
+}
+
+.modal pre {
+  border: 1px solid #aaa;
+  background-color: #ddd;
+  padding: 0.5em 1em;
+  width: auto;
+}

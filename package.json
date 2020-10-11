@@ -9,11 +9,7 @@
     "node": ">=14.8.0"
   },
   "dependencies": {
-    "ajv": "^6.12.5",
-    "font-awesome": "^4.7.0",
-    "http-server": "^0.12.1",
-    "jsonschema": "^1.2.10",
-    "marked": "^0.8.2",
+    "liquidjs": "^9.16.1",
     "node-fetch": "^2.2.0"
   },
   "scripts": {
@@ -35,6 +31,9 @@
     "url": "https://github.com/mnot/cdn-tests.git"
   },
   "devDependencies": {
+    "ajv": "^6.12.5",
+    "font-awesome": "^4.7.0",
+    "marked": "^0.8.2",
     "standard": "^14.3.4"
   }
 }
