@@ -8,6 +8,10 @@ body {
   margin: 2em 4em;
 }
 
+h1 {
+  line-height: 1.2em;
+}
+
 table {
   border-spacing: 0;
 }
@@ -108,7 +112,8 @@ input.select {
   align-items: center;
   justify-content: center;
   padding: 2em;
-  border: 1px solid #ccc;
+  border: 2px solid #aaa;
+  border-radius: 0.5em;
   overflow-y: auto;
 }
 .modal-open {
@@ -136,7 +141,6 @@ input.select {
 }
 
 .modal pre {
-  border: 1px solid #aaa;
   background-color: #ddd;
   padding: 0.5em 1em;
   width: auto;
