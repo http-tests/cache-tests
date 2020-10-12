@@ -165,6 +165,7 @@
   "freshness-expires-invalid": true,
   "freshness-expires-invalid-1-digit-hour": true,
   "freshness-expires-invalid-2-digit-year": true,
+  "freshness-expires-invalid-aest": true,
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": true,
   "freshness-expires-invalid-multiple-lines": true,
@@ -276,7 +277,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/22f82d32-d2da-4b6d-a64b-5609c63bc7eb failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/9a4d4f37-cd9c-4902-91ca-74e946fe3614 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -416,6 +417,11 @@
   "other-age-gen": true,
   "other-age-update-expires": true,
   "other-age-update-max-age": true,
+  "other-authorization": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "other-authorization-public": true,
   "other-cookie": true,
   "other-date-update": true,
   "other-fresh-content-disposition-attachment": true,

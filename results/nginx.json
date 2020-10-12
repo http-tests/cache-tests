@@ -234,6 +234,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "freshness-expires-invalid-aest": true,
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": [
     "Assertion",
@@ -527,10 +528,15 @@
     "Assertion",
     "Response 2 header Age is 30, should be bigger than 32"
   ],
+  "other-authorization": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "other-authorization-public": true,
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 12 Oct 2020 05:37:31 GMT\", not \"Mon, 12 Oct 2020 05:37:28 GMT\""
+    "Response 2 header Date is \"Mon, 12 Oct 2020 06:26:02 GMT\", not \"Mon, 12 Oct 2020 06:25:59 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

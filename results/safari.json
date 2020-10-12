@@ -157,6 +157,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "freshness-expires-invalid-aest": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": true,
   "freshness-expires-invalid-multiple-lines": [
