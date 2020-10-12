@@ -176,6 +176,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "freshness-expires-invalid-multiple-lines": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-multiple-spaces": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -230,6 +234,8 @@
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": true,
+  "freshness-max-age-multiple-directive": true,
+  "freshness-max-age-multiple-line": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",
@@ -386,7 +392,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 12 Oct 2020 05:07:02 GMT\", not \"Mon, 12 Oct 2020 05:06:59 GMT\""
+    "Response 2 header Date is \"Mon, 12 Oct 2020 05:37:04 GMT\", not \"Mon, 12 Oct 2020 05:37:00 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

@@ -159,6 +159,10 @@
   ],
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": true,
+  "freshness-expires-invalid-multiple-lines": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-invalid-multiple-spaces": true,
   "freshness-expires-invalid-no-comma": true,
   "freshness-expires-invalid-time-periods": [
@@ -204,6 +208,8 @@
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": true,
+  "freshness-max-age-multiple-directive": true,
+  "freshness-max-age-multiple-line": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": true,
   "freshness-max-age-s-maxage-private": true,
