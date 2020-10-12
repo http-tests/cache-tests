@@ -35,7 +35,28 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not reuse `Vary` response when request omits variant request header',
+      name: 'HTTP cache must not reuse `Vary` response when stored request omits variant request header',
+      id: 'vary-omit-stored',
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'Foo']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Foo', '1']
+          ],
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not reuse `Vary` response when presented request omits variant request header',
       id: 'vary-omit',
       requests: [
         templates.varySetup({}),
