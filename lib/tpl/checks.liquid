@@ -15,11 +15,11 @@
 {%- render 'header-list' with request.expected_request_headers as headers %}{% endif -%}
 
 {%- if request.expected_status %}
-- The server will check that the status code is `{{ request.expected_status }}` {% if test.setup_tests contains "expected_status" %}{{ setup_prop }}{% endif %}
+- The client will check that the status code is `{{ request.expected_status }}` {% if test.setup_tests contains "expected_status" %}{{ setup_prop }}{% endif %}
 {%- elsif request.response_status %}
-- The server will check that the status code is `{{ request.response_status | join: " " }}`{{ setup_prop }}
+- The client will check that the status code is `{{ request.response_status | join: " " }}`{{ setup_prop }}
 {%- else %}
-- The server will check that the status code is `200 OK`{{ setup_prop }}
+- The client will check that the status code is `200 OK`{{ setup_prop }}
 {%- endif -%}
 
 {%- assign response_headers = request.response_headers | skipHeaders -%}
