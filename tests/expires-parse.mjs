@@ -27,13 +27,51 @@ export default
     },
     {
       name: 'Does HTTP cache reuse a response with an `Expires` that is far in the future?',
-      id: 'freshness-expires-32bit',
+      id: 'freshness-expires-far-future',
       kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
           response_headers: [
             ['Expires', 'Sun 21 Nov 2286 04:46:39 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response with an `Expires` in obsolete RFC 850 format?',
+      id: 'freshness-expires-rfc850',
+      kind: 'check',
+      depends_on: ['freshness-expires-future'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Thursday, 18-Aug-50 02:01:18 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response with an `Expires` in ANSI C\'s asctime() format?',
+      id: 'freshness-expires-ansi-c',
+      kind: 'check',
+      depends_on: ['freshness-expires-future'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Thu Aug  8 02:01:18 2050', false],
             ['Date', 0]
           ],
           setup: true,
