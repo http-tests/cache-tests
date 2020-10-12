@@ -563,6 +563,10 @@
   ],
   "query-args-different": true,
   "query-args-same": true,
+  "stale-close": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "status-200-fresh": true,
   "status-200-stale": true,
   "status-203-fresh": true,

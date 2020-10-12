@@ -444,6 +444,10 @@
   ],
   "query-args-different": true,
   "query-args-same": true,
+  "stale-close": [
+    "TypeError",
+    "The network connection was lost."
+  ],
   "status-200-fresh": true,
   "status-200-stale": true,
   "status-203-fresh": true,

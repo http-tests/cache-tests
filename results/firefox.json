@@ -65,7 +65,10 @@
   ],
   "cc-resp-immutable-stale": true,
   "cc-resp-must-revalidate-fresh": true,
-  "cc-resp-must-revalidate-stale": true,
+  "cc-resp-must-revalidate-stale": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": [
     "Assertion",
@@ -381,6 +384,10 @@
   ],
   "query-args-different": true,
   "query-args-same": true,
+  "stale-close": [
+    "TypeError",
+    "NetworkError when attempting to fetch resource."
+  ],
   "status-200-fresh": true,
   "status-200-stale": true,
   "status-203-fresh": true,
