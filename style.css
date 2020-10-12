@@ -86,6 +86,10 @@ code {
   white-space: nowrap;
 }
 
+pre code {
+  white-space: pre;
+}
+
 @font-face {
   font-family: 'FontAwesome';
   src: url('/asset/fonts/fontawesome-webfont.eot?v=4.7.0');
