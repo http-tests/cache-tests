@@ -142,6 +142,11 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
+  "conditional-etag-vary-headers": true,
+  "conditional-etag-vary-headers-mismatch": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-weak-generate-weak": [
     "Assertion",
     "request 2 doesn't have if-none-match header"

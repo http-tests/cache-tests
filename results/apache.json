@@ -142,6 +142,11 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "conditional-etag-vary-headers": true,
+  "conditional-etag-vary-headers-mismatch": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": [
@@ -402,7 +407,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 12 Oct 2020 07:21:01 GMT\", not \"Mon, 12 Oct 2020 07:20:58 GMT\""
+    "Response 2 header Date is \"Mon, 12 Oct 2020 08:23:08 GMT\", not \"Mon, 12 Oct 2020 08:23:05 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
@@ -525,8 +530,8 @@
     "Response 2 does not come from cache"
   ],
   "surrogate-max-age-cc-max-age-invalid-expires": [
-    "Setup",
-    "PUT config resulted in 502 Proxy Error - server: Apache/2.4.46 (Ubuntu)    "
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "surrogate-max-age-expires": [
     "Assertion",
@@ -558,10 +563,7 @@
     "Response 2 does not come from cache"
   ],
   "surrogate-max-age-space-after-equals": true,
-  "surrogate-max-age-space-before-equals": [
-    "Setup",
-    "PUT config resulted in 502 Proxy Error - server: Apache/2.4.46 (Ubuntu)    "
-  ],
+  "surrogate-max-age-space-before-equals": true,
   "surrogate-no-store": true,
   "surrogate-no-store-cc-fresh": [
     "Assertion",

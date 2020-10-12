@@ -139,6 +139,11 @@
   ],
   "conditional-etag-unquoted-respond-quoted": true,
   "conditional-etag-unquoted-respond-unquoted": true,
+  "conditional-etag-vary-headers": true,
+  "conditional-etag-vary-headers-mismatch": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-weak-generate-weak": [
     "Assertion",
     "Request 2 should have been conditional, but it was not."
@@ -277,7 +282,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/759b714c-cf5b-4bca-bb4f-b4327a045258 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/24c48bef-8607-4877-890d-a473b2454024 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
