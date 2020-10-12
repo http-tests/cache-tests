@@ -39,7 +39,7 @@ The `tests` member is an array of objects, with the following members:
 
 Possible members of a request object:
 
-- `request_method` - A string containing the HTTP method to be used.
+- `request_method` - A string containing the HTTP method to be used. Default `GET`.
 - `request_headers` - An array of `[header_name_string, header_value_string]` arrays to
                     emit in the request.
 - `request_body` - A string to use as the request body.
@@ -52,12 +52,12 @@ Possible members of a request object:
 - `pause_after` - Boolean controlling a 3-second pause after the request completes.
 - `magic_locations` - Boolean; if `true`, the `Location` and `Content-Location` headers will be rewritten to full URLs.
 - `response_status` - A `[number, string]` array containing the HTTP status code
-                    and phrase to return from the origin.
+                    and phrase to return from the origin. Default `200` or `304`.
 - `response_headers` - An array of `[header_name_string, header_value_string]` arrays to
                      emit in the origin response. These values will also be checked like
                      expected_response_headers, unless there is a third value that is
                      `false`.
-- `response_body` - String to send as the response body from the origin. If not set, it will contain
+- `response_body` - String to send as the response body from the origin. Defaults to
                   the test identifier.
 - `check_body` - Whether to check the response body. Default `true`.
 - `expected_type` - One of:
