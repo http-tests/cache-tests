@@ -1,0 +1,70 @@
+# {{ test.name }}
+
+Test ID: `{{ test.id }}`
+
+{% case test.kind %}
+{%- when "optimal" -%}This is an optional test for cache efficiency
+{%- when "check" -%}This is an informational check
+{%- else -%}This is a conformance test
+{%- endcase -%}
+{%- if test.browser_only %} run on browsers only{% endif -%}
+{%- if test.browser_skip %} not run on browsers{% endif -%}
+.
+
+{%- if test.depends_on %} It depends on the following test IDs:
+{%- for dependant in test.depends_on %}
+- `{{ dependant }}`
+{%- endfor %}{% endif %}
+
+{% for request in test.requests -%}
+## Request {{ forloop.index }}
+
+{%- if request.setup == true %}
+
+_This is a setup request; if it fails, we can't perform the test._
+{%- endif -%}
+
+{%- if request.mode or request.credentials or request.cache or request.redirect %}
+
+### Fetch [init](https://fetch.spec.whatwg.org/#requestinit):
+{%- if request.mode %}
+- Mode: {{ request.mode }}
+{%- endif -%}
+{%- if request.credentials %}
+- Credentials: {{ request.credentials }}
+{%- endif -%}
+{%- if request.cache %}
+- Cache: {{ request.cache }}
+{%- endif -%}
+{%- if request.redirect %}
+- Redirect: {{ request.redirect }}
+{%- endif -%}
+{%- endif -%}
+
+{%- if request.method or request.filename or request.query_arg or request.headers or request.body %}
+
+### The client sends a request containing:
+~~~
+{{ request.method | default: 'GET' }} [generated test URL]{% if request.filename %}/{% endif %}{{ request.filename }}{% if request.query_arg %}?{% endif %}{{ request.query_arg }} {{ magic_locations }}
+{% for header in request.request_headers %}{% render 'header-magic' with header as header %}
+{% endfor %}
+{{ request.body }}
+~~~
+{% endif -%}
+
+{%- if request.response_status or request.response_headers or request.response_body %}
+
+### The server sends a response containing:
+~~~
+HTTP/1.1 {{ request.response_status[0] | default: 200 }} {{ request.response_status[1] | default: "OK" }}
+{% for header in request.response_headers %}{% render 'header-magic' with header as header %}
+{% endfor %}
+{{ response_body | default: '[generated response body]' }}
+~~~{% endif -%}
+
+{% render 'checks' with request as request %}
+
+{%- if request.pause_after == true %}
+The client will pause for three seconds after this request.{% endif %}
+
+{% endfor %}
