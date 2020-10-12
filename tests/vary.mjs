@@ -479,6 +479,32 @@ export default {
           expected_type: 'cached'
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache normalise unknown selecting headers by combining lines?',
+      id: 'vary-normalise-combine',
+      kind: 'check',
+      requests: [
+        {
+          request_headers: [
+            ['Foo', '1, 2']
+          ],
+          response_headers: [
+            ['Expires', 5000],
+            ['Last-Modified', -3000],
+            ['Date', 0],
+            ['Vary', 'Foo']
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Foo', '1'],
+            ['Foo', '2']
+          ],
+          expected_type: 'cached'
+        }
+      ]
     }
   ]
 }
