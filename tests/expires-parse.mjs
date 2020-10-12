@@ -159,6 +159,25 @@ export default
       ]
     },
     {
+      name: 'Does HTTP cache reuse a response with an invalid `Expires` (other tz)?',
+      id: 'freshness-expires-invalid-aest',
+      kind: 'check',
+      depends_on: ['freshness-expires-future'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Thu, 18 Aug 2050 02:01:18 AEST', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'Does HTTP cache reuse a response with an invalid `Expires` (two-digit year)?',
       id: 'freshness-expires-invalid-2-digit-year',
       kind: 'check',
