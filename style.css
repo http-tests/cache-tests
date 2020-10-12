@@ -82,6 +82,10 @@ input.select {
   margin-left: 6px;
 }
 
+code {
+  white-space: nowrap;
+}
+
 @font-face {
   font-family: 'FontAwesome';
   src: url('/asset/fonts/fontawesome-webfont.eot?v=4.7.0');
