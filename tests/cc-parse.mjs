@@ -239,6 +239,25 @@ export default
           expected_type: 'cached'
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response with an invalid `Cache-Control: max-age` (multiple)',
+      id: 'freshness-max-age-multiple',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600', false],
+            ['Cache-Control', 'max-age=1800', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
     }
   ]
 }
