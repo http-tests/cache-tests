@@ -7,6 +7,44 @@ export default
   description: 'These tests check how implementations parse the `Expires` response header. They are not conformance tests because error handling is not clearly specified; rather, they are being used to gather information as input to spec revisions. See also the [specification for Expires](https://httpwg.org/specs/rfc7234.html#header.expires).',
   tests: [
     {
+      name: 'Does HTTP cache reuse a response with an `Expires` that is exactly 32 bits?',
+      id: 'freshness-expires-32bit',
+      kind: 'check',
+      depends_on: ['freshness-expires-future'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Tue 19 Jan 2038 14:14:08 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response with an `Expires` that is far in the future?',
+      id: 'freshness-expires-32bit',
+      kind: 'check',
+      depends_on: ['freshness-expires-future'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Sun 21 Nov 2286 04:46:39 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'Does HTTP cache reuse a response with an `Expires` using wrong case (weekday)?',
       id: 'freshness-expires-wrong-case-weekday',
       kind: 'check',
