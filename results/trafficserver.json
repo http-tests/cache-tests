@@ -156,8 +156,11 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
+  "freshness-expires-32bit": true,
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
+  "freshness-expires-ansi-c": true,
+  "freshness-expires-far-future": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
   "freshness-expires-invalid-1-digit-hour": true,
@@ -177,6 +180,7 @@
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,
+  "freshness-expires-rfc850": true,
   "freshness-expires-wrong-case-month": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -269,7 +273,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/70102717-1497-46d3-9583-4beceaf9e9db failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/b80b5840-fcad-46ac-a4f2-afb16b1fed48 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,

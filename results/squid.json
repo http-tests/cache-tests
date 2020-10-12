@@ -159,11 +159,14 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
+  "freshness-expires-32bit": true,
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
   ],
   "freshness-expires-age-slow-date": true,
+  "freshness-expires-ansi-c": true,
+  "freshness-expires-far-future": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
   "freshness-expires-invalid-1-digit-hour": [
@@ -189,6 +192,7 @@
   ],
   "freshness-expires-past": true,
   "freshness-expires-present": true,
+  "freshness-expires-rfc850": true,
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": [
     "Assertion",

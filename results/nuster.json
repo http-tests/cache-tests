@@ -267,8 +267,20 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "freshness-expires-32bit": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
+  "freshness-expires-ansi-c": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-expires-far-future": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-future": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -309,6 +321,10 @@
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,
+  "freshness-expires-rfc850": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-wrong-case-month": [
     "Assertion",
     "Response 2 does not come from cache"
