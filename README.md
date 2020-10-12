@@ -14,11 +14,12 @@ including browsers, proxy caches and CDNs. Its public results are available at
 - [Running the Test Server](#running-the-test-server)
 - [Testing Reverse Proxies and CDNs](#testing-reverse-proxies-and-cdns)
   - [Testing from the Command Line](#testing-from-the-command-line)
+  - [Testing with Docker](#testing-with-docker)
 - [Testing Browser Caches](#testing-browser-caches)
 - [Interpreting the Results](#interpreting-the-results)
   - [Test Results FAQ](#test-results-faq)
 - [Getting your results onto cache-tests.fyi](#getting-your-results-onto-cache-testsfyi)
-- [Test Format](#test-format)
+- [Creating new tests](#creating-new-tests)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
