@@ -41,7 +41,7 @@ _This is a setup request; if it fails, we can't perform the test._
 {%- endif -%}
 {%- endif -%}
 
-{%- if request.method or request.filename or request.query_arg or request.headers or request.body %}
+{%- if request.method or request.filename or request.query_arg or request.request_headers or request.body %}
 
 ### The client sends a request containing:
 ~~~
