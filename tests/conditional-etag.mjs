@@ -320,6 +320,62 @@ export default {
       ]
     },
     {
+      name: 'HTTP cache must include stored response headers identified by `Vary` in a conditional request it generates',
+      id: 'conditional-etag-vary-headers',
+      requests: [
+        {
+          request_headers: [
+            ['Abc', '123']
+          ],
+          response_headers: [
+            ['Expires', 1],
+            ['ETag', '"abcdef"'],
+            ['Date', 0],
+            ['Vary', 'Abc']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          request_headers: [
+            ['Abc', '123']
+          ],
+          expected_type: 'etag_validated',
+          expected_request_headers: [
+            ['Abc', '123']
+          ],
+          setup_tests: ['expected_type']
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache create a conditional request when header identified by `Vary` mismatch?',
+      id: 'conditional-etag-vary-headers-mismatch',
+      kind: 'check',
+      depends_on: ['conditional-etag-vary-headers'],
+      requests: [
+        {
+          request_headers: [
+            ['Abc', '123']
+          ],
+          response_headers: [
+            ['Expires', 1],
+            ['ETag', '"abcdef"'],
+            ['Date', 0],
+            ['Vary', 'Abc']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          request_headers: [
+            ['Abc', '456']
+          ],
+          expected_type: 'etag_validated'
+        }
+      ]
+    },
+    {
       name: 'An optimal HTTP cache generates a `If-None-Match` request when holding a stale response with a matching strong `ETag`.',
       id: 'conditional-etag-strong-generate',
       kind: 'optimal',
