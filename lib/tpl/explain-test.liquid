@@ -65,6 +65,7 @@ HTTP/1.1 {{ request.response_status[0] | default: 200 }} {{ request.response_sta
 {% render 'checks' with request as request %}
 
 {%- if request.pause_after == true %}
+
 The client will pause for three seconds after this request.{% endif %}
 
 {% endfor %}
