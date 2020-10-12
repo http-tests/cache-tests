@@ -33,8 +33,13 @@
 {%- render 'header-list' with request.expected_response_headers_missing as headers %}{% endif -%}
 
 {%- if request.check_body != false %}
-- The client will check the body.{% endif -%}
+- The client will check the body
+{%- if request.expected_response text -%}
+, expecting: `{{ request.expected_response_text }}` {% if test.setup_tests contains "expected_response_text" %}{{ setup_prop }}{% endif %}
+{%- else -%}
+, expecting the generated response body.
+{%- endif -%}
+{%- endif -%}
 
-{%- if request.expected_response text %}
-- Expected response text: {{ request.expected_response_text }} {% if test.setup_tests contains "expected_response_text" %}{{ setup_prop }}{% endif %}{% endif -%}
+
 
