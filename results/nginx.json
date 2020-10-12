@@ -540,7 +540,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 12 Oct 2020 07:07:43 GMT\", not \"Mon, 12 Oct 2020 07:07:40 GMT\""
+    "Response 2 header Date is \"Mon, 12 Oct 2020 07:21:29 GMT\", not \"Mon, 12 Oct 2020 07:21:26 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -632,6 +632,10 @@
   "status-504-fresh": true,
   "status-504-stale": true,
   "status-599-fresh": true,
+  "status-599-must-understand": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",

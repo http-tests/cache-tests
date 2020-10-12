@@ -402,7 +402,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 12 Oct 2020 07:07:12 GMT\", not \"Mon, 12 Oct 2020 07:07:09 GMT\""
+    "Response 2 header Date is \"Mon, 12 Oct 2020 07:21:01 GMT\", not \"Mon, 12 Oct 2020 07:20:58 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
@@ -497,6 +497,10 @@
     "Setup",
     "Response 2 status is 500, not 599"
   ],
+  "status-599-must-understand": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",
@@ -521,8 +525,8 @@
     "Response 2 does not come from cache"
   ],
   "surrogate-max-age-cc-max-age-invalid-expires": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in 502 Proxy Error - server: Apache/2.4.46 (Ubuntu)    "
   ],
   "surrogate-max-age-expires": [
     "Assertion",
@@ -554,7 +558,10 @@
     "Response 2 does not come from cache"
   ],
   "surrogate-max-age-space-after-equals": true,
-  "surrogate-max-age-space-before-equals": true,
+  "surrogate-max-age-space-before-equals": [
+    "Setup",
+    "PUT config resulted in 502 Proxy Error - server: Apache/2.4.46 (Ubuntu)    "
+  ],
   "surrogate-no-store": true,
   "surrogate-no-store-cc-fresh": [
     "Assertion",

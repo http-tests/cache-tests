@@ -623,6 +623,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "status-599-must-understand": true,
   "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",

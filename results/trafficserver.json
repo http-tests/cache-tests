@@ -277,7 +277,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/058374f0-457e-45c4-b622-3b9dad57132b failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/759b714c-cf5b-4bca-bb4f-b4327a045258 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -512,6 +512,10 @@
   "status-504-fresh": true,
   "status-504-stale": true,
   "status-599-fresh": true,
+  "status-599-must-understand": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",
