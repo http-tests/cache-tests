@@ -110,6 +110,10 @@
                     "description": "Whether to pause for three seconds after the request completes",
                     "type": "boolean"
                   },
+                  "disconnect": {
+                    "description": "Whether to disconnect the client when receiving thsi request",
+                    "type": "boolean"
+                  },
                   "magic_locations": {
                     "description": "Whether to rewrite Location and Content-Location to full URLs",
                     "type": "boolean"

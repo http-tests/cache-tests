@@ -50,6 +50,7 @@ Possible members of a request object:
 - `cache` - The cache string to pass to `fetch()`.
 - `redirect` - The redirect string to pass to `fetch()`.
 - `pause_after` - Boolean controlling a 3-second pause after the request completes.
+- `disconnect` - Close the connection when receiving this request.
 - `magic_locations` - Boolean; if `true`, the `Location` and `Content-Location` headers will be rewritten to full URLs.
 - `response_status` - A `[number, string]` array containing the HTTP status code
                     and phrase to return from the origin. Default `200` or `304`.

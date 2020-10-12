@@ -6,6 +6,7 @@ import ageParse from './age-parse.mjs'
 import pragma from './pragma.mjs'
 import expiresParse from './expires-parse.mjs'
 import expires from './expires-freshness.mjs'
+import stale from './stale.mjs'
 import heuristic from './heuristic-freshness.mjs'
 import methods from './method.mjs'
 import statuses from './status.mjs'
@@ -18,4 +19,4 @@ import invalidation from './invalidation.mjs'
 import partial from './partial.mjs'
 import other from './other.mjs'
 
-export default [ccFreshness, ccParse, ageParse, expires, expiresParse, ccResponse, heuristic, methods, statuses, ccRequest, pragma, vary, varyParse, conditionalEtag, headers, update304, invalidation, partial, other]
+export default [ccFreshness, ccParse, ageParse, expires, expiresParse, ccResponse, stale, heuristic, methods, statuses, ccRequest, pragma, vary, varyParse, conditionalEtag, headers, update304, invalidation, partial, other]

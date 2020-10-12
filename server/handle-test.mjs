@@ -90,7 +90,11 @@ export default function handleTest (pathSegs, request, response) {
   setStash(uuid, serverState)
 
   // Response body generation
-  if (noBodyStatus.has(response.statusCode)) {
+  if ('disconnect' in reqConfig && reqConfig.disconnect) {
+    // disconnect now because we want the state
+    response.socket.destroy()
+    response = 'disconnect'
+  } else if (noBodyStatus.has(response.statusCode)) {
     response.end()
   } else {
     var content = reqConfig.response_body || uuid

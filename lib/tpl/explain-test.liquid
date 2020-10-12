@@ -24,6 +24,12 @@ Test ID: `{{ test.id }}`
 _This is a setup request; if it fails, we can't perform the test._
 {%- endif -%}
 
+{%- if request.disconnect == true %}
+
+The server will disconnect the client when receiving this request.
+{%- endif -%}
+
+
 {%- if request.mode or request.credentials or request.cache or request.redirect %}
 
 ### Fetch [init](https://fetch.spec.whatwg.org/#requestinit):
