@@ -267,6 +267,25 @@ export default
           expected_type: 'cached'
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response with an invalid `Expires` (multiple lines)?',
+      id: 'freshness-expires-invalid-multiple-lines',
+      kind: 'check',
+      depends_on: ['freshness-expires-future'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Thu, 18 Aug 2050 2:01:18 GMT', false],
+            ['Expires', 'Thu, 18 Aug 2050 2:01:19 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
     }
   ]
 }
