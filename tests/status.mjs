@@ -71,6 +71,24 @@ function checkStatus (status) {
   [599, 'Whatever']
 ].forEach(checkStatus)
 
+tests.push({
+  name: 'HTTP cache MUST NOT reuse a fresh response with an unrecognised status code and `Cache-Control: must-understand`',
+  id: 'status-599-must-understand',
+  depends_on: ['status-599-fresh'],
+  requests: [
+    {
+      response_status: [599, 'Whatever'],
+      response_headers: [
+        ['Cache-Control', 'max-age=3600, must-understand']
+      ],
+      setup: true
+    },
+    {
+      expected_type: 'not_cached'
+    }
+  ]
+})
+
 export default {
   name: 'Status Code Cacheability',
   id: 'status',
