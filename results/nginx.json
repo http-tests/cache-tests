@@ -516,6 +516,10 @@
     "Assertion",
     "Response 3 comes from cache"
   ],
+  "method-POST": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "other-age-gen": [
     "Assertion",
     "Response 2 Age header not present."
@@ -536,7 +540,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 12 Oct 2020 06:26:02 GMT\", not \"Mon, 12 Oct 2020 06:25:59 GMT\""
+    "Response 2 header Date is \"Mon, 12 Oct 2020 07:07:43 GMT\", not \"Mon, 12 Oct 2020 07:07:40 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -725,6 +729,7 @@
     "Response 2 does not come from cache"
   ],
   "vary-omit": true,
+  "vary-omit-stored": true,
   "vary-star": true,
   "vary-syntax-empty-star": true,
   "vary-syntax-empty-star-lines": [

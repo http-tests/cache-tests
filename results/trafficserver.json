@@ -277,7 +277,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/9a4d4f37-cd9c-4902-91ca-74e946fe3614 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/058374f0-457e-45c4-b622-3b9dad57132b failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -413,6 +413,10 @@
   "invalidate-PUT-location": [
     "Assertion",
     "Response 3 comes from cache"
+  ],
+  "method-POST": [
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "other-age-gen": true,
   "other-age-update-expires": true,
@@ -596,6 +600,7 @@
   "vary-normalise-lang-space": true,
   "vary-normalise-space": true,
   "vary-omit": true,
+  "vary-omit-stored": true,
   "vary-star": true,
   "vary-syntax-empty-star": [
     "Assertion",

@@ -573,6 +573,10 @@
     "Response 3 does not come from cache"
   ],
   "invalidate-PUT-location": true,
+  "method-POST": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "other-age-gen": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -848,6 +852,7 @@
     "Response 2 does not come from cache"
   ],
   "vary-omit": true,
+  "vary-omit-stored": true,
   "vary-star": true,
   "vary-syntax-empty-star": [
     "Assertion",
