@@ -1,6 +1,6 @@
 
 import { noBodyStatus } from '../lib/defines.mjs'
-import { fixupResponseHeader } from '../lib/header-fixup.mjs'
+import { fixupHeader } from '../lib/header-fixup.mjs'
 import { sendResponse, getHeader, configs, stash, setStash, logRequest, logResponse } from './utils.mjs'
 
 export default function handleTest (pathSegs, request, response) {
@@ -57,7 +57,7 @@ export default function handleTest (pathSegs, request, response) {
   response.setHeader('Server-Now', now, 0)
   response.setHeader('Capability-Seen', request.headers['surrogate-capability'] || '')
   responseHeaders.forEach(header => {
-    header = fixupResponseHeader(header, response.getHeaders(), reqConfig)
+    header = fixupHeader(header, response.getHeaders(), reqConfig)
     if (response.hasHeader(header[0])) {
       var currentVal = response.getHeader(header[0])
       if (typeof currentVal === 'string') {
