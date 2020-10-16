@@ -15,7 +15,7 @@ export function init (idx, reqConfig, prevResp) {
   if ('request_headers' in reqConfig) init.headers = reqConfig.request_headers
   if ('magic_ims' in reqConfig && reqConfig.magic_ims === true) {
     for (let i = 0; i < init.headers.length; i++) {
-      var header = init.headers[0]
+      var header = init.headers[i]
       if (header[0].toLowerCase() === 'if-modified-since') {
         init.headers[i] = fixupHeader(header, prevResp, reqConfig)
       }
