@@ -430,6 +430,26 @@
     "TypeError",
     "Failed to fetch"
   ],
+  "stale-close-must-revalidate": [
+    "TypeError",
+    "Failed to fetch"
+  ],
+  "stale-close-no-cache": [
+    "TypeError",
+    "Failed to fetch"
+  ],
+  "stale-close-proxy-revalidate": [
+    "TypeError",
+    "Failed to fetch"
+  ],
+  "stale-sie-503": [
+    "TypeError",
+    "Failed to fetch"
+  ],
+  "stale-sie-close": [
+    "TypeError",
+    "Failed to fetch"
+  ],
   "stale-warning-become": [
     "TypeError",
     "Failed to fetch"

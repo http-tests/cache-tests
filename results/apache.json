@@ -407,7 +407,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 16 Oct 2020 04:57:54 GMT\", not \"Fri, 16 Oct 2020 04:57:51 GMT\""
+    "Response 2 header Date is \"Fri, 16 Oct 2020 05:23:26 GMT\", not \"Fri, 16 Oct 2020 05:23:23 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
@@ -453,6 +453,17 @@
   "query-args-same": true,
   "stale-503": true,
   "stale-close": true,
+  "stale-close-must-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-no-cache": true,
+  "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-sie-503": true,
+  "stale-sie-close": true,
   "stale-warning-become": true,
   "stale-warning-stored": true,
   "status-200-fresh": true,

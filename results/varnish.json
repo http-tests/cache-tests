@@ -148,10 +148,7 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
     "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
@@ -183,10 +180,7 @@
     "Assertion",
     "Request 2 should have been conditional, but it was not."
   ],
-  "conditional-etag-weak-generate-weak": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
@@ -570,6 +564,26 @@
     "Response 2 does not come from cache"
   ],
   "stale-close": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-must-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-no-cache": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-sie-503": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-sie-close": [
     "Assertion",
     "Response 2 does not come from cache"
   ],

@@ -660,6 +660,26 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "stale-close-must-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-no-cache": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-sie-503": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-sie-close": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "stale-warning-become": [
     "Setup",
     "Response 2 does not come from cache"

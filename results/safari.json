@@ -448,6 +448,26 @@
     "TypeError",
     "The network connection was lost."
   ],
+  "stale-close-must-revalidate": [
+    "TypeError",
+    "The network connection was lost."
+  ],
+  "stale-close-no-cache": [
+    "TypeError",
+    "The network connection was lost."
+  ],
+  "stale-close-proxy-revalidate": [
+    "TypeError",
+    "The network connection was lost."
+  ],
+  "stale-sie-503": [
+    "TypeError",
+    "The network connection was lost."
+  ],
+  "stale-sie-close": [
+    "TypeError",
+    "The network connection was lost."
+  ],
   "stale-warning-become": [
     "TypeError",
     "The network connection was lost."

@@ -385,6 +385,26 @@
     "TypeError",
     "NetworkError when attempting to fetch resource."
   ],
+  "stale-close-must-revalidate": [
+    "TypeError",
+    "NetworkError when attempting to fetch resource."
+  ],
+  "stale-close-no-cache": [
+    "TypeError",
+    "NetworkError when attempting to fetch resource."
+  ],
+  "stale-close-proxy-revalidate": [
+    "TypeError",
+    "NetworkError when attempting to fetch resource."
+  ],
+  "stale-sie-503": [
+    "TypeError",
+    "NetworkError when attempting to fetch resource."
+  ],
+  "stale-sie-close": [
+    "TypeError",
+    "NetworkError when attempting to fetch resource."
+  ],
   "stale-warning-become": [
     "TypeError",
     "NetworkError when attempting to fetch resource."

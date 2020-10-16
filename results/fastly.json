@@ -60,8 +60,8 @@
     "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
   ],
   "304-etag-update-response-X-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Test-Header is \"ADGJMPSVYBEHKNQ\", not \"AEIMQUYCGKOSWAE\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
@@ -96,10 +96,7 @@
   "age-parse-suffix": true,
   "age-parse-suffix-twoline": true,
   "cc-resp-must-revalidate-fresh": true,
-  "cc-resp-must-revalidate-stale": [
-    "Assertion",
-    "Request 3 should have been conditional, but it was not."
-  ],
+  "cc-resp-must-revalidate-stale": true,
   "cc-resp-no-cache": [
     "Assertion",
     "Response 2 comes from cache"
@@ -202,11 +199,20 @@
     "Response 2 status is 200, not 304"
   ],
   "conditional-etag-unquoted-respond-unquoted": true,
+  "conditional-etag-vary-headers": true,
+  "conditional-etag-vary-headers-mismatch": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
   "conditional-etag-weak-respond-omit-slash": true,
+  "freshness-expires-32bit": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -215,10 +221,19 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "freshness-expires-ansi-c": true,
+  "freshness-expires-far-future": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
   "freshness-expires-invalid-1-digit-hour": true,
   "freshness-expires-invalid-2-digit-year": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-expires-invalid-aest": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
@@ -227,6 +242,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "freshness-expires-invalid-multiple-lines": true,
   "freshness-expires-invalid-multiple-spaces": true,
   "freshness-expires-invalid-no-comma": [
     "Assertion",
@@ -246,6 +262,7 @@
   ],
   "freshness-expires-past": true,
   "freshness-expires-present": true,
+  "freshness-expires-rfc850": true,
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": [
     "Assertion",
@@ -289,6 +306,8 @@
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": true,
+  "freshness-max-age-multiple-directive": true,
+  "freshness-max-age-multiple-line": true,
   "freshness-max-age-negative": [
     "Assertion",
     "Response 2 comes from cache"
@@ -508,16 +527,25 @@
     "Assertion",
     "Response 3 comes from cache"
   ],
+  "method-POST": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "other-age-gen": true,
   "other-age-update-expires": [
     "Assertion",
     "Response 2 header Age is 3, should be bigger than 32"
   ],
   "other-age-update-max-age": true,
+  "other-authorization": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "other-authorization-public": true,
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 09 Oct 2020 07:28:47 GMT\", not \"Fri, 09 Oct 2020 07:28:43 GMT\""
+    "Response 2 header Date is \"Fri, 16 Oct 2020 05:27:05 GMT\", not \"Fri, 16 Oct 2020 05:27:02 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -527,10 +555,6 @@
   "other-set-cookie": [
     "Assertion",
     "Response 2 does not come from cache"
-  ],
-  "other-warning": [
-    "Assertion",
-    "Response 2 warning header not present."
   ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
@@ -565,6 +589,42 @@
   ],
   "query-args-different": true,
   "query-args-same": true,
+  "stale-503": [
+    "Setup",
+    "retry"
+  ],
+  "stale-close": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-must-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-no-cache": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-sie-503": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-sie-close": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-warning-become": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "stale-warning-stored": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
   "status-200-fresh": true,
   "status-200-stale": true,
   "status-203-fresh": true,
@@ -642,6 +702,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "status-599-must-understand": true,
   "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",
@@ -718,6 +779,7 @@
     "Response 2 does not come from cache"
   ],
   "vary-omit": true,
+  "vary-omit-stored": true,
   "vary-star": [
     "Assertion",
     "Response 2 comes from cache"

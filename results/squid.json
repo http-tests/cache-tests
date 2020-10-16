@@ -441,6 +441,20 @@
   "query-args-same": true,
   "stale-503": true,
   "stale-close": true,
+  "stale-close-must-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-no-cache": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-sie-503": true,
+  "stale-sie-close": true,
   "stale-warning-become": true,
   "stale-warning-stored": true,
   "status-200-fresh": true,
