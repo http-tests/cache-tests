@@ -1,4 +1,6 @@
 
+import * as templates from '../lib/templates.mjs'
+
 export default
 
 {
@@ -7,17 +9,11 @@ export default
   description: 'These tests check for conformance to stale serving requirements that apply to HTTP caches. ',
   tests: [
     {
-      name: 'Does HTTP cache serve stale content when server closes the connection?',
+      name: 'Does HTTP cache serve stale stored response when server closes the connection?',
       id: 'stale-close',
       kind: 'check',
       requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=2']
-          ],
-          setup: true,
-          pause_after: true
-        },
+        templates.becomeStale({}),
         {
           disconnect: true,
           expected_type: 'cached'
@@ -25,13 +21,44 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache generate a `Warning` header when using stale content?',
-      id: 'other-warning',
+      name: 'Does HTTP cache serve stale stored response when server sends a `503 Service Unavailable`?',
+      id: 'stale-503',
+      kind: 'check',
+      requests: [
+        templates.becomeStale({}),
+        {
+          response_status: [503, 'Service Unavailable'],
+          expected_status: 200,
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache generate a `Warning` header when using a response that was stored already stale?',
+      id: 'stale-warning-stored',
       kind: 'check',
       requests: [
         templates.stale({}),
         {
-          expected_response_headers: ['warning']
+          disconnect: true,
+          expected_type: 'cached',
+          expected_response_headers: ['warning'],
+          setup_tests: ['expected_type']
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache generate a `Warning` header when using a stored response that became stale?',
+      id: 'stale-warning-become',
+      kind: 'check',
+      depends_on: ['stale-close'],
+      requests: [
+        templates.becomeStale({}),
+        {
+          disconnect: true,
+          expected_type: 'cached',
+          expected_response_headers: ['warning'],
+          setup_tests: ['expected_type']
         }
       ]
     }
