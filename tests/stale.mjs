@@ -1,10 +1,30 @@
 
 import * as templates from '../lib/templates.mjs'
 
-export default
+function makeStaleCheckCC (cc) {
+  return {
+    name: `Does HTTP cache serve stale stored response when prohibited by \`Cache-Control: ${cc}\`?`,
+    id: `stale-close-${cc}`,
+    kind: 'check',
+    depends_on: ['stale-close'],
+    requests: [
+      {
+        response_headers: [
+          ['Cache-Control', `max-age=2, ${cc}`]
+        ],
+        setup: true,
+        pause_after: true
+      },
+      {
+        disconnect: true,
+        expected_type: 'cached'
+      }
+    ]
+  }
+}
 
-{
-  name: 'Stale Serving Requirements',
+export default {
+  name: 'Serving Stale',
   id: 'stale',
   description: 'These tests check for conformance to stale serving requirements that apply to HTTP caches. ',
   tests: [
@@ -34,9 +54,49 @@ export default
       ]
     },
     {
+      name: 'Does HTTP cache serve stale stored response when server sends `Cache-Control: stale-if-error` and subsequently closes the connection?',
+      id: 'stale-sie-close',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2, stale-if-error=60']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          disconnect: true,
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache serve stale stored response when server sends `Cache-Control: stale-if-error` and subsequently a `503 Service Unavailable`?',
+      id: 'stale-sie-503',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2, stale-if-error=60']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          disconnect: true,
+          expected_type: 'cached'
+        }
+      ]
+    },
+    makeStaleCheckCC('must-revalidate'),
+    makeStaleCheckCC('proxy-revalidate'),
+    makeStaleCheckCC('no-cache'),
+    {
       name: 'Does HTTP cache generate a `Warning` header when using a response that was stored already stale?',
       id: 'stale-warning-stored',
       kind: 'check',
+      depends_on: ['stale-close'],
       requests: [
         templates.stale({}),
         {
