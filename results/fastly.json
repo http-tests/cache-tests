@@ -14,8 +14,8 @@
   ],
   "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"/foo\", not \"/bar\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Range": [
@@ -177,6 +177,7 @@
     "Assertion",
     "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
   ],
+  "conditional-etag-precedence": true,
   "conditional-etag-quoted-respond-unquoted": [
     "Assertion",
     "Response 2 status is 200, not 304"
@@ -548,7 +549,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 16 Oct 2020 06:25:01 GMT\", not \"Fri, 16 Oct 2020 06:24:58 GMT\""
+    "Response 2 header Date is \"Fri, 16 Oct 2020 08:24:34 GMT\", not \"Fri, 16 Oct 2020 08:24:31 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
