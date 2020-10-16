@@ -100,14 +100,14 @@ There's also a docker image, `mnot/proxy-cache-tests`, that can be used to test 
 
 To run an individual test case, try:
 
-> ./test-docker.sh nginx freshness-none
+> ./test-docker.sh -i freshness-none nginx
 
 
 ## Testing Browser Caches
 
 To test a browser, just point it at `https://{hostname:port}/test-browser.html` after setting up the server.
 
-On OSX, you can use `test-browser.sh` to automate this, somewhat.
+On OSX, you can use `test-browser.sh` to automate this.
 
 
 ## Interpreting the Results

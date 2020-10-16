@@ -5,57 +5,76 @@
 PORT=8000
 DOWNLOADS=~/Downloads
 
+function run {
+  BROWSERS=( "$@" )
+
+  # start test server
+  npm run --silent server --port=$PORT & echo $! > server.PID
+  sleep 2
+
+  for browser in "${BROWSERS[@]}"
+  do
+    test_browser "${browser}"
+  done
+
+  # stop test server
+  kill "$(cat server.PID)" && rm server.PID
+}
+
+
+function test_browser {
+  BROWSER=${1}
+  URL="http://localhost:${PORT}/test-browser.html?auto=1&download=${BROWSER}"
+
+  case ${BROWSER} in
+    safari)
+      BROWSER_CMD="/Applications/Safari.app"
+      ;;
+    firefox)
+      BROWSER_CMD="/Applications/Firefox.app"
+      ;;
+    chrome)
+      BROWSER_CMD="/Applications/Google Chrome.app"
+      ;;
+    *)
+      usage "Browser ${BROWSER} not recognised."
+      return
+      ;;
+  esac
+
+  # remove target file
+  TARGET="${DOWNLOADS}/${BROWSER}.json"
+  rm -f "${TARGET}"
+
+  # run tests
+  open -a "${BROWSER_CMD}" "${URL}"
+
+  # wait for the target to be created
+  i=0
+  while [ ! -f "${TARGET}" ]
+  do
+    sleep 1
+    i=$((i+1))
+    if [ "$i" -gt "60" ] ; then
+      echo "Timeout." >&2
+      break
+    fi
+  done
+
+  sleep 1
+  if [ -f "${TARGET}" ] ; then
+    mv "${TARGET}" results/
+  fi
+
+}
+
 function usage {
-  echo $1
-  echo "Usage: $0 browser-name" >&2
-  exit 1
+  echo "${1}"
+  echo "Usage: $0 [ browser-name ... ]" >&2
 }
 
 if [[ $# -eq 0 ]]; then
-  usage "Please specify a browser."
+  run safari firefox chrome
+else
+  run "$@"
 fi
-
-TARGET="${DOWNLOADS}/${1}.json"
-rm -f "${TARGET}"
-
-URL="http://localhost:${PORT}/test-browser.html?auto=1&download=$1"
-
-case $1 in
-  safari)
-    BROWSER_CMD="/Applications/Safari.app"
-    ;;
-  firefox)
-    BROWSER_CMD="/Applications/Firefox.app"
-    ;;
-  chrome)
-    BROWSER_CMD="/Applications/Google Chrome.app"
-    ;;
-  *)
-    usage "Browser not recognised."
-    ;;
-esac
-
-# start test server
-npm run --silent server --port=$PORT & echo $! > server.PID
-sleep 2
-
-# run tests
-open -a "$BROWSER_CMD" $URL
-
-# stop test server
-i=0
-while [ ! -f "${TARGET}" ]
-do
-  sleep 1
-  i=$((i+1))
-  if [ "$i" -gt "60" ] ; then
-    echo "Timeout." >&2
-    break
-  fi
-done
-
-if [ -f "${TARGET}" ] ; then
-  mv "${TARGET}" results/
-fi
-
-kill `cat server.PID` && rm server.PID
