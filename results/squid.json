@@ -117,6 +117,7 @@
     "Assertion",
     "Request 1 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
+  "conditional-etag-precedence": true,
   "conditional-etag-quoted-respond-unquoted": [
     "Assertion",
     "Response 2 status is 200, not 304"

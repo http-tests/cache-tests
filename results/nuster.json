@@ -207,6 +207,10 @@
     "Assertion",
     "Request 1 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
+  "conditional-etag-precedence": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "conditional-etag-quoted-respond-unquoted": [
     "Assertion",
     "Response 2 does not come from cache"

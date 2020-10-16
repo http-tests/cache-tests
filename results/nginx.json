@@ -180,6 +180,10 @@
     "Assertion",
     "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
   ],
+  "conditional-etag-precedence": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
   "conditional-etag-quoted-respond-unquoted": [
     "Assertion",
     "Response 2 status is 200, not 304"
@@ -273,7 +277,10 @@
     "Response 2 comes from cache"
   ],
   "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-present": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-rfc850": true,
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
@@ -548,7 +555,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 16 Oct 2020 06:22:54 GMT\", not \"Fri, 16 Oct 2020 06:22:51 GMT\""
+    "Response 2 header Date is \"Fri, 16 Oct 2020 08:16:51 GMT\", not \"Fri, 16 Oct 2020 08:16:48 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

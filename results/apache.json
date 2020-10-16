@@ -117,6 +117,7 @@
     "Assertion",
     "Request 1 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
+  "conditional-etag-precedence": true,
   "conditional-etag-quoted-respond-unquoted": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -410,7 +411,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 16 Oct 2020 06:22:30 GMT\", not \"Fri, 16 Oct 2020 06:22:27 GMT\""
+    "Response 2 header Date is \"Fri, 16 Oct 2020 08:17:10 GMT\", not \"Fri, 16 Oct 2020 08:17:07 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
