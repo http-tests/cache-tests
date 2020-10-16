@@ -4,8 +4,8 @@
 
 
 function usage {
-  echo $1
-  echo "Usage: $0 host[:port] [ test-id ]" >&2
+  echo "${1}"
+  echo "Usage: ${0} host[:port] [ test-id ]" >&2
   exit 1
 }
 
@@ -15,7 +15,7 @@ fi
 
 # run tests
 if [[ -z $2 ]]; then
-  npm run --silent cli --base=http://$1
+  npm run --silent cli --base="http://${1}"
 else
-  npm run --silent cli --base=http://$1 --id=$2
+  npm run --silent cli --base="http://${1}" --id="${2}"
 fi
