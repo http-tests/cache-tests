@@ -161,6 +161,9 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "conditional-lm-fresh": true,
+  "conditional-lm-fresh-earlier": true,
+  "conditional-lm-stale": true,
   "freshness-expires-32bit": true,
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
@@ -407,7 +410,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 16 Oct 2020 05:23:26 GMT\", not \"Fri, 16 Oct 2020 05:23:23 GMT\""
+    "Response 2 header Date is \"Fri, 16 Oct 2020 06:22:30 GMT\", not \"Fri, 16 Oct 2020 06:22:27 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
@@ -459,6 +462,10 @@
   ],
   "stale-close-no-cache": true,
   "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-s-maxage=2": [
     "Assertion",
     "Response 2 does not come from cache"
   ],

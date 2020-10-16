@@ -442,6 +442,10 @@
     "TypeError",
     "Failed to fetch"
   ],
+  "stale-close-s-maxage=2": [
+    "TypeError",
+    "Failed to fetch"
+  ],
   "stale-sie-503": [
     "TypeError",
     "Failed to fetch"

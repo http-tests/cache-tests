@@ -185,6 +185,9 @@
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
   "conditional-etag-weak-respond-omit-slash": true,
+  "conditional-lm-fresh": true,
+  "conditional-lm-fresh-earlier": true,
+  "conditional-lm-stale": true,
   "freshness-expires-32bit": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -576,6 +579,10 @@
     "Response 2 does not come from cache"
   ],
   "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-s-maxage=2": [
     "Assertion",
     "Response 2 does not come from cache"
   ],

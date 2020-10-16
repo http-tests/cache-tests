@@ -397,6 +397,10 @@
     "TypeError",
     "NetworkError when attempting to fetch resource."
   ],
+  "stale-close-s-maxage=2": [
+    "TypeError",
+    "NetworkError when attempting to fetch resource."
+  ],
   "stale-sie-503": [
     "TypeError",
     "NetworkError when attempting to fetch resource."

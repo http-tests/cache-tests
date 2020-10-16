@@ -275,6 +275,12 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "conditional-lm-fresh": true,
+  "conditional-lm-fresh-earlier": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-lm-stale": true,
   "freshness-expires-32bit": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -669,6 +675,10 @@
     "Response 2 does not come from cache"
   ],
   "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-s-maxage=2": [
     "Assertion",
     "Response 2 does not come from cache"
   ],

@@ -212,6 +212,12 @@
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
   "conditional-etag-weak-respond-omit-slash": true,
+  "conditional-lm-fresh": true,
+  "conditional-lm-fresh-earlier": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-lm-stale": true,
   "freshness-expires-32bit": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -542,7 +548,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 16 Oct 2020 05:23:50 GMT\", not \"Fri, 16 Oct 2020 05:23:47 GMT\""
+    "Response 2 header Date is \"Fri, 16 Oct 2020 06:22:54 GMT\", not \"Fri, 16 Oct 2020 06:22:51 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -612,6 +618,10 @@
     "Response 2 does not come from cache"
   ],
   "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-close-s-maxage=2": [
     "Assertion",
     "Response 2 does not come from cache"
   ],

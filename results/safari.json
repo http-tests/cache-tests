@@ -460,6 +460,10 @@
     "TypeError",
     "The network connection was lost."
   ],
+  "stale-close-s-maxage=2": [
+    "TypeError",
+    "The network connection was lost."
+  ],
   "stale-sie-503": [
     "TypeError",
     "The network connection was lost."
