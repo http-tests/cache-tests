@@ -69,7 +69,7 @@
                           "$ref": "#/definitions/field-name"
                         },
                         {
-                          "type": "string"
+                          "$ref": "#/definitions/magic-field-value"
                         }
                       ]
                     }
@@ -116,6 +116,10 @@
                   },
                   "magic_locations": {
                     "description": "Whether to rewrite Location and Content-Location to full URLs",
+                    "type": "boolean"
+                  },
+                  "magic_ims": {
+                    "description": "Whether to rewrite If-Modified-Since to a delta from the previous Last-Modified",
                     "type": "boolean"
                   },
                   "response_status": {

@@ -1,7 +1,8 @@
 
 import * as config from './config.mjs'
+import { fixupHeader } from '../lib/header-fixup.mjs'
 
-export function init (idx, reqConfig) {
+export function init (idx, reqConfig, prevResp) {
   var init = {
     headers: []
   }
@@ -12,6 +13,14 @@ export function init (idx, reqConfig) {
   }
   if ('request_method' in reqConfig) init.method = reqConfig.request_method
   if ('request_headers' in reqConfig) init.headers = reqConfig.request_headers
+  if ('magic_ims' in reqConfig && reqConfig.magic_ims === true) {
+    for (let i = 0; i < init.headers.length; i++) {
+      var header = init.headers[0]
+      if (header[0].toLowerCase() === 'if-modified-since') {
+        init.headers[i] = fixupHeader(header, prevResp, reqConfig)
+      }
+    }
+  }
   if ('name' in reqConfig) init.headers.push(['Test-Name', reqConfig.name])
   if ('request_body' in reqConfig) init.body = reqConfig.request_body
   if ('mode' in reqConfig) init.mode = reqConfig.mode

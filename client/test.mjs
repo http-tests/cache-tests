@@ -24,7 +24,11 @@ export function makeCacheTest (test) {
           var reqConfig = requests[idx]
           var reqNum = idx + 1
           var url = clientUtils.makeTestUrl(uuid, reqConfig)
-          var init = fetching.init(idx, reqConfig)
+          var prevRes
+          if (i > 0) {
+            prevRes = Object.fromEntries(responses[i - 1].headers)
+          }
+          var init = fetching.init(idx, reqConfig, prevRes)
           if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
           return config.fetch(url, init)
             .then(response => {
