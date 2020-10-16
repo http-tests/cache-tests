@@ -92,6 +92,7 @@ export default {
     makeStaleCheckCC('must-revalidate'),
     makeStaleCheckCC('proxy-revalidate'),
     makeStaleCheckCC('no-cache'),
+    makeStaleCheckCC('s-maxage=2'),
     {
       name: 'Does HTTP cache generate a `Warning` header when using a response that was stored already stale?',
       id: 'stale-warning-stored',
