@@ -28,7 +28,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache includes the `ETag` in a `304`.',
+      name: 'HTTP cache must include `ETag` in a `304 Not Modified`.',
       id: 'conditional-304-etag',
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
@@ -50,6 +50,32 @@ export default {
           expected_response_headers: [
             ['ETag', '"abcdef"']
           ]
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must give precedence to `If-None-Match` over `If-Modified-Since`',
+      id: 'conditional-etag-precedence',
+      depends_on: ['conditional-etag-strong-respond'],
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 100000],
+            ['Last-Modified', -5000],
+            ['ETag', '"abcdef"'],
+            ['Date', 0]
+          ],
+          setup: true
+        },
+        {
+          request_headers: [
+            ['If-None-Match', '"abcdef"'],
+            ['If-Modified-Since', -1]
+          ],
+          magic_ims: true,
+          expected_type: 'cached',
+          expected_status: 304
         }
       ]
     },
