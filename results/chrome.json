@@ -383,10 +383,6 @@
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
   "other-set-cookie": true,
-  "other-warning": [
-    "Assertion",
-    "Response 2 warning header not present."
-  ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,
@@ -426,7 +422,19 @@
   ],
   "query-args-different": true,
   "query-args-same": true,
+  "stale-503": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "stale-close": [
+    "TypeError",
+    "Failed to fetch"
+  ],
+  "stale-warning-become": [
+    "TypeError",
+    "Failed to fetch"
+  ],
+  "stale-warning-stored": [
     "TypeError",
     "Failed to fetch"
   ],

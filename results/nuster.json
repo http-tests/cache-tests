@@ -610,10 +610,6 @@
     "Response 2 does not come from cache"
   ],
   "other-set-cookie": true,
-  "other-warning": [
-    "Assertion",
-    "Response 2 warning header not present."
-  ],
   "partial-store-complete-reuse-partial": [
     "Assertion",
     "Response 2 status is 200, not 206"
@@ -656,8 +652,20 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "stale-503": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "stale-close": [
     "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-warning-become": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "stale-warning-stored": [
+    "Setup",
     "Response 2 does not come from cache"
   ],
   "status-200-fresh": [

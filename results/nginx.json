@@ -267,7 +267,10 @@
     "Response 2 comes from cache"
   ],
   "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-present": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-rfc850": true,
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
@@ -542,7 +545,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 12 Oct 2020 09:01:28 GMT\", not \"Mon, 12 Oct 2020 09:01:25 GMT\""
+    "Response 2 header Date is \"Fri, 16 Oct 2020 04:58:22 GMT\", not \"Fri, 16 Oct 2020 04:58:19 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -552,10 +555,6 @@
   "other-set-cookie": [
     "Assertion",
     "Response 2 does not come from cache"
-  ],
-  "other-warning": [
-    "Assertion",
-    "Response 2 warning header not present."
   ],
   "partial-store-complete-reuse-partial": [
     "Assertion",
@@ -599,8 +598,20 @@
   ],
   "query-args-different": true,
   "query-args-same": true,
+  "stale-503": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "stale-close": [
     "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-warning-become": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "stale-warning-stored": [
+    "Setup",
     "Response 2 does not come from cache"
   ],
   "status-200-fresh": true,

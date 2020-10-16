@@ -395,10 +395,6 @@
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
   "other-set-cookie": true,
-  "other-warning": [
-    "Assertion",
-    "Response 2 warning header not present."
-  ],
   "partial-store-complete-reuse-partial": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -444,7 +440,19 @@
   ],
   "query-args-different": true,
   "query-args-same": true,
+  "stale-503": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "stale-close": [
+    "TypeError",
+    "The network connection was lost."
+  ],
+  "stale-warning-become": [
+    "TypeError",
+    "The network connection was lost."
+  ],
+  "stale-warning-stored": [
     "TypeError",
     "The network connection was lost."
   ],

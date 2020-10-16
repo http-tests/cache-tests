@@ -148,7 +148,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": true,
+  "conditional-etag-strong-generate": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
     "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
@@ -180,7 +183,10 @@
     "Assertion",
     "Request 2 should have been conditional, but it was not."
   ],
-  "conditional-etag-weak-generate-weak": true,
+  "conditional-etag-weak-generate-weak": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
@@ -526,10 +532,6 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "other-warning": [
-    "Assertion",
-    "Response 2 warning header not present."
-  ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,
@@ -563,8 +565,20 @@
   ],
   "query-args-different": true,
   "query-args-same": true,
+  "stale-503": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "stale-close": [
     "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "stale-warning-become": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "stale-warning-stored": [
+    "Setup",
     "Response 2 does not come from cache"
   ],
   "status-200-fresh": true,

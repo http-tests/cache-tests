@@ -407,15 +407,11 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 12 Oct 2020 09:04:58 GMT\", not \"Mon, 12 Oct 2020 09:04:54 GMT\""
+    "Response 2 header Date is \"Fri, 16 Oct 2020 04:57:54 GMT\", not \"Fri, 16 Oct 2020 04:57:51 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
   "other-set-cookie": true,
-  "other-warning": [
-    "Assertion",
-    "Response 2 warning header not present."
-  ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,
@@ -455,7 +451,10 @@
   ],
   "query-args-different": true,
   "query-args-same": true,
+  "stale-503": true,
   "stale-close": true,
+  "stale-warning-become": true,
+  "stale-warning-stored": true,
   "status-200-fresh": true,
   "status-200-stale": true,
   "status-203-fresh": true,
