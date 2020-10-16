@@ -238,17 +238,6 @@ export default
           expected_type: 'cached'
         }
       ]
-    },
-    {
-      name: 'Does HTTP cache generate a `Warning` header when using stale content?',
-      id: 'other-warning',
-      kind: 'check',
-      requests: [
-        templates.stale({}),
-        {
-          expected_response_headers: ['warning']
-        }
-      ]
     }
   ]
 }
