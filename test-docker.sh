@@ -24,6 +24,8 @@ function run {
     -v "${PWD}/docker/nuster/nuster.cfg:/etc/nuster/nuster.cfg:ro" -dt nuster/nuster:latest \
     > /dev/null
 
+  trap cleanup EXIT
+
   # give docker enough time to start
   sleep 7
 
@@ -31,7 +33,9 @@ function run {
   do
     test_proxy "${proxy}" "${TEST_ID}"
   done
+}
 
+function cleanup {
   # stop docker containers
   docker kill tmp_proxies > /dev/null
   docker rm tmp_proxies > /dev/null
@@ -39,7 +43,8 @@ function run {
   docker rm tmp_nuster > /dev/null
 
   # stop test server
-  kill "$(cat server.PID)" && rm server.PID
+  kill "$(cat server.PID)" > /dev/null 2>&1
+  rm server.PID
 }
 
 function test_proxy {

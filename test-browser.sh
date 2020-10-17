@@ -10,17 +10,20 @@ function run {
 
   # start test server
   npm run --silent server --port=$PORT & echo $! > server.PID
+  trap cleanup EXIT
   sleep 2
 
   for browser in "${BROWSERS[@]}"
   do
     test_browser "${browser}"
   done
-
-  # stop test server
-  kill "$(cat server.PID)" && rm server.PID
 }
 
+function cleanup {
+  # stop test server
+  kill "$(cat server.PID)" > /dev/null 2>&1
+  rm server.PID
+}
 
 function test_browser {
   BROWSER=${1}
