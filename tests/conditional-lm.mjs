@@ -78,6 +78,31 @@ export default {
           expected_status: 304
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache respond to `If-Modified-Since` with a `304` when holding a newer fresh response with no `Last-Modified`?',
+      id: 'conditional-lm-fresh-no-lm',
+      kind: 'check',
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=10000'],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          request_headers: [
+            ['If-Modified-Since', -3000]
+          ],
+          magic_ims: true,
+          expected_type: 'cached',
+          expected_status: 304,
+          setup_tests: ['expected_type']
+        }
+      ]
     }
   ]
 }
