@@ -53,6 +53,7 @@ Possible members of a request object:
 - `disconnect` - Close the connection when receiving this request.
 - `magic_locations` - Boolean; if `true`, the `Location` and `Content-Location` response headers will be rewritten to full URLs.
 - `magic_ims` - Boolean; if `true`, the `If-Modified-Since` request header will be written as a delta against the previous response's `Last-Modified`, instead of `now`.
+- `rfc850date` - Array of header names to use RFC850 format on when magically converting dates.
 - `response_status` - A `[number, string]` array containing the HTTP status code
                     and phrase to return from the origin. Default `200` or `304`.
 - `response_headers` - An array of `[header_name_string, header_value_string]` arrays to

@@ -122,6 +122,15 @@
                     "description": "Whether to rewrite If-Modified-Since to a delta from the previous Last-Modified",
                     "type": "boolean"
                   },
+                  "rfc850date": {
+                    "description": "Header names to use RFC850 format on when converting dates",
+                    "type": "array",
+                    "items": [
+                      {
+                        "$ref": "#/definitions/date-headers"
+                      }
+                    ]
+                  },
                   "response_status": {
                     "description": "HTTP status code and phrase to return from origin",
                     "type": "array",
@@ -369,6 +378,10 @@
       "type": "integer",
       "minimum": 100,
       "maximum": 599
+    },
+    "date-headers": {
+      "type": "string",
+      "enum": ["date", "if-modified-since", "last-modified", "expires"]
     }
   }
 }

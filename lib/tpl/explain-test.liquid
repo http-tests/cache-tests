@@ -68,6 +68,13 @@ HTTP/1.1 {{ request.response_status[0] | default: 200 }} {{ request.response_sta
 {{ response_body | default: '[generated response body]' }}
 ~~~{% endif -%}
 
+{%- if request.rfc850date %}
+All instances of the following headers will be send and checked for being in RFC850 date format:
+{% for header in request.rfc850date %}
+ - `{{ header }}`
+{% endfor %}
+{% endif -%}
+
 {% render 'checks' with request as request %}
 
 {%- if request.pause_after == true %}
