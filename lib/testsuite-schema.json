@@ -195,6 +195,10 @@
                     "type": "string",
                     "enum": ["cached", "not_cached", "lm_validated", "etag_validated"]
                   },
+                  "expected_method": {
+                    "description": "Expected request method received by the server",
+                    "type": "string"
+                  },
                   "expected_status": {
                     "description": "Expected response status received by the client",
                     "$ref": "#/definitions/status-code"
@@ -315,7 +319,7 @@
                     "type": "array",
                     "items": {
                       "type": "string",
-                      "enum": ["expected_type", "expected_status", "expected_response_headers", "expected_response_text", "expected_request_headers"]
+                      "enum": ["expected_type", "expected_method", "expected_status", "expected_response_headers", "expected_response_text", "expected_request_headers"]
                     }
                   }
                 }

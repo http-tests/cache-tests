@@ -68,6 +68,7 @@ Possible members of a request object:
   - `not_cached`: The response is not served from cache; it comes from the origin
   - `lm_validated`: The response comes from cache, but was validated on the origin with Last-Modified
   - `etag_validated`: The response comes from cache, but was validated on the origin with an ETag
+- `expected_method` - A string HTTP method; checked on the server.
 - `expected_status` - A numeric HTTP status code; checked on the client.
                     If not set, the value of `response_status[0]` will be used; if that
                     is not set, 200 will be used.
@@ -85,9 +86,7 @@ Possible members of a request object:
   - `[header_name_string, header_value_string]`: headers to check that the response is either missing, or if they're present, that they do _not_ contain the given value string (evaluated against the whole header value).
 - `expected_response_text` - A string to check the response body against on the client.
 - `setup` - Boolean to indicate whether this is a setup request; failures don't mean the actual test failed.
-- `setup_tests` - Array of values that indicate whether the specified check is part of setup;
-  failures don't mean the actual test failed. One of: `["expected_type", "expected_status",
-  "expected_response_headers", "expected_response_text", "expected_request_headers"]`
+- `setup_tests` - Array of values that indicate whether the specified check is part of setup; failures don't mean the actual test failed. One of: `["expected_type", "expected_method", "expected_status", "expected_response_headers", "expected_response_text", "expected_request_headers"]`
 
 `server.js` stashes an entry containing observed headers for each request it receives. When the
 test fetches have run, this state is retrieved and the expected_* lists are checked, including

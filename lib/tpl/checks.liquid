@@ -10,6 +10,9 @@
 {%- if request.expected_type %}
 - The client will check that this response {% case request.expected_type %}{% when "cached" %}is cached{% when "not_cached" %}is not cached{% when "lm_validated" %}is validated using `Last-Modified`{% when "etag_validated" %}is validated using `ETag`{% endcase %} {% if test.setup_tests contains "expected_type" %}{{ setup_prop }}{% endif %}{% endif -%}
 
+{%- if request.expected_method %}
+- The server will check that the request method is `{{ request.expected_method }}`.{% endif -%}
+
 {%- if request.expected_request_headers.size > 0 %}
 - The server will check that the following request headers (and values, when specified) are present{% if test.setup_tests contains "expected_request_headers" %}{{ setup_prop }}{% endif %}:
 {%- render 'header-list' with request.expected_request_headers as headers %}{% endif -%}

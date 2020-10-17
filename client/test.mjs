@@ -266,5 +266,12 @@ function checkServerRequests (requests, responses, serverState) {
           `Response ${reqNum} header ${header[0]} is "${received}", not "${header[1]}"`)
       })
     }
+    if ('expected_method' in reqConfig) {
+      assert(
+        setupCheck(reqConfig, 'expected_method'),
+        serverRequest.request_method === reqConfig.expected_method,
+        `Request ${reqNum} had method ${serverRequest.request_method}, not ${reqConfig.expected_method}`
+      )
+    }
   }
 }
