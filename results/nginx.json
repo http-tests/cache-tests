@@ -353,6 +353,26 @@
   "freshness-max-age-space-before-equals": true,
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
+  "head-200-freshness-update": [
+    "Assertion",
+    "Request 2 had method GET, not HEAD"
+  ],
+  "head-200-retain": [
+    "Assertion",
+    "Response 2 header Template-A is \"null\", not \"1\""
+  ],
+  "head-200-update": [
+    "Assertion",
+    "Request 2 had method GET, not HEAD"
+  ],
+  "head-410-update": [
+    "Setup",
+    "Response 3 status is 410, not 200"
+  ],
+  "head-writethrough": [
+    "Assertion",
+    "Request 2 had method GET, not HEAD"
+  ],
   "headers-omit-headers-listed-in-Cache-Control-no-cache": [
     "Setup",
     "Response 2 does not come from cache"
@@ -560,7 +580,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Sat, 17 Oct 2020 05:04:49 GMT\", not \"Sat, 17 Oct 2020 05:04:46 GMT\""
+    "Response 2 header Date is \"Sat, 17 Oct 2020 06:37:38 GMT\", not \"Sat, 17 Oct 2020 06:37:35 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

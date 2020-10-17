@@ -1,5 +1,8 @@
 {
-  "304-etag-update-response-Cache-Control": true,
+  "304-etag-update-response-Cache-Control": [
+    "Setup",
+    "Response 1 status is 503, not 200"
+  ],
   "304-etag-update-response-Clear-Site-Data": true,
   "304-etag-update-response-Content-Encoding": [
     "Assertion",
@@ -88,8 +91,8 @@
   "cc-resp-no-store-fresh": true,
   "cc-resp-private-shared": true,
   "ccreq-ma0": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in 503 Backend fetch failed - age: 0    retry-after: 5    server: Varnish    via: 1.1 varnish (Varnish/6.4)    x-varnish: 4947973    "
   ],
   "ccreq-ma1": [
     "Assertion",
@@ -108,8 +111,8 @@
     "Response 2 does not come from cache"
   ],
   "ccreq-min-fresh": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in 503 Backend fetch failed - age: 0    retry-after: 5    server: Varnish    via: 1.1 varnish (Varnish/6.4)    x-varnish: 2392071    "
   ],
   "ccreq-min-fresh-age": [
     "Assertion",
@@ -149,13 +152,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "Request 2 should have been conditional, but it was not."
+    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": [
@@ -326,6 +326,26 @@
   ],
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
+  "head-200-freshness-update": [
+    "Assertion",
+    "Request 2 had method GET, not HEAD"
+  ],
+  "head-200-retain": [
+    "Assertion",
+    "Response 2 header Template-A is \"null\", not \"1\""
+  ],
+  "head-200-update": [
+    "Assertion",
+    "Request 2 had method GET, not HEAD"
+  ],
+  "head-410-update": [
+    "Setup",
+    "Response 3 status is 410, not 200"
+  ],
+  "head-writethrough": [
+    "Assertion",
+    "Request 2 had method GET, not HEAD"
+  ],
   "headers-omit-headers-listed-in-Cache-Control-no-cache": [
     "Setup",
     "Response 2 does not come from cache"
@@ -564,7 +584,10 @@
   "pragma-request-extension": true,
   "pragma-request-no-cache": true,
   "pragma-response-extension": true,
-  "pragma-response-no-cache": true,
+  "pragma-response-no-cache": [
+    "Setup",
+    "PUT config resulted in 503 Backend fetch failed - age: 0    retry-after: 5    server: Varnish    via: 1.1 varnish (Varnish/6.4)    x-varnish: 5931010    "
+  ],
   "pragma-response-no-cache-heuristic": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -666,7 +689,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "status-503-stale": true,
+  "status-503-stale": [
+    "Setup",
+    "PUT config resulted in 503 Backend fetch failed - age: 0    retry-after: 5    server: Varnish    via: 1.1 varnish (Varnish/6.4)    x-varnish: 1376262    "
+  ],
   "status-504-fresh": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -740,8 +766,14 @@
   "surrogate-remove-header": true,
   "vary-2-match": true,
   "vary-2-match-omit": true,
-  "vary-2-no-match": true,
-  "vary-3-match": true,
+  "vary-2-no-match": [
+    "Setup",
+    "PUT config resulted in 503 Backend fetch failed - age: 0    retry-after: 5    server: Varnish    via: 1.1 varnish (Varnish/6.4)    x-varnish: 3047430    "
+  ],
+  "vary-3-match": [
+    "Setup",
+    "PUT config resulted in 503 Backend fetch failed - age: 0    retry-after: 5    server: Varnish    via: 1.1 varnish (Varnish/6.4)    x-varnish: 327697    "
+  ],
   "vary-3-no-match": true,
   "vary-3-omit": true,
   "vary-3-order": true,
@@ -775,9 +807,15 @@
   ],
   "vary-omit": true,
   "vary-omit-stored": true,
-  "vary-star": true,
+  "vary-star": [
+    "Setup",
+    "PUT config resulted in 503 Backend fetch failed - age: 0    retry-after: 5    server: Varnish    via: 1.1 varnish (Varnish/6.4)    x-varnish: 6062082    "
+  ],
   "vary-syntax-empty-star": true,
-  "vary-syntax-empty-star-lines": true,
+  "vary-syntax-empty-star-lines": [
+    "Setup",
+    "PUT config resulted in 503 Backend fetch failed - age: 0    retry-after: 5    server: Varnish    via: 1.1 varnish (Varnish/6.4)    x-varnish: 3145739    "
+  ],
   "vary-syntax-foo-star": true,
   "vary-syntax-star": [
     "Assertion",

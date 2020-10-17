@@ -269,6 +269,23 @@
   "freshness-max-age-space-before-equals": true,
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
+  "head-200-freshness-update": [
+    "Assertion",
+    "Response 3 does not come from cache"
+  ],
+  "head-200-retain": [
+    "Assertion",
+    "Response 2 header Template-A is \"null\", not \"1\""
+  ],
+  "head-200-update": [
+    "Setup",
+    "Response 3 does not come from cache"
+  ],
+  "head-410-update": [
+    "Setup",
+    "Response 3 does not come from cache"
+  ],
+  "head-writethrough": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache-single": true,
   "headers-omit-headers-listed-in-Connection": true,
@@ -416,7 +433,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Sat, 17 Oct 2020 05:05:09 GMT\", not \"Sat, 17 Oct 2020 05:05:06 GMT\""
+    "Response 2 header Date is \"Sat, 17 Oct 2020 06:38:03 GMT\", not \"Sat, 17 Oct 2020 06:38:00 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

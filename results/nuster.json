@@ -443,6 +443,23 @@
   "freshness-max-age-space-before-equals": true,
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
+  "head-200-freshness-update": [
+    "Assertion",
+    "Response 3 does not come from cache"
+  ],
+  "head-200-retain": [
+    "Assertion",
+    "Response 2 header Template-A is \"null\", not \"1\""
+  ],
+  "head-200-update": [
+    "Setup",
+    "Response 3 does not come from cache"
+  ],
+  "head-410-update": [
+    "Setup",
+    "Response 3 does not come from cache"
+  ],
+  "head-writethrough": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache": [
     "Assertion",
     "Response 2 includes unexpected header a: \"1\""
