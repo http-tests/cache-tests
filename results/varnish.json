@@ -149,10 +149,13 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": true,
+  "conditional-etag-strong-generate": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
+    "Request 2 should have been conditional, but it was not."
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": [
@@ -188,6 +191,11 @@
   "conditional-etag-weak-respond-omit-slash": true,
   "conditional-lm-fresh": true,
   "conditional-lm-fresh-earlier": true,
+  "conditional-lm-fresh-no-lm": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-lm-fresh-rfc850": true,
   "conditional-lm-stale": true,
   "freshness-expires-32bit": [
     "Assertion",

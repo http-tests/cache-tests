@@ -221,6 +221,11 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
+  "conditional-lm-fresh-no-lm": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-lm-fresh-rfc850": true,
   "conditional-lm-stale": true,
   "freshness-expires-32bit": [
     "Assertion",
@@ -555,7 +560,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 16 Oct 2020 08:16:51 GMT\", not \"Fri, 16 Oct 2020 08:16:48 GMT\""
+    "Response 2 header Date is \"Sat, 17 Oct 2020 05:04:49 GMT\", not \"Sat, 17 Oct 2020 05:04:46 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

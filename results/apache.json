@@ -164,6 +164,11 @@
   ],
   "conditional-lm-fresh": true,
   "conditional-lm-fresh-earlier": true,
+  "conditional-lm-fresh-no-lm": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "conditional-lm-fresh-rfc850": true,
   "conditional-lm-stale": true,
   "freshness-expires-32bit": true,
   "freshness-expires-age-fast-date": true,
@@ -411,7 +416,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Fri, 16 Oct 2020 08:17:10 GMT\", not \"Fri, 16 Oct 2020 08:17:07 GMT\""
+    "Response 2 header Date is \"Sat, 17 Oct 2020 05:05:09 GMT\", not \"Sat, 17 Oct 2020 05:05:06 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

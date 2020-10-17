@@ -284,6 +284,14 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
+  "conditional-lm-fresh-no-lm": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-lm-fresh-rfc850": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
   "conditional-lm-stale": true,
   "freshness-expires-32bit": [
     "Assertion",
