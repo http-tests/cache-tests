@@ -1,0 +1,14 @@
+
+.adornment {
+  padding-left: 1em;
+}
+
+#resultsFrame {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  left: 0%;
+  height: 40vh;
+  z-index: 500;
+  background-color: white;
+}

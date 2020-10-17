@@ -12,7 +12,15 @@ Each test run gets its own URL, randomized content, and operates independently.
 
 Tests are kept in JavaScript files in `tests/`, each file representing a suite.
 
-A suite is an object with a `name` member, `id` member, a `tests` member, and an optional `description` member that can contain Markdown; e.g.,
+A suite is an object with the following members:
+
+- `name` - A concise description of the suite. Required.
+- `id` - A short, stable identifier for the suite. Required.
+- `description` - A longer description of the suite, can contain Markdown. Optional.
+- `spec_anchors` - An array of strings that represent anchors in the HTTP Caching specification related to this test. Optional.
+- `tests` - see below.
+
+E.g.,
 
 ```javascript
 export default {
