@@ -103,6 +103,33 @@ export default {
           setup_tests: ['expected_type']
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache respond to `If-Modified-Since` with a `304` when holding a newer fresh response when IMS uses an equivalent rfc850 date?',
+      id: 'conditional-lm-fresh-rfc850',
+      kind: 'check',
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=10000'],
+            ['Last-Modified', -3000],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          request_headers: [
+            ['If-Modified-Since', -3000]
+          ],
+          magic_ims: true,
+          rfc850date: ['if-modified-since'],
+          expected_type: 'cached',
+          expected_status: 304,
+          setup_tests: ['expected_type']
+        }
+      ]
     }
   ]
 }
