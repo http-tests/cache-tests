@@ -48,7 +48,7 @@ export default
           expected_method: 'HEAD',
           response_headers: [
             ['Cache-Control', 'max-age=1000']
-          ],
+          ]
         },
         {
           expected_type: 'cached'
@@ -68,7 +68,7 @@ export default
           response_headers: [
             ['Template-A', '2'],
             ['Cache-Control', 'max-age=1000']
-          ],
+          ]
         },
         {
           expected_type: 'cached',
@@ -93,7 +93,7 @@ export default
           response_headers: [
             ['Template-A', '2'],
             ['Cache-Control', 'max-age=1000']
-          ],
+          ]
         },
         {
           expected_type: 'cached',
