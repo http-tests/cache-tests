@@ -69,58 +69,6 @@ function checkStoreHeader (config) {
 
 headerList.forEach(checkStoreHeader)
 
-
-tests.push({
-  name: 'Does `Cache-Control: no-cache` inhibit storing a listed header?',
-  id: 'headers-omit-headers-listed-in-Cache-Control-no-cache-single',
-  kind: 'check',
-  requests: [
-    {
-      response_headers: [
-        ['Cache-Control', 'no-cache="a"'],
-        ['a', '1'],
-        ['b', '2'],
-        ['Cache-Control', 'max-age=3600'],
-        ['Date', 0]
-      ],
-      setup: true,
-      pause_after: true
-    },
-    {
-      expected_type: 'cached',
-      expected_response_headers: [['b', '2']],
-      expected_response_headers_missing: ['a'],
-      setup_tests: ['expected_type']
-    }
-  ]
-})
-
-tests.push({
-  name: 'Does `Cache-Control: no-cache` inhibit storing multiple listed headers?',
-  id: 'headers-omit-headers-listed-in-Cache-Control-no-cache',
-  kind: 'check',
-  requests: [
-    {
-      response_headers: [
-        ['Cache-Control', 'no-cache="a, b"'],
-        ['a', '1'],
-        ['b', '2'],
-        ['c', '3'],
-        ['Cache-Control', 'max-age=3600'],
-        ['Date', 0]
-      ],
-      setup: true,
-      pause_after: true
-    },
-    {
-      expected_type: 'cached',
-      expected_response_headers: [['c', '3']],
-      expected_response_headers_missing: ['a', 'b'],
-      setup_tests: ['expected_type']
-    }
-  ]
-})
-
 export default {
   name: 'Storing Header Fields',
   id: 'headers',
