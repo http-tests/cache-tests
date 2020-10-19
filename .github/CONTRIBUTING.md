@@ -17,7 +17,7 @@ A suite is an object with the following members:
 - `name` - A concise description of the suite. Required.
 - `id` - A short, stable identifier for the suite. Required.
 - `description` - A longer description of the suite, can contain Markdown. Optional.
-- `spec_anchors` - An array of strings that represent anchors in the HTTP Caching specification related to this test. Optional.
+- `spec_anchors` - An array of strings that represent anchors in the HTTP Caching specification related to this suite. Optional.
 - `tests` - see below.
 
 E.g.,
@@ -44,6 +44,7 @@ The `tests` member is an array of objects, with the following members:
 - `browser_only` - if `true`, will not run on non-browser caches. Default `false`.
 - `browser_skip` - if `true, will not run on browser caches. Default `false`.
 - `depends_on` - a list of test IDs that, when one fails, indicates that this test's results are not useful. Currently limited to test IDs in the same suite. Optional.
+- `spec_anchors` - An array of strings that represent anchors in the HTTP Caching specification related to this test. Optional.
 
 Possible members of a request object:
 

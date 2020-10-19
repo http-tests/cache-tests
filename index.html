@@ -31,11 +31,12 @@
         var loc = new URL(window.location)
         var suite = loc.searchParams.get('suite')
         var selected = loc.searchParams.getAll('id')
+        var isFrame = loc.searchParams.get('frame') && true || false
         if (selected.length === 0 && ! suite) {
           summary.showToC(ToC, baseTests)
         }
-        if (suite) {
-          document.querySelectorAll('.noSuite').forEach(e => {e.style.display = 'none'})
+        if (isFrame) {
+          document.querySelectorAll('.noFrame').forEach(e => {e.style.display = 'none'})
         }
         summary.showResults(target, baseTests, results, selected, suite)
         return selected
@@ -55,9 +56,9 @@
     </script>
   </head>
   <body>
-    <h1 class='noSuite'>HTTP Caching Tests</h1>
+    <h1 class='noFrame'>HTTP Caching Tests</h1>
 
-    <p class="warning noSuite">These tests are a work in progress. The reported results may be faulty, and
+    <p class="warning noFrame">These tests are a work in progress. The reported results may be faulty, and
     do not necessarily reflect the true capabilities of each cache. Furthermore, their primary
     purpose is to inform revision of the <a
     href="https://httpwg.org/http-core/draft-ietf-httpbis-cache-latest.html">HTTP caching
@@ -78,16 +79,16 @@
       <span class="key-item"><span class="fa" data-kind="untested"></span>not tested</span>
     </p>
 
-    <ul id="ToC" class="noSuite">
+    <ul id="ToC" class="noFrame">
     </ul>
 
     <form method="GET" id="selectForm">
 
-      <p class="noSuite"><i>
+      <p class="noFrame"><i>
         Click on test names for details of what is sent and checked. Hover over failed tests for the reason why they failed.
       </i></p>
 
-      <p class="noSuite">
+      <p class="noFrame">
         <a href="#" id="select">Select test results to display</a>
       </p>
 

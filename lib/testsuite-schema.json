@@ -54,6 +54,13 @@
               "type": "string",
               "enum": ["required", "optimal", "check"]
             },
+            "spec_anchors": {
+              "description": "Anchors in the HTTP caching spec that this test applies to",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
             "requests": {
               "description": "An array of requests",
               "type": "array",
