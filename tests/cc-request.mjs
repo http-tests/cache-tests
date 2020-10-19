@@ -6,6 +6,7 @@ export default {
   name: 'Cache-Control Request Directives',
   id: 'cc-request',
   description: 'HTTP no longer requires adherence to [request `Cache-Control` directives](https://httpwg.org/specs/rfc7234.html#cache-request-directive) (see [this issue](https://github.com/httpwg/http-core/issues/129)). These tests gather information about whether implementations honour them by default, for further discussion; it would be good if there was consistent behaviour here.',
+  spec_anchors: ['cache-request-directive'],
   tests: [
     {
       name: 'Does HTTP cache honor request `Cache-Control: max-age=0` when it holds a fresh response?',

@@ -27,6 +27,7 @@ export default {
   name: 'Serving Stale',
   id: 'stale',
   description: 'These tests check for conformance to stale serving requirements that apply to HTTP caches. ',
+  spec_anchors: ['serving.stale.responses'],
   tests: [
     {
       name: 'Does HTTP cache serve stale stored response when server closes the connection?',

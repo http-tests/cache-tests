@@ -3,6 +3,7 @@ export default {
   name: 'Conditional Requests: If-None-Match and ETag',
   id: 'conditional-inm',
   description: 'Testing of HTTP [conditional requests](https://httpwg.org/specs/rfc7232.html) using `If-None-Match` and `ETag`.',
+  spec_anchors: ['validation.model'],
   tests: [
     {
       name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag`.',

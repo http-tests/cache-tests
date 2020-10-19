@@ -124,5 +124,6 @@ export default {
   name: 'Storing Headers',
   id: 'headers',
   description: 'These tests examine how caches store headers in responses and check whether they conform to the existing requirements to omit headers, for example around [no-cache](https://httpwg.org/specs/rfc7234.html#cache-response-directive.no-cache). See [this issue](https://github.com/httpwg/http-core/issues/165) for relevant discussion.',
+  spec_anchors: ['storing.fields'],
   tests
 }

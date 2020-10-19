@@ -6,6 +6,7 @@ export default {
   name: 'Vary and Cache Keys',
   id: 'vary',
   description: 'These tests check for conformance and optimal behaviour when calculating a [cache key using Vary] in HTTP.',
+  spec_anchors: ['caching.negotiated.responses'],
   tests: [
     {
       name: 'An optimal HTTP cache reuses a `Vary` response when the request matches',

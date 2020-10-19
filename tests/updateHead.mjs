@@ -7,6 +7,7 @@ export default
   name: 'HEAD updates',
   id: 'updateHEAD',
   description: 'HTTP [specifies](https://httpwg.org/http-core/draft-ietf-httpbis-cache-latest.html#head.effects) that `HEAD` responses should update stored responses under certain conditions.',
+  spec_anchors: ['head.effects'],
   tests: [
     {
       name: 'Does HTTP cache write through a HEAD when stored response is stale?',

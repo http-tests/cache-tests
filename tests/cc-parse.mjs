@@ -5,6 +5,7 @@ export default
   name: 'Cache-Control Parsing',
   id: 'cc-parse',
   description: 'These tests check how implementations parse the `Cache-Control` response header. They are not conformance tests because error handling is not clearly specified; rather, they are being used to gather information as input to spec revisions. See also the [specification for Cache-Control](https://httpwg.org/specs/rfc7234.html#header.cache-control), and [this issue](https://github.com/httpwg/http-core/issues/128) for relevant discussion.',
+  spec_anchors: ['field.cache-control'],
   tests: [
     {
       name: 'Does HTTP cache reuse a response with a quoted `Cache-Control: max-age`?',

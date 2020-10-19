@@ -93,5 +93,6 @@ export default {
   name: 'Status Code Cacheability',
   id: 'status',
   description: 'These tests check to see if a cache will store and reuse various status codes when they have explicit freshness information associated with them. See [this issue](https://github.com/httpwg/http-core/issues/120) for related discussion.',
+  spec_anchors: ['response.cacheability', 'cache-response-directive.must-understand'],
   tests: tests
 }
