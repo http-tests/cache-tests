@@ -109,6 +109,9 @@
   <!-- site name -->
   <xsl:param name="siteName" select="''" />
 
+  <!-- optional banner -->
+  <xsl:param name="banner" select="''" />
+
   <!-- disable built-in ToC -->
   <xsl:variable name="xml2rfc-toc">yes</xsl:variable>
 
@@ -278,6 +281,15 @@
         font: 11pt consolas, monospace;
         font-size-adjust: none;
       }
+      div.banner {
+        background-color: #fee;
+        border: 2px solid #633;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+      }
+      div.banner p {
+        font-size: 1.2em;
+      }
     </style>
     <xsl:if test="$siteCssUrl!=''">
       <link rel="stylesheet" type="text/css" href="{$siteCssUrl}" />
@@ -291,6 +303,12 @@
     <div class="lead">
       <xsl:apply-templates />
     </div>
+    <xsl:if test="$banner!=''">
+      <div class="banner">
+        <p><xsl:value-of select="$banner"/></p>
+      </div>
+    </xsl:if>
+
   </xsl:template>
 
   <xsl:template match="/" mode="toc">
