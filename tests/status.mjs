@@ -75,6 +75,7 @@ tests.push({
   name: 'HTTP cache MUST NOT reuse a fresh response with an unrecognised status code and `Cache-Control: must-understand`',
   id: 'status-599-must-understand',
   depends_on: ['status-599-fresh'],
+  spec_anchors: ['cache-response-directive.must-understand'],
   requests: [
     {
       response_status: [599, 'Whatever'],
@@ -93,6 +94,6 @@ export default {
   name: 'Status Code Cacheability',
   id: 'status',
   description: 'These tests check to see if a cache will store and reuse various status codes when they have explicit freshness information associated with them. See [this issue](https://github.com/httpwg/http-core/issues/120) for related discussion.',
-  spec_anchors: ['response.cacheability', 'cache-response-directive.must-understand'],
+  spec_anchors: ['response.cacheability'],
   tests: tests
 }
