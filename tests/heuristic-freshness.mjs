@@ -12,7 +12,7 @@ function checkStatus (status) {
   }
   var extra = status[4] || ''
   var extraHdr = status[5]
-  var spec_anchors = status[6] || []
+  var specAnchors = status[6] || []
   var expectedType = 'not_cached'
   var desired = 'HTTP cache must not reuse'
   if (succeed === true) {
@@ -30,7 +30,7 @@ function checkStatus (status) {
     name: `${desired} a \`${code} ${phrase}\` response with \`Last-Modified\` based upon heuristic freshness ${extra}`,
     id: `heuristic-${code}-${expectedType}`,
     kind: succeed ? 'optimal' : 'required',
-    spec_anchors: spec_anchors,
+    spec_anchors: specAnchors,
     requests: [{
       response_status: [code, phrase],
       response_headers: responseHeaders,

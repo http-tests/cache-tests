@@ -4,14 +4,14 @@ import * as templates from '../lib/templates.mjs'
 function makeStaleCheckCC (cc, value) {
   return {
     name: `Does HTTP cache serve stale stored response when prohibited by \`Cache-Control: ${cc}\`?`,
-    id: `stale-close-${cc}${value||''}`,
+    id: `stale-close-${cc}${value || ''}`,
     kind: 'check',
     depends_on: ['stale-close'],
     spec_anchors: [`cache-response-directive.${cc}`],
     requests: [
       {
         response_headers: [
-          ['Cache-Control', `max-age=2, ${cc}${value||''}`]
+          ['Cache-Control', `max-age=2, ${cc}${value || ''}`]
         ],
         setup: true,
         pause_after: true
