@@ -1,5 +1,5 @@
 export default {
-  name: 'Partial Content',
+  name: 'Combining Partial Content',
   id: 'partial',
   description: 'These tests check for conformance to requirements regarding partial content (also known as `Range` requests). See the [partial content specification](https://httpwg.org/specs/rfc7233.html) and the [relevant part of the HTTP caching specification](https://httpwg.org/specs/rfc7234.html#combining.responses).',
   spec_anchors: ['combining.responses'],
@@ -201,6 +201,33 @@ export default {
         {
           expected_request_headers: [
             ['range', 'bytes=5-']
+          ]
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must use header fields from the new response',
+      id: 'partial-use-headers',
+      depends_on: ['partial-store-complete-reuse-partial'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600'],
+            ['A', '1']
+          ],
+          response_body: '01234567890',
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Range', 'bytes=0-1']
+          ],
+          expected_type: 'cached',
+          expected_status: 206,
+          expected_response_text: '01',
+          setup_tests: ['expected_type', 'expected_status', 'expected_response_text'],
+          response_headers: [
+            ['A', '2']
           ]
         }
       ]
