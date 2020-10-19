@@ -37,6 +37,7 @@ export default
       kind: 'optimal',
       browser_skip: true,
       depends_on: ['other-authorization'],
+      spec_anchors: ['cache-response-directive.public'],
       requests: [
         {
           request_headers: [

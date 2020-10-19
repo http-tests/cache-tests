@@ -12,6 +12,7 @@ function checkStatus (status) {
   }
   var extra = status[4] || ''
   var extraHdr = status[5]
+  var spec_anchors = status[6] || []
   var expectedType = 'not_cached'
   var desired = 'HTTP cache must not reuse'
   if (succeed === true) {
@@ -29,6 +30,7 @@ function checkStatus (status) {
     name: `${desired} a \`${code} ${phrase}\` response with \`Last-Modified\` based upon heuristic freshness ${extra}`,
     id: `heuristic-${code}-${expectedType}`,
     kind: succeed ? 'optimal' : 'required',
+    spec_anchors: spec_anchors,
     requests: [{
       response_status: [code, phrase],
       response_headers: responseHeaders,
@@ -57,8 +59,8 @@ function checkStatus (status) {
   [false, 502, 'Bad Gateway'],
   [false, 503, 'Service Unavailable'],
   [false, 504, 'Gateway Timeout'],
-  [false, 599, 'Unknown', undefined, 'when `Cache-Control: public` is not present'],
-  [true, 599, 'Unknown', undefined, 'when `Cache-Control: public` is present', ['Cache-Control', 'public']]
+  [false, 599, 'Unknown', undefined, 'when `Cache-Control: public` is not present', undefined, ['cache-response-directive.public']],
+  [true, 599, 'Unknown', undefined, 'when `Cache-Control: public` is present', ['Cache-Control', 'public'], ['cache-response-directive.public']]
 ].forEach(checkStatus)
 
 function checkHeuristic (delta) {

@@ -12,6 +12,7 @@ export default {
       name: 'Does HTTP cache honor request `Cache-Control: max-age=0` when it holds a fresh response?',
       id: 'ccreq-ma0',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.max-age'],
       requests: [
         templates.fresh({
           pause_after: true,
@@ -29,6 +30,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: max-age=1` when it holds a fresh response?',
       id: 'ccreq-ma1',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.max-age'],
       requests: [
         templates.fresh({
           pause_after: true,
@@ -46,6 +48,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: max-age` when it holds a fresh but `Age`d response that is not fresh enough?',
       id: 'ccreq-magreaterage',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.max-age'],
       requests: [
         {
           response_headers: [
@@ -66,6 +69,7 @@ export default {
       name: 'Does HTTP cache reuse a stale response when request `Cache-Control: max-stale` allows it?',
       id: 'ccreq-max-stale',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.max-stale'],
       requests: [
         {
           response_headers: [
@@ -86,6 +90,7 @@ export default {
       name: 'Does HTTP cache reuse a stale `Age`d response when request `Cache-Control: max-stale` allows it?',
       id: 'ccreq-max-stale-age',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.max-stale'],
       requests: [
         {
           response_headers: [
@@ -106,6 +111,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: min-fresh` when the response it holds is not fresh enough?',
       id: 'ccreq-min-fresh',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.min-fresh'],
       requests: [
         {
           response_headers: [
@@ -125,6 +131,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: min-fresh` when the `Age`d response it holds is not fresh enough?',
       id: 'ccreq-min-fresh-age',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.min-fresh'],
       requests: [
         {
           response_headers: [
@@ -145,6 +152,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: no-cache` when it holds a fresh response?',
       id: 'ccreq-no-cache',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.no-cache'],
       requests: [
         {
           response_headers: [
@@ -164,6 +172,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: no-cache` by validating a response with `Last-Modified`?',
       id: 'ccreq-no-cache-lm',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.no-cache'],
       requests: [
         {
           response_headers: [
@@ -185,6 +194,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: no-cache` by validating a response with an `ETag`?',
       id: 'ccreq-no-cache-etag',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.no-cache'],
       requests: [
         {
           response_headers: [
@@ -205,6 +215,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: no-store` when it holds a fresh response?',
       id: 'ccreq-no-store',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.no-store'],
       requests: [
         {
           response_headers: [
@@ -224,6 +235,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: only-if-cached` by generating a `504` response when it does not have a stored response?',
       id: 'ccreq-oic',
       kind: 'check',
+      spec_anchors: ['cache-request-directive.only-if-cached'],
       requests: [
         {
           request_headers: [

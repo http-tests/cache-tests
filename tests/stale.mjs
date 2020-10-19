@@ -1,16 +1,17 @@
 
 import * as templates from '../lib/templates.mjs'
 
-function makeStaleCheckCC (cc) {
+function makeStaleCheckCC (cc, value) {
   return {
     name: `Does HTTP cache serve stale stored response when prohibited by \`Cache-Control: ${cc}\`?`,
-    id: `stale-close-${cc}`,
+    id: `stale-close-${cc}${value||''}`,
     kind: 'check',
     depends_on: ['stale-close'],
+    spec_anchors: [`cache-response-directive.${cc}`],
     requests: [
       {
         response_headers: [
-          ['Cache-Control', `max-age=2, ${cc}`]
+          ['Cache-Control', `max-age=2, ${cc}${value||''}`]
         ],
         setup: true,
         pause_after: true
@@ -93,7 +94,7 @@ export default {
     makeStaleCheckCC('must-revalidate'),
     makeStaleCheckCC('proxy-revalidate'),
     makeStaleCheckCC('no-cache'),
-    makeStaleCheckCC('s-maxage=2'),
+    makeStaleCheckCC('s-maxage', '=2'),
     {
       name: 'Does HTTP cache generate a `Warning` header when using a response that was stored already stale?',
       id: 'stale-warning-stored',

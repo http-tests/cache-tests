@@ -12,6 +12,7 @@ export default
     {
       name: 'HTTP cache [must generate](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) an [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when using a stored response.',
       id: 'other-age-gen',
+      spec_anchors: ['field.age'],
       requests: [
         {
           response_headers: [
@@ -32,6 +33,7 @@ export default
     {
       name: 'HTTP cache [must update](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) the [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when freshness is based upon `Expires`',
       id: 'other-age-update-expires',
+      spec_anchors: ['field.age'],
       requests: [
         {
           response_headers: [
@@ -53,6 +55,7 @@ export default
     {
       name: 'HTTP cache [must update](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) the [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when freshness is based upon `CC: max-age`',
       id: 'other-age-update-max-age',
+      spec_anchors: ['field.age'],
       requests: [
         {
           response_headers: [
