@@ -23,8 +23,8 @@
 
       var loc = new URL(window.location)
       var isFrame = loc.searchParams.get('frame') && true || false
-      if (isFrame) {
-        document.querySelectorAll('.noFrame').forEach(e => {e.style.display = 'none'})
+      if (! isFrame) {
+        document.querySelectorAll('.noFrame').forEach(e => {e.style.display = 'block'})
       }
 
       baseTests.push(surrogate)

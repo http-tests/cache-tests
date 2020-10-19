@@ -153,3 +153,7 @@ pre code {
   padding: 0.5em 1em;
   width: auto;
 }
+
+.noFrame {
+  display: none;
+}
