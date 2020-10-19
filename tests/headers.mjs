@@ -3,6 +3,32 @@ import headerList from './header-list.mjs'
 
 const tests = []
 
+tests.push({
+  name: '`Connection` header must inhibit a HTTP cache from storing listed headers',
+  id: 'headers-omit-headers-listed-in-Connection',
+  kind: 'required',
+  requests: [
+    {
+      response_headers: [
+        ['Connection', 'a, b', false],
+        ['a', '1', false],
+        ['b', '2', false],
+        ['c', '3', false],
+        ['Cache-Control', 'max-age=3600'],
+        ['Date', 0]
+      ],
+      setup: true,
+      pause_after: true
+    },
+    {
+      expected_type: 'cached',
+      expected_response_headers: [['c', '3']],
+      expected_response_headers_missing: ['a', 'b'],
+      setup_tests: ['expected_type']
+    }
+  ]
+})
+
 function checkStoreHeader (config) {
   const id = `store-${config.name}`
   const value = 'valB' in config ? config.valB : utils.httpContent(`${config.name}-store-value`)
@@ -43,31 +69,6 @@ function checkStoreHeader (config) {
 
 headerList.forEach(checkStoreHeader)
 
-tests.push({
-  name: '`Connection` header must inhibit a HTTP cache from storing listed headers',
-  id: 'headers-omit-headers-listed-in-Connection',
-  kind: 'required',
-  requests: [
-    {
-      response_headers: [
-        ['Connection', 'a, b', false],
-        ['a', '1', false],
-        ['b', '2', false],
-        ['c', '3', false],
-        ['Cache-Control', 'max-age=3600'],
-        ['Date', 0]
-      ],
-      setup: true,
-      pause_after: true
-    },
-    {
-      expected_type: 'cached',
-      expected_response_headers: [['c', '3']],
-      expected_response_headers_missing: ['a', 'b'],
-      setup_tests: ['expected_type']
-    }
-  ]
-})
 
 tests.push({
   name: 'Does `Cache-Control: no-cache` inhibit storing a listed header?',
@@ -121,7 +122,7 @@ tests.push({
 })
 
 export default {
-  name: 'Storing Headers',
+  name: 'Storing Header Fields',
   id: 'headers',
   description: 'These tests examine how caches store headers in responses and check whether they conform to the existing requirements to omit headers, for example around [no-cache](https://httpwg.org/specs/rfc7234.html#cache-response-directive.no-cache). See [this issue](https://github.com/httpwg/http-core/issues/165) for relevant discussion.',
   spec_anchors: ['storing.fields'],
