@@ -59,7 +59,7 @@ function adornSpecSection(anchor, target, name) {
 function showSuite(suite_id) {
   var iframeNode = document.createElement('iframe')
   iframeNode.id = 'resultsFrame'
-  iframeNode.setAttribute("src", `/index.html?suite=${suite_id}&frame`)
+  iframeNode.setAttribute("src", `/index.html?suite=${suite_id}&frame=1`)
   document.body.appendChild(iframeNode)
 }
 
@@ -67,7 +67,7 @@ function showTests(test_ids) {
   var iframeNode = document.createElement('iframe')
   iframeNode.id = 'resultsFrame'
   var query = test_ids.map(id => `id=${id}`).join("&")
-  iframeNode.setAttribute("src", `/index.html?${query}&frame`)
+  iframeNode.setAttribute("src", `/index.html?${query}&frame=1`)
   document.body.appendChild(iframeNode)
 }
 
