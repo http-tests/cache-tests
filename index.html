@@ -21,6 +21,12 @@
       import baseTests from './tests/index.mjs'
       import surrogate from './tests/surrogate-control.mjs'
 
+      var loc = new URL(window.location)
+      var isFrame = loc.searchParams.get('frame') && true || false
+      if (isFrame) {
+        document.querySelectorAll('.noFrame').forEach(e => {e.style.display = 'none'})
+      }
+
       baseTests.push(surrogate)
       var ToC = document.getElementById('ToC')
       var target = document.getElementById('target')
@@ -28,15 +34,10 @@
 
       display.showKey(key)
       summary.loadResults(index).then(results => {
-        var loc = new URL(window.location)
         var suite = loc.searchParams.get('suite')
         var selected = loc.searchParams.getAll('id')
-        var isFrame = loc.searchParams.get('frame') && true || false
-        if (selected.length === 0 && ! suite) {
+        if (selected.length === 0) {
           summary.showToC(ToC, baseTests)
-        }
-        if (isFrame) {
-          document.querySelectorAll('.noFrame').forEach(e => {e.style.display = 'none'})
         }
         summary.showResults(target, baseTests, results, selected, suite)
         return selected
