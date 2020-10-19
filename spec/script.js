@@ -29,6 +29,7 @@ function adornSpecSection(anchor, suite_id, suite_name) {
   wrapper.addEventListener('click', function (event) {
     event.preventDefault()
     showSuite(suite_id)
+    this.scrollIntoView(true)
   })
   headerNode.appendChild(wrapper)
 
