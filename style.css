@@ -78,6 +78,18 @@ th.category a {
   display: none;
 }
 
+#key {
+  position: fixed;
+  bottom: 0;
+  width: 80vw;
+  left: 10vw;
+  background-color: white;
+  margin-bottom: 0;
+  padding: 10px;
+  border: 1px solid #999;
+  border-bottom: none;
+}
+
 input.select {
   margin-left: 6px;
 }
