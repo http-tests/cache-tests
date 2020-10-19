@@ -65,7 +65,10 @@
   ],
   "cc-resp-immutable-stale": true,
   "cc-resp-must-revalidate-fresh": true,
-  "cc-resp-must-revalidate-stale": true,
+  "cc-resp-must-revalidate-stale": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
   "cc-resp-no-cache": true,
   "cc-resp-no-cache-case-insensitive": [
     "Assertion",
@@ -379,6 +382,14 @@
   ],
   "partial-store-partial-reuse-partial-suffix": [
     "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "partial-use-headers": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "partial-use-stored-headers": [
+    "Setup",
     "Response 2 does not come from cache"
   ],
   "pragma-request-extension": true,

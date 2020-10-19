@@ -441,6 +441,14 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "partial-use-headers": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
+  "partial-use-stored-headers": [
+    "Setup",
+    "Response 2 does not come from cache"
+  ],
   "pragma-request-extension": true,
   "pragma-request-no-cache": [
     "Assertion",
