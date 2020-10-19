@@ -73,7 +73,7 @@ headerList.forEach(checkStoreHeader)
 tests.push({
   name: 'Does `Cache-Control: no-cache` inhibit storing a listed header?',
   id: 'headers-omit-headers-listed-in-Cache-Control-no-cache-single',
-  kind: 'required',
+  kind: 'check',
   requests: [
     {
       response_headers: [
@@ -98,7 +98,7 @@ tests.push({
 tests.push({
   name: 'Does `Cache-Control: no-cache` inhibit storing multiple listed headers?',
   id: 'headers-omit-headers-listed-in-Cache-Control-no-cache',
-  kind: 'required',
+  kind: 'check',
   requests: [
     {
       response_headers: [
