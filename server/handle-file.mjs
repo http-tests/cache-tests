@@ -10,12 +10,16 @@ export default function handleFile (url, request, response) {
   var urlPath = path.normalize(url.pathname)
   if (urlPath === '/') urlPath = '/index.html'
   var filename = path.join(process.cwd(), urlPath)
-  if (!fs.existsSync(filename)) {
+  var stat
+  try {
+    stat = fs.statSync(filename)
+  } catch {}
+  if (!stat || !stat.isFile()) {
     sendResponse(response, 404, `${urlPath} Not Found`)
     return
   }
   var mimeType = mimeTypes[path.extname(filename).split('.')[1]] || 'application/octet-stream'
-  response.writeHead(200, { 'Content-Type': mimeType })
   var fileStream = fs.createReadStream(filename)
+  response.writeHead(200, { 'Content-Type': mimeType })
   fileStream.pipe(response)
 }
