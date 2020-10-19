@@ -231,6 +231,34 @@ export default {
           ]
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache preserve unupdated header fields from the stored response?',
+      id: 'partial-use-stored-headers',
+      kind: 'check',
+      depends_on: ['partial-store-complete-reuse-partial'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600'],
+            ['A', '1']
+          ],
+          response_body: '01234567890',
+          setup: true
+        },
+        {
+          request_headers: [
+            ['Range', 'bytes=0-1']
+          ],
+          expected_type: 'cached',
+          expected_status: 206,
+          expected_response_text: '01',
+          setup_tests: ['expected_type', 'expected_status', 'expected_response_text'],
+          expected_response_headers: [
+            ['A', '1']
+          ]
+        }
+      ]
     }
   ]
 }
