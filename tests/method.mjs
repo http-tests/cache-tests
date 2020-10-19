@@ -5,6 +5,7 @@ export default
   name: 'Method-related Caching Requirements',
   id: 'method',
   description: 'These tests check for conformance to method-related requirements that apply to HTTP caches. ',
+  spec_anchors: ['response.cacheability'],
   tests: [
     {
       name: 'An optimal HTTP cache reuses a stored `POST` response (that has `Content-Location` with the same URL and explicit freshness) for subsequent `GET` requests',
