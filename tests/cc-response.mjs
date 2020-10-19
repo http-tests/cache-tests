@@ -11,6 +11,7 @@ export default
       name: 'Shared HTTP cache must not store a response with `Cache-Control: private`',
       id: 'cc-resp-private-shared',
       browser_skip: true,
+      spec_anchors: ['cache-response-directive.private'],
       requests: [
         {
           response_headers: [
@@ -28,6 +29,7 @@ export default
       id: 'cc-resp-private-private',
       browser_only: true,
       kind: 'optimal',
+      spec_anchors: ['cache-response-directive.private'],
       requests: [
         {
           response_headers: [
@@ -43,6 +45,7 @@ export default
     {
       name: 'HTTP cache must not store a response with `Cache-Control: no-store`',
       id: 'cc-resp-no-store',
+      spec_anchors: ['cache-response-directive.no-store'],
       requests: [
         {
           response_headers: [
@@ -59,6 +62,7 @@ export default
       name: 'HTTP cache must not store a response with `Cache-Control: nO-StOrE`',
       id: 'cc-resp-no-store-case-insensitive',
       depends_on: ['cc-resp-no-store'],
+      spec_anchors: ['cache-response-directive.no-store'],
       requests: [
         {
           response_headers: [
@@ -75,6 +79,7 @@ export default
       name: 'HTTP cache must not store a response with `Cache-Control: no-store`, even with `max-age` and `Expires`',
       id: 'cc-resp-no-store-fresh',
       depends_on: ['cc-resp-no-store'],
+      spec_anchors: ['cache-response-directive.no-store'],
       requests: [
         {
           response_headers: [
@@ -92,6 +97,7 @@ export default
     {
       name: 'HTTP cache must not use a cached response with `Cache-Control: no-cache`, even with `max-age` and `Expires`',
       id: 'cc-resp-no-cache',
+      spec_anchors: ['cache-response-directive.no-cache'],
       requests: [
         {
           response_headers: [
@@ -110,6 +116,7 @@ export default
       name: 'HTTP cache must not use a cached response with `Cache-Control: No-CaChE`, even with `max-age` and `Expires`',
       id: 'cc-resp-no-cache-case-insensitive',
       depends_on: ['cc-resp-no-cache'],
+      spec_anchors: ['cache-response-directive.no-cache'],
       requests: [
         {
           response_headers: [
@@ -129,6 +136,7 @@ export default
       id: 'cc-resp-no-cache-revalidate',
       kind: 'optimal',
       depends_on: ['cc-resp-no-cache'],
+      spec_anchors: ['cache-response-directive.no-cache'],
       requests: [
         {
           response_headers: [
@@ -147,6 +155,7 @@ export default
       id: 'cc-resp-no-cache-revalidate-fresh',
       kind: 'optimal',
       depends_on: ['cc-resp-no-cache'],
+      spec_anchors: ['cache-response-directive.no-cache'],
       requests: [
         {
           response_headers: [
@@ -166,6 +175,7 @@ export default
       name: 'Does `Cache-Control: no-cache` inhibit storing a listed header?',
       id: 'headers-omit-headers-listed-in-Cache-Control-no-cache-single',
       kind: 'check',
+      spec_anchors: ['cache-response-directive.no-cache'],
       requests: [
         {
           response_headers: [
@@ -190,6 +200,7 @@ export default
       name: 'Does `Cache-Control: no-cache` inhibit storing multiple listed headers?',
       id: 'headers-omit-headers-listed-in-Cache-Control-no-cache',
       kind: 'check',
+      spec_anchors: ['cache-response-directive.no-cache'],
       requests: [
         {
           response_headers: [
@@ -216,6 +227,7 @@ export default
       id: 'cc-resp-must-revalidate-fresh',
       kind: 'optimal',
       depends_on: ['freshness-none'],
+      spec_anchors: ['cache-response-directive.must-revalidate'],
       requests: [
         {
           response_headers: [
@@ -233,6 +245,7 @@ export default
       name: 'HTTP cache must revalidate a stale response with positive `Cache-Control: max-age, must-revalidate`',
       id: 'cc-resp-must-revalidate-stale',
       depends_on: ['freshness-none'],
+      spec_anchors: ['cache-response-directive.must-revalidate'],
       requests: [
         {
           response_headers: [
