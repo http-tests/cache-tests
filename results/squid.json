@@ -420,7 +420,15 @@
     "Setup",
     "Request 1 header Authorization is \"undefined\", not \"FOO\""
   ],
+  "other-authorization-must-revalidate": [
+    "Setup",
+    "Request 1 header Authorization is \"undefined\", not \"FOO\""
+  ],
   "other-authorization-public": [
+    "Setup",
+    "Request 1 header Authorization is \"undefined\", not \"FOO\""
+  ],
+  "other-authorization-smaxage": [
     "Setup",
     "Request 1 header Authorization is \"undefined\", not \"FOO\""
   ],
@@ -452,6 +460,8 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "partial-use-headers": true,
+  "partial-use-stored-headers": true,
   "pragma-request-extension": true,
   "pragma-request-no-cache": [
     "Assertion",

@@ -633,7 +633,9 @@
     "Response 2 header Age is 30, should be bigger than 32"
   ],
   "other-authorization": true,
+  "other-authorization-must-revalidate": true,
   "other-authorization-public": true,
+  "other-authorization-smaxage": true,
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
@@ -673,6 +675,14 @@
   "partial-store-partial-reuse-partial-suffix": [
     "Assertion",
     "Response body is \"01234\", not \"4\""
+  ],
+  "partial-use-headers": [
+    "Setup",
+    "Response 2 status is 200, not 206"
+  ],
+  "partial-use-stored-headers": [
+    "Setup",
+    "Response 2 status is 200, not 206"
   ],
   "pragma-request-extension": true,
   "pragma-request-no-cache": true,

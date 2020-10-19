@@ -426,14 +426,22 @@
   "other-age-update-expires": true,
   "other-age-update-max-age": true,
   "other-authorization": true,
+  "other-authorization-must-revalidate": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "other-authorization-public": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "other-authorization-smaxage": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Sat, 17 Oct 2020 06:38:03 GMT\", not \"Sat, 17 Oct 2020 06:38:00 GMT\""
+    "Response 2 header Date is \"Mon, 19 Oct 2020 04:31:35 GMT\", not \"Mon, 19 Oct 2020 04:31:32 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
@@ -461,6 +469,8 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "partial-use-headers": true,
+  "partial-use-stored-headers": true,
   "pragma-request-extension": true,
   "pragma-request-no-cache": [
     "Assertion",

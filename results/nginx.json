@@ -576,11 +576,13 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "other-authorization-must-revalidate": true,
   "other-authorization-public": true,
+  "other-authorization-smaxage": true,
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Sat, 17 Oct 2020 06:37:38 GMT\", not \"Sat, 17 Oct 2020 06:37:35 GMT\""
+    "Response 2 header Date is \"Mon, 19 Oct 2020 04:49:31 GMT\", not \"Mon, 19 Oct 2020 04:49:28 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -622,6 +624,14 @@
   "partial-store-partial-reuse-partial-suffix": [
     "Assertion",
     "Response body is \"01234\", not \"4\""
+  ],
+  "partial-use-headers": [
+    "Setup",
+    "Response 2 status is 200, not 206"
+  ],
+  "partial-use-stored-headers": [
+    "Setup",
+    "Response 2 status is 200, not 206"
   ],
   "pragma-request-extension": true,
   "pragma-request-no-cache": true,
