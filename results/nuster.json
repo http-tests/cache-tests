@@ -435,10 +435,7 @@
     "Response 2 does not come from cache"
   ],
   "freshness-max-age-s-maxage-shared-shorter-expires": true,
-  "freshness-max-age-single-quoted": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-max-age-single-quoted": true,
   "freshness-max-age-space-after-equals": true,
   "freshness-max-age-space-before-equals": true,
   "freshness-none": true,
@@ -707,19 +704,19 @@
   ],
   "stale-close-must-revalidate": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
   "stale-close-no-cache": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
   "stale-close-proxy-revalidate": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
   "stale-close-s-maxage=2": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
   "stale-sie-503": [
     "Assertion",
@@ -947,32 +944,11 @@
   "vary-omit": true,
   "vary-omit-stored": true,
   "vary-star": true,
-  "vary-syntax-empty-star": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-empty-star-lines": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-foo-star": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-star": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-star-foo": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-star-star": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-star-star-lines": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ]
+  "vary-syntax-empty-star": true,
+  "vary-syntax-empty-star-lines": true,
+  "vary-syntax-foo-star": true,
+  "vary-syntax-star": true,
+  "vary-syntax-star-foo": true,
+  "vary-syntax-star-star": true,
+  "vary-syntax-star-star-lines": true
 }

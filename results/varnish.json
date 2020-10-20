@@ -152,7 +152,7 @@
   "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
+    "Request 2 should have been conditional, but it was not."
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": [
@@ -176,12 +176,18 @@
     "Response 2 status is 200, not 304"
   ],
   "conditional-etag-unquoted-respond-unquoted": true,
-  "conditional-etag-vary-headers": true,
+  "conditional-etag-vary-headers": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-vary-headers-mismatch": [
     "Assertion",
     "Request 2 should have been conditional, but it was not."
   ],
-  "conditional-etag-weak-generate-weak": true,
+  "conditional-etag-weak-generate-weak": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,
@@ -309,10 +315,7 @@
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
   "freshness-max-age-s-maxage-shared-shorter-expires": true,
-  "freshness-max-age-single-quoted": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-max-age-single-quoted": true,
   "freshness-max-age-space-after-equals": [
     "Assertion",
     "Response 2 comes from cache"
@@ -608,19 +611,19 @@
   ],
   "stale-close-must-revalidate": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
   "stale-close-no-cache": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
   "stale-close-proxy-revalidate": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
   "stale-close-s-maxage=2": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
   "stale-sie-503": [
     "Assertion",
@@ -803,14 +806,29 @@
   "vary-omit": true,
   "vary-omit-stored": true,
   "vary-star": true,
-  "vary-syntax-empty-star": true,
-  "vary-syntax-empty-star-lines": true,
-  "vary-syntax-foo-star": true,
-  "vary-syntax-star": [
+  "vary-syntax-empty-star": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "vary-syntax-star-foo": true,
-  "vary-syntax-star-star": true,
-  "vary-syntax-star-star-lines": true
+  "vary-syntax-empty-star-lines": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-foo-star": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-star": true,
+  "vary-syntax-star-foo": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-star-star": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-star-star-lines": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ]
 }
