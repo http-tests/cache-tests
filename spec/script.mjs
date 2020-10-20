@@ -44,6 +44,15 @@ function adornSpecSection (anchor, ids) {
 }
 
 function showTests (ids) {
+  // modify the spec HTML to make room for the test results
+  const specNode = document.getElementById('top')
+  specNode.classList.add('half')
+  const mainNode = document.querySelector('div[role="main"]')
+  mainNode.classList.remove('col-lg-8')
+  mainNode.classList.add('col-lg-11')
+  const tocNode = document.getElementById('sidebar')
+  tocNode.classList.remove('d-lg-block')
+  tocNode.classList.add('d-none')
   const iframeNode = document.createElement('iframe')
   iframeNode.id = 'resultsFrame'
   const query = ids.map(id => `${id[0]}=${id[1]}`).join('&')
