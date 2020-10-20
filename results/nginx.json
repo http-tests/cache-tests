@@ -282,10 +282,7 @@
     "Response 2 comes from cache"
   ],
   "freshness-expires-past": true,
-  "freshness-expires-present": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-present": true,
   "freshness-expires-rfc850": true,
   "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
@@ -582,7 +579,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 19 Oct 2020 04:49:31 GMT\", not \"Mon, 19 Oct 2020 04:49:28 GMT\""
+    "Response 2 header Date is \"Tue, 20 Oct 2020 00:52:27 GMT\", not \"Tue, 20 Oct 2020 00:52:24 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
