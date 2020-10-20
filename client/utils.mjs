@@ -25,7 +25,7 @@ export function makeTestUrl (uuid, reqConfig) {
 const uninterestingHeaders = new Set(['date', 'expires', 'last-modified', 'content-length', 'content-type', 'connection', 'content-language', 'vary', 'mime-version'])
 
 export function putTestConfig (uuid, requests) {
-  var init = {
+  const init = {
     method: 'PUT',
     headers: [['content-type', 'application/json']],
     body: JSON.stringify(requests)

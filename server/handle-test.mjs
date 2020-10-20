@@ -5,18 +5,18 @@ import { sendResponse, getHeader, configs, stash, setStash, logRequest, logRespo
 
 export default function handleTest (pathSegs, request, response) {
   // identify the desired configuration for this request
-  var uuid = pathSegs[0]
+  const uuid = pathSegs[0]
   if (!uuid) {
     sendResponse(response, 404, `Config Not Found for ${uuid}`)
     return
   }
-  var requests = configs.get(uuid)
+  const requests = configs.get(uuid)
   if (!requests) {
     sendResponse(response, 409, `Requests not found for ${uuid}`)
     return
   }
 
-  var serverState = stash.get(uuid) || []
+  const serverState = stash.get(uuid) || []
   const srvReqNum = serverState.length + 1
   const cliReqNum = parseInt(request.headers['req-num'])
   const reqNum = cliReqNum || srvReqNum
@@ -49,7 +49,7 @@ export default function handleTest (pathSegs, request, response) {
   response.statusPhrase = httpStatus[1]
 
   // header manipulation
-  var responseHeaders = reqConfig.response_headers || []
+  const responseHeaders = reqConfig.response_headers || []
   const savedHeaders = new Map()
   response.setHeader('Server-Base-Url', request.url)
   response.setHeader('Server-Request-Count', srvReqNum)
@@ -59,7 +59,7 @@ export default function handleTest (pathSegs, request, response) {
   responseHeaders.forEach(header => {
     header = fixupHeader(header, response.getHeaders(), reqConfig)
     if (response.hasHeader(header[0])) {
-      var currentVal = response.getHeader(header[0])
+      const currentVal = response.getHeader(header[0])
       if (typeof currentVal === 'string') {
         response.setHeader(header[0], [currentVal, header[1]])
       } else if (Array.isArray(currentVal)) {
@@ -97,7 +97,7 @@ export default function handleTest (pathSegs, request, response) {
   } else if (noBodyStatus.has(response.statusCode)) {
     response.end()
   } else {
-    var content = reqConfig.response_body || uuid
+    const content = reqConfig.response_body || uuid
     response.end(content)
   }
 

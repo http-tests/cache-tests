@@ -9,7 +9,7 @@ import { mimeTypes } from '../lib/defines.mjs'
 export default function handleFile (url, request, response) {
   var urlPath = path.normalize(url.pathname)
   if (urlPath === '/') urlPath = '/index.html'
-  var filename = path.join(process.cwd(), urlPath)
+  const filename = path.join(process.cwd(), urlPath)
   var stat
   try {
     stat = fs.statSync(filename)
@@ -18,8 +18,8 @@ export default function handleFile (url, request, response) {
     sendResponse(response, 404, `${urlPath} Not Found`)
     return
   }
-  var mimeType = mimeTypes[path.extname(filename).split('.')[1]] || 'application/octet-stream'
-  var fileStream = fs.createReadStream(filename)
+  const mimeType = mimeTypes[path.extname(filename).split('.')[1]] || 'application/octet-stream'
+  const fileStream = fs.createReadStream(filename)
   response.writeHead(200, { 'Content-Type': mimeType })
   fileStream.pipe(response)
 }

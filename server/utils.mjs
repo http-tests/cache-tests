@@ -19,14 +19,14 @@ export function getHeader (headers, headerName) {
 }
 
 // stash for server state
-export var stash = new Map()
+export const stash = new Map()
 
 export function setStash (key, value) {
   stash.set(key, value)
 }
 
 // configurations
-export var configs = new Map()
+export const configs = new Map()
 
 export function setConfig (key, value) {
   configs.set(key, value)

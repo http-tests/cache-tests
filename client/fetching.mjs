@@ -3,7 +3,7 @@ import * as config from './config.mjs'
 import { fixupHeader } from '../lib/header-fixup.mjs'
 
 export function init (idx, reqConfig, prevResp) {
-  var init = {
+  const init = {
     headers: []
   }
   if (!config.useBrowserCache) {
@@ -15,7 +15,7 @@ export function init (idx, reqConfig, prevResp) {
   if ('request_headers' in reqConfig) init.headers = reqConfig.request_headers
   if ('magic_ims' in reqConfig && reqConfig.magic_ims === true) {
     for (let i = 0; i < init.headers.length; i++) {
-      var header = init.headers[i]
+      const header = init.headers[i]
       if (header[0].toLowerCase() === 'if-modified-since') {
         init.headers[i] = fixupHeader(header, prevResp, reqConfig)
       }
@@ -33,8 +33,8 @@ export function init (idx, reqConfig, prevResp) {
 }
 
 export function inflateRequests (test) {
-  var rawRequests = test.requests
-  var requests = []
+  const rawRequests = test.requests
+  const requests = []
   for (let i = 0; i < rawRequests.length; i++) {
     var reqConfig = rawRequests[i]
     reqConfig.name = test.name

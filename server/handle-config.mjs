@@ -2,7 +2,7 @@
 import { sendResponse, configs, setConfig } from './utils.mjs'
 
 export default function handleConfig (pathSegs, request, response) {
-  var uuid = pathSegs[0]
+  const uuid = pathSegs[0]
   if (request.method !== 'PUT') {
     sendResponse(response, 405, `${request.method} request to config for ${uuid}`)
     return

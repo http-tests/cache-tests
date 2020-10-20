@@ -2,7 +2,7 @@
 import * as config from './config.mjs'
 import { makeCacheTest, testResults } from './test.mjs'
 
-var testArray = []
+const testArray = []
 
 export function runTests (tests, myFetch, browserCache, base, chunkSize = 100) {
   config.setFetch(myFetch)

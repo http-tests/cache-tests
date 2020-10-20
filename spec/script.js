@@ -5,7 +5,7 @@ import baseTests from '../tests/index.mjs'
 
 
 function populateLinks() {
-  var testAnchors = {}
+  const testAnchors = {}
   baseTests.forEach(suite => {
     if (suite.spec_anchors) {
       suite.spec_anchors.forEach(anchor => {
@@ -16,7 +16,7 @@ function populateLinks() {
       if (test.spec_anchors) {
         test.spec_anchors.forEach(anchor => {
           if (anchor in testAnchors) {
-            var val = testAnchors[anchor]
+            const val = testAnchors[anchor]
             val.push(test.id)
             testAnchors[anchor] = val
           } else {
@@ -26,22 +26,22 @@ function populateLinks() {
       }
     })
   })
-  for (var anchor in testAnchors) {
+  for (const anchor in testAnchors) {
     adornSpecSection(anchor, testAnchors[anchor])
   }
 }
 
 function adornSpecSection(anchor, target, name) {
-  var anchorNode = document.getElementById(anchor)
+  const anchorNode = document.getElementById(anchor)
   if (! anchorNode) {
     console.log(`Anchor ${anchor} not found.`)
     return
   }
-  var headerNode = anchorNode.children[0]
-  var wrapper = document.createElement('span')
+  const headerNode = anchorNode.children[0]
+  const wrapper = document.createElement('span')
   wrapper.classList.add('adornment')
   wrapper.title = name
-  var adornment = document.createTextNode('ℹ️')
+  const adornment = document.createTextNode('ℹ️')
   wrapper.appendChild(adornment)
   wrapper.addEventListener('click', function (event) {
     event.preventDefault()
@@ -57,16 +57,16 @@ function adornSpecSection(anchor, target, name) {
 }
 
 function showSuite(suite_id) {
-  var iframeNode = document.createElement('iframe')
+  const iframeNode = document.createElement('iframe')
   iframeNode.id = 'resultsFrame'
   iframeNode.setAttribute("src", `/index.html?suite=${suite_id}&frame=1`)
   document.body.appendChild(iframeNode)
 }
 
 function showTests(test_ids) {
-  var iframeNode = document.createElement('iframe')
+  const iframeNode = document.createElement('iframe')
   iframeNode.id = 'resultsFrame'
-  var query = test_ids.map(id => `id=${id}`).join("&")
+  const query = test_ids.map(id => `id=${id}`).join("&")
   iframeNode.setAttribute("src", `/index.html?${query}&frame=1`)
   document.body.appendChild(iframeNode)
 }

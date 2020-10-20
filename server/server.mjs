@@ -11,10 +11,10 @@ import handleState from './handle-state.mjs'
 import handleTest from './handle-test.mjs'
 
 function handleMain (request, response) {
-  var url = new URL(request.url, baseUrl)
-  var pathSegs = url.pathname.split('/')
+  const url = new URL(request.url, baseUrl)
+  const pathSegs = url.pathname.split('/')
   pathSegs.shift()
-  var dispatch = pathSegs.shift()
+  const dispatch = pathSegs.shift()
   if (dispatch === 'config') {
     handleConfig(pathSegs, request, response)
   } else if (dispatch === 'test') {
