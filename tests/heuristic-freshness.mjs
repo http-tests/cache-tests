@@ -65,7 +65,7 @@ function checkStatus (status) {
 
 function checkHeuristic (delta) {
   tests.push({
-    name: `Does HTTP cache reuse a response with a \`Last-Modified\` ${delta} seconds ago?`,
+    name: `Does HTTP cache consider a \`Last-Modified\` ${delta} seconds ago heuristically fresh?`,
     id: `heuristic-delta-${delta}`,
     kind: 'check',
     requests: [{

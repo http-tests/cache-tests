@@ -12,7 +12,7 @@ export default
     {
       name: 'HTTP cache [must generate](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) an [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when using a stored response.',
       id: 'other-age-gen',
-      spec_anchors: ['field.age'],
+      spec_anchors: ['field.age', 'constructing.responses.from.caches'],
       requests: [
         {
           response_headers: [

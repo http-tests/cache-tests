@@ -26,9 +26,8 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with a single-quoted `Cache-Control: max-age`?',
+      name: 'HTTP cache must not reuse a response with a single-quoted `Cache-Control: max-age`',
       id: 'freshness-max-age-single-quoted',
-      kind: 'check',
       depends_on: ['freshness-none'],
       requests: [
         {
@@ -39,14 +38,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache ignore the phrase `max-age` in a quoted string (before the "real" `max-age`)?',
+      name: 'HTTP cache must not reuse a response with `max-age` in a quoted string (before the "real" `max-age`)',
       id: 'freshness-max-age-ignore-quoted',
-      kind: 'check',
       depends_on: ['freshness-max-age'],
       requests: [
         {
@@ -62,9 +60,8 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache ignore the phrase `max-age` in a quoted string (after the "real" `max-age`)?',
+      name: 'HTTP cache mut not reuse a response with `max-age` in a quoted string (after the "real" `max-age`)',
       id: 'freshness-max-age-ignore-quoted-rev',
-      kind: 'check',
       depends_on: ['freshness-max-age'],
       requests: [
         {
@@ -80,9 +77,8 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache ignore the phrase `max-age` in a quoted string, even when max-age has a quoted value too?',
+      name: 'HTTP cache must not reuse a response with `max-age` in a quoted string, even when max-age has a quoted value too',
       id: 'freshness-max-age-ignore-quoted-all',
-      kind: 'check',
       depends_on: ['freshness-max-age-quoted'],
       requests: [
         {
@@ -98,9 +94,8 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache ignore the phrase `max-age` in a quoted string, even when previous max-age has a quoted value too?',
+      name: 'HTTP cache must not reuse a response with `max-age` in a quoted string, even when previous max-age has a quoted value too',
       id: 'freshness-max-age-ignore-quoted-all-rev',
-      kind: 'check',
       depends_on: ['freshness-max-age-quoted'],
       requests: [
         {
@@ -116,9 +111,8 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse max-age with `003600` value?',
+      name: 'An optimal HTTP cache reuses max-age with the value `003600`',
       id: 'freshness-max-age-leading-zero',
-      kind: 'check',
       depends_on: ['freshness-none'],
       requests: [
         {

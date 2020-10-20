@@ -431,9 +431,9 @@ export default {
       ]
     },
     {
-      name: 'Does HTTP cache select `Content-Language` by using the qvalue on `Accept-Language`?',
+      name: 'An optimal HTTP cache selects `Content-Language` by using the qvalue on `Accept-Language`',
       id: 'vary-normalise-lang-select',
-      kind: 'check',
+      kind: 'optimal',
       requests: [
         {
           request_headers: [
@@ -457,9 +457,9 @@ export default {
       ]
     },
     {
-      name: 'Does HTTP cache normalise unknown selecting headers by removing whitespace?',
+      name: 'An optimal HTTP cache normalises unknown selecting headers by removing whitespace',
       id: 'vary-normalise-space',
-      kind: 'check',
+      kind: 'optimal',
       requests: [
         {
           request_headers: [

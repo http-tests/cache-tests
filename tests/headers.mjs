@@ -24,7 +24,7 @@ tests.push({
       expected_type: 'cached',
       expected_response_headers: [['c', '3']],
       expected_response_headers_missing: ['a', 'b'],
-      setup_tests: ['expected_type']
+      setup_tests: ['expected_type', 'expected_response_headers']
     }
   ]
 })

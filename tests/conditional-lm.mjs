@@ -81,9 +81,9 @@ export default {
       ]
     },
     {
-      name: 'Does HTTP cache respond to `If-Modified-Since` with a `304` when holding a newer fresh response with no `Last-Modified`?',
+      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a newer fresh response with no `Last-Modified`',
       id: 'conditional-lm-fresh-no-lm',
-      kind: 'check',
+      kind: 'optimal',
       browser_skip: true,
       requests: [
         {
@@ -106,9 +106,9 @@ export default {
       ]
     },
     {
-      name: 'Does HTTP cache respond to `If-Modified-Since` with a `304` when holding a newer fresh response when IMS uses an equivalent rfc850 date?',
+      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a newer fresh response when IMS uses an equivalent rfc850 date',
       id: 'conditional-lm-fresh-rfc850',
-      kind: 'check',
+      kind: 'optimal',
       browser_skip: true,
       requests: [
         {

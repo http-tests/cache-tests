@@ -6,9 +6,8 @@ export default {
   spec_anchors: ['caching.negotiated.responses'],
   tests: [
     {
-      name: 'Does HTTP cache reuse `Vary` response with a value of `*`?',
+      name: 'HTTP cache must not reuse `Vary` response with a value of `*`',
       id: 'vary-syntax-star',
-      kind: 'check',
       requests: [
         {
           request_headers: [
@@ -28,14 +27,13 @@ export default {
             ['Foo', '1'],
             ['Baz', '789']
           ],
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse `Vary` response with a value of `*, *`?',
+      name: 'HTTP cache must not reuse `Vary` response with a value of `*, *`',
       id: 'vary-syntax-star-star',
-      kind: 'check',
       requests: [
         {
           request_headers: [
@@ -55,14 +53,13 @@ export default {
             ['Foo', '1'],
             ['Baz', '789']
           ],
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse `Vary` response with a value of `*, *` on different lines?',
+      name: 'HTTP cache must not reuse `Vary` response with a value of `*, *` on different lines',
       id: 'vary-syntax-star-star-lines',
-      kind: 'check',
       requests: [
         {
           request_headers: [
@@ -83,14 +80,13 @@ export default {
             ['Foo', '1'],
             ['Baz', '789']
           ],
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse `Vary` response with a value of `, *`?',
+      name: 'HTTP cache must not reuse `Vary` response with a value of `, *`',
       id: 'vary-syntax-empty-star',
-      kind: 'check',
       requests: [
         {
           request_headers: [
@@ -110,14 +106,13 @@ export default {
             ['Foo', '1'],
             ['Baz', '789']
           ],
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse `Vary` response with a value of `, *` on different lines?',
+      name: 'HTTP cache must not reuse `Vary` response with a value of `, *` on different lines',
       id: 'vary-syntax-empty-star-lines',
-      kind: 'check',
       requests: [
         {
           request_headers: [
@@ -138,14 +133,13 @@ export default {
             ['Foo', '1'],
             ['Baz', '789']
           ],
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse `Vary` response with a value of `*, Foo`?',
+      name: 'HTTP cache must not reuse `Vary` response with a value of `*, Foo`',
       id: 'vary-syntax-star-foo',
-      kind: 'check',
       requests: [
         {
           request_headers: [
@@ -165,14 +159,13 @@ export default {
             ['Foo', '1'],
             ['Baz', '789']
           ],
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse `Vary` response with a value of `Foo, *`?',
+      name: 'HTTP cache must not reuse `Vary` response with a value of `Foo, *`',
       id: 'vary-syntax-foo-star',
-      kind: 'check',
       requests: [
         {
           request_headers: [
@@ -192,7 +185,7 @@ export default {
             ['Foo', '1'],
             ['Baz', '789']
           ],
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     }

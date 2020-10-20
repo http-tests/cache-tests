@@ -3,9 +3,8 @@ import * as templates from '../lib/templates.mjs'
 
 function makeStaleCheckCC (cc, value) {
   return {
-    name: `Does HTTP cache serve stale stored response when prohibited by \`Cache-Control: ${cc}\`?`,
+    name: `HTTP cache must not serve stale stored response when prohibited by \`Cache-Control: ${cc}\`?`,
     id: `stale-close-${cc}${value || ''}`,
-    kind: 'check',
     depends_on: ['stale-close'],
     spec_anchors: [`cache-response-directive.${cc}`],
     requests: [
@@ -18,7 +17,7 @@ function makeStaleCheckCC (cc, value) {
       },
       {
         disconnect: true,
-        expected_type: 'cached'
+        expected_type: 'not_cached'
       }
     ]
   }
