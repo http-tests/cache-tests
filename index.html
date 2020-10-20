@@ -21,37 +21,36 @@
       import baseTests from './tests/index.mjs'
       import surrogate from './tests/surrogate-control.mjs'
 
-      var loc = new URL(window.location)
-      var isFrame = loc.searchParams.get('frame') && true || false
+      const loc = new URL(window.location)
+      const suiteIds = loc.searchParams.getAll('suite')
+      const testIds = loc.searchParams.getAll('id')
+      const isFrame = loc.searchParams.get('frame') && true || false
+      const isDefault = testIds.length === 0 && suiteIds.length === 0
+
       if (! isFrame) {
         document.querySelectorAll('.noFrame').forEach(e => {e.style.display = 'block'})
       }
 
       baseTests.push(surrogate)
-      var ToC = document.getElementById('ToC')
-      var target = document.getElementById('target')
-      var key = document.getElementById('key')
+      const ToC = document.getElementById('ToC')
+      const target = document.getElementById('target')
+      const key = document.getElementById('key')
 
       display.showKey(key)
-      summary.loadResults(index).then(results => {
-        var suite = loc.searchParams.get('suite')
-        var selected = loc.searchParams.getAll('id')
-        if (selected.length === 0) {
+      summary.loadResults(index)
+      .then(results => {
+        if (isDefault) {
           summary.showToC(ToC, baseTests)
         }
-        summary.showResults(target, baseTests, results, selected, suite)
-        return selected
-      }).then(function (selected) {
+        summary.showResults(target, baseTests, results, testIds, suiteIds)
+      })
+      .then(() => {
         if (window.location.hash !== "") {
-          var fragId = window.location.hash.substring(1)
+          const fragId = window.location.hash.substring(1)
           document.getElementById(fragId).scrollIntoView()
         }
-        return selected
-      }).then(function (selected) {
-        if (selected.length === 0) {
+        if (! isFrame) {
           summary.selectClickListen()
-        } else {
-          summary.selectClearShow()
         }
       })
     </script>
