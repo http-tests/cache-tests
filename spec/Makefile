@@ -2,7 +2,7 @@ saxpath ?= "lib/saxon9.jar"
 saxon ?= java -classpath $(saxpath) net.sf.saxon.Transform -l
 themedir ?= ../../../httpwg-theme
 saxparam ?= bootstrapCssUrl='/spec/bootstrap.min.css' \
-						siteJsUrl='/spec/script.js' \
+						siteJsUrl='/spec/script.mjs' \
 						siteCssUrl='/spec/style.css' \
 						banner='This copy of the specification has test results interspersed throughout; click on ℹ️ to see them.'
 stylesheet := lib/rfcbootstrap.xslt

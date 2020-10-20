@@ -17,8 +17,8 @@
     "cli": "node --no-warnings cli.mjs",
     "export": "node --no-warnings export.mjs",
     "validate": "node --no-warnings export.mjs validate",
-    "lint": "standard *.mjs client/*.mjs server/*.mjs lib/*.mjs tests/*.mjs",
-    "fix": "standard --fix *.mjs client/*.mjs server/*.mjs lib/*.mjs tests/*.mjs"
+    "lint": "standard *.mjs client/*.mjs server/*.mjs lib/*.mjs tests/*.mjs spec/*.mjs",
+    "fix": "standard --fix *.mjs client/*.mjs server/*.mjs lib/*.mjs tests/*.mjs spec/*.mjs"
   },
   "config": {
     "protocol": "http",
