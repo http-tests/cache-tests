@@ -5,7 +5,7 @@ import * as utils from '../lib/utils.mjs'
 export default {
   name: 'Vary and Cache Keys',
   id: 'vary',
-  description: 'These tests check for conformance and optimal behaviour when calculating a [cache key using Vary] in HTTP.',
+  description: 'These tests check how caches calculate a cache key using `Vary`.',
   spec_anchors: ['caching.negotiated.responses'],
   tests: [
     {

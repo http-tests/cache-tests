@@ -3,7 +3,7 @@ export default
 {
   name: 'Age Parsing',
   id: 'age-parse',
-  description: 'These tests check how implementations parse the [`Age` response header](https://httpwg.org/http-core/draft-ietf-httpbis-cache-latest.html#field.age). They are not conformance tests because error handling is not clearly specified; rather, they are being used to gather information as input to spec revisions.',
+  description: 'These tests check how implementations parse the `Age` response header.',
   spec_anchors: ['field.age', 'expiration.model'],
   tests: [
     {

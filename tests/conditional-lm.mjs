@@ -2,7 +2,7 @@
 export default {
   name: 'Conditional Requests: If-Modified-Since and Last-Modified',
   id: 'conditional-lm',
-  description: 'Testing of HTTP [conditional requests](https://httpwg.org/specs/rfc7232.html) using `If-Modified-Since` and `Last-Modified`.',
+  description: 'These tests check handling of conditional requests using `If-Modified-Since` and `Last-Modified`.',
   spec_anchors: ['validation.model'],
   tests: [
     {

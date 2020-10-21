@@ -4,7 +4,7 @@ export default
 {
   name: 'Expires Parsing',
   id: 'expires-parse',
-  description: 'These tests check how implementations parse the `Expires` response header. They are not conformance tests because error handling is not clearly specified; rather, they are being used to gather information as input to spec revisions. See also the [specification for Expires](https://httpwg.org/specs/rfc7234.html#header.expires).',
+  description: 'These tests check how caches parse the `Expires` response header.',
   spec_anchors: ['field.expires'],
   tests: [
     {

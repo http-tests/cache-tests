@@ -4,7 +4,7 @@ export default
 {
   name: 'Pragma',
   id: 'pragma',
-  description: 'These tests check for how caches handle the [`Pragma` header](https://httpwg.org/specs/rfc7234.html#header.pragma) in reqeusts and responses.',
+  description: 'These tests check how caches handle the deprecated `Pragma` header in reqeusts and responses.',
   spec_anchors: ['field.pragma'],
   tests: [
     {

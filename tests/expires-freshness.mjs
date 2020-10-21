@@ -4,7 +4,7 @@ export default
 {
   name: 'Expires Freshness',
   id: 'expires',
-  description: 'These tests check whether caches are conformant and optimal in calculating freshness using `Expires`. See the [freshness section](https://httpwg.org/specs/rfc7234.html#expiration.model) of the HTTP caching specification, along with the specifics for [`Expires`](https://httpwg.org/specs/rfc7234.html#header.expires).',
+  description: 'These tests check how caches calculate freshness using `Expires`.',
   spec_anchors: ['expiration.model', 'field.expires'],
   tests: [
     {

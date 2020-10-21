@@ -4,7 +4,7 @@ export default
 {
   name: 'Storing Respones to Authenticated Requests',
   id: 'auth',
-  description: 'These tests check for conformance to other requirements that apply to HTTP caches. Note that some proxies might fail the first test because they consider themselves the origin (i.e., they\'re \'reverse proxies\')',
+  description: 'These tests check for behaviours regarding authenticated HTTP responses.',
   spec_anchors: ['caching.authenticated.responses'],
   tests: [
     {

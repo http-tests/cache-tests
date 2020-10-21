@@ -93,7 +93,7 @@ tests.push({
 export default {
   name: 'Status Code Cacheability',
   id: 'status',
-  description: 'These tests check to see if a cache will store and reuse various status codes when they have explicit freshness information associated with them. See [this issue](https://github.com/httpwg/http-core/issues/120) for related discussion.',
+  description: 'These tests check to see if a cache will store and reuse various status codes when they have explicit freshness information associated with them.',
   spec_anchors: ['response.cacheability'],
   tests: tests
 }

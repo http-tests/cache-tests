@@ -1,7 +1,7 @@
 export default {
   name: 'Combining Partial Content',
   id: 'partial',
-  description: 'These tests check for conformance to requirements regarding partial content (also known as `Range` requests). See the [partial content specification](https://httpwg.org/specs/rfc7233.html) and the [relevant part of the HTTP caching specification](https://httpwg.org/specs/rfc7234.html#combining.responses).',
+  description: 'These tests check how caches handle partial content (also known as `Range` requests).',
   spec_anchors: ['combining.responses'],
   tests: [
     {

@@ -26,7 +26,7 @@ function makeStaleCheckCC (cc, value) {
 export default {
   name: 'Serving Stale',
   id: 'stale',
-  description: 'These tests check for conformance to stale serving requirements that apply to HTTP caches. ',
+  description: 'These tests check how caches serve stale content.',
   spec_anchors: ['serving.stale.responses'],
   tests: [
     {

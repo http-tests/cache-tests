@@ -4,7 +4,7 @@ export default
 {
   name: 'Method-related Caching Requirements',
   id: 'method',
-  description: 'These tests check for conformance to method-related requirements that apply to HTTP caches. ',
+  description: 'These tests check how caches handle different HTTP methods.',
   spec_anchors: ['response.cacheability'],
   tests: [
     {

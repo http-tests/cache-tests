@@ -2,7 +2,7 @@
 export default {
   name: 'Conditional Requests: If-None-Match and ETag',
   id: 'conditional-inm',
-  description: 'Testing of HTTP [conditional requests](https://httpwg.org/specs/rfc7232.html) using `If-None-Match` and `ETag`.',
+  description: 'These tests check handling of conditional requests using `If-None-Match` and `ETag`.',
   spec_anchors: ['validation.model'],
   tests: [
     {

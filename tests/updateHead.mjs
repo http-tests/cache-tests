@@ -6,7 +6,7 @@ export default
 {
   name: 'HEAD updates',
   id: 'updateHEAD',
-  description: 'HTTP [specifies](https://httpwg.org/http-core/draft-ietf-httpbis-cache-latest.html#head.effects) that `HEAD` responses should update stored responses under certain conditions.',
+  description: 'These tests check how a cache updates stored responses when receiving a `HEAD` response.',
   spec_anchors: ['head.effects'],
   tests: [
     {

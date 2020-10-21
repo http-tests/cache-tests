@@ -7,7 +7,7 @@ export default
 {
   name: 'Other Caching Requirements',
   id: 'other',
-  description: 'These tests check for conformance to other requirements that apply to HTTP caches. ',
+  description: 'These tests check miscellaneous HTTP cache behaviours. ',
   tests: [
     {
       name: 'HTTP cache [must generate](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) an [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when using a stored response.',

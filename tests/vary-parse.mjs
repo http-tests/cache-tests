@@ -2,7 +2,7 @@
 export default {
   name: 'Vary Parsing',
   id: 'vary-parse',
-  description: 'These tests check how implementations parse the `Vary` response header. They are not conformance tests because error handling is not clearly specified; rather, they are being used to gather information as input to spec revisions. See also the [specification for Vary](https://httpwg.org/specs/rfc7231.html#header.vary), and [this issue](https://github.com/httpwg/http-core/issues/286) for relevant discussion.',
+  description: 'These tests check how caches parse the `Vary` response header.',
   spec_anchors: ['caching.negotiated.responses'],
   tests: [
     {
