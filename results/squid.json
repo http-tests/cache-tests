@@ -273,6 +273,16 @@
     "Response 2 comes from cache"
   ],
   "freshness-max-age-space-before-equals": true,
+  "freshness-max-age-two-fresh-stale-sameline": true,
+  "freshness-max-age-two-fresh-stale-sepline": true,
+  "freshness-max-age-two-stale-fresh-sameline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-two-stale-fresh-sepline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
   "head-200-freshness-update": [

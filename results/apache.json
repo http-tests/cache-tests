@@ -264,6 +264,16 @@
   "freshness-max-age-single-quoted": true,
   "freshness-max-age-space-after-equals": true,
   "freshness-max-age-space-before-equals": true,
+  "freshness-max-age-two-fresh-stale-sameline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-two-fresh-stale-sepline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-two-stale-fresh-sameline": true,
+  "freshness-max-age-two-stale-fresh-sepline": true,
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
   "head-200-freshness-update": [
@@ -438,7 +448,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 20 Oct 2020 06:29:53 GMT\", not \"Tue, 20 Oct 2020 06:29:50 GMT\""
+    "Response 2 header Date is \"Wed, 21 Oct 2020 05:41:48 GMT\", not \"Wed, 21 Oct 2020 05:41:45 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

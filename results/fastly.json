@@ -19,8 +19,8 @@
   ],
   "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Range": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Content-Range is \"null\", not \"APETIXMBQFUJYNC\""
   ],
   "304-etag-update-response-Content-Security-Policy": [
     "Assertion",
@@ -342,6 +342,16 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "freshness-max-age-two-fresh-stale-sameline": true,
+  "freshness-max-age-two-fresh-stale-sepline": true,
+  "freshness-max-age-two-stale-fresh-sameline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-two-stale-fresh-sepline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
   "head-200-freshness-update": [
@@ -576,7 +586,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 20 Oct 2020 06:34:29 GMT\", not \"Tue, 20 Oct 2020 06:34:26 GMT\""
+    "Response 2 header Date is \"Wed, 21 Oct 2020 08:44:40 GMT\", not \"Wed, 21 Oct 2020 08:44:37 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
