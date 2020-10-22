@@ -47,14 +47,14 @@ The server will disconnect the client when receiving this request.
 {%- endif -%}
 {%- endif -%}
 
-{%- if request.method or request.filename or request.query_arg or request.request_headers or request.body %}
+{%- if request.request_method or request.filename or request.query_arg or request.request_headers or request.request_body %}
 
 ### The client sends a request containing:
 ~~~
-{{ request.method | default: 'GET' }} [generated test URL]{% if request.filename %}/{% endif %}{{ request.filename }}{% if request.query_arg %}?{% endif %}{{ request.query_arg }} {{ magic_locations }}
+{{ request.request_method | default: 'GET' }} [generated test URL]{% if request.filename %}/{% endif %}{{ request.filename }}{% if request.query_arg %}?{% endif %}{{ request.query_arg }} {{ magic_locations }}
 {% for header in request.request_headers %}{% render 'header-magic' with header as header %}
 {% endfor %}
-{{ request.body }}
+{{ request.request_body }}
 ~~~
 {% endif -%}
 
@@ -65,7 +65,7 @@ The server will disconnect the client when receiving this request.
 HTTP/1.1 {{ request.response_status[0] | default: 200 }} {{ request.response_status[1] | default: "OK" }}
 {% for header in request.response_headers %}{% render 'header-magic' with header as header %}
 {% endfor %}
-{{ response_body | default: '[generated response body]' }}
+{{ request.response_body | default: '[generated response body]' }}
 ~~~{% endif -%}
 
 {%- if request.rfc850date %}
