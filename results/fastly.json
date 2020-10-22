@@ -67,10 +67,7 @@
     "Assertion",
     "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
-  "304-lm-use-stored-Test-Header": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-lm-use-stored-Test-Header": true,
   "age-parse-dup-0": [
     "Assertion",
     "Response 2 comes from cache"
@@ -586,7 +583,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Wed, 21 Oct 2020 08:44:40 GMT\", not \"Wed, 21 Oct 2020 08:44:37 GMT\""
+    "Response 2 header Date is \"Thu, 22 Oct 2020 06:25:48 GMT\", not \"Thu, 22 Oct 2020 06:25:44 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
