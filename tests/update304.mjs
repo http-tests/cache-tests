@@ -13,7 +13,7 @@ tests.push({
   requests: [
     {
       response_headers: [
-        ['Cache-Control', 'max-age=1'],
+        ['Cache-Control', 'max-age=2'],
         ['Last-Modified', lm1],
         ['Date', 0],
         [storedHeader, valueA]
