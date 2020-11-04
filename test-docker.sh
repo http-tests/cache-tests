@@ -13,7 +13,7 @@ function run {
   shift
   PROXIES=( "$@" )
   # start test server
-  npm run --silent server --port=8000 & echo $! > server.PID
+  npm run --silent server --port=8000
 
   # run proxies container
   docker run --name=tmp_proxies ${DOCKER_PORTS} -dt mnot/proxy-cache-tests host.docker.internal \

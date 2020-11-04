@@ -9,7 +9,7 @@ function run {
   BROWSERS=( "$@" )
 
   # start test server
-  npm run --silent server --port=$PORT & echo $! > server.PID
+  npm run --silent server --port=$PORT
   trap cleanup EXIT
   sleep 2
 

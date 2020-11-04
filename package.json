@@ -13,7 +13,7 @@
     "node-fetch": "^2.2.0"
   },
   "scripts": {
-    "server": "node server/server.mjs",
+    "server": "node server/server.mjs  & echo $! > server.PID",
     "cli": "node --no-warnings cli.mjs",
     "export": "node --no-warnings export.mjs",
     "validate": "node --no-warnings export.mjs validate",
