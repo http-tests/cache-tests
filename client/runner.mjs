@@ -29,10 +29,10 @@ export function getResults () {
 
 function runSome (tests, chunkSize) {
   return new Promise((resolve, reject) => {
-    var index = 0
+    let index = 0
     function next () {
       if (index < tests.length) {
-        var these = tests.slice(index, index + chunkSize).map(makeCacheTest)
+        const these = tests.slice(index, index + chunkSize).map(makeCacheTest)
         index += chunkSize
         Promise.all(these).then(next)
       } else {

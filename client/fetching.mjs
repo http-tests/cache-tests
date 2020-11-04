@@ -36,7 +36,7 @@ export function inflateRequests (test) {
   const rawRequests = test.requests
   const requests = []
   for (let i = 0; i < rawRequests.length; i++) {
-    var reqConfig = rawRequests[i]
+    const reqConfig = rawRequests[i]
     reqConfig.name = test.name
     reqConfig.id = test.id
     reqConfig.dump = test.dump

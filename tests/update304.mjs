@@ -1,12 +1,12 @@
 import * as utils from '../lib/utils.mjs'
 import headerList from './header-list.mjs'
 
-var tests = []
+const tests = []
 
 // first, check to see that the cache actually returns a stored header
-var storedHeader = 'Test-Header'
-var valueA = utils.httpContent(`${storedHeader}-value-A`)
-var lm1 = 'Wed, 01 Jan 2020 00:00:00 GMT'
+const storedHeader = 'Test-Header'
+const valueA = utils.httpContent(`${storedHeader}-value-A`)
+const lm1 = 'Wed, 01 Jan 2020 00:00:00 GMT'
 tests.push({
   name: `HTTP cache must return stored \`${storedHeader}\` from a \`304\` that omits it`,
   id: `304-lm-use-stored-${storedHeader}`,
@@ -84,8 +84,8 @@ function makeRequests (config, validatorType, validatorValue) {
 }
 
 function makeResponse (config, value, validatorType, validatorValue) {
-  var checkHeader = 'noUpdate' in config ? !config.noUpdate : true
-  var responseHeaders = [
+  const checkHeader = 'noUpdate' in config ? !config.noUpdate : true
+  const responseHeaders = [
     ['Date', 0],
     [config.name, value, checkHeader]
   ]

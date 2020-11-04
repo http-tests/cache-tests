@@ -9,7 +9,7 @@ export function sendResponse (response, statusCode, message) {
 }
 
 export function getHeader (headers, headerName) {
-  var result
+  let result
   headers.forEach(header => {
     if (header[0].toLowerCase() === headerName.toLowerCase()) {
       result = header[1]

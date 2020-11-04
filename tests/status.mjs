@@ -2,16 +2,16 @@
 import * as templates from '../lib/templates.mjs'
 import * as utils from '../lib/utils.mjs'
 
-var tests = []
+const tests = []
 
 function checkStatus (status) {
-  var code = status[0]
-  var phrase = status[1]
-  var body = status[2]
+  const code = status[0]
+  const phrase = status[1]
+  let body = status[2]
   if (body === undefined) {
     body = utils.httpContent(code)
   }
-  var is3xx = code > 299 && code < 400
+  const is3xx = code > 299 && code < 400
   tests.push({
     name: 'An optimal HTTP cache reuses a fresh `' + code + '` response with explict freshness',
     id: `status-${code}-fresh`,

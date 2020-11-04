@@ -30,7 +30,7 @@ const protocol = process.env.npm_config_protocol || process.env.npm_package_conf
 const port = process.env.npm_config_port || process.env.npm_package_config_port
 const baseUrl = `${protocol}://localhost:${port}/`
 
-var server
+let server
 if (protocol.toLowerCase() === 'https') {
   const options = {
     key: fs.readFileSync(process.env.npm_config_keyfile),

@@ -1,7 +1,7 @@
 
-export var fetch = null
-export var useBrowserCache = false
-export var baseUrl = ''
+export let fetch = null
+export let useBrowserCache = false
+export let baseUrl = ''
 
 export function setFetch (call) {
   if (call !== undefined) {

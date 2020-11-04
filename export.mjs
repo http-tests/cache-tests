@@ -8,10 +8,10 @@ import surrogate from './tests/surrogate-control.mjs'
 tests.push(surrogate)
 
 if (process.argv[2] === 'validate') {
-  var ajv = new Ajv()
-  var schema = JSON.parse(fs.readFileSync('lib/testsuite-schema.json', 'utf8'))
-  var validate = ajv.compile(schema)
-  var valid = validate(tests)
+  const ajv = new Ajv()
+  const schema = JSON.parse(fs.readFileSync('lib/testsuite-schema.json', 'utf8'))
+  const validate = ajv.compile(schema)
+  const valid = validate(tests)
   if (!valid) {
     console.log(validate.errors)
     process.exit(1)

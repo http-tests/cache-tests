@@ -1,7 +1,7 @@
 
 import * as templates from '../lib/templates.mjs'
 
-var tests = []
+const tests = []
 
 function checkInvalidation (method) {
   tests.push({
@@ -75,7 +75,7 @@ function checkClInvalidation (method) {
   })
 }
 
-var methods = [
+const methods = [
   'POST',
   'PUT',
   'DELETE',

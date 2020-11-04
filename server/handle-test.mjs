@@ -31,7 +31,7 @@ export default function handleTest (pathSegs, request, response) {
   if (reqConfig.dump) logRequest(request, srvReqNum)
 
   // Determine what the response status should be
-  var httpStatus = reqConfig.response_status || [200, 'OK']
+  let httpStatus = reqConfig.response_status || [200, 'OK']
   if ('expected_type' in reqConfig && reqConfig.expected_type.endsWith('validated')) {
     const previousLm = getHeader(previousConfig.response_headers, 'Last-Modified')
     if (previousLm && request.headers['if-modified-since'] === previousLm) {

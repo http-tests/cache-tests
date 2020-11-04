@@ -66,7 +66,7 @@ class AnchorMap {
   }
 
   push (k, v) {
-    var val = this.map.get(k)
+    const val = this.map.get(k)
     if (val) {
       val.push(v)
       this.map.set(k, val)

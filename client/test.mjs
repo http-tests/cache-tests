@@ -24,7 +24,7 @@ export function makeCacheTest (test) {
           const reqConfig = requests[idx]
           const reqNum = idx + 1
           const url = clientUtils.makeTestUrl(uuid, reqConfig)
-          var prevRes
+          let prevRes
           if (i > 0) {
             prevRes = Object.fromEntries(responses[i - 1].headers)
           }
@@ -40,7 +40,7 @@ export function makeCacheTest (test) {
       })
     }
 
-    var idx = 0
+    let idx = 0
     function runNextStep () {
       if (fetchFunctions.length) {
         const nextFetchFunction = fetchFunctions.shift()
@@ -181,7 +181,7 @@ function checkResponse (test, requests, idx, response) {
 function makeCheckResponseBody (test, reqConfig, statusCode) {
   return function checkResponseBody (resBody) {
     if ('check_body' in reqConfig && reqConfig.check_body === false) {
-
+      return true
     } else if ('expected_response_text' in reqConfig) {
       if (reqConfig.expected_response_text !== null) {
         assert(setupCheck(reqConfig, 'expected_response_text'),
@@ -203,7 +203,7 @@ function makeCheckResponseBody (test, reqConfig, statusCode) {
 
 function checkServerRequests (requests, responses, serverState) {
   // compare a test's requests array against the server-side serverState
-  var testIdx = 0
+  let testIdx = 0
   for (let i = 0; i < requests.length; ++i) {
     const expectedValidatingHeaders = []
     const reqConfig = requests[i]

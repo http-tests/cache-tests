@@ -37,7 +37,7 @@ function checkStoreHeader (config) {
   const expectedHeaders = storeHeader ? [[config.name, value]] : []
   const unexpectedHeaders = storeHeader ? [] : [[config.name, value]]
 
-  var respHeaders = [
+  const respHeaders = [
     ['Date', 0],
     [config.name, value, storeHeader]
   ]

@@ -12,7 +12,7 @@ export function pause () {
 }
 
 export function makeTestUrl (uuid, reqConfig) {
-  var extra = ''
+  let extra = ''
   if ('filename' in reqConfig) {
     extra += `/${reqConfig.filename}`
   }
@@ -33,7 +33,7 @@ export function putTestConfig (uuid, requests) {
   return config.fetch(`${config.baseUrl}/config/${uuid}`, init)
     .then(response => {
       if (response.status !== 201) {
-        var headers = ''
+        let headers = ''
         response.headers.forEach((hvalue, hname) => { // for some reason, node-fetch reverses these
           if (!uninterestingHeaders.has(hname.toLowerCase())) {
             headers += `${hname}: ${hvalue}    `

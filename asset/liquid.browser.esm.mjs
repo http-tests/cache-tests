@@ -1851,8 +1851,8 @@ var include = {
     const { renderer } = liquid
     const filepath = ctx.opts.dynamicPartials
       ? (isQuotedToken(file)
-        ? yield renderer.renderTemplates(liquid.parse(evalQuotedToken(file)), ctx)
-        : yield evalToken(file, ctx))
+          ? yield renderer.renderTemplates(liquid.parse(evalQuotedToken(file)), ctx)
+          : yield evalToken(file, ctx))
       : file.getText()
     assert(filepath, () => `illegal filename "${file.getText()}":"${filepath}"`)
     const saved = ctx.saveRegister('blocks', 'blockMode')
@@ -1906,8 +1906,8 @@ var render = {
     const { renderer } = liquid
     const filepath = ctx.opts.dynamicPartials
       ? (isQuotedToken(file)
-        ? yield renderer.renderTemplates(liquid.parse(evalQuotedToken(file)), ctx)
-        : evalToken(file, ctx))
+          ? yield renderer.renderTemplates(liquid.parse(evalQuotedToken(file)), ctx)
+          : evalToken(file, ctx))
       : file.getText()
     assert(filepath, () => `illegal filename "${file.getText()}":"${filepath}"`)
     const childCtx = new Context({}, ctx.opts, ctx.sync)
@@ -2051,8 +2051,8 @@ var layout = {
     const { renderer } = liquid
     const filepath = ctx.opts.dynamicPartials
       ? (isQuotedToken(file)
-        ? yield renderer.renderTemplates(liquid.parse(evalQuotedToken(file)), ctx)
-        : evalToken(this.file, ctx))
+          ? yield renderer.renderTemplates(liquid.parse(evalQuotedToken(file)), ctx)
+          : evalToken(this.file, ctx))
       : file.getText()
     assert(filepath, () => `illegal filename "${file.getText()}":"${filepath}"`)
     // render the remaining tokens immediately

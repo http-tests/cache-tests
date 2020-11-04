@@ -7,10 +7,10 @@ import { sendResponse } from './utils.mjs'
 import { mimeTypes } from '../lib/defines.mjs'
 
 export default function handleFile (url, request, response) {
-  var urlPath = path.normalize(url.pathname)
+  let urlPath = path.normalize(url.pathname)
   if (urlPath === '/') urlPath = '/index.html'
   const filename = path.join(process.cwd(), urlPath)
-  var stat
+  let stat
   try {
     stat = fs.statSync(filename)
   } catch {}

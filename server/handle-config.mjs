@@ -11,7 +11,7 @@ export default function handleConfig (pathSegs, request, response) {
     sendResponse(response, 409, `Config already exists for ${uuid}`)
     return
   }
-  var body = ''
+  let body = ''
   request.on('data', chunk => {
     body += chunk
   })

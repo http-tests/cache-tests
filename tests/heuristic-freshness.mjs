@@ -1,25 +1,25 @@
 import * as utils from '../lib/utils.mjs'
 
-var tests = []
+const tests = []
 
 function checkStatus (status) {
-  var succeed = status[0]
-  var code = status[1]
-  var phrase = status[2]
-  var body = status[3]
+  const succeed = status[0]
+  const code = status[1]
+  const phrase = status[2]
+  let body = status[3]
   if (body === undefined) {
     body = utils.httpContent(code)
   }
-  var extra = status[4] || ''
-  var extraHdr = status[5]
-  var specAnchors = status[6] || []
-  var expectedType = 'not_cached'
-  var desired = 'HTTP cache must not reuse'
+  const extra = status[4] || ''
+  const extraHdr = status[5]
+  const specAnchors = status[6] || []
+  let expectedType = 'not_cached'
+  let desired = 'HTTP cache must not reuse'
   if (succeed === true) {
     expectedType = 'cached'
     desired = 'An optimal HTTP cache should reuse'
   }
-  var responseHeaders = [
+  const responseHeaders = [
     ['Last-Modified', -24 * 60 * 60],
     ['Date', 0]
   ]
