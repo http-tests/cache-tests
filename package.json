@@ -14,7 +14,7 @@
     "npm": "^6.14.11"
   },
   "scripts": {
-    "server": "node server/server.mjs  & echo $! > $npm_package_config_pidfile",
+    "server": "node server/server.mjs &",
     "cli": "node --no-warnings cli.mjs",
     "export": "node --no-warnings export.mjs",
     "validate": "node --no-warnings export.mjs validate",
