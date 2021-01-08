@@ -31,8 +31,8 @@ const port = process.env.npm_config_port || process.env.npm_package_config_port
 const baseUrl = `${protocol}://localhost:${port}/`
 const pidfile = process.env.npm_config_pidfile || process.env.npm_package_config_pidfile
 
-fs.writeFile(pidfile, process.pid.toString(), 'ascii', function(err){
-  if (err) {console.log(`PID file write error: ${err.message}`)}
+fs.writeFile(pidfile, process.pid.toString(), 'ascii', function (err) {
+  if (err) { console.log(`PID file write error: ${err.message}`) }
 })
 
 let server
