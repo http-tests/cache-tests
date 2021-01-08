@@ -43,8 +43,8 @@ function cleanup {
   docker rm tmp_nuster > /dev/null
 
   # stop test server
-  kill "$(cat server.PID)" > /dev/null 2>&1
-  rm server.PID
+  kill "$(cat /tmp/http-cache-test-server.pid)" > /dev/null 2>&1
+  rm /tmp/http-cache-test-server.pid
 }
 
 function test_proxy {

@@ -14,7 +14,7 @@
     "npm": "^6.14.11"
   },
   "scripts": {
-    "server": "node server/server.mjs  & echo $! > server.PID",
+    "server": "node server/server.mjs  & echo $! > /tmp/http-cache-test-server.pid",
     "cli": "node --no-warnings cli.mjs",
     "export": "node --no-warnings export.mjs",
     "validate": "node --no-warnings export.mjs validate",
