@@ -1,6 +1,6 @@
 {
   "name": "http-cache-tests",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Tests for HTTP caches",
   "homepage": "https://cache-tests.fyi/",
   "author": "Mark Nottingham",
