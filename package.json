@@ -1,6 +1,6 @@
 {
   "name": "http-cache-tests",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Tests for HTTP caches",
   "homepage": "",
   "author": "Mark Nottingham",
