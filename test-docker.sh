@@ -2,6 +2,9 @@
 
 ## Run tests against a local docker image with common proxy/caches.
 
+PIDFILE=/tmp/http-cache-test-server.pid
+
+
 ALL_PROXIES=(squid nginx apache varnish nuster)
 DOCKER_PORTS=""
 for PORT in {8001..8005}; do
@@ -43,8 +46,8 @@ function cleanup {
   docker rm tmp_nuster > /dev/null
 
   # stop test server
-  kill "$(cat /tmp/http-cache-test-server.pid)" > /dev/null 2>&1
-  rm /tmp/http-cache-test-server.pid
+  kill "$(cat $PIDFILE)" > /dev/null 2>&1
+  rm $PIDFILE
 }
 
 function test_proxy {

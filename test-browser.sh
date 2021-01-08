@@ -4,6 +4,7 @@
 
 PORT=8000
 DOWNLOADS=~/Downloads
+PIDFILE=/tmp/http-cache-test-server.pid
 
 function run {
   BROWSERS=( "$@" )
@@ -21,8 +22,8 @@ function run {
 
 function cleanup {
   # stop test server
-  kill "$(cat /tmp/http-cache-test-server.pid)" > /dev/null 2>&1
-  rm /tmp/http-cache-test-server.pid
+  kill "$(cat $PIDFILE)" > /dev/null 2>&1
+  rm $PIDFILE
 }
 
 function test_browser {
