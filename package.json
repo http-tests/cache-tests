@@ -2,7 +2,7 @@
   "name": "http-cache-tests",
   "version": "0.4.0",
   "description": "Tests for HTTP caches",
-  "homepage": "",
+  "homepage": "https://cache-tests.fyi/",
   "author": "Mark Nottingham",
   "license": "BSD-3-Clause",
   "engines": {
@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "liquidjs": "^9.16.1",
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.2.0",
+    "npm": "^6.14.11"
   },
   "scripts": {
     "server": "node server/server.mjs  & echo $! > server.PID",
@@ -28,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mnot/cdn-tests.git"
+    "url": "https://github.com/http-tests/cache-tests.git"
   },
   "devDependencies": {
     "ajv": "^6.12.5",
