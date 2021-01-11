@@ -61,7 +61,7 @@ function test_browser {
     i=$((i+1))
     if [ "$i" -gt "60" ] ; then
       echo "Timeout." >&2
-      break
+      exit 1
     fi
   done
 
