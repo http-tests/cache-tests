@@ -12,7 +12,7 @@ jobs:
       with:
         node-version: '14'
     - name: Run browser tests
-      run: ./test-browser.sh firefox
+      run: ./test-browser.sh safari
     - name: Push update
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
