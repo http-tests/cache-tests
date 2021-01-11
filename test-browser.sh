@@ -58,6 +58,7 @@ function test_browser {
   while [ ! -f "${TARGET}" ]
   do
     sleep 1
+    ls ${DOWNLOADS}
     i=$((i+1))
     if [ "$i" -gt "60" ] ; then
       echo "Timeout." >&2
