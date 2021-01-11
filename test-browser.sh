@@ -10,7 +10,7 @@ function run {
   BROWSERS=( "$@" )
 
   # start test server
-  npm run --silent server --port=$PORT
+  npm run --silent server --port=$PORT --pidfile=$PIDFILE
   trap cleanup EXIT
   sleep 2
 
@@ -51,7 +51,7 @@ function test_browser {
   rm -f "${TARGET}"
 
   # run tests
-  open -a "${BROWSER_CMD}" "${URL}"
+  open -j -a "${BROWSER_CMD}" --args --headless "${URL}"
 
   # wait for the target to be created
   i=0
