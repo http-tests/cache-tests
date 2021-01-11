@@ -60,7 +60,7 @@ function test_browser {
     sleep 1
     ls ${DOWNLOADS}
     i=$((i+1))
-    if [ "$i" -gt "60" ] ; then
+    if [ "$i" -gt "120" ] ; then
       echo "Timeout." >&2
       exit 1
     fi
