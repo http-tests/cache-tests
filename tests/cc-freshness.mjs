@@ -8,7 +8,7 @@ export default
   spec_anchors: ['expiration.model', 'cache-response-directive'],
   tests: [
     {
-      name: 'Does HTTP cache avoid reusing a response without explict freshness information or a validator (doing so messes up the tests)?',
+      name: 'Does HTTP cache avoid reusing a response without explict freshness information or a validator (reuse is allowed, but not common, and many tests rely upon a cache _not_ doing it)?',
       id: 'freshness-none',
       kind: 'check',
       spec_anchors: ['cache-response-directive.max-age'],
