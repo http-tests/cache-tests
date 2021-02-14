@@ -8,24 +8,6 @@ export default
   spec_anchors: ['field.cache-control'],
   tests: [
     {
-      name: 'Does HTTP cache reuse a response with a quoted `Cache-Control: max-age`?',
-      id: 'freshness-max-age-quoted',
-      kind: 'check',
-      depends_on: ['freshness-max-age'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age="3600"', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
       name: 'HTTP cache must not reuse a response with a single-quoted `Cache-Control: max-age`',
       id: 'freshness-max-age-single-quoted',
       depends_on: ['freshness-none'],
@@ -73,6 +55,24 @@ export default
         },
         {
           expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response with a quoted `Cache-Control: max-age`?',
+      id: 'freshness-max-age-quoted',
+      kind: 'check',
+      depends_on: ['freshness-max-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age="3600"', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
         }
       ]
     },
