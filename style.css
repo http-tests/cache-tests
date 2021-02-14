@@ -45,6 +45,10 @@ th.category a {
 }
 
 .clickhint {
+  cursor: pointer;
+}
+
+.uuid {
   color: #999;
   margin-left: 0.5em;
 }
