@@ -83,18 +83,9 @@
     "Setup",
     "Request 2 should have been conditional, but it was not."
   ],
-  "age-parse-dup-0": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "age-parse-dup-0-twoline": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "age-parse-dup-old": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-dup-0": true,
+  "age-parse-dup-0-twoline": true,
+  "age-parse-dup-old": true,
   "age-parse-float": [
     "Assertion",
     "Response 2 comes from cache"
@@ -115,11 +106,11 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "age-parse-prefix": true,
-  "age-parse-prefix-twoline": [
+  "age-parse-prefix": [
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "age-parse-prefix-twoline": true,
   "age-parse-suffix": [
     "Assertion",
     "Response 2 comes from cache"
@@ -406,8 +397,6 @@
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
   "freshness-max-age-ignore-quoted": true,
-  "freshness-max-age-ignore-quoted-all": true,
-  "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-leading-zero": true,
   "freshness-max-age-max": true,

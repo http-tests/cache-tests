@@ -44,18 +44,9 @@
     "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
-  "age-parse-dup-0": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "age-parse-dup-0-twoline": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "age-parse-dup-old": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-dup-0": true,
+  "age-parse-dup-0-twoline": true,
+  "age-parse-dup-old": true,
   "age-parse-float": [
     "Assertion",
     "Response 2 comes from cache"
@@ -76,11 +67,11 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "age-parse-prefix": true,
-  "age-parse-prefix-twoline": [
+  "age-parse-prefix": [
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "age-parse-prefix-twoline": true,
   "age-parse-suffix": true,
   "age-parse-suffix-twoline": true,
   "cc-resp-immutable-fresh": [
@@ -194,16 +185,12 @@
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
   "freshness-max-age-ignore-quoted": true,
-  "freshness-max-age-ignore-quoted-all": true,
-  "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-leading-zero": true,
   "freshness-max-age-max": true,
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": true,
-  "freshness-max-age-multiple-directive": true,
-  "freshness-max-age-multiple-line": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",
