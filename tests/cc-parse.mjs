@@ -292,7 +292,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Cache-Control: max-age` (trailing alpha)',
+      name: 'Does HTTP cache reuse a response with an invalid `Cache-Control: max-age` (trailing alpha)?',
       id: 'freshness-max-age-100a',
       kind: 'check',
       depends_on: ['freshness-none'],
@@ -310,7 +310,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Cache-Control: max-age` (multiple lines)',
+      name: 'Does HTTP cache reuse a response with an invalid `Cache-Control: max-age` (multiple lines)?',
       id: 'freshness-max-age-multiple-line',
       kind: 'check',
       depends_on: ['freshness-none'],
@@ -329,7 +329,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Cache-Control: max-age` (multiple directives)',
+      name: 'Does HTTP cache reuse a response with an invalid `Cache-Control: max-age` (multiple directives)?',
       id: 'freshness-max-age-multiple-directive',
       kind: 'check',
       depends_on: ['freshness-none'],
