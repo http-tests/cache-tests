@@ -176,28 +176,28 @@
   "freshness-expires-ansi-c": true,
   "freshness-expires-far-future": true,
   "freshness-expires-future": true,
-  "freshness-expires-invalid": true,
+  "freshness-expires-invalid": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-invalid-1-digit-hour": true,
   "freshness-expires-invalid-2-digit-year": true,
   "freshness-expires-invalid-aest": true,
   "freshness-expires-invalid-date": true,
   "freshness-expires-invalid-date-dashes": true,
   "freshness-expires-invalid-multiple-lines": true,
-  "freshness-expires-invalid-multiple-spaces": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-invalid-multiple-spaces": true,
   "freshness-expires-invalid-no-comma": true,
-  "freshness-expires-invalid-time-periods": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-invalid-time-periods": true,
   "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-past": true,
+  "freshness-expires-past": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-present": true,
   "freshness-expires-rfc850": true,
   "freshness-expires-wrong-case-month": [
@@ -220,10 +220,7 @@
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
   "freshness-max-age-ignore-quoted": true,
-  "freshness-max-age-ignore-quoted-all": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-max-age-ignore-quoted-all": true,
   "freshness-max-age-ignore-quoted-all-rev": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-leading-zero": true,
@@ -325,7 +322,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/414e39bc-b3a6-4ec6-b127-4d4b0ea18ad9 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/c2c25b8b-9909-4e16-bf3f-be05a9ec2f72 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
