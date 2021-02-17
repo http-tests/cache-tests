@@ -10,14 +10,14 @@ export default [
     file: 'firefox.json',
     name: 'Firefox',
     type: 'browser',
-    version: '73.0b9',
+    version: '85.0.2',
     link: 'https://github.com/http-tests/cache-tests/wiki/Firefox'
   },
   {
     file: 'safari.json',
     name: 'Safari',
     type: 'browser',
-    version: '14.0 (15610.1.28.1.9, 15610)'
+    version: '14.0.3 (16610.4.3.1.4)'
   },
   {
     file: 'nginx.json',
