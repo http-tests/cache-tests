@@ -116,24 +116,6 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with a quoted `Cache-Control: max-age`?',
-      id: 'freshness-max-age-quoted',
-      kind: 'check',
-      depends_on: ['freshness-max-age'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age="3600"', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
       name: 'Does HTTP cache ignore max-age with space before the `=`?',
       id: 'freshness-max-age-space-before-equals',
       kind: 'check',
@@ -166,6 +148,24 @@ export default
         },
         {
           expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response with a quoted `Cache-Control: max-age`?',
+      id: 'freshness-max-age-quoted',
+      kind: 'check',
+      depends_on: ['freshness-max-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age="3600"', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
         }
       ]
     },
