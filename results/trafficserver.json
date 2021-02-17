@@ -59,7 +59,10 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "age-parse-numeric-parameter": true,
+  "age-parse-numeric-parameter": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "age-parse-parameter": true,
   "age-parse-prefix": true,
   "age-parse-prefix-twoline": [
@@ -123,6 +126,7 @@
     "Assertion",
     "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
   ],
+  "conditional-etag-precedence": true,
   "conditional-etag-quoted-respond-unquoted": true,
   "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
@@ -161,6 +165,14 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
+  "conditional-lm-fresh": true,
+  "conditional-lm-fresh-earlier": true,
+  "conditional-lm-fresh-no-lm": [
+    "Assertion",
+    "Response 2 status is 200, not 304"
+  ],
+  "conditional-lm-fresh-rfc850": true,
+  "conditional-lm-stale": true,
   "freshness-expires-32bit": true,
   "freshness-expires-age-fast-date": true,
   "freshness-expires-age-slow-date": true,
@@ -186,7 +198,10 @@
   "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
-  "freshness-expires-present": true,
+  "freshness-expires-present": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-rfc850": true,
   "freshness-expires-wrong-case-month": [
     "Assertion",
@@ -210,7 +225,10 @@
   "freshness-max-age-ignore-quoted": true,
   "freshness-max-age-ignore-quoted-all": true,
   "freshness-max-age-ignore-quoted-all-rev": true,
-  "freshness-max-age-ignore-quoted-rev": true,
+  "freshness-max-age-ignore-quoted-rev": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-max-age-leading-zero": true,
   "freshness-max-age-max": [
     "Assertion",
@@ -222,8 +240,6 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "freshness-max-age-multiple-directive": true,
-  "freshness-max-age-multiple-line": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": true,
   "freshness-max-age-s-maxage-shared-longer": true,
@@ -231,7 +247,10 @@
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
   "freshness-max-age-s-maxage-shared-shorter-expires": true,
-  "freshness-max-age-single-quoted": true,
+  "freshness-max-age-single-quoted": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-max-age-space-after-equals": [
     "Assertion",
     "Response 2 comes from cache"
@@ -240,8 +259,32 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "freshness-max-age-two-fresh-stale-sameline": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-two-fresh-stale-sepline": true,
+  "freshness-max-age-two-stale-fresh-sameline": true,
+  "freshness-max-age-two-stale-fresh-sepline": true,
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
+  "head-200-freshness-update": [
+    "Assertion",
+    "Response 3 does not come from cache"
+  ],
+  "head-200-retain": [
+    "Assertion",
+    "Response 2 header Template-A is \"null\", not \"1\""
+  ],
+  "head-200-update": [
+    "Setup",
+    "Response 3 does not come from cache"
+  ],
+  "head-410-update": [
+    "Setup",
+    "Response 3 does not come from cache"
+  ],
+  "head-writethrough": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache": [
     "Setup",
     "Response 2 does not come from cache"
@@ -282,7 +325,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/24c48bef-8607-4877-890d-a473b2454024 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/e342a77d-8ec4-4199-a648-6b1e5ea96044 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -430,7 +473,9 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "other-authorization-must-revalidate": true,
   "other-authorization-public": true,
+  "other-authorization-smaxage": true,
   "other-cookie": true,
   "other-date-update": true,
   "other-fresh-content-disposition-attachment": true,
@@ -439,10 +484,6 @@
     "Response 2 does not come from cache"
   ],
   "other-set-cookie": true,
-  "other-warning": [
-    "Assertion",
-    "Response 2 warning header not present."
-  ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,
@@ -466,6 +507,8 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "partial-use-headers": true,
+  "partial-use-stored-headers": true,
   "pragma-request-extension": true,
   "pragma-request-no-cache": true,
   "pragma-response-extension": true,
@@ -477,8 +520,33 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "query-args-different": true,
+  "query-args-different": [
+    "Setup",
+    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+  ],
   "query-args-same": true,
+  "stale-503": true,
+  "stale-close": true,
+  "stale-close-must-revalidate": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "stale-close-no-cache": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "stale-close-proxy-revalidate": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "stale-close-s-maxage=2": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "stale-sie-503": true,
+  "stale-sie-close": true,
+  "stale-warning-become": true,
+  "stale-warning-stored": true,
   "status-200-fresh": true,
   "status-200-stale": true,
   "status-203-fresh": true,
@@ -611,29 +679,14 @@
   "vary-omit": true,
   "vary-omit-stored": true,
   "vary-star": true,
-  "vary-syntax-empty-star": [
+  "vary-syntax-empty-star": true,
+  "vary-syntax-empty-star-lines": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "vary-syntax-empty-star-lines": true,
-  "vary-syntax-foo-star": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-star": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-star-foo": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-star-star": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-syntax-star-star-lines": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ]
+  "vary-syntax-foo-star": true,
+  "vary-syntax-star": true,
+  "vary-syntax-star-foo": true,
+  "vary-syntax-star-star": true,
+  "vary-syntax-star-star-lines": true
 }
