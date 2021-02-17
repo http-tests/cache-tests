@@ -3,7 +3,7 @@ export default
 {
   name: 'Age Parsing',
   id: 'age-parse',
-  description: 'These tests check how implementations parse the `Age` response header.',
+  description: 'These tests check how caches parse the `Age` response header.',
   spec_anchors: ['field.age', 'expiration.model'],
   tests: [
     {
