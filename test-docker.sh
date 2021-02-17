@@ -30,7 +30,7 @@ function run {
   trap cleanup EXIT
 
   # give docker enough time to start
-  sleep 7
+  sleep 10
 
   for proxy in "${PROXIES[@]}"
   do
