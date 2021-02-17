@@ -23,7 +23,7 @@ export default [
     file: 'nginx.json',
     name: 'nginx',
     type: 'rev-proxy',
-    version: '1.18.0-6ubuntu2',
+    version: '1.18.0-6ubuntu4',
     link: 'https://github.com/http-tests/cache-tests/wiki/nginx'
   },
   {
@@ -44,14 +44,14 @@ export default [
     file: 'apache.json',
     name: 'httpd',
     type: 'rev-proxy',
-    version: '2.4.46-1ubuntu1',
+    version: '2.4.46-2ubuntu1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Apache-httpd'
   },
   {
     file: 'varnish.json',
     name: 'Varnish',
     type: 'rev-proxy',
-    version: '6.4.0-3',
+    version: '6.5.1-1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Varnish'
   },
   {

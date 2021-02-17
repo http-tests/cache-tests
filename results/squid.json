@@ -255,8 +255,6 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "freshness-max-age-multiple-directive": true,
-  "freshness-max-age-multiple-line": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",

@@ -414,8 +414,6 @@
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": true,
-  "freshness-max-age-multiple-directive": true,
-  "freshness-max-age-multiple-line": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",

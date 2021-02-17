@@ -330,8 +330,6 @@
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": true,
-  "freshness-max-age-multiple-directive": true,
-  "freshness-max-age-multiple-line": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",
@@ -589,7 +587,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Wed, 21 Oct 2020 05:41:27 GMT\", not \"Wed, 21 Oct 2020 05:41:24 GMT\""
+    "Response 2 header Date is \"Wed, 17 Feb 2021 06:22:57 GMT\", not \"Wed, 17 Feb 2021 06:22:54 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

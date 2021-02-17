@@ -1,10 +1,7 @@
 {
   "304-etag-update-response-Cache-Control": true,
   "304-etag-update-response-Clear-Site-Data": true,
-  "304-etag-update-response-Content-Encoding": [
-    "Assertion",
-    "Response 2 header Content-Encoding is \"ASKCUMEWOGYQIAS\", not \"ARIZQHYPGXOFWNE\""
-  ],
+  "304-etag-update-response-Content-Encoding": true,
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": true,
@@ -297,8 +294,6 @@
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": true,
-  "freshness-max-age-multiple-directive": true,
-  "freshness-max-age-multiple-line": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",
