@@ -82,23 +82,6 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with a single-quoted `Cache-Control: max-age`',
-      id: 'freshness-max-age-single-quoted',
-      depends_on: ['freshness-none'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=\'3600\'', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'not_cached'
-        }
-      ]
-    },
-    {
       name: 'HTTP cache must not reuse a response with `max-age` in a quoted string (before the "real" `max-age`)',
       id: 'freshness-max-age-ignore-quoted',
       depends_on: ['freshness-max-age'],
@@ -185,6 +168,42 @@ export default
       ]
     },
     {
+      name: 'Does HTTP cache ignore max-age with space before the `=`?',
+      id: 'freshness-max-age-space-before-equals',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age =3600', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache ignore max-age with space after the `=`?',
+      id: 'freshness-max-age-space-after-equals',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age= 3600', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'An optimal HTTP cache reuses max-age with the value `003600`',
       id: 'freshness-max-age-leading-zero',
       depends_on: ['freshness-none'],
@@ -198,6 +217,23 @@ export default
         },
         {
           expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not reuse a response with a single-quoted `Cache-Control: max-age`',
+      id: 'freshness-max-age-single-quoted',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=\'3600\'', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
         }
       ]
     },
@@ -234,42 +270,6 @@ export default
         },
         {
           expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'Does HTTP cache ignore max-age with space before the `=`?',
-      id: 'freshness-max-age-space-before-equals',
-      kind: 'check',
-      depends_on: ['freshness-none'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age =3600', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'not_cached'
-        }
-      ]
-    },
-    {
-      name: 'Does HTTP cache ignore max-age with space after the `=`?',
-      id: 'freshness-max-age-space-after-equals',
-      kind: 'check',
-      depends_on: ['freshness-none'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age= 3600', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'not_cached'
         }
       ]
     },
