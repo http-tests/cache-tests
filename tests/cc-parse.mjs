@@ -4,7 +4,7 @@ export default
 {
   name: 'Cache-Control Parsing',
   id: 'cc-parse',
-  description: 'These tests check how cache parse the `Cache-Control` response header.',
+  description: 'These tests check how caches parse the `Cache-Control` response header.',
   spec_anchors: ['field.cache-control'],
   tests: [
     {
