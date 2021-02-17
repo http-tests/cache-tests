@@ -8,6 +8,80 @@ export default
   spec_anchors: ['field.cache-control'],
   tests: [
     {
+      name: 'Does HTTP cache reuse a response when first `Cache-Control: max-age` is fresh, but second is stale (same line)?',
+      id: 'freshness-max-age-two-fresh-stale-sameline',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1800, max-age=1', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response when first `Cache-Control: max-age` is fresh, but second is stale (separate lines)?',
+      id: 'freshness-max-age-two-fresh-stale-sepline',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1800', false],
+            ['Cache-Control', 'max-age=1', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response when first `Cache-Control: max-age` is stale, but second is fresh (same line)?',
+      id: 'freshness-max-age-two-stale-fresh-sameline',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1, max-age=1800', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response when first `Cache-Control: max-age` is stale, but second is fresh (separate lines)?',
+      id: 'freshness-max-age-two-stale-fresh-sepline',
+      kind: 'check',
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1', false],
+            ['Cache-Control', 'max-age=1800', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not reuse a response with a single-quoted `Cache-Control: max-age`',
       id: 'freshness-max-age-single-quoted',
       depends_on: ['freshness-none'],
@@ -263,80 +337,6 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=3600, max-age=1800', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'Does HTTP cache reuse a response when first `Cache-Control: max-age` is stale, but second is fresh (same line)?',
-      id: 'freshness-max-age-two-stale-fresh-sameline',
-      kind: 'check',
-      depends_on: ['freshness-none'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=1, max-age=1800', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'Does HTTP cache reuse a response when first `Cache-Control: max-age` is fresh, but second is stale (same line)?',
-      id: 'freshness-max-age-two-fresh-stale-sameline',
-      kind: 'check',
-      depends_on: ['freshness-none'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=1800, max-age=1', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'Does HTTP cache reuse a response when first `Cache-Control: max-age` is stale, but second is fresh (separate lines)?',
-      id: 'freshness-max-age-two-stale-fresh-sepline',
-      kind: 'check',
-      depends_on: ['freshness-none'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=1', false],
-            ['Cache-Control', 'max-age=1800', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'Does HTTP cache reuse a response when first `Cache-Control: max-age` is fresh, but second is stale (separate lines)?',
-      id: 'freshness-max-age-two-fresh-stale-sepline',
-      kind: 'check',
-      depends_on: ['freshness-none'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=1800', false],
-            ['Cache-Control', 'max-age=1', false]
           ],
           setup: true,
           pause_after: true
