@@ -134,40 +134,6 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not reuse a response with `max-age` in a quoted string, even when max-age has a quoted value too',
-      id: 'freshness-max-age-ignore-quoted-all',
-      depends_on: ['freshness-max-age-quoted'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'extension="max-age=3600", max-age="1"', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'not_cached'
-        }
-      ]
-    },
-    {
-      name: 'HTTP cache must not reuse a response with `max-age` in a quoted string, even when previous max-age has a quoted value too',
-      id: 'freshness-max-age-ignore-quoted-all-rev',
-      depends_on: ['freshness-max-age-quoted'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age="1", extension="max-age=3600"', false]
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'not_cached'
-        }
-      ]
-    },
-    {
       name: 'Does HTTP cache ignore max-age with space before the `=`?',
       id: 'freshness-max-age-space-before-equals',
       kind: 'check',
