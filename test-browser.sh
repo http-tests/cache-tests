@@ -51,7 +51,7 @@ function test_browser {
   rm -f "${TARGET}"
 
   # run tests
-  open -jg -a "${BROWSER_CMD}" "${URL}" --args --headless
+  open -g -a "${BROWSER_CMD}" "${URL}" --args --headless
 
   # wait for the target to be created
   i=0
