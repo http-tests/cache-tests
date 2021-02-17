@@ -4,7 +4,7 @@ import { makeCacheTest, testResults } from './test.mjs'
 
 const testArray = []
 
-export function runTests (tests, myFetch, browserCache, base, chunkSize = 100) {
+export function runTests (tests, myFetch, browserCache, base, chunkSize = 50) {
   config.setFetch(myFetch)
   config.setBaseUrl(base)
   config.setUseBrowserCache(browserCache)
