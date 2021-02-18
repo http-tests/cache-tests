@@ -10,7 +10,7 @@ function run {
   BROWSERS=( "$@" )
 
   # start test server
-  npm run --silent server --port=$PORT --pidfile=$PIDFILE
+  npm run --silent server --port=$PORT --pidfile=$PIDFILE &
   trap cleanup EXIT
   sleep 2
 
