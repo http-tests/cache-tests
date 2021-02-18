@@ -8,9 +8,9 @@ export default
   spec_anchors: ['field.expires'],
   tests: [
     {
-      name: 'Does HTTP cache reuse a response with an `Expires` that is exactly 32 bits?',
+      name: 'An optimal HTTP cache reuses a response with an `Expires` that is exactly 32 bits.',
       id: 'freshness-expires-32bit',
-      kind: 'check',
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -27,9 +27,9 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an `Expires` that is far in the future?',
+      name: 'An optimal HTTP cache reuses a response with an `Expires` that is far in the future.',
       id: 'freshness-expires-far-future',
-      kind: 'check',
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -46,9 +46,9 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an `Expires` in obsolete RFC 850 format?',
+      name: 'An optimal HTTP cache reuses a response with a future `Expires` in obsolete RFC 850 format.',
       id: 'freshness-expires-rfc850',
-      kind: 'check',
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -65,9 +65,9 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an `Expires` in ANSI C\'s asctime() format?',
+      name: 'An optimal HTTP cache reuses a response with a future `Expires` in ANSI C\'s asctime() format.',
       id: 'freshness-expires-ansi-c',
-      kind: 'check',
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -84,9 +84,9 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an `Expires` using wrong case (weekday)?',
+      name: 'An optimal HTTP cache reuses a response with a future `Expires` using wrong case (weekday).',
       id: 'freshness-expires-wrong-case-weekday',
-      kind: 'check',
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -103,9 +103,9 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an `Expires` using wrong case (month)?',
+      name: 'An optimal HTTP cache reuses a response with a future `Expires` using wrong case (month).',
       id: 'freshness-expires-wrong-case-month',
-      kind: 'check',
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -122,9 +122,9 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an `Expires` using wrong case (tz)?',
+      name: 'An optimal HTTP cache reuses a response with a future `Expires` using wrong case (tz).',
       id: 'freshness-expires-wrong-case-tz',
-      kind: 'check',
+      kind: 'optimal',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -141,9 +141,8 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Expires` (UTC)?',
+      name: 'HTTP cache must not reuse a response with an invalid `Expires` (UTC).',
       id: 'freshness-expires-invalid-utc',
-      kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -155,14 +154,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Expires` (other tz)?',
+      name: 'HTTP cache must not reuse a response with an invalid `Expires` (other tz).',
       id: 'freshness-expires-invalid-aest',
-      kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -174,14 +172,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Expires` (two-digit year)?',
+      name: 'HTTP cache must not reuse a response with an invalid `Expires` (two-digit year).',
       id: 'freshness-expires-invalid-2-digit-year',
-      kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -193,14 +190,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Expires` (missing comma)?',
+      name: 'HTTP cache must not reuse a response with an invalid `Expires` (missing comma).',
       id: 'freshness-expires-invalid-no-comma',
-      kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -212,14 +208,13 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Expires` (multiple spaces)?',
+      name: 'HTTP cache must not reuse a response with an invalid `Expires` (multiple spaces).',
       id: 'freshness-expires-invalid-multiple-spaces',
-      kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -230,14 +225,13 @@ export default
           setup: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Expires` (date dashes)?',
+      name: 'HTTP cache must not reuse a response with an invalid `Expires` (date dashes).',
       id: 'freshness-expires-invalid-date-dashes',
-      kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -248,14 +242,13 @@ export default
           setup: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Expires` (time periods)?',
+      name: 'HTTP cache must not reuse a response with an invalid `Expires` (time periods).',
       id: 'freshness-expires-invalid-time-periods',
-      kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -266,14 +259,13 @@ export default
           setup: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Expires` (1-digit hour)?',
+      name: 'HTTP cache must not reuse a response with an invalid `Expires` (1-digit hour).',
       id: 'freshness-expires-invalid-1-digit-hour',
-      kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -284,14 +276,13 @@ export default
           setup: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     },
     {
-      name: 'Does HTTP cache reuse a response with an invalid `Expires` (multiple lines)?',
+      name: 'HTTP cache must not reuse a response with an invalid `Expires` (multiple lines).',
       id: 'freshness-expires-invalid-multiple-lines',
-      kind: 'check',
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -303,7 +294,7 @@ export default
           setup: true
         },
         {
-          expected_type: 'cached'
+          expected_type: 'not_cached'
         }
       ]
     }
