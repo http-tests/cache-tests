@@ -110,7 +110,6 @@ tests.push({
   ]
 })
 
-
 export default {
   name: 'Status Code Cacheability',
   id: 'status',
