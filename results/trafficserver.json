@@ -167,10 +167,7 @@
   "freshness-expires-ansi-c": true,
   "freshness-expires-far-future": true,
   "freshness-expires-future": true,
-  "freshness-expires-invalid": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-invalid": true,
   "freshness-expires-invalid-1-digit-hour": [
     "Assertion",
     "Response 2 comes from cache"
@@ -202,10 +199,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-old-date": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,
   "freshness-expires-rfc850": true,
@@ -329,7 +323,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/43d576af-5387-412e-aac7-2cc76bffa194 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/0c62d469-b421-49f2-87f4-2147bf690e61 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -512,7 +506,10 @@
     "Response 2 does not come from cache"
   ],
   "partial-use-headers": true,
-  "partial-use-stored-headers": true,
+  "partial-use-stored-headers": [
+    "Setup",
+    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+  ],
   "pragma-request-extension": true,
   "pragma-request-no-cache": true,
   "pragma-response-extension": true,
@@ -588,7 +585,7 @@
   "status-599-fresh": true,
   "status-599-must-understand": [
     "Assertion",
-    "Response 2 comes from cache"
+    "Response 2 does not come from cache"
   ],
   "status-599-stale": true,
   "surrogate-append-capabilities": [
@@ -603,10 +600,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "surrogate-max-age-0": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
-  ],
+  "surrogate-max-age-0": true,
   "surrogate-max-age-0-expires": [
     "Assertion",
     "Response 2 comes from cache"

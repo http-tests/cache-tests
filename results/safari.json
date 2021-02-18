@@ -551,7 +551,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "status-599-must-understand": true,
+  "status-599-must-understand": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "status-599-stale": true,
   "vary-2-match": true,
   "vary-2-match-omit": true,
