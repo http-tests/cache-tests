@@ -66,9 +66,11 @@ export default
       name: 'Does HTTP cache reuse a stored and heuristically fresh response when it contains `Pragma: no-cache`?',
       id: 'pragma-response-no-cache-heuristic',
       kind: 'check',
+      depends_on: ['heuristic-200-cached'],
       requests: [
         {
           response_headers: [
+            ['Date', 0],
             ['Last-Modified', -10000],
             ['Pragma', 'no-cache']
           ],
