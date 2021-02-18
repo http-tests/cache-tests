@@ -1,11 +1,11 @@
 {
   "304-etag-update-response-Cache-Control": [
-    "Assertion",
-    "Response 2 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Clear-Site-Data": [
-    "Assertion",
-    "Response 2 header Clear-Site-Data is \"cache\", not \"cookies\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Content-Encoding": true,
   "304-etag-update-response-Content-Foo": [
@@ -173,7 +173,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": true,
+  "conditional-etag-strong-generate": [
+    "Assertion",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
     "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
@@ -228,34 +231,25 @@
   ],
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
-  "freshness-expires-invalid-1-digit-hour": true,
-  "freshness-expires-invalid-2-digit-year": [
+  "freshness-expires-invalid-1-digit-hour": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-aest": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-invalid-2-digit-year": true,
+  "freshness-expires-invalid-aest": true,
   "freshness-expires-invalid-date": true,
-  "freshness-expires-invalid-date-dashes": [
+  "freshness-expires-invalid-date-dashes": true,
+  "freshness-expires-invalid-multiple-lines": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-multiple-lines": true,
-  "freshness-expires-invalid-multiple-spaces": true,
-  "freshness-expires-invalid-no-comma": [
+  "freshness-expires-invalid-multiple-spaces": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-time-periods": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "freshness-expires-invalid-utc": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-invalid-no-comma": true,
+  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-utc": true,
   "freshness-expires-old-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -567,7 +561,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Wed, 17 Feb 2021 07:28:39 GMT\", not \"Wed, 17 Feb 2021 07:28:36 GMT\""
+    "Response 2 header Date is \"Thu, 18 Feb 2021 00:17:01 GMT\", not \"Thu, 18 Feb 2021 00:16:58 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

@@ -148,28 +148,31 @@
   "freshness-expires-far-future": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
-  "freshness-expires-invalid-1-digit-hour": true,
-  "freshness-expires-invalid-2-digit-year": [
+  "freshness-expires-invalid-1-digit-hour": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-aest": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-invalid-2-digit-year": true,
+  "freshness-expires-invalid-aest": true,
   "freshness-expires-invalid-date": true,
-  "freshness-expires-invalid-date-dashes": true,
-  "freshness-expires-invalid-multiple-lines": [
+  "freshness-expires-invalid-date-dashes": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-multiple-spaces": true,
-  "freshness-expires-invalid-no-comma": true,
-  "freshness-expires-invalid-time-periods": [
+  "freshness-expires-invalid-multiple-lines": true,
+  "freshness-expires-invalid-multiple-spaces": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-utc": true,
+  "freshness-expires-invalid-no-comma": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-utc": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-old-date": true,
   "freshness-expires-past": true,
   "freshness-expires-present": true,

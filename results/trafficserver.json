@@ -167,23 +167,41 @@
   "freshness-expires-ansi-c": true,
   "freshness-expires-far-future": true,
   "freshness-expires-future": true,
-  "freshness-expires-invalid": true,
-  "freshness-expires-invalid-1-digit-hour": true,
-  "freshness-expires-invalid-2-digit-year": true,
-  "freshness-expires-invalid-aest": true,
+  "freshness-expires-invalid": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-expires-invalid-1-digit-hour": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-expires-invalid-2-digit-year": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-expires-invalid-aest": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-invalid-date": true,
-  "freshness-expires-invalid-date-dashes": true,
-  "freshness-expires-invalid-multiple-lines": true,
-  "freshness-expires-invalid-multiple-spaces": [
+  "freshness-expires-invalid-date-dashes": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-no-comma": true,
-  "freshness-expires-invalid-time-periods": [
+  "freshness-expires-invalid-multiple-lines": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-utc": true,
+  "freshness-expires-invalid-multiple-spaces": true,
+  "freshness-expires-invalid-no-comma": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-utc": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-old-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -311,7 +329,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/81f570f7-644f-4099-b713-7d50b999c323 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/43d576af-5387-412e-aac7-2cc76bffa194 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -460,10 +478,7 @@
     "Response 2 comes from cache"
   ],
   "other-authorization-must-revalidate": true,
-  "other-authorization-public": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
-  ],
+  "other-authorization-public": true,
   "other-authorization-smaxage": true,
   "other-cookie": true,
   "other-date-update": true,
@@ -485,12 +500,12 @@
     "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-absent": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-byterange": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-suffix": [
     "Assertion",
@@ -588,7 +603,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "surrogate-max-age-0": true,
+  "surrogate-max-age-0": [
+    "Setup",
+    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+  ],
   "surrogate-max-age-0-expires": [
     "Assertion",
     "Response 2 comes from cache"
