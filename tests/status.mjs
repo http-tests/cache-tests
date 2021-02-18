@@ -72,7 +72,7 @@ function checkStatus (status) {
 ].forEach(checkStatus)
 
 tests.push({
-  name: 'HTTP cache MUST NOT reuse a fresh response with an unrecognised status code and `Cache-Control: must-understand`',
+  name: 'An optimal HTTP cache reuses a fresh response with an unrecognised status code and `Cache-Control: must-understand`, even if it also contains `Cache-Control: no-store`.',
   id: 'status-599-must-understand',
   depends_on: ['status-599-fresh'],
   spec_anchors: ['cache-response-directive.must-understand'],
@@ -80,12 +80,12 @@ tests.push({
     {
       response_status: [599, 'Whatever'],
       response_headers: [
-        ['Cache-Control', 'max-age=3600, must-understand']
+        ['Cache-Control', 'max-age=3600, no-store, must-understand']
       ],
       setup: true
     },
     {
-      expected_type: 'not_cached'
+      expected_type: 'cached'
     }
   ]
 })
