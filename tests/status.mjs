@@ -72,7 +72,7 @@ function checkStatus (status) {
 ].forEach(checkStatus)
 
 tests.push({
-  name: 'An optimal HTTP cache reuses a fresh response with an unrecognised status code and `Cache-Control: must-understand`, even if it also contains `Cache-Control: no-store`.',
+  name: 'HTTP cache must not reuse a fresh response with an unrecognised status code and `Cache-Control: no-store, must-understand`.',
   id: 'status-599-must-understand',
   depends_on: ['status-599-fresh'],
   spec_anchors: ['cache-response-directive.must-understand'],
@@ -85,10 +85,31 @@ tests.push({
       setup: true
     },
     {
+      expected_type: 'not_cached'
+    }
+  ]
+})
+
+tests.push({
+  name: 'An optimal HTTP cache reuses a fresh response with a recognised status code and `Cache-Control: no-store, must-understand`.',
+  id: 'status-200-must-understand',
+  kind: 'optimal',
+  depends_on: ['status-200-fresh', 'cc-resp-no-store-fresh'],
+  spec_anchors: ['cache-response-directive.must-understand'],
+  requests: [
+    {
+      response_status: [200, 'OK'],
+      response_headers: [
+        ['Cache-Control', 'max-age=3600, no-store, must-understand']
+      ],
+      setup: true
+    },
+    {
       expected_type: 'cached'
     }
   ]
 })
+
 
 export default {
   name: 'Status Code Cacheability',
