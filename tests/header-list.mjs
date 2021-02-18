@@ -1,29 +1,33 @@
 
 export default [
   {
-    name: 'Test-Header'
+    name: 'Test-Header',
+    reqUpdate: true
   },
   {
-    name: 'X-Test-Header'
+    name: 'X-Test-Header',
+    reqUpdate: true
   },
   {
-    name: 'Content-Foo'
+    name: 'Content-Foo',
+    reqUpdate: true
   },
   {
-    name: 'X-Content-Foo'
+    name: 'X-Content-Foo',
+    reqUpdate: true
   },
   {
     name: 'Cache-Control',
     valA: 'max-age=1',
-    valB: 'max-age=3600'
+    valB: 'max-age=3600',
+    reqUpdate: true
   },
   {
     name: 'Connection',
     noStore: true
   },
   {
-    name: 'Content-Encoding',
-    noUpdate: true
+    name: 'Content-Encoding'
   },
   {
     name: 'Content-Length',
@@ -40,12 +44,10 @@ export default [
   {
     name: 'Content-MD5',
     valA: 'rL0Y20zC+Fzt72VPzMSk2A==',
-    valB: 'N7UdGUp1E+RbVvZSTy1R8g==',
-    noUpdate: true
+    valB: 'N7UdGUp1E+RbVvZSTy1R8g=='
   },
   {
-    name: 'Content-Range',
-    noUpdate: true
+    name: 'Content-Range'
   },
   {
     name: 'Content-Security-Policy',
@@ -64,7 +66,6 @@ export default [
   },
   {
     name: 'ETag',
-    noUpdate: true,
     valA: '"abcdef"',
     valB: '"ghijkl"'
   },
