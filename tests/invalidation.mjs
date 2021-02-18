@@ -41,8 +41,9 @@ function checkInvalidation (method) {
 
 function checkLocationInvalidation (method) {
   tests.push({
-    name: `HTTP cache must invalidate \`Location\` URL after a successful response to a \`${method}\` request`,
+    name: `Does HTTP cache invalidate \`Location\` URL after a successful response to a \`${method}\` request?`,
     id: `invalidate-${method}-location`,
+    kind: 'check',
     requests: [
       templates.location({
         setup: true
@@ -59,8 +60,9 @@ function checkLocationInvalidation (method) {
 
 function checkClInvalidation (method) {
   tests.push({
-    name: `HTTP cache must invalidate \`Content-Location\` URL after a successful response to a \`${method}\` request`,
+    name: `Does HTTP cache must invalidate \`Content-Location\` URL after a successful response to a \`${method}\` request?`,
     id: `invalidate-${method}-cl`,
+    kind: 'check',
     requests: [
       templates.contentLocation({
         setup: true
