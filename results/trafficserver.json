@@ -323,7 +323,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/0c62d469-b421-49f2-87f4-2147bf690e61 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/0a30189c-40e6-4421-86e8-98504fa00ade failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -506,10 +506,7 @@
     "Response 2 does not come from cache"
   ],
   "partial-use-headers": true,
-  "partial-use-stored-headers": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
-  ],
+  "partial-use-stored-headers": true,
   "pragma-request-extension": true,
   "pragma-request-no-cache": true,
   "pragma-response-extension": true,
@@ -546,6 +543,10 @@
   "stale-warning-become": true,
   "stale-warning-stored": true,
   "status-200-fresh": true,
+  "status-200-must-understand": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "status-200-stale": true,
   "status-203-fresh": true,
   "status-203-stale": true,
@@ -583,10 +584,7 @@
   "status-504-fresh": true,
   "status-504-stale": true,
   "status-599-fresh": true,
-  "status-599-must-understand": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-599-must-understand": true,
   "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",

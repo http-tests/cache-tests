@@ -7,7 +7,10 @@
     "Assertion",
     "Response 2 header Clear-Site-Data is \"cache\", not \"cookies\""
   ],
-  "304-etag-update-response-Content-Encoding": true,
+  "304-etag-update-response-Content-Encoding": [
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
+  ],
   "304-etag-update-response-Content-Foo": [
     "Assertion",
     "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
@@ -558,7 +561,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 18 Feb 2021 00:32:25 GMT\", not \"Thu, 18 Feb 2021 00:32:22 GMT\""
+    "Response 2 header Date is \"Thu, 18 Feb 2021 00:44:40 GMT\", not \"Thu, 18 Feb 2021 00:44:37 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -645,6 +648,7 @@
     "Response 2 does not come from cache"
   ],
   "status-200-fresh": true,
+  "status-200-must-understand": true,
   "status-200-stale": true,
   "status-203-fresh": true,
   "status-203-stale": true,
@@ -721,10 +725,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "status-599-must-understand": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-599-must-understand": true,
   "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",

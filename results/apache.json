@@ -426,7 +426,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 18 Feb 2021 00:28:56 GMT\", not \"Thu, 18 Feb 2021 00:28:53 GMT\""
+    "Response 2 header Date is \"Thu, 18 Feb 2021 00:39:46 GMT\", not \"Thu, 18 Feb 2021 00:39:43 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
@@ -495,6 +495,10 @@
   "stale-warning-become": true,
   "stale-warning-stored": true,
   "status-200-fresh": true,
+  "status-200-must-understand": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "status-200-stale": true,
   "status-203-fresh": true,
   "status-203-stale": true,
@@ -541,10 +545,7 @@
     "Setup",
     "Response 2 status is 500, not 599"
   ],
-  "status-599-must-understand": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-599-must-understand": true,
   "status-599-stale": true,
   "surrogate-append-capabilities": [
     "Assertion",

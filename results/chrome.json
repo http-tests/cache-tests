@@ -503,6 +503,10 @@
     "Failed to fetch"
   ],
   "status-200-fresh": true,
+  "status-200-must-understand": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "status-200-stale": true,
   "status-203-fresh": true,
   "status-203-stale": true,
@@ -527,10 +531,7 @@
   "status-504-fresh": true,
   "status-504-stale": true,
   "status-599-fresh": true,
-  "status-599-must-understand": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-599-must-understand": true,
   "status-599-stale": true,
   "vary-2-match": true,
   "vary-2-match-omit": true,

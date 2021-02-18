@@ -489,6 +489,10 @@
   "stale-warning-become": true,
   "stale-warning-stored": true,
   "status-200-fresh": true,
+  "status-200-must-understand": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "status-200-stale": true,
   "status-203-fresh": true,
   "status-203-stale": true,
@@ -556,10 +560,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "status-599-must-understand": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-599-must-understand": true,
   "status-599-stale": true,
   "surrogate-append-capabilities": true,
   "surrogate-fresh-cc-nostore": [
