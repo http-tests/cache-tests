@@ -7,7 +7,10 @@
     "Assertion",
     "Response 2 header Clear-Site-Data is \"cache\", not \"cookies\""
   ],
-  "304-etag-update-response-Content-Encoding": true,
+  "304-etag-update-response-Content-Encoding": [
+    "Assertion",
+    "Response 2 header Content-Encoding is \"ARIZQHYPGXOFWNE\", not \"ASKCUMEWOGYQIAS\""
+  ],
   "304-etag-update-response-Content-Foo": [
     "Assertion",
     "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
@@ -17,10 +20,13 @@
     "Assertion",
     "Response 2 header Content-Location is \"/foo\", not \"/bar\""
   ],
-  "304-etag-update-response-Content-MD5": true,
+  "304-etag-update-response-Content-MD5": [
+    "Assertion",
+    "Response 2 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
+  ],
   "304-etag-update-response-Content-Range": [
     "Assertion",
-    "Response 2 header Content-Range is \"null\", not \"APETIXMBQFUJYNC\""
+    "Response 2 header Content-Range is \"null\", not \"AQGWMCSIYOEUKAQ\""
   ],
   "304-etag-update-response-Content-Security-Policy": [
     "Assertion",
@@ -30,7 +36,10 @@
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
-  "304-etag-update-response-ETag": true,
+  "304-etag-update-response-ETag": [
+    "Assertion",
+    "Response 2 header ETag is \"\"abcdef\"\", not \"\"ghijkl\"\""
+  ],
   "304-etag-update-response-Expires": [
     "Assertion",
     "Response 2 header Expires is \"Fri, 01 Jan 2038 01:01:01 GMT\", not \"Mon, 11 Jan 2038 11:11:11 GMT\""
@@ -558,7 +567,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 18 Feb 2021 00:58:43 GMT\", not \"Thu, 18 Feb 2021 00:58:40 GMT\""
+    "Response 2 header Date is \"Thu, 18 Feb 2021 01:54:21 GMT\", not \"Thu, 18 Feb 2021 01:54:18 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

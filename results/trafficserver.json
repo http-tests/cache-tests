@@ -1,30 +1,18 @@
 {
   "304-etag-update-response-Cache-Control": true,
   "304-etag-update-response-Clear-Site-Data": true,
-  "304-etag-update-response-Content-Encoding": [
-    "Assertion",
-    "Response 2 header Content-Encoding is \"ASKCUMEWOGYQIAS\", not \"ARIZQHYPGXOFWNE\""
-  ],
+  "304-etag-update-response-Content-Encoding": true,
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": true,
-  "304-etag-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 header Content-MD5 is \"N7UdGUp1E+RbVvZSTy1R8g==\", not \"rL0Y20zC+Fzt72VPzMSk2A==\""
-  ],
-  "304-etag-update-response-Content-Range": [
-    "Assertion",
-    "Response 2 header Content-Range is \"AQGWMCSIYOEUKAQ\", not \"APETIXMBQFUJYNC\""
-  ],
+  "304-etag-update-response-Content-MD5": true,
+  "304-etag-update-response-Content-Range": true,
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
   ],
-  "304-etag-update-response-ETag": [
-    "Assertion",
-    "Response 2 header ETag is \"\"ghijkl\"\", not \"\"abcdef\"\""
-  ],
+  "304-etag-update-response-ETag": true,
   "304-etag-update-response-Expires": true,
   "304-etag-update-response-Public-Key-Pins": true,
   "304-etag-update-response-Set-Cookie": [
@@ -323,7 +311,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/0a30189c-40e6-4421-86e8-98504fa00ade failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/6e03c36d-171a-4270-9c82-23c86410a8e0 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,

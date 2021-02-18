@@ -1,24 +1,21 @@
 {
   "304-etag-update-response-Cache-Control": true,
   "304-etag-update-response-Clear-Site-Data": true,
-  "304-etag-update-response-Content-Encoding": true,
+  "304-etag-update-response-Content-Encoding": [
+    "Assertion",
+    "Response 2 header Content-Encoding is \"ARIZQHYPGXOFWNE\", not \"ASKCUMEWOGYQIAS\""
+  ],
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": true,
-  "304-etag-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 header Content-MD5 is \"N7UdGUp1E+RbVvZSTy1R8g==\", not \"rL0Y20zC+Fzt72VPzMSk2A==\""
-  ],
+  "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Range": [
     "Assertion",
-    "Response 2 header Content-Range is \"null\", not \"APETIXMBQFUJYNC\""
+    "Response 2 header Content-Range is \"null\", not \"AQGWMCSIYOEUKAQ\""
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": true,
-  "304-etag-update-response-ETag": [
-    "Assertion",
-    "Response 2 header ETag is \"\"ghijkl\"\", not \"\"abcdef\"\""
-  ],
+  "304-etag-update-response-ETag": true,
   "304-etag-update-response-Expires": true,
   "304-etag-update-response-Public-Key-Pins": true,
   "304-etag-update-response-Set-Cookie": [
