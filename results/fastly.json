@@ -7,10 +7,7 @@
     "Assertion",
     "Response 2 header Clear-Site-Data is \"cache\", not \"cookies\""
   ],
-  "304-etag-update-response-Content-Encoding": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "304-etag-update-response-Content-Encoding": true,
   "304-etag-update-response-Content-Foo": [
     "Assertion",
     "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
@@ -561,7 +558,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 18 Feb 2021 00:44:40 GMT\", not \"Thu, 18 Feb 2021 00:44:37 GMT\""
+    "Response 2 header Date is \"Thu, 18 Feb 2021 00:58:43 GMT\", not \"Thu, 18 Feb 2021 00:58:40 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
