@@ -64,6 +64,44 @@ export default
       ]
     },
     {
+      name: 'HTTP cache should consider a response with a `Age` value of 2147483648 to be stale',
+      id: 'age-parse-large',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '2147483648', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should consider a response with a `Age` value of 2147483649 to be stale',
+      id: 'age-parse-larger',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '2147483649', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache should consider a response with a single `Age` header line `old, 0` to be stale.',
       id: 'age-parse-suffix',
       depends_on: ['freshness-max-age-age'],
