@@ -63,6 +63,8 @@
   "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
   "age-parse-float": true,
+  "age-parse-large": true,
+  "age-parse-larger": true,
   "age-parse-negative": [
     "Assertion",
     "Response 2 comes from cache"

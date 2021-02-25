@@ -48,6 +48,8 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "age-parse-large": true,
+  "age-parse-larger": true,
   "age-parse-negative": [
     "Assertion",
     "Response 2 comes from cache"
@@ -426,7 +428,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 18 Feb 2021 01:50:51 GMT\", not \"Thu, 18 Feb 2021 01:50:48 GMT\""
+    "Response 2 header Date is \"Thu, 25 Feb 2021 04:23:13 GMT\", not \"Thu, 25 Feb 2021 04:23:09 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

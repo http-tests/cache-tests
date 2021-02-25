@@ -30,6 +30,8 @@
   "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
   "age-parse-float": true,
+  "age-parse-large": true,
+  "age-parse-larger": true,
   "age-parse-negative": [
     "Assertion",
     "Response 2 comes from cache"
@@ -311,7 +313,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/6e03c36d-171a-4270-9c82-23c86410a8e0 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/8bde03a3-f661-4a0d-8630-869c6d435815 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -466,10 +468,13 @@
   "other-date-update": true,
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
   ],
-  "other-set-cookie": true,
+  "other-set-cookie": [
+    "Setup",
+    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+  ],
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,
@@ -482,8 +487,8 @@
     "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-absent": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
   ],
   "partial-store-partial-reuse-partial-byterange": [
     "Assertion",
