@@ -233,9 +233,8 @@ export default {
       ]
     },
     {
-      name: 'Does HTTP cache preserve unupdated header fields from the stored response?',
+      name: 'HTTP cache must preserve unupdated header fields from the stored response',
       id: 'partial-use-stored-headers',
-      kind: 'check',
       depends_on: ['partial-store-complete-reuse-partial'],
       requests: [
         {
