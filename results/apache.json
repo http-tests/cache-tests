@@ -44,20 +44,12 @@
   "age-parse-dup-0": true,
   "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
-  "age-parse-float": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-float": true,
   "age-parse-large": true,
+  "age-parse-large-minus-one": true,
   "age-parse-larger": true,
-  "age-parse-negative": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "age-parse-nonnumeric": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": true,
   "age-parse-numeric-parameter": [
     "Assertion",
     "Response 2 comes from cache"
@@ -66,10 +58,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "age-parse-prefix": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": [
     "Assertion",
@@ -428,7 +417,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 25 Feb 2021 04:23:13 GMT\", not \"Thu, 25 Feb 2021 04:23:09 GMT\""
+    "Response 2 header Date is \"Mon, 01 Mar 2021 04:39:50 GMT\", not \"Mon, 01 Mar 2021 04:39:46 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

@@ -32,17 +32,15 @@
   "age-parse-dup-0": true,
   "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
-  "age-parse-float": true,
+  "age-parse-float": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "age-parse-large": true,
+  "age-parse-large-minus-one": true,
   "age-parse-larger": true,
-  "age-parse-negative": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "age-parse-nonnumeric": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": true,
   "age-parse-numeric-parameter": [
     "Assertion",
     "Response 2 comes from cache"
@@ -51,10 +49,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "age-parse-prefix": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": true,
   "age-parse-suffix-twoline": true,
@@ -136,13 +131,10 @@
     "Assertion",
     "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-strong-generate": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-strong-generate": true,
   "conditional-etag-strong-generate-unquoted": [
     "Assertion",
-    "Request 2 should have been conditional, but it was not."
+    "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": [
@@ -171,10 +163,7 @@
     "Assertion",
     "Request 2 should have been conditional, but it was not."
   ],
-  "conditional-etag-weak-generate-weak": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,
   "conditional-etag-weak-respond-lowercase": true,

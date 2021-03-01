@@ -29,8 +29,15 @@
   "age-parse-dup-0": true,
   "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
-  "age-parse-float": true,
+  "age-parse-float": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "age-parse-large": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "age-parse-large-minus-one": [
     "Assertion",
     "Response 2 comes from cache"
   ],
@@ -38,20 +45,11 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "age-parse-negative": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "age-parse-nonnumeric": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": true,
   "age-parse-numeric-parameter": true,
   "age-parse-parameter": true,
-  "age-parse-prefix": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": true,
   "age-parse-suffix-twoline": true,

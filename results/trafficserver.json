@@ -29,23 +29,18 @@
   "age-parse-dup-0": true,
   "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
-  "age-parse-float": true,
+  "age-parse-float": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "age-parse-large": true,
+  "age-parse-large-minus-one": true,
   "age-parse-larger": true,
-  "age-parse-negative": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "age-parse-nonnumeric": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-negative": true,
+  "age-parse-nonnumeric": true,
   "age-parse-numeric-parameter": true,
   "age-parse-parameter": true,
-  "age-parse-prefix": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": true,
   "age-parse-suffix-twoline": true,
@@ -313,7 +308,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/8bde03a3-f661-4a0d-8630-869c6d435815 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/2ed2874d-f839-40f4-8bcd-d82493406ddd failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -468,13 +463,10 @@
   "other-date-update": true,
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
-  "other-set-cookie": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
-  ],
+  "other-set-cookie": true,
   "partial-store-complete-reuse-partial": true,
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,
@@ -487,8 +479,8 @@
     "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-absent": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "partial-store-partial-reuse-partial-byterange": [
     "Assertion",
@@ -636,12 +628,18 @@
   ],
   "surrogate-max-age-space-after-equals": true,
   "surrogate-max-age-space-before-equals": true,
-  "surrogate-no-store": true,
+  "surrogate-no-store": [
+    "Setup",
+    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+  ],
   "surrogate-no-store-cc-fresh": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "surrogate-remove-header": true,
+  "surrogate-remove-header": [
+    "Setup",
+    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+  ],
   "vary-2-match": true,
   "vary-2-match-omit": true,
   "vary-2-no-match": true,
