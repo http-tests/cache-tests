@@ -7,7 +7,7 @@ export default
   spec_anchors: ['field.age', 'expiration.model'],
   tests: [
     {
-      name: 'HTTP cache should consider a response with a non-numeric `Age` header to be stale',
+      name: 'HTTP cache should ignore an `Age` header with a non-numeric value.',
       id: 'age-parse-nonnumeric',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -21,12 +21,12 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'not_cached'
+          expected_type: 'cached'
         }
       ]
     },
     {
-      name: 'HTTP cache should consider a response with a negative `Age` header to be stale',
+      name: 'HTTP cache should ignore an `Age` header with a negative value.',
       id: 'age-parse-negative',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -40,12 +40,12 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'not_cached'
+          expected_type: 'cached'
         }
       ]
     },
     {
-      name: 'HTTP cache should consider a response with a float `Age` header to be stale',
+      name: 'HTTP cache should ignore an `Age` header with a float value.',
       id: 'age-parse-float',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -54,6 +54,25 @@ export default
             ['Date', 0],
             ['Cache-Control', 'max-age=3600'],
             ['Age', '7200.0', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should consider a response with a `Age` value of 2147483647 to be stale',
+      id: 'age-parse-large-minus-one',
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '2147483647', false]
           ],
           setup: true,
           pause_after: true
@@ -121,7 +140,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with a single `Age` header line `0, old` to be stale.',
+      name: 'HTTP cache should consider a response with a single `Age` header line `0, old` to be fresh.',
       id: 'age-parse-prefix',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -135,7 +154,7 @@ export default
           pause_after: true
         },
         {
-          expected_type: 'not_cached'
+          expected_type: 'cached'
         }
       ]
     },
@@ -227,7 +246,8 @@ export default
           response_headers: [
             ['Date', 0],
             ['Cache-Control', 'max-age=10000'],
-            ['Age', '3600, 3600', false]
+            ['Age', '3600', false],
+            ['Age', '3600', false]
           ],
           setup: true,
           pause_after: true
