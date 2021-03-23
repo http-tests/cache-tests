@@ -31,7 +31,7 @@ export default [
   },
   {
     name: 'Content-Length',
-    valA: '5',
+    valA: '36',
     valB: '10',
     noUpdate: true,
     checkBody: false
