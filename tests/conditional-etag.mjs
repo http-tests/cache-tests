@@ -376,7 +376,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not use a stored `Vary`ing request header in a conditional when the presented `Vary`ing request header differs',
+      name: 'HTTP cache must not use a stored `ETag` to validate when the presented `Vary`ing request header differs',
       id: 'conditional-etag-vary-headers-mismatch',
       depends_on: ['conditional-etag-vary-headers', 'vary-no-match'],
       requests: [
