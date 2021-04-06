@@ -17,6 +17,10 @@
 - The server will check that the following request headers (and values, when specified) are present{% if test.setup_tests contains "expected_request_headers" %}{{ setup_prop }}{% endif %}:
 {%- render 'header-list' with request.expected_request_headers as headers %}{% endif -%}
 
+{%- if request.expected_request_headers_missing.size > 0 %}
+- The server will check that the following request headers (and values, when specified) are absent{% if test.setup_tests contains "expected_request_headers_missing" %}{{ setup_prop }}{% endif %}:
+{%- render 'header-list' with request.expected_request_headers_missing as headers %}{% endif -%}
+
 {%- if request.expected_status %}
 - The client will check that the status code is `{{ request.expected_status }}` {% if test.setup_tests contains "expected_status" %}{{ setup_prop }}{% endif %}
 {%- elsif request.response_status %}

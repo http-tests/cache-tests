@@ -243,6 +243,20 @@ function checkServerRequests (requests, responses, serverState) {
         }
       })
     }
+    if ('expected_request_headers_missing' in reqConfig) {
+      const reqmPresentSetup = setupCheck(reqConfig, 'expected_request_headers_missing')
+      reqConfig.expected_request_headers_missing.forEach(header => {
+        if (typeof header === 'string') {
+          const headerName = header.toLowerCase()
+          assert(reqmPresentSetup, !Object.prototype.hasOwnProperty.call(serverRequest.request_headers, headerName),
+            `Request ${reqNum} ${header} header present.`)
+        } else {
+          const reqValue = serverRequest.request_headers[header[0].toLowerCase()]
+          assert(reqmPresentSetup, reqValue !== header[1],
+            `Request ${reqNum} header ${header[0]} is "${reqValue}"`)
+        }
+      })
+    }
     if (typeof serverRequest !== 'undefined' && 'response_headers' in serverRequest) {
       serverRequest.response_headers.forEach(header => {
         if (config.useBrowserCache && defines.forbiddenResponseHeaders.has(header[0].toLowerCase())) {

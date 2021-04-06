@@ -241,6 +241,30 @@
                       ]
                     }
                   },
+                  "expected_request_headers_missing": {
+                    "description": "Request headers to check for absence on the server",
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/definitions/field-name"
+                        },
+                        {
+                          "description": "name and value",
+                          "type": "array",
+                          "items": [
+                            {
+                              "$ref": "#/definitions/field-name"
+                            },
+                            {
+                              "description": "field value",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
                   "expected_response_headers": {
                     "description": "Response headers to check for on the client",
                     "type": "array",
