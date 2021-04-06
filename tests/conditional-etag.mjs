@@ -376,17 +376,16 @@ export default {
       ]
     },
     {
-      name: 'Does HTTP cache create a conditional request when header identified by `Vary` mismatch?',
+      name: 'HTTP cache must not use a stored `Vary`ing request header in a conditional when the presented `Vary`ing request header differs',
       id: 'conditional-etag-vary-headers-mismatch',
-      kind: 'check',
-      depends_on: ['conditional-etag-vary-headers'],
+      depends_on: ['conditional-etag-vary-headers', 'vary-no-match'],
       requests: [
         {
           request_headers: [
             ['Abc', '123']
           ],
           response_headers: [
-            ['Expires', 1],
+            ['Expires', 10000],
             ['ETag', '"abcdef"'],
             ['Date', 0],
             ['Vary', 'Abc']
@@ -398,7 +397,9 @@ export default {
           request_headers: [
             ['Abc', '456']
           ],
-          expected_type: 'etag_validated'
+          expected_request_headers_missing: [
+            ['If-None-Match', '"abcdef"']
+          ]
         }
       ]
     },
