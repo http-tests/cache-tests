@@ -210,10 +210,7 @@
   ],
   "conditional-etag-unquoted-respond-unquoted": true,
   "conditional-etag-vary-headers": true,
-  "conditional-etag-vary-headers-mismatch": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-vary-headers-mismatch": true,
   "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,
@@ -573,7 +570,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 01 Mar 2021 04:39:20 GMT\", not \"Mon, 01 Mar 2021 04:39:17 GMT\""
+    "Response 2 header Date is \"Tue, 06 Apr 2021 07:02:04 GMT\", not \"Tue, 06 Apr 2021 07:02:01 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

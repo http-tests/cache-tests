@@ -246,10 +246,7 @@
     "Setup",
     "Request 2 should have been conditional, but it was not."
   ],
-  "conditional-etag-vary-headers-mismatch": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-vary-headers-mismatch": true,
   "conditional-etag-weak-generate-weak": [
     "Assertion",
     "Request 2 should have been conditional, but it was not."

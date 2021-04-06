@@ -159,10 +159,7 @@
   ],
   "conditional-etag-unquoted-respond-unquoted": true,
   "conditional-etag-vary-headers": true,
-  "conditional-etag-vary-headers-mismatch": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-vary-headers-mismatch": true,
   "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": true,

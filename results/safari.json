@@ -41,8 +41,8 @@
     "Response 2 header Set-Cookie is \"null\", not \"a=c\""
   ],
   "304-etag-update-response-Set-Cookie2": [
-    "Assertion",
-    "Response 2 header Set-Cookie2 is \"null\", not \"a=c\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": [
@@ -50,13 +50,13 @@
     "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
   ],
   "304-etag-update-response-X-Frame-Options": [
-    "Assertion",
-    "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": [
-    "Assertion",
-    "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
+    "Setup",
+    "Request 2 should have been conditional, but it was not."
   ],
   "304-lm-use-stored-Test-Header": true,
   "age-parse-dup-0": true,
@@ -145,10 +145,7 @@
     "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-vary-headers": true,
-  "conditional-etag-vary-headers-mismatch": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-vary-headers-mismatch": true,
   "conditional-etag-weak-generate-weak": true,
   "freshness-expires-32bit": true,
   "freshness-expires-age-fast-date": true,
@@ -403,18 +400,21 @@
   ],
   "other-age-gen": [
     "Assertion",
-    "Response 2 Age header not present."
+    "Response 2 does not come from cache"
   ],
   "other-age-update-expires": [
     "Assertion",
-    "Response 2 header Age is 30, should be bigger than 32"
+    "Response 2 does not come from cache"
   ],
   "other-age-update-max-age": [
     "Assertion",
-    "Response 2 header Age is 30, should be bigger than 32"
+    "Response 2 does not come from cache"
   ],
   "other-cookie": true,
-  "other-date-update": true,
+  "other-date-update": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
   "other-set-cookie": true,

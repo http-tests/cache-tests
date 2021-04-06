@@ -117,10 +117,7 @@
   "conditional-etag-unquoted-respond-quoted": true,
   "conditional-etag-unquoted-respond-unquoted": true,
   "conditional-etag-vary-headers": true,
-  "conditional-etag-vary-headers-mismatch": [
-    "Assertion",
-    "Request 2 should have been conditional, but it was not."
-  ],
+  "conditional-etag-vary-headers-mismatch": true,
   "conditional-etag-weak-generate-weak": [
     "Assertion",
     "Request 2 should have been conditional, but it was not."
@@ -308,7 +305,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/2ed2874d-f839-40f4-8bcd-d82493406ddd failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/78db4995-b2bf-4481-b433-c3f3ff310777 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -628,18 +625,12 @@
   ],
   "surrogate-max-age-space-after-equals": true,
   "surrogate-max-age-space-before-equals": true,
-  "surrogate-no-store": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
-  ],
+  "surrogate-no-store": true,
   "surrogate-no-store-cc-fresh": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "surrogate-remove-header": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
-  ],
+  "surrogate-remove-header": true,
   "vary-2-match": true,
   "vary-2-match-omit": true,
   "vary-2-no-match": true,
