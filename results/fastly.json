@@ -80,17 +80,11 @@
   "age-parse-dup-0": true,
   "age-parse-dup-0-twoline": true,
   "age-parse-dup-old": true,
-  "age-parse-float": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-float": true,
   "age-parse-large": true,
   "age-parse-large-minus-one": true,
   "age-parse-larger": true,
-  "age-parse-negative": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "age-parse-negative": true,
   "age-parse-nonnumeric": true,
   "age-parse-numeric-parameter": true,
   "age-parse-parameter": true,
@@ -218,10 +212,7 @@
   ],
   "conditional-lm-fresh-rfc850": true,
   "conditional-lm-stale": true,
-  "freshness-expires-32bit": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-32bit": true,
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -231,10 +222,7 @@
     "Response 2 comes from cache"
   ],
   "freshness-expires-ansi-c": true,
-  "freshness-expires-far-future": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-far-future": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
   "freshness-expires-invalid-1-digit-hour": [
@@ -286,8 +274,14 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-max-age-decimal-five": true,
-  "freshness-max-age-decimal-zero": true,
+  "freshness-max-age-decimal-five": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-decimal-zero": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,
@@ -301,10 +295,7 @@
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
   "freshness-max-age-max-plus-1": true,
-  "freshness-max-age-negative": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -567,7 +558,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 06 Apr 2021 07:05:15 GMT\", not \"Tue, 06 Apr 2021 07:05:12 GMT\""
+    "Response 2 header Date is \"Mon, 17 May 2021 05:28:55 GMT\", not \"Mon, 17 May 2021 05:28:52 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
