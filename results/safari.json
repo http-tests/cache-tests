@@ -41,8 +41,8 @@
     "Response 2 header Set-Cookie is \"null\", not \"a=c\""
   ],
   "304-etag-update-response-Set-Cookie2": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header Set-Cookie2 is \"null\", not \"a=c\""
   ],
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": [
@@ -50,13 +50,13 @@
     "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
   ],
   "304-etag-update-response-X-Frame-Options": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
   ],
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": [
-    "Setup",
-    "Request 2 should have been conditional, but it was not."
+    "Assertion",
+    "Response 2 header X-XSS-Protection is \"1\", not \"1; mode=block\""
   ],
   "304-lm-use-stored-Test-Header": true,
   "age-parse-dup-0": true,
@@ -103,6 +103,7 @@
   "cc-resp-no-store": true,
   "cc-resp-no-store-case-insensitive": true,
   "cc-resp-no-store-fresh": true,
+  "cc-resp-no-store-old-new": true,
   "cc-resp-private-private": true,
   "ccreq-ma0": true,
   "ccreq-ma1": [
@@ -132,7 +133,7 @@
   ],
   "ccreq-oic": [
     "TypeError",
-    "can’t load from network"
+    "Load failed"
   ],
   "conditional-etag-forward": true,
   "conditional-etag-forward-unquoted": [
@@ -400,21 +401,18 @@
   ],
   "other-age-gen": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 Age header not present."
   ],
   "other-age-update-expires": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 header Age is 30, should be bigger than 32"
   ],
   "other-age-update-max-age": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 header Age is 30, should be bigger than 32"
   ],
   "other-cookie": true,
-  "other-date-update": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "other-date-update": true,
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
   "other-set-cookie": true,
@@ -477,39 +475,39 @@
   ],
   "stale-close": [
     "TypeError",
-    "The network connection was lost."
+    "Load failed"
   ],
   "stale-close-must-revalidate": [
     "TypeError",
-    "The network connection was lost."
+    "Load failed"
   ],
   "stale-close-no-cache": [
     "TypeError",
-    "The network connection was lost."
+    "Load failed"
   ],
   "stale-close-proxy-revalidate": [
     "TypeError",
-    "The network connection was lost."
+    "Load failed"
   ],
   "stale-close-s-maxage=2": [
     "TypeError",
-    "The network connection was lost."
+    "Load failed"
   ],
   "stale-sie-503": [
     "TypeError",
-    "The network connection was lost."
+    "Load failed"
   ],
   "stale-sie-close": [
     "TypeError",
-    "The network connection was lost."
+    "Load failed"
   ],
   "stale-warning-become": [
     "TypeError",
-    "The network connection was lost."
+    "Load failed"
   ],
   "stale-warning-stored": [
     "TypeError",
-    "The network connection was lost."
+    "Load failed"
   ],
   "status-200-fresh": true,
   "status-200-must-understand": [

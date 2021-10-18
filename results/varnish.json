@@ -68,6 +68,7 @@
   "cc-resp-no-store": true,
   "cc-resp-no-store-case-insensitive": true,
   "cc-resp-no-store-fresh": true,
+  "cc-resp-no-store-old-new": true,
   "cc-resp-private-shared": true,
   "ccreq-ma0": [
     "Assertion",
@@ -173,10 +174,7 @@
   ],
   "conditional-lm-fresh-rfc850": true,
   "conditional-lm-stale": true,
-  "freshness-expires-32bit": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-32bit": true,
   "freshness-expires-age-fast-date": [
     "Assertion",
     "Response 2 comes from cache"
@@ -186,10 +184,7 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "freshness-expires-far-future": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-far-future": true,
   "freshness-expires-future": true,
   "freshness-expires-invalid": true,
   "freshness-expires-invalid-1-digit-hour": true,

@@ -91,6 +91,7 @@
   "cc-resp-no-store": true,
   "cc-resp-no-store-case-insensitive": true,
   "cc-resp-no-store-fresh": true,
+  "cc-resp-no-store-old-new": true,
   "cc-resp-private-private": true,
   "ccreq-ma0": true,
   "ccreq-ma1": [
@@ -204,7 +205,10 @@
   "freshness-max-age": true,
   "freshness-max-age-0": true,
   "freshness-max-age-0-expires": true,
-  "freshness-max-age-100a": true,
+  "freshness-max-age-100a": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-a100": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -212,8 +216,14 @@
   "freshness-max-age-age": true,
   "freshness-max-age-case-insenstive": true,
   "freshness-max-age-date": true,
-  "freshness-max-age-decimal-five": true,
-  "freshness-max-age-decimal-zero": true,
+  "freshness-max-age-decimal-five": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "freshness-max-age-decimal-zero": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-max-age-expires": true,
   "freshness-max-age-expires-invalid": true,
   "freshness-max-age-extension": true,

@@ -116,6 +116,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "cc-resp-no-store-old-new": true,
   "cc-resp-private-shared": true,
   "ccreq-ma0": [
     "Assertion",
@@ -558,7 +559,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 17 May 2021 05:28:55 GMT\", not \"Mon, 17 May 2021 05:28:52 GMT\""
+    "Response 2 header Date is \"Mon, 18 Oct 2021 04:05:35 GMT\", not \"Mon, 18 Oct 2021 04:05:32 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

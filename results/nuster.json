@@ -146,6 +146,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "cc-resp-no-store-old-new": true,
   "cc-resp-private-shared": [
     "Assertion",
     "Response 2 comes from cache"

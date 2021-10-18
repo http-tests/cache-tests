@@ -65,7 +65,7 @@ export default [
     file: 'fastly.json',
     name: 'Fastly',
     type: 'cdn',
-    version: '06-05-2019',
+    version: '18-10-2021',
     link: 'https://github.com/http-tests/cache-tests/wiki/Fastly'
   }
 ]
