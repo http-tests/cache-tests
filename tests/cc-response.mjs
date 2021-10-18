@@ -113,7 +113,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'no-store'],
-            ['Date', 0]
+            ['Date', 0],
             ['A', '2']
           ],
           setup: true,
@@ -121,7 +121,7 @@ export default
         },
         {
           expected_type: 'cached',
-          expected_response_headers: [['a', '1']],
+          expected_response_headers: [['a', '1']]
         }
       ]
     },
@@ -144,7 +144,7 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'no-store, max-age=0'],
-            ['Date', 0]
+            ['Date', 0],
             ['A', '2']
           ],
           setup: true,
@@ -152,7 +152,7 @@ export default
         },
         {
           expected_type: 'cached',
-          expected_response_headers: [['a', '1']],
+          expected_response_headers: [['a', '1']]
         }
       ]
     },
