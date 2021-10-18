@@ -95,6 +95,37 @@ export default
       ]
     },
     {
+      name: 'Does HTTP cache use older stored response when newer one came with `Cache-Control: no-store`?',
+      id: 'cc-resp-no-store-old-new',
+      depends_on: ['cc-resp-no-store'],
+      spec_anchors: ['cache-response-directive.no-store'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=10000'],
+            ['Expires', 10000],
+            ['Date', 0],
+            ['A', '1']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          response_headers: [
+            ['Cache-Control', 'no-store'],
+            ['Date', 0]
+            ['A', '2']
+          ],
+          setup: true,
+          pause: true
+        },
+        {
+          expected_type: 'cached',
+          expected_response_headers: [['a', '1']],
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not use a cached response with `Cache-Control: no-cache`, even with `max-age` and `Expires`',
       id: 'cc-resp-no-cache',
       spec_anchors: ['cache-response-directive.no-cache'],
