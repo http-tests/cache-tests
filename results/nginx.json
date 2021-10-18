@@ -128,6 +128,7 @@
   "cc-resp-no-store": true,
   "cc-resp-no-store-case-insensitive": true,
   "cc-resp-no-store-fresh": true,
+  "cc-resp-no-store-old-max-age": true,
   "cc-resp-no-store-old-new": true,
   "cc-resp-private-shared": true,
   "ccreq-ma0": [
@@ -565,7 +566,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 18 Oct 2021 03:57:58 GMT\", not \"Mon, 18 Oct 2021 03:57:55 GMT\""
+    "Response 2 header Date is \"Mon, 18 Oct 2021 04:12:41 GMT\", not \"Mon, 18 Oct 2021 04:12:38 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

@@ -68,6 +68,7 @@
   "cc-resp-no-store": true,
   "cc-resp-no-store-case-insensitive": true,
   "cc-resp-no-store-fresh": true,
+  "cc-resp-no-store-old-max-age": true,
   "cc-resp-no-store-old-new": true,
   "cc-resp-private-shared": true,
   "ccreq-ma0": [
