@@ -21,5 +21,6 @@ import invalidation from './invalidation.mjs'
 import partial from './partial.mjs'
 import auth from './authorization.mjs'
 import other from './other.mjs'
+import cdncc from './cdn-cache-control.mjs'
 
-export default [ccFreshness, ccParse, ageParse, expires, expiresParse, ccResponse, stale, heuristic, methods, statuses, ccRequest, pragma, vary, varyParse, conditionalLm, conditionalEtag, headers, update304, updateHead, invalidation, partial, auth, other]
+export default [ccFreshness, ccParse, ageParse, expires, expiresParse, ccResponse, stale, heuristic, methods, statuses, ccRequest, pragma, vary, varyParse, conditionalLm, conditionalEtag, headers, update304, updateHead, invalidation, partial, auth, other, cdncc]
