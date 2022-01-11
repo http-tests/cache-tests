@@ -364,7 +364,11 @@
               }
             },
             "browser_only": {
-              "description": "Whether the test will skip non-browsers",
+              "description": "Whether the test will only run on browsers",
+              "type": "boolean"
+            },
+            "cdn_only": {
+              "description": "Whether the test will only run on CDN caches",
               "type": "boolean"
             },
             "browser_skip": {

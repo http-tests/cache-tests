@@ -8,6 +8,7 @@ Test ID: `{{ test.id }}`
 {%- else -%}This is a conformance test
 {%- endcase -%}
 {%- if test.browser_only %} run on browsers only{% endif -%}
+{%- if test.cdn_only %} run on CDN caches only{% endif -%}
 {%- if test.browser_skip %} not run on browsers{% endif -%}
 .
 

@@ -41,7 +41,8 @@ The `tests` member is an array of objects, with the following members:
   - `optimal` - This test is to see if the cache behaves optimally.
   - `check` - This test is gathering information about cache behaviour.
 - `requests` - a list of request objects (see below).
-- `browser_only` - if `true`, will not run on non-browser caches. Default `false`.
+- `browser_only` - if `true`, will only run on browser caches. Default `false`.
+- `cdn_only` - if `true`, will only run on CDN caches. Default `false`.
 - `browser_skip` - if `true, will not run on browser caches. Default `false`.
 - `depends_on` - a list of test IDs that, when one fails, indicates that this test's results are not useful. Currently limited to test IDs in the same suite. Optional.
 - `spec_anchors` - An array of strings that represent anchors in the HTTP Caching specification related to this test. Optional.

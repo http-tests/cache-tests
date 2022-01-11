@@ -12,6 +12,8 @@ export function runTests (tests, myFetch, browserCache, base, chunkSize = 50) {
     testSet.tests.forEach(test => {
       if (test.id === undefined) throw new Error('Missing test id')
       if (test.browser_only === true && !config.useBrowserCache === true) return
+      if (test.cdn_only === true && config.useBrowserCache === true) return
+      // note: still runs cdn tests on rev-proxy
       if (test.browser_skip === true && config.useBrowserCache === true) return
       testArray.push(test)
     })
