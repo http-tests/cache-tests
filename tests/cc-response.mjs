@@ -108,7 +108,7 @@ export default
             ['A', '1']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           response_headers: [
@@ -117,7 +117,7 @@ export default
             ['A', '2']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'cached',
@@ -139,7 +139,7 @@ export default
             ['A', '1']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           response_headers: [
@@ -148,7 +148,7 @@ export default
             ['A', '2']
           ],
           setup: true,
-          pause: true
+          pause_after: true
         },
         {
           expected_type: 'cached',
