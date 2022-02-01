@@ -284,6 +284,7 @@ export default
     {
       name: 'CDN must not reuse a cached response with `CDN-Cache-Control: private`, even with `Cache-Control: max-age` and `Expires`',
       id: 'cdn-private',
+      cdn_only: true,
       requests: [
         {
           response_headers: [
@@ -302,6 +303,7 @@ export default
     {
       name: 'CDN must not reuse a cached response with `CDN-Cache-Control: no-cache`, even with `Cache-Control: max-age` and `Expires`',
       id: 'cdn-no-cache',
+      cdn_only: true,
       requests: [
         {
           response_headers: [
