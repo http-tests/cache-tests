@@ -23,35 +23,35 @@ export default [
     file: 'nginx.json',
     name: 'nginx',
     type: 'rev-proxy',
-    version: '1.18.0-6ubuntu4',
+    version: '1.18.0-6ubuntu12',
     link: 'https://github.com/http-tests/cache-tests/wiki/nginx'
   },
   {
     file: 'squid.json',
     name: 'Squid',
     type: 'rev-proxy',
-    version: '4.13-1ubuntu2',
+    version: '5.2-1ubuntu1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Squid'
   },
   {
     file: 'trafficserver.json',
     name: 'ATS',
     type: 'rev-proxy',
-    version: '8.1.1+ds-1',
+    version: '8.1.1+ds-1.1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Traffic-Server'
   },
   {
     file: 'apache.json',
     name: 'httpd',
     type: 'rev-proxy',
-    version: '2.4.46-2ubuntu1',
+    version: '2.4.51-2ubuntu1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Apache-httpd'
   },
   {
     file: 'varnish.json',
     name: 'Varnish',
     type: 'rev-proxy',
-    version: '6.5.1-1',
+    version: '6.5.2-1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Varnish'
   },
   {

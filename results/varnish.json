@@ -3,7 +3,7 @@
   "304-etag-update-response-Clear-Site-Data": true,
   "304-etag-update-response-Content-Encoding": [
     "Assertion",
-    "Response 2 header Content-Encoding is \"ARIZQHYPGXOFWNE\", not \"ASKCUMEWOGYQIAS\""
+    "Response 2 header Content-Encoding is \"arizqhypgxofwne\", not \"askcumewogyqias\""
   ],
   "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Length": true,
@@ -11,7 +11,7 @@
   "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Range": [
     "Assertion",
-    "Response 2 header Content-Range is \"null\", not \"AQGWMCSIYOEUKAQ\""
+    "Response 2 header Content-Range is \"null\", not \"aqgwmcsiyoeukaq\""
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": true,
@@ -119,6 +119,69 @@
     "Assertion",
     "Response 1 status is 200, not 504"
   ],
+  "cdn-cc-invalid-sh-type-unknown": true,
+  "cdn-cc-invalid-sh-type-wrong": true,
+  "cdn-fresh-cc-nostore": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-0": true,
+  "cdn-max-age-0-expires": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-max-age-age": true,
+  "cdn-max-age-case-insensitive": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-cc-max-age-invalid-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-extension": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-long-cc-max-age": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-max-age-max": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-max-plus": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-short-cc-max-age": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-space-after-equals": true,
+  "cdn-max-age-space-before-equals": true,
+  "cdn-no-cache": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-no-store-cc-fresh": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-private": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-remove-header": true,
   "conditional-304-etag": true,
   "conditional-etag-forward": [
     "Assertion",
@@ -313,7 +376,7 @@
   "headers-store-Content-MD5": true,
   "headers-store-Content-Range": [
     "Assertion",
-    "Response 2 header Content-Range is \"null\", not \"ANANANANANANANA\""
+    "Response 2 header Content-Range is \"null\", not \"ananananananana\""
   ],
   "headers-store-Content-Security-Policy": true,
   "headers-store-Content-Type": true,

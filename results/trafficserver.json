@@ -92,6 +92,69 @@
     "Response 2 comes from cache"
   ],
   "ccreq-oic": true,
+  "cdn-cc-invalid-sh-type-unknown": true,
+  "cdn-cc-invalid-sh-type-wrong": true,
+  "cdn-fresh-cc-nostore": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-0": true,
+  "cdn-max-age-0-expires": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-max-age-age": true,
+  "cdn-max-age-case-insensitive": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-cc-max-age-invalid-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-extension": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-long-cc-max-age": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-max-age-max": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-max-plus": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-short-cc-max-age": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-space-after-equals": true,
+  "cdn-max-age-space-before-equals": true,
+  "cdn-no-cache": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-no-store-cc-fresh": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-private": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-remove-header": true,
   "conditional-304-etag": true,
   "conditional-etag-forward": [
     "Assertion",
@@ -187,10 +250,7 @@
   "freshness-expires-past": true,
   "freshness-expires-present": true,
   "freshness-expires-rfc850": true,
-  "freshness-expires-wrong-case-month": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-expires-wrong-case-month": true,
   "freshness-expires-wrong-case-tz": true,
   "freshness-expires-wrong-case-weekday": true,
   "freshness-max-age": true,
@@ -307,7 +367,7 @@
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "FetchError",
-    "request to http://localhost:8003/test/b303c35a-12d2-4abc-a616-6ac1ec447a21 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "request to http://localhost:8003/test/58957e60-249a-43c2-a1df-48bc8ff6f8f8 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -415,8 +475,8 @@
   ],
   "invalidate-M-SEARCH-failed": true,
   "invalidate-M-SEARCH-location": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
   ],
   "invalidate-POST": true,
   "invalidate-POST-cl": [

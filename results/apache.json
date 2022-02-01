@@ -95,6 +95,69 @@
   ],
   "ccreq-no-store": true,
   "ccreq-oic": true,
+  "cdn-cc-invalid-sh-type-unknown": true,
+  "cdn-cc-invalid-sh-type-wrong": true,
+  "cdn-fresh-cc-nostore": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-0": true,
+  "cdn-max-age-0-expires": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-max-age-age": true,
+  "cdn-max-age-case-insensitive": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-cc-max-age-invalid-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-extension": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-long-cc-max-age": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-max-age-max": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-max-plus": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-short-cc-max-age": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-space-after-equals": true,
+  "cdn-max-age-space-before-equals": true,
+  "cdn-no-cache": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-no-store-cc-fresh": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-private": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-remove-header": true,
   "conditional-304-etag": true,
   "conditional-etag-forward": true,
   "conditional-etag-forward-unquoted": [
@@ -416,7 +479,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 18 Oct 2021 04:13:09 GMT\", not \"Mon, 18 Oct 2021 04:13:06 GMT\""
+    "Response 2 header Date is \"Tue, 01 Feb 2022 00:57:47 GMT\", not \"Tue, 01 Feb 2022 00:57:44 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

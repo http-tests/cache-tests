@@ -9,11 +9,11 @@
   ],
   "304-etag-update-response-Content-Encoding": [
     "Assertion",
-    "Response 2 header Content-Encoding is \"ARIZQHYPGXOFWNE\", not \"ASKCUMEWOGYQIAS\""
+    "Response 2 header Content-Encoding is \"arizqhypgxofwne\", not \"askcumewogyqias\""
   ],
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
+    "Response 2 header Content-Foo is \"awsokgcyuqmieaw\", not \"axurolifczwtqnk\""
   ],
   "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": [
@@ -26,7 +26,7 @@
   ],
   "304-etag-update-response-Content-Range": [
     "Assertion",
-    "Response 2 header Content-Range is \"null\", not \"AQGWMCSIYOEUKAQ\""
+    "Response 2 header Content-Range is \"null\", not \"aqgwmcsiyoeukaq\""
   ],
   "304-etag-update-response-Content-Security-Policy": [
     "Assertion",
@@ -46,7 +46,7 @@
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
-    "Response 2 header Public-Key-Pins is \"AUOICWQKEYSMGAU\", not \"AVQLGBWRMHCXSNI\""
+    "Response 2 header Public-Key-Pins is \"auoicwqkeysmgau\", not \"avqlgbwrmhcxsni\""
   ],
   "304-etag-update-response-Set-Cookie": [
     "Setup",
@@ -58,11 +58,11 @@
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
-    "Response 2 header Test-Header is \"AAAAAAAAAAAAAAA\", not \"ABCDEFGHIJKLMNO\""
+    "Response 2 header Test-Header is \"aaaaaaaaaaaaaaa\", not \"abcdefghijklmno\""
   ],
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
+    "Response 2 header X-Content-Foo is \"azyxwvutsrqponm\", not \"aaaaaaaaaaaaaaa\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",
@@ -70,7 +70,7 @@
   ],
   "304-etag-update-response-X-Test-Header": [
     "Assertion",
-    "Response 2 header X-Test-Header is \"ADGJMPSVYBEHKNQ\", not \"AEIMQUYCGKOSWAE\""
+    "Response 2 header X-Test-Header is \"adgjmpsvybehknq\", not \"aeimquycgkoswae\""
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
@@ -167,6 +167,69 @@
     "Assertion",
     "Response 1 status is 200, not 504"
   ],
+  "cdn-cc-invalid-sh-type-unknown": true,
+  "cdn-cc-invalid-sh-type-wrong": true,
+  "cdn-fresh-cc-nostore": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-0": true,
+  "cdn-max-age-0-expires": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-max-age-age": true,
+  "cdn-max-age-case-insensitive": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-cc-max-age-invalid-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-extension": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-long-cc-max-age": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-max-age-max": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-max-plus": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-short-cc-max-age": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "cdn-max-age-space-after-equals": true,
+  "cdn-max-age-space-before-equals": true,
+  "cdn-no-cache": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-no-store-cc-fresh": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-private": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "cdn-remove-header": true,
   "conditional-304-etag": true,
   "conditional-etag-forward": [
     "Assertion",
@@ -370,7 +433,7 @@
   "headers-store-Content-MD5": true,
   "headers-store-Content-Range": [
     "Assertion",
-    "Response 2 header Content-Range is \"null\", not \"ANANANANANANANA\""
+    "Response 2 header Content-Range is \"null\", not \"ananananananana\""
   ],
   "headers-store-Content-Security-Policy": true,
   "headers-store-Content-Type": true,
@@ -560,7 +623,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 18 Oct 2021 04:15:29 GMT\", not \"Mon, 18 Oct 2021 04:15:26 GMT\""
+    "Response 2 header Date is \"Tue, 01 Feb 2022 01:02:35 GMT\", not \"Tue, 01 Feb 2022 01:02:32 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
