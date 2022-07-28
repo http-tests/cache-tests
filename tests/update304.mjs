@@ -118,7 +118,7 @@ headerList.forEach(check304)
 export default {
   name: 'Update Headers Upon a 304',
   id: 'update304',
-  description: 'These tests check cache behaviour upon recieving a `304 Not Modified` response.',
+  description: 'These tests check cache behaviour upon receiving a `304 Not Modified` response.',
   spec_anchors: ['freshening.responses'],
   tests: tests
 }
