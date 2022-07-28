@@ -10,7 +10,7 @@ export default
   description: 'These tests check miscellaneous HTTP cache behaviours. ',
   tests: [
     {
-      name: 'HTTP cache [must generate](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) an [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when using a stored response.',
+      name: 'HTTP cache must generate an `Age` header field when using a stored response.',
       id: 'other-age-gen',
       spec_anchors: ['field.age', 'constructing.responses.from.caches'],
       requests: [
@@ -31,9 +31,9 @@ export default
       ]
     },
     {
-      name: 'HTTP cache [must update](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) the [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when freshness is based upon `Expires`',
+      name: 'HTTP cache must update the `Age` header field when freshness is based upon `Expires`',
       id: 'other-age-update-expires',
-      spec_anchors: ['field.age'],
+      spec_anchors: ['constructing.responses.from.caches', 'field.age'],
       requests: [
         {
           response_headers: [
@@ -53,9 +53,9 @@ export default
       ]
     },
     {
-      name: 'HTTP cache [must update](https://httpwg.org/specs/rfc7234.html#constructing.responses.from.caches) the [`Age` header](https://httpwg.org/specs/rfc7234.html#header.age) when freshness is based upon `CC: max-age`',
+      name: 'HTTP cache must update the `Age` header field when freshness is based upon `CC: max-age`',
       id: 'other-age-update-max-age',
-      spec_anchors: ['field.age'],
+      spec_anchors: ['constructing.responses.from.caches', 'field.age'],
       requests: [
         {
           response_headers: [
@@ -75,8 +75,9 @@ export default
       ]
     },
     {
-      name: 'HTTP cache must not update the [`Date` header](https://httpwg.org/specs/rfc7231.html#header.date)',
+      name: 'HTTP cache must not update the `Date` header field',
       id: 'other-date-update',
+      spec_anchors: ['field.date'],
       requests: [
         {
           response_headers: [
