@@ -4,7 +4,7 @@ export default
 {
   name: 'CDN-Cache-Control',
   id: 'cdn-cache-control',
-  description: 'These tests check non-browser caches for behaviours around the [`CDN-Cache-Control` response header](https://httpwg.org/http-extensions/draft-ietf-httpbis-targeted-cache-control.html).',
+  description: 'These tests check non-browser caches for behaviours around the [`CDN-Cache-Control` response header](https://httpwg.org/specs/rfc9213.html).',
   tests: [
     {
       name: 'An optimal CDN reuses a response with positive `CDN-Cache-Control: max-age`',
