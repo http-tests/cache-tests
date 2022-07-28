@@ -7,7 +7,7 @@ saxparam ?= bootstrapCssUrl='/spec/bootstrap.min.css' \
 						banner='This copy of the specification has test results interspersed throughout; click on ℹ️ to see them.'
 stylesheet := lib/rfcbootstrap.xslt
 
-specs := cache
+specs := rfc9111
 TARGETS := $(addsuffix .html,$(specs))
 
 .PHONY: all clean
