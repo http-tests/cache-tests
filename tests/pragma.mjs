@@ -4,7 +4,7 @@ export default
 {
   name: 'Pragma',
   id: 'pragma',
-  description: 'These tests check how caches handle the deprecated `Pragma` header in reqeusts and responses.',
+  description: 'These tests check how caches handle the deprecated `Pragma` header in reqeusts and responses. Note that This field is deprecated - it is not required to be supported.',
   spec_anchors: ['field.pragma'],
   tests: [
     {
