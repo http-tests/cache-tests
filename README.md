@@ -1,6 +1,6 @@
 # Tests for HTTP Caches
 
-This is a test suite for the behaviours of [HTTP caches](http://httpwg.org/specs/rfc7234.html),
+This is a test suite for the behaviours of [HTTP caches](https://httpwg.org/specs/rfc9111.html),
 including browsers, proxy caches and CDNs. Its public results are available at
 [cache-tests.fyi](https://cache-tests.fyi).
 
@@ -112,7 +112,7 @@ On OSX, you can use `test-browser.sh` to automate this.
 
 ## Interpreting the Results
 
-HTTP caching by its nature is an optimisation; implementations aren't required to cache everything. However, when they do cache, their behaviour is constrained by [the specification](https://httpwg.org/specs/rfc7234.html).
+HTTP caching by its nature is an optimisation; implementations aren't required to cache everything. However, when they do cache, their behaviour is constrained by [the specification](https://httpwg.org/specs/rfc9111.html).
 
 As a result, there are a few different kinds of test results (note that the HTML results use similar but slightly different symbols):
 
