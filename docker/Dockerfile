@@ -1,4 +1,4 @@
-FROM ubuntu:devel
+FROM --platform=linux/amd64 ubuntu:devel
 LABEL maintainer="Mark Nottingham <mnot@mnot.net>"
 
 
