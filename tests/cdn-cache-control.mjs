@@ -161,10 +161,10 @@ export default
       ]
     },
     {
-      name: 'An optimal CDN reuses a response with a positive `CDN-Cache-Control: MaX-aGe`',
+      name: 'Does CDN reuse a response with a positive `CDN-Cache-Control: MaX-aGe`?',
       id: 'cdn-max-age-case-insensitive',
       cdn_only: true,
-      kind: 'optimal',
+      kind: 'check',
       depends_on: ['cdn-max-age'],
       requests: [
         {
