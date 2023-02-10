@@ -6,6 +6,9 @@ squid -f /etc/squid/squid.conf -N &
 echo "* Starting nginx"
 /usr/sbin/nginx -g "daemon off;" &
 
+echo "* Starting Caddy"
+/usr/bin/caddy run --config /etc/caddy/Caddyfile &
+
 echo "* starting TrafficServer"
 /usr/bin/traffic_manager &
 

@@ -1,0 +1,1494 @@
+{
+  "304-etag-update-response-Cache-Control": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Clear-Site-Data": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Content-Encoding": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Content-Foo": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Content-Length": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Content-Location": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Content-MD5": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Content-Range": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Content-Security-Policy": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Content-Type": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-ETag": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Public-Key-Pins": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Set-Cookie": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Set-Cookie2": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-Test-Header": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-X-Content-Foo": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-X-Frame-Options": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-X-Test-Header": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-etag-update-response-X-XSS-Protection": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "304-lm-use-stored-Test-Header": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-dup-0": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-dup-0-twoline": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-dup-old": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-float": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-large": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-large-minus-one": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-larger": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-negative": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-nonnumeric": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-numeric-parameter": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-parameter": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-prefix": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-prefix-twoline": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-suffix": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "age-parse-suffix-twoline": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-must-revalidate-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-must-revalidate-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-no-cache": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-no-cache-case-insensitive": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-no-cache-revalidate": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-no-cache-revalidate-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-no-store": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-no-store-case-insensitive": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-no-store-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-no-store-old-max-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-no-store-old-new": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cc-resp-private-shared": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-ma0": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-ma1": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-magreaterage": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-max-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-max-stale-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-min-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-min-fresh-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-no-cache": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-no-cache-etag": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-no-cache-lm": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-no-store": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "ccreq-oic": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-cc-invalid-sh-type-unknown": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-cc-invalid-sh-type-wrong": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-fresh-cc-nostore": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-0": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-0-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-case-insensitive": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-cc-max-age-invalid-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-extension": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-long-cc-max-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-max": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-max-plus": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-short-cc-max-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-space-after-equals": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-max-age-space-before-equals": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-no-cache": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-no-store-cc-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-private": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "cdn-remove-header": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-304-etag": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-forward": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-forward-unquoted": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-precedence": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-quoted-respond-unquoted": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-strong-generate": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-strong-generate-unquoted": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-strong-respond": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-strong-respond-multiple-first": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-strong-respond-multiple-last": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-strong-respond-multiple-second": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-strong-respond-obs-text": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-unquoted-respond-quoted": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-unquoted-respond-unquoted": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-vary-headers": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-vary-headers-mismatch": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-weak-generate-weak": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-weak-respond": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-weak-respond-backslash": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-weak-respond-lowercase": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-etag-weak-respond-omit-slash": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-lm-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-lm-fresh-earlier": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-lm-fresh-no-lm": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-lm-fresh-rfc850": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "conditional-lm-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-32bit": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-age-fast-date": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-age-slow-date": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-ansi-c": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-far-future": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-future": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-1-digit-hour": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-2-digit-year": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-aest": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-date": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-date-dashes": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-multiple-lines": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-multiple-spaces": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-no-comma": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-time-periods": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-invalid-utc": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-old-date": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-past": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-present": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-rfc850": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-wrong-case-month": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-wrong-case-tz": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-expires-wrong-case-weekday": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-0": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-0-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-100a": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-a100": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-case-insenstive": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-date": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-decimal-five": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-decimal-zero": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-expires-invalid": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-extension": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-ignore-quoted": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-ignore-quoted-rev": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-leading-zero": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-max": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-max-minus-1": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-max-plus": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-max-plus-1": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-negative": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-quoted": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-s-maxage-shared-longer": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-s-maxage-shared-longer-multiple": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-s-maxage-shared-longer-reversed": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-s-maxage-shared-shorter": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-s-maxage-shared-shorter-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-single-quoted": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-space-after-equals": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-space-before-equals": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-two-fresh-stale-sameline": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-two-fresh-stale-sepline": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-two-stale-fresh-sameline": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-max-age-two-stale-fresh-sepline": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-none": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "freshness-s-maxage-shared": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "head-200-freshness-update": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "head-200-retain": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "head-200-update": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "head-410-update": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "head-writethrough": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-omit-headers-listed-in-Cache-Control-no-cache": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-omit-headers-listed-in-Cache-Control-no-cache-single": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-omit-headers-listed-in-Connection": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Cache-Control": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Clear-Site-Data": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Connection": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Content-Encoding": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Content-Foo": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Content-Length": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Content-Location": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Content-MD5": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Content-Range": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Content-Security-Policy": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Content-Type": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-ETag": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Keep-Alive": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Proxy-Authenticate": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Proxy-Authentication-Info": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Proxy-Authorization": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Proxy-Connection": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Public-Key-Pins": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Set-Cookie": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Set-Cookie2": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-TE": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Test-Header": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Transfer-Encoding": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-Upgrade": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-X-Content-Foo": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-X-Frame-Options": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-X-Test-Header": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "headers-store-X-XSS-Protection": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-200-cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-201-not_cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-202-not_cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-203-cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-204-cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-403-not_cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-404-cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-405-cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-410-cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-414-cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-501-cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-502-not_cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-503-not_cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-504-not_cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-599-cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-599-not_cached": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-10": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-1200": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-1800": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-30": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-300": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-3600": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-43200": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-5": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-60": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-600": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "heuristic-delta-86400": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-DELETE": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-DELETE-cl": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-DELETE-failed": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-DELETE-location": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-M-SEARCH": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-M-SEARCH-cl": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-M-SEARCH-failed": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-M-SEARCH-location": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-POST": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-POST-cl": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-POST-failed": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-POST-location": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-PUT": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-PUT-cl": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-PUT-failed": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "invalidate-PUT-location": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "method-POST": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-age-gen": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-age-update-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-age-update-max-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-authorization": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-authorization-must-revalidate": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-authorization-public": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-authorization-smaxage": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-cookie": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-date-update": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-fresh-content-disposition-attachment": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-heuristic-content-disposition-attachment": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "other-set-cookie": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-store-complete-reuse-partial": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-store-complete-reuse-partial-no-last": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-store-complete-reuse-partial-suffix": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-store-partial-complete": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-store-partial-reuse-partial": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-store-partial-reuse-partial-absent": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-store-partial-reuse-partial-byterange": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-store-partial-reuse-partial-suffix": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-use-headers": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "partial-use-stored-headers": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "pragma-request-extension": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "pragma-request-no-cache": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "pragma-response-extension": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "pragma-response-no-cache": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "pragma-response-no-cache-heuristic": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "query-args-different": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "query-args-same": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-503": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-close": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-close-must-revalidate": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-close-no-cache": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-close-proxy-revalidate": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-close-s-maxage=2": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-sie-503": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-sie-close": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-warning-become": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "stale-warning-stored": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-200-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-200-must-understand": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-200-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-203-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-203-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-204-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-204-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-299-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-299-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-301-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-301-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-302-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-302-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-303-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-303-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-307-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-307-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-308-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-308-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-400-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-400-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-404-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-404-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-410-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-410-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-499-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-499-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-500-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-500-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-502-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-502-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-503-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-503-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-504-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-504-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-599-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-599-must-understand": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "status-599-stale": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-append-capabilities": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-fresh-cc-nostore": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-0": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-0-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-case-insensitive": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-cc-max-age-invalid-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-expires": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-extension": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-long-cc-max-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-max": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-max-plus": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-me-target": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-other-target": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-short-cc-max-age": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-space-after-equals": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-max-age-space-before-equals": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-no-store": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-no-store-cc-fresh": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "surrogate-remove-header": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-2-match": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-2-match-omit": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-2-no-match": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-3-match": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-3-no-match": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-3-omit": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-3-order": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-cache-key": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-invalidate": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-match": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-no-match": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-normalise-combine": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-normalise-lang-case": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-normalise-lang-order": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-normalise-lang-select": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-normalise-lang-space": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-normalise-space": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-omit": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-omit-stored": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-star": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-syntax-empty-star": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-syntax-empty-star-lines": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-syntax-foo-star": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-syntax-star": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-syntax-star-foo": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-syntax-star-star": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ],
+  "vary-syntax-star-star-lines": [
+    "Setup",
+    "PUT config resulted in 200 OK - server: Caddy    "
+  ]
+}

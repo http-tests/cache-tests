@@ -1,3 +1,8 @@
+# Build Caddy with the Souin module
+FROM caddy:2-builder-alpine AS app_caddy_builder
+RUN xcaddy build \
+    --with github.com/darkweak/souin/plugins/caddy
+
 FROM --platform=linux/amd64 ubuntu:devel
 LABEL maintainer="Mark Nottingham <mnot@mnot.net>"
 
@@ -60,6 +65,11 @@ EXPOSE 8004
 
 EXPOSE 8005
 
+# caddy
+
+COPY --from=app_caddy_builder /usr/bin/caddy /usr/bin/caddy
+COPY caddy/Caddyfile /etc/caddy/Caddyfile
+EXPOSE 8006
 
 # setup
 

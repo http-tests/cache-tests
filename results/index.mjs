@@ -67,5 +67,12 @@ export default [
     type: 'cdn',
     version: '18-10-2021',
     link: 'https://github.com/http-tests/cache-tests/wiki/Fastly'
+  },
+  {
+    file: 'caddy.json',
+    name: 'Caddy',
+    type: 'rev-proxy',
+    version: 'main',
+    link: 'https://github.com/http-tests/cache-tests/wiki/Souin'
   }
 ]
