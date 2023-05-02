@@ -109,6 +109,14 @@ To test a browser, just point it at `https://{hostname:port}/test-browser.html` 
 
 On OSX, you can use `test-browser.sh` to automate this.
 
+## Testing Forward Proxies
+To test a forward proxy which listens on 127.0.0.1:8082, start the server:
+
+> npm run server
+
+and then run:
+
+> HTTP_PROXY=http://127.0.0.1:8082 npm run --silent cli --base=http://127.0.0.1:8000
 
 ## Interpreting the Results
 
