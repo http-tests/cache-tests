@@ -1,6 +1,6 @@
 
 import * as config from './config.mjs'
-import { makeCacheTest, testResults } from './test.mjs'
+import { makeTest, testResults } from './test.mjs'
 
 const testArray = []
 
@@ -34,7 +34,7 @@ function runSome (tests, chunkSize) {
     let index = 0
     function next () {
       if (index < tests.length) {
-        const these = tests.slice(index, index + chunkSize).map(makeCacheTest)
+        const these = tests.slice(index, index + chunkSize).map(makeTest)
         index += chunkSize
         Promise.all(these).then(next)
       } else {

@@ -11,7 +11,7 @@ const setupCheck = clientUtils.setupCheck
 export const testUUIDs = {}
 export const testResults = {}
 
-export function makeCacheTest (test) {
+export function makeTest (test) {
   return new Promise((resolve, reject) => {
     const uuid = utils.token()
     testUUIDs[test.id] = uuid
