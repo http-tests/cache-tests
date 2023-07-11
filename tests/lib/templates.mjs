@@ -7,6 +7,7 @@ function makeTemplate (template) {
 export const fresh = makeTemplate({
   response_headers: [
     ['Expires', 100000],
+    ['Cache-Control', 'max-age=100000'],
     ['Last-Modified', 0],
     ['Date', 0]
   ]
