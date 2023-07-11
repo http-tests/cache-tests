@@ -1,4 +1,3 @@
-
 export default {
   name: 'Conditional Requests: If-Modified-Since and Last-Modified',
   id: 'conditional-lm',

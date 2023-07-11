@@ -1,5 +1,4 @@
-
-import * as templates from '../lib/templates.mjs'
+import * as templates from './lib/templates.mjs'
 
 function makeStaleCheckCC (cc, value) {
   return {

@@ -1,4 +1,3 @@
-
 export default {
   name: 'Vary Parsing',
   id: 'vary-parse',

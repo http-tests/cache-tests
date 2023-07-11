@@ -10,14 +10,14 @@
     <meta property="og:url" content="https://cache-tests.fyi/">
     <meta property="og:site_name" content="HTTP Caching Tests">
     <meta property="og:image" content="https://cache-tests.fyi/asset/badge.png">
-    <link rel="preload" as="fetch" crossorigin href="/lib/tpl/explain-test.liquid">
-    <link rel="preload" as="fetch" crossorigin href="/lib/tpl/checks.liquid">
-    <link rel="preload" as="fetch" crossorigin href="/lib/tpl/header-list.liquid">
-    <link rel="preload" as="fetch" crossorigin href="/lib/tpl/header-magic.liquid">
+    <link rel="preload" as="fetch" crossorigin href="/test-engine/lib/tpl/explain-test.liquid">
+    <link rel="preload" as="fetch" crossorigin href="/test-engine/lib/tpl/checks.liquid">
+    <link rel="preload" as="fetch" crossorigin href="/test-engine/lib/tpl/header-list.liquid">
+    <link rel="preload" as="fetch" crossorigin href="/test-engine/lib/tpl/header-magic.liquid">
     <script type="module">
       import index from './results/index.mjs'
-      import * as summary from './lib/summary.mjs'
-      import * as display from './lib/display.mjs'
+      import * as summary from './test-engine/lib/summary.mjs'
+      import * as display from './test-engine/lib/display.mjs'
       import baseTests from './tests/index.mjs'
       import surrogate from './tests/surrogate-control.mjs'
 

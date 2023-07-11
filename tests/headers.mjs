@@ -1,5 +1,5 @@
-import * as utils from '../lib/utils.mjs'
-import headerList from './header-list.mjs'
+import * as utils from './lib/utils.mjs'
+import headerList from './lib/header-list.mjs'
 
 const tests = []
 

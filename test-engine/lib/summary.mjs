@@ -1,6 +1,6 @@
 /* global fetch marked */
 
-import '../asset/marked.min.js'
+import '../../asset/marked.min.js'
 import * as display from './display.mjs'
 
 export function loadResults (index) {

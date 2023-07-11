@@ -1,4 +1,3 @@
-
 import * as defines from '../lib/defines.mjs'
 import { fixupHeader } from '../lib/header-fixup.mjs'
 import * as utils from '../lib/utils.mjs'

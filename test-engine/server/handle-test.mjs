@@ -1,4 +1,3 @@
-
 import { noBodyStatus } from '../lib/defines.mjs'
 import { fixupHeader } from '../lib/header-fixup.mjs'
 import { sendResponse, getHeader, configs, stash, setStash, logRequest, logResponse } from './utils.mjs'

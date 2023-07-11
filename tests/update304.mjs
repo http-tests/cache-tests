@@ -1,5 +1,5 @@
-import * as utils from '../lib/utils.mjs'
-import headerList from './header-list.mjs'
+import * as utils from './lib/utils.mjs'
+import headerList from './lib/header-list.mjs'
 
 const tests = []
 
@@ -120,5 +120,5 @@ export default {
   id: 'update304',
   description: 'These tests check cache behaviour upon receiving a `304 Not Modified` response.',
   spec_anchors: ['freshening.responses'],
-  tests: tests
+  tests
 }

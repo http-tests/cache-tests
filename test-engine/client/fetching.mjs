@@ -1,4 +1,3 @@
-
 import * as config from './config.mjs'
 import { fixupHeader } from '../lib/header-fixup.mjs'
 

@@ -1,5 +1,4 @@
-
-import * as templates from '../lib/templates.mjs'
+import * as templates from './lib/templates.mjs'
 
 const tests = []
 
@@ -93,5 +92,5 @@ export default {
   id: 'invalidation',
   description: 'These tests check how caches support  invalidation, including when it is triggered by the `Location` and `Content-Location` response headers.',
   spec_anchors: ['invalidation'],
-  tests: tests
+  tests
 }

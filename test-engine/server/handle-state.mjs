@@ -1,4 +1,3 @@
-
 import { sendResponse, stash } from './utils.mjs'
 
 export default function handleState (pathSegs, request, response) {

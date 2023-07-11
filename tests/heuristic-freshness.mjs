@@ -1,4 +1,4 @@
-import * as utils from '../lib/utils.mjs'
+import * as utils from './lib/utils.mjs'
 
 const tests = []
 
@@ -91,5 +91,5 @@ export default {
   id: 'heuristic',
   description: 'These tests check how caches handle heuristic freshness.',
   spec_anchors: ['heuristic.freshness'],
-  tests: tests
+  tests
 }

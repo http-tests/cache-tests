@@ -2,14 +2,14 @@ import fs from 'fs'
 
 import Ajv from 'ajv'
 
-import tests from './tests/index.mjs'
-import surrogate from './tests/surrogate-control.mjs'
+import tests from '../tests/index.mjs'
+import surrogate from '../tests/surrogate-control.mjs'
 
 tests.push(surrogate)
 
 if (process.argv[2] === 'validate') {
   const ajv = new Ajv()
-  const schema = JSON.parse(fs.readFileSync('lib/testsuite-schema.json', 'utf8'))
+  const schema = JSON.parse(fs.readFileSync('test-engine/lib/testsuite-schema.json', 'utf8'))
   const validate = ajv.compile(schema)
   const valid = validate(tests)
   if (!valid) {

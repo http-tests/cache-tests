@@ -1,4 +1,3 @@
-
 import { sendResponse, configs, setConfig } from './utils.mjs'
 
 export default function handleConfig (pathSegs, request, response) {

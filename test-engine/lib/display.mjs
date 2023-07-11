@@ -1,7 +1,7 @@
 /* global Blob marked */
 
-import '../asset/marked.min.js'
-import { Liquid } from '../asset/liquid.browser.esm.mjs'
+import '../../asset/marked.min.js'
+import { Liquid } from '../../asset/liquid.browser.esm.mjs'
 import { modalOpen } from './modal.mjs'
 
 const templateEngine = new Liquid({ root: 'lib/tpl', extname: '.liquid', cache: true })
@@ -113,7 +113,7 @@ export function showTestResult (testSuites, testId, testResults) {
 
 export function showTestDetails (test) {
   templateEngine
-    .renderFile('explain-test', { test: test })
+    .renderFile('explain-test', { test })
     .then(result => {
       console.log(result)
       const html = marked.parse(result)

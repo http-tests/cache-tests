@@ -1,4 +1,3 @@
-
 import { BLUE, NC } from '../lib/defines.mjs'
 
 export function sendResponse (response, statusCode, message) {

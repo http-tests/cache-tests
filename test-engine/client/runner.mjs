@@ -1,4 +1,3 @@
-
 import * as config from './config.mjs'
 import { makeTest, testResults } from './test.mjs'
 

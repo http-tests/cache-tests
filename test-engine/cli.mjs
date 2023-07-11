@@ -2,8 +2,8 @@ import { runTests, getResults } from './client/runner.mjs'
 import * as display from './lib/display.mjs'
 import { GREEN, NC } from './lib/defines.mjs'
 import fetch from 'node-fetch-with-proxy'
-import tests from './tests/index.mjs'
-import surrogate from './tests/surrogate-control.mjs'
+import tests from '../tests/index.mjs'
+import surrogate from '../tests/surrogate-control.mjs'
 
 tests.push(surrogate)
 

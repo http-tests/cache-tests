@@ -1,6 +1,5 @@
-
-import * as templates from '../lib/templates.mjs'
-import * as utils from '../lib/utils.mjs'
+import * as templates from './lib/templates.mjs'
+import * as utils from './lib/utils.mjs'
 
 const tests = []
 
@@ -115,5 +114,5 @@ export default {
   id: 'status',
   description: 'These tests check to see if a cache will store and reuse various status codes when they have explicit freshness information associated with them.',
   spec_anchors: ['response.cacheability'],
-  tests: tests
+  tests
 }

@@ -1,4 +1,3 @@
-
 export function modalOpen (content) {
   let modal = document.getElementById('modal')
   if (!modal) {

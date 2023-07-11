@@ -1,4 +1,3 @@
-
 import { locationHeaders, dateHeaders } from './defines.mjs'
 import { httpDate } from './utils.mjs'
 

@@ -1,4 +1,3 @@
-
 export function AssertionError (options) {
   this.name = 'Assertion'
   this.message = options.message
@@ -12,30 +11,9 @@ export function SetupError (options) {
 export function assert (isSetup, expr, message) {
   if (expr) return
   if (isSetup) {
-    throw new SetupError({ message: message })
+    throw new SetupError({ message })
   } else {
-    throw new AssertionError({ message: message })
-  }
-}
-
-const contentSeed = 1
-const contentStore = {}
-export function httpContent (csKey, contentLength = 15) {
-  if (csKey in contentStore) {
-    return contentStore[csKey]
-  } else {
-    let keySeed = 0
-    for (let i = 0; i < csKey.length; i++) {
-      keySeed += csKey.charCodeAt(i)
-    }
-    const contents = []
-    for (let i = 0; i < contentLength; ++i) {
-      const idx = ((i * keySeed * contentSeed) % 26) + 97
-      contents.push(String.fromCharCode(idx))
-    }
-    const content = contents.join('')
-    contentStore[csKey] = content
-    return content
+    throw new AssertionError({ message })
   }
 }
 

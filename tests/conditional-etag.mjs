@@ -1,4 +1,3 @@
-
 export default {
   name: 'Conditional Requests: If-None-Match and ETag',
   id: 'conditional-inm',

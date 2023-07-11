@@ -1,4 +1,3 @@
-
 export const noBodyStatus = new Set([204, 304])
 
 export const dateHeaders = new Set(['date', 'expires', 'last-modified', 'if-modified-since', 'if-unmodified-since'])

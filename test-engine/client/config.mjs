@@ -1,4 +1,3 @@
-
 export let fetch = null
 export let useBrowserCache = false
 export let baseUrl = ''
