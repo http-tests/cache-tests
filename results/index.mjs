@@ -62,6 +62,13 @@ export default [
     link: 'https://github.com/http-tests/cache-tests/wiki/nuster'
   },
   {
+    file: 'caddy.json',
+    name: 'caddy',
+    type: 'rev-proxy',
+    version: '0.7.0',
+    link: 'https://github.com/caddyserver/cache-handler'
+  },
+  {
     file: 'fastly.json',
     name: 'Fastly',
     type: 'cdn',
