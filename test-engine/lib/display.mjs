@@ -4,7 +4,7 @@ import '../../asset/marked.min.js'
 import { Liquid } from '../../asset/liquid.browser.esm.mjs'
 import { modalOpen } from './modal.mjs'
 
-const templateEngine = new Liquid({ root: 'lib/tpl', extname: '.liquid', cache: true })
+const templateEngine = new Liquid({ root: 'test-engine/lib/tpl', extname: '.liquid', cache: true })
 templateEngine.registerFilter('typeof', v => typeof (v))
 templateEngine.registerFilter('toLocaleString', v => v.toLocaleString())
 templateEngine.registerFilter('skipHeaders', v => {
