@@ -152,8 +152,14 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "ccreq-ma0": true,
-  "ccreq-ma1": true,
+  "ccreq-ma0": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "ccreq-ma1": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "ccreq-magreaterage": [
     "Assertion",
     "Response 2 comes from cache"
@@ -614,33 +620,33 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "invalidate-DELETE": true,
+  "invalidate-DELETE": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
   "invalidate-DELETE-cl": true,
-  "invalidate-DELETE-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
-  ],
+  "invalidate-DELETE-failed": true,
   "invalidate-DELETE-location": true,
-  "invalidate-M-SEARCH": true,
+  "invalidate-M-SEARCH": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
   "invalidate-M-SEARCH-cl": true,
-  "invalidate-M-SEARCH-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
-  ],
+  "invalidate-M-SEARCH-failed": true,
   "invalidate-M-SEARCH-location": true,
-  "invalidate-POST": true,
+  "invalidate-POST": [
+    "Assertion",
+    "Response 3 comes from cache"
+  ],
   "invalidate-POST-cl": true,
-  "invalidate-POST-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
-  ],
+  "invalidate-POST-failed": true,
   "invalidate-POST-location": true,
-  "invalidate-PUT": true,
-  "invalidate-PUT-cl": true,
-  "invalidate-PUT-failed": [
+  "invalidate-PUT": [
     "Assertion",
-    "Response 3 does not come from cache"
+    "Response 3 comes from cache"
   ],
+  "invalidate-PUT-cl": true,
+  "invalidate-PUT-failed": true,
   "invalidate-PUT-location": true,
   "method-POST": [
     "Assertion",
@@ -719,10 +725,7 @@
     "Response 2 does not come from cache"
   ],
   "query-args-different": true,
-  "query-args-same": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "query-args-same": true,
   "stale-503": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -763,96 +766,42 @@
     "Setup",
     "Response 2 does not come from cache"
   ],
-  "status-200-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-200-fresh": true,
   "status-200-must-understand": true,
   "status-200-stale": true,
-  "status-203-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-203-fresh": true,
   "status-203-stale": true,
-  "status-204-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-204-fresh": true,
   "status-204-stale": true,
-  "status-299-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-299-fresh": true,
   "status-299-stale": true,
-  "status-301-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-301-fresh": true,
   "status-301-stale": true,
-  "status-302-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-302-fresh": true,
   "status-302-stale": true,
-  "status-303-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-303-fresh": true,
   "status-303-stale": true,
-  "status-307-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-307-fresh": true,
   "status-307-stale": true,
-  "status-308-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-308-fresh": true,
   "status-308-stale": true,
-  "status-400-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-400-fresh": true,
   "status-400-stale": true,
-  "status-404-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-404-fresh": true,
   "status-404-stale": true,
-  "status-410-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-410-fresh": true,
   "status-410-stale": true,
-  "status-499-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-499-fresh": true,
   "status-499-stale": true,
-  "status-500-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-500-fresh": true,
   "status-500-stale": true,
-  "status-502-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-502-fresh": true,
   "status-502-stale": true,
-  "status-503-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-503-fresh": true,
   "status-503-stale": true,
-  "status-504-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-504-fresh": true,
   "status-504-stale": true,
-  "status-599-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-599-fresh": true,
   "status-599-must-understand": [
     "Assertion",
     "Response 2 comes from cache"

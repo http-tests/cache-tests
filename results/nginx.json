@@ -469,10 +469,7 @@
     "Response 2 does not come from cache"
   ],
   "heuristic-201-not_cached": true,
-  "heuristic-202-not_cached": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "heuristic-202-not_cached": true,
   "heuristic-203-cached": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -632,7 +629,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 11 Jul 2023 06:08:07 GMT\", not \"Tue, 11 Jul 2023 06:08:04 GMT\""
+    "Response 2 header Date is \"Tue, 11 Jul 2023 11:06:44 GMT\", not \"Tue, 11 Jul 2023 11:06:41 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -734,10 +731,7 @@
   ],
   "status-200-stale": true,
   "status-203-fresh": true,
-  "status-203-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-203-stale": true,
   "status-204-fresh": true,
   "status-204-stale": true,
   "status-299-fresh": true,
@@ -749,10 +743,7 @@
   "status-303-fresh": true,
   "status-303-stale": true,
   "status-307-fresh": true,
-  "status-307-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-307-stale": true,
   "status-308-fresh": true,
   "status-308-stale": true,
   "status-400-fresh": true,
