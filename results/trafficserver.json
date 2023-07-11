@@ -250,7 +250,10 @@
   "freshness-expires-past": true,
   "freshness-expires-present": true,
   "freshness-expires-rfc850": true,
-  "freshness-expires-wrong-case-month": true,
+  "freshness-expires-wrong-case-month": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "freshness-expires-wrong-case-tz": true,
   "freshness-expires-wrong-case-weekday": true,
   "freshness-max-age": true,
@@ -269,16 +272,10 @@
   "freshness-max-age-ignore-quoted": true,
   "freshness-max-age-ignore-quoted-rev": true,
   "freshness-max-age-leading-zero": true,
-  "freshness-max-age-max": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-max-age-max": true,
   "freshness-max-age-max-minus-1": true,
   "freshness-max-age-max-plus": true,
-  "freshness-max-age-max-plus-1": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-max-age-max-plus-1": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": true,
   "freshness-max-age-s-maxage-shared-longer": true,
@@ -366,8 +363,8 @@
   "headers-store-TE": true,
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
-    "FetchError",
-    "request to http://localhost:8003/test/58957e60-249a-43c2-a1df-48bc8ff6f8f8 failed, reason: Parse Error: Content-Length can't be present with Transfer-Encoding"
+    "Setup",
+    "Response 1 status is 400, not 200"
   ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
@@ -452,14 +449,17 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "invalidate-DELETE": true,
+  "invalidate-DELETE": [
+    "Setup",
+    "Response 2 status is 403, not 200"
+  ],
   "invalidate-DELETE-cl": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "Response 2 status is 403, not 200"
   ],
   "invalidate-DELETE-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
+    "Setup",
+    "Response 2 status is 403, not 500"
   ],
   "invalidate-DELETE-location": [
     "Assertion",
@@ -475,18 +475,15 @@
   ],
   "invalidate-M-SEARCH-failed": true,
   "invalidate-M-SEARCH-location": [
-    "Setup",
-    "PUT config resulted in 502 Server Hangup - cache-control: no-store    server: ATS/8.1.1    "
+    "Assertion",
+    "Response 3 comes from cache"
   ],
   "invalidate-POST": true,
   "invalidate-POST-cl": [
     "Assertion",
     "Response 3 comes from cache"
   ],
-  "invalidate-POST-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
-  ],
+  "invalidate-POST-failed": true,
   "invalidate-POST-location": [
     "Assertion",
     "Response 3 comes from cache"
@@ -496,10 +493,7 @@
     "Assertion",
     "Response 3 comes from cache"
   ],
-  "invalidate-PUT-failed": [
-    "Assertion",
-    "Response 3 does not come from cache"
-  ],
+  "invalidate-PUT-failed": true,
   "invalidate-PUT-location": [
     "Assertion",
     "Response 3 comes from cache"
@@ -594,10 +588,7 @@
   "status-200-stale": true,
   "status-203-fresh": true,
   "status-203-stale": true,
-  "status-204-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-204-fresh": true,
   "status-204-stale": true,
   "status-299-fresh": true,
   "status-299-stale": true,

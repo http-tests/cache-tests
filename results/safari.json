@@ -3,11 +3,11 @@
   "304-etag-update-response-Clear-Site-Data": true,
   "304-etag-update-response-Content-Encoding": [
     "Assertion",
-    "Response 2 header Content-Encoding is \"ARIZQHYPGXOFWNE\", not \"ASKCUMEWOGYQIAS\""
+    "Response 2 header Content-Encoding is \"arizqhypgxofwne\", not \"askcumewogyqias\""
   ],
   "304-etag-update-response-Content-Foo": [
     "Assertion",
-    "Response 2 header Content-Foo is \"AWSOKGCYUQMIEAW\", not \"AXUROLIFCZWTQNK\""
+    "Response 2 header Content-Foo is \"awsokgcyuqmieaw\", not \"axurolifczwtqnk\""
   ],
   "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": [
@@ -20,12 +20,9 @@
   ],
   "304-etag-update-response-Content-Range": [
     "Assertion",
-    "Response 2 header Content-Range is \"APETIXMBQFUJYNC\", not \"AQGWMCSIYOEUKAQ\""
+    "Response 2 header Content-Range is \"apetixmbqfujync\", not \"aqgwmcsiyoeukaq\""
   ],
-  "304-etag-update-response-Content-Security-Policy": [
-    "Assertion",
-    "Response 2 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
-  ],
+  "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
     "Assertion",
     "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
@@ -47,7 +44,7 @@
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": [
     "Assertion",
-    "Response 2 header X-Content-Foo is \"AZYXWVUTSRQPONM\", not \"AAAAAAAAAAAAAAA\""
+    "Response 2 header X-Content-Foo is \"azyxwvutsrqponm\", not \"aaaaaaaaaaaaaaa\""
   ],
   "304-etag-update-response-X-Frame-Options": [
     "Assertion",

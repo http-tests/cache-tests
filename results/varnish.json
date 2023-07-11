@@ -10,8 +10,8 @@
   "304-etag-update-response-Content-Location": true,
   "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Range": [
-    "Assertion",
-    "Response 2 header Content-Range is \"null\", not \"aqgwmcsiyoeukaq\""
+    "Setup",
+    "Response 1 status is 503, not 200"
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": true,
@@ -375,8 +375,8 @@
   "headers-store-Content-Location": true,
   "headers-store-Content-MD5": true,
   "headers-store-Content-Range": [
-    "Assertion",
-    "Response 2 header Content-Range is \"null\", not \"ananananananana\""
+    "Setup",
+    "Response 1 status is 503, not 200"
   ],
   "headers-store-Content-Security-Policy": true,
   "headers-store-Content-Type": true,
@@ -581,24 +581,24 @@
   "partial-store-complete-reuse-partial-no-last": true,
   "partial-store-complete-reuse-partial-suffix": true,
   "partial-store-partial-complete": [
-    "Assertion",
-    "Request 2 header range is \"undefined\", not \"bytes=5-\""
+    "Setup",
+    "Response 1 status is 503, not 206"
   ],
   "partial-store-partial-reuse-partial": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "Response 1 status is 503, not 206"
   ],
   "partial-store-partial-reuse-partial-absent": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "Response 1 status is 503, not 206"
   ],
   "partial-store-partial-reuse-partial-byterange": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "Response 1 status is 503, not 206"
   ],
   "partial-store-partial-reuse-partial-suffix": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "Response 1 status is 503, not 206"
   ],
   "partial-use-headers": true,
   "partial-use-stored-headers": true,

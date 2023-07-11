@@ -4,54 +4,54 @@ export default [
     file: 'chrome.json',
     name: 'Chrome',
     type: 'browser',
-    version: '79.0.3945.130'
+    version: '114.0.5735.198'
   },
   {
     file: 'firefox.json',
     name: 'Firefox',
     type: 'browser',
-    version: '85.0.2',
+    version: '115.0.1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Firefox'
   },
   {
     file: 'safari.json',
     name: 'Safari',
     type: 'browser',
-    version: '14.0.3 (16610.4.3.1.4)'
+    version: '16.5.1 (18615.2.9.11.7)'
   },
   {
     file: 'nginx.json',
     name: 'nginx',
     type: 'rev-proxy',
-    version: '1.18.0-6ubuntu12',
+    version: '1.22.1-9ubuntu5',
     link: 'https://github.com/http-tests/cache-tests/wiki/nginx'
   },
   {
     file: 'squid.json',
     name: 'Squid',
     type: 'rev-proxy',
-    version: '5.2-1ubuntu1',
+    version: '5.7-1ubuntu3',
     link: 'https://github.com/http-tests/cache-tests/wiki/Squid'
   },
   {
     file: 'trafficserver.json',
     name: 'ATS',
     type: 'rev-proxy',
-    version: '8.1.1+ds-1.1',
+    version: '9.2.1+ds-1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Traffic-Server'
   },
   {
     file: 'apache.json',
     name: 'httpd',
     type: 'rev-proxy',
-    version: '2.4.51-2ubuntu1',
+    version: '2.4.57-2ubuntu1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Apache-httpd'
   },
   {
     file: 'varnish.json',
     name: 'Varnish',
     type: 'rev-proxy',
-    version: '6.5.2-1',
+    version: '7.1.1-1.1ubuntu1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Varnish'
   },
   {
