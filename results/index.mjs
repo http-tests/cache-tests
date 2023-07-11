@@ -66,7 +66,7 @@ export default [
     name: 'caddy',
     type: 'rev-proxy',
     version: '0.7.0',
-    link: 'https://github.com/caddyserver/cache-handler'
+    link: 'https://github.com/http-tests/cache-tests/wiki/Caddy'
   },
   {
     file: 'fastly.json',
