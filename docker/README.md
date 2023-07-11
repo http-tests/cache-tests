@@ -14,4 +14,3 @@ To add a new reverse proxy:
 4. In `serve.sh`, start the server in the background
 5. In `/test-docker.sh`, add the `PROXY_PORT` to the case statement
 
-To run on the CI server, modify `/.circleci/config.yml` suitably.

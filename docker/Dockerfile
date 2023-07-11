@@ -6,12 +6,13 @@ LABEL maintainer="Mark Nottingham <mnot@mnot.net>"
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    nodejs npm git openssh-client \
+    nodejs npm git openssh-client telnet \
     squid \
     nginx \
     trafficserver \
     apache2 \
     varnish \
+    golang \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
@@ -60,6 +61,13 @@ EXPOSE 8004
 
 EXPOSE 8005
 
+
+# caddy
+
+RUN go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
+RUN ~/go/bin/xcaddy build --with github.com/caddyserver/cache-handler
+COPY caddy/Caddyfile /etc/caddy/Caddyfile
+EXPOSE 8006
 
 # setup
 

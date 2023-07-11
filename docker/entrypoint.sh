@@ -20,6 +20,9 @@ if [[ ! -z $1 ]] ; then
     # varnish
     sed -i s/127.0.0.1/$1/ /etc/varnish/default.vcl
 
+    # caddy
+    sed -i s/127.0.0.1/$1/ /etc/caddy/Caddyfile
+
     serve.sh
   fi
 
