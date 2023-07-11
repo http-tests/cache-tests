@@ -28,7 +28,7 @@
     "port": "8000",
     "base": "",
     "id": "",
-    "pidfile": "server.pid"
+    "pidfile": "/tmp/http-cache-test-server.pid"
   },
   "repository": {
     "type": "git",
