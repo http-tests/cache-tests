@@ -1,28 +1,28 @@
 {
   "304-etag-update-response-Cache-Control": [
-    "Assertion",
-    "Response 2 header Cache-Control is \"max-age=1\", not \"max-age=3600\""
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "304-etag-update-response-Clear-Site-Data": [
-    "Assertion",
-    "Response 2 header Clear-Site-Data is \"cache\", not \"cookies\""
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "304-etag-update-response-Content-Encoding": [
-    "Assertion",
-    "Response 2 header Content-Encoding is \"arizqhypgxofwne\", not \"askcumewogyqias\""
+    "Setup",
+    "Response 1 status is 504, not 200"
   ],
   "304-etag-update-response-Content-Foo": [
-    "Assertion",
-    "Response 2 header Content-Foo is \"awsokgcyuqmieaw\", not \"axurolifczwtqnk\""
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": [
-    "Assertion",
-    "Response 2 header Content-Location is \"/foo\", not \"/bar\""
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "304-etag-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "304-etag-update-response-Content-Range": [
     "Assertion",
@@ -33,16 +33,16 @@
     "Response 2 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
   ],
   "304-etag-update-response-Content-Type": [
-    "Assertion",
-    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "304-etag-update-response-ETag": [
-    "Assertion",
-    "Response 2 header ETag is \"\"abcdef\"\", not \"\"ghijkl\"\""
+    "Setup",
+    "Response 1 status is 504, not 200"
   ],
   "304-etag-update-response-Expires": [
-    "Assertion",
-    "Response 2 header Expires is \"Fri, 01 Jan 2038 01:01:01 GMT\", not \"Mon, 11 Jan 2038 11:11:11 GMT\""
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "304-etag-update-response-Public-Key-Pins": [
     "Assertion",
@@ -53,8 +53,8 @@
     "Request 2 should have been conditional, but it was not."
   ],
   "304-etag-update-response-Set-Cookie2": [
-    "Assertion",
-    "Response 2 header Set-Cookie2 is \"a=b\", not \"a=c\""
+    "Setup",
+    "Response 1 status is 504, not 200"
   ],
   "304-etag-update-response-Test-Header": [
     "Assertion",
@@ -65,12 +65,12 @@
     "Response 2 header X-Content-Foo is \"azyxwvutsrqponm\", not \"aaaaaaaaaaaaaaa\""
   ],
   "304-etag-update-response-X-Frame-Options": [
-    "Assertion",
-    "Response 2 header X-Frame-Options is \"deny\", not \"sameorigin\""
+    "Setup",
+    "Response 1 status is 504, not 200"
   ],
   "304-etag-update-response-X-Test-Header": [
-    "Assertion",
-    "Response 2 header X-Test-Header is \"adgjmpsvybehknq\", not \"aeimquycgkoswae\""
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "304-etag-update-response-X-XSS-Protection": [
     "Assertion",
@@ -401,16 +401,16 @@
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
   "head-200-freshness-update": [
-    "Assertion",
-    "Request 2 had method GET, not HEAD"
+    "Setup",
+    "Response 1 status is 504, not 200"
   ],
   "head-200-retain": [
     "Assertion",
     "Response 2 header Template-A is \"null\", not \"1\""
   ],
   "head-200-update": [
-    "Assertion",
-    "Request 2 had method GET, not HEAD"
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "head-410-update": [
     "Setup",
@@ -453,7 +453,7 @@
   "headers-store-Public-Key-Pins": true,
   "headers-store-Set-Cookie": [
     "Setup",
-    "Response 2 does not come from cache"
+    "Response 1 status is 504, not 200"
   ],
   "headers-store-Set-Cookie2": true,
   "headers-store-TE": true,
@@ -552,8 +552,8 @@
     "Response 2 does not come from cache"
   ],
   "invalidate-DELETE": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "Response 1 status is 504, not 200"
   ],
   "invalidate-DELETE-cl": [
     "Assertion",
@@ -565,8 +565,8 @@
     "Response 3 comes from cache"
   ],
   "invalidate-M-SEARCH": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "invalidate-M-SEARCH-cl": [
     "Assertion",
@@ -591,8 +591,8 @@
     "Response 3 comes from cache"
   ],
   "invalidate-PUT": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "Setup",
+    "Response 2 status is 504, not 200"
   ],
   "invalidate-PUT-cl": [
     "Assertion",
@@ -629,7 +629,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 11 Jul 2023 11:06:44 GMT\", not \"Tue, 11 Jul 2023 11:06:41 GMT\""
+    "Response 2 header Date is \"Tue, 11 Jul 2023 13:10:18 GMT\", not \"Tue, 11 Jul 2023 13:10:15 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

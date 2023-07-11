@@ -241,7 +241,10 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "freshness-expires-invalid-time-periods": true,
+  "freshness-expires-invalid-time-periods": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "freshness-expires-invalid-utc": [
     "Assertion",
     "Response 2 comes from cache"
@@ -620,7 +623,10 @@
   "status-504-stale": true,
   "status-599-fresh": true,
   "status-599-must-understand": true,
-  "status-599-stale": true,
+  "status-599-stale": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "surrogate-append-capabilities": [
     "Assertion",
     "Request 1 Surrogate-Capability header not present."

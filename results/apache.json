@@ -479,7 +479,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 11 Jul 2023 11:07:17 GMT\", not \"Tue, 11 Jul 2023 11:07:14 GMT\""
+    "Response 2 header Date is \"Tue, 11 Jul 2023 13:10:51 GMT\", not \"Tue, 11 Jul 2023 13:10:48 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

@@ -883,19 +883,16 @@
     "Response 2 does not come from cache"
   ],
   "vary-3-order": true,
-  "vary-cache-key": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "vary-cache-key": true,
   "vary-invalidate": [
-    "Assertion",
-    "Response 3 does not come from cache"
+    "Setup",
+    "Response 2 comes from cache"
   ],
-  "vary-match": [
+  "vary-match": true,
+  "vary-no-match": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "vary-no-match": true,
   "vary-normalise-combine": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -920,7 +917,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "vary-omit": true,
+  "vary-omit": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "vary-omit-stored": true,
   "vary-star": true,
   "vary-syntax-empty-star": true,
