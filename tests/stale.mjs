@@ -1,11 +1,11 @@
 import * as templates from './lib/templates.mjs'
 
-function makeStaleCheckCC (cc, shared_only, value) {
-  const shared = shared_only === true ? "Shared " : ""
+function makeStaleCheckCC (cc, sharedOnly, value) {
+  const shared = sharedOnly === true ? 'Shared ' : ''
   return {
     name: `${shared}HTTP cache must not serve stale stored response when prohibited by \`Cache-Control: ${cc}\`.`,
     id: `stale-close-${cc}${value || ''}`,
-    browser_skip: shared_only,
+    browser_skip: sharedOnly,
     depends_on: ['stale-close'],
     spec_anchors: [`cache-response-directive.${cc}`],
     requests: [
