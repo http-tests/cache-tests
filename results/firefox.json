@@ -456,14 +456,6 @@
     "TypeError",
     "NetworkError when attempting to fetch resource."
   ],
-  "stale-close-proxy-revalidate": [
-    "TypeError",
-    "NetworkError when attempting to fetch resource."
-  ],
-  "stale-close-s-maxage=2": [
-    "TypeError",
-    "NetworkError when attempting to fetch resource."
-  ],
   "stale-sie-503": [
     "TypeError",
     "NetworkError when attempting to fetch resource."
@@ -480,6 +472,8 @@
     "TypeError",
     "NetworkError when attempting to fetch resource."
   ],
+  "stale-while-revalidate": true,
+  "stale-while-revalidate-window": true,
   "status-200-fresh": true,
   "status-200-must-understand": [
     "Assertion",

@@ -483,14 +483,6 @@
     "TypeError",
     "Load failed"
   ],
-  "stale-close-proxy-revalidate": [
-    "TypeError",
-    "Load failed"
-  ],
-  "stale-close-s-maxage=2": [
-    "TypeError",
-    "Load failed"
-  ],
   "stale-sie-503": [
     "TypeError",
     "Load failed"
@@ -507,6 +499,8 @@
     "TypeError",
     "Load failed"
   ],
+  "stale-while-revalidate": true,
+  "stale-while-revalidate-window": true,
   "status-200-fresh": true,
   "status-200-must-understand": [
     "Assertion",

@@ -495,14 +495,6 @@
     "TypeError",
     "Failed to fetch"
   ],
-  "stale-close-proxy-revalidate": [
-    "TypeError",
-    "Failed to fetch"
-  ],
-  "stale-close-s-maxage=2": [
-    "TypeError",
-    "Failed to fetch"
-  ],
   "stale-sie-503": [
     "TypeError",
     "Failed to fetch"
@@ -519,6 +511,8 @@
     "TypeError",
     "Failed to fetch"
   ],
+  "stale-while-revalidate": true,
+  "stale-while-revalidate-window": true,
   "status-200-fresh": true,
   "status-200-must-understand": [
     "Assertion",

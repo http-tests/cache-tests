@@ -623,7 +623,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 01 Feb 2022 01:02:35 GMT\", not \"Tue, 01 Feb 2022 01:02:32 GMT\""
+    "Response 2 header Date is \"Wed, 12 Jul 2023 03:59:28 GMT\", not \"Wed, 12 Jul 2023 03:59:25 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -709,6 +709,8 @@
     "Setup",
     "Response 2 does not come from cache"
   ],
+  "stale-while-revalidate": true,
+  "stale-while-revalidate-window": true,
   "status-200-fresh": true,
   "status-200-must-understand": true,
   "status-200-stale": true,
@@ -789,45 +791,6 @@
   ],
   "status-599-must-understand": true,
   "status-599-stale": true,
-  "surrogate-append-capabilities": [
-    "Assertion",
-    "Request 1 Surrogate-Capability header not present."
-  ],
-  "surrogate-fresh-cc-nostore": true,
-  "surrogate-max-age": true,
-  "surrogate-max-age-0": true,
-  "surrogate-max-age-0-expires": true,
-  "surrogate-max-age-age": true,
-  "surrogate-max-age-case-insensitive": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "surrogate-max-age-cc-max-age-invalid-expires": true,
-  "surrogate-max-age-expires": true,
-  "surrogate-max-age-extension": true,
-  "surrogate-max-age-long-cc-max-age": true,
-  "surrogate-max-age-max": true,
-  "surrogate-max-age-max-plus": true,
-  "surrogate-max-age-me-target": true,
-  "surrogate-max-age-other-target": true,
-  "surrogate-max-age-short-cc-max-age": true,
-  "surrogate-max-age-space-after-equals": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "surrogate-max-age-space-before-equals": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "surrogate-no-store": true,
-  "surrogate-no-store-cc-fresh": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "surrogate-remove-header": [
-    "Assertion",
-    "Response 1 header Surrogate-Control is \"null\", not \"foo\""
-  ],
   "vary-2-match": true,
   "vary-2-match-omit": true,
   "vary-2-no-match": true,
