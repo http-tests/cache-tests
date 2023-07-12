@@ -41,6 +41,25 @@ export default
       ]
     },
     {
+      name: 'HTTP cache must not reuse a response with `Cache-Control: max-age` after it becomes stale',
+      id: 'freshness-max-age-stale',
+      kind: 'optimal',
+      depends_on: ['freshness-max-age'],
+      spec_anchors: ['cache-response-directive.max-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not reuse a response with `Cache-Control: max-age=0`',
       id: 'freshness-max-age-0',
       depends_on: ['freshness-none'],
