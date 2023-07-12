@@ -1,9 +1,11 @@
 import * as templates from './lib/templates.mjs'
 
-function makeStaleCheckCC (cc, value) {
+function makeStaleCheckCC (cc, shared_only, value) {
+  const shared = shared_only === true ? "Shared " : ""
   return {
-    name: `HTTP cache must not serve stale stored response when prohibited by \`Cache-Control: ${cc}\`?`,
+    name: `${shared}HTTP cache must not serve stale stored response when prohibited by \`Cache-Control: ${cc}\`.`,
     id: `stale-close-${cc}${value || ''}`,
+    browser_skip: shared_only,
     depends_on: ['stale-close'],
     spec_anchors: [`cache-response-directive.${cc}`],
     requests: [
@@ -89,10 +91,10 @@ export default {
         }
       ]
     },
-    makeStaleCheckCC('must-revalidate'),
-    makeStaleCheckCC('proxy-revalidate'),
-    makeStaleCheckCC('no-cache'),
-    makeStaleCheckCC('s-maxage', '=2'),
+    makeStaleCheckCC('must-revalidate', false),
+    makeStaleCheckCC('proxy-revalidate', true),
+    makeStaleCheckCC('no-cache', false),
+    makeStaleCheckCC('s-maxage', true, '=2'),
     {
       name: 'Does HTTP cache generate a `Warning` header when using a response that was stored already stale?',
       id: 'stale-warning-stored',
