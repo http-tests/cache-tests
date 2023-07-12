@@ -8,7 +8,7 @@ const storedHeader = 'Test-Header'
 const valueA = utils.httpContent(`${storedHeader}-value-A`)
 const lm1 = 'Wed, 01 Jan 2020 00:00:00 GMT'
 tests.push({
-  name: `HTTP cache must return stored \`${storedHeader}\` from a \`304\` that omits it.`,
+  name: `HTTP cache must return stored \`${storedHeader}\` from a \`304\` that omits it`,
   id: `304-lm-use-stored-${storedHeader}`,
   requests: [
     {
@@ -43,12 +43,12 @@ function check304 (config) {
   if (config.noUpdate === true) {
     config.expectedValue = config.valueA
     config.requirement = 'HTTP cache must not'
-    config.punctuation = '.'
+    config.punctuation = ''
     config.kind = 'required'
   } else if (config.reqUpdate === true) {
     config.expectedValue = config.valueB
     config.requirement = 'HTTP cache must'
-    config.punctuation = '.'
+    config.punctuation = ''
     config.kind = 'required'
   } else {
     config.expectedValue = config.valueB

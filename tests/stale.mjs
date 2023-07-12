@@ -3,7 +3,7 @@ import * as templates from './lib/templates.mjs'
 function makeStaleCheckCC (cc, sharedOnly, value) {
   const shared = sharedOnly === true ? 'Shared ' : ''
   return {
-    name: `${shared}HTTP cache must not serve stale stored response when prohibited by \`Cache-Control: ${cc}\`.`,
+    name: `${shared}HTTP cache must not serve stale stored response when prohibited by \`Cache-Control: ${cc}\``,
     id: `stale-close-${cc}${value || ''}`,
     browser_skip: sharedOnly,
     depends_on: ['stale-close'],
@@ -56,7 +56,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal cache serves stale stored response with [`Cache-Control: stale-while-revalidate`](https://httpwg.org/specs/rfc5861.html).',
+      name: 'An optimal cache serves stale stored response with [`Cache-Control: stale-while-revalidate`](https://httpwg.org/specs/rfc5861.html)',
       id: 'stale-while-revalidate',
       kind: 'optimal',
       requests: [
@@ -74,7 +74,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not serve stale stored response after the [`stale-while-revalidate`](https://httpwg.org/specs/rfc5861.html) window.',
+      name: 'HTTP cache must not serve stale stored response after the [`stale-while-revalidate`](https://httpwg.org/specs/rfc5861.html) window',
       id: 'stale-while-revalidate-window',
       depends_on: ['stale-while-revalidate'],
       requests: [

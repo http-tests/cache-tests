@@ -350,7 +350,7 @@ export default
       ]
     },
     {
-      name: 'A HTTP cache MUST revalidate a stale response with `Cache-Control: immutable`.',
+      name: 'A HTTP cache MUST revalidate a stale response with `Cache-Control: immutable`',
       id: 'cc-resp-immutable-stale',
       browser_only: true,
       requests: [

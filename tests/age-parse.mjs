@@ -7,7 +7,7 @@ export default
   spec_anchors: ['field.age', 'expiration.model'],
   tests: [
     {
-      name: 'HTTP cache should ignore an `Age` header with a non-numeric value.',
+      name: 'HTTP cache should ignore an `Age` header with a non-numeric value',
       id: 'age-parse-nonnumeric',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -26,7 +26,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should ignore an `Age` header with a negative value.',
+      name: 'HTTP cache should ignore an `Age` header with a negative value',
       id: 'age-parse-negative',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -45,7 +45,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should ignore an `Age` header with a float value.',
+      name: 'HTTP cache should ignore an `Age` header with a float value',
       id: 'age-parse-float',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -121,7 +121,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with a single `Age` header line `old, 0` to be stale.',
+      name: 'HTTP cache should consider a response with a single `Age` header line `old, 0` to be stale',
       id: 'age-parse-suffix',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -140,7 +140,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should consider a response with a single `Age` header line `0, old` to be fresh.',
+      name: 'HTTP cache should consider a response with a single `Age` header line `0, old` to be fresh',
       id: 'age-parse-prefix',
       depends_on: ['freshness-max-age-age'],
       requests: [
@@ -179,7 +179,7 @@ export default
       ]
     },
     {
-      name: 'HTTP cache should use the first line in a response with multiple `Age` header lines: `0`, `old`.',
+      name: 'HTTP cache should use the first line in a response with multiple `Age` header lines: `0`, `old`',
       id: 'age-parse-prefix-twoline',
       depends_on: ['freshness-max-age-age'],
       requests: [

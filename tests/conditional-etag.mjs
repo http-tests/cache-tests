@@ -5,7 +5,7 @@ export default {
   spec_anchors: ['validation.model'],
   tests: [
     {
-      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag`.',
+      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag`',
       id: 'conditional-etag-strong-respond',
       kind: 'optimal',
       browser_skip: true,
@@ -28,7 +28,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must include `ETag` in a `304 Not Modified`.',
+      name: 'HTTP cache must include `ETag` in a `304 Not Modified`',
       id: 'conditional-304-etag',
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
@@ -107,7 +107,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache responds to unquoted `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag` that is quoted.',
+      name: 'HTTP cache responds to unquoted `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag` that is quoted',
       id: 'conditional-etag-quoted-respond-unquoted',
       kind: 'check',
       depends_on: ['conditional-etag-strong-respond'],
@@ -131,7 +131,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache responds to unquoted `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag` that is unquoted.',
+      name: 'HTTP cache responds to unquoted `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag` that is unquoted',
       id: 'conditional-etag-unquoted-respond-unquoted',
       kind: 'check',
       depends_on: ['conditional-etag-strong-respond'],
@@ -155,7 +155,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache responds to quoted `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag` that is unquoted.',
+      name: 'HTTP cache responds to quoted `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag` that is unquoted',
       id: 'conditional-etag-unquoted-respond-quoted',
       kind: 'check',
       depends_on: ['conditional-etag-strong-respond'],
@@ -179,7 +179,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak `ETag`.',
+      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak `ETag`',
       id: 'conditional-etag-weak-respond',
       kind: 'optimal',
       browser_skip: true,
@@ -202,7 +202,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak `ETag`, and the entity-tag weakness flag is lowercase.',
+      name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak `ETag`, and the entity-tag weakness flag is lowercase',
       id: 'conditional-etag-weak-respond-lowercase',
       kind: 'check',
       depends_on: ['conditional-etag-weak-respond'],
@@ -226,7 +226,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak `ETag`, and the entity-tag weakness flag uses `\\` instead of `/`.',
+      name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak `ETag`, and the entity-tag weakness flag uses `\\` instead of `/`',
       id: 'conditional-etag-weak-respond-backslash',
       kind: 'check',
       depends_on: ['conditional-etag-weak-respond'],
@@ -250,7 +250,7 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak `ETag`, and the entity-tag weakness flag omits `/`.',
+      name: 'HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak `ETag`, and the entity-tag weakness flag omits `/`',
       id: 'conditional-etag-weak-respond-omit-slash',
       depends_on: ['conditional-etag-weak-respond'],
       kind: 'check',
@@ -274,7 +274,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when it contains multiple entity-tags (first one).',
+      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when it contains multiple entity-tags (first one)',
       id: 'conditional-etag-strong-respond-multiple-first',
       kind: 'optimal',
       depends_on: ['conditional-etag-strong-respond'],
@@ -298,7 +298,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when it contains multiple entity-tags (middle one).',
+      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when it contains multiple entity-tags (middle one)',
       id: 'conditional-etag-strong-respond-multiple-second',
       kind: 'optimal',
       depends_on: ['conditional-etag-strong-respond'],
@@ -322,7 +322,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when it contains multiple entity-tags (last one).',
+      name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when it contains multiple entity-tags (last one)',
       id: 'conditional-etag-strong-respond-multiple-last',
       kind: 'optimal',
       depends_on: ['conditional-etag-strong-respond'],
@@ -403,7 +403,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache generates a `If-None-Match` request when holding a stale response with a matching strong `ETag`.',
+      name: 'An optimal HTTP cache generates a `If-None-Match` request when holding a stale response with a matching strong `ETag`',
       id: 'conditional-etag-strong-generate',
       kind: 'optimal',
       requests: [
@@ -425,7 +425,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache generates a `If-None-Match` request when holding a stale response with a matching weak `ETag`.',
+      name: 'An optimal HTTP cache generates a `If-None-Match` request when holding a stale response with a matching weak `ETag`',
       id: 'conditional-etag-weak-generate-weak',
       kind: 'optimal',
       requests: [

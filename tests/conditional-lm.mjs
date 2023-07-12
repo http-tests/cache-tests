@@ -5,7 +5,7 @@ export default {
   spec_anchors: ['validation.model'],
   tests: [
     {
-      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a fresh response with a matching `Last-Modified`.',
+      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a fresh response with a matching `Last-Modified`',
       id: 'conditional-lm-fresh',
       kind: 'optimal',
       browser_skip: true,
@@ -30,7 +30,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a fresh response with an earlier `Last-Modified`.',
+      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a fresh response with an earlier `Last-Modified`',
       id: 'conditional-lm-fresh-earlier',
       kind: 'optimal',
       browser_skip: true,
@@ -55,7 +55,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a stale response with a matching `Last-Modified`, after validation.',
+      name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a stale response with a matching `Last-Modified`, after validation',
       id: 'conditional-lm-stale',
       kind: 'optimal',
       browser_skip: true,
