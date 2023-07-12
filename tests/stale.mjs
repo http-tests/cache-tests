@@ -56,6 +56,49 @@ export default {
       ]
     },
     {
+      name: 'An optimal cache serves stale stored response with [`Cache-Control: stale-while-revalidate`](https://httpwg.org/specs/rfc5861.html).',
+      id: 'stale-while-revalidate',
+      kind: 'optimal',
+      requests: [
+        {
+          setup: true,
+          pause_after: true,
+          response_headers: [
+            ['Cache-Control', 'max-age=1, stale-while-revalidate=3600'],
+            ['ETag', '"abc"']
+          ]
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not serve stale stored response after the [`stale-while-revalidate`](https://httpwg.org/specs/rfc5861.html) window.',
+      id: 'stale-while-revalidate-window',
+      depends_on: ['stale-while-revalidate'],
+      requests: [
+        {
+          setup: true,
+          pause_after: true,
+          response_headers: [
+            ['Cache-Control', 'max-age=1, stale-while-revalidate=4'],
+            ['ETag', '"abc"']
+          ]
+        },
+        {
+          setup: true,
+          pause_after: true,
+          expected_type: 'cached'
+        },
+        {
+          expected_response_headers: [
+            ['client-request-count', '3']
+          ]
+        }
+      ]
+    },
+    {
       name: 'Does HTTP cache serve stale stored response when server sends `Cache-Control: stale-if-error` and subsequently closes the connection?',
       id: 'stale-sie-close',
       kind: 'check',
