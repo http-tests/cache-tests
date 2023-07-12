@@ -19,7 +19,6 @@
       import * as summary from './test-engine/lib/summary.mjs'
       import * as display from './test-engine/lib/display.mjs'
       import baseTests from './tests/index.mjs'
-      import surrogate from './tests/surrogate-control.mjs'
 
       const loc = new URL(window.location)
       const suiteIds = loc.searchParams.getAll('suite')
@@ -31,7 +30,6 @@
         document.querySelectorAll('.noFrame').forEach(e => {e.style.display = 'block'})
       }
 
-      baseTests.push(surrogate)
       const ToC = document.getElementById('ToC')
       const target = document.getElementById('target')
       const key = document.getElementById('key')

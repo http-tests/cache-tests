@@ -3,9 +3,6 @@ import * as display from './lib/display.mjs'
 import { GREEN, NC } from './lib/defines.mjs'
 import fetch from 'node-fetch-with-proxy'
 import tests from '../tests/index.mjs'
-import surrogate from '../tests/surrogate-control.mjs'
-
-tests.push(surrogate)
 
 const baseUrl = process.env.npm_config_base || process.env.npm_package_config_base
 const testId = process.env.npm_config_id || process.env.npm_package_config_id

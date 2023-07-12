@@ -3,9 +3,6 @@ import fs from 'fs'
 import Ajv from 'ajv'
 
 import tests from '../tests/index.mjs'
-import surrogate from '../tests/surrogate-control.mjs'
-
-tests.push(surrogate)
 
 if (process.argv[2] === 'validate') {
   const ajv = new Ajv()

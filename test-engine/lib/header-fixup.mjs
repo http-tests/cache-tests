@@ -24,16 +24,5 @@ export function fixupHeader (header, respHeaders, reqConfig) {
     }
   }
 
-  // Surrogate-Control
-  const capabilitySeen = respHeaders['capability-seen']
-  if (headerName === 'surrogate-control' && capabilitySeen) {
-    // right now we assume just one
-    const capabilityTarget = capabilitySeen.split('=')[0]
-    if (!capabilityTarget) {
-      console.error('WARN: Capability target is empty')
-    }
-    header[1] = header[1].replace('CAPABILITY_TARGET', capabilityTarget)
-  }
-
   return header
 }
