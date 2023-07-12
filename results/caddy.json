@@ -156,7 +156,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "ccreq-max-stale-age": true,
+  "ccreq-max-stale-age": [
+    "Setup",
+    "Response body is \"aa2643c7-e393-4f60-a09d-adacff98b46868075fe04\", not \"2584cd00-4c4a-4cce-bcda-fbc68075fe04\""
+  ],
   "ccreq-min-fresh": true,
   "ccreq-min-fresh-age": true,
   "ccreq-no-cache": true,
@@ -433,6 +436,7 @@
   "freshness-max-age-single-quoted": true,
   "freshness-max-age-space-after-equals": true,
   "freshness-max-age-space-before-equals": true,
+  "freshness-max-age-stale": true,
   "freshness-max-age-two-fresh-stale-sameline": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -464,17 +468,11 @@
   "head-writethrough": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache": true,
   "headers-omit-headers-listed-in-Cache-Control-no-cache-single": true,
-  "headers-omit-headers-listed-in-Connection": [
-    "Setup",
-    "Response 2 header c is \"null\", not \"3\""
-  ],
+  "headers-omit-headers-listed-in-Connection": true,
   "headers-store-Cache-Control": true,
   "headers-store-Clear-Site-Data": true,
   "headers-store-Connection": true,
-  "headers-store-Content-Encoding": [
-    "Assertion",
-    "Response 2 header Content-Encoding is \"null\", not \"apetixmbqfujync\""
-  ],
+  "headers-store-Content-Encoding": true,
   "headers-store-Content-Foo": [
     "Assertion",
     "Response 2 header Content-Foo is \"null\", not \"auoicwqkeysmgau\""
@@ -493,23 +491,32 @@
     "Assertion",
     "Response 2 header Content-Security-Policy is \"null\", not \"default-src 'self' cdn.example.com\""
   ],
-  "headers-store-Content-Type": [
+  "headers-store-Content-Type": true,
+  "headers-store-ETag": [
     "Assertion",
-    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+    "Response 2 header ETag is \"null\", not \"\"ghijkl\"\""
   ],
-  "headers-store-ETag": true,
   "headers-store-Expires": [
     "Assertion",
     "Response 2 header Expires is \"null\", not \"Mon, 11 Jan 2038 11:11:11 GMT\""
   ],
-  "headers-store-Keep-Alive": true,
-  "headers-store-Proxy-Authenticate": true,
+  "headers-store-Keep-Alive": [
+    "Setup",
+    "Response body is \"a7bf52d5-d115-4556-bd3b-8649a022d379\", not \"bfc7f3f4-d031-4f5b-87b4-a76f801d715c\""
+  ],
+  "headers-store-Proxy-Authenticate": [
+    "Setup",
+    "Response body is \"efb34408-143c-41b7-8294-627b0582143f\", not \"045dabc9-b9f7-4117-b520-c3d3aa19355f\""
+  ],
   "headers-store-Proxy-Authentication-Info": [
     "Setup",
-    "Response body is \"8e6d6f27-15a0-49d3-aef6-1fc7f5fdb8b93ca64a19b5aa\", not \"a2365ffe-e071-48da-9065-3ca64a19b5aa\""
+    "Response body is \"a5bfbdb0-5346-41e5-9e2c-829ddd0b1bc70s\r\n\r\nbc9f607d-8ab6-4dbb-8756-b1f85723ca78\", not \"bc9f607d-8ab6-4dbb-8756-b1f85723ca78\""
   ],
   "headers-store-Proxy-Authorization": true,
-  "headers-store-Proxy-Connection": true,
+  "headers-store-Proxy-Connection": [
+    "Setup",
+    "Response body is \"9f2545af-e8a7-4a85-9934-9df5ce197be0\", not \"b4cb4815-d6f5-4687-9720-0a2edb14061d\""
+  ],
   "headers-store-Public-Key-Pins": [
     "Assertion",
     "Response 2 header Public-Key-Pins is \"null\", not \"askcumewogyqias\""
@@ -518,10 +525,7 @@
     "Assertion",
     "Response 2 header Set-Cookie is \"null\", not \"a=c\""
   ],
-  "headers-store-Set-Cookie2": [
-    "Assertion",
-    "Response 2 header Set-Cookie2 is \"null\", not \"a=c\""
-  ],
+  "headers-store-Set-Cookie2": true,
   "headers-store-TE": true,
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
@@ -633,7 +637,7 @@
   ],
   "invalidate-DELETE-failed": [
     "Setup",
-    "Response body is \"7fd2ae5a-def5-4783-8593-3e2c59a0f6abRequest-Count: 1\r\nX-Souin-Stored-Ttl: 2m0s\r\n\r\n93459012-22b4-4575-8a7a-2fb7167c8aaf\", not \"93459012-22b4-4575-8a7a-2fb7167c8aaf\""
+    "Response body is \"9ab01b3c-b020-411e-b1f3-967b2ca56971Stored-Ttl: 2m0s\r\n\r\nc6e8232b-1ea1-48c0-8551-3c7abba747e3\", not \"c6e8232b-1ea1-48c0-8551-3c7abba747e3\""
   ],
   "invalidate-DELETE-location": [
     "Assertion",
@@ -649,7 +653,7 @@
   ],
   "invalidate-M-SEARCH-failed": [
     "Setup",
-    "Response body is \"e1034ac4-af63-4886-b0f9-22dd6d6eccaared-Ttl: 2m0s\r\n\r\n28b84a90-9f1e-43cf-acfd-bdcd75889b6c\", not \"28b84a90-9f1e-43cf-acfd-bdcd75889b6c\""
+    "Response body is \"f3bd6518-02ef-40ef-9a55-c6e73c20612f\", not \"1b2cce05-e5e0-436f-bde2-a2453a408e65\""
   ],
   "invalidate-M-SEARCH-location": [
     "Assertion",
@@ -665,7 +669,7 @@
   ],
   "invalidate-POST-failed": [
     "Setup",
-    "Response body is \"d2507136-d622-46a8-8397-fb78ebdeb62dunt: 1\r\nX-Souin-Stored-Ttl: 2m0s\r\n\r\n16bc7405-95ae-4a72-a981-c4ea5a8b5004\", not \"16bc7405-95ae-4a72-a981-c4ea5a8b5004\""
+    "Response body is \"ca94f71c-1e8f-4e63-b731-75196b5bfb82red-Ttl: 2m0s\r\n\r\n11988041-d108-469c-98d4-d0848d4b34c3\", not \"11988041-d108-469c-98d4-d0848d4b34c3\""
   ],
   "invalidate-POST-location": [
     "Assertion",
@@ -681,7 +685,7 @@
   ],
   "invalidate-PUT-failed": [
     "Setup",
-    "Response body is \"7cc80304-9c79-4c1f-a93d-8668fc6ff7e9erver-Request-Count: 1\r\nX-Souin-Stored-Ttl: 2m0s\r\n\r\nbcc44f3b-b95a-4aa5-8947-94890e880dc5\", not \"bcc44f3b-b95a-4aa5-8947-94890e880dc5\""
+    "Response body is \"94d9efaf-6rver-Now: 1689144230686\r\nServer-Request-Count: 1\r\nX-Souin-Stored-Ttl: 2m0s\r\n\r\ne0de6f44-cd7d-41f1-9711-1e6696bce28c\", not \"e0de6f44-cd7d-41f1-9711-1e6696bce28c\""
   ],
   "invalidate-PUT-location": [
     "Assertion",
@@ -726,7 +730,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "other-set-cookie": true,
+  "other-set-cookie": [
+    "Setup",
+    "Response body is \"012345678900s\r\n\r\n9d4452e3-55c0-4dcf-a7e1-56de26dbbaa9\", not \"9d4452e3-55c0-4dcf-a7e1-56de26dbbaa9\""
+  ],
   "partial-store-complete-reuse-partial": [
     "Assertion",
     "Response 2 status is 200, not 206"
@@ -741,16 +748,19 @@
   ],
   "partial-store-partial-complete": [
     "Setup",
-    "Response 2 status is 206, not 200"
+    "Response body is \"df91782a-ebfb-4877-bd9e-0bbd40e8ecff4\", not \"2dcb6411-bc75-4232-92f5-2e4ffbe40845\""
   ],
-  "partial-store-partial-reuse-partial": true,
+  "partial-store-partial-reuse-partial": [
+    "Assertion",
+    "Response 2 status is 200, not 206"
+  ],
   "partial-store-partial-reuse-partial-absent": [
     "Assertion",
     "Response body is \"01234\", not \"234\""
   ],
   "partial-store-partial-reuse-partial-byterange": [
     "Assertion",
-    "Response 2 status is 200, not 206"
+    "Response body is \"01234\", not \"234\""
   ],
   "partial-store-partial-reuse-partial-suffix": [
     "Assertion",
@@ -770,18 +780,12 @@
     "Response 2 does not come from cache"
   ],
   "pragma-response-extension": true,
-  "pragma-response-no-cache": [
-    "Setup",
-    "Response body is \"be841406-ff03-4152-8079-d9c8e2c4a6a99c\", not \"47d4aebd-3fc2-419c-abd1-63843d542a9c\""
-  ],
-  "pragma-response-no-cache-heuristic": [
-    "Setup",
-    "Response body is \"944b4542-4cfe-438b-88da-ef592c0cbd3el: 2m0s\r\n\r\n2a36fe30-0d55-45f6-a9af-880bb415835e\", not \"2a36fe30-0d55-45f6-a9af-880bb415835e\""
-  ],
+  "pragma-response-no-cache": true,
+  "pragma-response-no-cache-heuristic": true,
   "query-args-different": true,
   "query-args-same": [
     "Setup",
-    "Response body is \"1e766a5d-bd92-4893-8572-c0af404f3e6aNow: 1689133007676\r\nServer-Request-Count: 1\r\nX-Souin-Stored-Ttl: 2m0s\r\n\r\n74dbfddb-98c2-4b42-bb92-af76291f43f2\", not \"74dbfddb-98c2-4b42-bb92-af76291f43f2\""
+    "Response body is \"2584cd00-4c4a-4cce-bcda-fbc68075fe044233790\r\nServer-Request-Count: 1\r\nX-Souin-Stored-Ttl: 2m0s\r\n\r\n631cdc8f-33a6-43cc-865e-25d4422e571a\", not \"631cdc8f-33a6-43cc-865e-25d4422e571a\""
   ],
   "stale-503": [
     "Assertion",
@@ -875,10 +879,7 @@
   "status-400-stale": true,
   "status-404-fresh": true,
   "status-404-stale": true,
-  "status-410-fresh": [
-    "Setup",
-    "Response 2 status is 200, not 410"
-  ],
+  "status-410-fresh": true,
   "status-410-stale": true,
   "status-499-fresh": [
     "Assertion",
@@ -927,15 +928,15 @@
     "Response 2 does not come from cache"
   ],
   "vary-3-order": true,
-  "vary-cache-key": [
-    "Setup",
-    "Response body is \"f5db50eb-c803-4141-8758-1f9b552d372b-Ttl: 2m0s\r\n\r\n84b6190c-ae7b-48d9-95d0-3f199469ca1c\", not \"84b6190c-ae7b-48d9-95d0-3f199469ca1c\""
-  ],
+  "vary-cache-key": true,
   "vary-invalidate": [
     "Setup",
-    "Response body is \"e640e060-3d98-4266-8ef1-177286c4881bary: Foo\r\nX-Souin-Stored-Ttl: 2m0s\r\n\r\naaaaaaaaaaaaaaa\", not \"aaaaaaaaaaaaaaa\""
+    "Response body is \"8d771304-90dc-4e45-86fe-6922ba14604d: 1\r\nVary: Foo\r\nX-Souin-Stored-Ttl: 2m0s\r\n\r\naaaaaaaaaaaaaaa\", not \"aaaaaaaaaaaaaaa\""
   ],
-  "vary-match": true,
+  "vary-match": [
+    "Setup",
+    "Response body is \"c0effa9c-ff21-4d07-a15a-eaee93201411-Count: 1\r\nVary: Foo\r\nX-Souin-Stored-Ttl: 2m0s\r\n\r\n62285e66-6099-40ff-ad0c-a12189917319\", not \"62285e66-6099-40ff-ad0c-a12189917319\""
+  ],
   "vary-no-match": true,
   "vary-normalise-combine": [
     "Assertion",

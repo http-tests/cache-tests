@@ -463,6 +463,7 @@
   "freshness-max-age-single-quoted": true,
   "freshness-max-age-space-after-equals": true,
   "freshness-max-age-space-before-equals": true,
+  "freshness-max-age-stale": true,
   "freshness-max-age-two-fresh-stale-sameline": true,
   "freshness-max-age-two-fresh-stale-sepline": true,
   "freshness-max-age-two-stale-fresh-sameline": [

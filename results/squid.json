@@ -307,6 +307,7 @@
     "Response 2 comes from cache"
   ],
   "freshness-max-age-space-before-equals": true,
+  "freshness-max-age-stale": true,
   "freshness-max-age-two-fresh-stale-sameline": true,
   "freshness-max-age-two-fresh-stale-sepline": true,
   "freshness-max-age-two-stale-fresh-sameline": [
@@ -369,7 +370,10 @@
     "Response 2 header Set-Cookie is \"null\", not \"a=c\""
   ],
   "headers-store-Set-Cookie2": true,
-  "headers-store-TE": true,
+  "headers-store-TE": [
+    "Setup",
+    "PUT config resulted in 503 Service Unavailable - server: squid/5.7    via: 1.1 cff261b1a868 (squid/5.7)    x-cache: MISS from cff261b1a868    x-cache-lookup: MISS from cff261b1a868:8001    x-squid-error: ERR_CONNECT_FAIL 110    "
+  ],
   "headers-store-Test-Header": true,
   "headers-store-Transfer-Encoding": [
     "Setup",

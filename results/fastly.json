@@ -379,6 +379,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "freshness-max-age-stale": true,
   "freshness-max-age-two-fresh-stale-sameline": true,
   "freshness-max-age-two-fresh-stale-sepline": true,
   "freshness-max-age-two-stale-fresh-sameline": [
@@ -623,7 +624,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Wed, 12 Jul 2023 03:59:28 GMT\", not \"Wed, 12 Jul 2023 03:59:25 GMT\""
+    "Response 2 header Date is \"Wed, 12 Jul 2023 06:46:33 GMT\", not \"Wed, 12 Jul 2023 06:46:30 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [

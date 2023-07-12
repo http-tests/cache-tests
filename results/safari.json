@@ -227,6 +227,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "freshness-max-age-stale": true,
   "freshness-max-age-two-fresh-stale-sameline": true,
   "freshness-max-age-two-fresh-stale-sepline": true,
   "freshness-max-age-two-stale-fresh-sameline": [

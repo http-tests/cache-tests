@@ -295,6 +295,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "freshness-max-age-stale": true,
   "freshness-max-age-two-fresh-stale-sameline": [
     "Assertion",
     "Response 2 does not come from cache"
