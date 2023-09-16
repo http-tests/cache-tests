@@ -36,7 +36,7 @@
     "url": "https://github.com/http-tests/cache-tests.git"
   },
   "devDependencies": {
-    "ajv": "^6.12.5",
+    "ajv": "^8.12.0",
     "font-awesome": "^4.7.0",
     "standard": "^17.1.0"
   }
