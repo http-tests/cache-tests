@@ -9,11 +9,12 @@
     "node": ">=14.8.0"
   },
   "dependencies": {
-    "liquidjs": "^10.9.2",
     "marked": "^4.0.12",
+    "liquidjs": "^10.9.2",
+    "marked": "^9.0.1",
     "node-fetch": "3.1.1",
     "node-fetch-with-proxy": "^0.1.6",
-    "npm": "^6.14.11"
+    "npm": "^10.1.0"
   },
   "scripts": {
     "server": "node test-engine/server/server.mjs",
