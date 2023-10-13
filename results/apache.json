@@ -461,6 +461,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "other-age-delay": [
+    "Assertion",
+    "Response 1 age header not present."
+  ],
   "other-age-gen": true,
   "other-age-update-expires": true,
   "other-age-update-max-age": true,
@@ -480,7 +484,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Wed, 12 Jul 2023 06:41:58 GMT\", not \"Wed, 12 Jul 2023 06:41:55 GMT\""
+    "Response 2 header Date is \"Fri, 13 Oct 2023 07:12:03 GMT\", not \"Fri, 13 Oct 2023 07:12:00 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,

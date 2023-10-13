@@ -677,6 +677,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "other-age-delay": [
+    "Assertion",
+    "Response 1 age header not present."
+  ],
   "other-age-gen": [
     "Assertion",
     "Response 2 does not come from cache"

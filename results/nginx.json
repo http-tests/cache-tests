@@ -106,12 +106,12 @@
   "age-parse-prefix": true,
   "age-parse-prefix-twoline": true,
   "age-parse-suffix": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "Response 1 status is 504, not 200"
   ],
   "age-parse-suffix-twoline": [
-    "Assertion",
-    "Response 2 comes from cache"
+    "Setup",
+    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
   ],
   "cc-resp-must-revalidate-fresh": true,
   "cc-resp-must-revalidate-stale": true,
@@ -136,16 +136,16 @@
     "Response 2 comes from cache"
   ],
   "ccreq-ma1": [
-    "Setup",
-    "Response 1 status is 504, not 200"
+    "Assertion",
+    "Response 2 comes from cache"
   ],
   "ccreq-magreaterage": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
+    "Assertion",
+    "Response 2 comes from cache"
   ],
   "ccreq-max-stale": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "ccreq-max-stale-age": true,
   "ccreq-min-fresh": [
@@ -165,12 +165,12 @@
     "request 2 wasn't sent to server"
   ],
   "ccreq-no-cache-lm": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
+    "Assertion",
+    "request 2 wasn't sent to server"
   ],
   "ccreq-no-store": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
+    "Assertion",
+    "Response 2 comes from cache"
   ],
   "ccreq-oic": [
     "Assertion",
@@ -370,7 +370,10 @@
   "freshness-max-age-leading-zero": true,
   "freshness-max-age-max": true,
   "freshness-max-age-max-minus-1": true,
-  "freshness-max-age-max-plus": true,
+  "freshness-max-age-max-plus": [
+    "Setup",
+    "Response 1 status is 504, not 200"
+  ],
   "freshness-max-age-max-plus-1": true,
   "freshness-max-age-negative": true,
   "freshness-max-age-quoted": [
@@ -379,7 +382,10 @@
   ],
   "freshness-max-age-s-maxage-shared-longer": true,
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
-  "freshness-max-age-s-maxage-shared-longer-reversed": true,
+  "freshness-max-age-s-maxage-shared-longer-reversed": [
+    "Setup",
+    "Response 1 status is 504, not 200"
+  ],
   "freshness-max-age-s-maxage-shared-shorter": true,
   "freshness-max-age-s-maxage-shared-shorter-expires": [
     "Assertion",
@@ -395,8 +401,8 @@
     "Response 2 does not come from cache"
   ],
   "freshness-max-age-two-stale-fresh-sameline": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "Setup",
+    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
   ],
   "freshness-max-age-two-stale-fresh-sepline": true,
   "freshness-none": true,
@@ -608,6 +614,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "other-age-delay": [
+    "Assertion",
+    "Response 1 age header not present."
+  ],
   "other-age-gen": [
     "Assertion",
     "Response 2 Age header not present."
@@ -630,7 +640,7 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Wed, 12 Jul 2023 06:41:25 GMT\", not \"Wed, 12 Jul 2023 06:41:21 GMT\""
+    "Response 2 header Date is \"Fri, 13 Oct 2023 07:10:23 GMT\", not \"Fri, 13 Oct 2023 07:10:20 GMT\""
   ],
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
@@ -683,14 +693,8 @@
   ],
   "pragma-request-extension": true,
   "pragma-request-no-cache": true,
-  "pragma-response-extension": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
-  "pragma-response-no-cache": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
+  "pragma-response-extension": true,
+  "pragma-response-no-cache": true,
   "pragma-response-no-cache-heuristic": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -765,91 +769,31 @@
   "status-400-stale": true,
   "status-404-fresh": true,
   "status-404-stale": true,
-  "status-410-fresh": [
-    "Setup",
-    "Response 1 status is 504, not 410"
-  ],
-  "status-410-stale": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
-  "status-499-fresh": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
-  "status-499-stale": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
-  "status-500-fresh": [
-    "Setup",
-    "Response 1 status is 504, not 500"
-  ],
-  "status-500-stale": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-410-fresh": true,
+  "status-410-stale": true,
+  "status-499-fresh": true,
+  "status-499-stale": true,
+  "status-500-fresh": true,
+  "status-500-stale": true,
   "status-502-fresh": true,
-  "status-502-stale": [
-    "Setup",
-    "Response 1 status is 504, not 502"
-  ],
+  "status-502-stale": true,
   "status-503-fresh": true,
-  "status-503-stale": [
-    "Setup",
-    "Response 1 status is 504, not 503"
-  ],
+  "status-503-stale": true,
   "status-504-fresh": true,
-  "status-504-stale": [
-    "Setup",
-    "Response body is \"<html>\r\n<head><title>504 Gateway Time-out</title></head>\r\n<body>\r\n<center><h1>504 Gateway Time-out</h1></center>\r\n<hr><center>nginx/1.22.1 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n\", not \"aaaaaaaaaaaaaaa\""
-  ],
-  "status-599-fresh": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
-  "status-599-must-understand": [
-    "Setup",
-    "Response 1 status is 504, not 599"
-  ],
-  "status-599-stale": [
-    "Setup",
-    "Response 1 status is 504, not 599"
-  ],
-  "vary-2-match": [
-    "Setup",
-    "Response 1 status is 504, not 200"
-  ],
-  "vary-2-match-omit": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "status-504-stale": true,
+  "status-599-fresh": true,
+  "status-599-must-understand": true,
+  "status-599-stale": true,
+  "vary-2-match": true,
+  "vary-2-match-omit": true,
   "vary-2-no-match": true,
-  "vary-3-match": [
-    "Setup",
-    "Response 1 status is 504, not 200"
-  ],
-  "vary-3-no-match": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
-  "vary-3-omit": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
+  "vary-3-match": true,
+  "vary-3-no-match": true,
+  "vary-3-omit": true,
   "vary-3-order": true,
-  "vary-cache-key": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
-  "vary-invalidate": [
-    "TypeError",
-    "Cannot read properties of undefined (reading 'request_num')"
-  ],
-  "vary-match": [
-    "Setup",
-    "Response 1 status is 504, not 200"
-  ],
+  "vary-cache-key": true,
+  "vary-invalidate": true,
+  "vary-match": true,
   "vary-no-match": true,
   "vary-normalise-combine": [
     "Assertion",
@@ -873,14 +817,8 @@
     "Response 2 does not come from cache"
   ],
   "vary-omit": true,
-  "vary-omit-stored": [
-    "Setup",
-    "Response 1 status is 504, not 200"
-  ],
-  "vary-star": [
-    "Setup",
-    "PUT config resulted in 504 Gateway Time-out - server: nginx/1.22.1 (Ubuntu)    "
-  ],
+  "vary-omit-stored": true,
+  "vary-star": true,
   "vary-syntax-empty-star": [
     "Assertion",
     "Response 2 comes from cache"
