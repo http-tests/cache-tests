@@ -30,6 +30,21 @@ export default
       ]
     },
     {
+      name: 'Does HTTP cache insert an `Age` header field when there is delay generating the response?',
+      id: 'other-age-delay',
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600'],
+            ['Date', 0]
+          ],
+          response_pause: 5,
+          expected_response_headers: [['age', '>', 0]]
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must update the `Age` header field when freshness is based upon `Expires`',
       id: 'other-age-update-expires',
       spec_anchors: ['constructing.responses.from.caches', 'field.age'],
