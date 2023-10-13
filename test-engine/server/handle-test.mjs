@@ -20,14 +20,28 @@ export default function handleTest (pathSegs, request, response) {
   const cliReqNum = parseInt(request.headers['req-num'])
   const reqNum = cliReqNum || srvReqNum
   const reqConfig = requests[reqNum - 1]
-  const previousConfig = requests[reqNum - 2]
-  const now = Date.now()
 
   if (!reqConfig) {
     sendResponse(response, 409, `${requests[0].id} config not found for request ${srvReqNum} (anticipating ${requests.length})`)
     return
   }
   if (reqConfig.dump) logRequest(request, srvReqNum)
+
+  // response_pause
+  if ('response_pause' in reqConfig) {
+    setTimeout(continueHandleTest, reqConfig.response_pause * 1000, uuid, request, response, requests, serverState)
+  } else {
+    continueHandleTest(uuid, request, response, requests, serverState)
+  }
+}
+
+function continueHandleTest (uuid, request, response, requests, serverState) {
+  const srvReqNum = serverState.length + 1
+  const cliReqNum = parseInt(request.headers['req-num'])
+  const reqNum = cliReqNum || srvReqNum
+  const reqConfig = requests[reqNum - 1]
+  const previousConfig = requests[reqNum - 2]
+  const now = Date.now()
 
   // Determine what the response status should be
   let httpStatus = reqConfig.response_status || [200, 'OK']

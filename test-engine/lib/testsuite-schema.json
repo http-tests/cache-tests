@@ -241,6 +241,10 @@
                       ]
                     }
                   },
+                  "response_pause": {
+                    "description": "Pause the response body by the server",
+                    "type": "integer"
+                  },
                   "expected_request_headers_missing": {
                     "description": "Request headers to check for absence on the server",
                     "type": "array",

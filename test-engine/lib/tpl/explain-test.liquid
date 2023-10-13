@@ -59,6 +59,10 @@ The server will disconnect the client when receiving this request.
 ~~~
 {% endif -%}
 
+{%- if request.response_pause %}
+
+The server will pause for {{ request.response_pause }} seconds before responding.{% endif -%}
+
 {%- if request.response_status or request.response_headers or request.response_body %}
 
 ### The server sends a response containing:
