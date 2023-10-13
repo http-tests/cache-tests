@@ -72,6 +72,7 @@ Possible members of a request object:
                      `false`.
 - `response_body` - String to send as the response body from the origin. Defaults to
                   the test identifier.
+- `response_pause` - Integer number of seconds for the server to pause before generating a response.
 - `check_body` - Whether to check the response body. Default `true`.
 - `expected_type` - One of:
   - `cached`: The response is served from cache
