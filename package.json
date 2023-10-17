@@ -9,7 +9,6 @@
     "node": ">=14.8.0"
   },
   "dependencies": {
-    "marked": "^4.0.12",
     "liquidjs": "^10.9.2",
     "marked": "^9.0.1",
     "node-fetch": "3.1.1",
