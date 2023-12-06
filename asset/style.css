@@ -83,15 +83,10 @@ th.category a {
 }
 
 #key {
-  position: fixed;
-  bottom: 0;
-  width: 80vw;
-  left: 10vw;
   background-color: white;
   margin-bottom: 0;
   padding: 10px;
   border: 1px solid #999;
-  border-bottom: none;
 }
 
 input.select {
@@ -172,4 +167,35 @@ pre code {
 
 .noFrame {
   display: none;
+}
+
+
+@page {
+  size: A4;
+  margin: 11mm 17mm 17mm 17mm;
+}
+
+@media screen {
+  #key {
+    position: fixed;
+    bottom: 0;
+    width: 80vw;
+    left: 10vw;
+    border-bottom: none;
+  }
+}
+
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  #key {
+    width: 100%;
+  }
+
+  .noPrint * {
+    display: none;
+  }
 }
