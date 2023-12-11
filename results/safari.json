@@ -398,6 +398,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "other-age-delay": [
+    "Assertion",
+    "Response 1 age header not present."
+  ],
   "other-age-gen": [
     "Assertion",
     "Response 2 Age header not present."
@@ -412,6 +416,8 @@
   ],
   "other-cookie": true,
   "other-date-update": true,
+  "other-date-update-expires": true,
+  "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": true,
   "other-set-cookie": true,

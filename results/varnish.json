@@ -121,6 +121,11 @@
   ],
   "cdn-cc-invalid-sh-type-unknown": true,
   "cdn-cc-invalid-sh-type-wrong": true,
+  "cdn-date-update-exceed": true,
+  "cdn-expires-update-exceed": [
+    "Assertion",
+    "Response 2 header Expires is \"null\", not \"Mon, 11 Dec 2023 04:30:59 GMT\""
+  ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -181,6 +186,7 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
+  "cdn-remove-age-exceed": true,
   "cdn-remove-header": true,
   "conditional-304-etag": true,
   "conditional-etag-forward": [
@@ -339,8 +345,8 @@
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
   "head-200-freshness-update": [
-    "Assertion",
-    "Request 2 had method GET, not HEAD"
+    "Setup",
+    "Response 1 status is 503, not 200"
   ],
   "head-200-retain": [
     "Assertion",
@@ -391,7 +397,7 @@
   "headers-store-Public-Key-Pins": true,
   "headers-store-Set-Cookie": [
     "Setup",
-    "Response 2 does not come from cache"
+    "Response 1 status is 503, not 200"
   ],
   "headers-store-Set-Cookie2": true,
   "headers-store-TE": true,
@@ -573,6 +579,8 @@
     "Response 2 does not come from cache"
   ],
   "other-date-update": true,
+  "other-date-update-expires": true,
+  "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
     "Assertion",

@@ -169,6 +169,11 @@
   ],
   "cdn-cc-invalid-sh-type-unknown": true,
   "cdn-cc-invalid-sh-type-wrong": true,
+  "cdn-date-update-exceed": true,
+  "cdn-expires-update-exceed": [
+    "Assertion",
+    "Response 2 header Expires is \"null\", not \"Mon, 11 Dec 2023 04:24:47 GMT\""
+  ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -228,6 +233,10 @@
   "cdn-private": [
     "Assertion",
     "Response 2 comes from cache"
+  ],
+  "cdn-remove-age-exceed": [
+    "Assertion",
+    "Response 2 Age header not present."
   ],
   "cdn-remove-header": true,
   "conditional-304-etag": true,
@@ -608,6 +617,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "other-age-delay": [
+    "Assertion",
+    "Response 1 header age is 0, should be bigger than 0"
+  ],
   "other-age-gen": true,
   "other-age-update-expires": [
     "Assertion",
@@ -624,8 +637,13 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Wed, 12 Jul 2023 06:46:33 GMT\", not \"Wed, 12 Jul 2023 06:46:30 GMT\""
+    "Response 2 header Date is \"Mon, 11 Dec 2023 04:24:42 GMT\", not \"Mon, 11 Dec 2023 04:24:39 GMT\""
   ],
+  "other-date-update-expires": [
+    "Assertion",
+    "Response 2 header Date is \"Mon, 11 Dec 2023 04:24:42 GMT\", not \"Mon, 11 Dec 2023 04:24:39 GMT\""
+  ],
+  "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,
   "other-heuristic-content-disposition-attachment": [
     "Assertion",

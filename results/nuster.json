@@ -199,6 +199,11 @@
   ],
   "cdn-cc-invalid-sh-type-unknown": true,
   "cdn-cc-invalid-sh-type-wrong": true,
+  "cdn-date-update-exceed": true,
+  "cdn-expires-update-exceed": [
+    "Assertion",
+    "Response 2 header Expires is \"null\", not \"Mon, 11 Dec 2023 04:33:05 GMT\""
+  ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
     "Response 2 does not come from cache"
@@ -255,6 +260,10 @@
   "cdn-private": [
     "Assertion",
     "Response 2 comes from cache"
+  ],
+  "cdn-remove-age-exceed": [
+    "Assertion",
+    "Response 2 Age header not present."
   ],
   "cdn-remove-header": true,
   "conditional-304-etag": [
@@ -698,7 +707,12 @@
   "other-authorization-public": true,
   "other-authorization-smaxage": true,
   "other-cookie": true,
-  "other-date-update": [
+  "other-date-update": true,
+  "other-date-update-expires": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "other-date-update-expires-update": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
