@@ -416,6 +416,76 @@ export default
           ]
         }
       ]
+    },
+    {
+      name: 'Does the CDN send `Age` when `CDN-Cache-Control: max-age` exceeds `Cache-Control: max-age`?',
+      id: 'cdn-remove-age-exceed',
+      cdn_only: true,
+      depends_on: ['cdn-max-age'],
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1'],
+            ['CDN-Cache-Control', 'max-age=10000'],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_response_headers: [
+            'Age'
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Does the CDN preserve `Date` when `CDN-Cache-Control: max-age` exceeds `Cache-Control: max-age`?',
+      id: 'cdn-date-update-exceed',
+      cdn_only: true,
+      depends_on: ['cdn-max-age'],
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1'],
+            ['CDN-Cache-Control', 'max-age=10000'],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_response_headers: [
+            ['Date', 0]
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Does the CDN preserve `Expires` when `CDN-Cache-Control: max-age` exceeds `Cache-Control: max-age`?',
+      id: 'cdn-expires-update-exceed',
+      cdn_only: true,
+      depends_on: ['cdn-max-age'],
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1'],
+            ['Expires', 1],
+            ['CDN-Cache-Control', 'max-age=10000'],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_response_headers: [
+            ['Expires', 1]
+          ]
+        }
+      ]
     }
   ]
 }

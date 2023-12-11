@@ -95,6 +95,27 @@ export default
       requests: [
         {
           response_headers: [
+            ['Cache-Control', 'max-age=60'],
+            ['Date', 0]
+          ],
+          pause_after: true,
+          setup: true
+        },
+        {
+          expected_type: 'cached',
+          expected_response_headers: [
+            ['Date', 0]
+          ]
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not update the `Date` header field when `Expires` is present',
+      id: 'other-date-update-expires',
+      spec_anchors: ['field.date'],
+      requests: [
+        {
+          response_headers: [
             ['Expires', 30 * 24 * 60 * 60],
             ['Date', 0]
           ],
@@ -105,6 +126,28 @@ export default
           expected_type: 'cached',
           expected_response_headers: [
             ['Date', 0]
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache leave the `Expires` header field alone?',
+      id: 'other-date-update-expires-update',
+      kind: 'check',
+      spec_anchors: ['field.date'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 30 * 24 * 60 * 60],
+            ['Date', 0]
+          ],
+          pause_after: true,
+          setup: true
+        },
+        {
+          expected_type: 'cached',
+          expected_response_headers: [
+            ['Expires', 30 * 24 * 60 * 60]
           ]
         }
       ]
