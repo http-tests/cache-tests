@@ -12,6 +12,7 @@ export default
       name: 'Does HTTP cache write through a HEAD when stored response is stale?',
       id: 'head-writethrough',
       kind: 'check',
+      depends_on: ['freshness-max-age-stale'],
       requests: [
         templates.becomeStale({}),
         {
@@ -59,7 +60,7 @@ export default
       name: 'Does HTTP cache update stored fields recieved in a `200` response to a `HEAD`?',
       id: 'head-200-update',
       kind: 'check',
-      depends_on: ['head-writethrough', 'head-200-freshness-update'],
+      depends_on: ['head-200-freshness-update'],
       requests: [
         templates.becomeStale({}),
         {
@@ -83,7 +84,7 @@ export default
       name: 'Does HTTP cache update stored fields recieved in a `410` response to a `HEAD`?',
       id: 'head-410-update',
       kind: 'check',
-      depends_on: ['head-writethrough', 'head-200-freshness-update'],
+      depends_on: ['head-200-freshness-update'],
       requests: [
         templates.becomeStale({}),
         {
