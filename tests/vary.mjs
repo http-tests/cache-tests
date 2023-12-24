@@ -10,6 +10,7 @@ export default {
     {
       name: 'An optimal HTTP cache reuses a `Vary` response when the request matches',
       id: 'vary-match',
+      depends_on: ['freshness-max-age'],
       kind: 'optimal',
       requests: [
         templates.varySetup({}),
@@ -24,6 +25,7 @@ export default {
     {
       name: "HTTP cache must not reuse `Vary` response when request doesn't match",
       id: 'vary-no-match',
+      depends_on: ['vary-match'],
       requests: [
         templates.varySetup({}),
         {
@@ -37,10 +39,11 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response when stored request omits variant request header',
       id: 'vary-omit-stored',
+      depends_on: ['vary-match'],
       requests: [
         {
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo']
@@ -58,6 +61,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response when presented request omits variant request header',
       id: 'vary-omit',
+      depends_on: ['vary-match'],
       requests: [
         templates.varySetup({}),
         {
@@ -68,6 +72,7 @@ export default {
     {
       name: 'An optimal HTTP cache can store two different variants',
       id: 'vary-invalidate',
+      depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
         templates.varySetup({
@@ -78,7 +83,7 @@ export default {
             ['Foo', '2']
           ],
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo']
@@ -99,6 +104,7 @@ export default {
     {
       name: 'An optimal HTTP cache should not include headers not listed in `Vary` in the cache key',
       id: 'vary-cache-key',
+      depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
         templates.varySetup({
@@ -119,21 +125,10 @@ export default {
     {
       name: 'An optimal HTTP cache reuses a two-way `Vary` response when request matches',
       id: 'vary-2-match',
+      depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
-        {
-          request_headers: [
-            ['Foo', '1'],
-            ['Bar', 'abc']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo, Bar', false] // FIXME: allow whitespace changes
-          ],
-          setup: true
-        },
+        templates.vary2Setup({}),
         {
           request_headers: [
             ['Foo', '1'],
@@ -146,20 +141,9 @@ export default {
     {
       name: "HTTP cache must not reuse two-way `Vary` response when request doesn't match",
       id: 'vary-2-no-match',
+      depends_on: ['vary-2-match'],
       requests: [
-        {
-          request_headers: [
-            ['Foo', '1'],
-            ['Bar', 'abc']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo, Bar', false] // FIXME: allow whitespace changes
-          ],
-          setup: true
-        },
+        templates.vary2Setup({}),
         {
           request_headers: [
             ['Foo', '2'],
@@ -172,19 +156,9 @@ export default {
     {
       name: 'HTTP cache must not reuse two-way `Vary` response when request omits variant request header',
       id: 'vary-2-match-omit',
+      depends_on: ['vary-2-match'],
       requests: [
-        {
-          request_headers: [
-            ['Foo', '1']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo, Bar', false] // FIXME: allow whitespace changes
-          ],
-          setup: true
-        },
+        templates.vary2Setup({}),
         {
           expected_type: 'not_cached'
         }
@@ -193,22 +167,10 @@ export default {
     {
       name: 'An optimal HTTP cache reuses a three-way `Vary` response when request matches',
       id: 'vary-3-match',
+      depends_on: ['vary-2-match'],
       kind: 'optimal',
       requests: [
-        {
-          request_headers: [
-            ['Foo', '1'],
-            ['Bar', 'abc'],
-            ['Baz', '789']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo, Bar, Baz', false] // FIXME: allow whitespace changes
-          ],
-          setup: true
-        },
+        templates.vary3Setup({}),
         {
           request_headers: [
             ['Foo', '1'],
@@ -222,21 +184,9 @@ export default {
     {
       name: "HTTP cache must not reuse three-way `Vary` response when request doesn't match",
       id: 'vary-3-no-match',
+      depends_on: ['vary-3-match'],
       requests: [
-        {
-          request_headers: [
-            ['Foo', '1'],
-            ['Bar', 'abc'],
-            ['Baz', '789']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo, Bar, Baz', false] // FIXME: allow whitespace changes
-          ],
-          setup: true
-        },
+        templates.vary3Setup({}),
         {
           request_headers: [
             ['Foo', '2'],
@@ -250,26 +200,14 @@ export default {
     {
       name: "HTTP cache must not reuse three-way `Vary` response when request doesn't match, regardless of header order",
       id: 'vary-3-order',
+      depends_on: ['vary-3-match'],
       requests: [
+        templates.vary3Setup({}),
         {
           request_headers: [
             ['Foo', '1'],
-            ['Bar', 'abc4'],
-            ['Baz', '789']
-          ],
-          response_headers: [
-            ['Expires', 5000],
-            ['Last-Modified', -3000],
-            ['Date', 0],
-            ['Vary', 'Foo, Bar, Baz', false] // FIXME: allow whitespace changes
-          ],
-          setup: true
-        },
-        {
-          request_headers: [
-            ['Foo', '1'],
-            ['Bar', 'abc'],
-            ['Baz', '789']
+            ['Baz', '789'],
+            ['Bar', 'abcd']
           ],
           expected_type: 'not_cached'
         }
@@ -278,6 +216,7 @@ export default {
     {
       name: 'An optimal HTTP cache reuses a three-way `Vary` response when both request and the original request omited a variant header',
       id: 'vary-3-omit',
+      depends_on: ['vary-3-match'],
       kind: 'optimal',
       requests: [
         {
@@ -286,7 +225,7 @@ export default {
             ['Baz', '789']
           ],
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Date', 0],
             ['Last-Modified', -3000],
             ['Vary', 'Foo, Bar, Baz', false] // FIXME: allow whitespace changes
@@ -312,7 +251,7 @@ export default {
             ['Baz', '789']
           ],
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', '*']
@@ -331,6 +270,7 @@ export default {
     {
       name: 'An optimal HTTP cache normalises unknown selecting headers by combining fields',
       id: 'vary-normalise-combine',
+      depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
         {
@@ -338,7 +278,7 @@ export default {
             ['Foo', '1, 2']
           ],
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo']
@@ -357,6 +297,7 @@ export default {
     {
       name: 'An optimal HTTP cache normalises `Accept-Language` by ignoring language order',
       id: 'vary-normalise-lang-order',
+      depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
         {
@@ -364,7 +305,7 @@ export default {
             ['Accept-Language', 'en, de']
           ],
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Accept-Language']
@@ -382,6 +323,7 @@ export default {
     {
       name: 'An optimal HTTP cache normalises `Accept-Language` by ignoring language case',
       id: 'vary-normalise-lang-case',
+      depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
         {
@@ -389,7 +331,7 @@ export default {
             ['Accept-Language', 'en, de']
           ],
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Accept-Language']
@@ -407,6 +349,7 @@ export default {
     {
       name: 'An optimal HTTP cache normalises `Accept-Language` by ignoring whitespace',
       id: 'vary-normalise-lang-space',
+      depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
         {
@@ -414,7 +357,7 @@ export default {
             ['Accept-Language', 'en, de']
           ],
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Accept-Language']
@@ -432,6 +375,7 @@ export default {
     {
       name: 'An optimal HTTP cache selects `Content-Language` by using the qvalue on `Accept-Language`',
       id: 'vary-normalise-lang-select',
+      depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
         {
@@ -439,7 +383,7 @@ export default {
             ['Accept-Language', 'en, de']
           ],
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Accept-Language'],
@@ -458,6 +402,7 @@ export default {
     {
       name: 'An optimal HTTP cache normalises unknown selecting headers by removing whitespace',
       id: 'vary-normalise-space',
+      depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
         {
@@ -465,7 +410,7 @@ export default {
             ['Foo', '1,2']
           ],
           response_headers: [
-            ['Expires', 5000],
+            ['Cache-Control', 'max-age=5000'],
             ['Last-Modified', -3000],
             ['Date', 0],
             ['Vary', 'Foo']

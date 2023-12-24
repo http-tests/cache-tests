@@ -51,7 +51,6 @@ export const location = makeTemplate({
 export const contentLocation = makeTemplate({
   filename: 'content_location_target',
   response_headers: [
-    ['Expires', 100000],
     ['Cache-Control', 'max-age=100000'],
     ['Last-Modified', 0],
     ['Date', 0]
@@ -63,11 +62,39 @@ export const varySetup = makeTemplate({
     ['Foo', '1']
   ],
   response_headers: [
-    ['Expires', 5000],
     ['Cache-Control', 'max-age=5000'],
     ['Last-Modified', -3000],
     ['Date', 0],
     ['Vary', 'Foo']
+  ],
+  setup: true
+})
+
+export const vary2Setup = makeTemplate({
+  request_headers: [
+    ['Foo', '1'],
+    ['Bar', 'abc']
+  ],
+  response_headers: [
+    ['Cache-Control', 'max-age=5000'],
+    ['Last-Modified', -3000],
+    ['Date', 0],
+    ['Vary', 'Foo', 'Bar', false]
+  ],
+  setup: true
+})
+
+export const vary3Setup = makeTemplate({
+  request_headers: [
+    ['Foo', '1'],
+    ['Bar', 'abc'],
+    ['Baz', '789']
+  ],
+  response_headers: [
+    ['Cache-Control', 'max-age=5000'],
+    ['Last-Modified', -3000],
+    ['Date', 0],
+    ['Vary', 'Foo', 'Bar', 'Baz', false]
   ],
   setup: true
 })
