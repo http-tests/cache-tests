@@ -33,6 +33,7 @@ export default {
     {
       name: 'Does HTTP cache serve stale stored response when server closes the connection?',
       id: 'stale-close',
+      depends_on: ['freshness-max-age-stale'],
       kind: 'check',
       requests: [
         templates.becomeStale({}),
@@ -45,6 +46,7 @@ export default {
     {
       name: 'Does HTTP cache serve stale stored response when server sends a `503 Service Unavailable`?',
       id: 'stale-503',
+      depends_on: ['freshness-max-age-stale'],
       kind: 'check',
       requests: [
         templates.becomeStale({}),
@@ -58,6 +60,7 @@ export default {
     {
       name: 'An optimal cache serves stale stored response with [`Cache-Control: stale-while-revalidate`](https://httpwg.org/specs/rfc5861.html)',
       id: 'stale-while-revalidate',
+      depends_on: ['freshness-max-age-stale'],
       kind: 'optimal',
       requests: [
         {
@@ -101,6 +104,7 @@ export default {
     {
       name: 'Does HTTP cache serve stale stored response when server sends `Cache-Control: stale-if-error` and subsequently closes the connection?',
       id: 'stale-sie-close',
+      depends_on: ['freshness-max-age-stale'],
       kind: 'check',
       requests: [
         {
@@ -119,6 +123,7 @@ export default {
     {
       name: 'Does HTTP cache serve stale stored response when server sends `Cache-Control: stale-if-error` and subsequently a `503 Service Unavailable`?',
       id: 'stale-sie-503',
+      depends_on: ['freshness-max-age-stale'],
       kind: 'check',
       requests: [
         {
