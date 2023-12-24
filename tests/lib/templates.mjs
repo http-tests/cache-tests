@@ -98,3 +98,16 @@ export const vary3Setup = makeTemplate({
   ],
   setup: true
 })
+
+export const varyParseSetup = makeTemplate({
+  request_headers: [
+    ['Foo', '1'],
+    ['Baz', '789']
+  ],
+  response_headers: [
+    ['Cache-Control', 'max-age=5000'],
+    ['Last-Modified', -3000],
+    ['Date', 0]
+  ],
+  setup: true
+})

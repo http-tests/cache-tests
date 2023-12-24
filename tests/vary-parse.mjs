@@ -27,6 +27,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `*, *`',
       id: 'vary-syntax-star-star',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.varyParseSetup({
           response_headers: [
@@ -45,6 +46,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `*, *` on different lines',
       id: 'vary-syntax-star-star-lines',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.varyParseSetup({
           response_headers: [
@@ -64,6 +66,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `, *`',
       id: 'vary-syntax-empty-star',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.varyParseSetup({
           response_headers: [
@@ -82,6 +85,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `, *` on different lines',
       id: 'vary-syntax-empty-star-lines',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.varyParseSetup({
           response_headers: [
@@ -101,6 +105,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `*, Foo`',
       id: 'vary-syntax-star-foo',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.varyParseSetup({
           response_headers: [
@@ -119,6 +124,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `Foo, *`',
       id: 'vary-syntax-foo-star',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.varyParseSetup({
           response_headers: [
