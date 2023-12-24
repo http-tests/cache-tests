@@ -2,6 +2,7 @@
 
 import '../../asset/marked.min.js'
 import * as display from './display.mjs'
+import { testLookup } from './results.mjs'
 
 export function loadResults (index) {
   return Promise.all(index.map(item =>
@@ -88,7 +89,7 @@ function showHeader (testSuite, results) {
 }
 
 function showTest (testSuites, testId, results) {
-  const test = display.testLookup(testSuites, testId)
+  const test = testLookup(testSuites, testId)
   const testRow = tableRow()
   testRow.appendChild(tableCell('td', testSelector(test.id)))
   testRow.appendChild(tableCell('th', display.showTestName(test), 'name'))
