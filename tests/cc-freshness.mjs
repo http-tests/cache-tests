@@ -1,3 +1,5 @@
+import * as templates from './lib/templates.mjs'
+
 export default
 
 {
@@ -47,13 +49,7 @@ export default
       depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-response-directive.max-age'],
       requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=2']
-          ],
-          setup: true,
-          pause_after: true
-        },
+        templates.becomeStale({}),
         {
           expected_type: 'not_cached'
         }
