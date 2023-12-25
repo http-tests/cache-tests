@@ -1,5 +1,5 @@
 import { runTests, getResults } from './client/runner.mjs'
-import * as display from './lib/display.mjs'
+import { determineTestResult } from './lib/results.mjs'
 import { GREEN, NC } from './lib/defines.mjs'
 import fetch from 'node-fetch-with-proxy'
 import tests from '../tests/index.mjs'
@@ -32,7 +32,7 @@ runTests(testsToRun, fetch, false, baseUrl)
     if (testId !== '') {
       console.log(`${GREEN}==== Results${NC}`)
       const result = getResults()
-      const resultSymbol = display.determineTestResult(tests, testId, result, false)
+      const resultSymbol = determineTestResult(tests, testId, result, false)
       const resultDetails = result[testId][1] || ''
       console.log(`${resultSymbol[2]} - ${resultDetails}`)
     } else {
