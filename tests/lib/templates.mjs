@@ -25,7 +25,9 @@ export const stale = makeTemplate({
     ['Expires', -5000],
     ['Last-Modified', -100000],
     ['Date', 0]
-  ]
+  ],
+  setup: true,
+  pause_after: true
 })
 
 export const becomeStale = makeTemplate({
