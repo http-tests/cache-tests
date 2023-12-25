@@ -11,6 +11,7 @@ export default {
       name: 'Does HTTP cache honor request `Cache-Control: max-age=0` when it holds a fresh response?',
       id: 'ccreq-ma0',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.max-age'],
       requests: [
         templates.fresh({}),
@@ -26,6 +27,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: max-age=1` when it holds a fresh response?',
       id: 'ccreq-ma1',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.max-age'],
       requests: [
         templates.fresh({}),
@@ -41,15 +43,14 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: max-age` when it holds a fresh but `Age`d response that is not fresh enough?',
       id: 'ccreq-magreaterage',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.max-age'],
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Cache-Control', 'max-age=3600'],
             ['Age', '1800']
-          ],
-          setup: true
-        },
+          ]
+        }),
         {
           request_headers: [
             ['Cache-Control', 'max-age=600']
@@ -62,15 +63,10 @@ export default {
       name: 'Does HTTP cache reuse a stale response when request `Cache-Control: max-stale` allows it?',
       id: 'ccreq-max-stale',
       kind: 'check',
+      depends_on: ['freshness-max-age-stale'],
       spec_anchors: ['cache-request-directive.max-stale'],
       requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=1']
-          ],
-          pause_after: true,
-          setup: true
-        },
+        templates.becomeStale({}),
         {
           request_headers: [
             ['Cache-Control', 'max-stale=1000']
@@ -83,6 +79,7 @@ export default {
       name: 'Does HTTP cache reuse a stale `Age`d response when request `Cache-Control: max-stale` allows it?',
       id: 'ccreq-max-stale-age',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.max-stale'],
       requests: [
         {
@@ -104,6 +101,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: min-fresh` when the response it holds is not fresh enough?',
       id: 'ccreq-min-fresh',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.min-fresh'],
       requests: [
         {
@@ -124,6 +122,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: min-fresh` when the `Age`d response it holds is not fresh enough?',
       id: 'ccreq-min-fresh-age',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.min-fresh'],
       requests: [
         {
@@ -145,6 +144,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: no-cache` when it holds a fresh response?',
       id: 'ccreq-no-cache',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.no-cache'],
       requests: [
         {
@@ -165,6 +165,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: no-cache` by validating a response with `Last-Modified`?',
       id: 'ccreq-no-cache-lm',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.no-cache'],
       requests: [
         {
@@ -187,6 +188,7 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: no-cache` by validating a response with an `ETag`?',
       id: 'ccreq-no-cache-etag',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.no-cache'],
       requests: [
         {
@@ -208,14 +210,10 @@ export default {
       name: 'Does HTTP cache honour request `Cache-Control: no-store` when it holds a fresh response?',
       id: 'ccreq-no-store',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-request-directive.no-store'],
       requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=3600']
-          ],
-          setup: true
-        },
+        templates.fresh({}),
         {
           request_headers: [
             ['Cache-Control', 'no-store']
