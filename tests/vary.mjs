@@ -23,7 +23,7 @@ const vary2Setup = makeTemplate({
     ['Cache-Control', 'max-age=5000'],
     ['Last-Modified', -3000],
     ['Date', 0],
-    ['Vary', 'Foo', 'Bar', false]
+    ['Vary', 'Foo, Bar', false]
   ],
   setup: true
 })
@@ -38,7 +38,7 @@ const vary3Setup = makeTemplate({
     ['Cache-Control', 'max-age=5000'],
     ['Last-Modified', -3000],
     ['Date', 0],
-    ['Vary', 'Foo', 'Bar', 'Baz', false]
+    ['Vary', 'Foo, Bar, Baz', false]
   ],
   setup: true
 })
@@ -151,7 +151,6 @@ export default {
       requests: [
         varySetup({
           request_headers: [
-            ['Foo', '1'],
             ['Other', '2']
           ]
         }),
@@ -249,7 +248,7 @@ export default {
           request_headers: [
             ['Foo', '1'],
             ['Baz', '789'],
-            ['Bar', 'abcd']
+            ['Bar', 'abcde']
           ],
           expected_type: 'not_cached'
         }
