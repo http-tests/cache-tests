@@ -18,7 +18,7 @@ export default
             ['Content-Type', 'text/plain']
           ],
           response_headers: [
-            ['Expires', 30 * 24 * 60 * 60],
+            ['Cache-Control', 'max-age=3600'],
             ['Content-Location', ''],
             ['Date', 0]
           ],
