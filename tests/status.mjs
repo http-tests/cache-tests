@@ -15,6 +15,7 @@ function checkStatus (status) {
     name: 'An optimal HTTP cache reuses a fresh `' + code + '` response with explict freshness',
     id: `status-${code}-fresh`,
     kind: 'optimal',
+    depends_on: ['freshness-max-age'],
     browser_skip: is3xx,
     requests: [
       templates.fresh({
