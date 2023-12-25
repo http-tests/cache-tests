@@ -46,9 +46,7 @@ function mergeDeep (target, ...sources) {
 
 export const fresh = makeTemplate({
   response_headers: [
-    ['Expires', 100000],
     ['Cache-Control', 'max-age=100000'],
-    ['Last-Modified', 0],
     ['Date', 0]
   ],
   setup: true,
@@ -68,6 +66,7 @@ export const stale = makeTemplate({
 export const becomeStale = makeTemplate({
   response_headers: [
     ['Cache-Control', 'max-age=2'],
+    ['Date', 0],
     ['Template-A', '1']
   ],
   setup: true,
