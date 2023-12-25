@@ -56,10 +56,7 @@
   "cc-resp-must-revalidate-fresh": true,
   "cc-resp-must-revalidate-stale": true,
   "cc-resp-no-cache": true,
-  "cc-resp-no-cache-case-insensitive": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "cc-resp-no-cache-case-insensitive": true,
   "cc-resp-no-cache-revalidate": true,
   "cc-resp-no-cache-revalidate-fresh": true,
   "cc-resp-no-store": true,
@@ -94,7 +91,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Mon, 11 Dec 2023 04:35:46 GMT\""
+    "Response 2 header Expires is \"null\", not \"Mon, 25 Dec 2023 12:08:16 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -277,10 +274,7 @@
     "Response 2 does not come from cache"
   ],
   "freshness-max-age-age": true,
-  "freshness-max-age-case-insenstive": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-max-age-case-insenstive": true,
   "freshness-max-age-date": true,
   "freshness-max-age-decimal-five": true,
   "freshness-max-age-decimal-zero": true,
@@ -552,8 +546,14 @@
   ],
   "stale-sie-503": true,
   "stale-sie-close": true,
-  "stale-warning-become": true,
-  "stale-warning-stored": true,
+  "stale-warning-become": [
+    "Assertion",
+    "Response 2 warning header not present."
+  ],
+  "stale-warning-stored": [
+    "Assertion",
+    "Response 2 warning header not present."
+  ],
   "stale-while-revalidate": [
     "Assertion",
     "Response 2 does not come from cache"

@@ -181,7 +181,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Mon, 11 Dec 2023 04:29:19 GMT\""
+    "Response 2 header Expires is \"null\", not \"Mon, 25 Dec 2023 12:26:49 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -390,10 +390,7 @@
   "freshness-max-age-s-maxage-shared-longer-multiple": true,
   "freshness-max-age-s-maxage-shared-longer-reversed": true,
   "freshness-max-age-s-maxage-shared-shorter": true,
-  "freshness-max-age-s-maxage-shared-shorter-expires": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "freshness-max-age-s-maxage-shared-shorter-expires": true,
   "freshness-max-age-single-quoted": true,
   "freshness-max-age-space-after-equals": true,
   "freshness-max-age-space-before-equals": true,
@@ -468,7 +465,10 @@
   "headers-store-Set-Cookie2": true,
   "headers-store-TE": true,
   "headers-store-Test-Header": true,
-  "headers-store-Transfer-Encoding": true,
+  "headers-store-Transfer-Encoding": [
+    "Setup",
+    "Response 1 status is 502, not 200"
+  ],
   "headers-store-Upgrade": true,
   "headers-store-X-Content-Foo": true,
   "headers-store-X-Frame-Options": true,
@@ -643,11 +643,11 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 11 Dec 2023 04:29:13 GMT\", not \"Mon, 11 Dec 2023 04:29:10 GMT\""
+    "Response 2 header Date is \"Mon, 25 Dec 2023 12:26:43 GMT\", not \"Mon, 25 Dec 2023 12:26:40 GMT\""
   ],
   "other-date-update-expires": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 11 Dec 2023 04:29:13 GMT\", not \"Mon, 11 Dec 2023 04:29:10 GMT\""
+    "Response 2 header Date is \"Mon, 25 Dec 2023 12:26:43 GMT\", not \"Mon, 25 Dec 2023 12:26:40 GMT\""
   ],
   "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,

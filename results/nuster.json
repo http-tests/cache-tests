@@ -202,7 +202,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Mon, 11 Dec 2023 04:33:05 GMT\""
+    "Response 2 header Expires is \"null\", not \"Mon, 25 Dec 2023 12:11:29 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -266,10 +266,7 @@
     "Response 2 Age header not present."
   ],
   "cdn-remove-header": true,
-  "conditional-304-etag": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "conditional-304-etag": true,
   "conditional-etag-forward": true,
   "conditional-etag-forward-unquoted": [
     "Assertion",
@@ -277,11 +274,11 @@
   ],
   "conditional-etag-precedence": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 status is 200, not 304"
   ],
   "conditional-etag-quoted-respond-unquoted": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 status is 200, not 304"
   ],
   "conditional-etag-strong-generate": [
     "Assertion",
@@ -291,34 +288,19 @@
     "Assertion",
     "Request 2 should have been conditional, but it was not."
   ],
-  "conditional-etag-strong-respond": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "conditional-etag-strong-respond-multiple-first": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "conditional-etag-strong-respond-multiple-last": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "conditional-etag-strong-respond-multiple-second": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "conditional-etag-strong-respond": true,
+  "conditional-etag-strong-respond-multiple-first": true,
+  "conditional-etag-strong-respond-multiple-last": true,
+  "conditional-etag-strong-respond-multiple-second": true,
   "conditional-etag-strong-respond-obs-text": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 status is 200, not 304"
   ],
   "conditional-etag-unquoted-respond-quoted": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 status is 200, not 304"
   ],
-  "conditional-etag-unquoted-respond-unquoted": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "conditional-etag-unquoted-respond-unquoted": true,
   "conditional-etag-vary-headers": [
     "Setup",
     "Request 2 should have been conditional, but it was not."
@@ -328,22 +310,10 @@
     "Assertion",
     "Request 2 should have been conditional, but it was not."
   ],
-  "conditional-etag-weak-respond": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "conditional-etag-weak-respond-backslash": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "conditional-etag-weak-respond-lowercase": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "conditional-etag-weak-respond-omit-slash": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "conditional-etag-weak-respond": true,
+  "conditional-etag-weak-respond-backslash": true,
+  "conditional-etag-weak-respond-lowercase": true,
+  "conditional-etag-weak-respond-omit-slash": true,
   "conditional-lm-fresh": true,
   "conditional-lm-fresh-earlier": [
     "Assertion",
@@ -692,7 +662,7 @@
   ],
   "other-age-gen": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 Age header not present."
   ],
   "other-age-update-expires": [
     "Assertion",
@@ -702,7 +672,10 @@
     "Assertion",
     "Response 2 header Age is 30, should be bigger than 32"
   ],
-  "other-authorization": true,
+  "other-authorization": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "other-authorization-must-revalidate": true,
   "other-authorization-public": true,
   "other-authorization-smaxage": true,
@@ -858,22 +831,25 @@
     "Response 2 comes from cache"
   ],
   "status-599-stale": true,
-  "vary-2-match": [
+  "vary-2-match": true,
+  "vary-2-match-omit": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "vary-2-match-omit": true,
-  "vary-2-no-match": true,
-  "vary-3-match": [
+  "vary-2-no-match": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "vary-3-no-match": true,
-  "vary-3-omit": [
+  "vary-3-match": true,
+  "vary-3-no-match": [
     "Assertion",
-    "Response 2 does not come from cache"
+    "Response 2 comes from cache"
   ],
-  "vary-3-order": true,
+  "vary-3-omit": true,
+  "vary-3-order": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
   "vary-cache-key": true,
   "vary-invalidate": [
     "Setup",
@@ -884,41 +860,50 @@
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "vary-normalise-combine": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-normalise-lang-case": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-normalise-lang-order": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-normalise-lang-select": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-normalise-lang-space": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
-  "vary-normalise-space": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "vary-normalise-combine": true,
+  "vary-normalise-lang-case": true,
+  "vary-normalise-lang-order": true,
+  "vary-normalise-lang-select": true,
+  "vary-normalise-lang-space": true,
+  "vary-normalise-space": true,
   "vary-omit": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "vary-omit-stored": true,
-  "vary-star": true,
-  "vary-syntax-empty-star": true,
-  "vary-syntax-empty-star-lines": true,
-  "vary-syntax-foo-star": true,
-  "vary-syntax-star": true,
-  "vary-syntax-star-foo": true,
-  "vary-syntax-star-star": true,
-  "vary-syntax-star-star-lines": true
+  "vary-omit-stored": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-star": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-empty-star": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-empty-star-lines": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-foo-star": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-star": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-star-foo": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-star-star": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ],
+  "vary-syntax-star-star-lines": [
+    "Assertion",
+    "Response 2 comes from cache"
+  ]
 }

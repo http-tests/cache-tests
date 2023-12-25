@@ -124,7 +124,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Mon, 11 Dec 2023 04:30:59 GMT\""
+    "Response 2 header Expires is \"null\", not \"Mon, 25 Dec 2023 12:14:56 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -345,8 +345,8 @@
   "freshness-none": true,
   "freshness-s-maxage-shared": true,
   "head-200-freshness-update": [
-    "Setup",
-    "Response 1 status is 503, not 200"
+    "Assertion",
+    "Request 2 had method GET, not HEAD"
   ],
   "head-200-retain": [
     "Assertion",
@@ -397,7 +397,7 @@
   "headers-store-Public-Key-Pins": true,
   "headers-store-Set-Cookie": [
     "Setup",
-    "Response 1 status is 503, not 200"
+    "Response 2 does not come from cache"
   ],
   "headers-store-Set-Cookie2": true,
   "headers-store-TE": true,

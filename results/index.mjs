@@ -4,47 +4,47 @@ export default [
     file: 'chrome.json',
     name: 'Chrome',
     type: 'browser',
-    version: '118.0.5993.70'
+    version: '120.0.6099.109'
   },
   {
     file: 'firefox.json',
     name: 'Firefox',
     type: 'browser',
-    version: '120.0.1',
+    version: '121.0',
     link: 'https://github.com/http-tests/cache-tests/wiki/Firefox'
   },
   {
     file: 'safari.json',
     name: 'Safari',
     type: 'browser',
-    version: '17.1 (19616.2.9.11.7)'
+    version: '17.2 (19617.1.17.11.9)'
   },
   {
     file: 'nginx.json',
     name: 'nginx',
     type: 'rev-proxy',
-    version: '1.22.1-9ubuntu5',
+    version: '1.24.0-2ubuntu3',
     link: 'https://github.com/http-tests/cache-tests/wiki/nginx'
   },
   {
     file: 'squid.json',
     name: 'Squid',
     type: 'rev-proxy',
-    version: '5.7-1ubuntu3',
+    version: '6.5-1ubuntu1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Squid'
   },
   {
     file: 'trafficserver.json',
     name: 'ATS',
     type: 'rev-proxy',
-    version: '9.2.1+ds-1',
+    version: '9.2.3+ds-1+deb12u1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Traffic-Server'
   },
   {
     file: 'apache.json',
     name: 'httpd',
     type: 'rev-proxy',
-    version: '2.4.57-2ubuntu1',
+    version: '2.4.58-1ubuntu1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Apache-httpd'
   },
   {
