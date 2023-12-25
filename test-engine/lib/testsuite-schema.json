@@ -231,6 +231,7 @@
                         {
                           "description": "name and value",
                           "type": "array",
+                          "additionalItems": false,
                           "items": [
                             {
                               "$ref": "#/definitions/field-name"
@@ -259,6 +260,7 @@
                         {
                           "description": "name and value",
                           "type": "array",
+                          "additionalItems": false,
                           "items": [
                             {
                               "$ref": "#/definitions/field-name"
@@ -283,6 +285,7 @@
                         {
                           "description": "name and value",
                           "type": "array",
+                          "additionalItems": false,
                           "items": [
                             {
                               "$ref": "#/definitions/field-name"
@@ -295,6 +298,7 @@
                         {
                           "description": "check two headers have the same value",
                           "type": "array",
+                          "additionalItems": false,
                           "items": [
                             {
                               "$ref": "#/definitions/field-name"
@@ -311,6 +315,7 @@
                         {
                           "description": "header value is greater than an integer",
                           "type": "array",
+                          "additionalItems": false,
                           "items": [
                             {
                               "$ref": "#/definitions/field-name"
