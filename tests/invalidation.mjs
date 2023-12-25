@@ -12,7 +12,6 @@ const contentLocation = makeTemplate({
 const location = makeTemplate({
   filename: 'location_target',
   response_headers: [
-    ['Expires', 100000],
     ['Cache-Control', 'max-age=100000'],
     ['Last-Modified', 0],
     ['Date', 0]
@@ -33,6 +32,7 @@ function checkInvalidation (method) {
   tests.push({
     name: `HTTP cache must invalidate the URL after a successful response to a \`${method}\` request`,
     id: `invalidate-${method}`,
+    depends_on: ['freshness-max-age'],
     requests: [
       fresh({}), {
         request_method: method,
@@ -66,6 +66,7 @@ function checkLocationInvalidation (method) {
     name: `Does HTTP cache invalidate \`Location\` URL after a successful response to a \`${method}\` request?`,
     id: `invalidate-${method}-location`,
     kind: 'check',
+    depends_on: [`invalidate-${method}`],
     requests: [
       location({
         setup: true
@@ -85,6 +86,7 @@ function checkClInvalidation (method) {
     name: `Does HTTP cache must invalidate \`Content-Location\` URL after a successful response to a \`${method}\` request?`,
     id: `invalidate-${method}-cl`,
     kind: 'check',
+    depends_on: [`invalidate-${method}`],
     requests: [
       contentLocation({
         setup: true
