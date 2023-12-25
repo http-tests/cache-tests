@@ -1,4 +1,31 @@
-import * as templates from './lib/templates.mjs'
+import { makeTemplate, fresh } from './lib/templates.mjs'
+
+const contentLocation = makeTemplate({
+  filename: 'content_location_target',
+  response_headers: [
+    ['Cache-Control', 'max-age=100000'],
+    ['Last-Modified', 0],
+    ['Date', 0]
+  ]
+})
+
+const location = makeTemplate({
+  filename: 'location_target',
+  response_headers: [
+    ['Expires', 100000],
+    ['Cache-Control', 'max-age=100000'],
+    ['Last-Modified', 0],
+    ['Date', 0]
+  ]
+})
+
+const lclResponse = makeTemplate({
+  response_headers: [
+    ['Location', 'location_target'],
+    ['Content-Location', 'content_location_target']
+  ],
+  magic_locations: true
+})
 
 const tests = []
 
@@ -7,7 +34,7 @@ function checkInvalidation (method) {
     name: `HTTP cache must invalidate the URL after a successful response to a \`${method}\` request`,
     id: `invalidate-${method}`,
     requests: [
-      templates.fresh({}), {
+      fresh({}), {
         request_method: method,
         request_body: 'abc',
         setup: true
@@ -22,7 +49,7 @@ function checkInvalidation (method) {
     kind: 'optimal',
     depends_on: [`invalidate-${method}`],
     requests: [
-      templates.fresh({}), {
+      fresh({}), {
         request_method: method,
         request_body: 'abc',
         response_status: [500, 'Internal Server Error'],
@@ -40,13 +67,13 @@ function checkLocationInvalidation (method) {
     id: `invalidate-${method}-location`,
     kind: 'check',
     requests: [
-      templates.location({
+      location({
         setup: true
-      }), templates.lclResponse({
+      }), lclResponse({
         request_method: 'POST',
         request_body: 'abc',
         setup: true
-      }), templates.location({
+      }), location({
         expected_type: 'not_cached'
       })
     ]
@@ -59,13 +86,13 @@ function checkClInvalidation (method) {
     id: `invalidate-${method}-cl`,
     kind: 'check',
     requests: [
-      templates.contentLocation({
+      contentLocation({
         setup: true
-      }), templates.lclResponse({
+      }), lclResponse({
         request_method: method,
         request_body: 'abc',
         setup: true
-      }), templates.contentLocation({
+      }), contentLocation({
         expected_type: 'not_cached'
       })
     ]

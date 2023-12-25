@@ -1,3 +1,5 @@
+import * as templates from './lib/templates.mjs'
+
 export default
 
 {
@@ -11,12 +13,7 @@ export default
       id: 'pragma-request-no-cache',
       kind: 'check',
       requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=3600']
-          ],
-          setup: true
-        },
+        templates.fresh({}),
         {
           request_headers: [
             ['Pragma', 'no-cache']
@@ -30,12 +27,7 @@ export default
       id: 'pragma-request-extension',
       kind: 'check',
       requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=3600']
-          ],
-          setup: true
-        },
+        templates.fresh({}),
         {
           request_headers: [
             ['Pragma', 'unrecognised-extension']

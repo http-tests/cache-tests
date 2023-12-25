@@ -1,5 +1,47 @@
-import * as templates from './lib/templates.mjs'
+import { makeTemplate } from './lib/templates.mjs'
 import * as utils from './lib/utils.mjs'
+
+const varySetup = makeTemplate({
+  request_headers: [
+    ['Foo', '1']
+  ],
+  response_headers: [
+    ['Cache-Control', 'max-age=5000'],
+    ['Last-Modified', -3000],
+    ['Date', 0],
+    ['Vary', 'Foo']
+  ],
+  setup: true
+})
+
+const vary2Setup = makeTemplate({
+  request_headers: [
+    ['Foo', '1'],
+    ['Bar', 'abc']
+  ],
+  response_headers: [
+    ['Cache-Control', 'max-age=5000'],
+    ['Last-Modified', -3000],
+    ['Date', 0],
+    ['Vary', 'Foo', 'Bar', false]
+  ],
+  setup: true
+})
+
+const vary3Setup = makeTemplate({
+  request_headers: [
+    ['Foo', '1'],
+    ['Bar', 'abc'],
+    ['Baz', '789']
+  ],
+  response_headers: [
+    ['Cache-Control', 'max-age=5000'],
+    ['Last-Modified', -3000],
+    ['Date', 0],
+    ['Vary', 'Foo', 'Bar', 'Baz', false]
+  ],
+  setup: true
+})
 
 export default {
   name: 'Vary and Cache Keys',
@@ -13,7 +55,7 @@ export default {
       depends_on: ['freshness-max-age'],
       kind: 'optimal',
       requests: [
-        templates.varySetup({}),
+        varySetup({}),
         {
           request_headers: [
             ['Foo', '1']
@@ -27,7 +69,7 @@ export default {
       id: 'vary-no-match',
       depends_on: ['vary-match'],
       requests: [
-        templates.varySetup({}),
+        varySetup({}),
         {
           request_headers: [
             ['Foo', '2']
@@ -63,7 +105,7 @@ export default {
       id: 'vary-omit',
       depends_on: ['vary-match'],
       requests: [
-        templates.varySetup({}),
+        varySetup({}),
         {
           expected_type: 'not_cached'
         }
@@ -75,7 +117,7 @@ export default {
       depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
-        templates.varySetup({
+        varySetup({
           response_body: utils.httpContent('foo_1')
         }),
         {
@@ -107,7 +149,7 @@ export default {
       depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
-        templates.varySetup({
+        varySetup({
           request_headers: [
             ['Foo', '1'],
             ['Other', '2']
@@ -128,7 +170,7 @@ export default {
       depends_on: ['vary-match'],
       kind: 'optimal',
       requests: [
-        templates.vary2Setup({}),
+        vary2Setup({}),
         {
           request_headers: [
             ['Foo', '1'],
@@ -143,7 +185,7 @@ export default {
       id: 'vary-2-no-match',
       depends_on: ['vary-2-match'],
       requests: [
-        templates.vary2Setup({}),
+        vary2Setup({}),
         {
           request_headers: [
             ['Foo', '2'],
@@ -158,7 +200,7 @@ export default {
       id: 'vary-2-match-omit',
       depends_on: ['vary-2-match'],
       requests: [
-        templates.vary2Setup({}),
+        vary2Setup({}),
         {
           expected_type: 'not_cached'
         }
@@ -170,7 +212,7 @@ export default {
       depends_on: ['vary-2-match'],
       kind: 'optimal',
       requests: [
-        templates.vary3Setup({}),
+        vary3Setup({}),
         {
           request_headers: [
             ['Foo', '1'],
@@ -186,7 +228,7 @@ export default {
       id: 'vary-3-no-match',
       depends_on: ['vary-3-match'],
       requests: [
-        templates.vary3Setup({}),
+        vary3Setup({}),
         {
           request_headers: [
             ['Foo', '2'],
@@ -202,7 +244,7 @@ export default {
       id: 'vary-3-order',
       depends_on: ['vary-3-match'],
       requests: [
-        templates.vary3Setup({}),
+        vary3Setup({}),
         {
           request_headers: [
             ['Foo', '1'],

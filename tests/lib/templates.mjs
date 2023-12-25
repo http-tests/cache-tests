@@ -1,8 +1,13 @@
-function makeTemplate (template) {
+export function makeTemplate (template) {
   return function (request) {
     return Object.assign({}, template, request)
   }
 }
+
+/*
+ Templates below are shared between multiple suites;
+ suite-specific tests should go in that file.
+*/
 
 export const fresh = makeTemplate({
   response_headers: [
@@ -30,86 +35,4 @@ export const becomeStale = makeTemplate({
   ],
   setup: true,
   pause_after: true
-})
-
-export const lclResponse = makeTemplate({
-  response_headers: [
-    ['Location', 'location_target'],
-    ['Content-Location', 'content_location_target']
-  ],
-  magic_locations: true
-})
-
-export const location = makeTemplate({
-  filename: 'location_target',
-  response_headers: [
-    ['Expires', 100000],
-    ['Cache-Control', 'max-age=100000'],
-    ['Last-Modified', 0],
-    ['Date', 0]
-  ]
-})
-
-export const contentLocation = makeTemplate({
-  filename: 'content_location_target',
-  response_headers: [
-    ['Cache-Control', 'max-age=100000'],
-    ['Last-Modified', 0],
-    ['Date', 0]
-  ]
-})
-
-export const varySetup = makeTemplate({
-  request_headers: [
-    ['Foo', '1']
-  ],
-  response_headers: [
-    ['Cache-Control', 'max-age=5000'],
-    ['Last-Modified', -3000],
-    ['Date', 0],
-    ['Vary', 'Foo']
-  ],
-  setup: true
-})
-
-export const vary2Setup = makeTemplate({
-  request_headers: [
-    ['Foo', '1'],
-    ['Bar', 'abc']
-  ],
-  response_headers: [
-    ['Cache-Control', 'max-age=5000'],
-    ['Last-Modified', -3000],
-    ['Date', 0],
-    ['Vary', 'Foo', 'Bar', false]
-  ],
-  setup: true
-})
-
-export const vary3Setup = makeTemplate({
-  request_headers: [
-    ['Foo', '1'],
-    ['Bar', 'abc'],
-    ['Baz', '789']
-  ],
-  response_headers: [
-    ['Cache-Control', 'max-age=5000'],
-    ['Last-Modified', -3000],
-    ['Date', 0],
-    ['Vary', 'Foo', 'Bar', 'Baz', false]
-  ],
-  setup: true
-})
-
-export const varyParseSetup = makeTemplate({
-  request_headers: [
-    ['Foo', '1'],
-    ['Baz', '789']
-  ],
-  response_headers: [
-    ['Cache-Control', 'max-age=5000'],
-    ['Last-Modified', -3000],
-    ['Date', 0]
-  ],
-  setup: true
 })

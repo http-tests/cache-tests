@@ -1,4 +1,17 @@
-import * as templates from './lib/templates.mjs'
+import { makeTemplate } from './lib/templates.mjs'
+
+const varyParseSetup = makeTemplate({
+  request_headers: [
+    ['Foo', '1'],
+    ['Baz', '789']
+  ],
+  response_headers: [
+    ['Cache-Control', 'max-age=5000'],
+    ['Last-Modified', -3000],
+    ['Date', 0]
+  ],
+  setup: true
+})
 
 export default {
   name: 'Vary Parsing',
@@ -10,7 +23,7 @@ export default {
       name: 'HTTP cache must not reuse `Vary` response with a value of `*`',
       id: 'vary-syntax-star',
       requests: [
-        templates.varyParseSetup({
+        varyParseSetup({
           response_headers: [
             ['Vary', '*', false]
           ]
@@ -29,7 +42,7 @@ export default {
       id: 'vary-syntax-star-star',
       depends_on: ['freshness-max-age'],
       requests: [
-        templates.varyParseSetup({
+        varyParseSetup({
           response_headers: [
             ['Vary', '*, *', false]
           ]
@@ -48,7 +61,7 @@ export default {
       id: 'vary-syntax-star-star-lines',
       depends_on: ['freshness-max-age'],
       requests: [
-        templates.varyParseSetup({
+        varyParseSetup({
           response_headers: [
             ['Vary', '*', false],
             ['Vary', '*', false]
@@ -68,7 +81,7 @@ export default {
       id: 'vary-syntax-empty-star',
       depends_on: ['freshness-max-age'],
       requests: [
-        templates.varyParseSetup({
+        varyParseSetup({
           response_headers: [
             ['Vary', ', *', false]
           ]
@@ -87,7 +100,7 @@ export default {
       id: 'vary-syntax-empty-star-lines',
       depends_on: ['freshness-max-age'],
       requests: [
-        templates.varyParseSetup({
+        varyParseSetup({
           response_headers: [
             ['Vary', '', false],
             ['Vary', '*', false]
@@ -107,7 +120,7 @@ export default {
       id: 'vary-syntax-star-foo',
       depends_on: ['freshness-max-age'],
       requests: [
-        templates.varyParseSetup({
+        varyParseSetup({
           response_headers: [
             ['Vary', '*, Foo', false]
           ]
@@ -126,7 +139,7 @@ export default {
       id: 'vary-syntax-foo-star',
       depends_on: ['freshness-max-age'],
       requests: [
-        templates.varyParseSetup({
+        varyParseSetup({
           response_headers: [
             ['Vary', 'Foo, *', false]
           ]
