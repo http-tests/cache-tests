@@ -12,6 +12,7 @@ export default
       name: 'Does HTTP cache use a stored fresh response when request contains `Pragma: no-cache`?',
       id: 'pragma-request-no-cache',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.fresh({}),
         {
@@ -26,6 +27,7 @@ export default
       name: 'Does HTTP cache reuse a stored fresh response when request contains `Pragma: unrecognised-extension`?',
       id: 'pragma-request-extension',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.fresh({}),
         {
@@ -40,6 +42,7 @@ export default
       name: 'Does HTTP cache reuse a stored and otherwise fresh response when it contains `Pragma: no-cache`?',
       id: 'pragma-response-no-cache',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       requests: [
         {
           response_headers: [
@@ -76,6 +79,7 @@ export default
       name: 'Does HTTP cache use a stored and otherwise fresh response when it contains `Pragma: unrecognised-extension`?',
       id: 'pragma-response-extension',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       requests: [
         {
           response_headers: [
