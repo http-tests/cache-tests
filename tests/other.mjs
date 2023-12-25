@@ -11,16 +11,10 @@ export default
     {
       name: 'HTTP cache must generate an `Age` header field when using a stored response.',
       id: 'other-age-gen',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['field.age', 'constructing.responses.from.caches'],
       requests: [
-        {
-          response_headers: [
-            ['Expires', 30 * 24 * 60 * 60],
-            ['Date', 0]
-          ],
-          pause_after: true,
-          setup: true
-        },
+        templates.fresh({}),
         {
           expected_type: 'cached',
           expected_response_headers: [
@@ -47,6 +41,7 @@ export default
     {
       name: 'HTTP cache must update the `Age` header field when freshness is based upon `Expires`',
       id: 'other-age-update-expires',
+      depends_on: ['freshness-expires-future'],
       spec_anchors: ['constructing.responses.from.caches', 'field.age'],
       requests: [
         {
@@ -69,17 +64,14 @@ export default
     {
       name: 'HTTP cache must update the `Age` header field when freshness is based upon `CC: max-age`',
       id: 'other-age-update-max-age',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['constructing.responses.from.caches', 'field.age'],
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Cache-Control', 'max-age=600'],
-            ['Date', 0],
             ['Age', '30']
-          ],
-          pause_after: true,
-          setup: true
-        },
+          ]
+        }),
         {
           expected_type: 'cached',
           expected_response_headers: [
@@ -91,16 +83,10 @@ export default
     {
       name: 'HTTP cache must not update the `Date` header field',
       id: 'other-date-update',
+      depends_on: ['freshness-max-age'],
       spec_anchors: ['field.date'],
       requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=60'],
-            ['Date', 0]
-          ],
-          pause_after: true,
-          setup: true
-        },
+        templates.fresh({}),
         {
           expected_type: 'cached',
           expected_response_headers: [
@@ -112,6 +98,7 @@ export default
     {
       name: 'HTTP cache must not update the `Date` header field when `Expires` is present',
       id: 'other-date-update-expires',
+      depends_on: ['freshness-expires-future'],
       spec_anchors: ['field.date'],
       requests: [
         {
@@ -134,6 +121,7 @@ export default
       name: 'Does HTTP cache leave the `Expires` header field alone?',
       id: 'other-date-update-expires-update',
       kind: 'check',
+      depends_on: ['freshness-expires-future'],
       spec_anchors: ['field.date'],
       requests: [
         {
@@ -155,6 +143,7 @@ export default
     {
       name: 'Different query arguments must be different cache keys',
       id: 'query-args-different',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.fresh({
           query_arg: 'test=' + utils.httpContent('query-args-different-1')
@@ -169,6 +158,7 @@ export default
       name: 'An optimal HTTP cache should not be affected by the presence of a URL query',
       id: 'query-args-same',
       kind: 'optimal',
+      depends_on: ['freshness-max-age'],
       requests: [
         templates.fresh({
           query_arg: 'test=' + utils.httpContent('query-args-same')
@@ -183,6 +173,7 @@ export default
       name: 'Does HTTP heuristically cache a response with a `Content-Disposition: attachment` header?',
       id: 'other-heuristic-content-disposition-attachment',
       kind: 'check',
+      depends_on: ['heuristic-200-cached'],
       requests: [
         {
           response_headers: [
@@ -201,14 +192,13 @@ export default
       name: 'Does HTTP reuse a fresh response with a `Content-Disposition: attachment` header?',
       id: 'other-fresh-content-disposition-attachment',
       kind: 'check',
+      depends_on: ['freshness-max-age'],
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Cache-Control', 'max-age=3600'],
             ['Content-Disposition', 'attachment; filename=example.txt']
-          ],
-          setup: true
-        },
+          ]
+        }),
         {
           expected_type: 'cached'
         }
@@ -217,15 +207,14 @@ export default
     {
       name: 'An optimal HTTP cache reuses a fresh response with a `Set-Cookie` header',
       id: 'other-set-cookie',
+      depends_on: ['freshness-max-age'],
       kind: 'optimal',
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Cache-Control', 'max-age=3600'],
             ['Set-Cookie', 'a=b']
-          ],
-          setup: true
-        },
+          ]
+        }),
         {
           expected_type: 'cached'
         }
@@ -235,13 +224,9 @@ export default
       name: 'An optimal HTTP cache reuses a fresh response when the request has a `Cookie` header',
       id: 'other-cookie',
       kind: 'optimal',
+      depends_on: ['freshness-max-age'],
       requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=3600']
-          ],
-          setup: true
-        },
+        templates.fresh({}),
         {
           request_headers: [
             ['Cookie', 'a=b']
