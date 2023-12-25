@@ -13,10 +13,7 @@ export default {
       kind: 'check',
       spec_anchors: ['cache-request-directive.max-age'],
       requests: [
-        templates.fresh({
-          pause_after: true,
-          setup: true
-        }),
+        templates.fresh({}),
         {
           request_headers: [
             ['Cache-Control', 'max-age=0']
@@ -31,10 +28,7 @@ export default {
       kind: 'check',
       spec_anchors: ['cache-request-directive.max-age'],
       requests: [
-        templates.fresh({
-          pause_after: true,
-          setup: true
-        }),
+        templates.fresh({}),
         {
           request_headers: [
             ['Cache-Control', 'max-age=1']

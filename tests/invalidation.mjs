@@ -7,9 +7,7 @@ function checkInvalidation (method) {
     name: `HTTP cache must invalidate the URL after a successful response to a \`${method}\` request`,
     id: `invalidate-${method}`,
     requests: [
-      templates.fresh({
-        setup: true
-      }), {
+      templates.fresh({}), {
         request_method: method,
         request_body: 'abc',
         setup: true
@@ -24,9 +22,7 @@ function checkInvalidation (method) {
     kind: 'optimal',
     depends_on: [`invalidate-${method}`],
     requests: [
-      templates.fresh({
-        setup: true
-      }), {
+      templates.fresh({}), {
         request_method: method,
         request_body: 'abc',
         response_status: [500, 'Internal Server Error'],

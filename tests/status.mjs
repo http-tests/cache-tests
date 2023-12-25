@@ -21,8 +21,7 @@ function checkStatus (status) {
       templates.fresh({
         response_status: [code, phrase],
         response_body: body,
-        redirect: 'manual',
-        setup: true
+        redirect: 'manual'
       }), {
         expected_type: 'cached',
         response_status: [code, phrase],

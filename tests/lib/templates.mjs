@@ -10,7 +10,9 @@ export const fresh = makeTemplate({
     ['Cache-Control', 'max-age=100000'],
     ['Last-Modified', 0],
     ['Date', 0]
-  ]
+  ],
+  setup: true,
+  pause_after: true
 })
 
 export const stale = makeTemplate({
