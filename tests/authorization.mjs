@@ -1,3 +1,5 @@
+import * as templates from './lib/templates.mjs'
+
 export default
 
 {
@@ -9,22 +11,17 @@ export default
     {
       name: 'HTTP shared cache must not reuse a response to a request that contained `Authorization`, even with explicit freshness',
       id: 'other-authorization',
+      depends_on: ['freshness-max-age'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           request_headers: [
             ['Authorization', 'FOO']
           ],
           expected_request_headers: [
             ['Authorization', 'FOO']
-          ],
-          response_headers: [
-            ['Expires', 30 * 24 * 60 * 60],
-            ['Date', 0]
-          ],
-          pause_after: true,
-          setup: true
-        },
+          ]
+        }),
         {
           expected_type: 'not_cached'
         }
