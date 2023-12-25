@@ -46,9 +46,7 @@ The server will disconnect the client when receiving this request.
 {%- if request.redirect %}
 - Redirect: {{ request.redirect }}
 {%- endif -%}
-{%- endif -%}
-
-{%- if request.request_method or request.filename or request.query_arg or request.request_headers or request.request_body %}
+{%- endif %}
 
 ### The client sends a request containing:
 ~~~
@@ -57,7 +55,6 @@ The server will disconnect the client when receiving this request.
 {% endfor %}
 {{ request.request_body }}
 ~~~
-{% endif -%}
 
 {%- if request.response_pause %}
 
@@ -67,7 +64,11 @@ The server will pause for {{ request.response_pause }} seconds before responding
 
 ### The server sends a response containing:
 ~~~
+{% if request.expected_type == "lm_validated" or request.expected_type = "etag_validated" -%}
+HTTP/1.1 304 Not Modified
+{%- else -%}
 HTTP/1.1 {{ request.response_status[0] | default: 200 }} {{ request.response_status[1] | default: "OK" }}
+{%- endif %}
 {% for header in request.response_headers %}{% render 'header-magic' with header as header %}
 {% endfor %}
 {{ request.response_body | default: '[generated response body]' }}
