@@ -1,3 +1,5 @@
+import * as templates from './lib/templates.mjs'
+
 export default {
   name: 'Conditional Requests: If-None-Match and ETag',
   id: 'conditional-inm',
@@ -8,16 +10,14 @@ export default {
       name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching strong `ETag`',
       id: 'conditional-etag-strong-respond',
       kind: 'optimal',
+      depends_on: ['freshness-max-age'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', '"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', '"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', '"abcdef"']
@@ -33,14 +33,11 @@ export default {
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', '"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', '"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', '"abcdef"']
@@ -59,15 +56,12 @@ export default {
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
             ['Last-Modified', -5000],
-            ['ETag', '"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', '"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', '"abcdef"'],
@@ -86,14 +80,11 @@ export default {
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', '"abcdefü"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', '"abcdefü"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', '"abcdefü"']
@@ -113,14 +104,11 @@ export default {
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', '"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', '"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', 'abcdef']
@@ -137,14 +125,11 @@ export default {
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', 'abcdef'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', 'abcdef']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', 'abcdef']
@@ -161,14 +146,11 @@ export default {
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', 'abcdef'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', 'abcdef']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', '"abcdef"']
@@ -182,16 +164,14 @@ export default {
       name: 'An optimal HTTP cache responds to `If-None-Match` with a `304` when holding a fresh response with a matching weak `ETag`',
       id: 'conditional-etag-weak-respond',
       kind: 'optimal',
+      depends_on: ['freshness-max-age'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', 'W/"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', 'W/"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', 'W/"abcdef"']
@@ -208,14 +188,11 @@ export default {
       depends_on: ['conditional-etag-weak-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', 'w/"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', 'w/"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', 'w/"abcdef"']
@@ -232,14 +209,11 @@ export default {
       depends_on: ['conditional-etag-weak-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', 'W\\"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', 'W\\"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', 'W\\"abcdef"']
@@ -256,14 +230,11 @@ export default {
       kind: 'check',
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', 'W"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', 'W"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', 'W"abcdef"']
@@ -280,14 +251,11 @@ export default {
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', '"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', '"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', '"abcdef", "1234", "5678"']
@@ -304,14 +272,11 @@ export default {
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', '"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', '"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', '"1234", "abcdef", "5678"']
@@ -328,14 +293,11 @@ export default {
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Expires', 100000],
-            ['ETag', '"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true
-        },
+            ['ETag', '"abcdef"']
+          ]
+        }),
         {
           request_headers: [
             ['If-None-Match', '"1234", "5678", "abcdef"']
@@ -406,16 +368,13 @@ export default {
       name: 'An optimal HTTP cache generates a `If-None-Match` request when holding a stale response with a matching strong `ETag`',
       id: 'conditional-etag-strong-generate',
       kind: 'optimal',
+      depends_on: ['freshness-max-age-stale'],
       requests: [
-        {
+        templates.becomeStale({
           response_headers: [
-            ['Expires', 1],
-            ['ETag', '"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true,
-          pause_after: true
-        },
+            ['ETag', '"abcdef"']
+          ]
+        }),
         {
           expected_request_headers: [
             ['If-None-Match', '"abcdef"']
@@ -428,16 +387,13 @@ export default {
       name: 'An optimal HTTP cache generates a `If-None-Match` request when holding a stale response with a matching weak `ETag`',
       id: 'conditional-etag-weak-generate-weak',
       kind: 'optimal',
+      depends_on: ['freshness-max-age-stale'],
       requests: [
-        {
+        templates.becomeStale({
           response_headers: [
-            ['Expires', 1],
-            ['ETag', 'W/"abcdef"'],
-            ['Date', 0]
-          ],
-          setup: true,
-          pause_after: true
-        },
+            ['ETag', 'W/"abcdef"']
+          ]
+        }),
         {
           expected_request_headers: [
             ['If-None-Match', 'W/"abcdef"']
@@ -452,15 +408,11 @@ export default {
       kind: 'check',
       depends_on: ['conditional-etag-strong-generate'],
       requests: [
-        {
+        templates.becomeStale({
           response_headers: [
-            ['Expires', 1],
-            ['ETag', 'abcdef'],
-            ['Date', 0]
-          ],
-          setup: true,
-          pause_after: true
-        },
+            ['ETag', 'abcdef']
+          ]
+        }),
         {
           expected_request_headers: [
             ['If-None-Match', '"abcdef"']

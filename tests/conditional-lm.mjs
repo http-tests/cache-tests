@@ -1,3 +1,5 @@
+import * as templates from './lib/templates.mjs'
+
 export default {
   name: 'Conditional Requests: If-Modified-Since and Last-Modified',
   id: 'conditional-lm',
@@ -8,17 +10,14 @@ export default {
       name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a fresh response with a matching `Last-Modified`',
       id: 'conditional-lm-fresh',
       kind: 'optimal',
+      depends_on: ['freshness-max-age'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Cache-Control', 'max-age=100000'],
-            ['Last-Modified', -3000],
-            ['Date', 0]
-          ],
-          setup: true,
-          pause_after: true
-        },
+            ['Last-Modified', -3000]
+          ]
+        }),
         {
           request_headers: [
             ['If-Modified-Since', -3000]
@@ -33,17 +32,14 @@ export default {
       name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a fresh response with an earlier `Last-Modified`',
       id: 'conditional-lm-fresh-earlier',
       kind: 'optimal',
+      depends_on: ['freshness-max-age'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Cache-Control', 'max-age=100000'],
-            ['Last-Modified', -3000],
-            ['Date', 0]
-          ],
-          setup: true,
-          pause_after: true
-        },
+            ['Last-Modified', -3000]
+          ]
+        }),
         {
           request_headers: [
             ['If-Modified-Since', -2000]
@@ -58,17 +54,14 @@ export default {
       name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a stale response with a matching `Last-Modified`, after validation',
       id: 'conditional-lm-stale',
       kind: 'optimal',
+      depends_on: ['freshness-max-age-stale'],
       browser_skip: true,
       requests: [
-        {
+        templates.becomeStale({
           response_headers: [
-            ['Cache-Control', 'max-age=2'],
-            ['Last-Modified', -3000],
-            ['Date', 0]
-          ],
-          setup: true,
-          pause_after: true
-        },
+            ['Last-Modified', -3000]
+          ]
+        }),
         {
           request_headers: [
             ['If-Modified-Since', -3000]
@@ -83,16 +76,10 @@ export default {
       name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a newer fresh response with no `Last-Modified`',
       id: 'conditional-lm-fresh-no-lm',
       kind: 'optimal',
+      depends_on: ['freshness-max-age'],
       browser_skip: true,
       requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=10000'],
-            ['Date', 0]
-          ],
-          setup: true,
-          pause_after: true
-        },
+        templates.fresh({}),
         {
           request_headers: [
             ['If-Modified-Since', -3000]
@@ -108,17 +95,14 @@ export default {
       name: 'An optimal HTTP cache responds to `If-Modified-Since` with a `304` when holding a newer fresh response when IMS uses an equivalent rfc850 date',
       id: 'conditional-lm-fresh-rfc850',
       kind: 'optimal',
+      depends_on: ['freshness-max-age'],
       browser_skip: true,
       requests: [
-        {
+        templates.fresh({
           response_headers: [
-            ['Cache-Control', 'max-age=10000'],
-            ['Last-Modified', -3000],
-            ['Date', 0]
-          ],
-          setup: true,
-          pause_after: true
-        },
+            ['Last-Modified', -3000]
+          ]
+        }),
         {
           request_headers: [
             ['If-Modified-Since', -3000]
