@@ -35,6 +35,9 @@ export function determineTestResult (testSuites, testId, testResults, honorDepen
   if (result === false && result[0] !== 'Assertion') {
     return resultTypes.harness_fail
   }
+  if (result[0] === 'AbortError') {
+    return resultTypes.harness_fail
+  }
   if (test.kind === 'required' || test.kind === undefined) {
     if (result === true) {
       return resultTypes.pass
