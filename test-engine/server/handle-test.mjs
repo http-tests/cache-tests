@@ -68,7 +68,6 @@ function continueHandleTest (uuid, request, response, requests, serverState) {
   response.setHeader('Server-Request-Count', srvReqNum)
   response.setHeader('Client-Request-Count', cliReqNum)
   response.setHeader('Server-Now', now, 0)
-  response.setHeader('Capability-Seen', request.headers['surrogate-capability'] || '')
   responseHeaders.forEach(header => {
     header = fixupHeader(header, response.getHeaders(), reqConfig)
     if (response.hasHeader(header[0])) {
