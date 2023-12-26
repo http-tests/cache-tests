@@ -28,11 +28,19 @@ export function makeTest (test) {
             prevRes = Object.fromEntries(responses[i - 1].headers)
           }
           const init = fetching.init(idx, reqConfig, prevRes)
+          const controller = new AbortController()
+          const timeout = setTimeout(() => {
+            controller.abort()
+          }, config.requestTimeout * 1000)
+          init.signal = controller.signal
           if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
           return config.fetch(url, init)
             .then(response => {
               responses.push(response)
               return checkResponse(test, requests, idx, response)
+            })
+            .finally(() => {
+              clearTimeout(timeout)
             })
         },
         pauseAfter: 'pause_after' in requests[i]
@@ -55,6 +63,7 @@ export function makeTest (test) {
     }
 
     return clientUtils.putTestConfig(uuid, requests)
+      .catch(handleError)
       .then(runNextStep)
       .then(() => {
         return clientUtils.getServerState(uuid)
@@ -287,4 +296,8 @@ function checkServerRequests (requests, responses, serverState) {
       )
     }
   }
+}
+
+function handleError (err) {
+  console.error(`ERROR: ${err}`)
 }

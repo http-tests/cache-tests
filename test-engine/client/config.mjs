@@ -1,6 +1,7 @@
 export let fetch = null
 export let useBrowserCache = false
 export let baseUrl = ''
+export const requestTimeout = 10 // seconds
 
 export function setFetch (call) {
   if (call !== undefined) {
