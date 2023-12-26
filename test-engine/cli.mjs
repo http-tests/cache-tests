@@ -29,14 +29,14 @@ if (testId !== '') {
 
 runTests(testsToRun, fetch, false, baseUrl)
   .then(() => {
+    const results = getResults()
     if (testId !== '') {
       console.log(`${GREEN}==== Results${NC}`)
-      const result = getResults()
-      const resultSymbol = determineTestResult(tests, testId, result, false)
-      const resultDetails = result[testId][1] || ''
+      const resultSymbol = determineTestResult(tests, testId, results, false)
+      const resultDetails = results[testId][1] || ''
       console.log(`${resultSymbol[2]} - ${resultDetails}`)
     } else {
-      console.log(JSON.stringify(getResults(), null, 2))
+      console.log(JSON.stringify(results, null, 2))
     }
   })
   .catch(err => {
