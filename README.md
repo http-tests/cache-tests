@@ -63,7 +63,7 @@ A number of scripts are supplied to simplify common test scenarios.
 
 ### Testing with docker
 
-There's also a docker image, `mnot/proxy-cache-tests`, that can be used to test reverse proxy caches. Once you have docker running, you can run the CLI tests against a given proxy like this:
+The `mnot/proxy-cache-tests` Docker image can be used to test common reverse proxy caches. Once you have docker running, you can run the CLI tests against a given proxy like this:
 
 > ./test-docker.sh squid
 
