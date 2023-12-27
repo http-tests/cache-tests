@@ -79,6 +79,12 @@ function test_browser {
 
 }
 
+OS=$(uname)
+if [[ "${OS}" != "Darwin" ]]; then
+  usage "This script must be run on Mac OSX."
+  exit 1
+fi
+
 if [[ $# -eq 0 ]]; then
   run safari firefox chrome
 else
