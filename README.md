@@ -7,17 +7,18 @@ including browsers, proxy caches and CDNs. Its public results are available at
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [Goals](#goals)
 - [Installation](#installation)
   - [Installing from NPM](#installing-from-npm)
-- [Running the Test Server](#running-the-test-server)
-- [Testing Reverse Proxies and CDNs](#testing-reverse-proxies-and-cdns)
-  - [Testing from the Command Line](#testing-from-the-command-line)
-  - [Testing with Docker](#testing-with-docker)
-- [Testing Browser Caches](#testing-browser-caches)
-- [Interpreting the Results](#interpreting-the-results)
-  - [Test Results FAQ](#test-results-faq)
+- [Running tests with scripts](#running-tests-with-scripts)
+  - [Testing with docker](#testing-with-docker)
+  - [Testing browser caches](#testing-browser-caches)
+  - [Testing forward proxies](#testing-forward-proxies)
+- [Running tests with npm](#running-tests-with-npm)
+  - [Starting the test server](#starting-the-test-server)
+  - [Running the client](#running-the-client)
+- [Interpreting results](#interpreting-results)
+  - [Test results FAQ](#test-results-faq)
 - [Getting your results onto cache-tests.fyi](#getting-your-results-onto-cache-testsfyi)
 - [Creating new tests](#creating-new-tests)
 
@@ -32,12 +33,12 @@ The underlying aim is to provide a basis for discussion about how HTTP caches --
 
 In other words, **passing all of the tests currently means nothing** -- this is not a conformance test suite, it's just the start of a conversation, and a **tool to assess how a cache behaves**.
 
-Therefore, if you believe a test should change (based upon common behaviour or your interpretation of the specifications), or have additional tests, please [contribute](.github/CONTRIBUTING.md).
+Therefore, if you believe a test should change (based upon common behaviour or your interpretation of the specifications), or have additional tests, please [contribute](CONTRIBUTING.md).
 
 
 ## Installation
 
-The tests require a recent version of [NodeJS](https://nodejs.org/) (10.8.0 or greater), which includes the `npm` package manager.
+The tests require a recent version of [NodeJS](https://nodejs.org/) (14.8.0 or greater), which includes the `npm` package manager.
 
 To install the most recent source from GitHub (*recommended; things are moving fast*):
 
@@ -53,8 +54,61 @@ Alternatively, for the most recent release:
 
 > npm i --legacy-bundling http-cache-tests
 
+Note that the version in the registry is not necessarily up-to-date.
 
-## Running the Test Server
+
+## Running tests with scripts
+
+A number of scripts are supplied to simplify common test scenarios.
+
+### Testing with docker
+
+There's also a docker image, `mnot/proxy-cache-tests`, that can be used to test reverse proxy caches. Once you have docker running, you can run the CLI tests against a given proxy like this:
+
+> ./test-docker.sh squid
+
+Omit the proxy name to test all available in the Docker image. To run an individual test case, try:
+
+> ./test-docker.sh -i freshness-none nginx
+
+
+### Testing browser caches
+
+To test a browser, just point it at `https://{hostname:port}/test-browser.html` after setting up the server.
+
+On OSX, you can use `test-browser.sh` to automate this:
+
+> ./test-browser.sh safari
+
+Again, omit the browser name to test all. Run a single case with:
+
+> ./test-browser.sh -i freshness-none safari
+
+Make sure that your browsers are not configured to use a proxy cache, and that the network being tested upon does not use an intercepting proxy cache.
+
+
+### Testing forward proxies
+
+To test a forward proxy which listens on 127.0.0.1:8082, start the server:
+
+> npm run server
+
+and then run:
+
+> HTTP_PROXY=http://127.0.0.1:8082 npm run --silent cli --base=http://127.0.0.1:8000
+
+or:
+
+> ./test-host.sh 127.0.0.1:8002
+
+Again, pass `-i` to run a specific test.
+
+
+## Running tests with npm
+
+If you don't want to run the test scripts (see above), this section documents how to run tests directly with NPM. First, you'll need to start the test server; then, you'll need to run the client against it.
+
+### Starting the test server
 
 First, start the server-side by running:
 
@@ -72,14 +126,10 @@ If you want to run an HTTPS origin, you'll need to specify the `protocol`, `keyf
 
 Note that the default port for HTTPS is still 8000.
 
-Make sure that the browser is not configured to use a proxy cache, and that the network being tested upon does not use an intercepting proxy cache.
 
+### Running the client
 
-## Testing Reverse Proxies and CDNs
-
-### Testing from the Command Line
-
-To test a reverse proxy or CDN from the command line::
+To test a reverse proxy or CDN from the command line:
 
 > npm run --silent cli --base=http://server-url.example.org:8000/
 
@@ -92,33 +142,7 @@ To run a single test, use:
 ... where `test-id` is the identifier for the test. This will output the request and response headers as seen by the client and server, along with the results. This is useful for debugging a particular failure.
 
 
-### Testing with Docker
-
-There's also a docker image, `mnot/proxy-cache-tests`, that can be used to test reverse proxy caches. Once you have docker running, you can run the CLI tests against a given proxy like this:
-
-> ./test-docker.sh squid
-
-To run an individual test case, try:
-
-> ./test-docker.sh -i freshness-none nginx
-
-
-## Testing Browser Caches
-
-To test a browser, just point it at `https://{hostname:port}/test-browser.html` after setting up the server.
-
-On OSX, you can use `test-browser.sh` to automate this.
-
-## Testing Forward Proxies
-To test a forward proxy which listens on 127.0.0.1:8082, start the server:
-
-> npm run server
-
-and then run:
-
-> HTTP_PROXY=http://127.0.0.1:8082 npm run --silent cli --base=http://127.0.0.1:8000
-
-## Interpreting the Results
+## Interpreting results
 
 HTTP caching by its nature is an optimisation; implementations aren't required to cache everything. However, when they do cache, their behaviour is constrained by [the specification](https://httpwg.org/specs/rfc9111.html).
 
@@ -140,11 +164,11 @@ Some additional results might pop up from time to time:
 When you're testing with a browser, each test has a `uuid` that identifies that specific test run; this can be used to find its requests in the browser developer tools or proxy logs. Click ⚙︎ to copy it to the clipboard.
 
 
-### Test Results FAQ
+### Test results FAQ
 
 If you see a lot of failures, it might be one of a few different issues:
 
-* If you see lots of grey circles at the top (dependency failures), it's probably because the cache will store and reuse a response without explicit freshness or a validator. While this is technically legal in HTTP, it interferes with the tests. Disabling "default caching" or similar usually fixes this.
+* If you see lots of grey circles at the top (dependency failures), it's probably because the cache will store and reuse a response without explicit freshness or a validator; see the very first test (`freshness-none`). While this is technically legal in HTTP, it interferes with the tests. Disabling "default caching" or similar usually fixes this.
 
 * If you see lots of blue diamonds (setup failures), it's likely that the cache is refusing `PUT` requests. Enable them to clear this; the tests use PUT to synchronise state between the client and the server.
 
@@ -160,4 +184,4 @@ Right now, all of the reverse proxy and CDN implementations are run by a script 
 
 ## Creating new tests
 
-See [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md)
