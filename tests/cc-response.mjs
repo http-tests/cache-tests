@@ -236,6 +236,7 @@ export default
       name: 'Does `Cache-Control: no-cache` inhibit storing a listed header?',
       id: 'headers-omit-headers-listed-in-Cache-Control-no-cache-single',
       kind: 'check',
+      depends_on: ['cc-resp-no-cache-revalidate'],
       spec_anchors: ['cache-response-directive.no-cache'],
       requests: [
         {
@@ -261,6 +262,7 @@ export default
       name: 'Does `Cache-Control: no-cache` inhibit storing multiple listed headers?',
       id: 'headers-omit-headers-listed-in-Cache-Control-no-cache',
       kind: 'check',
+      depends_on: ['cc-resp-no-cache-revalidate'],
       spec_anchors: ['cache-response-directive.no-cache'],
       requests: [
         {
