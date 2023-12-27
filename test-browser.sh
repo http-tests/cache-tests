@@ -6,6 +6,13 @@ PORT=8000
 DOWNLOADS=~/Downloads
 PIDFILE=/tmp/http-cache-test-server.pid
 
+function usage {
+  if [[ -n "${1}" ]]; then
+    echo "${1}"
+  fi
+  echo "Usage: $0 [ browser-name ... ]" >&2
+}
+
 function run {
   BROWSERS=( "$@" )
 
@@ -70,11 +77,6 @@ function test_browser {
     mv "${TARGET}" results/
   fi
 
-}
-
-function usage {
-  echo "${1}"
-  echo "Usage: $0 [ browser-name ... ]" >&2
 }
 
 if [[ $# -eq 0 ]]; then

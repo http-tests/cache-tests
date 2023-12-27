@@ -4,12 +4,18 @@
 
 PIDFILE=/tmp/http-cache-test-server.pid
 
-
 ALL_PROXIES=(squid nginx apache trafficserver varnish caddy nuster)
 DOCKER_PORTS=""
 for PORT in {8001..8006}; do
   DOCKER_PORTS+="-p ${PORT}:${PORT} "
 done
+
+function usage {
+  if [[ -n "${1}" ]]; then
+    echo "${1}"
+  fi
+  echo "Usage: $0 [ -i test_id ] [ proxy... ]"
+}
 
 function run {
   TEST_ID="$1"
@@ -19,7 +25,7 @@ function run {
   npm run --silent server --port=8000 --pidfile=$PIDFILE &
 
   # run proxies container
-  docker run --platform linux/amd64 --name=tmp_proxies ${DOCKER_PORTS} -dt mnot/proxy-cache-tests host.docker.internal \
+  docker run --platform linux/amd64 --name=tmp_proxies "${DOCKER_PORTS}" -dt mnot/proxy-cache-tests host.docker.internal \
     > /dev/null
 
   # run nuster container
@@ -83,7 +89,7 @@ function test_proxy {
       ;;
   esac
 
-  echo "* ${PKG} $(docker container exec tmp_proxies /usr/bin/apt-cache show $PKG | grep Version)"
+  echo "* ${PKG} $(docker container exec tmp_proxies /usr/bin/apt-cache show ${PKG} | grep Version)"
 
   if [[ -z "${TEST_ID}" ]]; then
     npm run --silent cli --base=http://localhost:${PROXY_PORT} > "results/${PROXY}.json"
@@ -92,9 +98,6 @@ function test_proxy {
   fi
 }
 
-function usage {
-  echo "> $0 [ -i test_id ] [ proxy... ]"
-}
 
 TEST_ID=""
 while getopts "h?i:" opt; do
