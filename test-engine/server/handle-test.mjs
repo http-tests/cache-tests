@@ -25,7 +25,7 @@ export default function handleTest (pathSegs, request, response) {
     sendResponse(response, 409, `${requests[0].id} config not found for request ${srvReqNum} (anticipating ${requests.length})`)
     return
   }
-  if (reqConfig.dump) logRequest(request, srvReqNum)
+  if (reqConfig.dump) logRequest(request, reqNum)
 
   // response_pause
   if ('response_pause' in reqConfig) {
@@ -114,5 +114,5 @@ function continueHandleTest (uuid, request, response, requests, serverState) {
   }
 
   // logging
-  if (reqConfig.dump) logResponse(response, srvReqNum)
+  if (reqConfig.dump) logResponse(response, reqNum)
 }

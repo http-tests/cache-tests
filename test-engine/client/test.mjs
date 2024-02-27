@@ -24,7 +24,7 @@ export function makeTest (test) {
           const reqNum = idx + 1
           const url = clientUtils.makeTestUrl(uuid, reqConfig)
           let prevRes
-          if (i > 0) {
+          if (i > 0 && !('async' in requests[i - 1])) {
             prevRes = Object.fromEntries(responses[i - 1].headers)
           }
           const init = fetching.init(idx, reqConfig, prevRes)
@@ -43,7 +43,8 @@ export function makeTest (test) {
               clearTimeout(timeout)
             })
         },
-        pauseAfter: 'pause_after' in requests[i]
+        pauseAfter: 'pause_after' in requests[i],
+        async: 'async' in requests[i]
       })
     }
 
@@ -51,6 +52,10 @@ export function makeTest (test) {
     function runNextStep () {
       if (fetchFunctions.length) {
         const nextFetchFunction = fetchFunctions.shift()
+        if (nextFetchFunction.async === true) {
+          nextFetchFunction.code(idx++)
+          return runNextStep()
+        }
         if (nextFetchFunction.pauseAfter === true) {
           return nextFetchFunction.code(idx++)
             .then(clientUtils.pause)
@@ -77,6 +82,7 @@ export function makeTest (test) {
         resolve()
       })
       .catch(err => { // fail
+        throw (err)
         if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
         testResults[test.id] = [(err.name || 'unknown'), err.message]
         resolve()
@@ -111,6 +117,10 @@ function checkResponse (test, requests, idx, response) {
     if (reqConfig.expected_type === 'not_cached') {
       assert(typeSetup, resNum === reqNum, `Response ${reqNum} comes from cache`)
     }
+    if (reqConfig.expected_type === 'collapsed') {
+      assert(typeSetup, resNum === 1, `Request ${reqNum} was not collapsed`)
+    }
+
   }
 
   // check response status
