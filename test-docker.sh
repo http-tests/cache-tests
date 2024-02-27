@@ -7,7 +7,7 @@ PIDFILE=/tmp/http-cache-test-server.pid
 ALL_PROXIES=(squid nginx apache trafficserver varnish caddy nuster)
 DOCKER_PORTS=""
 for PORT in {8001..8006}; do
-  DOCKER_PORTS+="-p ${PORT}:${PORT} "
+  DOCKER_PORTS+="-p 127.0.0.1:${PORT}:${PORT} "
 done
 
 function usage {
@@ -24,8 +24,10 @@ function run {
   # start test server
   npm run --silent server --port=8000 --pidfile=$PIDFILE &
 
+  echo $DOCKER_PORTS
+
   # run proxies container
-  docker run --platform linux/amd64 --name=tmp_proxies "${DOCKER_PORTS}" -dt mnot/proxy-cache-tests host.docker.internal \
+  docker run --platform linux/amd64 --name=tmp_proxies ${DOCKER_PORTS} -dt mnot/proxy-cache-tests host.docker.internal \
     > /dev/null
 
   # run nuster container
