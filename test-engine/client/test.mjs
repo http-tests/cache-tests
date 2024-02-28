@@ -73,12 +73,10 @@ export async function makeTest (test) {
     .then(() => { // pass
       if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
       testResults[test.id] = true
-      return
     })
     .catch(err => { // fail
       if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
       testResults[test.id] = [(err.name || 'unknown'), err.message]
-      return
     })
 }
 

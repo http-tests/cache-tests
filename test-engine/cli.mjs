@@ -29,7 +29,7 @@ if (testId !== '') {
 
 await runTests(testsToRun, fetch, false, baseUrl).catch(err => {
   console.error(err)
-  process.exit(1);
+  process.exit(1)
 })
 
 const results = getResults()
