@@ -27,18 +27,18 @@ if (testId !== '') {
   testsToRun = tests
 }
 
-runTests(testsToRun, fetch, false, baseUrl)
-  .then(() => {
-    const results = getResults()
-    if (testId !== '') {
-      console.log(`${GREEN}==== Results${NC}`)
-      const resultSymbol = determineTestResult(tests, testId, results, false)
-      const resultDetails = results[testId][1] || ''
-      console.log(`${resultSymbol[2]} - ${resultDetails}`)
-    } else {
-      console.log(JSON.stringify(results, null, 2))
-    }
-  })
-  .catch(err => {
-    console.error(err)
-  })
+await runTests(testsToRun, fetch, false, baseUrl).catch(err => {
+  console.error(err)
+  process.exit(1);
+})
+
+const results = getResults()
+
+if (testId !== '') {
+  console.log(`${GREEN}==== Results${NC}`)
+  const resultSymbol = determineTestResult(tests, testId, results, false)
+  const resultDetails = results[testId][1] || ''
+  console.log(`${resultSymbol[2]} - ${resultDetails}`)
+} else {
+  console.log(JSON.stringify(results, null, 2))
+}

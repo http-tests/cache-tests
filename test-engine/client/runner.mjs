@@ -3,7 +3,7 @@ import { makeTest, testResults } from './test.mjs'
 
 const testArray = []
 
-export function runTests (tests, myFetch, browserCache, base, chunkSize = 50) {
+export async function runTests (tests, myFetch, browserCache, base, chunkSize = 50) {
   config.setFetch(myFetch)
   config.setBaseUrl(base)
   config.setUseBrowserCache(browserCache)
@@ -28,18 +28,14 @@ export function getResults () {
   return ordered
 }
 
-function runSome (tests, chunkSize) {
-  return new Promise((resolve, reject) => {
-    let index = 0
-    function next () {
-      if (index < tests.length) {
-        const these = tests.slice(index, index + chunkSize).map(makeTest)
-        index += chunkSize
-        Promise.all(these).then(next)
-      } else {
-        resolve()
-      }
+async function runSome (tests, chunkSize) {
+  let index = 0
+  function next () {
+    if (index < tests.length) {
+      const these = tests.slice(index, index + chunkSize).map(makeTest)
+      index += chunkSize
+      return Promise.all(these).then(next)
     }
-    next()
-  })
+  }
+  return next()
 }

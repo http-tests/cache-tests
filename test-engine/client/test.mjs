@@ -10,78 +10,76 @@ const setupCheck = clientUtils.setupCheck
 export const testUUIDs = {}
 export const testResults = {}
 
-export function makeTest (test) {
-  return new Promise((resolve, reject) => {
-    const uuid = utils.token()
-    testUUIDs[test.id] = uuid
-    const requests = fetching.inflateRequests(test)
-    const responses = []
-    const fetchFunctions = []
-    for (let i = 0; i < requests.length; ++i) {
-      fetchFunctions.push({
-        code: idx => {
-          const reqConfig = requests[idx]
-          const reqNum = idx + 1
-          const url = clientUtils.makeTestUrl(uuid, reqConfig)
-          let prevRes
-          if (i > 0) {
-            prevRes = Object.fromEntries(responses[i - 1].headers)
-          }
-          const init = fetching.init(idx, reqConfig, prevRes)
-          const controller = new AbortController()
-          const timeout = setTimeout(() => {
-            controller.abort()
-          }, config.requestTimeout * 1000)
-          init.signal = controller.signal
-          if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
-          return config.fetch(url, init)
-            .then(response => {
-              responses.push(response)
-              return checkResponse(test, requests, idx, response)
-            })
-            .finally(() => {
-              clearTimeout(timeout)
-            })
-        },
-        pauseAfter: 'pause_after' in requests[i]
-      })
-    }
-
-    let idx = 0
-    function runNextStep () {
-      if (fetchFunctions.length) {
-        const nextFetchFunction = fetchFunctions.shift()
-        if (nextFetchFunction.pauseAfter === true) {
-          return nextFetchFunction.code(idx++)
-            .then(clientUtils.pause)
-            .then(runNextStep)
-        } else {
-          return nextFetchFunction.code(idx++)
-            .then(runNextStep)
+export async function makeTest (test) {
+  const uuid = utils.token()
+  testUUIDs[test.id] = uuid
+  const requests = fetching.inflateRequests(test)
+  const responses = []
+  const fetchFunctions = []
+  for (let i = 0; i < requests.length; ++i) {
+    fetchFunctions.push({
+      code: idx => {
+        const reqConfig = requests[idx]
+        const reqNum = idx + 1
+        const url = clientUtils.makeTestUrl(uuid, reqConfig)
+        let prevRes
+        if (i > 0) {
+          prevRes = Object.fromEntries(responses[i - 1].headers)
         }
+        const init = fetching.init(idx, reqConfig, prevRes)
+        const controller = new AbortController()
+        const timeout = setTimeout(() => {
+          controller.abort()
+        }, config.requestTimeout * 1000)
+        init.signal = controller.signal
+        if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
+        return config.fetch(url, init)
+          .then(response => {
+            responses.push(response)
+            return checkResponse(test, requests, idx, response)
+          })
+          .finally(() => {
+            clearTimeout(timeout)
+          })
+      },
+      pauseAfter: 'pause_after' in requests[i]
+    })
+  }
+
+  let idx = 0
+  function runNextStep () {
+    if (fetchFunctions.length) {
+      const nextFetchFunction = fetchFunctions.shift()
+      if (nextFetchFunction.pauseAfter === true) {
+        return nextFetchFunction.code(idx++)
+          .then(clientUtils.pause)
+          .then(runNextStep)
+      } else {
+        return nextFetchFunction.code(idx++)
+          .then(runNextStep)
       }
     }
+  }
 
-    return clientUtils.putTestConfig(uuid, requests)
-      .catch(handleError)
-      .then(runNextStep)
-      .then(() => {
-        return clientUtils.getServerState(uuid)
-      })
-      .then(serverState => {
-        checkServerRequests(requests, responses, serverState)
-      })
-      .then(() => { // pass
-        if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
-        testResults[test.id] = true
-        resolve()
-      })
-      .catch(err => { // fail
-        if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
-        testResults[test.id] = [(err.name || 'unknown'), err.message]
-        resolve()
-      })
-  })
+  return clientUtils.putTestConfig(uuid, requests)
+    .catch(handleError)
+    .then(runNextStep)
+    .then(() => {
+      return clientUtils.getServerState(uuid)
+    })
+    .then(serverState => {
+      checkServerRequests(requests, responses, serverState)
+    })
+    .then(() => { // pass
+      if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
+      testResults[test.id] = true
+      return
+    })
+    .catch(err => { // fail
+      if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
+      testResults[test.id] = [(err.name || 'unknown'), err.message]
+      return
+    })
 }
 
 function checkResponse (test, requests, idx, response) {

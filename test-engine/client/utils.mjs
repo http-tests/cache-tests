@@ -23,7 +23,7 @@ export function makeTestUrl (uuid, reqConfig) {
 
 const uninterestingHeaders = new Set(['date', 'expires', 'last-modified', 'content-length', 'content-type', 'connection', 'content-language', 'vary', 'mime-version'])
 
-export function putTestConfig (uuid, requests) {
+export async function putTestConfig (uuid, requests) {
   const init = {
     method: 'PUT',
     headers: [['content-type', 'application/json']],
@@ -43,7 +43,7 @@ export function putTestConfig (uuid, requests) {
     })
 }
 
-export function getServerState (uuid) {
+export async function getServerState (uuid) {
   return config.fetch(`${config.baseUrl}/state/${uuid}`)
     .then(response => {
       if (response.status === 200) {
