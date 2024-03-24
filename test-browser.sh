@@ -2,6 +2,8 @@
 
 ## Run tests against a local browser on OSX.
 
+set -euo pipefail
+
 PORT=8000
 DOWNLOADS=~/Downloads
 PIDFILE=/tmp/http-cache-test-server.pid

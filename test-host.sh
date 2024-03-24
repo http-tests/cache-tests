@@ -2,6 +2,8 @@
 
 ## Run tests against a host/port combination.
 
+set -euo pipefail
+
 function usage {
   if [[ -n "${1}" ]]; then
     echo "${1}"

@@ -2,6 +2,8 @@
 
 ## Run tests against a local docker image with common proxy/caches.
 
+set -euo pipefail
+
 PIDFILE=/tmp/http-cache-test-server.pid
 
 ALL_PROXIES=(squid nginx apache trafficserver varnish caddy nuster)
@@ -18,13 +20,11 @@ function usage {
 }
 
 function run {
-  TEST_ID="$1"
+  TEST_ID="${1}"
   shift
   PROXIES=( "$@" )
   # start test server
-  npm run --silent server --port=8000 --pidfile=$PIDFILE &
-
-  echo $DOCKER_PORTS
+  npm run --silent server --port=8000 --pidfile=${PIDFILE} &
 
   # run proxies container
   docker run --platform linux/amd64 --name=tmp_proxies ${DOCKER_PORTS} -dt mnot/proxy-cache-tests host.docker.internal \
@@ -54,8 +54,8 @@ function cleanup {
   docker rm tmp_nuster > /dev/null
 
   # stop test server
-  kill "$(cat $PIDFILE)" > /dev/null 2>&1
-  rm $PIDFILE
+  kill "$(cat ${PIDFILE})" > /dev/null 2>&1
+  rm ${PIDFILE}
 }
 
 function test_proxy {
