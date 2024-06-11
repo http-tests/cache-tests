@@ -9,7 +9,6 @@
 # domain name.
 
 {
-  order cache before rewrite
   cache
 }
 
