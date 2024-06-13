@@ -65,7 +65,7 @@ export default [
     file: 'caddy.json',
     name: 'caddy',
     type: 'rev-proxy',
-    version: '0.7.0',
+    version: '0.13.0',
     link: 'https://github.com/http-tests/cache-tests/wiki/Caddy'
   },
   {
