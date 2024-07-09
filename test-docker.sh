@@ -6,7 +6,7 @@ set -euo pipefail
 
 PIDFILE=/tmp/http-cache-test-server.pid
 
-ALL_PROXIES=(squid nginx apache trafficserver varnish caddy nuster)
+ALL_PROXIES=(squid nginx apache trafficserver varnish caddy)
 DOCKER_PORTS=""
 for PORT in {8001..8006}; do
   DOCKER_PORTS+="-p 127.0.0.1:${PORT}:${PORT} "
@@ -30,11 +30,6 @@ function run {
   docker run --name=tmp_proxies ${DOCKER_PORTS} -dt mnot/proxy-cache-tests host.docker.internal \
     > /dev/null
 
-  # run nuster container
-  docker run --name=tmp_nuster -p 9001:9001 \
-    -v "${PWD}/docker/nuster/nuster.cfg:/etc/nuster/nuster.cfg:ro" -dt nuster/nuster:latest \
-    > /dev/null
-
   trap cleanup EXIT
 
   # give docker enough time to start
@@ -50,8 +45,6 @@ function cleanup {
   # stop docker containers
   docker kill tmp_proxies > /dev/null
   docker rm tmp_proxies > /dev/null
-  docker kill tmp_nuster > /dev/null
-  docker rm tmp_nuster > /dev/null
 
   # stop test server
   kill "$(cat ${PIDFILE})" > /dev/null 2>&1
@@ -81,9 +74,6 @@ function test_proxy {
       ;;
     caddy)
       PROXY_PORT=8006
-      ;;
-    nuster)
-      PROXY_PORT=9001
       ;;
     *)
       echo "Proxy ${PKG} not recognised."
