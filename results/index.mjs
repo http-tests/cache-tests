@@ -4,47 +4,47 @@ export default [
     file: 'chrome.json',
     name: 'Chrome',
     type: 'browser',
-    version: '120.0.6099.109'
+    version: '126.0.6478.127'
   },
   {
     file: 'firefox.json',
     name: 'Firefox',
     type: 'browser',
-    version: '121.0',
+    version: '127.0.2',
     link: 'https://github.com/http-tests/cache-tests/wiki/Firefox'
   },
   {
     file: 'safari.json',
     name: 'Safari',
     type: 'browser',
-    version: '17.2 (19617.1.17.11.9)'
+    version: 'Version 17.5 (19618.2.12.11.6)'
   },
   {
     file: 'nginx.json',
     name: 'nginx',
     type: 'rev-proxy',
-    version: '1.24.0-2ubuntu3',
+    version: '1.26.0-1ubuntu2',
     link: 'https://github.com/http-tests/cache-tests/wiki/nginx'
   },
   {
     file: 'squid.json',
     name: 'Squid',
     type: 'rev-proxy',
-    version: '6.5-1ubuntu1',
+    version: '6.9-1ubuntu1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Squid'
   },
   {
     file: 'trafficserver.json',
     name: 'ATS',
     type: 'rev-proxy',
-    version: '9.2.3+ds-1+deb12u1',
+    version: '9.2.4+ds-2',
     link: 'https://github.com/http-tests/cache-tests/wiki/Traffic-Server'
   },
   {
     file: 'apache.json',
     name: 'httpd',
     type: 'rev-proxy',
-    version: '2.4.58-1ubuntu1',
+    version: '2.4.59-2ubuntu2',
     link: 'https://github.com/http-tests/cache-tests/wiki/Apache-httpd'
   },
   {
@@ -53,13 +53,6 @@ export default [
     type: 'rev-proxy',
     version: '7.1.1-1.1ubuntu1',
     link: 'https://github.com/http-tests/cache-tests/wiki/Varnish'
-  },
-  {
-    file: 'nuster.json',
-    name: 'nuster',
-    type: 'rev-proxy',
-    version: 'master',
-    link: 'https://github.com/http-tests/cache-tests/wiki/nuster'
   },
   {
     file: 'caddy.json',
@@ -72,7 +65,7 @@ export default [
     file: 'fastly.json',
     name: 'Fastly',
     type: 'cdn',
-    version: '11-12-2023',
+    version: '2024-07-09',
     link: 'https://github.com/http-tests/cache-tests/wiki/Fastly'
   }
 ]

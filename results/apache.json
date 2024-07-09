@@ -100,7 +100,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Mon, 25 Dec 2023 12:17:04 GMT\""
+    "Response 2 header Expires is \"null\", not \"Tue, 09 Jul 2024 01:05:30 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -493,11 +493,11 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 25 Dec 2023 12:16:58 GMT\", not \"Mon, 25 Dec 2023 12:16:55 GMT\""
+    "Response 2 header Date is \"Tue, 09 Jul 2024 01:05:24 GMT\", not \"Tue, 09 Jul 2024 01:05:21 GMT\""
   ],
   "other-date-update-expires": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 25 Dec 2023 12:16:58 GMT\", not \"Mon, 25 Dec 2023 12:16:55 GMT\""
+    "Response 2 header Date is \"Tue, 09 Jul 2024 01:05:24 GMT\", not \"Tue, 09 Jul 2024 01:05:21 GMT\""
   ],
   "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,

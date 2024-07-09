@@ -91,7 +91,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Mon, 25 Dec 2023 12:08:16 GMT\""
+    "Response 2 header Expires is \"null\", not \"Tue, 09 Jul 2024 00:51:04 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",

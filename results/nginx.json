@@ -12,8 +12,8 @@
     "Response 2 header Content-Encoding is \"arizqhypgxofwne\", not \"askcumewogyqias\""
   ],
   "304-etag-update-response-Content-Foo": [
-    "Assertion",
-    "Response 2 header Content-Foo is \"awsokgcyuqmieaw\", not \"axurolifczwtqnk\""
+    "AbortError",
+    "The user aborted a request."
   ],
   "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": [
@@ -33,12 +33,12 @@
     "Response 2 header Content-Security-Policy is \"default-src 'self'\", not \"default-src 'self' cdn.example.com\""
   ],
   "304-etag-update-response-Content-Type": [
-    "Assertion",
-    "Response 2 header Content-Type is \"text/plain\", not \"text/plain;charset=utf-8\""
+    "AbortError",
+    "The user aborted a request."
   ],
   "304-etag-update-response-ETag": [
-    "Assertion",
-    "Response 2 header ETag is \"\"abcdef\"\", not \"\"ghijkl\"\""
+    "AbortError",
+    "The user aborted a request."
   ],
   "304-etag-update-response-Expires": [
     "Assertion",
@@ -181,7 +181,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Mon, 25 Dec 2023 12:26:49 GMT\""
+    "Response 2 header Expires is \"null\", not \"Tue, 09 Jul 2024 01:06:50 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -588,8 +588,8 @@
     "Response 3 comes from cache"
   ],
   "invalidate-POST": [
-    "Assertion",
-    "Response 3 comes from cache"
+    "AbortError",
+    "The user aborted a request."
   ],
   "invalidate-POST-cl": [
     "Assertion",
@@ -643,11 +643,11 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 25 Dec 2023 12:26:43 GMT\", not \"Mon, 25 Dec 2023 12:26:40 GMT\""
+    "Response 2 header Date is \"Tue, 09 Jul 2024 01:06:44 GMT\", not \"Tue, 09 Jul 2024 01:06:41 GMT\""
   ],
   "other-date-update-expires": [
     "Assertion",
-    "Response 2 header Date is \"Mon, 25 Dec 2023 12:26:43 GMT\", not \"Mon, 25 Dec 2023 12:26:40 GMT\""
+    "Response 2 header Date is \"Tue, 09 Jul 2024 01:06:44 GMT\", not \"Tue, 09 Jul 2024 01:06:41 GMT\""
   ],
   "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,
