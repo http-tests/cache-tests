@@ -27,11 +27,11 @@ function run {
   npm run --silent server --port=8000 --pidfile=${PIDFILE} &
 
   # run proxies container
-  docker run --platform linux/amd64 --name=tmp_proxies ${DOCKER_PORTS} -dt mnot/proxy-cache-tests host.docker.internal \
+  docker run --name=tmp_proxies ${DOCKER_PORTS} -dt mnot/proxy-cache-tests host.docker.internal \
     > /dev/null
 
   # run nuster container
-  docker run --platform linux/amd64 --name=tmp_nuster -p 9001:9001 \
+  docker run --name=tmp_nuster -p 9001:9001 \
     -v "${PWD}/docker/nuster/nuster.cfg:/etc/nuster/nuster.cfg:ro" -dt nuster/nuster:latest \
     > /dev/null
 
