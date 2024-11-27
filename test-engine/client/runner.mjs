@@ -5,7 +5,7 @@ export async function runTests (tests, myFetch, browserCache, base, chunkSize = 
   config.setFetch(myFetch)
   config.setBaseUrl(base)
   config.setUseBrowserCache(browserCache)
-  
+
   const testArray = []
   tests.forEach(testSet => {
     testSet.tests.forEach(test => {
