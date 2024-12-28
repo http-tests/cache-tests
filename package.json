@@ -13,7 +13,7 @@
     "marked": "^15.0.0",
     "node-fetch": "3.1.1",
     "node-fetch-with-proxy": "^0.1.6",
-    "npm": "^10.1.0"
+    "npm": "^11.0.0"
   },
   "scripts": {
     "server": "node test-engine/server/server.mjs",
