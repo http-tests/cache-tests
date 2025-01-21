@@ -10,7 +10,7 @@
       import * as display from './test-engine/lib/display.mjs'
       import baseTests from './tests/index.mjs'
 
-      runTests(baseTests, fetch, true)
+      runTests(baseTests, true)
         .then(function() {
           let resultsTarget = document.getElementById('results')
           display.renderTestResults(baseTests, getResults(), testUUIDs, resultsTarget, true)
