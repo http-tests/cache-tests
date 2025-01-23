@@ -136,8 +136,8 @@
     "Response 2 comes from cache"
   ],
   "ccreq-ma1": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 comes from cache"
   ],
   "ccreq-magreaterage": [
     "Assertion",
@@ -147,13 +147,10 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
-  "ccreq-max-stale-age": [
-    "AbortError",
-    "This operation was aborted"
-  ],
+  "ccreq-max-stale-age": true,
   "ccreq-min-fresh": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 comes from cache"
   ],
   "ccreq-min-fresh-age": [
     "Assertion",
@@ -184,29 +181,32 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Tue, 21 Jan 2025 00:19:03 GMT\""
+    "Response 2 header Expires is \"null\", not \"Thu, 23 Jan 2025 02:53:10 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "cdn-max-age": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "AbortError",
+    "This operation was aborted"
   ],
   "cdn-max-age-0": true,
   "cdn-max-age-0-expires": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "cdn-max-age-age": true,
+  "cdn-max-age-age": [
+    "AbortError",
+    "This operation was aborted"
+  ],
   "cdn-max-age-case-insensitive": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "cdn-max-age-cc-max-age-invalid-expires": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "AbortError",
+    "This operation was aborted"
   ],
   "cdn-max-age-expires": [
     "Assertion",
@@ -225,15 +225,18 @@
     "Response 2 does not come from cache"
   ],
   "cdn-max-age-max-plus": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "AbortError",
+    "This operation was aborted"
   ],
   "cdn-max-age-short-cc-max-age": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "cdn-max-age-space-after-equals": true,
-  "cdn-max-age-space-before-equals": true,
+  "cdn-max-age-space-before-equals": [
+    "TypeError",
+    "Cannot read properties of undefined (reading 'request_num')"
+  ],
   "cdn-no-cache": [
     "Assertion",
     "Response 2 comes from cache"
@@ -273,10 +276,7 @@
     "Assertion",
     "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
-  "conditional-etag-strong-respond": [
-    "AbortError",
-    "This operation was aborted"
-  ],
+  "conditional-etag-strong-respond": true,
   "conditional-etag-strong-respond-multiple-first": true,
   "conditional-etag-strong-respond-multiple-last": true,
   "conditional-etag-strong-respond-multiple-second": true,
@@ -646,14 +646,17 @@
   "other-authorization-must-revalidate": true,
   "other-authorization-public": true,
   "other-authorization-smaxage": true,
-  "other-cookie": true,
+  "other-cookie": [
+    "AbortError",
+    "This operation was aborted"
+  ],
   "other-date-update": [
-    "Assertion",
-    "Response 2 header Date is \"Tue, 21 Jan 2025 00:18:57 GMT\", not \"Tue, 21 Jan 2025 00:18:54 GMT\""
+    "AbortError",
+    "This operation was aborted"
   ],
   "other-date-update-expires": [
     "Assertion",
-    "Response 2 header Date is \"Tue, 21 Jan 2025 00:18:57 GMT\", not \"Tue, 21 Jan 2025 00:18:54 GMT\""
+    "Response 2 header Date is \"Thu, 23 Jan 2025 02:52:06 GMT\", not \"Thu, 23 Jan 2025 02:52:03 GMT\""
   ],
   "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,
@@ -662,8 +665,8 @@
     "Response 2 does not come from cache"
   ],
   "other-set-cookie": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "AbortError",
+    "This operation was aborted"
   ],
   "partial-store-complete-reuse-partial": [
     "Assertion",
@@ -841,12 +844,12 @@
   ],
   "vary-syntax-star": true,
   "vary-syntax-star-foo": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 comes from cache"
   ],
   "vary-syntax-star-star": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 comes from cache"
   ],
   "vary-syntax-star-star-lines": true
 }
