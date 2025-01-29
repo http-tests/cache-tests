@@ -181,32 +181,29 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Thu, 23 Jan 2025 02:53:10 GMT\""
+    "Response 2 header Expires is \"null\", not \"Wed, 29 Jan 2025 03:36:49 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "cdn-max-age": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "cdn-max-age-0": true,
   "cdn-max-age-0-expires": [
     "Assertion",
     "Response 2 comes from cache"
   ],
-  "cdn-max-age-age": [
-    "AbortError",
-    "This operation was aborted"
-  ],
+  "cdn-max-age-age": true,
   "cdn-max-age-case-insensitive": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "cdn-max-age-cc-max-age-invalid-expires": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "cdn-max-age-expires": [
     "Assertion",
@@ -225,18 +222,15 @@
     "Response 2 does not come from cache"
   ],
   "cdn-max-age-max-plus": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "cdn-max-age-short-cc-max-age": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "cdn-max-age-space-after-equals": true,
-  "cdn-max-age-space-before-equals": [
-    "TypeError",
-    "Cannot read properties of undefined (reading 'request_num')"
-  ],
+  "cdn-max-age-space-before-equals": true,
   "cdn-no-cache": [
     "Assertion",
     "Response 2 comes from cache"
@@ -254,7 +248,10 @@
     "Response 2 Age header not present."
   ],
   "cdn-remove-header": true,
-  "conditional-304-etag": true,
+  "conditional-304-etag": [
+    "AbortError",
+    "This operation was aborted"
+  ],
   "conditional-etag-forward": [
     "Assertion",
     "Request 1 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
@@ -646,17 +643,14 @@
   "other-authorization-must-revalidate": true,
   "other-authorization-public": true,
   "other-authorization-smaxage": true,
-  "other-cookie": [
-    "AbortError",
-    "This operation was aborted"
-  ],
+  "other-cookie": true,
   "other-date-update": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 header Date is \"Wed, 29 Jan 2025 03:36:43 GMT\", not \"Wed, 29 Jan 2025 03:36:40 GMT\""
   ],
   "other-date-update-expires": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 23 Jan 2025 02:52:06 GMT\", not \"Thu, 23 Jan 2025 02:52:03 GMT\""
+    "Response 2 header Date is \"Wed, 29 Jan 2025 03:36:43 GMT\", not \"Wed, 29 Jan 2025 03:36:40 GMT\""
   ],
   "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,
@@ -665,8 +659,8 @@
     "Response 2 does not come from cache"
   ],
   "other-set-cookie": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "partial-store-complete-reuse-partial": [
     "Assertion",
@@ -814,8 +808,8 @@
   "vary-no-match": true,
   "vary-normalise-combine": true,
   "vary-normalise-lang-case": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "AbortError",
+    "This operation was aborted"
   ],
   "vary-normalise-lang-order": [
     "Assertion",

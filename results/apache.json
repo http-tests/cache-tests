@@ -20,7 +20,7 @@
   ],
   "304-etag-update-response-Content-Range": [
     "Setup",
-    "Response 1 status is 409, not 200"
+    "retry"
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": [
@@ -34,16 +34,10 @@
   "304-etag-update-response-Expires": true,
   "304-etag-update-response-Public-Key-Pins": true,
   "304-etag-update-response-Set-Cookie": true,
-  "304-etag-update-response-Set-Cookie2": [
-    "Setup",
-    "Response 1 status is 409, not 200"
-  ],
+  "304-etag-update-response-Set-Cookie2": true,
   "304-etag-update-response-Test-Header": true,
   "304-etag-update-response-X-Content-Foo": true,
-  "304-etag-update-response-X-Frame-Options": [
-    "Setup",
-    "Response 1 status is 409, not 200"
-  ],
+  "304-etag-update-response-X-Frame-Options": true,
   "304-etag-update-response-X-Test-Header": true,
   "304-etag-update-response-X-XSS-Protection": true,
   "304-lm-use-stored-Test-Header": true,
@@ -106,7 +100,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Thu, 23 Jan 2025 02:54:08 GMT\""
+    "Response 2 header Expires is \"null\", not \"Wed, 29 Jan 2025 03:37:47 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -499,11 +493,11 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 23 Jan 2025 02:54:02 GMT\", not \"Thu, 23 Jan 2025 02:53:59 GMT\""
+    "Response 2 header Date is \"Wed, 29 Jan 2025 03:37:41 GMT\", not \"Wed, 29 Jan 2025 03:37:38 GMT\""
   ],
   "other-date-update-expires": [
     "Assertion",
-    "Response 2 header Date is \"Thu, 23 Jan 2025 02:54:02 GMT\", not \"Thu, 23 Jan 2025 02:53:59 GMT\""
+    "Response 2 header Date is \"Wed, 29 Jan 2025 03:37:41 GMT\", not \"Wed, 29 Jan 2025 03:37:38 GMT\""
   ],
   "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,
@@ -575,10 +569,7 @@
     "TypeError",
     "fetch failed"
   ],
-  "stale-sie-close": [
-    "TypeError",
-    "fetch failed"
-  ],
+  "stale-sie-close": true,
   "stale-warning-become": [
     "TypeError",
     "fetch failed"
