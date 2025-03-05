@@ -564,6 +564,14 @@
     "Assertion",
     "Response 2 does not come from cache"
   ],
+  "interim-102": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "interim-103": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "invalidate-DELETE": [
     "Assertion",
     "Response 3 comes from cache"
