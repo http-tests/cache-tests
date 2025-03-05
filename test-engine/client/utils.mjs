@@ -80,3 +80,46 @@ export function logResponse (response, reqNum) {
   })
   console.log('')
 }
+
+class InterimResponsesCollectingHandler {
+  #handler
+  #interimResponses
+
+  constructor (handler, interimResponses) {
+    this.#handler = handler
+    this.#interimResponses = interimResponses
+  }
+
+  onRequestStart (controller, context) {
+    this.#handler.onRequestStart?.(controller, context)
+  }
+
+  onRequestUpgrade (controller, statusCode, headers, socket) {
+    this.#handler.onRequestUpgrade?.(controller, statusCode, headers, socket)
+  }
+
+  onResponseStart (controller, statusCode, headers, statusMessage) {
+    if (statusCode < 200) this.#interimResponses.push([statusCode, headers])
+    this.#handler.onResponseStart?.(controller, statusCode, headers, statusMessage)
+  }
+
+  onResponseData (controller, data) {
+    this.#handler.onResponseData?.(controller, data)
+  }
+
+  onResponseEnd (controller, trailers) {
+    this.#handler.onResponseEnd?.(controller, trailers)
+  }
+
+  onResponseError (controller, err) {
+    this.#handler.onResponseError?.(controller, err)
+  }
+}
+
+export function interimResponsesCollectingInterceptor (collectInto) {
+  return (dispatch) => {
+    return (opts, handler) => {
+      return dispatch(opts, new InterimResponsesCollectingHandler(handler, collectInto))
+    }
+  }
+}

@@ -4,6 +4,7 @@ import * as utils from '../lib/utils.mjs'
 import * as config from './config.mjs'
 import * as clientUtils from './utils.mjs'
 import * as fetching from './fetching.mjs'
+import { getGlobalDispatcher } from 'undici'
 const assert = utils.assert
 const setupCheck = clientUtils.setupCheck
 
@@ -32,11 +33,19 @@ export async function makeTest (test) {
           controller.abort()
         }, config.requestTimeout * 1000)
         init.signal = controller.signal
+
+        const interimResponses = []
+        if ('expected_interim_responses' in reqConfig) {
+          const globalDispatcher = getGlobalDispatcher()
+          const dispatcher = globalDispatcher.compose(clientUtils.interimResponsesCollectingInterceptor(interimResponses))
+          init.dispatcher = dispatcher
+        }
+
         if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
         return fetch(url, init)
           .then(response => {
             responses.push(response)
-            return checkResponse(test, requests, idx, response)
+            return checkResponse(test, requests, idx, response, interimResponses)
           })
           .finally(() => {
             clearTimeout(timeout)
@@ -84,7 +93,7 @@ export async function makeTest (test) {
     })
 }
 
-function checkResponse (test, requests, idx, response) {
+function checkResponse (test, requests, idx, response, interimResponses) {
   const reqNum = idx + 1
   const reqConfig = requests[idx]
   const resNum = parseInt(response.headers.get('Server-Request-Count'))
@@ -185,6 +194,37 @@ function checkResponse (test, requests, idx, response) {
       }
     })
   }
+
+  // check interim responses
+  if ('expected_interim_responses' in reqConfig) {
+    const isSetup = setupCheck(reqConfig, 'expected_interim_responses')
+
+    reqConfig.expected_interim_responses.forEach(([statusCode, headers = []], idx) => {
+      if (interimResponses[idx] == null) {
+        assert(isSetup, false, `Interim response ${idx + 1} not received`)
+      } else {
+        assert(isSetup, interimResponses[idx][0] === statusCode, `Interim response ${idx + 1} status is ${interimResponses[idx][0]}, not ${statusCode}`)
+
+        const receivedHeaders = interimResponses[idx][1]
+        headers.forEach(([header, value]) => {
+          if (typeof header === 'string') {
+            assert(isSetup, header in receivedHeaders,
+              `Interim response ${idx + 1} ${header} header not present.`)
+          } else if (header.length > 2) {
+            assert(isSetup, header in receivedHeaders,
+              `Interim response ${idx + 1} ${header} header not present.`)
+
+            const receivedValue = receivedHeaders[header]
+            assert(isSetup, value === receivedValue,
+              `Interim response ${idx + 1} header ${header} is ${receivedValue}, should ${value}`)
+          } else {
+            console.log('ERROR: Unknown header item in expected_interim_responses', header)
+          }
+        })
+      }
+    })
+  }
+
   return response.text().then(makeCheckResponseBody(test, reqConfig, response.status))
 }
 
