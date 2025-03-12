@@ -464,6 +464,14 @@
     "Assertion",
     "Interim response 1 not received"
   ],
+  "interim-no-header-reuse": [
+    "Assertion",
+    "Interim response 1 not received"
+  ],
+  "interim-not-cached": [
+    "Assertion",
+    "Interim response 1 not received"
+  ],
   "invalidate-DELETE": [
     "Setup",
     "Response 2 status is 403, not 200"

@@ -569,6 +569,14 @@
     "Response 2 does not come from cache"
   ],
   "interim-103": [
+    "AbortError",
+    "This operation was aborted"
+  ],
+  "interim-no-header-reuse": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
+  "interim-not-cached": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
