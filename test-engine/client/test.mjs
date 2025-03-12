@@ -4,7 +4,6 @@ import * as utils from '../lib/utils.mjs'
 import * as config from './config.mjs'
 import * as clientUtils from './utils.mjs'
 import * as fetching from './fetching.mjs'
-import { getGlobalDispatcher } from 'undici'
 const assert = utils.assert
 const setupCheck = clientUtils.setupCheck
 
@@ -19,7 +18,7 @@ export async function makeTest (test) {
   const fetchFunctions = []
   for (let i = 0; i < requests.length; ++i) {
     fetchFunctions.push({
-      code: idx => {
+      code: async idx => {
         const reqConfig = requests[idx]
         const reqNum = idx + 1
         const url = clientUtils.makeTestUrl(uuid, reqConfig)
@@ -36,7 +35,9 @@ export async function makeTest (test) {
 
         const interimResponses = []
         if ('expected_interim_responses' in reqConfig) {
-          const globalDispatcher = getGlobalDispatcher()
+          // Dynamic import since undici is only available in Node.js
+          const undici = await import('undici')
+          const globalDispatcher = undici.getGlobalDispatcher()
           const dispatcher = globalDispatcher.compose(clientUtils.interimResponsesCollectingInterceptor(interimResponses))
           init.dispatcher = dispatcher
         }
