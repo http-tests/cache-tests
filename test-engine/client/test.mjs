@@ -37,8 +37,7 @@ export async function makeTest (test) {
         if ('expected_interim_responses' in reqConfig) {
           // Dynamic import since undici is only available in Node.js
           const undici = await import('undici')
-          const globalDispatcher = undici.getGlobalDispatcher()
-          const dispatcher = globalDispatcher.compose(clientUtils.interimResponsesCollectingInterceptor(interimResponses))
+          const dispatcher = new undici.Agent().compose(clientUtils.interimResponsesCollectingInterceptor(interimResponses))
           init.dispatcher = dispatcher
         }
 
