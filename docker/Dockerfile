@@ -13,6 +13,7 @@ RUN apt-get update \
     apache2 \
     varnish \
     golang \
+    haproxy \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
@@ -68,6 +69,13 @@ RUN go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 RUN ~/go/bin/xcaddy build --with github.com/caddyserver/cache-handler
 COPY caddy/Caddyfile /etc/caddy/Caddyfile
 EXPOSE 8006
+
+
+# haproxy
+
+COPY haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg
+EXPOSE 8007
+
 
 # setup
 

@@ -17,4 +17,7 @@ echo "* Starting Varnish"
 /usr/sbin/varnishd -j unix -a 0.0.0.0:8005 -f /etc/varnish/default.vcl -p default_ttl=0 -p default_grace=0 -p default_keep=3600 -s malloc,64M
 
 echo "* Starting Caddy"
-HOME=/root /caddy run --config /etc/caddy/Caddyfile
+HOME=/root /caddy run --config /etc/caddy/Caddyfile &
+
+echo "* Starting HAProxy"
+/usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg &
