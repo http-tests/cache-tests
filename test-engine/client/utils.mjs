@@ -72,8 +72,15 @@ export function logRequest (url, init, reqNum) {
   console.log('')
 }
 
-export function logResponse (response, reqNum) {
+export function logResponse (response, interimResponses, reqNum) {
   console.log(`${defines.GREEN}=== Client response ${reqNum}${defines.NC}`)
+  for (const [statusCode, headers] of interimResponses) {
+    console.log(`    HTTP ${statusCode}`)
+    for (const [key, value] of Object.entries(headers)) {
+      console.log(`    ${key}: ${value}`)
+    }
+    console.log('')
+  }
   console.log(`    HTTP ${response.status} ${response.statusText}`)
   response.headers.forEach((hvalue, hname) => { // for some reason, node-fetch reverses these
     console.log(`    ${hname}: ${hvalue}`)

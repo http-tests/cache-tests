@@ -125,5 +125,5 @@ function continueHandleTest (uuid, request, response, requests, serverState) {
   }
 
   // logging
-  if (reqConfig.dump) logResponse(response, srvReqNum)
+  if (reqConfig.dump) logResponse(response, interimResponses, srvReqNum)
 }

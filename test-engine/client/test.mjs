@@ -97,7 +97,7 @@ function checkResponse (test, requests, idx, response, interimResponses) {
   const reqNum = idx + 1
   const reqConfig = requests[idx]
   const resNum = parseInt(response.headers.get('Server-Request-Count'))
-  if (test.dump === true) clientUtils.logResponse(response, reqNum)
+  if (test.dump === true) clientUtils.logResponse(response, interimResponses, reqNum)
 
   // catch retries
   if (response.headers.has('Request-Numbers')) {
