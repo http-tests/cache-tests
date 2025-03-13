@@ -11,7 +11,8 @@
   "dependencies": {
     "liquidjs": "^10.9.2",
     "marked": "^15.0.0",
-    "npm": "^11.0.0"
+    "npm": "^11.0.0",
+    "undici": "^7.4.0"
   },
   "scripts": {
     "server": "node test-engine/server/server.mjs",
