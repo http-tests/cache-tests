@@ -6,9 +6,9 @@ set -euo pipefail
 
 PIDFILE=/tmp/http-cache-test-server.pid
 
-ALL_PROXIES=(squid nginx apache trafficserver varnish caddy)
+ALL_PROXIES=(squid nginx apache trafficserver varnish caddy haproxy)
 DOCKER_PORTS=""
-for PORT in {8001..8006}; do
+for PORT in {8001..8007}; do
   DOCKER_PORTS+="-p 127.0.0.1:${PORT}:${PORT} "
 done
 
@@ -74,6 +74,9 @@ function test_proxy {
       ;;
     caddy)
       PROXY_PORT=8006
+      ;;
+    haproxy)
+      PROXY_PORT=8007
       ;;
     *)
       echo "Proxy ${PKG} not recognised."
