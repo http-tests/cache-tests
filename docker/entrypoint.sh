@@ -23,6 +23,9 @@ if [[ ! -z $1 ]] ; then
     # caddy
     sed -i s/127.0.0.1/$1/ /etc/caddy/Caddyfile
 
+    # haproxy
+    sed -i s/127.0.0.1/$1/ /etc/haproxy/haproxy.cfg
+
     serve.sh
   fi
 
