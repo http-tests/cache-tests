@@ -72,6 +72,9 @@ Possible members of a request object:
                      `false`.
 - `response_body` - String to send as the response body from the origin. Defaults to
                   the test identifier.
+- `interim_responses` - An array of interim responses to send before the final response. Each item can be either:
+  - `[status_code]` - Just a status code (e.g., `[102]`)
+  - `[status_code, headers_array]` - Status code and headers, where headers_array is an array of `[header_name, header_value]` pairs
 - `response_pause` - Integer number of seconds for the server to pause before generating a response.
 - `check_body` - Whether to check the response body. Default `true`.
 - `expected_type` - One of:
@@ -98,6 +101,7 @@ Possible members of a request object:
   - `header_name_string` representing headers to check that the response on the client does not include.
   - `[header_name_string, header_value_string]`: headers to check that the response is either missing, or if they're present, that they do _not_ contain the given value string (evaluated against the whole header value).
 - `expected_response_text` - A string to check the response body against on the client.
+- `expected_interim_responses` - An array of interim responses expected to be received by the client. Format is the same as `interim_responses`.
 - `setup` - Boolean to indicate whether this is a setup request; failures don't mean the actual test failed.
 - `setup_tests` - Array of values that indicate whether the specified check is part of setup; failures don't mean the actual test failed. One of: `["expected_type", "expected_method", "expected_status", "expected_response_headers", "expected_response_text", "expected_request_headers"]`
 
