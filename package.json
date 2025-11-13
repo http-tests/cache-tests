@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "liquidjs": "^10.9.2",
-    "marked": "^16.0.0",
+    "marked": "^17.0.0",
     "npm": "^11.0.0",
     "undici": "^7.4.0"
   },
