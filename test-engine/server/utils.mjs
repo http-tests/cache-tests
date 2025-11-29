@@ -52,7 +52,7 @@ export function logResponse (response, interimResponses, resNum) {
       }
       console.log('')
     }
-    console.log(`    HTTP ${response.statusCode} ${response.statusPhrase}`)
+    console.log(`    HTTP ${response.statusCode} ${response.statusMessage}`)
     for (const [key, value] of Object.entries(response.getHeaders())) {
       console.log(`    ${key}: ${value}`)
     }

@@ -70,7 +70,7 @@ function continueHandleTest (uuid, request, response, requests, serverState) {
     }
   }
   response.statusCode = httpStatus[0]
-  response.statusPhrase = httpStatus[1]
+  response.statusMessage = httpStatus[1]
 
   // header manipulation
   const responseHeaders = reqConfig.response_headers || []
