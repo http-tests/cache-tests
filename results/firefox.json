@@ -108,10 +108,7 @@
     "Request 2 header If-None-Match is \"abcdef\", not \"\"abcdef\"\""
   ],
   "conditional-etag-vary-headers": true,
-  "conditional-etag-vary-headers-mismatch": [
-    "Assertion",
-    "Request 2 header If-None-Match is \"\"abcdef\"\""
-  ],
+  "conditional-etag-vary-headers-mismatch": true,
   "conditional-etag-weak-generate-weak": true,
   "freshness-expires-32bit": true,
   "freshness-expires-age-fast-date": true,
@@ -434,7 +431,10 @@
   "pragma-request-extension": true,
   "pragma-request-no-cache": true,
   "pragma-response-extension": true,
-  "pragma-response-no-cache": true,
+  "pragma-response-no-cache": [
+    "Assertion",
+    "Response 2 does not come from cache"
+  ],
   "pragma-response-no-cache-heuristic": [
     "Assertion",
     "Response 2 does not come from cache"

@@ -100,7 +100,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Sat, 24 May 2025 02:02:37 GMT\""
+    "Response 2 header Expires is \"null\", not \"Sun, 28 Dec 2025 23:43:35 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -200,7 +200,10 @@
     "Response 2 does not come from cache"
   ],
   "conditional-etag-vary-headers": true,
-  "conditional-etag-vary-headers-mismatch": true,
+  "conditional-etag-vary-headers-mismatch": [
+    "Assertion",
+    "Request 2 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
   "conditional-etag-weak-generate-weak": true,
   "conditional-etag-weak-respond": true,
   "conditional-etag-weak-respond-backslash": [
@@ -497,11 +500,11 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Sat, 24 May 2025 02:02:31 GMT\", not \"Sat, 24 May 2025 02:02:28 GMT\""
+    "Response 2 header Date is \"Sun, 28 Dec 2025 23:43:29 GMT\", not \"Sun, 28 Dec 2025 23:43:26 GMT\""
   ],
   "other-date-update-expires": [
     "Assertion",
-    "Response 2 header Date is \"Sat, 24 May 2025 02:02:31 GMT\", not \"Sat, 24 May 2025 02:02:28 GMT\""
+    "Response 2 header Date is \"Sun, 28 Dec 2025 23:43:29 GMT\", not \"Sun, 28 Dec 2025 23:43:26 GMT\""
   ],
   "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,
@@ -566,10 +569,11 @@
     "TypeError",
     "fetch failed"
   ],
-  "stale-sie-503": [
+  "stale-close-s-maxage=2": [
     "TypeError",
     "fetch failed"
   ],
+  "stale-sie-503": true,
   "stale-sie-close": [
     "TypeError",
     "fetch failed"

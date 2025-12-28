@@ -91,7 +91,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Sat, 24 May 2025 02:00:04 GMT\""
+    "Response 2 header Expires is \"null\", not \"Sun, 28 Dec 2025 23:40:39 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -194,7 +194,10 @@
     "Response 2 status is 200, not 304"
   ],
   "conditional-etag-vary-headers": true,
-  "conditional-etag-vary-headers-mismatch": true,
+  "conditional-etag-vary-headers-mismatch": [
+    "Assertion",
+    "Request 2 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
   "conditional-etag-weak-generate-weak": [
     "Assertion",
     "request 2 doesn't have if-none-match header"
@@ -454,10 +457,7 @@
   "invalidate-POST-cl": true,
   "invalidate-POST-failed": true,
   "invalidate-POST-location": true,
-  "invalidate-PUT": [
-    "Setup",
-    "Response 1 status is 409, not 200"
-  ],
+  "invalidate-PUT": true,
   "invalidate-PUT-cl": true,
   "invalidate-PUT-failed": true,
   "invalidate-PUT-location": true,

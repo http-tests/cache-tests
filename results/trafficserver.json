@@ -97,7 +97,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Sat, 24 May 2025 02:03:28 GMT\""
+    "Response 2 header Expires is \"null\", not \"Sun, 28 Dec 2025 23:45:35 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -188,7 +188,10 @@
   "conditional-etag-unquoted-respond-quoted": true,
   "conditional-etag-unquoted-respond-unquoted": true,
   "conditional-etag-vary-headers": true,
-  "conditional-etag-vary-headers-mismatch": true,
+  "conditional-etag-vary-headers-mismatch": [
+    "Assertion",
+    "Request 2 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
   "conditional-etag-weak-generate-weak": [
     "Assertion",
     "Request 2 should have been conditional, but it was not."
@@ -657,15 +660,18 @@
   "vary-normalise-combine": true,
   "vary-normalise-lang-case": true,
   "vary-normalise-lang-order": [
-    "Assertion",
-    "Response 2 does not come from cache"
+    "AbortError",
+    "This operation was aborted"
   ],
   "vary-normalise-lang-select": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-space": true,
-  "vary-normalise-space": true,
+  "vary-normalise-space": [
+    "AbortError",
+    "This operation was aborted"
+  ],
   "vary-omit": true,
   "vary-omit-stored": true,
   "vary-star": true,
