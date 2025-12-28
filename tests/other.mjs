@@ -143,6 +143,7 @@ export default
     {
       name: 'Different query arguments must be different cache keys',
       id: 'query-args-different',
+      spec_anchors: ['caching.overview'],
       depends_on: ['freshness-max-age'],
       requests: [
         templates.fresh({

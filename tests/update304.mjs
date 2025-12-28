@@ -10,6 +10,7 @@ const lm1 = 'Wed, 01 Jan 2020 00:00:00 GMT'
 tests.push({
   name: `HTTP cache must return stored \`${storedHeader}\` from a \`304\` that omits it`,
   id: `304-lm-use-stored-${storedHeader}`,
+  spec_anchors: ['freshening.responses'],
   requests: [
     {
       response_headers: [
@@ -63,6 +64,7 @@ function check304 (config) {
   tests.push({
     name: `${config.requirement} update and return \`${config.name}\` from a \`304\`${config.punctuation}`,
     id: `304-etag-update-response-${config.name}`,
+    spec_anchors: ['freshening.responses'],
     kind: config.kind,
     depends_on: [`304-lm-use-stored-${storedHeader}`],
     requests: makeRequests(config, 'ETag', config.etag)

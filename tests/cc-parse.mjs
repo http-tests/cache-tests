@@ -102,6 +102,7 @@ export default
       name: 'HTTP cache must not reuse a response with `max-age` in a quoted string (before the "real" `max-age`)',
       id: 'freshness-max-age-ignore-quoted',
       depends_on: ['freshness-max-age'],
+      spec_anchors: ['cache-response-directive.max-age'],
       requests: [
         {
           response_headers: [
@@ -119,6 +120,7 @@ export default
       name: 'HTTP cache mut not reuse a response with `max-age` in a quoted string (after the "real" `max-age`)',
       id: 'freshness-max-age-ignore-quoted-rev',
       depends_on: ['freshness-max-age'],
+      spec_anchors: ['cache-response-directive.max-age'],
       requests: [
         {
           response_headers: [
@@ -171,6 +173,7 @@ export default
     {
       name: 'An optimal HTTP cache reuses max-age with the value `003600`',
       id: 'freshness-max-age-leading-zero',
+      spec_anchors: ['delta-seconds'],
       depends_on: ['freshness-none'],
       requests: [
         {
@@ -189,6 +192,7 @@ export default
       name: 'HTTP cache must not reuse a response with a single-quoted `Cache-Control: max-age`',
       id: 'freshness-max-age-single-quoted',
       depends_on: ['freshness-none'],
+      spec_anchors: ['cache-response-directive.max-age'],
       requests: [
         {
           response_headers: [

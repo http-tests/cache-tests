@@ -65,6 +65,7 @@ export default
     {
       name: 'CDN must not reuse a response when the `Age` header is greater than its `CDN-Cache-Control: max-age` freshness lifetime',
       id: 'cdn-max-age-age',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       cdn_only: true,
       depends_on: ['cdn-max-age'],
       requests: [
@@ -125,6 +126,7 @@ export default
     {
       name: 'CDN must not reuse a response with `CDN-Cache-Control: max-age=0`',
       id: 'cdn-max-age-0',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       cdn_only: true,
       depends_on: ['cdn-max-age'],
       requests: [
@@ -224,6 +226,7 @@ export default
     {
       name: 'CDN must not reuse a response with a `CDN-Cache-Control: max-age=0` and a future `Expires`',
       id: 'cdn-max-age-0-expires',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       cdn_only: true,
       depends_on: ['cdn-max-age'],
       requests: [
@@ -264,6 +267,7 @@ export default
     {
       name: 'CDN must prefer a short `CDN-Cache-Control: max-age` over a long `Cache-Control: max-age`',
       id: 'cdn-max-age-long-cc-max-age',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       cdn_only: true,
       depends_on: ['cdn-max-age'],
       requests: [
@@ -283,6 +287,7 @@ export default
     {
       name: 'CDN must not reuse a cached response with `CDN-Cache-Control: private`, even with `Cache-Control: max-age` and `Expires`',
       id: 'cdn-private',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       cdn_only: true,
       requests: [
         {
@@ -302,6 +307,7 @@ export default
     {
       name: 'CDN must not reuse a cached response with `CDN-Cache-Control: no-cache`, even with `Cache-Control: max-age` and `Expires`',
       id: 'cdn-no-cache',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       cdn_only: true,
       requests: [
         {
@@ -321,6 +327,7 @@ export default
     {
       name: 'CDN must not store a response with `CDN-Cache-Control: no-store`, even with `Cache-Control: max-age` and `Expires`',
       id: 'cdn-no-store-cc-fresh',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       cdn_only: true,
       depends_on: ['freshness-none'],
       requests: [
@@ -342,6 +349,7 @@ export default
     {
       name: 'An optimal CDN stores a response with a fresh `CDN-Cache-Control: max-age`, even with `Cache-Control: no-store`',
       id: 'cdn-fresh-cc-nostore',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       depends_on: ['freshness-none'],
       cdn_only: true,
       requests: [
@@ -361,6 +369,7 @@ export default
     {
       name: 'CDN should ignore a `CDN-Cache-Control` that\'s an invalid Structured Field (unknown type)',
       id: 'cdn-cc-invalid-sh-type-unknown',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       depends_on: ['cdn-max-age'],
       cdn_only: true,
       requests: [
@@ -380,6 +389,7 @@ export default
     {
       name: 'CDN should ignore a `CDN-Cache-Control` that\'s an invalid Structured Field (wrong type)',
       id: 'cdn-cc-invalid-sh-type-wrong',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
       depends_on: ['cdn-max-age'],
       cdn_only: true,
       requests: [

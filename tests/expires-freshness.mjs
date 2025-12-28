@@ -28,6 +28,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with a past `Expires`',
       id: 'freshness-expires-past',
+      spec_anchors: ['calculating.freshness.lifetime'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -46,6 +47,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with a present `Expires`',
       id: 'freshness-expires-present',
+      spec_anchors: ['calculating.freshness.lifetime'],
       depends_on: ['freshness-none'],
       requests: [
         {
@@ -63,6 +65,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an `Expires` older than `Date`, both fast',
       id: 'freshness-expires-old-date',
+      spec_anchors: ['calculating.freshness.lifetime'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -81,6 +84,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (0)',
       id: 'freshness-expires-invalid',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -117,6 +121,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response when the `Age` header is greater than its `Expires` minus `Date`, and `Date` is slow',
       id: 'freshness-expires-age-slow-date',
+      spec_anchors: ['calculating.freshness.lifetime'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -135,6 +140,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response when the `Age` header is greater than its `Expires` minus `Date`, and `Date` is fast',
       id: 'freshness-expires-age-fast-date',
+      spec_anchors: ['calculating.freshness.lifetime'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {

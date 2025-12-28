@@ -30,6 +30,7 @@ export default {
     {
       name: 'HTTP cache must include `ETag` in a `304 Not Modified`',
       id: 'conditional-304-etag',
+      spec_anchors: ['freshening.responses'],
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
@@ -53,6 +54,7 @@ export default {
     {
       name: 'HTTP cache must give precedence to `If-None-Match` over `If-Modified-Since`',
       id: 'conditional-etag-precedence',
+      spec_anchors: ['validation.received'],
       depends_on: ['conditional-etag-strong-respond'],
       browser_skip: true,
       requests: [
@@ -310,6 +312,7 @@ export default {
     {
       name: 'HTTP cache must include stored response headers identified by `Vary` in a conditional request it generates',
       id: 'conditional-etag-vary-headers',
+      spec_anchors: ['validation.sent'],
       requests: [
         {
           request_headers: [
@@ -339,6 +342,7 @@ export default {
     {
       name: 'HTTP cache must not use a stored `ETag` to validate when the presented `Vary`ing request header differs',
       id: 'conditional-etag-vary-headers-mismatch',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['conditional-etag-vary-headers', 'vary-no-match'],
       requests: [
         {

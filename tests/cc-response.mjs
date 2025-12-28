@@ -354,6 +354,7 @@ export default
     {
       name: 'A HTTP cache MUST revalidate a stale response with `Cache-Control: immutable`',
       id: 'cc-resp-immutable-stale',
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc8246.html#section-2'],
       browser_only: true,
       requests: [
         {

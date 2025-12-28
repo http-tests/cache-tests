@@ -58,6 +58,7 @@ export default
     {
       name: 'An HTTP cache should not cache non-final responses',
       id: 'interim-not-cached',
+      spec_anchors: ['response.cacheability'],
       browser_skip: true,
       kind: 'required',
       requests: [

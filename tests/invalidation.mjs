@@ -32,6 +32,7 @@ function checkInvalidation (method) {
   tests.push({
     name: `HTTP cache must invalidate the URL after a successful response to a \`${method}\` request`,
     id: `invalidate-${method}`,
+    spec_anchors: ['invalidation'],
     depends_on: ['freshness-max-age'],
     requests: [
       fresh({}), {

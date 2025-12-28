@@ -142,6 +142,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (UTC)',
       id: 'freshness-expires-invalid-utc',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -160,6 +161,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (other tz)',
       id: 'freshness-expires-invalid-aest',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -178,6 +180,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (two-digit year)',
       id: 'freshness-expires-invalid-2-digit-year',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -196,6 +199,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (missing comma)',
       id: 'freshness-expires-invalid-no-comma',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -214,6 +218,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (multiple spaces)',
       id: 'freshness-expires-invalid-multiple-spaces',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -231,6 +236,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (date dashes)',
       id: 'freshness-expires-invalid-date-dashes',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -248,6 +254,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (time periods)',
       id: 'freshness-expires-invalid-time-periods',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -265,6 +272,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (1-digit hour)',
       id: 'freshness-expires-invalid-1-digit-hour',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {
@@ -282,6 +290,7 @@ export default
     {
       name: 'HTTP cache must not reuse a response with an invalid `Expires` (multiple lines)',
       id: 'freshness-expires-invalid-multiple-lines',
+      spec_anchors: ['field.expires'],
       depends_on: ['freshness-expires-future'],
       requests: [
         {

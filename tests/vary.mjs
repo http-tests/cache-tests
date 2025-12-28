@@ -67,6 +67,7 @@ export default {
     {
       name: "HTTP cache must not reuse `Vary` response when request doesn't match",
       id: 'vary-no-match',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         varySetup({}),
@@ -81,6 +82,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response when stored request omits variant request header',
       id: 'vary-omit-stored',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         {
@@ -103,6 +105,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response when presented request omits variant request header',
       id: 'vary-omit',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         varySetup({}),
@@ -182,6 +185,7 @@ export default {
     {
       name: "HTTP cache must not reuse two-way `Vary` response when request doesn't match",
       id: 'vary-2-no-match',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-2-match'],
       requests: [
         vary2Setup({}),
@@ -197,6 +201,7 @@ export default {
     {
       name: 'HTTP cache must not reuse two-way `Vary` response when request omits variant request header',
       id: 'vary-2-match-omit',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-2-match'],
       requests: [
         vary2Setup({}),
@@ -225,6 +230,7 @@ export default {
     {
       name: "HTTP cache must not reuse three-way `Vary` response when request doesn't match",
       id: 'vary-3-no-match',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-3-match'],
       requests: [
         vary3Setup({}),
@@ -241,6 +247,7 @@ export default {
     {
       name: "HTTP cache must not reuse three-way `Vary` response when request doesn't match, regardless of header order",
       id: 'vary-3-order',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-3-match'],
       requests: [
         vary3Setup({}),
@@ -285,6 +292,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `*`',
       id: 'vary-star',
+      spec_anchors: ['caching.negotiated.responses'],
       requests: [
         {
           request_headers: [

@@ -22,6 +22,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `*`',
       id: 'vary-syntax-star',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         varyParseSetup({
@@ -41,6 +42,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `*, *`',
       id: 'vary-syntax-star-star',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         varyParseSetup({
@@ -60,6 +62,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `*, *` on different lines',
       id: 'vary-syntax-star-star-lines',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         varyParseSetup({
@@ -80,6 +83,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `, *`',
       id: 'vary-syntax-empty-star',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         varyParseSetup({
@@ -99,6 +103,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `, *` on different lines',
       id: 'vary-syntax-empty-star-lines',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         varyParseSetup({
@@ -119,6 +124,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `*, Foo`',
       id: 'vary-syntax-star-foo',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         varyParseSetup({
@@ -138,6 +144,7 @@ export default {
     {
       name: 'HTTP cache must not reuse `Vary` response with a value of `Foo, *`',
       id: 'vary-syntax-foo-star',
+      spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-match'],
       requests: [
         varyParseSetup({

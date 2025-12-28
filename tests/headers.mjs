@@ -7,6 +7,7 @@ const tests = []
 tests.push({
   name: '`Connection` header must inhibit a HTTP cache from storing listed headers',
   id: 'headers-omit-headers-listed-in-Connection',
+  spec_anchors: ['storing.fields'],
   kind: 'required',
   depends_on: ['freshness-max-age'],
   requests: [
@@ -46,6 +47,7 @@ function checkStoreHeader (config) {
   tests.push({
     name: `HTTP cache ${requirement} store \`${config.name}\` header field`,
     id: `headers-${id}`,
+    spec_anchors: ['storing.fields'],
     kind: 'required',
     depends_on: ['freshness-max-age'],
     requests: [

@@ -33,6 +33,7 @@ function checkStatus (status) {
   tests.push({
     name: 'HTTP cache must not reuse a stale `' + code + '` response with explicit freshness',
     id: `status-${code}-stale`,
+    spec_anchors: ['response.cacheability'],
     depends_on: [`status-${code}-fresh`],
     browser_skip: is3xx,
     requests: [

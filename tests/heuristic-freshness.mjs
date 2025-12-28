@@ -46,19 +46,19 @@ function checkStatus (status) {
 
 [
   [true, 200, 'OK'],
-  [false, 201, 'Created'],
-  [false, 202, 'Accepted'],
+  [false, 201, 'Created', undefined, undefined, undefined, ['response.cacheability']],
+  [false, 202, 'Accepted', undefined, undefined, undefined, ['response.cacheability']],
   [true, 203, 'Non-Authoritative Information'],
   [true, 204, 'No Content', null],
-  [false, 403, 'Forbidden'],
+  [false, 403, 'Forbidden', undefined, undefined, undefined, ['response.cacheability']],
   [true, 404, 'Not Found'],
   [true, 405, 'Method Not Allowed'],
   [true, 410, 'Gone'],
   [true, 414, 'URI Too Long'],
   [true, 501, 'Not Implemented'],
-  [false, 502, 'Bad Gateway'],
-  [false, 503, 'Service Unavailable'],
-  [false, 504, 'Gateway Timeout'],
+  [false, 502, 'Bad Gateway', undefined, undefined, undefined, ['response.cacheability']],
+  [false, 503, 'Service Unavailable', undefined, undefined, undefined, ['response.cacheability']],
+  [false, 504, 'Gateway Timeout', undefined, undefined, undefined, ['response.cacheability']],
   [false, 599, 'Unknown', undefined, 'when `Cache-Control: public` is not present', undefined, ['cache-response-directive.public']],
   [true, 599, 'Unknown', undefined, 'when `Cache-Control: public` is present', ['Cache-Control', 'public'], ['cache-response-directive.public']]
 ].forEach(checkStatus)

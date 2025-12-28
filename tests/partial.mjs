@@ -216,6 +216,7 @@ export default {
     {
       name: 'HTTP cache must use header fields from the new response',
       id: 'partial-use-headers',
+      spec_anchors: ['combining.responses'],
       depends_on: ['partial-store-complete-reuse-partial'],
       requests: [
         {
@@ -243,6 +244,7 @@ export default {
     {
       name: 'HTTP cache must preserve unupdated header fields from the stored response',
       id: 'partial-use-stored-headers',
+      spec_anchors: ['combining.responses'],
       depends_on: ['partial-store-complete-reuse-partial'],
       requests: [
         {

@@ -11,6 +11,7 @@ export default
     {
       name: 'HTTP shared cache must not reuse a response to a request that contained `Authorization`, even with explicit freshness',
       id: 'other-authorization',
+      spec_anchors: ['caching.authenticated.responses'],
       depends_on: ['freshness-max-age'],
       browser_skip: true,
       requests: [
