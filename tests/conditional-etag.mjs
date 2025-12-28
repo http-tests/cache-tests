@@ -340,8 +340,9 @@ export default {
       ]
     },
     {
-      name: 'HTTP cache must not use a stored `ETag` to validate when the presented `Vary`ing request header differs',
+      name: 'Does HTTP cache use a stored `ETag` to validate when the presented `Vary`ing request header differs?',
       id: 'conditional-etag-vary-headers-mismatch',
+      kind: 'check',
       spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['conditional-etag-vary-headers', 'vary-no-match'],
       requests: [
