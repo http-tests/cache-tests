@@ -363,7 +363,7 @@ export default {
           request_headers: [
             ['Abc', '456']
           ],
-          expected_request_headers_missing: [
+          expected_request_headers: [
             ['If-None-Match', '"abcdef"']
           ]
         }
