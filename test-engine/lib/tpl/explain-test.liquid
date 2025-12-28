@@ -22,13 +22,13 @@ Test ID: `{{ test.id }}`
 Spec References:
 
 {% for anchor in test.spec_anchors %}
-{%- assign is_url = anchor | slice: 0, 4 -%}
+{% assign is_url = anchor | slice: 0, 4 -%}
 {%- if is_url == "http" -%}
 * <{{ anchor }}>
 {%- else -%}
 * [{{ anchor }}](https://httpwg.org/specs/rfc9111.html#{{ anchor }})
-{%- endif -%}
-{%- endfor %}
+{% endif -%}
+{% endfor %}
 {%- endif %}
 
 {% for request in test.requests -%}
@@ -86,7 +86,7 @@ HTTP/1.1 {{ interim_response[0] }}
 {% endfor %}
 {% endfor -%}
 {%- endif -%}
-{% if request.expected_type == "lm_validated" or request.expected_type = "etag_validated" -%}
+{% if request.expected_type == "lm_validated" or request.expected_type == "etag_validated" -%}
 HTTP/1.1 304 Not Modified
 {%- else -%}
 HTTP/1.1 {{ request.response_status[0] | default: 200 }} {{ request.response_status[1] | default: "OK" }}
