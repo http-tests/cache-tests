@@ -45,7 +45,6 @@ export default
     {
       name: 'HTTP cache must not reuse a response with `Cache-Control: max-age` after it becomes stale',
       id: 'freshness-max-age-stale',
-      kind: 'optimal',
       depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-response-directive.max-age'],
       requests: [
