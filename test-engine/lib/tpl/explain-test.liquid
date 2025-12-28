@@ -17,6 +17,20 @@ Test ID: `{{ test.id }}`
 - `{{ dependant }}`
 {%- endfor %}{% endif %}
 
+{%- if test.spec_anchors %}
+
+Spec References:
+
+{% for anchor in test.spec_anchors %}
+{%- assign is_url = anchor | slice: 0, 4 -%}
+{%- if is_url == "http" -%}
+* <{{ anchor }}>
+{%- else -%}
+* [{{ anchor }}](https://httpwg.org/specs/rfc9111.html#{{ anchor }})
+{%- endif -%}
+{%- endfor %}
+{%- endif %}
+
 {% for request in test.requests -%}
 ## Request {{ forloop.index }}
 
