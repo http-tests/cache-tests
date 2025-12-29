@@ -10,8 +10,8 @@
   "304-etag-update-response-Content-Location": true,
   "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Range": [
-    "Setup",
-    "Response 1 status is 503, not 200"
+    "Assertion",
+    "Response 2 header Content-Range is \"null\", not \"aqgwmcsiyoeukaq\""
   ],
   "304-etag-update-response-Content-Security-Policy": true,
   "304-etag-update-response-Content-Type": true,
@@ -124,7 +124,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Sun, 28 Dec 2025 23:46:34 GMT\""
+    "Response 2 header Expires is \"null\", not \"Mon, 29 Dec 2025 00:27:13 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -385,8 +385,8 @@
   "headers-store-Content-Location": true,
   "headers-store-Content-MD5": true,
   "headers-store-Content-Range": [
-    "Setup",
-    "Response 1 status is 503, not 200"
+    "Assertion",
+    "Response 2 header Content-Range is \"null\", not \"ananananananana\""
   ],
   "headers-store-Content-Security-Policy": true,
   "headers-store-Content-Type": true,

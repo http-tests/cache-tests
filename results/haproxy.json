@@ -177,14 +177,11 @@
     "Response 1 status is 200, not 504"
   ],
   "cdn-cc-invalid-sh-type-unknown": true,
-  "cdn-cc-invalid-sh-type-wrong": [
-    "AbortError",
-    "This operation was aborted"
-  ],
+  "cdn-cc-invalid-sh-type-wrong": true,
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Wed, 12 Mar 2025 10:13:52 GMT\""
+    "Response 2 header Expires is \"null\", not \"Mon, 29 Dec 2025 00:28:56 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -290,7 +287,10 @@
     "Setup",
     "Request 2 should have been conditional, but it was not."
   ],
-  "conditional-etag-vary-headers-mismatch": true,
+  "conditional-etag-vary-headers-mismatch": [
+    "Assertion",
+    "Request 2 header If-None-Match is \"undefined\", not \"\"abcdef\"\""
+  ],
   "conditional-etag-weak-generate-weak": [
     "Assertion",
     "Request 2 should have been conditional, but it was not."
@@ -658,8 +658,8 @@
     "Response 2 does not come from cache"
   ],
   "stale-close": [
-    "TypeError",
-    "fetch failed"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "stale-close-must-revalidate": [
     "TypeError",
@@ -673,21 +673,18 @@
     "TypeError",
     "fetch failed"
   ],
-  "stale-close-s-maxage=2": [
-    "TypeError",
-    "fetch failed"
-  ],
+  "stale-close-s-maxage=2": true,
   "stale-sie-503": [
-    "TypeError",
-    "fetch failed"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "stale-sie-close": [
-    "TypeError",
-    "fetch failed"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "stale-warning-become": [
-    "TypeError",
-    "fetch failed"
+    "Setup",
+    "Response 2 does not come from cache"
   ],
   "stale-warning-stored": [
     "TypeError",

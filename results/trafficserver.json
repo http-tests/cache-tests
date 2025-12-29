@@ -97,7 +97,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Sun, 28 Dec 2025 23:45:35 GMT\""
+    "Response 2 header Expires is \"null\", not \"Mon, 29 Dec 2025 00:26:14 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -660,18 +660,15 @@
   "vary-normalise-combine": true,
   "vary-normalise-lang-case": true,
   "vary-normalise-lang-order": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-select": [
     "Assertion",
     "Response 2 does not come from cache"
   ],
   "vary-normalise-lang-space": true,
-  "vary-normalise-space": [
-    "AbortError",
-    "This operation was aborted"
-  ],
+  "vary-normalise-space": true,
   "vary-omit": true,
   "vary-omit-stored": true,
   "vary-star": true,

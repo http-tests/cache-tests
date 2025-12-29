@@ -181,7 +181,7 @@
   "cdn-date-update-exceed": true,
   "cdn-expires-update-exceed": [
     "Assertion",
-    "Response 2 header Expires is \"null\", not \"Sun, 28 Dec 2025 23:42:30 GMT\""
+    "Response 2 header Expires is \"null\", not \"Mon, 29 Dec 2025 00:31:03 GMT\""
   ],
   "cdn-fresh-cc-nostore": [
     "Assertion",
@@ -565,20 +565,20 @@
     "Response 2 does not come from cache"
   ],
   "interim-102": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "interim-103": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "interim-no-header-reuse": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "interim-not-cached": [
-    "AbortError",
-    "This operation was aborted"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "invalidate-DELETE": [
     "Assertion",
@@ -662,11 +662,11 @@
   "other-cookie": true,
   "other-date-update": [
     "Assertion",
-    "Response 2 header Date is \"Sun, 28 Dec 2025 23:42:24 GMT\", not \"Sun, 28 Dec 2025 23:42:21 GMT\""
+    "Response 2 header Date is \"Mon, 29 Dec 2025 00:30:39 GMT\", not \"Mon, 29 Dec 2025 00:30:36 GMT\""
   ],
   "other-date-update-expires": [
     "Assertion",
-    "Response 2 header Date is \"Sun, 28 Dec 2025 23:42:24 GMT\", not \"Sun, 28 Dec 2025 23:42:21 GMT\""
+    "Response 2 header Date is \"Mon, 29 Dec 2025 00:30:39 GMT\", not \"Mon, 29 Dec 2025 00:30:36 GMT\""
   ],
   "other-date-update-expires-update": true,
   "other-fresh-content-disposition-attachment": true,
