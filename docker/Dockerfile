@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 ubuntu:devel
+FROM --platform=linux/amd64 ubuntu:rolling
 LABEL maintainer="Mark Nottingham <mnot@mnot.net>"
 
 
