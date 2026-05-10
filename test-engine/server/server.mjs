@@ -51,4 +51,13 @@ server.on('listening', () => {
     : server.address().address
   console.log(`Listening on ${protocol.toLowerCase()}://${host}:${server.address().port}/`)
 })
-server.listen(port)
+await new Promise((resolve, reject) => {
+  function onListening () {
+    server.off('error', reject)
+    resolve()
+  }
+
+  server.once('listening', onListening)
+  server.once('error', reject)
+  server.listen(port)
+})
