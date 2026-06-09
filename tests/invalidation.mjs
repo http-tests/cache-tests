@@ -84,7 +84,7 @@ function checkLocationInvalidation (method) {
 
 function checkClInvalidation (method) {
   tests.push({
-    name: `Does HTTP cache must invalidate \`Content-Location\` URL after a successful response to a \`${method}\` request?`,
+    name: `Does HTTP cache invalidate \`Content-Location\` URL after a successful response to a \`${method}\` request?`,
     id: `invalidate-${method}-cl`,
     kind: 'check',
     depends_on: [`invalidate-${method}`],
