@@ -23,7 +23,7 @@ export function init (idx, reqConfig, prevResp) {
   if ('name' in reqConfig) init.headers.push(['Test-Name', reqConfig.name])
   if ('request_body' in reqConfig) init.body = reqConfig.request_body
   if ('mode' in reqConfig) init.mode = reqConfig.mode
-  if ('credentials' in reqConfig) init.mode = reqConfig.credentials
+  if ('credentials' in reqConfig) init.credentials = reqConfig.credentials
   if ('cache' in reqConfig) init.cache = reqConfig.cache
   if ('redirect' in reqConfig) init.redirect = reqConfig.redirect
   init.headers.push(['Test-ID', reqConfig.id])
