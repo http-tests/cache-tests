@@ -65,9 +65,14 @@ export default {
           ]
         }),
         {
+          // The two conditionals are intentionally in disagreement: the
+          // matching `If-None-Match` yields 304, whereas `If-Modified-Since`
+          // is set before `Last-Modified` (-10000 vs -5000) so on its own it
+          // would yield 200. Only a cache that gives `If-None-Match`
+          // precedence returns the expected 304.
           request_headers: [
             ['If-None-Match', '"abcdef"'],
-            ['If-Modified-Since', -1]
+            ['If-Modified-Since', -10000]
           ],
           magic_ims: true,
           expected_type: 'cached',
