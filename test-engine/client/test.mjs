@@ -223,6 +223,9 @@ function checkResponse (test, requests, idx, response, interimResponses) {
         })
       }
     })
+
+    assert(isSetup, interimResponses.length === reqConfig.expected_interim_responses.length,
+      `Received ${interimResponses.length} interim response(s), expected ${reqConfig.expected_interim_responses.length}`)
   }
 
   return response.text().then(makeCheckResponseBody(test, reqConfig, response.status))
