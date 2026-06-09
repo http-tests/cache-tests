@@ -142,7 +142,8 @@ export default {
           pause_after: true
         },
         {
-          disconnect: true,
+          response_status: [503, 'Service Unavailable'],
+          expected_status: 200,
           expected_type: 'cached'
         }
       ]
