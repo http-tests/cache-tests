@@ -51,7 +51,7 @@ export async function makeTest (test) {
             clearTimeout(timeout)
           })
       },
-      pauseAfter: 'pause_after' in requests[i]
+      pauseAfter: requests[i].pause_after === true
     })
   }
 
