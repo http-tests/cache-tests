@@ -4,7 +4,7 @@ export default
 
 {
   name: 'HEAD updates',
-  id: 'updateHEAD',
+  id: 'update-head',
   description: 'These tests check how a cache updates stored responses when receiving a `HEAD` response.',
   spec_anchors: ['head.effects'],
   tests: [
