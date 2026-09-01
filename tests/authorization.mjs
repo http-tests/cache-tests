@@ -3,7 +3,7 @@ import * as templates from './lib/templates.mjs'
 export default
 
 {
-  name: 'Storing Respones to Authenticated Requests',
+  name: 'Storing Responses to Authenticated Requests',
   id: 'auth',
   description: 'These tests check for behaviours regarding authenticated HTTP responses.',
   spec_anchors: ['caching.authenticated.responses'],

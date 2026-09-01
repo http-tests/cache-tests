@@ -271,7 +271,7 @@
   "freshness-max-age-100a": true,
   "freshness-max-age-a100": true,
   "freshness-max-age-age": true,
-  "freshness-max-age-case-insenstive": true,
+  "freshness-max-age-case-insensitive": true,
   "freshness-max-age-date": true,
   "freshness-max-age-decimal-five": true,
   "freshness-max-age-decimal-zero": true,
