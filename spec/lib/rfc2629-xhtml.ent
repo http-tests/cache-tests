@@ -162,4 +162,8 @@
 <!ENTITY lang   "&#9001;"><!-- U+2329 LEFT-POINTING ANGLE BRACKET                ("<")                -->
 <!ENTITY rang   "&#9002;"><!-- U+232A RIGHT-POINTING ANGLE BRACKET               (">")                -->
 
+<!-- Typographic help characters -->
+<!ENTITY zwsp   "&#8203;"><!-- U+232A RIGHT-POINTING ANGLE BRACKET        -->
+<!ENTITY br     "&#8232;"><!-- U+2028 LINE SEPARATOR                      -->
+<!ENTITY wj     "&#8288;"><!-- U+2060 WORD JOINER                         -->
 <!-- EOF -->
