@@ -38,7 +38,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache update freshness lifetime recieved in a `200` response to a `HEAD`?',
+      name: 'Does HTTP cache update freshness lifetime received in a `200` response to a `HEAD`?',
       id: 'head-200-freshness-update',
       kind: 'check',
       depends_on: ['head-writethrough'],
@@ -57,7 +57,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache update stored fields recieved in a `200` response to a `HEAD`?',
+      name: 'Does HTTP cache update stored fields received in a `200` response to a `HEAD`?',
       id: 'head-200-update',
       kind: 'check',
       depends_on: ['head-200-freshness-update'],
@@ -81,7 +81,7 @@ export default
       ]
     },
     {
-      name: 'Does HTTP cache update stored fields recieved in a `410` response to a `HEAD`?',
+      name: 'Does HTTP cache update stored fields received in a `410` response to a `HEAD`?',
       id: 'head-410-update',
       kind: 'check',
       depends_on: ['head-200-freshness-update'],

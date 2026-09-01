@@ -262,7 +262,7 @@ export default {
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a three-way `Vary` response when both request and the original request omited a variant header',
+      name: 'An optimal HTTP cache reuses a three-way `Vary` response when both request and the original request omitted a variant header',
       id: 'vary-3-omit',
       depends_on: ['vary-3-match'],
       kind: 'optimal',

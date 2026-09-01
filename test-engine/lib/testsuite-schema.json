@@ -126,7 +126,7 @@
                     "type": "boolean"
                   },
                   "disconnect": {
-                    "description": "Whether to disconnect the client when receiving thsi request",
+                    "description": "Whether to disconnect the client when receiving this request",
                     "type": "boolean"
                   },
                   "magic_locations": {
@@ -519,7 +519,7 @@
       ]
     },
     "test-id": {
-      "description": "A short identifer for a test",
+      "description": "A short identifier for a test",
       "type": "string"
     },
     "response-or-null": {

@@ -9,7 +9,7 @@ export default
   spec_anchors: ['expiration.model', 'cache-response-directive'],
   tests: [
     {
-      name: 'Does HTTP cache avoid reusing a response without explict freshness information or a validator (reuse is allowed, but not common, and many tests rely upon a cache _not_ doing it)?',
+      name: 'Does HTTP cache avoid reusing a response without explicit freshness information or a validator (reuse is allowed, but not common, and many tests rely upon a cache _not_ doing it)?',
       id: 'freshness-none',
       kind: 'check',
       spec_anchors: ['cache-response-directive.max-age'],
@@ -271,7 +271,7 @@ export default
     },
     {
       name: 'An optimal HTTP cache reuses a response with positive `Cache-Control: MaX-AgE`',
-      id: 'freshness-max-age-case-insenstive',
+      id: 'freshness-max-age-case-insensitive',
       kind: 'optimal',
       depends_on: ['freshness-max-age'],
       spec_anchors: ['cache-response-directive.max-age'],

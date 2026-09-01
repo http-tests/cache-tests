@@ -298,7 +298,7 @@
     "Response 2 does not come from cache"
   ],
   "freshness-max-age-age": true,
-  "freshness-max-age-case-insenstive": true,
+  "freshness-max-age-case-insensitive": true,
   "freshness-max-age-date": [
     "Assertion",
     "Response 2 comes from cache"
