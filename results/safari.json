@@ -5,19 +5,13 @@
     "Assertion",
     "Response 2 header Content-Encoding is \"arizqhypgxofwne\", not \"askcumewogyqias\""
   ],
-  "304-etag-update-response-Content-Foo": [
-    "Assertion",
-    "Response 2 header Content-Foo is \"awsokgcyuqmieaw\", not \"axurolifczwtqnk\""
-  ],
+  "304-etag-update-response-Content-Foo": true,
   "304-etag-update-response-Content-Length": true,
   "304-etag-update-response-Content-Location": [
     "Assertion",
     "Response 2 header Content-Location is \"/foo\", not \"/bar\""
   ],
-  "304-etag-update-response-Content-MD5": [
-    "Assertion",
-    "Response 2 header Content-MD5 is \"rL0Y20zC+Fzt72VPzMSk2A==\", not \"N7UdGUp1E+RbVvZSTy1R8g==\""
-  ],
+  "304-etag-update-response-Content-MD5": true,
   "304-etag-update-response-Content-Range": [
     "Assertion",
     "Response 2 header Content-Range is \"apetixmbqfujync\", not \"aqgwmcsiyoeukaq\""
@@ -104,31 +98,16 @@
   "cc-resp-no-store-old-new": true,
   "cc-resp-private-private": true,
   "ccreq-ma0": true,
-  "ccreq-ma1": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "ccreq-magreaterage": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "ccreq-ma1": true,
+  "ccreq-magreaterage": true,
   "ccreq-max-stale": true,
   "ccreq-max-stale-age": true,
-  "ccreq-min-fresh": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
-  "ccreq-min-fresh-age": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "ccreq-min-fresh": true,
+  "ccreq-min-fresh-age": true,
   "ccreq-no-cache": true,
   "ccreq-no-cache-etag": true,
   "ccreq-no-cache-lm": true,
-  "ccreq-no-store": [
-    "Assertion",
-    "Response 2 comes from cache"
-  ],
+  "ccreq-no-store": true,
   "ccreq-oic": [
     "TypeError",
     "Load failed"
@@ -320,10 +299,7 @@
   "heuristic-502-not_cached": true,
   "heuristic-503-not_cached": true,
   "heuristic-504-not_cached": true,
-  "heuristic-599-cached": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "heuristic-599-cached": true,
   "heuristic-599-not_cached": true,
   "heuristic-delta-10": [
     "Assertion",
@@ -494,8 +470,8 @@
     "Load failed"
   ],
   "stale-sie-503": [
-    "TypeError",
-    "Load failed"
+    "Assertion",
+    "Response 2 does not come from cache"
   ],
   "stale-sie-close": [
     "TypeError",
@@ -521,49 +497,25 @@
   "status-203-stale": true,
   "status-204-fresh": true,
   "status-204-stale": true,
-  "status-299-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-299-fresh": true,
   "status-299-stale": true,
-  "status-400-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-400-fresh": true,
   "status-400-stale": true,
   "status-404-fresh": true,
   "status-404-stale": true,
   "status-410-fresh": true,
   "status-410-stale": true,
-  "status-499-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-499-fresh": true,
   "status-499-stale": true,
-  "status-500-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-500-fresh": true,
   "status-500-stale": true,
-  "status-502-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-502-fresh": true,
   "status-502-stale": true,
-  "status-503-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-503-fresh": true,
   "status-503-stale": true,
-  "status-504-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-504-fresh": true,
   "status-504-stale": true,
-  "status-599-fresh": [
-    "Assertion",
-    "Response 2 does not come from cache"
-  ],
+  "status-599-fresh": true,
   "status-599-must-understand": true,
   "status-599-stale": true,
   "vary-2-match": true,
