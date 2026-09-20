@@ -245,19 +245,20 @@ export default {
       ]
     },
     {
-      name: "HTTP cache must not reuse three-way `Vary` response when request doesn't match, regardless of header order",
+      name: 'An optimal HTTP cache reuses a three-way `Vary` response regardless of request header order',
       id: 'vary-3-order',
       spec_anchors: ['caching.negotiated.responses'],
       depends_on: ['vary-3-match'],
+      kind: 'optimal',
       requests: [
         vary3Setup({}),
         {
           request_headers: [
             ['Foo', '1'],
             ['Baz', '789'],
-            ['Bar', 'abcde']
+            ['Bar', 'abc']
           ],
-          expected_type: 'not_cached'
+          expected_type: 'cached'
         }
       ]
     },
