@@ -473,6 +473,90 @@ export default {
           expected_type: 'cached'
         }
       ]
+    },
+    {
+      name: 'HTTP cache must not serve a mismatched stored representation after a 304 response matching on a weak `Last-Modified` timestamp alters the `Vary` header',
+      id: 'vary-altered-by-304-lm',
+      kind: 'required',
+      depends_on: ['conditional-last-modified-weak-generate'],
+      requests: [
+        {
+          request_headers: [
+            //['Accept-Encoding', 'gzip;q=0.5']
+          ],
+          response_headers: [
+            ['Cache-Control', 'max-age=2, no-transform'],
+            ['Date', 0],
+            ['Last-Modified', 0],
+            ['Vary', 'Foo'],
+          ],
+          response_body: 'abc',
+          setup: true,
+          pause_after: true
+        },
+        {
+          request_headers: [
+            ['Accept-Encoding', 'gzip'],
+          ],
+          response_headers: [
+            ['Cache-Control', 'max-age=2, no-transform'],
+            ['Date', 0],
+            ['Last-Modified', -3],
+            ['Vary', 'Accept-Encoding'],
+            ['Content-Encoding', 'gzip']
+          ],
+          setup_tests: ['expected_type'],
+          expected_type: 'lm_validated',
+          expected_response_headers: [
+            ['Vary', 'Accept-Encoding'],
+            ['Content-Encoding', 'gzip']
+          ],
+          // If `Content-Encoding: gzip` is supplied as expected, Fetch will decode it prior to the
+          // text comparison.
+          expected_response_text: 'abc'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not serve a mismatched stored representation after a 304 response matching on a weak `ETag` alters the `Vary` header',
+      id: 'vary-altered-by-304-etag',
+      kind: 'required',
+      depends_on: ['conditional-etag-weak-generate-weak'],
+      requests: [
+        {
+          request_headers: [
+            //['Accept-Encoding', 'gzip;q=0.5']
+          ],
+          response_headers: [
+            ['Cache-Control', 'max-age=2, no-transform'],
+            ['ETag', 'W/"v1"'],
+            ['Vary', 'Foo']
+          ],
+          response_body: 'abc',
+          setup: true,
+          pause_after: true
+        },
+        {
+          request_headers: [
+            ['Accept-Encoding', 'gzip'],
+          ],
+          response_headers: [
+            ['Cache-Control', 'max-age=2, no-transform'],
+            ['ETag', 'W/"v1"'],
+            ['Vary', 'Accept-Encoding'],
+            ['Content-Encoding', 'gzip']
+          ],
+          setup_tests: ['expected_type'],
+          expected_type: 'etag_validated',
+          expected_response_headers: [
+            ['Vary', 'Accept-Encoding'],
+            ['Content-Encoding', 'gzip']
+          ],
+          // If `Content-Encoding: gzip` is supplied as expected, Fetch will decode it prior to the
+          // text comparison.
+          expected_response_text: 'abc'
+        }
+      ]
     }
   ]
 }
