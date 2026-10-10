@@ -1,0 +1,10 @@
+# Allow the test harness to exercise every HTTP method through the reverse proxy.
+ip_allow:
+  - apply: in
+    ip_addrs: 0/0
+    action: allow
+    methods: ALL
+  - apply: in
+    ip_addrs: ::/0
+    action: allow
+    methods: ALL

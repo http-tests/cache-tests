@@ -84,7 +84,11 @@ function test_proxy {
       ;;
   esac
 
-  echo "* ${PKG} $(docker container exec tmp_proxies /usr/bin/apt-cache show ${PKG} | grep Version)"
+  if [[ ${PKG} == trafficserver ]]; then
+    docker container exec tmp_proxies /opt/trafficserver/bin/traffic_server --version
+  else
+    echo "* ${PKG} $(docker container exec tmp_proxies /usr/bin/apt-cache show ${PKG} | grep Version)"
+  fi
 
   if [[ -z "${TEST_ID}" ]]; then
     npm run --silent cli --base=http://localhost:${PROXY_PORT} > "results/${PROXY}.json"
