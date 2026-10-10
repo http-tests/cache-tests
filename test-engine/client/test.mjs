@@ -228,7 +228,25 @@ function checkResponse (test, requests, idx, response, interimResponses) {
       `Received ${interimResponses.length} interim response(s), expected ${reqConfig.expected_interim_responses.length}`)
   }
 
-  return response.text().then(makeCheckResponseBody(test, reqConfig, response.status))
+  return response.text().then(
+    makeCheckResponseBody(test, reqConfig, response.status),
+    err => {
+      const details = []
+      const seen = new Set()
+      for (let cause = err; cause != null && !seen.has(cause); cause = cause.cause) {
+        seen.add(cause)
+        const code = cause.code ? `${cause.code}: ` : ''
+        details.push(`${code}${cause.message || String(cause)}`)
+      }
+      const encoding = response.headers.get('Content-Encoding')
+      const context = encoding ? ` (Content-Encoding: ${encoding})` : ''
+      const message = details.length ? details.join('; caused by ') : String(err)
+      const readError = new Error(`Response ${reqNum} body could not be read${context}: ${message}`)
+      readError.name = err?.name || 'unknown'
+      readError.cause = err
+      throw readError
+    }
+  )
 }
 
 function makeCheckResponseBody (test, reqConfig, statusCode) {

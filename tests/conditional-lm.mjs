@@ -114,6 +114,32 @@ export default {
           setup_tests: ['expected_type']
         }
       ]
+    },
+    {
+      name: 'An optimal HTTP cache generates an `If-Modified-Since` request when holding a stale response with a matching weak `Last-Modified`',
+      id: 'conditional-last-modified-weak-generate',
+      kind: 'optimal',
+      depends_on: ['freshness-max-age-stale'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2'],
+            ['Date', 0],
+            ['Last-Modified', 0],
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2'],
+            ['Date', 0],
+            ['Last-Modified', -3],
+          ],
+          expected_type: 'lm_validated',
+        }
+      ]
+
     }
   ]
 }
