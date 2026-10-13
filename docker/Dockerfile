@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 ubuntu:rolling AS trafficserver-build
+FROM ubuntu:rolling AS trafficserver-build
 
 # Rolling Ubuntu no longer packages ATS. Build a verified upstream release in a
 # separate stage so its compiler and development dependencies stay out of the image.
@@ -24,7 +24,7 @@ RUN curl -fL --retry 3 "https://archive.apache.org/dist/trafficserver/trafficser
     && cmake --build build --parallel "${ATS_BUILD_JOBS}" \
     && DESTDIR=/opt/ats-install cmake --install build
 
-FROM --platform=linux/amd64 ubuntu:rolling
+FROM ubuntu:rolling
 LABEL maintainer="Mark Nottingham <mnot@mnot.net>"
 
 
