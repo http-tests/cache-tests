@@ -7,7 +7,7 @@ echo "* Starting nginx"
 /usr/sbin/nginx -g "daemon off;" &
 
 echo "* starting TrafficServer"
-/usr/bin/traffic_manager &
+/opt/trafficserver/bin/traffic_server &
 
 echo "* Starting Apache"
 source /etc/apache2/envvars
