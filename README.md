@@ -38,7 +38,7 @@ Therefore, if you believe a test should change (based upon common behaviour or y
 
 ## Installation
 
-The tests require a recent version of [NodeJS](https://nodejs.org/) (14.8.0 or greater), which includes the `npm` package manager.
+The tests require a recent version of [NodeJS](https://nodejs.org/) (22.19.0 or greater), which includes the `npm` package manager.
 
 To install the most recent source from GitHub (*recommended; things are moving fast*):
 
@@ -54,7 +54,7 @@ Alternatively, for the most recent release:
 
 > npm i --legacy-bundling http-cache-tests
 
-Note that the version in the registry is not necessarily up-to-date.
+Note that the version in the registry is not necessarily up-to-date. The package has what you need to run the server, the command-line client, the browser tests and the scripts below, and to view results locally (`index.html`, the `results` directory and the annotated specification), but not the Docker image's build files or the specification's sources; the scripts that save results create a `results` directory if there isn't one.
 
 
 ## Running tests with scripts
