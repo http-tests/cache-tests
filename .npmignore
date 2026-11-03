@@ -1,11 +1,10 @@
-# Things the published package doesn't need to run the tests. Everything else ships;
-# note that having this file means .gitignore is no longer consulted.
+# Things the published package doesn't need to run the tests or show their results. Everything
+# else ships; note that having this file means .gitignore is no longer consulted.
 
-# the website: results data, the annotated spec, and the page that shows them
-/index.html
-/results/
-/spec/
-/CNAME
+# the annotated spec's build inputs (the built page and its assets ship)
+/spec/Makefile
+/spec/*.xml
+/spec/lib/
 
 # the Docker image's build files; test-docker.sh pulls the image instead
 /docker/
@@ -13,6 +12,7 @@
 # repository tooling
 /.editorconfig
 /.github/
+/CNAME
 
 # local state
 /server.pid

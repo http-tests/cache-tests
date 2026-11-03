@@ -54,7 +54,7 @@ Alternatively, for the most recent release:
 
 > npm i --legacy-bundling http-cache-tests
 
-Note that the version in the registry is not necessarily up-to-date. The package has what you need to run the server, the command-line client, the browser tests and the scripts below, but not the results, the specification or the Docker image's build files; the scripts that save results create a `results` directory if there isn't one.
+Note that the version in the registry is not necessarily up-to-date. The package has what you need to run the server, the command-line client, the browser tests and the scripts below, and to view results locally (`index.html`, the `results` directory and the annotated specification), but not the Docker image's build files or the specification's sources; the scripts that save results create a `results` directory if there isn't one.
 
 
 ## Running tests with scripts
