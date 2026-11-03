@@ -4,7 +4,7 @@ import '../../asset/marked.min.js'
 import * as display from './display.mjs'
 import { testLookup } from './results.mjs'
 
-export function loadResults (index) {
+export function loadResults (index, traces = {}) {
   return Promise.all(index.map(item =>
     fetch(`results/${item.file}`)
       .then(response => {
@@ -12,6 +12,7 @@ export function loadResults (index) {
       })
       .then(results => {
         item.results = results
+        item.traces = traces[item.file]
         return item
       }
       ))
@@ -94,8 +95,9 @@ function showTest (testSuites, testId, results) {
   testRow.appendChild(tableCell('td', testSelector(test.id)))
   testRow.appendChild(tableCell('th', display.showTestName(test), 'name'))
   results.forEach(implementation => {
+    const subject = [implementation.name, implementation.version].filter(Boolean).join(' ')
     testRow.appendChild(
-      tableCell('th', display.showTestResult(testSuites, test.id, implementation.results)))
+      tableCell('th', display.showTestResult(testSuites, test.id, implementation.results, implementation.traces, subject)))
   })
   return testRow
 }

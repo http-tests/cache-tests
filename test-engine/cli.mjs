@@ -1,10 +1,12 @@
-import { runTests, getResults } from './client/runner.mjs'
+import fs from 'fs'
+import { runTests, getResults, getTraces } from './client/runner.mjs'
 import { determineTestResult } from './lib/results.mjs'
 import { GREEN, NC } from './lib/defines.mjs'
 import tests from '../tests/index.mjs'
 
 const baseUrl = process.env.npm_config_base || process.env.npm_package_config_base
 const testId = process.env.npm_config_id || process.env.npm_package_config_id
+const tracesFile = process.env.npm_config_traces || process.env.npm_package_config_traces
 
 let testsToRun
 if (testId !== '') {
@@ -32,6 +34,10 @@ await runTests(testsToRun, false, baseUrl).catch(err => {
 })
 
 const results = getResults()
+
+if (tracesFile) {
+  fs.writeFileSync(tracesFile, JSON.stringify(getTraces()))
+}
 
 if (testId !== '') {
   console.log(`${GREEN}==== Results${NC}`)

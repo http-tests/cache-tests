@@ -17,6 +17,7 @@
   "scripts": {
     "server": "node test-engine/server/server.mjs",
     "cli": "node --no-warnings test-engine/cli.mjs",
+    "embed-traces": "node --no-warnings test-engine/embed-traces.mjs",
     "export": "node --no-warnings test-engine/export.mjs",
     "validate": "node --no-warnings test-engine/export.mjs validate",
     "lint": "standard test-engine tests spec",
@@ -27,6 +28,7 @@
     "port": "8000",
     "base": "",
     "id": "",
+    "traces": "",
     "pidfile": "/tmp/http-cache-test-server.pid"
   },
   "repository": {

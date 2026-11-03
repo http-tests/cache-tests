@@ -10,6 +10,9 @@ export const forbiddenResponseHeaders = new Set(['set-cookie', 'set-cookie2'])
 // headers to skip when checking response_headers (not expected)
 export const skipResponseHeaders = new Set(['date'])
 
+// headers added by the harness itself; not interesting in traces
+export const harnessHeaders = new Set(['test-id', 'test-name', 'req-num', 'server-base-url', 'client-request-count', 'server-now', 'request-numbers'])
+
 // colours for console
 export const RED = '\x1b[31m'
 export const GREEN = '\x1b[32m'

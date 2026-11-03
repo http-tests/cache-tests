@@ -35,7 +35,8 @@
       const key = document.getElementById('key')
 
       display.showKey(key)
-      summary.loadResults(index)
+      const traces = JSON.parse(document.getElementById('traces').textContent)
+      summary.loadResults(index, traces)
       .then(results => {
         if (isDefault) {
           summary.showToC(ToC, baseTests)
@@ -83,7 +84,7 @@
     <form method="GET" id="selectForm">
 
       <p class="noFrame noPrint"><i>
-        Click on test names for details of what is sent and checked. Hover over failed tests for the reason why they failed.
+        Click on test names for details of what is sent and checked. Click on a result to see the requests and responses the test saw. Hover over failed tests for the reason why they failed.
       </i></p>
 
       <p class="noFrame noPrint">
@@ -93,5 +94,10 @@
       <table id="target">
       </table>
     </form>
+
+    <!-- Request/response traces for each results file; written by test-engine/embed-traces.mjs. -->
+    <script type="application/json" id="traces">
+{}
+</script>
   </body>
 </html>

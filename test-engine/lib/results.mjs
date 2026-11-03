@@ -1,14 +1,14 @@
 export const resultTypes = {
-  untested: ['-', '', '-'],
-  pass: ['\uf058', '#1aa123', '✅'],
-  fail: ['\uf057', '#c33131', '⛔️'],
-  optional_fail: ['\uf05a', '#bbbd15', '⚠️'],
-  yes: ['\uf055', '#999696', 'Y'],
-  no: ['\uf056', '#999696', 'N'],
-  setup_fail: ['\uf059', '#4c61ae', '🔹'],
-  harness_fail: ['\uf06a', '#4c61ae', '⁉️'],
-  dependency_fail: ['\uf192', '#b4b2b2', '⚪️'],
-  retry: ['\uf01e', '#4c61ae', '↻']
+  untested: ['-', '', '-', 'not tested'],
+  pass: ['\uf058', '#1aa123', '✅', 'passed'],
+  fail: ['\uf057', '#c33131', '⛔️', 'conformance test failed'],
+  optional_fail: ['\uf05a', '#bbbd15', '⚠️', 'optional test failed'],
+  yes: ['\uf055', '#999696', 'Y', 'behaviour check: yes'],
+  no: ['\uf056', '#999696', 'N', 'behaviour check: no'],
+  setup_fail: ['\uf059', '#4c61ae', '🔹', 'test failed during setup'],
+  harness_fail: ['\uf06a', '#4c61ae', '⁉️', 'test harness failure'],
+  dependency_fail: ['\uf192', '#b4b2b2', '⚪️', 'test dependency failed'],
+  retry: ['\uf01e', '#4c61ae', '↻', 'cache retried a request']
 }
 const passTypes = [resultTypes.pass, resultTypes.yes]
 

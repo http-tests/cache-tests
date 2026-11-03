@@ -59,6 +59,23 @@ export function setupCheck (reqConfig, memberName) {
   return reqConfig.setup === true || ('setup_tests' in reqConfig && reqConfig.setup_tests.indexOf(memberName) > -1)
 }
 
+// Flattens headers (pairs, Headers or a plain object) into a lowercase-keyed object for traces.
+export function traceHeaders (headers) {
+  const entries = Array.isArray(headers)
+    ? headers
+    : (typeof headers.entries === 'function' ? Array.from(headers.entries()) : Object.entries(headers))
+  const out = {}
+  for (const [name, rawValue] of entries) {
+    const key = name.toLowerCase()
+    const value = Array.isArray(rawValue) ? rawValue.join(', ') : String(rawValue)
+    if (defines.harnessHeaders.has(key)) continue
+    // see fetching.init(); these defeat browser caching and are always sent
+    if ((key === 'pragma' && value === 'foo') || (key === 'cache-control' && value === 'nothing-to-see-here')) continue
+    out[key] = key in out ? `${out[key]}, ${value}` : value
+  }
+  return out
+}
+
 export function logRequest (url, init, reqNum) {
   console.log(`${defines.GREEN}=== Client request ${reqNum}${defines.NC}`)
   if ('method' in init) {

@@ -135,6 +135,13 @@ To test a reverse proxy or CDN from the command line:
 
 ... using the URL of the server you want to test. This will output the test results in JSON to STDOUT, suitable for inclusion in the `results` directory. See `lib/summary.mjs` for details of how to interpret that.
 
+To also record the requests and responses seen by each test (shown when clicking on a result in the HTML results), save them to a file and embed that in `index.html`:
+
+> npm run --silent cli --base=http://server-url.example.org:8000/ --traces=traces.json > results/name.json
+> npm run embed-traces -- results/name.json traces.json
+
+The traces are stored under the results file's name, so `name.json` needs to be listed in `results/index.mjs`. The browser test page (`test-browser.html`) has a link to download its traces, which can be embedded the same way.
+
 To run a single test, use:
 
 > npm run cli --base=http://server-url.example.org:8000/ --id=test-id

@@ -9,10 +9,13 @@ const setupCheck = clientUtils.setupCheck
 
 export const testUUIDs = {}
 export const testResults = {}
+export const testTraces = {}
 
 export async function makeTest (test) {
   const uuid = utils.token()
   testUUIDs[test.id] = uuid
+  const trace = { client: [] }
+  testTraces[test.id] = trace
   const requests = fetching.inflateRequests(test)
   const responses = []
   const fetchFunctions = []
@@ -42,10 +45,18 @@ export async function makeTest (test) {
         }
 
         if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
+        const traceEntry = {
+          req: [init.method || 'GET', url.slice(url.indexOf(uuid) + uuid.length), clientUtils.traceHeaders(init.headers)]
+        }
+        trace.client[idx] = traceEntry
         return fetch(url, init)
           .then(response => {
             responses.push(response)
-            return checkResponse(test, requests, idx, response, interimResponses)
+            traceEntry.res = [response.status, clientUtils.traceHeaders(response.headers)]
+            if (interimResponses.length) {
+              traceEntry.interim = interimResponses.map(([status, headers]) => [status, clientUtils.traceHeaders(headers)])
+            }
+            return checkResponse(test, requests, idx, response, interimResponses, traceEntry)
           })
           .finally(() => {
             clearTimeout(timeout)
@@ -74,6 +85,14 @@ export async function makeTest (test) {
     console.error(`ERROR: ${uuid} ${err.name} ${err.message}`)
   }
 
+  function recordOrigin (serverState) {
+    trace.origin = serverState.map(item => ({
+      n: item.request_num,
+      method: item.request_method,
+      headers: clientUtils.traceHeaders(item.request_headers)
+    }))
+  }
+
   return clientUtils.putTestConfig(uuid, requests)
     .catch(handleError)
     .then(runNextStep)
@@ -81,6 +100,7 @@ export async function makeTest (test) {
       return clientUtils.getServerState(uuid)
     })
     .then(serverState => {
+      recordOrigin(serverState)
       checkServerRequests(requests, responses, serverState)
     })
     .then(() => { // pass
@@ -90,10 +110,14 @@ export async function makeTest (test) {
     .catch(err => { // fail
       if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
       testResults[test.id] = [(err.name || 'unknown'), err.message]
+      // an early failure skips the server state; fetch it for the trace
+      if (!trace.origin) {
+        return clientUtils.getServerState(uuid).then(recordOrigin).catch(() => {})
+      }
     })
 }
 
-function checkResponse (test, requests, idx, response, interimResponses) {
+function checkResponse (test, requests, idx, response, interimResponses, traceEntry) {
   const reqNum = idx + 1
   const reqConfig = requests[idx]
   const resNum = parseInt(response.headers.get('Server-Request-Count'))
@@ -228,11 +252,13 @@ function checkResponse (test, requests, idx, response, interimResponses) {
       `Received ${interimResponses.length} interim response(s), expected ${reqConfig.expected_interim_responses.length}`)
   }
 
-  return response.text().then(makeCheckResponseBody(test, reqConfig, response.status))
+  return response.text().then(makeCheckResponseBody(test, reqConfig, response.status, traceEntry))
 }
 
-function makeCheckResponseBody (test, reqConfig, statusCode) {
+function makeCheckResponseBody (test, reqConfig, statusCode, traceEntry) {
   return function checkResponseBody (resBody) {
+    // the usual body is the test's UUID; only record the unusual
+    if (resBody !== '' && resBody !== testUUIDs[test.id]) traceEntry.body = resBody.slice(0, 1000)
     if ('check_body' in reqConfig && reqConfig.check_body === false) {
       return true
     } else if ('expected_response_text' in reqConfig) {
