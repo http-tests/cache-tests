@@ -1,0 +1,20 @@
+# Things the published package doesn't need to run the tests. Everything else ships;
+# note that having this file means .gitignore is no longer consulted.
+
+# the website: results data, the annotated spec, and the page that shows them
+/index.html
+/results/
+/spec/
+/CNAME
+
+# scripts that assume a git checkout (they write into results/ or use docker/)
+/docker/
+/test-browser.sh
+/test-docker.sh
+
+# repository tooling
+/.editorconfig
+/.github/
+
+# local state
+/server.pid

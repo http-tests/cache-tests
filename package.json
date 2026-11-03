@@ -6,7 +6,7 @@
   "author": "Mark Nottingham",
   "license": "BSD-3-Clause",
   "engines": {
-    "node": ">=14.8.0"
+    "node": ">=22.19.0"
   },
   "dependencies": {
     "liquidjs": "^10.9.2",
