@@ -5,7 +5,7 @@
     <title>Browser HTTP Caching Tests</title>
     <link rel="stylesheet" href="/asset/style.css" type="text/css">
     <script type="module">
-      import { runTests, getResults } from './test-engine/client/runner.mjs'
+      import { runTests, getResults, getTraces } from './test-engine/client/runner.mjs'
       import { testUUIDs } from './test-engine/client/test.mjs'
       import * as display from './test-engine/lib/display.mjs'
       import baseTests from './tests/index.mjs'
@@ -13,7 +13,7 @@
       runTests(baseTests, true)
         .then(function() {
           let resultsTarget = document.getElementById('results')
-          display.renderTestResults(baseTests, getResults(), testUUIDs, resultsTarget, true)
+          display.renderTestResults(baseTests, getResults(), testUUIDs, resultsTarget, true, getTraces())
         })
         .then(function() {
           let params = (new URL(location)).searchParams
@@ -26,7 +26,7 @@
             auto = true
           }
           let downloadTarget = document.getElementById('download')
-          display.downloadTestResults(downloadTarget, filename, getResults(), auto)
+          display.downloadTestResults(downloadTarget, filename, getResults(), getTraces(), auto)
         })
     </script>
   </head>
@@ -40,7 +40,7 @@
     implementation's results, file issues or learn more, see <a
     href="https://github.com/http-tests/cache-tests">the repository</a>.</p>
 
-    <p><i>Hover over failed tests for details. Click on <span class="hint">⚙︎</span> to copy the
+    <p><i>Hover over failed tests for details, or click on a result to see the requests and responses. Click on <span class="hint">⚙︎</span> to copy the
     test UUID (for finding it in the browser networking tab or proxy logs).</i></p>
 
     <p><a id="download">Download results (JSON)</a></p>

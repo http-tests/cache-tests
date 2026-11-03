@@ -19,6 +19,7 @@
     "cli": "node --no-warnings test-engine/cli.mjs",
     "export": "node --no-warnings test-engine/export.mjs",
     "validate": "node --no-warnings test-engine/export.mjs validate",
+    "test": "node --test test-engine/lib/locate-failure.test.mjs",
     "lint": "standard test-engine tests spec",
     "fix": "standard --fix test-engine tests spec"
   },

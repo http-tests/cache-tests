@@ -142,14 +142,16 @@ pre code {
 }
 
 .modal-exit {
-  position: absolute;
-  right: 15px;
-  top: 15px;
+  position: sticky;
+  float: right;
+  top: 0;
+  z-index: 1;
   outline: none;
   appearance: none;
   color: red;
-  background: none;
+  background: #fafafa;
   border: 0px;
+  border-radius: 0.3em;
   font-weight: bold;
   font-size: 1.5em;
   cursor: pointer;
@@ -163,6 +165,69 @@ pre code {
   background-color: #ddd;
   padding: 0.5em 1em;
   width: auto;
+}
+
+.modal:has(.trace) {
+  width: min(60rem, 85vw);
+}
+
+.trace h2 {
+  margin-top: 0;
+}
+
+.trace h3 {
+  margin: 1.2em 0 0.2em 0;
+}
+
+.trace-subject {
+  color: #666;
+  margin: 0;
+}
+
+.trace-message {
+  background-color: color-mix(in srgb, var(--hl) 12%, white);
+  border-left: 4px solid var(--hl);
+  padding: 0.4em 0.8em;
+}
+
+.trace-label {
+  color: #666;
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+  margin-top: 0.6em;
+  text-transform: uppercase;
+}
+
+.modal .trace pre {
+  background-color: white;
+  border: 1px solid #ccc;
+  margin: 0;
+  overflow-x: auto;
+  padding: 0.4em 0;
+}
+
+.trace-note {
+  color: #666;
+  font-style: italic;
+  margin: 0.4em 0 0.4em 1em;
+}
+
+.trace .line {
+  display: block;
+  padding: 0 1em;
+  white-space: pre;
+}
+
+.trace .line.hl {
+  background-color: color-mix(in srgb, var(--hl) 18%, white);
+  border-left: 4px solid var(--hl);
+  font-weight: bold;
+  padding-left: calc(1em - 4px);
+}
+
+.trace .line.muted {
+  color: #888;
+  font-style: italic;
 }
 
 .noFrame {

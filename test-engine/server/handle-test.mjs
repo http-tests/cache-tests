@@ -107,7 +107,8 @@ function continueHandleTest (uuid, request, response, requests, serverState) {
     request_num: cliReqNum,
     request_method: request.method,
     request_headers: request.headers,
-    response_headers: Array.from(savedHeaders.entries())
+    response_headers: Array.from(savedHeaders.entries()),
+    response: describeResponse(response, reqConfig, interimResponses)
   })
   response.setHeader('Request-Numbers', serverState.map(item => item.request_num).join(' '))
   setStash(uuid, serverState)
@@ -126,4 +127,20 @@ function continueHandleTest (uuid, request, response, requests, serverState) {
 
   // logging
   if (reqConfig.dump) logResponse(response, interimResponses, srvReqNum)
+}
+
+// what we sent, for traces; the body is only included when it isn't the test's UUID
+function describeResponse (response, reqConfig, interimResponses) {
+  const description = {
+    status: response.statusCode,
+    headers: response.getHeaders()
+  }
+  const interim = interimResponses.map(([status, headers = []]) => [status, Object.fromEntries(headers)])
+  if (interim.length) description.interim = interim
+  if (reqConfig.disconnect) {
+    description.disconnect = true
+  } else if (reqConfig.response_body && !noBodyStatus.has(response.statusCode)) {
+    description.body = reqConfig.response_body
+  }
+  return description
 }
