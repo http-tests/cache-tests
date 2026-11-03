@@ -2,17 +2,16 @@
 
 import '../../asset/marked.min.js'
 import * as display from './display.mjs'
-import { testLookup } from './results.mjs'
+import { parseResults, testLookup } from './results.mjs'
 
-export function loadResults (index, traces = {}) {
+export function loadResults (index) {
   return Promise.all(index.map(item =>
     fetch(`results/${item.file}`)
       .then(response => {
         return response.json()
       })
       .then(results => {
-        item.results = results
-        item.traces = traces[item.file]
+        Object.assign(item, parseResults(results))
         return item
       }
       ))

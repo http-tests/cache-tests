@@ -87,10 +87,7 @@ function test_proxy {
   echo "* ${PKG} $(docker container exec tmp_proxies /usr/bin/apt-cache show ${PKG} | grep Version)"
 
   if [[ -z "${TEST_ID}" ]]; then
-    TRACES=$(mktemp)
-    npm run --silent cli --base=http://localhost:${PROXY_PORT} --traces="${TRACES}" > "results/${PROXY}.json"
-    npm run --silent embed-traces -- "results/${PROXY}.json" "${TRACES}"
-    rm -f "${TRACES}"
+    npm run --silent cli --base=http://localhost:${PROXY_PORT} > "results/${PROXY}.json"
   else
     npm run --silent cli --base=http://localhost:${PROXY_PORT} --id="${TEST_ID}"
   fi

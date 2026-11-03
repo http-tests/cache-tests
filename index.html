@@ -35,8 +35,7 @@
       const key = document.getElementById('key')
 
       display.showKey(key)
-      const traces = JSON.parse(document.getElementById('traces').textContent)
-      summary.loadResults(index, traces)
+      summary.loadResults(index)
       .then(results => {
         if (isDefault) {
           summary.showToC(ToC, baseTests)
@@ -94,10 +93,5 @@
       <table id="target">
       </table>
     </form>
-
-    <!-- Request/response traces for each results file; written by test-engine/embed-traces.mjs. -->
-    <script type="application/json" id="traces">
-{}
-</script>
   </body>
 </html>

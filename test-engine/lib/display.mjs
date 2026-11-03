@@ -4,7 +4,7 @@ import '../../asset/marked.min.js'
 import { Liquid } from '../../asset/liquid.browser.esm.mjs'
 import { modalOpen } from './modal.mjs'
 
-import { determineTestResult, resultTypes, testLookup } from './results.mjs'
+import { determineTestResult, resultTypes, serializeResults, testLookup } from './results.mjs'
 
 const templateEngine = new Liquid({ root: 'test-engine/lib/tpl', extname: '.liquid', cache: true })
 templateEngine.registerFilter('typeof', v => typeof (v))
@@ -17,8 +17,8 @@ templateEngine.registerFilter('skipHeaders', v => {
   }
 })
 
-export function downloadTestResults (target, fileName, data, auto, indent = 2) {
-  const dataBlob = new Blob([JSON.stringify(data, null, indent)], { type: 'text/json' })
+export function downloadTestResults (target, fileName, results, traces, auto) {
+  const dataBlob = new Blob([serializeResults(results, traces)], { type: 'text/json' })
   target.setAttribute('href', window.URL.createObjectURL(dataBlob))
   target.setAttribute('download', fileName)
   target.style.display = 'inherit'

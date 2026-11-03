@@ -12,6 +12,24 @@ export const resultTypes = {
 }
 const passTypes = [resultTypes.pass, resultTypes.yes]
 
+// Traces live in the results file under this key, beside the test results. It can't collide
+// with a test ID.
+const tracesKey = '_traces'
+
+// Test results are pretty-printed; traces get one compact line per test to keep the file
+// diffable without ballooning it.
+export function serializeResults (results, traces) {
+  const body = JSON.stringify(results, null, 2)
+  if (!traces || Object.keys(traces).length === 0) return body
+  const lines = Object.entries(traces).map(([id, trace]) => `    ${JSON.stringify(id)}: ${JSON.stringify(trace)}`)
+  return body.replace(/\n}$/, `,\n  "${tracesKey}": {\n${lines.join(',\n')}\n  }\n}`)
+}
+
+export function parseResults (json) {
+  const { [tracesKey]: traces, ...results } = json
+  return { results, traces }
+}
+
 export function determineTestResult (testSuites, testId, testResults, honorDependencies = true) {
   const test = testLookup(testSuites, testId)
   const result = testResults[testId]

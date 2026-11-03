@@ -26,9 +26,7 @@
             auto = true
           }
           let downloadTarget = document.getElementById('download')
-          display.downloadTestResults(downloadTarget, filename, getResults(), auto)
-          let tracesTarget = document.getElementById('download-traces')
-          display.downloadTestResults(tracesTarget, filename.replace(/\.json$/, '.traces.json'), getTraces(), false, 0)
+          display.downloadTestResults(downloadTarget, filename, getResults(), getTraces(), auto)
         })
     </script>
   </head>
@@ -46,7 +44,6 @@
     test UUID (for finding it in the browser networking tab or proxy logs).</i></p>
 
     <p><a id="download">Download results (JSON)</a></p>
-    <p><a id="download-traces" style="display: none">Download traces (JSON)</a></p>
 
     <div id="results"></div>
   </body>
