@@ -335,6 +335,7 @@ function checkServerRequests (requests, responses, serverState) {
     })
     if ('expected_request_headers' in reqConfig) {
       const reqPresentSetup = setupCheck(reqConfig, 'expected_request_headers')
+      assert(reqPresentSetup, typeof (serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
       reqConfig.expected_request_headers.forEach(header => {
         if (typeof header === 'string') {
           const headerName = header.toLowerCase()
@@ -349,6 +350,7 @@ function checkServerRequests (requests, responses, serverState) {
     }
     if ('expected_request_headers_missing' in reqConfig) {
       const reqmPresentSetup = setupCheck(reqConfig, 'expected_request_headers_missing')
+      assert(reqmPresentSetup, typeof (serverRequest) !== 'undefined', `request ${reqNum} wasn't sent to server`)
       reqConfig.expected_request_headers_missing.forEach(header => {
         if (typeof header === 'string') {
           const headerName = header.toLowerCase()
