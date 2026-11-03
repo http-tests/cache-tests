@@ -82,7 +82,8 @@ export function traceBody (body, uuid) {
 //   uuid: the test's UUID, so URLs to it can be elided
 //   now:  the server's clock (ms) that dates are relative to
 //   sent: headers the test itself sent; those are its own data, so aren't elided
-export function traceHeaders (headers, { uuid, now, sent = {} } = {}) {
+//   elide: false for headers that are all the test's own, like its request
+export function traceHeaders (headers, { uuid, now, sent = {}, elide: doElide = true } = {}) {
   const entries = Array.isArray(headers)
     ? headers
     : (typeof headers.entries === 'function' ? Array.from(headers.entries()) : Object.entries(headers))
@@ -96,7 +97,7 @@ export function traceHeaders (headers, { uuid, now, sent = {} } = {}) {
     if ((key === 'pragma' && value === 'foo') || (key === 'cache-control' && value === 'nothing-to-see-here')) continue
     if (defines.dateHeaders.has(key)) value = normaliseDate(key, value, now)
     if (testUrl) value = value.replace(testUrl, '[test URL]')
-    if (!(key in sent)) value = elide(key, value)
+    if (doElide && !(key in sent)) value = elide(key, value)
     out[key] = key in out ? `${out[key]}, ${value}` : value
   }
   return out

@@ -23,7 +23,8 @@ export function serializeResults (results, traces) {
   if (!traces || Object.keys(traces).length === 0) return body
   const lines = Object.entries(traces).map(([id, trace]) => `    ${JSON.stringify(id)}: ${JSON.stringify(trace)}`)
   const section = `  "${tracesKey}": {\n${lines.join(',\n')}\n  }`
-  return body === '{}' ? `{\n${section}\n}` : body.replace(/\n}$/, `,\n${section}\n}`)
+  // a function replacement, as the section can contain '$' sequences that a string would interpret
+  return body === '{}' ? `{\n${section}\n}` : body.replace(/\n}$/, () => `,\n${section}\n}`)
 }
 
 export function parseResults (json) {

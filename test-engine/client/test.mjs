@@ -49,7 +49,7 @@ export async function makeTest (test) {
         if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
         const traceEntry = {
           req: [init.method || 'GET', url.slice(url.indexOf(uuid) + uuid.length),
-            traceHeaders(init.headers, { uuid, now: serverNows[idx - 1] })]
+            traceHeaders(init.headers, { uuid, now: serverNows[idx - 1], elide: false })]
         }
         trace.client[idx] = traceEntry
         return fetch(url, init)
