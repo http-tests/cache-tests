@@ -4,7 +4,8 @@
 
 set -euo pipefail
 
-PORT=8000
+# Uncommon port, so service workers etc. from other local apps on 8000 don't interfere.
+PORT=22243
 DOWNLOADS=~/Downloads
 PIDFILE=/tmp/http-cache-test-server.pid
 
