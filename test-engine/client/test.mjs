@@ -91,11 +91,15 @@ export async function makeTest (test) {
   }
 
   function recordOrigin (serverState) {
-    trace.origin = serverState.map(item => ({
-      n: item.request_num,
-      method: item.request_method,
-      headers: traceHeaders(item.request_headers, { uuid, now: serverNows[item.request_num - 2], sent: trace.client[item.request_num - 1]?.req[2] })
-    }))
+    trace.origin = serverState.map(item => {
+      const entry = {
+        n: item.request_num,
+        method: item.request_method,
+        headers: traceHeaders(item.request_headers, { uuid, now: serverNows[item.request_num - 2], sent: trace.client[item.request_num - 1]?.req[2] })
+      }
+      // absent when the server is too old to report it
+      return item.response ? { ...entry, ...originResponse(uuid, item.response) } : entry
+    })
   }
 
   return clientUtils.putTestConfig(uuid, requests)
@@ -120,6 +124,16 @@ export async function makeTest (test) {
         return clientUtils.getServerState(uuid).then(recordOrigin).catch(() => {})
       }
     })
+}
+
+// the origin's response is the test's own data, so only dates and test URLs are normalised
+function originResponse (uuid, { status, headers, interim, body, disconnect }) {
+  const options = { uuid, now: parseInt(headers['server-now']), elide: false }
+  const res = { res: [status, traceHeaders(headers, options)] }
+  if (interim) res.interim = interim.map(([interimStatus, interimHeaders]) => [interimStatus, traceHeaders(interimHeaders, options)])
+  if (body !== undefined) res.body = traceBody(body, uuid)
+  if (disconnect) res.disconnect = true
+  return res
 }
 
 function checkResponse (test, requests, idx, response, interimResponses, traceEntry) {

@@ -138,6 +138,17 @@ function traceHeaderLines (headers, failure, matchesBlock) {
   return lines
 }
 
+function originSentLines (item) {
+  const lines = []
+  for (const [interimStatus, interimHeaders] of item.interim || []) {
+    lines.push(traceLine(`HTTP ${interimStatus}`), ...traceHeaderLines(interimHeaders, null, false))
+  }
+  lines.push(traceLine(`HTTP ${item.res[0]}`), ...traceHeaderLines(item.res[1], null, false))
+  if (item.body !== undefined) lines.push(traceLine(`body: ${JSON.stringify(item.body)}`))
+  if (item.disconnect) lines.push(traceLine('(closed the connection)', 'muted'))
+  return lines
+}
+
 function traceBlock (label, lines) {
   return `<div class="trace-label">${label}</div><pre>${lines.join('')}</pre>`
 }
@@ -171,6 +182,22 @@ export function showTestTrace (test, subject, result, resultValue, trace) {
       ...traceHeaderLines(reqHeaders, null, false)
     ])
 
+    if (trace.origin) {
+      const seen = trace.origin.filter(item => item.n === n)
+      const lines = []
+      if (seen.length === 0) {
+        lines.push(traceLine('(not seen by origin)', originFailure && failure.notSent ? 'hl muted' : 'muted'))
+      }
+      seen.forEach(item => {
+        lines.push(traceLine(item.method, originFailure && failure.method ? 'hl' : ''))
+        lines.push(...traceHeaderLines(item.headers, failure, originFailure))
+      })
+      html += traceBlock('Origin received', lines)
+      seen.filter(item => item.res).forEach(item => {
+        html += traceBlock('Origin sent', originSentLines(item))
+      })
+    }
+
     if (entry.res) {
       const [status, resHeaders] = entry.res
       const lines = []
@@ -187,19 +214,6 @@ export function showTestTrace (test, subject, result, resultValue, trace) {
     } else {
       const stoppedHere = message && !failure && n === trace.client.length
       html += traceBlock('Client received', [traceLine('(no response)', stoppedHere ? 'hl muted' : 'muted')])
-    }
-
-    if (trace.origin) {
-      const seen = trace.origin.filter(item => item.n === n)
-      const lines = []
-      if (seen.length === 0) {
-        lines.push(traceLine('(not seen by origin)', originFailure && failure.notSent ? 'hl muted' : 'muted'))
-      }
-      seen.forEach(item => {
-        lines.push(traceLine(item.method, originFailure && failure.method ? 'hl' : ''))
-        lines.push(...traceHeaderLines(item.headers, failure, originFailure))
-      })
-      html += traceBlock('Origin received', lines)
     }
   })
 
