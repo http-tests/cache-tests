@@ -149,6 +149,10 @@ function originSentLines (item) {
   return lines
 }
 
+function traceNote (text) {
+  return `<div class="trace-note">${escapeHtml(text)}</div>`
+}
+
 function traceBlock (label, lines) {
   return `<div class="trace-label">${label}</div><pre>${lines.join('')}</pre>`
 }
@@ -177,10 +181,10 @@ export function showTestTrace (test, subject, result, resultValue, trace) {
     html += `<h3>Request ${n}</h3>`
 
     const [method, suffix, reqHeaders] = entry.req
-    html += traceBlock('Client sent', [
-      traceLine(`${method} [test URL]${suffix}`),
-      ...traceHeaderLines(reqHeaders, null, false)
-    ])
+    const sentLines = [traceLine(`${method} [test URL]${suffix}`), ...traceHeaderLines(reqHeaders, null, false)]
+    if (entry.reqBody !== undefined) sentLines.push(traceLine(`body: ${JSON.stringify(entry.reqBody)}`))
+    if (entry.reqOptions) sentLines.push(traceLine(`fetch options: ${JSON.stringify(entry.reqOptions)}`, 'muted'))
+    html += traceBlock('Client sent', sentLines)
 
     if (trace.origin) {
       const seen = trace.origin.filter(item => item.n === n)
@@ -193,9 +197,12 @@ export function showTestTrace (test, subject, result, resultValue, trace) {
         lines.push(...traceHeaderLines(item.headers, failure, originFailure))
       })
       html += traceBlock('Origin received', lines)
+      if (entry.delay) html += traceNote(`Origin waited ${entry.delay} seconds before responding`)
       seen.filter(item => item.res).forEach(item => {
         html += traceBlock('Origin sent', originSentLines(item))
       })
+    } else if (entry.delay) {
+      html += traceNote(`Origin waited ${entry.delay} seconds before responding`)
     }
 
     if (entry.res) {
@@ -215,6 +222,7 @@ export function showTestTrace (test, subject, result, resultValue, trace) {
       const stoppedHere = message && !failure && n === trace.client.length
       html += traceBlock('Client received', [traceLine('(no response)', stoppedHere ? 'hl muted' : 'muted')])
     }
+    if (entry.pause) html += traceNote(`Client waited ${entry.pause} seconds before the next request`)
   })
 
   const unmatched = (trace.origin || []).filter(item => !(item.n >= 1 && item.n <= trace.client.length))

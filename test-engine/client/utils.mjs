@@ -2,11 +2,13 @@ import * as config from './config.mjs'
 import * as utils from '../lib/utils.mjs'
 import * as defines from '../lib/defines.mjs'
 
+export const pauseSeconds = 3
+
 export function pause () {
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
       return resolve()
-    }, 3000)
+    }, pauseSeconds * 1000)
   })
 }
 

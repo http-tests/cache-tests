@@ -2,8 +2,9 @@ import * as defines from '../lib/defines.mjs'
 
 // Traces end up in public results files, and in git. These rules keep them stable between runs
 // (dates, UUIDs, per-request identifiers) and free of details of the machines and networks the
-// tests ran on (hosts, addresses, browser identity). The elision rules are a denylist, so
-// they can't catch everything a proxy or CDN decides to add.
+// tests ran on (hosts, addresses, cookies). The device under test isn't a secret, so its
+// User-Agent and the like are kept. The elision rules are a denylist, so they can't catch
+// everything a proxy or CDN decides to add.
 
 // Tests use offsets of at most a month or so; anything further out is a literal date.
 const MAX_OFFSET = 365 * 24 * 3600
@@ -21,8 +22,22 @@ const hostHeaders = new Set(['host', 'x-forwarded-host'])
 // differ on every request
 const idHeaders = new Set(['x-request-id', 'x-correlation-id', 'x-trace-id', 'x-amzn-trace-id', 'x-amz-cf-id', 'x-amz-request-id', 'x-cloud-trace-context', 'x-b3-traceid', 'x-b3-spanid', 'traceparent', 'tracestate', 'cf-ray', 'x-varnish', 'x-served-by', 'x-akamai-request-id', 'x-edge-request-id'])
 const timingHeaders = new Set(['server-timing', 'x-response-time', 'x-runtime', 'x-timer', 'x-envoy-upstream-service-time'])
-// identify the browser or its user
-const redactedHeaders = new Set(['user-agent', 'accept-language', 'cookie'])
+// may carry identifiers from the test environment
+const redactedHeaders = new Set(['cookie'])
+
+// the test's identity is in the page already; see fetching.init() for the Pragma and Cache-Control
+// values, which defeat browser caching and may be joined to the test's own by the time they arrive
+const cacheDefeaters = { pragma: 'foo', 'cache-control': 'nothing-to-see-here' }
+
+function hiddenRequestHeader (key) {
+  return key === 'test-id' || key === 'test-name'
+}
+
+function withoutCacheDefeater (key, value) {
+  const defeater = cacheDefeaters[key]
+  if (defeater === undefined) return value
+  return value === defeater ? '' : value.replace(new RegExp(`^${defeater}, `), '')
+}
 
 function parseHttpDate (value) {
   let match = imfDate.exec(value)
@@ -68,7 +83,7 @@ function elide (name, value) {
   }
   if (idHeaders.has(name)) return '[id]'
   if (timingHeaders.has(name)) return '[time]'
-  if (redactedHeaders.has(name) || name.startsWith('sec-ch-ua')) return '[redacted]'
+  if (redactedHeaders.has(name)) return '[redacted]'
   return value.replace(ipv4, '[ip]').replace(ipv6, '[ip]')
 }
 
@@ -83,7 +98,9 @@ export function traceBody (body, uuid) {
 //   now:  the server's clock (ms) that dates are relative to
 //   sent: headers the test itself sent; those are its own data, so aren't elided
 //   elide: false for headers that are all the test's own, like its request
-export function traceHeaders (headers, { uuid, now, sent = {}, elide: doElide = true } = {}) {
+//   request: true for a request, where only the headers identifying the test are hidden (the
+//            rest, like Req-Num, are sent to the origin); otherwise the server's harness headers are
+export function traceHeaders (headers, { uuid, now, sent = {}, elide: doElide = true, request = false } = {}) {
   const entries = Array.isArray(headers)
     ? headers
     : (typeof headers.entries === 'function' ? Array.from(headers.entries()) : Object.entries(headers))
@@ -92,9 +109,8 @@ export function traceHeaders (headers, { uuid, now, sent = {}, elide: doElide = 
   for (const [name, rawValue] of entries) {
     const key = name.toLowerCase()
     let value = Array.isArray(rawValue) ? rawValue.join(', ') : String(rawValue)
-    if (defines.harnessHeaders.has(key)) continue
-    // see fetching.init(); these defeat browser caching and are always sent
-    if ((key === 'pragma' && value === 'foo') || (key === 'cache-control' && value === 'nothing-to-see-here')) continue
+    if (request) value = withoutCacheDefeater(key, value)
+    if (request ? hiddenRequestHeader(key) || value === '' : defines.harnessHeaders.has(key)) continue
     if (defines.dateHeaders.has(key)) value = normaliseDate(key, value, now)
     if (testUrl) value = value.replace(testUrl, '[test URL]')
     if (doElide && !(key in sent)) value = elide(key, value)

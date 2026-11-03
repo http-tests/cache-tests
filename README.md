@@ -135,7 +135,7 @@ To test a reverse proxy or CDN from the command line:
 
 ... using the URL of the server you want to test. This will output the test results in JSON to STDOUT, suitable for inclusion in the `results` directory. See `lib/summary.mjs` for details of how to interpret that.
 
-The results also include the requests and responses each test saw (what the client sent and received, and what the origin received and sent), under a `_traces` key; they're shown when clicking on a result in the HTML results. Dates, test URLs, hosts, IP addresses, per-request identifiers and browser identity are normalised or elided (see `test-engine/client/trace.mjs`), but that's a denylist and can't catch everything a proxy or CDN adds, so skim the `_traces` diff before committing a proxy's results.
+The results also include the requests and responses each test saw (what the client sent and received, and what the origin received and sent), under a `_traces` key; they're shown when clicking on a result in the HTML results. Dates, test URLs, hosts, IP addresses, per-request identifiers and cookies are normalised or elided (see `test-engine/client/trace.mjs`), but that's a denylist and can't catch everything a proxy or CDN adds, so skim the `_traces` diff before committing a proxy's results.
 
 To run a single test, use:
 

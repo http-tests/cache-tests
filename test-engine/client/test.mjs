@@ -49,8 +49,12 @@ export async function makeTest (test) {
         if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
         const traceEntry = {
           req: [init.method || 'GET', url.slice(url.indexOf(uuid) + uuid.length),
-            traceHeaders(init.headers, { uuid, now: serverNows[idx - 1], elide: false })]
+            traceHeaders(init.headers, { uuid, now: serverNows[idx - 1], elide: false, request: true })]
         }
+        if ('request_body' in reqConfig) traceEntry.reqBody = traceBody(String(init.body), uuid)
+        const fetchOptions = ['mode', 'credentials', 'cache', 'redirect'].filter(name => name in reqConfig)
+        if (fetchOptions.length) traceEntry.reqOptions = Object.fromEntries(fetchOptions.map(name => [name, init[name]]))
+        if ('response_pause' in reqConfig) traceEntry.delay = reqConfig.response_pause
         trace.client[idx] = traceEntry
         return fetch(url, init)
           .then(response => {
@@ -76,7 +80,9 @@ export async function makeTest (test) {
     if (fetchFunctions.length) {
       const nextFetchFunction = fetchFunctions.shift()
       if (nextFetchFunction.pauseAfter === true) {
-        return nextFetchFunction.code(idx++)
+        const n = idx++
+        return nextFetchFunction.code(n)
+          .then(() => { trace.client[n].pause = clientUtils.pauseSeconds })
           .then(clientUtils.pause)
           .then(runNextStep)
       } else {
@@ -95,7 +101,7 @@ export async function makeTest (test) {
       const entry = {
         n: item.request_num,
         method: item.request_method,
-        headers: traceHeaders(item.request_headers, { uuid, now: serverNows[item.request_num - 2], sent: trace.client[item.request_num - 1]?.req[2] })
+        headers: traceHeaders(item.request_headers, { uuid, now: serverNows[item.request_num - 2], sent: trace.client[item.request_num - 1]?.req[2], request: true })
       }
       // absent when the server is too old to report it
       return item.response ? { ...entry, ...originResponse(uuid, item.response) } : entry

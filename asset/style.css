@@ -142,14 +142,16 @@ pre code {
 }
 
 .modal-exit {
-  position: absolute;
-  right: 15px;
-  top: 15px;
+  position: sticky;
+  float: right;
+  top: 0;
+  z-index: 1;
   outline: none;
   appearance: none;
   color: red;
-  background: none;
+  background: #fafafa;
   border: 0px;
+  border-radius: 0.3em;
   font-weight: bold;
   font-size: 1.5em;
   cursor: pointer;
@@ -202,6 +204,12 @@ pre code {
   margin: 0;
   overflow-x: auto;
   padding: 0.4em 0;
+}
+
+.trace-note {
+  color: #666;
+  font-style: italic;
+  margin: 0.4em 0 0.4em 1em;
 }
 
 .trace .line {
