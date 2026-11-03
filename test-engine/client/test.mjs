@@ -4,6 +4,7 @@ import * as utils from '../lib/utils.mjs'
 import * as config from './config.mjs'
 import * as clientUtils from './utils.mjs'
 import * as fetching from './fetching.mjs'
+import { traceBody, traceHeaders } from './trace.mjs'
 const assert = utils.assert
 const setupCheck = clientUtils.setupCheck
 
@@ -18,6 +19,7 @@ export async function makeTest (test) {
   testTraces[test.id] = trace
   const requests = fetching.inflateRequests(test)
   const responses = []
+  const serverNows = [] // the server's clock for each response, which trace dates are relative to
   const fetchFunctions = []
   for (let i = 0; i < requests.length; ++i) {
     fetchFunctions.push({
@@ -46,15 +48,18 @@ export async function makeTest (test) {
 
         if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
         const traceEntry = {
-          req: [init.method || 'GET', url.slice(url.indexOf(uuid) + uuid.length), clientUtils.traceHeaders(init.headers)]
+          req: [init.method || 'GET', url.slice(url.indexOf(uuid) + uuid.length),
+            traceHeaders(init.headers, { uuid, now: serverNows[idx - 1] })]
         }
         trace.client[idx] = traceEntry
         return fetch(url, init)
           .then(response => {
             responses.push(response)
-            traceEntry.res = [response.status, clientUtils.traceHeaders(response.headers)]
+            const now = parseInt(response.headers.get('Server-Now'))
+            serverNows[idx] = now
+            traceEntry.res = [response.status, traceHeaders(response.headers, { uuid, now })]
             if (interimResponses.length) {
-              traceEntry.interim = interimResponses.map(([status, headers]) => [status, clientUtils.traceHeaders(headers)])
+              traceEntry.interim = interimResponses.map(([status, headers]) => [status, traceHeaders(headers, { uuid, now })])
             }
             return checkResponse(test, requests, idx, response, interimResponses, traceEntry)
           })
@@ -89,7 +94,7 @@ export async function makeTest (test) {
     trace.origin = serverState.map(item => ({
       n: item.request_num,
       method: item.request_method,
-      headers: clientUtils.traceHeaders(item.request_headers)
+      headers: traceHeaders(item.request_headers, { uuid, now: serverNows[item.request_num - 2], sent: trace.client[item.request_num - 1]?.req[2] })
     }))
   }
 
@@ -258,7 +263,7 @@ function checkResponse (test, requests, idx, response, interimResponses, traceEn
 function makeCheckResponseBody (test, reqConfig, statusCode, traceEntry) {
   return function checkResponseBody (resBody) {
     // the usual body is the test's UUID; only record the unusual
-    if (resBody !== '' && resBody !== testUUIDs[test.id]) traceEntry.body = resBody.slice(0, 1000)
+    if (resBody !== '' && resBody !== testUUIDs[test.id]) traceEntry.body = traceBody(resBody, testUUIDs[test.id])
     if ('check_body' in reqConfig && reqConfig.check_body === false) {
       return true
     } else if ('expected_response_text' in reqConfig) {
