@@ -4,17 +4,22 @@ import * as utils from '../lib/utils.mjs'
 import * as config from './config.mjs'
 import * as clientUtils from './utils.mjs'
 import * as fetching from './fetching.mjs'
+import { traceBody, traceHeaders } from './trace.mjs'
 const assert = utils.assert
 const setupCheck = clientUtils.setupCheck
 
 export const testUUIDs = {}
 export const testResults = {}
+export const testTraces = {}
 
 export async function makeTest (test) {
   const uuid = utils.token()
   testUUIDs[test.id] = uuid
+  const trace = { client: [] }
+  testTraces[test.id] = trace
   const requests = fetching.inflateRequests(test)
   const responses = []
+  const serverNows = [] // the server's clock for each response, which trace dates are relative to
   const fetchFunctions = []
   for (let i = 0; i < requests.length; ++i) {
     fetchFunctions.push({
@@ -42,10 +47,25 @@ export async function makeTest (test) {
         }
 
         if (test.dump === true) clientUtils.logRequest(url, init, reqNum)
+        const traceEntry = {
+          req: [init.method || 'GET', url.slice(url.indexOf(uuid) + uuid.length),
+            traceHeaders(init.headers, { uuid, now: serverNows[idx - 1], elide: false, request: true })]
+        }
+        if ('request_body' in reqConfig) traceEntry.reqBody = traceBody(String(init.body), uuid)
+        const fetchOptions = ['mode', 'credentials', 'cache', 'redirect'].filter(name => name in reqConfig)
+        if (fetchOptions.length) traceEntry.reqOptions = Object.fromEntries(fetchOptions.map(name => [name, init[name]]))
+        if ('response_pause' in reqConfig) traceEntry.delay = reqConfig.response_pause
+        trace.client[idx] = traceEntry
         return fetch(url, init)
           .then(response => {
             responses.push(response)
-            return checkResponse(test, requests, idx, response, interimResponses)
+            const now = parseInt(response.headers.get('Server-Now'))
+            serverNows[idx] = now
+            traceEntry.res = [response.status, traceHeaders(response.headers, { uuid, now })]
+            if (interimResponses.length) {
+              traceEntry.interim = interimResponses.map(([status, headers]) => [status, traceHeaders(headers, { uuid, now })])
+            }
+            return checkResponse(test, requests, idx, response, interimResponses, traceEntry)
           })
           .finally(() => {
             clearTimeout(timeout)
@@ -60,7 +80,9 @@ export async function makeTest (test) {
     if (fetchFunctions.length) {
       const nextFetchFunction = fetchFunctions.shift()
       if (nextFetchFunction.pauseAfter === true) {
-        return nextFetchFunction.code(idx++)
+        const n = idx++
+        return nextFetchFunction.code(n)
+          .then(() => { trace.client[n].pause = clientUtils.pauseSeconds })
           .then(clientUtils.pause)
           .then(runNextStep)
       } else {
@@ -74,6 +96,18 @@ export async function makeTest (test) {
     console.error(`ERROR: ${uuid} ${err.name} ${err.message}`)
   }
 
+  function recordOrigin (serverState) {
+    trace.origin = serverState.map(item => {
+      const entry = {
+        n: item.request_num,
+        method: item.request_method,
+        headers: traceHeaders(item.request_headers, { uuid, now: serverNows[item.request_num - 2], sent: trace.client[item.request_num - 1]?.req[2], request: true })
+      }
+      // absent when the server is too old to report it
+      return item.response ? { ...entry, ...originResponse(uuid, item.response) } : entry
+    })
+  }
+
   return clientUtils.putTestConfig(uuid, requests)
     .catch(handleError)
     .then(runNextStep)
@@ -81,6 +115,7 @@ export async function makeTest (test) {
       return clientUtils.getServerState(uuid)
     })
     .then(serverState => {
+      recordOrigin(serverState)
       checkServerRequests(requests, responses, serverState)
     })
     .then(() => { // pass
@@ -90,10 +125,24 @@ export async function makeTest (test) {
     .catch(err => { // fail
       if (test.id in testResults) throw new Error(`Duplicate test ${test.id}`)
       testResults[test.id] = [(err.name || 'unknown'), err.message]
+      // an early failure skips the server state; fetch it for the trace
+      if (!trace.origin) {
+        return clientUtils.getServerState(uuid).then(recordOrigin).catch(() => {})
+      }
     })
 }
 
-function checkResponse (test, requests, idx, response, interimResponses) {
+// the origin's response is the test's own data, so only dates and test URLs are normalised
+function originResponse (uuid, { status, headers, interim, body, disconnect }) {
+  const options = { uuid, now: parseInt(headers['server-now']), elide: false }
+  const res = { res: [status, traceHeaders(headers, options)] }
+  if (interim) res.interim = interim.map(([interimStatus, interimHeaders]) => [interimStatus, traceHeaders(interimHeaders, options)])
+  if (body !== undefined) res.body = traceBody(body, uuid)
+  if (disconnect) res.disconnect = true
+  return res
+}
+
+function checkResponse (test, requests, idx, response, interimResponses, traceEntry) {
   const reqNum = idx + 1
   const reqConfig = requests[idx]
   const resNum = parseInt(response.headers.get('Server-Request-Count'))
@@ -228,11 +277,13 @@ function checkResponse (test, requests, idx, response, interimResponses) {
       `Received ${interimResponses.length} interim response(s), expected ${reqConfig.expected_interim_responses.length}`)
   }
 
-  return response.text().then(makeCheckResponseBody(test, reqConfig, response.status))
+  return response.text().then(makeCheckResponseBody(test, reqConfig, response.status, traceEntry))
 }
 
-function makeCheckResponseBody (test, reqConfig, statusCode) {
+function makeCheckResponseBody (test, reqConfig, statusCode, traceEntry) {
   return function checkResponseBody (resBody) {
+    // the usual body is the test's UUID; only record the unusual
+    if (resBody !== '' && resBody !== testUUIDs[test.id]) traceEntry.body = traceBody(resBody, testUUIDs[test.id])
     if ('check_body' in reqConfig && reqConfig.check_body === false) {
       return true
     } else if ('expected_response_text' in reqConfig) {

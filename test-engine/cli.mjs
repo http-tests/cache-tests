@@ -1,5 +1,5 @@
-import { runTests, getResults } from './client/runner.mjs'
-import { determineTestResult } from './lib/results.mjs'
+import { runTests, getResults, getTraces } from './client/runner.mjs'
+import { determineTestResult, serializeResults } from './lib/results.mjs'
 import { GREEN, NC } from './lib/defines.mjs'
 import tests from '../tests/index.mjs'
 
@@ -39,5 +39,5 @@ if (testId !== '') {
   const resultDetails = results[testId][1] || ''
   console.log(`${resultSymbol[2]} - ${resultDetails}`)
 } else {
-  console.log(JSON.stringify(results, null, 2))
+  console.log(serializeResults(results, getTraces()))
 }

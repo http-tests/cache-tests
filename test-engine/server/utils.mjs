@@ -45,7 +45,7 @@ export function logResponse (response, interimResponses, resNum) {
   if (response === 'disconnect') {
     console.log('    [ server disconnect ]')
   } else {
-    for (const [statusCode, headers] of interimResponses) {
+    for (const [statusCode, headers = []] of interimResponses) {
       console.log(`    HTTP ${statusCode}`)
       for (const [key, value] of headers) {
         console.log(`    ${key}: ${value}`)

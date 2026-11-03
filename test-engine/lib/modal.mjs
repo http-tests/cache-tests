@@ -15,7 +15,7 @@ export function modalOpen (content) {
     event.preventDefault()
     modal.classList.remove('modal-open')
   })
-  modal.appendChild(closeButton)
+  modal.prepend(closeButton)
   document.body.appendChild(modal)
   document.onkeydown = function (evt) {
     evt = evt || window.event

@@ -2,7 +2,7 @@
 
 import '../../asset/marked.min.js'
 import * as display from './display.mjs'
-import { testLookup } from './results.mjs'
+import { parseResults, testLookup } from './results.mjs'
 
 export function loadResults (index) {
   return Promise.all(index.map(item =>
@@ -11,7 +11,7 @@ export function loadResults (index) {
         return response.json()
       })
       .then(results => {
-        item.results = results
+        Object.assign(item, parseResults(results))
         return item
       }
       ))
@@ -94,8 +94,9 @@ function showTest (testSuites, testId, results) {
   testRow.appendChild(tableCell('td', testSelector(test.id)))
   testRow.appendChild(tableCell('th', display.showTestName(test), 'name'))
   results.forEach(implementation => {
+    const subject = [implementation.name, implementation.version].filter(Boolean).join(' ')
     testRow.appendChild(
-      tableCell('th', display.showTestResult(testSuites, test.id, implementation.results)))
+      tableCell('th', display.showTestResult(testSuites, test.id, implementation.results, implementation.traces, subject)))
   })
   return testRow
 }

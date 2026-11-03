@@ -91,6 +91,7 @@ function test_proxy {
   fi
 
   if [[ -z "${TEST_ID}" ]]; then
+    mkdir -p results
     npm run --silent cli --base=http://localhost:${PROXY_PORT} > "results/${PROXY}.json"
   else
     npm run --silent cli --base=http://localhost:${PROXY_PORT} --id="${TEST_ID}"

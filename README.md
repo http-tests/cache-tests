@@ -38,7 +38,7 @@ Therefore, if you believe a test should change (based upon common behaviour or y
 
 ## Installation
 
-The tests require a recent version of [NodeJS](https://nodejs.org/) (14.8.0 or greater), which includes the `npm` package manager.
+The tests require a recent version of [NodeJS](https://nodejs.org/) (22.19.0 or greater), which includes the `npm` package manager.
 
 To install the most recent source from GitHub (*recommended; things are moving fast*):
 
@@ -54,7 +54,7 @@ Alternatively, for the most recent release:
 
 > npm i --legacy-bundling http-cache-tests
 
-Note that the version in the registry is not necessarily up-to-date.
+Note that the version in the registry is not necessarily up-to-date. The package has what you need to run the server, the command-line client, the browser tests and the scripts below, and to view results locally (`index.html`, the `results` directory and the annotated specification), but not the Docker image's build files or the specification's sources; the scripts that save results create a `results` directory if there isn't one.
 
 
 ## Running tests with scripts
@@ -134,6 +134,8 @@ To test a reverse proxy or CDN from the command line:
 > npm run --silent cli --base=http://server-url.example.org:8000/
 
 ... using the URL of the server you want to test. This will output the test results in JSON to STDOUT, suitable for inclusion in the `results` directory. See `lib/summary.mjs` for details of how to interpret that.
+
+The results also include the requests and responses each test saw (what the client sent and received, and what the origin received and sent), under a `_traces` key; they're shown when clicking on a result in the HTML results. Dates, test URLs, hosts, IP addresses, per-request identifiers and cookies are normalised or elided (see `test-engine/client/trace.mjs`), but that's a denylist and can't catch everything a proxy or CDN adds, so skim the `_traces` diff before committing a proxy's results.
 
 To run a single test, use:
 
