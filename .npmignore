@@ -7,10 +7,8 @@
 /spec/
 /CNAME
 
-# scripts that assume a git checkout (they write into results/ or use docker/)
+# the Docker image's build files; test-docker.sh pulls the image instead
 /docker/
-/test-browser.sh
-/test-docker.sh
 
 # repository tooling
 /.editorconfig

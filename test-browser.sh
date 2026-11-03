@@ -77,6 +77,7 @@ function test_browser {
 
   sleep 1
   if [ -f "${TARGET}" ] ; then
+    mkdir -p results
     mv "${TARGET}" results/
   fi
 

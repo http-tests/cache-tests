@@ -54,7 +54,7 @@ Alternatively, for the most recent release:
 
 > npm i --legacy-bundling http-cache-tests
 
-Note that the version in the registry is not necessarily up-to-date. The package has what you need to run the server, the command-line client and the browser tests, but not the results, the specification or the scripts that assume a clone (`test-docker.sh` and `test-browser.sh`); use the clone for those.
+Note that the version in the registry is not necessarily up-to-date. The package has what you need to run the server, the command-line client, the browser tests and the scripts below, but not the results, the specification or the Docker image's build files; the scripts that save results create a `results` directory if there isn't one.
 
 
 ## Running tests with scripts
