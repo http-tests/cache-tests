@@ -14,7 +14,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Tue, 19 Jan 2038 14:14:08 GMT', false],
+            ['Expires', 'Tue, 19 Jan 2038 03:14:08 GMT', false],
             ['Date', 0]
           ],
           setup: true,
@@ -33,7 +33,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Sun, 21 Nov 2286 04:46:39 GMT', false],
+            ['Expires', 'Sat, 20 Nov 2286 17:46:39 GMT', false],
             ['Date', 0]
           ],
           setup: true,
@@ -71,7 +71,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu Aug  8 02:01:18 2050', false],
+            ['Expires', 'Mon Aug  8 02:01:18 2050', false],
             ['Date', 0]
           ],
           setup: true,
@@ -303,6 +303,25 @@ export default
         },
         {
           expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response with a future `Expires` whose day-of-week does not match its date?',
+      id: 'freshness-expires-wrong-weekday',
+      depends_on: ['freshness-expires-future'],
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Fri, 18 Aug 2050 02:01:18 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
         }
       ]
     }
