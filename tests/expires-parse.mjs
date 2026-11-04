@@ -305,6 +305,25 @@ export default
           expected_type: 'not_cached'
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache reuse a response with a future `Expires` whose day-of-week does not match its date?',
+      id: 'freshness-expires-wrong-weekday',
+      depends_on: ['freshness-expires-future'],
+      kind: 'check',
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Fri, 18 Aug 2050 02:01:18 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
     }
   ]
 }
