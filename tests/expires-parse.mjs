@@ -71,7 +71,7 @@ export default
       requests: [
         {
           response_headers: [
-            ['Expires', 'Thu Aug  8 02:01:18 2050', false],
+            ['Expires', 'Mon Aug  8 02:01:18 2050', false],
             ['Date', 0]
           ],
           setup: true,
