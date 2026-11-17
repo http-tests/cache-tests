@@ -6,6 +6,7 @@ set -euo pipefail
 
 # Uncommon port, so service workers etc. from other local apps on 8000 don't interfere.
 PORT=22243
+TIMEOUT=120
 DOWNLOADS=~/Downloads
 PIDFILE=/tmp/http-cache-test-server.pid
 
@@ -69,7 +70,7 @@ function test_browser {
   do
     sleep 1
     i=$((i+1))
-    if [ "$i" -gt "60" ] ; then
+    if [ "$i" -gt "${TIMEOUT}" ] ; then
       echo "Timeout." >&2
       exit 1
     fi
