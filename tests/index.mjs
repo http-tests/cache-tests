@@ -8,6 +8,7 @@ import expiresParse from './expires-parse.mjs'
 import expires from './expires-freshness.mjs'
 import stale from './stale.mjs'
 import heuristic from './heuristic-freshness.mjs'
+import y2038 from './y2038.mjs'
 import methods from './method.mjs'
 import statuses from './status.mjs'
 import vary from './vary.mjs'
@@ -24,4 +25,4 @@ import other from './other.mjs'
 import cdncc from './cdn-cache-control.mjs'
 import interim from './interim.mjs'
 
-export default [ccFreshness, ccParse, ageParse, expires, expiresParse, ccResponse, stale, heuristic, methods, statuses, ccRequest, pragma, vary, varyParse, conditionalLm, conditionalEtag, headers, update304, updateHead, invalidation, partial, auth, other, cdncc, interim]
+export default [ccFreshness, ccParse, ageParse, expires, expiresParse, ccResponse, stale, heuristic, y2038, methods, statuses, ccRequest, pragma, vary, varyParse, conditionalLm, conditionalEtag, headers, update304, updateHead, invalidation, partial, auth, other, cdncc, interim]

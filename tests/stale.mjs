@@ -80,6 +80,26 @@ export default {
       ]
     },
     {
+      name: 'An optimal cache serves stale stored response with `Cache-Control: stale-while-revalidate` of `99999999999`',
+      id: 'stale-while-revalidate-99999999999',
+      kind: 'optimal',
+      depends_on: ['stale-while-revalidate'],
+      spec_anchors: ['https://www.rfc-editor.org/rfc/rfc5861.html#section-3', 'delta-seconds'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=1, stale-while-revalidate=99999999999'],
+            ['ETag', '"abc"']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not serve stale stored response after the [`stale-while-revalidate`](https://httpwg.org/specs/rfc5861.html) window',
       id: 'stale-while-revalidate-window',
       spec_anchors: ['https://www.rfc-editor.org/rfc/rfc5861.html#section-3'],
@@ -137,6 +157,27 @@ export default {
         {
           response_headers: [
             ['Cache-Control', 'max-age=2, stale-if-error=60']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          response_status: [503, 'Service Unavailable'],
+          expected_status: 200,
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache serve stale stored response when server sends `Cache-Control: stale-if-error` of `99999999999` and subsequently a `503 Service Unavailable`?',
+      id: 'stale-sie-503-99999999999',
+      kind: 'check',
+      depends_on: ['stale-sie-503'],
+      spec_anchors: ['delta-seconds'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2, stale-if-error=99999999999']
           ],
           setup: true,
           pause_after: true

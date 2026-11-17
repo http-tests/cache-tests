@@ -73,53 +73,15 @@ export default
       ]
     },
     {
-      name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 2147483647`',
-      id: 'freshness-max-age-max-minus-1',
+      name: 'An optimal HTTP cache reuses a response with a `Cache-Control: max-age` of `315360000`',
+      id: 'freshness-max-age-315360000',
       kind: 'optimal',
-      depends_on: ['freshness-none'],
-      spec_anchors: ['cache-response-directive.max-age'],
+      depends_on: ['freshness-max-age'],
+      spec_anchors: ['cache-response-directive.max-age', 'delta-seconds'],
       requests: [
         {
           response_headers: [
-            ['Cache-Control', 'max-age=2147483647']
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 2147483648`',
-      id: 'freshness-max-age-max',
-      kind: 'optimal',
-      depends_on: ['freshness-none'],
-      spec_anchors: ['cache-response-directive.max-age'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=2147483648']
-          ],
-          setup: true,
-          pause_after: true
-        },
-        {
-          expected_type: 'cached'
-        }
-      ]
-    },
-    {
-      name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 2147483649`',
-      id: 'freshness-max-age-max-plus-1',
-      kind: 'optimal',
-      depends_on: ['freshness-none'],
-      spec_anchors: ['cache-response-directive.max-age'],
-      requests: [
-        {
-          response_headers: [
-            ['Cache-Control', 'max-age=2147483649']
+            ['Cache-Control', 'max-age=315360000']
           ],
           setup: true,
           pause_after: true
@@ -139,6 +101,63 @@ export default
         {
           response_headers: [
             ['Cache-Control', 'max-age=99999999999']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal HTTP cache reuses a response with a `Cache-Control: max-age` of `9223372036854775807`',
+      id: 'freshness-max-age-9223372036854775807',
+      kind: 'optimal',
+      depends_on: ['freshness-max-age'],
+      spec_anchors: ['cache-response-directive.max-age', 'delta-seconds'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=9223372036854775807']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal HTTP cache reuses a response with a `Cache-Control: max-age` of `18446744073709551616`',
+      id: 'freshness-max-age-18446744073709551616',
+      kind: 'optimal',
+      depends_on: ['freshness-max-age'],
+      spec_anchors: ['cache-response-directive.max-age', 'delta-seconds'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=18446744073709551616']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal HTTP cache reuses a response with a `Cache-Control: max-age` of a 100-digit number',
+      id: 'freshness-max-age-100-digits',
+      kind: 'optimal',
+      depends_on: ['freshness-max-age'],
+      spec_anchors: ['cache-response-directive.max-age', 'delta-seconds'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999']
           ],
           setup: true,
           pause_after: true
@@ -179,6 +198,25 @@ export default
           response_headers: [
             ['Date', -7200],
             ['Cache-Control', 'max-age=3600']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache must not reuse a response with a `Date` of Fri, 31 Dec 9999 23:59:59 GMT (maximum HTTP-date) and `Cache-Control: max-age=2` after it becomes stale',
+      id: 'freshness-max-age-date-9999',
+      depends_on: ['freshness-max-age-stale'],
+      spec_anchors: ['cache-response-directive.max-age', 'field.date'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2'],
+            ['Date', 'Fri, 31 Dec 9999 23:59:59 GMT', false]
           ],
           setup: true,
           pause_after: true
@@ -363,6 +401,106 @@ export default
         }
       ],
       browser_skip: true
+    },
+    {
+      name: 'An optimal shared HTTP cache reuses a response with a `Cache-Control: s-maxage` of `315360000`',
+      id: 'freshness-s-maxage-315360000',
+      kind: 'optimal',
+      depends_on: ['freshness-s-maxage-shared'],
+      spec_anchors: ['cache-response-directive.s-maxage', 'delta-seconds'],
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 's-maxage=315360000']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal shared HTTP cache reuses a response with a `Cache-Control: s-maxage` of `99999999999`',
+      id: 'freshness-s-maxage-99999999999',
+      kind: 'optimal',
+      depends_on: ['freshness-s-maxage-shared'],
+      spec_anchors: ['cache-response-directive.s-maxage', 'delta-seconds'],
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 's-maxage=99999999999']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal shared HTTP cache reuses a response with a `Cache-Control: s-maxage` of `9223372036854775807`',
+      id: 'freshness-s-maxage-9223372036854775807',
+      kind: 'optimal',
+      depends_on: ['freshness-s-maxage-shared'],
+      spec_anchors: ['cache-response-directive.s-maxage', 'delta-seconds'],
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 's-maxage=9223372036854775807']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal shared HTTP cache reuses a response with a `Cache-Control: s-maxage` of `18446744073709551616`',
+      id: 'freshness-s-maxage-18446744073709551616',
+      kind: 'optimal',
+      depends_on: ['freshness-s-maxage-shared'],
+      spec_anchors: ['cache-response-directive.s-maxage', 'delta-seconds'],
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 's-maxage=18446744073709551616']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal shared HTTP cache reuses a response with a `Cache-Control: s-maxage` of a 100-digit number',
+      id: 'freshness-s-maxage-100-digits',
+      kind: 'optimal',
+      depends_on: ['freshness-s-maxage-shared'],
+      spec_anchors: ['cache-response-directive.s-maxage', 'delta-seconds'],
+      browser_skip: true,
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 's-maxage=9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
     },
     {
       name: 'Shared HTTP cache must prefer short `Cache-Control: s-maxage` over a longer `Cache-Control: max-age`',

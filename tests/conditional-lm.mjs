@@ -114,6 +114,56 @@ export default {
           setup_tests: ['expected_type']
         }
       ]
+    },
+    {
+      name: 'Does HTTP cache send `If-Modified-Since` exactly as the stored `Last-Modified` of Fri, 11 Apr 2262 23:47:16 GMT (maximum 64-bit nanosecond time) when validating?',
+      id: 'conditional-lm-validate-exact-2262',
+      kind: 'check',
+      depends_on: ['304-lm-use-stored-Test-Header'],
+      spec_anchors: ['freshening.responses'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2'],
+            ['Last-Modified', 'Fri, 11 Apr 2262 23:47:16 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          response_headers: [
+            ['Last-Modified', 'Fri, 11 Apr 2262 23:47:16 GMT', false],
+            ['Date', 0]
+          ],
+          expected_type: 'lm_validated'
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache send `If-Modified-Since` exactly as the stored `Last-Modified` of Fri, 31 Dec 9999 23:59:59 GMT (maximum HTTP-date) when validating?',
+      id: 'conditional-lm-validate-exact-9999',
+      kind: 'check',
+      depends_on: ['304-lm-use-stored-Test-Header'],
+      spec_anchors: ['freshening.responses'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=2'],
+            ['Last-Modified', 'Fri, 31 Dec 9999 23:59:59 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          response_headers: [
+            ['Last-Modified', 'Fri, 31 Dec 9999 23:59:59 GMT', false],
+            ['Date', 0]
+          ],
+          expected_type: 'lm_validated'
+        }
+      ]
     }
   ]
 }

@@ -96,6 +96,58 @@ export default
       ]
     },
     {
+      name: 'Does HTTP cache preserve `Expires` and `Last-Modified` of Fri, 11 Apr 2262 23:47:16 GMT (maximum 64-bit nanosecond time) when using a stored response?',
+      id: 'other-dates-preserved-2262',
+      kind: 'check',
+      depends_on: ['freshness-max-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600'],
+            ['Expires', 'Fri, 11 Apr 2262 23:47:16 GMT', false],
+            ['Last-Modified', 'Fri, 11 Apr 2262 23:47:16 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached',
+          expected_response_headers: [
+            ['Expires', 'Fri, 11 Apr 2262 23:47:16 GMT'],
+            ['Last-Modified', 'Fri, 11 Apr 2262 23:47:16 GMT']
+          ],
+          setup_tests: ['expected_type']
+        }
+      ]
+    },
+    {
+      name: 'Does HTTP cache preserve `Expires` and `Last-Modified` of Fri, 31 Dec 9999 23:59:59 GMT (maximum HTTP-date) when using a stored response?',
+      id: 'other-dates-preserved-9999',
+      kind: 'check',
+      depends_on: ['freshness-max-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=3600'],
+            ['Expires', 'Fri, 31 Dec 9999 23:59:59 GMT', false],
+            ['Last-Modified', 'Fri, 31 Dec 9999 23:59:59 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached',
+          expected_response_headers: [
+            ['Expires', 'Fri, 31 Dec 9999 23:59:59 GMT'],
+            ['Last-Modified', 'Fri, 31 Dec 9999 23:59:59 GMT']
+          ],
+          setup_tests: ['expected_type']
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not update the `Date` header field when `Expires` is present',
       id: 'other-date-update-expires',
       depends_on: ['freshness-expires-future'],
