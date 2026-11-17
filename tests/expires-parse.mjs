@@ -7,6 +7,25 @@ export default
   spec_anchors: ['field.expires'],
   tests: [
     {
+      name: 'An optimal HTTP cache reuses a response with an `Expires` that is far in the future',
+      id: 'freshness-expires-far-future',
+      kind: 'optimal',
+      depends_on: ['freshness-expires-future'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Sat, 20 Nov 2286 17:46:39 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'An optimal HTTP cache reuses a response with a future `Expires` in obsolete RFC 850 format',
       id: 'freshness-expires-rfc850',
       kind: 'optimal',

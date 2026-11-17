@@ -259,25 +259,6 @@ tests.push({
 })
 maxAge('4294967295')
 maxAge('4294967296')
-tests.push({
-  name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 99999999999`',
-  id: 'freshness-max-age-max-plus',
-  kind: 'optimal',
-  depends_on: ['freshness-none'],
-  spec_anchors: ['cache-response-directive.max-age'],
-  requests: [
-    {
-      response_headers: [
-        ['Cache-Control', 'max-age=99999999999']
-      ],
-      setup: true,
-      pause_after: true
-    },
-    {
-      expected_type: 'cached'
-    }
-  ]
-})
 maxAge('9223372036854775807')
 maxAge('18446744073709551616')
 maxAge('9'.repeat(100))
@@ -286,45 +267,6 @@ for (const n of [
   '315360000', '2147483647', '2147483648', '4294967295', '4294967296', '99999999999',
   '9223372036854775807', '18446744073709551616', '9'.repeat(100)
 ]) sMaxAge(n)
-
-tests.push({
-  name: 'An optimal CDN reuses a response with `CDN-Cache-Control: max-age: 2147483648`',
-  id: 'cdn-max-age-max',
-  kind: 'optimal',
-  cdn_only: true,
-  depends_on: ['freshness-none'],
-  requests: [
-    {
-      response_headers: [
-        ['CDN-Cache-Control', 'max-age=2147483648', false]
-      ],
-      setup: true,
-      pause_after: true
-    },
-    {
-      expected_type: 'cached'
-    }
-  ]
-})
-tests.push({
-  name: 'An optimal CDN reuses a response with `CDN-Cache-Control: max-age: 99999999999`',
-  id: 'cdn-max-age-max-plus',
-  kind: 'optimal',
-  cdn_only: true,
-  depends_on: ['freshness-none'],
-  requests: [
-    {
-      response_headers: [
-        ['CDN-Cache-Control', 'max-age=99999999999', false]
-      ],
-      setup: true,
-      pause_after: true
-    },
-    {
-      expected_type: 'cached'
-    }
-  ]
-})
 
 for (const n of ['2147483648', '4294967296', '99999999999']) staleWhileRevalidate(n)
 for (const n of ['2147483648', '4294967296', '99999999999']) staleIfError(n)
@@ -568,25 +510,6 @@ expiresFuture('round-year')
 expiresFuture('uint32-max')
 expiresFuture('uint32-max-plus-1')
 expiresFuture('int64-ns-max')
-tests.push({
-  name: 'An optimal HTTP cache reuses a response with an `Expires` that is far in the future',
-  id: 'freshness-expires-far-future',
-  kind: 'optimal',
-  depends_on: ['freshness-expires-future'],
-  requests: [
-    {
-      response_headers: [
-        ['Expires', 'Sat, 20 Nov 2286 17:46:39 GMT', false],
-        ['Date', 0]
-      ],
-      setup: true,
-      pause_after: true
-    },
-    {
-      expected_type: 'cached'
-    }
-  ]
-})
 expiresFuture('http-date-max')
 
 for (const name of ['int32-max', 'round-year', 'uint32-max']) futureDateExpiresLater(name)

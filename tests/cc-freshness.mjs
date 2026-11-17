@@ -73,6 +73,25 @@ export default
       ]
     },
     {
+      name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 99999999999`',
+      id: 'freshness-max-age-max-plus',
+      kind: 'optimal',
+      depends_on: ['freshness-none'],
+      spec_anchors: ['cache-response-directive.max-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Cache-Control', 'max-age=99999999999']
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache must not reuse a response when the `Age` header is greater than its `Cache-Control: max-age` freshness lifetime',
       id: 'freshness-max-age-age',
       depends_on: ['freshness-max-age'],

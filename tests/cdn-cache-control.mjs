@@ -25,6 +25,44 @@ export default
       ]
     },
     {
+      name: 'An optimal CDN reuses a response with `CDN-Cache-Control: max-age: 2147483648`',
+      id: 'cdn-max-age-max',
+      kind: 'optimal',
+      cdn_only: true,
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['CDN-Cache-Control', 'max-age=2147483648', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal CDN reuses a response with `CDN-Cache-Control: max-age: 99999999999`',
+      id: 'cdn-max-age-max-plus',
+      kind: 'optimal',
+      cdn_only: true,
+      depends_on: ['freshness-none'],
+      requests: [
+        {
+          response_headers: [
+            ['CDN-Cache-Control', 'max-age=99999999999', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'CDN must not reuse a response when the `Age` header is greater than its `CDN-Cache-Control: max-age` freshness lifetime',
       id: 'cdn-max-age-age',
       spec_anchors: ['https://www.rfc-editor.org/rfc/rfc9213.html'],
