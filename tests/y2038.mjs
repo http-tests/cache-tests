@@ -778,7 +778,7 @@ expiresRfc850(60, 'HTTP cache must not reuse a response with an RFC 850 `Expires
 export default {
   name: 'Large Time Values (Y2038)',
   id: 'y2038',
-  description: 'These tests check how caches handle times and durations at and beyond the limits of 32-bit arithmetic, including the Year 2038 problem, using far-future dates and large delta-seconds. A cache that rejects a value, caps it or wraps it can look the same on the wire, so the tests step through values; the first one that fails shows where behaviour changes. They cannot exercise the rollover itself, which needs a cache with a controllable clock.',
+  description: 'These tests check how caches cope with the Year 2038 problem: a time held in a signed 32-bit integer overflows at 03:14:07 UTC on 19 January 2038. Most of the behaviour can be probed now, using dates at and past that limit (and past the unsigned 32-bit limit in 2106) and delta-seconds at 2^31 and beyond. A cache that rejects a value, caps it or wraps it can look the same on the wire, so the tests step through values; the first one that fails shows where behaviour changes. They cannot exercise the rollover itself, which needs a cache with a controllable clock.',
   spec_anchors: ['expiration.model', 'delta-seconds'],
   tests
 }
