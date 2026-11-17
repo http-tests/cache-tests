@@ -67,6 +67,86 @@ export default
       ]
     },
     {
+      name: 'HTTP cache should consider a response with an `Age` value of `99999999999` to be stale',
+      id: 'age-parse-99999999999',
+      spec_anchors: ['field.age', 'delta-seconds'],
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '99999999999', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should consider a response with an `Age` value of `9223372036854775807` to be stale',
+      id: 'age-parse-9223372036854775807',
+      spec_anchors: ['field.age', 'delta-seconds'],
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '9223372036854775807', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should consider a response with an `Age` value of `18446744073709551616` to be stale',
+      id: 'age-parse-18446744073709551616',
+      spec_anchors: ['field.age', 'delta-seconds'],
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '18446744073709551616', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
+      name: 'HTTP cache should consider a response with an `Age` value of a 100-digit number to be stale',
+      id: 'age-parse-100-digits',
+      spec_anchors: ['field.age', 'delta-seconds'],
+      depends_on: ['freshness-max-age-age'],
+      requests: [
+        {
+          response_headers: [
+            ['Date', 0],
+            ['Cache-Control', 'max-age=3600'],
+            ['Age', '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999', false]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'not_cached'
+        }
+      ]
+    },
+    {
       name: 'HTTP cache should consider a response with a single `Age` header line `old, 0` to be stale',
       id: 'age-parse-suffix',
       spec_anchors: ['field.age'],

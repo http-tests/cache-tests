@@ -26,6 +26,46 @@ export default
       ]
     },
     {
+      name: 'An optimal HTTP cache reuses a response with an `Expires` of Fri, 11 Apr 2262 23:47:16 GMT (maximum 64-bit nanosecond time)',
+      id: 'freshness-expires-int64-ns-max',
+      kind: 'optimal',
+      depends_on: ['freshness-expires-future'],
+      spec_anchors: ['field.expires'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Fri, 11 Apr 2262 23:47:16 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: 'An optimal HTTP cache reuses a response with an `Expires` of Fri, 31 Dec 9999 23:59:59 GMT (maximum HTTP-date)',
+      id: 'freshness-expires-http-date-max',
+      kind: 'optimal',
+      depends_on: ['freshness-expires-future'],
+      spec_anchors: ['field.expires'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Fri, 31 Dec 9999 23:59:59 GMT', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
       name: 'An optimal HTTP cache reuses a response with a future `Expires` in obsolete RFC 850 format',
       id: 'freshness-expires-rfc850',
       kind: 'optimal',
@@ -53,6 +93,46 @@ export default
         {
           response_headers: [
             ['Expires', 'Mon Aug  8 02:01:18 2050', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: "An optimal HTTP cache reuses a response with a future `Expires` of Fri Apr 11 23:47:16 2262 (maximum 64-bit nanosecond time) in ANSI C's asctime() format",
+      id: 'freshness-expires-ansi-c-int64-ns-max',
+      kind: 'optimal',
+      depends_on: ['freshness-expires-ansi-c'],
+      spec_anchors: ['field.expires'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Fri Apr 11 23:47:16 2262', false],
+            ['Date', 0]
+          ],
+          setup: true,
+          pause_after: true
+        },
+        {
+          expected_type: 'cached'
+        }
+      ]
+    },
+    {
+      name: "An optimal HTTP cache reuses a response with a future `Expires` of Fri Dec 31 23:59:59 9999 (maximum HTTP-date) in ANSI C's asctime() format",
+      id: 'freshness-expires-ansi-c-http-date-max',
+      kind: 'optimal',
+      depends_on: ['freshness-expires-ansi-c'],
+      spec_anchors: ['field.expires'],
+      requests: [
+        {
+          response_headers: [
+            ['Expires', 'Fri Dec 31 23:59:59 9999', false],
             ['Date', 0]
           ],
           setup: true,

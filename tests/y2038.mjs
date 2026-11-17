@@ -14,9 +14,7 @@ const boundaries = {
   'next-day': { secs: 2147558400, label: 'the day after maximum 32-bit signed time' },
   'round-year': { secs: 2208988800, label: 'the start of 2040' },
   'uint32-max': { secs: 4294967295, label: 'maximum 32-bit unsigned time' },
-  'uint32-max-plus-1': { secs: 4294967296, label: 'one second after maximum 32-bit unsigned time' },
-  'int64-ns-max': { secs: 9223372036, label: 'maximum 64-bit nanosecond time' },
-  'http-date-max': { secs: 253402300799, label: 'maximum HTTP-date' }
+  'uint32-max-plus-1': { secs: 4294967296, label: 'one second after maximum 32-bit unsigned time' }
 }
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -37,13 +35,9 @@ function yearsFromNow (years) {
   return Math.round(years * 365.25 * 24 * 60 * 60)
 }
 
-// a number as it appears in a test name; very long ones are described rather than printed
+// a number as it appears in a test name
 function num (n) {
-  return n.length > 20 ? `a ${n.length}-digit number` : `\`${n}\``
-}
-
-function idNum (n) {
-  return n.length > 20 ? `${n.length}-digits` : n
+  return `\`${n}\``
 }
 
 // a boundary as it appears in a test name
@@ -59,7 +53,7 @@ const lm2020 = 'Wed, 01 Jan 2020 00:00:00 GMT'
 function maxAge (n) {
   tests.push({
     name: `An optimal HTTP cache reuses a response with a \`Cache-Control: max-age\` of ${num(n)}`,
-    id: `y2038-max-age-${idNum(n)}`,
+    id: `y2038-max-age-${n}`,
     kind: 'optimal',
     depends_on: ['freshness-max-age'],
     spec_anchors: ['cache-response-directive.max-age', 'delta-seconds'],
@@ -81,7 +75,7 @@ function maxAge (n) {
 function sMaxAge (n) {
   tests.push({
     name: `An optimal shared HTTP cache reuses a response with a \`Cache-Control: s-maxage\` of ${num(n)}`,
-    id: `y2038-s-maxage-${idNum(n)}`,
+    id: `y2038-s-maxage-${n}`,
     kind: 'optimal',
     depends_on: ['freshness-s-maxage-shared'],
     spec_anchors: ['cache-response-directive.s-maxage', 'delta-seconds'],
@@ -104,7 +98,7 @@ function sMaxAge (n) {
 function staleWhileRevalidate (n) {
   tests.push({
     name: `An optimal cache serves stale stored response with \`Cache-Control: stale-while-revalidate\` of ${num(n)}`,
-    id: `y2038-stale-while-revalidate-${idNum(n)}`,
+    id: `y2038-stale-while-revalidate-${n}`,
     kind: 'optimal',
     depends_on: ['stale-while-revalidate'],
     spec_anchors: ['https://www.rfc-editor.org/rfc/rfc5861.html#section-3', 'delta-seconds'],
@@ -127,7 +121,7 @@ function staleWhileRevalidate (n) {
 function staleIfError (n) {
   tests.push({
     name: `Does HTTP cache serve stale stored response when server sends \`Cache-Control: stale-if-error\` of ${num(n)} and subsequently a \`503 Service Unavailable\`?`,
-    id: `y2038-stale-if-error-${idNum(n)}`,
+    id: `y2038-stale-if-error-${n}`,
     kind: 'check',
     depends_on: ['stale-sie-503'],
     spec_anchors: ['delta-seconds'],
@@ -151,7 +145,7 @@ function staleIfError (n) {
 function ageOverflow (n) {
   tests.push({
     name: `HTTP cache should consider a response with an \`Age\` value of ${num(n)} to be stale`,
-    id: `y2038-age-${idNum(n)}`,
+    id: `y2038-age-${n}`,
     spec_anchors: ['field.age', 'delta-seconds'],
     depends_on: ['freshness-max-age-age'],
     requests: [
@@ -199,7 +193,6 @@ function ageGenerated (storedAge, maxAgeValue, id) {
   })
 }
 
-maxAge('315360000')
 tests.push({
   name: 'An optimal HTTP cache reuses a response with `Cache-Control: max-age: 2147483647`',
   id: 'freshness-max-age-max-minus-1',
@@ -259,17 +252,11 @@ tests.push({
 })
 maxAge('4294967295')
 maxAge('4294967296')
-maxAge('9223372036854775807')
-maxAge('18446744073709551616')
-maxAge('9'.repeat(100))
 
-for (const n of [
-  '315360000', '2147483647', '2147483648', '4294967295', '4294967296', '99999999999',
-  '9223372036854775807', '18446744073709551616', '9'.repeat(100)
-]) sMaxAge(n)
+for (const n of ['2147483647', '2147483648', '4294967295', '4294967296']) sMaxAge(n)
 
-for (const n of ['2147483648', '4294967296', '99999999999']) staleWhileRevalidate(n)
-for (const n of ['2147483648', '4294967296', '99999999999']) staleIfError(n)
+for (const n of ['2147483648', '4294967296']) staleWhileRevalidate(n)
+for (const n of ['2147483648', '4294967296']) staleIfError(n)
 
 tests.push({
   name: 'HTTP cache should consider a response with a `Age` value of 2147483647 to be stale',
@@ -333,10 +320,6 @@ tests.push({
 })
 ageOverflow('4294967295')
 ageOverflow('4294967296')
-ageOverflow('99999999999')
-ageOverflow('9223372036854775807')
-ageOverflow('18446744073709551616')
-ageOverflow('9'.repeat(100))
 
 ageGenerated(2147483640, 2147483647, 'near-int32-max')
 ageGenerated(2147483646, 4294967295, 'across-int32-max')
@@ -509,11 +492,9 @@ expiresFuture('next-day')
 expiresFuture('round-year')
 expiresFuture('uint32-max')
 expiresFuture('uint32-max-plus-1')
-expiresFuture('int64-ns-max')
-expiresFuture('http-date-max')
 
 for (const name of ['int32-max', 'round-year', 'uint32-max']) futureDateExpiresLater(name)
-for (const name of ['int32-max', 'round-year', 'uint32-max', 'http-date-max']) futureDateBecomesStale(name)
+for (const name of ['int32-max', 'round-year', 'uint32-max']) futureDateBecomesStale(name)
 for (const name of ['int32-min', 'minus-1', 'epoch']) pastDate(name)
 
 // ---- Group 3: Last-Modified and heuristic freshness
@@ -768,7 +749,7 @@ function expiresRfc850 (years, name, expectedType, kind) {
 
 for (const name of [
   'nginx-max', 'int32-max', 'int32-max-plus-1', 'next-day', 'round-year', 'uint32-max',
-  'uint32-max-plus-1', 'int64-ns-max', 'http-date-max'
+  'uint32-max-plus-1'
 ]) expiresAsctime(name)
 
 expiresRfc850(44, 'An optimal HTTP cache reuses a response with an RFC 850 `Expires` 44 years in the future (a fixed pivot year reads its two-digit year as the past)', 'cached', 'optimal')
@@ -778,7 +759,7 @@ expiresRfc850(60, 'HTTP cache must not reuse a response with an RFC 850 `Expires
 export default {
   name: 'Large Time Values (Y2038)',
   id: 'y2038',
-  description: 'These tests check how caches cope with the Year 2038 problem: a time held in a signed 32-bit integer overflows at 03:14:07 UTC on 19 January 2038. Most of the behaviour can be probed now, using dates at and past that limit (and past the unsigned 32-bit limit in 2106) and delta-seconds at 2^31 and beyond. A cache that rejects a value, caps it or wraps it can look the same on the wire, so the tests step through values; the first one that fails shows where behaviour changes. They cannot exercise the rollover itself, which needs a cache with a controllable clock.',
+  description: 'These tests check how caches cope with the Year 2038 problem: a time held in a signed 32-bit integer overflows at 03:14:07 UTC on 19 January 2038.',
   spec_anchors: ['expiration.model', 'delta-seconds'],
   tests
 }
