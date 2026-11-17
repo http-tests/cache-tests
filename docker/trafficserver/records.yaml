@@ -1,0 +1,97 @@
+# ATS 10 configuration; retain the test settings from records.config.
+# Container runtimes put host.docker.internal in /etc/hosts, not DNS.
+records:
+  exec_thread:
+    autoconfig:
+      enabled: 1
+      scale: 1.5
+    limit: 2
+    affinity: 1
+  accept_threads: 1
+  task_threads: 2
+  cache:
+    threads_per_disk: 8
+    ram_cache:
+      size: -1
+    ram_cache_cutoff: 4194304
+    limits:
+      http:
+        max_alts: 5
+    max_doc_size: 0
+    min_average_object_size: 8000
+  http:
+    server_ports: "8003"
+    insert_request_via_str: 1
+    insert_response_via_str: 0
+    parent_proxy:
+      retry_time: 300
+    forward:
+      proxy_auth_to_parent: 0
+    uncacheable_requests_bypass_parent: 1
+    keep_alive_no_activity_timeout_in: 120
+    keep_alive_no_activity_timeout_out: 120
+    transaction_no_activity_timeout_in: 30
+    transaction_no_activity_timeout_out: 30
+    transaction_active_timeout_in: 900
+    transaction_active_timeout_out: 0
+    accept_no_activity_timeout: 120
+    connect_attempts_max_retries: 3
+    connect_attempts_max_retries_suspect_server: 1
+    connect_attempts_rr_retries: 3
+    connect_attempts_timeout: 30
+    down_server:
+      cache_time: 60
+    negative_caching_enabled: 0
+    negative_caching_lifetime: 1800
+    insert_client_ip: 1
+    insert_squid_x_forwarded_for: 1
+    push_method_enabled: 0
+    cache:
+      http: 1
+      ignore_client_cc_max_age: 1
+      cache_responses_to_cookies: 1
+      cache_urls_that_look_dynamic: 1
+      when_to_revalidate: 0
+      required_headers: 2
+      heuristic_min_lifetime: 3600
+      heuristic_max_lifetime: 86400
+      heuristic_lm_factor: 0.1
+    normalize_ae: 1
+    slow:
+      log:
+        threshold: 0
+  hostdb:
+    host_file:
+      path: "/etc/hosts"
+  net:
+    default_inactivity_timeout: 86400
+    connections_throttle: 30000
+    max_connections_in: 30000
+  log:
+    logging_enabled: 3
+    max_space_mb_for_logs: 25000
+    max_space_mb_headroom: 1000
+    rolling_enabled: 1
+    rolling_interval_sec: 86400
+    rolling_size_mb: 10
+    auto_delete_rolled_files: 1
+    periodic_tasks_interval: 5
+  url_remap:
+    remap_required: 1
+    pristine_host_hdr: 1
+  reverse_proxy:
+    enabled: 1
+  ssl:
+    client:
+      CA:
+        cert:
+          filename: null
+    server:
+      cipher_suite: "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-DSS-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-DSS-AES256-SHA:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA"
+  diags:
+    debug:
+      enabled: 0
+      tags: "http|dns"
+  dump_mem_info_frequency: 0
+  admin:
+    user_id: "trafficserver"
