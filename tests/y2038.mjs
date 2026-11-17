@@ -620,8 +620,7 @@ function imsInThePast (name) {
         request_headers: [
           ['If-Modified-Since', imf(boundaries[name].secs)]
         ],
-        expected_status: 200,
-        setup_tests: ['expected_type']
+        expected_status: 200
       }
     ]
   })
